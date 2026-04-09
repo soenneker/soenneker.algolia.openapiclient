@@ -17,10 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Issue>? Errors { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_issue>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Issue> Errors { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_issue> Errors { get; set; }
 #endif
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,10 +35,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The warnings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Issue>? Warnings { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_issue>? Warnings { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Issue> Warnings { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_issue> Warnings { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Advanced_personalization_putConfig_200"/> and sets the default values.
@@ -65,10 +65,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Issue>(global::Soenneker.Algolia.OpenApiClient.Models.Issue.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_issue>(global::Soenneker.Algolia.OpenApiClient.Models.Fixed_issue.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetDoubleValue(); } },
-                { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Issue>(global::Soenneker.Algolia.OpenApiClient.Models.Issue.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_issue>(global::Soenneker.Algolia.OpenApiClient.Models.Fixed_issue.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -78,10 +78,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Issue>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_issue>("errors", Errors);
             writer.WriteStringValue("message", Message);
             writer.WriteDoubleValue("status", Status);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Issue>("warnings", Warnings);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_issue>("warnings", Warnings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -36,27 +36,27 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.Search
         /// <summary>
         /// Searches for tasks.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Algolia.OpenApiClient.Models.TaskObject&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_Task&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ErrorBase">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.TaskObject>?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.TaskSearch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_Task>?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_TaskSearch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.TaskObject>> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.TaskSearch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_Task>> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_TaskSearch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ErrorBase.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Algolia.OpenApiClient.Models.TaskObject>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.TaskObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_Task>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_Task.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -67,11 +67,11 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.Search
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.TaskSearch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_TaskSearch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.TaskSearch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_TaskSearch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

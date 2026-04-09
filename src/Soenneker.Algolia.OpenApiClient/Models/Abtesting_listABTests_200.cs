@@ -15,10 +15,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The abtests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_ABTests? Abtests { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Fixed_abtesting_ABTests? Abtests { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_ABTests Abtests { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Fixed_abtesting_ABTests Abtests { get; set; }
 #endif
         /// <summary>Number of A/B tests.</summary>
         public int? Count { get; set; }
@@ -42,7 +42,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "abtests", n => { Abtests = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_ABTests>(global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_ABTests.CreateFromDiscriminatorValue); } },
+                { "abtests", n => { Abtests = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_abtesting_ABTests>(global::Soenneker.Algolia.OpenApiClient.Models.Fixed_abtesting_ABTests.CreateFromDiscriminatorValue); } },
                 { "count", n => { Count = n.GetIntValue(); } },
                 { "total", n => { Total = n.GetIntValue(); } },
             };
@@ -54,7 +54,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_ABTests>("abtests", Abtests);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_abtesting_ABTests>("abtests", Abtests);
             writer.WriteIntValue("count", Count);
             writer.WriteIntValue("total", Total);
         }

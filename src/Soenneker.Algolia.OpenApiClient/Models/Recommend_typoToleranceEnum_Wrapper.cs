@@ -22,8 +22,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>- `min`. Return matches with the lowest number of typos.  For example, if you have matches without typos, only include those.  But if there are no matches without typos (with 1 typo), include matches with 1 typo (2 typos).- `strict`. Return matches with the two lowest numbers of typos.  With `strict`, the Typo ranking criterion is applied first in the `ranking` setting.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.Recommend_typoToleranceEnum? Value { get; set; }
+        /// <summary>The value property</summary>
+        public global::Soenneker.Algolia.OpenApiClient.Models.Recommend_typoToleranceEnum_Wrapper_value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Recommend_typoToleranceEnum_Wrapper"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Recommend_typoToleranceEnum>(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Recommend_typoToleranceEnum_Wrapper_value>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Recommend_typoToleranceEnum>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Recommend_typoToleranceEnum_Wrapper_value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

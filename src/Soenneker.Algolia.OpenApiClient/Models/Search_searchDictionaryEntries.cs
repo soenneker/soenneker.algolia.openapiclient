@@ -16,7 +16,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Number of hits per page.</summary>
         public int? HitsPerPage { get; set; }
         /// <summary>ISO code for a supported language.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_supportedLanguage? Language { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_search_supportedLanguage? Language { get; set; }
         /// <summary>Page of search results to retrieve.</summary>
         public int? Page { get; set; }
         /// <summary>Search query.</summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "hitsPerPage", n => { HitsPerPage = n.GetIntValue(); } },
-                { "language", n => { Language = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_supportedLanguage>(); } },
+                { "language", n => { Language = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_search_supportedLanguage>(); } },
                 { "page", n => { Page = n.GetIntValue(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
             };
@@ -59,7 +59,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("hitsPerPage", HitsPerPage);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_supportedLanguage>("language", Language);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_search_supportedLanguage>("language", Language);
             writer.WriteIntValue("page", Page);
             writer.WriteStringValue("query", Query);
         }

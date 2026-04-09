@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptMember1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptMember1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1_Wrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2_Wrapper"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RenderJavaScript : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1_Wrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1? RenderJavaScriptBranch1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1_Wrapper? RenderJavaScriptBranch1Wrapper { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1 RenderJavaScriptBranch1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1_Wrapper RenderJavaScriptBranch1Wrapper { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2_Wrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2? RenderJavaScriptBranch2 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2_Wrapper? RenderJavaScriptBranch2Wrapper { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2 RenderJavaScriptBranch2 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2_Wrapper RenderJavaScriptBranch2Wrapper { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,11 +49,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript();
             if("renderJavaScript_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RenderJavaScriptBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1();
+                result.RenderJavaScriptBranch1Wrapper = new global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1_Wrapper();
             }
             else if("renderJavaScript_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RenderJavaScriptBranch2 = new global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2();
+                result.RenderJavaScriptBranch2Wrapper = new global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2_Wrapper();
             }
             else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -67,13 +67,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RenderJavaScriptBranch1 != null)
+            if(RenderJavaScriptBranch1Wrapper != null)
             {
-                return RenderJavaScriptBranch1.GetFieldDeserializers();
+                return RenderJavaScriptBranch1Wrapper.GetFieldDeserializers();
             }
-            else if(RenderJavaScriptBranch2 != null)
+            else if(RenderJavaScriptBranch2Wrapper != null)
             {
-                return RenderJavaScriptBranch2.GetFieldDeserializers();
+                return RenderJavaScriptBranch2Wrapper.GetFieldDeserializers();
             }
             else if(RenderJavaScriptMember1 != null)
             {
@@ -88,13 +88,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(RenderJavaScriptBranch1 != null)
+            if(RenderJavaScriptBranch1Wrapper != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1>(null, RenderJavaScriptBranch1);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1_Wrapper>(null, RenderJavaScriptBranch1Wrapper);
             }
-            else if(RenderJavaScriptBranch2 != null)
+            else if(RenderJavaScriptBranch2Wrapper != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2>(null, RenderJavaScriptBranch2);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2_Wrapper>(null, RenderJavaScriptBranch2Wrapper);
             }
             else if(RenderJavaScriptMember1 != null)
             {

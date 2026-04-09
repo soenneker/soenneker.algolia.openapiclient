@@ -36,62 +36,62 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Dictionaries.Asterisk.Setti
         /// <summary>
         /// Retrieves the languages for which standard dictionary entries are turned off.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_getDictionarySettings_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_getDictionarySettings_200_Response_application_json"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase">When receiving a 402 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Search_getDictionarySettings_200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Search_getDictionarySettings_200_Response_application_json?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Search_getDictionarySettings_200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Search_getDictionarySettings_200_Response_application_json> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase.CreateFromDiscriminatorValue },
-                { "402", global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Search_getDictionarySettings_200>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Search_getDictionarySettings_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Search_getDictionarySettings_200_Response_application_json>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Search_getDictionarySettings_200_Response_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Turns standard stop word dictionary entries on or off for a given language.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_updatedAtResponse"/></returns>
         /// <param name="body">Turn on or off the built-in Algolia stop words for a specific language.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase">When receiving a 402 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse?> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.Search_setDictionarySettings body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Search_updatedAtResponse?> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.Search_setDictionarySettings body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.Search_setDictionarySettings body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Search_updatedAtResponse> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.Search_setDictionarySettings body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase.CreateFromDiscriminatorValue },
-                { "402", global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Search_updatedAtResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Search_updatedAtResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the languages for which standard dictionary entries are turned off.

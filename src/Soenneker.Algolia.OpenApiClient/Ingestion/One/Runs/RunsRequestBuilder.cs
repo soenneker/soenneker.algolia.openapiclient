@@ -49,25 +49,25 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs
         /// <summary>
         /// Retrieve a list of task runs.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RunListResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_RunListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ErrorBase">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.RunListResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs.RunsRequestBuilder.RunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_RunListResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs.RunsRequestBuilder.RunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.RunListResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs.RunsRequestBuilder.RunsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_RunListResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs.RunsRequestBuilder.RunsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.RunListResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.RunListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_RunListResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_RunListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of task runs.
@@ -125,7 +125,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs
 #endif
             /// <summary>Sort order of the response, ascending or descending.</summary>
             [QueryParameter("order")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.OrderKeys? Order { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_orderKeys? Order { get; set; }
             /// <summary>Page number of the paginated API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,7 +138,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs
 #endif
             /// <summary>Property by which to sort the list of task runs.</summary>
             [QueryParameter("sort")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.RunSortKeys? Sort { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_runSortKeys? Sort { get; set; }
             /// <summary>Date and time for the earliest run to retrieve, in RFC 3339 format. By default, the current day minus seven days is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,11 +153,11 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.RunStatus[]? Status { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_RunStatus[]? Status { get; set; }
 #nullable restore
 #else
             [QueryParameter("status")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.RunStatus[] Status { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_RunStatus[] Status { get; set; }
 #endif
             /// <summary>Task ID for filtering the list of task runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -173,11 +173,11 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.RunType[]? Type { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_RunType[]? Type { get; set; }
 #nullable restore
 #else
             [QueryParameter("type")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.RunType[] Type { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_RunType[] Type { get; set; }
 #endif
         }
     }

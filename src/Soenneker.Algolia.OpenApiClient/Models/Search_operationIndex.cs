@@ -21,14 +21,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string Destination { get; set; }
 #endif
         /// <summary>Operation to perform on the index.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.OperationType? Operation { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Search_operationType? Operation { get; set; }
         /// <summary>&quot;**Only for copying.**If you specify a scope, only the selected scopes are copied. Records and the other scopes are left unchanged.If you omit the `scope` parameter, everything is copied: records, settings, synonyms, and rules.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ScopeType?>? Scope { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Search_scopeType?>? Scope { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ScopeType?> Scope { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Search_scopeType?> Scope { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,8 +49,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "destination", n => { Destination = n.GetStringValue(); } },
-                { "operation", n => { Operation = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.OperationType>(); } },
-                { "scope", n => { Scope = n.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.ScopeType>()?.AsList(); } },
+                { "operation", n => { Operation = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_operationType>(); } },
+                { "scope", n => { Scope = n.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.Search_scopeType>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -61,8 +61,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("destination", Destination);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.OperationType>("operation", Operation);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.ScopeType>("scope", Scope);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_operationType>("operation", Operation);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.Search_scopeType>("scope", Scope);
         }
     }
 }

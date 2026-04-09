@@ -36,33 +36,33 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Dictionaries.Item.Batch
         /// <summary>
         /// Adds or deletes multiple entries from your plurals, segmentation, or stop word dictionaries.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_updatedAtResponse"/></returns>
         /// <param name="body">Request body for updating dictionary entries.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase">When receiving a 402 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Search_batchDictionaryEntries body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Search_updatedAtResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Search_batchDictionaryEntries body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Search_batchDictionaryEntries body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Search_updatedAtResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Search_batchDictionaryEntries body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase.CreateFromDiscriminatorValue },
-                { "402", global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Search_updatedAtResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Search_updatedAtResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Adds or deletes multiple entries from your plurals, segmentation, or stop word dictionaries.

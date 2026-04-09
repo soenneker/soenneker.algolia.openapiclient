@@ -36,25 +36,25 @@ namespace Soenneker.Algolia.OpenApiClient.Search.PartialUpdateObjects
         /// <summary>
         /// &quot;Helper: Replaces object content of all the given objects according to their respective `objectID` field. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objects each.&quot;
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Algolia.OpenApiClient.Models.BatchResponse&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Algolia.OpenApiClient.Models.Search_batchResponse&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.BatchResponse>?> PostAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.PartialUpdateObjects.PartialUpdateObjectsRequestBuilder.PartialUpdateObjectsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.Search_batchResponse>?> PostAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.PartialUpdateObjects.PartialUpdateObjectsRequestBuilder.PartialUpdateObjectsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.BatchResponse>> PostAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.PartialUpdateObjects.PartialUpdateObjectsRequestBuilder.PartialUpdateObjectsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.Search_batchResponse>> PostAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.PartialUpdateObjects.PartialUpdateObjectsRequestBuilder.PartialUpdateObjectsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Search_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Algolia.OpenApiClient.Models.BatchResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.BatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Algolia.OpenApiClient.Models.Search_batchResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Search_batchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>

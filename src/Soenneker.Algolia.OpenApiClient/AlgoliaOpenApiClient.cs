@@ -12,8 +12,10 @@ using Soenneker.Algolia.OpenApiClient.AdvancedPersonalization;
 using Soenneker.Algolia.OpenApiClient.Analytics;
 using Soenneker.Algolia.OpenApiClient.Composition;
 using Soenneker.Algolia.OpenApiClient.Crawler;
+using Soenneker.Algolia.OpenApiClient.Fixed;
 using Soenneker.Algolia.OpenApiClient.Ingestion;
 using Soenneker.Algolia.OpenApiClient.Insights;
+using Soenneker.Algolia.OpenApiClient.MergedOpenapi;
 using Soenneker.Algolia.OpenApiClient.Monitoring;
 using Soenneker.Algolia.OpenApiClient.Personalization;
 using Soenneker.Algolia.OpenApiClient.QuerySuggestions;
@@ -61,6 +63,11 @@ namespace Soenneker.Algolia.OpenApiClient
         {
             get => new global::Soenneker.Algolia.OpenApiClient.Crawler.CrawlerRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The fixed property</summary>
+        public global::Soenneker.Algolia.OpenApiClient.Fixed.FixedRequestBuilder Fixed
+        {
+            get => new global::Soenneker.Algolia.OpenApiClient.Fixed.FixedRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The ingestion property</summary>
         public global::Soenneker.Algolia.OpenApiClient.Ingestion.IngestionRequestBuilder Ingestion
         {
@@ -70,6 +77,11 @@ namespace Soenneker.Algolia.OpenApiClient
         public global::Soenneker.Algolia.OpenApiClient.Insights.InsightsRequestBuilder Insights
         {
             get => new global::Soenneker.Algolia.OpenApiClient.Insights.InsightsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The mergedOpenapi property</summary>
+        public global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.MergedOpenapiRequestBuilder MergedOpenapi
+        {
+            get => new global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.MergedOpenapiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The monitoring property</summary>
         public global::Soenneker.Algolia.OpenApiClient.Monitoring.MonitoringRequestBuilder Monitoring

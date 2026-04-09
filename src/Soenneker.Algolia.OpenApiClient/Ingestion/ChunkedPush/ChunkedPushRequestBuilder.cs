@@ -36,25 +36,25 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.ChunkedPush
         /// <summary>
         /// &quot;Helper: Chunks the given `objects` list in subset of 1000 elements max in order to make it fit in `push` requests by leveraging the Transformation pipeline setup in the Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push).&quot;
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Algolia.OpenApiClient.Models.WatchResponse&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_WatchResponse&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ErrorBase">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.WatchResponse>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.ChunkedPush.ChunkedPushRequestBuilder.ChunkedPushRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_WatchResponse>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.ChunkedPush.ChunkedPushRequestBuilder.ChunkedPushRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.WatchResponse>> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.ChunkedPush.ChunkedPushRequestBuilder.ChunkedPushRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_WatchResponse>> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.ChunkedPush.ChunkedPushRequestBuilder.ChunkedPushRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ErrorBase.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Algolia.OpenApiClient.Models.WatchResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.WatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_WatchResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_WatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -93,7 +93,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.ChunkedPush
         {
             /// <summary>The `batch` `action` to perform on the given array of `objects`, defaults to `addObject`.</summary>
             [QueryParameter("action")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_action? Action { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_action? Action { get; set; }
             /// <summary>The size of the chunk of `objects`. The number of `batch` calls will be equal to `length(objects) / batchSize`. Defaults to 1,000.</summary>
             [QueryParameter("batchSize")]
             public int? BatchSize { get; set; }

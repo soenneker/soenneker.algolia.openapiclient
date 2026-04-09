@@ -17,10 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Click and conversion events.**All** events must be valid, otherwise the API returns an error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventsItems>? Events { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Insights_EventsItems>? Events { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventsItems> Events { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Insights_EventsItems> Events { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Insights_pushEvents"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventsItems>(global::Soenneker.Algolia.OpenApiClient.Models.EventsItems.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Insights_EventsItems>(global::Soenneker.Algolia.OpenApiClient.Models.Insights_EventsItems.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventsItems>("events", Events);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Insights_EventsItems>("events", Events);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
