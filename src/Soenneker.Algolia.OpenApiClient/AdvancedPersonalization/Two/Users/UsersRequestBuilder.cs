@@ -49,7 +49,7 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users
         /// <summary>
         /// Retrieves a list of user profiles in [lexicographical order](https://www.educative.io/answers/what-is-a-lexicographic-order).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Advanced_personalization_getUsers_200_Response_application_json"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Advanced_personalization_getUsers_200_Response_application_json_2"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponses_unauthorized">When receiving a 401 status code</exception>
@@ -57,11 +57,11 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponses_internalServerError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Advanced_personalization_getUsers_200_Response_application_json?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Advanced_personalization_getUsers_200_Response_application_json_2?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Advanced_personalization_getUsers_200_Response_application_json> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Advanced_personalization_getUsers_200_Response_application_json_2> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -71,7 +71,7 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users
                 { "422", global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponses_genericUnprocessableEntity.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponses_internalServerError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Advanced_personalization_getUsers_200_Response_application_json>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Advanced_personalization_getUsers_200_Response_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Advanced_personalization_getUsers_200_Response_application_json_2>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Advanced_personalization_getUsers_200_Response_application_json_2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of user profiles in [lexicographical order](https://www.educative.io/answers/what-is-a-lexicographic-order).

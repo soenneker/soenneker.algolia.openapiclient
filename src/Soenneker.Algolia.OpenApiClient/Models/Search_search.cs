@@ -15,13 +15,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The requests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Search_SearchQuery>? Requests { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.C_search_SearchQuery>? Requests { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Search_SearchQuery> Requests { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.C_search_SearchQuery> Requests { get; set; }
 #endif
         /// <summary>Strategy for multiple search queries:- `none`. Run all queries.- `stopIfEnoughMatches`. Run the queries one by one, stopping as soon as a query matches at least the `hitsPerPage` number of results.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_searchStrategy? Strategy { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_search_searchStrategy? Strategy { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,8 +40,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "requests", n => { Requests = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Search_SearchQuery>(global::Soenneker.Algolia.OpenApiClient.Models.Search_SearchQuery.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "strategy", n => { Strategy = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_searchStrategy>(); } },
+                { "requests", n => { Requests = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.C_search_SearchQuery>(global::Soenneker.Algolia.OpenApiClient.Models.C_search_SearchQuery.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "strategy", n => { Strategy = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_search_searchStrategy>(); } },
             };
         }
         /// <summary>
@@ -51,8 +51,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Search_SearchQuery>("requests", Requests);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_searchStrategy>("strategy", Strategy);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.C_search_SearchQuery>("requests", Requests);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_search_searchStrategy>("strategy", Strategy);
         }
     }
 }

@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper_2"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper_2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IgnoreCanonicalTo : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper_2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper? IgnoreCanonicalToBranch1Wrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper_2? IgnoreCanonicalToBranch1Wrapper2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper IgnoreCanonicalToBranch1Wrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper_2 IgnoreCanonicalToBranch1Wrapper2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper_2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper? IgnoreCanonicalToBranch2Wrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper_2? IgnoreCanonicalToBranch2Wrapper2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper IgnoreCanonicalToBranch2Wrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper_2 IgnoreCanonicalToBranch2Wrapper2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -41,11 +41,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo();
             if("ignoreCanonicalTo_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.IgnoreCanonicalToBranch1Wrapper = new global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper();
+                result.IgnoreCanonicalToBranch1Wrapper2 = new global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper_2();
             }
             else if("ignoreCanonicalTo_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.IgnoreCanonicalToBranch2Wrapper = new global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper();
+                result.IgnoreCanonicalToBranch2Wrapper2 = new global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper_2();
             }
             return result;
         }
@@ -55,13 +55,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(IgnoreCanonicalToBranch1Wrapper != null)
+            if(IgnoreCanonicalToBranch1Wrapper2 != null)
             {
-                return IgnoreCanonicalToBranch1Wrapper.GetFieldDeserializers();
+                return IgnoreCanonicalToBranch1Wrapper2.GetFieldDeserializers();
             }
-            else if(IgnoreCanonicalToBranch2Wrapper != null)
+            else if(IgnoreCanonicalToBranch2Wrapper2 != null)
             {
-                return IgnoreCanonicalToBranch2Wrapper.GetFieldDeserializers();
+                return IgnoreCanonicalToBranch2Wrapper2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +72,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(IgnoreCanonicalToBranch1Wrapper != null)
+            if(IgnoreCanonicalToBranch1Wrapper2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper>(null, IgnoreCanonicalToBranch1Wrapper);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper_2>(null, IgnoreCanonicalToBranch1Wrapper2);
             }
-            else if(IgnoreCanonicalToBranch2Wrapper != null)
+            else if(IgnoreCanonicalToBranch2Wrapper2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper>(null, IgnoreCanonicalToBranch2Wrapper);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper_2>(null, IgnoreCanonicalToBranch2Wrapper2);
             }
         }
     }

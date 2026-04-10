@@ -17,10 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Crawler configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_Configuration? Config { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_Configuration? Config { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_Configuration Config { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_Configuration Config { get; set; }
 #endif
         /// <summary>Name of the crawler.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_Configuration>(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_Configuration.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_Configuration>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_Configuration.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_Configuration>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_Configuration>("config", Config);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

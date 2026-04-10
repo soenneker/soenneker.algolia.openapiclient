@@ -36,25 +36,25 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Search.ReplaceAllObjects
         /// <summary>
         /// &quot;Replace all records in your index with a new set of records by using the Transformation pipeline in the Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push).This method replaces all records without downtime. It performs these operations:  1. Copy settings, synonyms, and rules from your original index to a temporary index.  2. Add your new records to the temporary index.  3. Replace your original index with the temporary index.Notes:- Use the `safe` parameter to run these (asynchronous) operations in sequence.- If there&apos;s an error during one of these steps, the temporary index isn&apos;t deleted.- This operation is rate-limited.- This method creates a temporary index, which temporarily doubles your record count.- Algolia doesn&apos;t count the three days with the highest number of records toward your monthly usage.- If you&apos;re on a legacy plan (before July 2020), this method counts two operations toward your usage (in addition to the number of records): `copySettings` and `moveIndex`.- The API key you use for this operation must have access to the index `YourIndex` and the temporary index `YourIndex_tmp`.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_replaceAllObjectsWithTransformationResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_replaceAllObjectsWithTransformationResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_search_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_search_ErrorBase">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_replaceAllObjectsWithTransformationResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Search.ReplaceAllObjectsWithTransformation.ReplaceAllObjectsWithTransformationRequestBuilder.ReplaceAllObjectsWithTransformationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_replaceAllObjectsWithTransformationResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Search.ReplaceAllObjectsWithTransformation.ReplaceAllObjectsWithTransformationRequestBuilder.ReplaceAllObjectsWithTransformationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_replaceAllObjectsWithTransformationResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Search.ReplaceAllObjectsWithTransformation.ReplaceAllObjectsWithTransformationRequestBuilder.ReplaceAllObjectsWithTransformationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_replaceAllObjectsWithTransformationResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Search.ReplaceAllObjectsWithTransformation.ReplaceAllObjectsWithTransformationRequestBuilder.ReplaceAllObjectsWithTransformationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_search_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_search_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_replaceAllObjectsWithTransformationResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_replaceAllObjectsWithTransformationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_replaceAllObjectsWithTransformationResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_replaceAllObjectsWithTransformationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Replace all records in your index with a new set of records by using the Transformation pipeline in the Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push).This method replaces all records without downtime. It performs these operations:  1. Copy settings, synonyms, and rules from your original index to a temporary index.  2. Add your new records to the temporary index.  3. Replace your original index with the temporary index.Notes:- Use the `safe` parameter to run these (asynchronous) operations in sequence.- If there&apos;s an error during one of these steps, the temporary index isn&apos;t deleted.- This operation is rate-limited.- This method creates a temporary index, which temporarily doubles your record count.- Algolia doesn&apos;t count the three days with the highest number of records toward your monthly usage.- If you&apos;re on a legacy plan (before July 2020), this method counts two operations toward your usage (in addition to the number of records): `copySettings` and `moveIndex`.- The API key you use for this operation must have access to the index `YourIndex` and the temporary index `YourIndex_tmp`.&quot;
@@ -117,11 +117,11 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Search.ReplaceAllObjects
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("scopes")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_scopeType[]? Scopes { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_scopeType[]? Scopes { get; set; }
 #nullable restore
 #else
             [QueryParameter("scopes")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_scopeType[] Scopes { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_scopeType[] Scopes { get; set; }
 #endif
         }
     }

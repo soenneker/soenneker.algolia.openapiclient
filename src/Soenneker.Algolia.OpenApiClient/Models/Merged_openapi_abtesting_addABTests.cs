@@ -31,10 +31,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>A/B test variants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_abtesting_AddABTestsVariant>? Variants { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_abtesting_AddABTestsVariant>? Variants { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_abtesting_AddABTestsVariant> Variants { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_abtesting_AddABTestsVariant> Variants { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +56,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "endAt", n => { EndAt = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_abtesting_AddABTestsVariant>(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_abtesting_AddABTestsVariant.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_abtesting_AddABTestsVariant>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_abtesting_AddABTestsVariant.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("endAt", EndAt);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_abtesting_AddABTestsVariant>("variants", Variants);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_abtesting_AddABTestsVariant>("variants", Variants);
         }
     }
 }

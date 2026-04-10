@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch1_Wrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch2_Wrapper"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch1_Wrapper_2"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch2_Wrapper_2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RemoveStopWords : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch1_Wrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch1_Wrapper_2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch1_Wrapper? RemoveStopWordsBranch1Wrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch1_Wrapper_2? RemoveStopWordsBranch1Wrapper2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch1_Wrapper RemoveStopWordsBranch1Wrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch1_Wrapper_2 RemoveStopWordsBranch1Wrapper2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch2_Wrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch2_Wrapper_2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch2_Wrapper? RemoveStopWordsBranch2Wrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch2_Wrapper_2? RemoveStopWordsBranch2Wrapper2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch2_Wrapper RemoveStopWordsBranch2Wrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch2_Wrapper_2 RemoveStopWordsBranch2Wrapper2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -41,11 +41,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords();
             if("removeStopWords_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RemoveStopWordsBranch1Wrapper = new global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch1_Wrapper();
+                result.RemoveStopWordsBranch1Wrapper2 = new global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch1_Wrapper_2();
             }
             else if("removeStopWords_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RemoveStopWordsBranch2Wrapper = new global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch2_Wrapper();
+                result.RemoveStopWordsBranch2Wrapper2 = new global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch2_Wrapper_2();
             }
             return result;
         }
@@ -55,13 +55,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RemoveStopWordsBranch1Wrapper != null)
+            if(RemoveStopWordsBranch1Wrapper2 != null)
             {
-                return RemoveStopWordsBranch1Wrapper.GetFieldDeserializers();
+                return RemoveStopWordsBranch1Wrapper2.GetFieldDeserializers();
             }
-            else if(RemoveStopWordsBranch2Wrapper != null)
+            else if(RemoveStopWordsBranch2Wrapper2 != null)
             {
-                return RemoveStopWordsBranch2Wrapper.GetFieldDeserializers();
+                return RemoveStopWordsBranch2Wrapper2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +72,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(RemoveStopWordsBranch1Wrapper != null)
+            if(RemoveStopWordsBranch1Wrapper2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch1_Wrapper>(null, RemoveStopWordsBranch1Wrapper);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch1_Wrapper_2>(null, RemoveStopWordsBranch1Wrapper2);
             }
-            else if(RemoveStopWordsBranch2Wrapper != null)
+            else if(RemoveStopWordsBranch2Wrapper2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch2_Wrapper>(null, RemoveStopWordsBranch2Wrapper);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch2_Wrapper_2>(null, RemoveStopWordsBranch2Wrapper2);
             }
         }
     }

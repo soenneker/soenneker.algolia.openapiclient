@@ -36,33 +36,33 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Rules.Batch
         /// <summary>
         /// Create or update multiple rules.If a rule with the specified object ID doesn&apos;t exist, Algolia creates a new one.Otherwise, existing rules are replaced.This operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_updatedAtResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_search_updatedAtResponse"/></returns>
         /// <param name="body">Rules to add or replace.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase">When receiving a 402 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C__search_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C__search_ErrorBase">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C__search_ErrorBase">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C__search_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Search_updatedAtResponse?> PostAsync(List<global::Soenneker.Algolia.OpenApiClient.Models.Search_rule> body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Rules.Batch.BatchRequestBuilder.BatchRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_search_updatedAtResponse?> PostAsync(List<global::Soenneker.Algolia.OpenApiClient.Models.C_search_rule> body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Rules.Batch.BatchRequestBuilder.BatchRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Search_updatedAtResponse> PostAsync(List<global::Soenneker.Algolia.OpenApiClient.Models.Search_rule> body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Rules.Batch.BatchRequestBuilder.BatchRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_search_updatedAtResponse> PostAsync(List<global::Soenneker.Algolia.OpenApiClient.Models.C_search_rule> body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Rules.Batch.BatchRequestBuilder.BatchRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase.CreateFromDiscriminatorValue },
-                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_search_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C__search_ErrorBase.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C__search_ErrorBase.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Algolia.OpenApiClient.Models.C__search_ErrorBase.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C__search_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Search_updatedAtResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Search_updatedAtResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_search_updatedAtResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_search_updatedAtResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create or update multiple rules.If a rule with the specified object ID doesn&apos;t exist, Algolia creates a new one.Otherwise, existing rules are replaced.This operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).
@@ -72,11 +72,11 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Rules.Batch
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Algolia.OpenApiClient.Models.Search_rule> body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Rules.Batch.BatchRequestBuilder.BatchRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Algolia.OpenApiClient.Models.C_search_rule> body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Rules.Batch.BatchRequestBuilder.BatchRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Algolia.OpenApiClient.Models.Search_rule> body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Rules.Batch.BatchRequestBuilder.BatchRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Algolia.OpenApiClient.Models.C_search_rule> body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Rules.Batch.BatchRequestBuilder.BatchRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

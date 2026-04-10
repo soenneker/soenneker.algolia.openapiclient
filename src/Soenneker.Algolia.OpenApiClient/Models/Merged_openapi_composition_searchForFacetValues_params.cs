@@ -27,10 +27,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The searchQuery property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_params? SearchQuery { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_params? SearchQuery { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_params SearchQuery { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_params SearchQuery { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_composition_searchForFacetValues_params"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "maxFacetHits", n => { MaxFacetHits = n.GetIntValue(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
-                { "searchQuery", n => { SearchQuery = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_params>(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_params.CreateFromDiscriminatorValue); } },
+                { "searchQuery", n => { SearchQuery = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_params>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_params.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("maxFacetHits", MaxFacetHits);
             writer.WriteStringValue("query", Query);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_params>("searchQuery", SearchQuery);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_params>("searchQuery", SearchQuery);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

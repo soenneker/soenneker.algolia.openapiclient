@@ -61,50 +61,50 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Ingestion.One.Sources
         /// <summary>
         /// Retrieves a list of sources.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_listSources_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_listSources_200_Response_application_json"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__ingestion_ErrorBase">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_listSources_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Ingestion.One.Sources.SourcesRequestBuilder.SourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_listSources_200_Response_application_json?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Ingestion.One.Sources.SourcesRequestBuilder.SourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_listSources_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Ingestion.One.Sources.SourcesRequestBuilder.SourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_listSources_200_Response_application_json> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Ingestion.One.Sources.SourcesRequestBuilder.SourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__ingestion_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_listSources_200>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_listSources_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_listSources_200_Response_application_json>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_listSources_200_Response_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new source.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_SourceCreateResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_SourceCreateResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__ingestion_ErrorBase">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_SourceCreateResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_SourceCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_SourceCreateResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_SourceCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_SourceCreateResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_SourceCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_SourceCreateResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_SourceCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__ingestion_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_SourceCreateResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_SourceCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_SourceCreateResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_SourceCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of sources.
@@ -133,11 +133,11 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Ingestion.One.Sources
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_SourceCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_SourceCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_SourceCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_SourceCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -184,7 +184,7 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Ingestion.One.Sources
 #endif
             /// <summary>Sort order of the response, ascending or descending.</summary>
             [QueryParameter("order")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_orderKeys? Order { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_orderKeys? Order { get; set; }
             /// <summary>Page number of the paginated API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -197,16 +197,16 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Ingestion.One.Sources
 #endif
             /// <summary>Property by which to sort the list of sources.</summary>
             [QueryParameter("sort")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_sourceSortKeys? Sort { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_sourceSortKeys? Sort { get; set; }
             /// <summary>Source type. Some sources require authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_sourceType[]? Type { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_SourceType[]? Type { get; set; }
 #nullable restore
 #else
             [QueryParameter("type")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_sourceType[] Type { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_ingestion_SourceType[] Type { get; set; }
 #endif
         }
     }

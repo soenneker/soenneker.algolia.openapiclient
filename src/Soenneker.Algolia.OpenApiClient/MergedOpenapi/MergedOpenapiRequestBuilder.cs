@@ -8,6 +8,7 @@ using Soenneker.Algolia.OpenApiClient.MergedOpenapi.AdvancedPersonalization;
 using Soenneker.Algolia.OpenApiClient.MergedOpenapi.Analytics;
 using Soenneker.Algolia.OpenApiClient.MergedOpenapi.Composition;
 using Soenneker.Algolia.OpenApiClient.MergedOpenapi.Crawler;
+using Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed;
 using Soenneker.Algolia.OpenApiClient.MergedOpenapi.Ingestion;
 using Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights;
 using Soenneker.Algolia.OpenApiClient.MergedOpenapi.Monitoring;
@@ -56,6 +57,11 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi
         public global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Crawler.CrawlerRequestBuilder Crawler
         {
             get => new global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Crawler.CrawlerRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The fixed property</summary>
+        public global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.FixedRequestBuilder Fixed
+        {
+            get => new global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.FixedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ingestion property</summary>
         public global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Ingestion.IngestionRequestBuilder Ingestion

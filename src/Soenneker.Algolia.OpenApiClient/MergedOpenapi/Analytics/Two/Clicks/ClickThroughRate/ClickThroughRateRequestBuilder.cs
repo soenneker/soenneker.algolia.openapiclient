@@ -36,31 +36,31 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Analytics.Two.Clicks.Cli
         /// <summary>
         /// &quot;Retrieves the click-through rate (CTR) for all your searches with at least one click event, including a daily breakdown.By default, the analyzed period includes the last eight days including the current day.**There&apos;s a difference between a 0 and null CTR when `clickAnalytics` is enabled:**- **Null** means there were no queries: since Algolia didn&apos;t receive any events, CTR is null.- **0** mean there _were_ queries but no [click events](https://www.algolia.com/doc/guides/sending-events/getting-started) were received.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_analytics_getClickThroughRate_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_analytics_getClickThroughRate_200_Response_application_json"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_analytics_ErrorBase">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_analytics_ErrorBase">When receiving a 402 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_analytics_ErrorBase">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_analytics_ErrorBase">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_analytics_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_analytics_ErrorBase">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_analytics_ErrorBase">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_analytics_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_analytics_getClickThroughRate_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Analytics.Two.Clicks.ClickThroughRate.ClickThroughRateRequestBuilder.ClickThroughRateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_analytics_getClickThroughRate_200_Response_application_json?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Analytics.Two.Clicks.ClickThroughRate.ClickThroughRateRequestBuilder.ClickThroughRateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_analytics_getClickThroughRate_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Analytics.Two.Clicks.ClickThroughRate.ClickThroughRateRequestBuilder.ClickThroughRateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_analytics_getClickThroughRate_200_Response_application_json> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Analytics.Two.Clicks.ClickThroughRate.ClickThroughRateRequestBuilder.ClickThroughRateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_analytics_ErrorBase.CreateFromDiscriminatorValue },
-                { "402", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_analytics_ErrorBase.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_analytics_ErrorBase.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_analytics_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_analytics_ErrorBase.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_analytics_ErrorBase.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_analytics_ErrorBase.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_analytics_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_analytics_getClickThroughRate_200>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_analytics_getClickThroughRate_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_analytics_getClickThroughRate_200_Response_application_json>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_analytics_getClickThroughRate_200_Response_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Retrieves the click-through rate (CTR) for all your searches with at least one click event, including a daily breakdown.By default, the analyzed period includes the last eight days including the current day.**There&apos;s a difference between a 0 and null CTR when `clickAnalytics` is enabled:**- **Null** means there were no queries: since Algolia didn&apos;t receive any events, CTR is null.- **0** mean there _were_ queries but no [click events](https://www.algolia.com/doc/guides/sending-events/getting-started) were received.&quot;

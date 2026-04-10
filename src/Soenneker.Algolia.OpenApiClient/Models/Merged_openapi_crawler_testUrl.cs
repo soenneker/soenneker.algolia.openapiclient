@@ -17,10 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Crawler configuration to update.You can only update top-level configuration properties.To update a nested configuration, such as `actions.recordExtractor`,you must provide the complete top-level object such as `actions`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_PartialConfig? Config { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_PartialConfig? Config { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_PartialConfig Config { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_PartialConfig Config { get; set; }
 #endif
         /// <summary>URL to test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_PartialConfig>(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_PartialConfig.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_PartialConfig>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_PartialConfig.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_PartialConfig>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_PartialConfig>("config", Config);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -55,50 +55,50 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks
         /// <summary>
         /// Retrieves a list of tasks.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_listTasks_200_Response_application_json"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_listTasks_200_Response_application_json_2"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ErrorBase_1">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_listTasks_200_Response_application_json?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_listTasks_200_Response_application_json_2?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_listTasks_200_Response_application_json> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_listTasks_200_Response_application_json_2> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ErrorBase_1.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_listTasks_200_Response_application_json>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_listTasks_200_Response_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_listTasks_200_Response_application_json_2>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_listTasks_200_Response_application_json_2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new task.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_TaskCreateResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_TaskCreateResponse"/></returns>
         /// <param name="body">API request body for creating a task.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ErrorBase_1">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_TaskCreateResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_TaskCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_TaskCreateResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_TaskCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_TaskCreateResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_TaskCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_TaskCreateResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_TaskCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ErrorBase_1.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_TaskCreateResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_TaskCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_TaskCreateResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_TaskCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of tasks.
@@ -127,11 +127,11 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_TaskCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_TaskCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_TaskCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_TaskCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -160,11 +160,11 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("action")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_ActionType[]? Action { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ActionType[]? Action { get; set; }
 #nullable restore
 #else
             [QueryParameter("action")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_ActionType[] Action { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ActionType[] Action { get; set; }
 #endif
             /// <summary>Destination IDs for filtering the list of tasks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -191,7 +191,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks
 #endif
             /// <summary>Sort order of the response, ascending or descending.</summary>
             [QueryParameter("order")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_orderKeys? Order { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_orderKeys? Order { get; set; }
             /// <summary>Page number of the paginated API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -204,7 +204,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks
 #endif
             /// <summary>Property by which to sort the list of tasks.</summary>
             [QueryParameter("sort")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_taskSortKeys? Sort { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_taskSortKeys? Sort { get; set; }
             /// <summary>Source IDs for filtering the list of tasks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -219,21 +219,21 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sourceType")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_SourceType[]? SourceType { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_SourceType[]? SourceType { get; set; }
 #nullable restore
 #else
             [QueryParameter("sourceType")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_SourceType[] SourceType { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_SourceType[] SourceType { get; set; }
 #endif
             /// <summary>Type of task trigger for filtering the list of tasks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("triggerType")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_TriggerType[]? TriggerType { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_TriggerType[]? TriggerType { get; set; }
 #nullable restore
 #else
             [QueryParameter("triggerType")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_TriggerType[] TriggerType { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_TriggerType[] TriggerType { get; set; }
 #endif
             /// <summary>If specified, the response only includes tasks with notifications.email.enabled set to this value.</summary>
             [QueryParameter("withEmailNotifications")]

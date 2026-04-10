@@ -23,7 +23,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string Type { get; set; }
 #endif
         /// <summary>The value property</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_search_EventStatus_value? Value { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_search_EventStatus_Wrapper_value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_search_EventStatus"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_search_EventStatus_value>(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_search_EventStatus_Wrapper_value>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_search_EventStatus_value>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_search_EventStatus_Wrapper_value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

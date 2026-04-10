@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Fixed_renderJavaScriptMember1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Fixed_renderJavaScriptMember1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1_Wrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2_Wrapper"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Fixed_renderJavaScript : IComposedTypeWrapper, IParsable
@@ -21,21 +21,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.Fixed_renderJavaScriptMember1 FixedRenderJavaScriptMember1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1_Wrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1? RenderJavaScriptBranch1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1_Wrapper? RenderJavaScriptBranch1Wrapper { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1 RenderJavaScriptBranch1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1_Wrapper RenderJavaScriptBranch1Wrapper { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2_Wrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2? RenderJavaScriptBranch2 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2_Wrapper? RenderJavaScriptBranch2Wrapper { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2 RenderJavaScriptBranch2 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2_Wrapper RenderJavaScriptBranch2Wrapper { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -53,11 +53,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             }
             else if("renderJavaScript_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RenderJavaScriptBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1();
+                result.RenderJavaScriptBranch1Wrapper = new global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1_Wrapper();
             }
             else if("renderJavaScript_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RenderJavaScriptBranch2 = new global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2();
+                result.RenderJavaScriptBranch2Wrapper = new global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2_Wrapper();
             }
             return result;
         }
@@ -71,13 +71,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 return FixedRenderJavaScriptMember1.GetFieldDeserializers();
             }
-            else if(RenderJavaScriptBranch1 != null)
+            else if(RenderJavaScriptBranch1Wrapper != null)
             {
-                return RenderJavaScriptBranch1.GetFieldDeserializers();
+                return RenderJavaScriptBranch1Wrapper.GetFieldDeserializers();
             }
-            else if(RenderJavaScriptBranch2 != null)
+            else if(RenderJavaScriptBranch2Wrapper != null)
             {
-                return RenderJavaScriptBranch2.GetFieldDeserializers();
+                return RenderJavaScriptBranch2Wrapper.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -92,13 +92,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_renderJavaScriptMember1>(null, FixedRenderJavaScriptMember1);
             }
-            else if(RenderJavaScriptBranch1 != null)
+            else if(RenderJavaScriptBranch1Wrapper != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1>(null, RenderJavaScriptBranch1);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch1_Wrapper>(null, RenderJavaScriptBranch1Wrapper);
             }
-            else if(RenderJavaScriptBranch2 != null)
+            else if(RenderJavaScriptBranch2Wrapper != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2>(null, RenderJavaScriptBranch2);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript_Branch2_Wrapper>(null, RenderJavaScriptBranch2Wrapper);
             }
         }
     }

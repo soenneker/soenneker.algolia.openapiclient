@@ -18,10 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Monitoring.One.Inventory
         /// <summary>The inventory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_Server>? Inventory { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_Server>? Inventory { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_Server> Inventory { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_Server> Inventory { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Monitoring.One.Inventory.Servers.ServersGetResponse"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Monitoring.One.Inventory
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "inventory", n => { Inventory = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_Server>(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_Server.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "inventory", n => { Inventory = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_Server>(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_Server.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Monitoring.One.Inventory
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_Server>("inventory", Inventory);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_Server>("inventory", Inventory);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
