@@ -16,10 +16,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Key-value pairs of [supported language ISO codes](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/supported-languages) and boolean values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_search_standardEntries? DisableStandardEntries { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C__search_standardEntries? DisableStandardEntries { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_search_standardEntries DisableStandardEntries { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C__search_standardEntries DisableStandardEntries { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "disableStandardEntries", n => { DisableStandardEntries = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_search_standardEntries>(global::Soenneker.Algolia.OpenApiClient.Models.C_search_standardEntries.CreateFromDiscriminatorValue); } },
+                { "disableStandardEntries", n => { DisableStandardEntries = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C__search_standardEntries>(global::Soenneker.Algolia.OpenApiClient.Models.C__search_standardEntries.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_search_standardEntries>("disableStandardEntries", DisableStandardEntries);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C__search_standardEntries>("disableStandardEntries", DisableStandardEntries);
         }
     }
 }

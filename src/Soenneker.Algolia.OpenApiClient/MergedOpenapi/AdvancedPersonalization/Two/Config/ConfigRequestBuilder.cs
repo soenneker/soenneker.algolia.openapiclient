@@ -36,58 +36,58 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.AdvancedPersonalization.
         /// <summary>
         /// Retrieves a list of configuration objects for each index.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_configurationObject"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_configurationObject_1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_unauthorized">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_internalServerError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_unauthorized_1">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_internalServerError_1">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_configurationObject?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_configurationObject_1?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_configurationObject> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_configurationObject_1> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_unauthorized.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_internalServerError.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_unauthorized_1.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_internalServerError_1.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_configurationObject>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_configurationObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_configurationObject_1>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_configurationObject_1.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the configuration.The configuration is a list of configuration objects for each index. To configure Advanced Personalization for an index, create a new configuration object for the index.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig_200_Response_application_json"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig_200_Response_application_json_2"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_badRequest">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_unauthorized">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_featureNotEnabled">When receiving a 402 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_internalServerError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_badRequest_1">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_unauthorized_1">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_featureNotEnabled_1">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_internalServerError_1">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig_200_Response_application_json?> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig_200_Response_application_json_2?> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig_200_Response_application_json> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig_200_Response_application_json_2> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_badRequest.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_unauthorized.CreateFromDiscriminatorValue },
-                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_featureNotEnabled.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_internalServerError.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_badRequest_1.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_unauthorized_1.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_featureNotEnabled_1.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_internalServerError_1.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig_200_Response_application_json>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig_200_Response_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig_200_Response_application_json_2>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig_200_Response_application_json_2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of configuration objects for each index.

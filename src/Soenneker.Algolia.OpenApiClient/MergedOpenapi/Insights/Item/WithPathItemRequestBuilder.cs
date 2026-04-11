@@ -39,10 +39,10 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathDeleteResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase">When receiving a 402 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathDeleteResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -55,10 +55,10 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
-                { "402", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathDeleteResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -68,10 +68,10 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase">When receiving a 402 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -84,10 +84,10 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
-                { "402", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathGetResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -98,10 +98,10 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase">When receiving a 402 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathPostResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -115,10 +115,10 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
-                { "402", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathPostResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -129,10 +129,10 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase">When receiving a 402 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathPutResponse?> PutAsync(global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -146,10 +146,10 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
-                { "402", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi__insights_ErrorBase.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathPutResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.Item.WithPathPutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

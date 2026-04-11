@@ -36,33 +36,33 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Asterisk.Batch
         /// <summary>
         /// Adds, updates, or deletes records in multiple indices with a single API request.- Actions are applied in the order they are specified.- Actions are equivalent to the individual API requests of the same name.This operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_multipleBatch_200_Response_application_json_2"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_multipleBatch_200_Response_application_json_3"/></returns>
         /// <param name="body">Batch parameters.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C__search_ErrorBase">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C__search_ErrorBase">When receiving a 402 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C__search_ErrorBase">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C__search_ErrorBase">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C___search_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C___search_ErrorBase">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C___search_ErrorBase">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C___search_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Search_multipleBatch_200_Response_application_json_2?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Search_multipleBatch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Search_multipleBatch_200_Response_application_json_3?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Search_multipleBatch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Search_multipleBatch_200_Response_application_json_2> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Search_multipleBatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Search_multipleBatch_200_Response_application_json_3> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Search_multipleBatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C__search_ErrorBase.CreateFromDiscriminatorValue },
-                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C__search_ErrorBase.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Algolia.OpenApiClient.Models.C__search_ErrorBase.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C__search_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C___search_ErrorBase.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C___search_ErrorBase.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Algolia.OpenApiClient.Models.C___search_ErrorBase.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C___search_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Search_multipleBatch_200_Response_application_json_2>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Search_multipleBatch_200_Response_application_json_2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Search_multipleBatch_200_Response_application_json_3>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Search_multipleBatch_200_Response_application_json_3.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Adds, updates, or deletes records in multiple indices with a single API request.- Actions are applied in the order they are specified.- Actions are equivalent to the individual API requests of the same name.This operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).

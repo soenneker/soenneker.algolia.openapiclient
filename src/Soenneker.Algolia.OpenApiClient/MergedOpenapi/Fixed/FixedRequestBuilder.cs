@@ -10,6 +10,7 @@ using Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.Composition;
 using Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.Crawler;
 using Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.Ingestion;
 using Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.Insights;
+using Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi;
 using Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.Monitoring;
 using Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.Personalization;
 using Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.QuerySuggestions;
@@ -66,6 +67,11 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed
         public global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.Insights.InsightsRequestBuilder Insights
         {
             get => new global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.Insights.InsightsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The mergedOpenapi property</summary>
+        public global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.MergedOpenapiRequestBuilder MergedOpenapi
+        {
+            get => new global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.MergedOpenapiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The monitoring property</summary>
         public global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.Monitoring.MonitoringRequestBuilder Monitoring

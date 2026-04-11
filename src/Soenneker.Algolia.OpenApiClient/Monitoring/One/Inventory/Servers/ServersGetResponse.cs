@@ -18,10 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.Monitoring.One.Inventory.Servers
         /// <summary>The inventory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.C_monitoring_Server>? Inventory { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.C__monitoring_Server>? Inventory { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.C_monitoring_Server> Inventory { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.C__monitoring_Server> Inventory { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Monitoring.One.Inventory.Servers.ServersGetResponse"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Monitoring.One.Inventory.Servers
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "inventory", n => { Inventory = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.C_monitoring_Server>(global::Soenneker.Algolia.OpenApiClient.Models.C_monitoring_Server.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "inventory", n => { Inventory = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.C__monitoring_Server>(global::Soenneker.Algolia.OpenApiClient.Models.C__monitoring_Server.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Monitoring.One.Inventory.Servers
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.C_monitoring_Server>("inventory", Inventory);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.C__monitoring_Server>("inventory", Inventory);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

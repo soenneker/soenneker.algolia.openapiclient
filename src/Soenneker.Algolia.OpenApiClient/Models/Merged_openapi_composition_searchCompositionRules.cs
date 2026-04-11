@@ -14,7 +14,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     public partial class Merged_openapi_composition_searchCompositionRules : IParsable
     {
         /// <summary>&quot;Which part of the search query the pattern should match:- `startsWith`. The pattern must match the beginning of the query.- `endsWith`. The pattern must match the end of the query.- `is`. The pattern must match the query exactly.- `contains`. The pattern must match anywhere in the query.Empty queries are only allowed as patterns with `anchoring: is`.&quot;</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_anchoring? Anchoring { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_anchoring_1? Anchoring { get; set; }
         /// <summary>Only return composition rules that match the context (exact match).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,7 +61,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "anchoring", n => { Anchoring = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_anchoring>(); } },
+                { "anchoring", n => { Anchoring = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_anchoring_1>(); } },
                 { "context", n => { Context = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_composition_searchCompositionRules_enabled>(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_composition_searchCompositionRules_enabled.CreateFromDiscriminatorValue); } },
                 { "hitsPerPage", n => { HitsPerPage = n.GetIntValue(); } },
@@ -76,7 +76,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_anchoring>("anchoring", Anchoring);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_anchoring_1>("anchoring", Anchoring);
             writer.WriteStringValue("context", Context);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_composition_searchCompositionRules_enabled>("enabled", Enabled);
             writer.WriteIntValue("hitsPerPage", HitsPerPage);

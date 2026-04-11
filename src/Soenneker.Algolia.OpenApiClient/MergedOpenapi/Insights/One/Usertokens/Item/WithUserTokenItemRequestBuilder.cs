@@ -39,8 +39,8 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.One.Usertokens.
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_insights_EventsResponse">When receiving a 422 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_insights_EventsResponse">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_EventsResponse">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_EventsResponse">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -53,8 +53,8 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Insights.One.Usertokens.
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_insights_EventsResponse.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_insights_EventsResponse.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_EventsResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi__insights_EventsResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -37,27 +37,27 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.Item.Push
         /// Pushes records through the pipeline, directly to an index. You can make the call synchronous by providing the `watch` parameter, for asynchronous calls, you can use the observability endpoints or the debugger dashboard to see the status of your task.If you want to transform your data before indexing, this is the recommended way of ingesting your records.This method is similar to `push`, but requires a `taskID` instead of a `indexName`, which is useful when many `destinations` target the same `indexName`.
         /// Pre-indexing data transformation. <see href="https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/how-to/transform-your-data" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_WatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_WatchResponse_1"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ErrorBase_1">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ErrorBase_2">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_WatchResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_PushTaskPayload body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.Item.Push.PushRequestBuilder.PushRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_WatchResponse_1?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_PushTaskPayload_1 body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.Item.Push.PushRequestBuilder.PushRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_WatchResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_PushTaskPayload body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.Item.Push.PushRequestBuilder.PushRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_WatchResponse_1> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_PushTaskPayload_1 body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.Item.Push.PushRequestBuilder.PushRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ErrorBase_1.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_ErrorBase_2.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_WatchResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_WatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_WatchResponse_1>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_WatchResponse_1.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Pushes records through the pipeline, directly to an index. You can make the call synchronous by providing the `watch` parameter, for asynchronous calls, you can use the observability endpoints or the debugger dashboard to see the status of your task.If you want to transform your data before indexing, this is the recommended way of ingesting your records.This method is similar to `push`, but requires a `taskID` instead of a `indexName`, which is useful when many `destinations` target the same `indexName`.
@@ -67,11 +67,11 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.Item.Push
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_PushTaskPayload body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.Item.Push.PushRequestBuilder.PushRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_PushTaskPayload_1 body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.Item.Push.PushRequestBuilder.PushRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_PushTaskPayload body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.Item.Push.PushRequestBuilder.PushRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.C_ingestion_PushTaskPayload_1 body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.Item.Push.PushRequestBuilder.PushRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

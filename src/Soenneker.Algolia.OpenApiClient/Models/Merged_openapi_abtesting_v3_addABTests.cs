@@ -15,10 +15,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>A/B test configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ABTestConfiguration? Configuration { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ABTestConfiguration_1? Configuration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ABTestConfiguration Configuration { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ABTestConfiguration_1 Configuration { get; set; }
 #endif
         /// <summary>End date and time of the A/B test, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,10 +31,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>A/B test metrics involved in the test. Only these metrics will be considered when calculating results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_createMetric>? Metrics { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_createMetric_1>? Metrics { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_createMetric> Metrics { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_createMetric_1> Metrics { get; set; }
 #endif
         /// <summary>A/B test name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,10 +47,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>A/B test variants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_AddABTestsVariant>? Variants { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_AddABTestsVariant_1>? Variants { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_AddABTestsVariant> Variants { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_AddABTestsVariant_1> Variants { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -70,11 +70,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ABTestConfiguration>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ABTestConfiguration.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ABTestConfiguration_1>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ABTestConfiguration_1.CreateFromDiscriminatorValue); } },
                 { "endAt", n => { EndAt = n.GetStringValue(); } },
-                { "metrics", n => { Metrics = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_createMetric>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_createMetric.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "metrics", n => { Metrics = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_createMetric_1>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_createMetric_1.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_AddABTestsVariant>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_AddABTestsVariant.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_AddABTestsVariant_1>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_AddABTestsVariant_1.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -84,11 +84,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ABTestConfiguration>("configuration", Configuration);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ABTestConfiguration_1>("configuration", Configuration);
             writer.WriteStringValue("endAt", EndAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_createMetric>("metrics", Metrics);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_createMetric_1>("metrics", Metrics);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_AddABTestsVariant>("variants", Variants);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_AddABTestsVariant_1>("variants", Variants);
         }
     }
 }

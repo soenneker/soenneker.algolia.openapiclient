@@ -36,25 +36,25 @@ namespace Soenneker.Algolia.OpenApiClient.Search.WaitForAppTask
         /// <summary>
         /// Wait for a application-level task to complete.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C__search_GetTaskResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C___search_GetTaskResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C__search_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C___search_ErrorBase">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C__search_GetTaskResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.WaitForAppTask.WaitForAppTaskRequestBuilder.WaitForAppTaskRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C___search_GetTaskResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.WaitForAppTask.WaitForAppTaskRequestBuilder.WaitForAppTaskRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C__search_GetTaskResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.WaitForAppTask.WaitForAppTaskRequestBuilder.WaitForAppTaskRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C___search_GetTaskResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.WaitForAppTask.WaitForAppTaskRequestBuilder.WaitForAppTaskRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C__search_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C___search_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C__search_GetTaskResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C__search_GetTaskResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C___search_GetTaskResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C___search_GetTaskResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Wait for a application-level task to complete.

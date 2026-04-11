@@ -36,31 +36,31 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.Analytics.Two.Clic
         /// <summary>
         /// Retrieves the average click position of your search results, including a daily breakdown.The average click position is the average of all clicked search result positions.For example, if users only ever click on the first result for any search, the average click position is 1.By default, the analyzed period includes the last eight days including the current day.An average of `null` when `clickAnalytics` is enabled means Algolia didn&apos;t receive any [click events](https://www.algolia.com/doc/guides/sending-events/getting-started) for the queries.The average is `null` until Algolia receives at least one click event.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_analytics_getAverageClickPosition_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_analytics_getAverageClickPosition_200_Response_application_json"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_analytics_ErrorBase">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_analytics_ErrorBase">When receiving a 402 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_analytics_ErrorBase">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_analytics_ErrorBase">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_analytics_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_analytics_ErrorBase">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_analytics_ErrorBase">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_analytics_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_analytics_getAverageClickPosition_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.Analytics.Two.Clicks.AverageClickPosition.AverageClickPositionRequestBuilder.AverageClickPositionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_analytics_getAverageClickPosition_200_Response_application_json?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.Analytics.Two.Clicks.AverageClickPosition.AverageClickPositionRequestBuilder.AverageClickPositionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_analytics_getAverageClickPosition_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.Analytics.Two.Clicks.AverageClickPosition.AverageClickPositionRequestBuilder.AverageClickPositionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_analytics_getAverageClickPosition_200_Response_application_json> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.Analytics.Two.Clicks.AverageClickPosition.AverageClickPositionRequestBuilder.AverageClickPositionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_analytics_ErrorBase.CreateFromDiscriminatorValue },
-                { "402", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_analytics_ErrorBase.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_analytics_ErrorBase.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_analytics_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_analytics_ErrorBase.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_analytics_ErrorBase.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_analytics_ErrorBase.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_analytics_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_analytics_getAverageClickPosition_200>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_analytics_getAverageClickPosition_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_analytics_getAverageClickPosition_200_Response_application_json>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_analytics_getAverageClickPosition_200_Response_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the average click position of your search results, including a daily breakdown.The average click position is the average of all clicked search result positions.For example, if users only ever click on the first result for any search, the average click position is 1.By default, the analyzed period includes the last eight days including the current day.An average of `null` when `clickAnalytics` is enabled means Algolia didn&apos;t receive any [click events](https://www.algolia.com/doc/guides/sending-events/getting-started) for the queries.The average is `null` until Algolia receives at least one click event.

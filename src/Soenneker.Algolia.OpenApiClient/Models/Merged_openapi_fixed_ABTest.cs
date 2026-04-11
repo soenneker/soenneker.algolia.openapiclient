@@ -49,7 +49,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>A/B test status.- `active`. The A/B test is live and search traffic is split between the two variants.- `stopped`. You stopped the A/B test. The A/B test data is still available for analysis.- `expired`. The A/B test was automatically stopped after reaching its end date.- `failed`. Creating the A/B test failed.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_Status? Status { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_status? Status { get; set; }
         /// <summary>Date and time when the A/B test was stopped, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,7 +98,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "endAt", n => { EndAt = n.GetStringValue(); } },
                 { "migratedAbTestID", n => { MigratedAbTestID = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_Status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_status>(); } },
                 { "stoppedAt", n => { StoppedAt = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetStringValue(); } },
                 { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_variant>(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_variant.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -117,7 +117,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("endAt", EndAt);
             writer.WriteIntValue("migratedAbTestID", MigratedAbTestID);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_Status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_status>("status", Status);
             writer.WriteStringValue("stoppedAt", StoppedAt);
             writer.WriteStringValue("updatedAt", UpdatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_variant>("variants", Variants);

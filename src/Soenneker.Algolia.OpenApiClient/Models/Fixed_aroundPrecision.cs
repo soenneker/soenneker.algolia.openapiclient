@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecisionFromValue_Wrapper_2"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecision_Branch1_Wrapper"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecisionFromValue_Wrapper_3"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecision_Branch1_Wrapper_2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Fixed_aroundPrecision : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecision_Branch1_Wrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecision_Branch1_Wrapper_2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecision_Branch1_Wrapper? AroundPrecisionBranch1Wrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecision_Branch1_Wrapper_2? AroundPrecisionBranch1Wrapper2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecision_Branch1_Wrapper AroundPrecisionBranch1Wrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecision_Branch1_Wrapper_2 AroundPrecisionBranch1Wrapper2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecisionFromValue_Wrapper_2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecisionFromValue_Wrapper_3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecisionFromValue_Wrapper_2? AroundPrecisionFromValueWrapper2 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecisionFromValue_Wrapper_3? AroundPrecisionFromValueWrapper3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecisionFromValue_Wrapper_2 AroundPrecisionFromValueWrapper2 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecisionFromValue_Wrapper_3 AroundPrecisionFromValueWrapper3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -41,11 +41,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.Fixed_aroundPrecision();
             if("aroundPrecision_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AroundPrecisionBranch1Wrapper = new global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecision_Branch1_Wrapper();
+                result.AroundPrecisionBranch1Wrapper2 = new global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecision_Branch1_Wrapper_2();
             }
             else if("aroundPrecisionFromValue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AroundPrecisionFromValueWrapper2 = new global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecisionFromValue_Wrapper_2();
+                result.AroundPrecisionFromValueWrapper3 = new global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecisionFromValue_Wrapper_3();
             }
             return result;
         }
@@ -55,13 +55,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(AroundPrecisionBranch1Wrapper != null)
+            if(AroundPrecisionBranch1Wrapper2 != null)
             {
-                return AroundPrecisionBranch1Wrapper.GetFieldDeserializers();
+                return AroundPrecisionBranch1Wrapper2.GetFieldDeserializers();
             }
-            else if(AroundPrecisionFromValueWrapper2 != null)
+            else if(AroundPrecisionFromValueWrapper3 != null)
             {
-                return AroundPrecisionFromValueWrapper2.GetFieldDeserializers();
+                return AroundPrecisionFromValueWrapper3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +72,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(AroundPrecisionBranch1Wrapper != null)
+            if(AroundPrecisionBranch1Wrapper2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecision_Branch1_Wrapper>(null, AroundPrecisionBranch1Wrapper);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecision_Branch1_Wrapper_2>(null, AroundPrecisionBranch1Wrapper2);
             }
-            else if(AroundPrecisionFromValueWrapper2 != null)
+            else if(AroundPrecisionFromValueWrapper3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecisionFromValue_Wrapper_2>(null, AroundPrecisionFromValueWrapper2);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecisionFromValue_Wrapper_3>(null, AroundPrecisionFromValueWrapper3);
             }
         }
     }

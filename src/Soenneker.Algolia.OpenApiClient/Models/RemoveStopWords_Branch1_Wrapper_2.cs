@@ -17,10 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>ISO code for languages for which stop words should be removed. This overrides languages you set in `queryLanguges`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage?>? Value { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_supportedLanguage?>? Value { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage?> Value { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_supportedLanguage?> Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords_Branch1_Wrapper_2"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage>()?.AsList(); } },
+                { "value", n => { Value = n.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_supportedLanguage>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage>("value", Value);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_supportedLanguage>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

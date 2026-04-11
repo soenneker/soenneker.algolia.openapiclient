@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Fixed_insideBoundingBoxMember1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBoxArray_Wrapper_2"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBox_Branch1_Wrapper"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Fixed_insideBoundingBoxMember1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBoxArray_Wrapper_3"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBox_Branch1_Wrapper_2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Fixed_insideBoundingBox : IComposedTypeWrapper, IParsable
@@ -21,21 +21,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.Fixed_insideBoundingBoxMember1 FixedInsideBoundingBoxMember1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBoxArray_Wrapper_2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBoxArray_Wrapper_3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBoxArray_Wrapper_2? InsideBoundingBoxArrayWrapper2 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBoxArray_Wrapper_3? InsideBoundingBoxArrayWrapper3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBoxArray_Wrapper_2 InsideBoundingBoxArrayWrapper2 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBoxArray_Wrapper_3 InsideBoundingBoxArrayWrapper3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBox_Branch1_Wrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBox_Branch1_Wrapper_2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBox_Branch1_Wrapper? InsideBoundingBoxBranch1Wrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBox_Branch1_Wrapper_2? InsideBoundingBoxBranch1Wrapper2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBox_Branch1_Wrapper InsideBoundingBoxBranch1Wrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBox_Branch1_Wrapper_2 InsideBoundingBoxBranch1Wrapper2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -53,11 +53,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             }
             else if("insideBoundingBoxArray".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.InsideBoundingBoxArrayWrapper2 = new global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBoxArray_Wrapper_2();
+                result.InsideBoundingBoxArrayWrapper3 = new global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBoxArray_Wrapper_3();
             }
             else if("insideBoundingBox_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.InsideBoundingBoxBranch1Wrapper = new global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBox_Branch1_Wrapper();
+                result.InsideBoundingBoxBranch1Wrapper2 = new global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBox_Branch1_Wrapper_2();
             }
             return result;
         }
@@ -71,13 +71,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 return FixedInsideBoundingBoxMember1.GetFieldDeserializers();
             }
-            else if(InsideBoundingBoxArrayWrapper2 != null)
+            else if(InsideBoundingBoxArrayWrapper3 != null)
             {
-                return InsideBoundingBoxArrayWrapper2.GetFieldDeserializers();
+                return InsideBoundingBoxArrayWrapper3.GetFieldDeserializers();
             }
-            else if(InsideBoundingBoxBranch1Wrapper != null)
+            else if(InsideBoundingBoxBranch1Wrapper2 != null)
             {
-                return InsideBoundingBoxBranch1Wrapper.GetFieldDeserializers();
+                return InsideBoundingBoxBranch1Wrapper2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -92,13 +92,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_insideBoundingBoxMember1>(null, FixedInsideBoundingBoxMember1);
             }
-            else if(InsideBoundingBoxArrayWrapper2 != null)
+            else if(InsideBoundingBoxArrayWrapper3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBoxArray_Wrapper_2>(null, InsideBoundingBoxArrayWrapper2);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBoxArray_Wrapper_3>(null, InsideBoundingBoxArrayWrapper3);
             }
-            else if(InsideBoundingBoxBranch1Wrapper != null)
+            else if(InsideBoundingBoxBranch1Wrapper2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBox_Branch1_Wrapper>(null, InsideBoundingBoxBranch1Wrapper);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBox_Branch1_Wrapper_2>(null, InsideBoundingBoxBranch1Wrapper2);
             }
         }
     }

@@ -17,10 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The features property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_features? Features { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_features_1? Features { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_features Features { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_features_1 Features { get; set; }
 #endif
         /// <summary>The indices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,9 +31,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public List<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig_indices> Indices { get; set; }
 #endif
         /// <summary>The impact that personalization has on the re-ranking of search results.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_personalizationReRanking? PersonalizationReRanking { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_personalizationReRanking_1? PersonalizationReRanking { get; set; }
         /// <summary>The type of user profiles to generate.Basic profiles are based on past behaviors, ensuring search results align with previous interests.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_profileType? ProfileType { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_profileType_1? ProfileType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig"/> and sets the default values.
         /// </summary>
@@ -59,10 +59,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "features", n => { Features = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_features>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_features.CreateFromDiscriminatorValue); } },
+                { "features", n => { Features = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_features_1>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_features_1.CreateFromDiscriminatorValue); } },
                 { "indices", n => { Indices = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig_indices>(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig_indices.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "personalizationReRanking", n => { PersonalizationReRanking = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_personalizationReRanking>(); } },
-                { "profileType", n => { ProfileType = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_profileType>(); } },
+                { "personalizationReRanking", n => { PersonalizationReRanking = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_personalizationReRanking_1>(); } },
+                { "profileType", n => { ProfileType = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_profileType_1>(); } },
             };
         }
         /// <summary>
@@ -72,10 +72,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_features>("features", Features);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_features_1>("features", Features);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig_indices>("indices", Indices);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_personalizationReRanking>("personalizationReRanking", PersonalizationReRanking);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_profileType>("profileType", ProfileType);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_personalizationReRanking_1>("personalizationReRanking", PersonalizationReRanking);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_profileType_1>("profileType", ProfileType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

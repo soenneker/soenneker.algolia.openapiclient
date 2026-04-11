@@ -33,10 +33,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.User>? Users { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_user>? Users { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.User> Users { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_user> Users { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Advanced_personalization_getUsers_200_Response_application_json_2"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "nextPageToken", n => { NextPageToken = n.GetStringValue(); } },
                 { "previousPageToken", n => { PreviousPageToken = n.GetStringValue(); } },
-                { "users", n => { Users = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.User>(global::Soenneker.Algolia.OpenApiClient.Models.User.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "users", n => { Users = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_user>(global::Soenneker.Algolia.OpenApiClient.Models.Fixed_user.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("nextPageToken", NextPageToken);
             writer.WriteStringValue("previousPageToken", PreviousPageToken);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.User>("users", Users);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_user>("users", Users);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

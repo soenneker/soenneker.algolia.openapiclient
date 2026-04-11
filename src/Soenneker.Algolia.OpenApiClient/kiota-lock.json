@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "EB443C9CD2A6D48410722B52CCC8736734ED772CED8908629591AFF75BE13FEDF734F1A7698962BB4063F04A44AD7602D446BE2E0C7D9BC5DDD381BA00BD4D66",
+  "descriptionHash": "AC56DCB05A075124C0D7A7EA986F701EF85855D01CF06C5D76C9C020B67EF7FDF5A0DD129FCCA35B8208C34CCFEF7211DFA70D218519CCFE1826C4FE48876970",
   "descriptionLocation": "../../openapi-json/fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.30.0",
+  "kiotaVersion": "1.31.0",
   "clientClassName": "AlgoliaOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Algolia.OpenApiClient",

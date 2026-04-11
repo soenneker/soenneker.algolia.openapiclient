@@ -36,62 +36,62 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.AdvancedPersonalization.
         /// <summary>
         /// Deletes a user profile.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_deleteUser_200_Response_application_json"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_deleteUser_200_Response_application_json_2"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_badUserID">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_unauthorized">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_invalidUserID">When receiving a 422 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_internalServerError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_badUserID_1">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_unauthorized_1">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_invalidUserID_1">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_internalServerError_1">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_deleteUser_200_Response_application_json?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_deleteUser_200_Response_application_json_2?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_deleteUser_200_Response_application_json> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_deleteUser_200_Response_application_json_2> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_badUserID.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_unauthorized.CreateFromDiscriminatorValue },
-                { "422", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_invalidUserID.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_internalServerError.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_badUserID_1.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_unauthorized_1.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_invalidUserID_1.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_internalServerError_1.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_deleteUser_200_Response_application_json>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_deleteUser_200_Response_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_deleteUser_200_Response_application_json_2>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_deleteUser_200_Response_application_json_2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a user profile.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_user"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_user_1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_badUserID">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_unauthorized">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_genericNotFound">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_invalidUserID">When receiving a 422 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_internalServerError">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_badUserID_1">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_unauthorized_1">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_genericNotFound_1">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_invalidUserID_1">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_internalServerError_1">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_user?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_user_1?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_user> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_user_1> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_badUserID.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_unauthorized.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_genericNotFound.CreateFromDiscriminatorValue },
-                { "422", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_invalidUserID.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_internalServerError.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_badUserID_1.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_unauthorized_1.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_genericNotFound_1.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_invalidUserID_1.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_ErrorResponses_internalServerError_1.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_user>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_user.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_user_1>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_user_1.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a user profile.

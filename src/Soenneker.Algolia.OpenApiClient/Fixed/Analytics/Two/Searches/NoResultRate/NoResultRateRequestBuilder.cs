@@ -36,7 +36,7 @@ namespace Soenneker.Algolia.OpenApiClient.Fixed.Analytics.Two.Searches.NoResultR
         /// <summary>
         /// Retrieves the fraction of searches that didn&apos;t return any results within a time range, including a daily breakdown.It also returns the count of searches and searches without results used to compute the rates.By default, the analyzed period includes the last eight days including the current day.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getNoResultsRate_200_Response_application_json"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getNoResultsRate_200_Response_application_json_2"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Fixed_analytics_ErrorBase">When receiving a 400 status code</exception>
@@ -45,11 +45,11 @@ namespace Soenneker.Algolia.OpenApiClient.Fixed.Analytics.Two.Searches.NoResultR
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Fixed_analytics_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getNoResultsRate_200_Response_application_json?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Fixed.Analytics.Two.Searches.NoResultRate.NoResultRateRequestBuilder.NoResultRateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getNoResultsRate_200_Response_application_json_2?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Fixed.Analytics.Two.Searches.NoResultRate.NoResultRateRequestBuilder.NoResultRateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getNoResultsRate_200_Response_application_json> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Fixed.Analytics.Two.Searches.NoResultRate.NoResultRateRequestBuilder.NoResultRateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getNoResultsRate_200_Response_application_json_2> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Fixed.Analytics.Two.Searches.NoResultRate.NoResultRateRequestBuilder.NoResultRateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -60,7 +60,7 @@ namespace Soenneker.Algolia.OpenApiClient.Fixed.Analytics.Two.Searches.NoResultR
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.Fixed_analytics_ErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.Fixed_analytics_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getNoResultsRate_200_Response_application_json>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getNoResultsRate_200_Response_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getNoResultsRate_200_Response_application_json_2>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getNoResultsRate_200_Response_application_json_2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the fraction of searches that didn&apos;t return any results within a time range, including a daily breakdown.It also returns the count of searches and searches without results used to compute the rates.By default, the analyzed period includes the last eight days including the current day.

@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch1_Wrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch2_Wrapper"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch1_Wrapper_2"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch2_Wrapper_2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Fixed_distinct : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch1_Wrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch1_Wrapper_2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch1_Wrapper? DistinctBranch1Wrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch1_Wrapper_2? DistinctBranch1Wrapper2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch1_Wrapper DistinctBranch1Wrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch1_Wrapper_2 DistinctBranch1Wrapper2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch2_Wrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch2_Wrapper_2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch2_Wrapper? DistinctBranch2Wrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch2_Wrapper_2? DistinctBranch2Wrapper2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch2_Wrapper DistinctBranch2Wrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch2_Wrapper_2 DistinctBranch2Wrapper2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -41,11 +41,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.Fixed_distinct();
             if("distinct_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DistinctBranch1Wrapper = new global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch1_Wrapper();
+                result.DistinctBranch1Wrapper2 = new global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch1_Wrapper_2();
             }
             else if("distinct_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DistinctBranch2Wrapper = new global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch2_Wrapper();
+                result.DistinctBranch2Wrapper2 = new global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch2_Wrapper_2();
             }
             return result;
         }
@@ -55,13 +55,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(DistinctBranch1Wrapper != null)
+            if(DistinctBranch1Wrapper2 != null)
             {
-                return DistinctBranch1Wrapper.GetFieldDeserializers();
+                return DistinctBranch1Wrapper2.GetFieldDeserializers();
             }
-            else if(DistinctBranch2Wrapper != null)
+            else if(DistinctBranch2Wrapper2 != null)
             {
-                return DistinctBranch2Wrapper.GetFieldDeserializers();
+                return DistinctBranch2Wrapper2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +72,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(DistinctBranch1Wrapper != null)
+            if(DistinctBranch1Wrapper2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch1_Wrapper>(null, DistinctBranch1Wrapper);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch1_Wrapper_2>(null, DistinctBranch1Wrapper2);
             }
-            else if(DistinctBranch2Wrapper != null)
+            else if(DistinctBranch2Wrapper2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch2_Wrapper>(null, DistinctBranch2Wrapper);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Distinct_Branch2_Wrapper_2>(null, DistinctBranch2Wrapper2);
             }
         }
     }

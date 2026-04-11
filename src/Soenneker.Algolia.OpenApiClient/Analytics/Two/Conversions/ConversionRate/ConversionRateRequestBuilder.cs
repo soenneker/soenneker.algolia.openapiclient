@@ -36,7 +36,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.ConversionRa
         /// <summary>
         /// &quot;Retrieves the conversion rate (CR) for all your searches with at least one conversion event, including a daily breakdown.By default, the analyzed period includes the last eight days including the current day.**There&apos;s a difference between a 0 and null CR when `clickAnalytics` is enabled:**- **Null** means there were no queries: since Algolia didn&apos;t receive any events, CR is null.- **0** mean there _were_ queries but no [conversion events](https://www.algolia.com/doc/guides/sending-events/getting-started) were received.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getConversionRate_200_Response_application_json_2"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getConversionRate_200_Response_application_json_3"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Analytics_ErrorBase">When receiving a 400 status code</exception>
@@ -45,11 +45,11 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.ConversionRa
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Analytics_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getConversionRate_200_Response_application_json_2?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.ConversionRate.ConversionRateRequestBuilder.ConversionRateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getConversionRate_200_Response_application_json_3?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.ConversionRate.ConversionRateRequestBuilder.ConversionRateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getConversionRate_200_Response_application_json_2> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.ConversionRate.ConversionRateRequestBuilder.ConversionRateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getConversionRate_200_Response_application_json_3> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.ConversionRate.ConversionRateRequestBuilder.ConversionRateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -60,7 +60,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.ConversionRa
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.Analytics_ErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.Analytics_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getConversionRate_200_Response_application_json_2>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getConversionRate_200_Response_application_json_2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getConversionRate_200_Response_application_json_3>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getConversionRate_200_Response_application_json_3.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Retrieves the conversion rate (CR) for all your searches with at least one conversion event, including a daily breakdown.By default, the analyzed period includes the last eight days including the current day.**There&apos;s a difference between a 0 and null CR when `clickAnalytics` is enabled:**- **Null** means there were no queries: since Algolia didn&apos;t receive any events, CR is null.- **0** mean there _were_ queries but no [conversion events](https://www.algolia.com/doc/guides/sending-events/getting-started) were received.&quot;

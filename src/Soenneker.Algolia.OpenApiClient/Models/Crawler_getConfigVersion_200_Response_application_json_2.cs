@@ -25,10 +25,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Crawler configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Configuration? Config { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Fixed_Configuration? Config { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Configuration Config { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Fixed_Configuration Config { get; set; }
 #endif
         /// <summary>Date and time when the object was created, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,7 +66,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "authorId", n => { AuthorId = n.GetStringValue(); } },
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Configuration>(global::Soenneker.Algolia.OpenApiClient.Models.Configuration.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_Configuration>(global::Soenneker.Algolia.OpenApiClient.Models.Fixed_Configuration.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
             };
@@ -79,7 +79,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("authorId", AuthorId);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Configuration>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_Configuration>("config", Config);
             writer.WriteStringValue("createdAt", CreatedAt);
             writer.WriteIntValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);

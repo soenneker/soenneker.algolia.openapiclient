@@ -16,10 +16,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>A list of actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_Action>? Actions { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_action?>? Actions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_Action> Actions { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_action?> Actions { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -200,7 +200,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_Action>(global::Soenneker.Algolia.OpenApiClient.Models.Fixed_Action.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "actions", n => { Actions = n.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_action>()?.AsList(); } },
                 { "apiKey", n => { ApiKey = n.GetStringValue(); } },
                 { "appId", n => { AppId = n.GetStringValue(); } },
                 { "exclusionPatterns", n => { ExclusionPatterns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -235,7 +235,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_Action>("actions", Actions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_action>("actions", Actions);
             writer.WriteStringValue("apiKey", ApiKey);
             writer.WriteStringValue("appId", AppId);
             writer.WriteCollectionOfPrimitiveValues<string>("exclusionPatterns", ExclusionPatterns);
