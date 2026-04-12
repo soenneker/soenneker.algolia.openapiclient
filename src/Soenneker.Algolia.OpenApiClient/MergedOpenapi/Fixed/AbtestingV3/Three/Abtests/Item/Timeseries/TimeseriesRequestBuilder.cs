@@ -36,33 +36,33 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.AbtestingV3.Three.
         /// <summary>
         /// Retrieves timeseries for an A/B test by its ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_Timeseries"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_Timeseries_1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase">When receiving a 402 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase_1">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase_1">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase_1">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase_1">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase_1">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_Timeseries?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.AbtestingV3.Three.Abtests.Item.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_Timeseries_1?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.AbtestingV3.Three.Abtests.Item.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_Timeseries> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.AbtestingV3.Three.Abtests.Item.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_Timeseries_1> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.AbtestingV3.Three.Abtests.Item.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase.CreateFromDiscriminatorValue },
-                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase.CreateFromDiscriminatorValue },
-                { "422", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase_1.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase_1.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase_1.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase_1.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_ErrorBase_1.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_Timeseries>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_Timeseries.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_Timeseries_1>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_Timeseries_1.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves timeseries for an A/B test by its ID.
@@ -112,11 +112,11 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.AbtestingV3.Three.
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("metric")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_MetricName[]? Metric { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_MetricName_1[]? Metric { get; set; }
 #nullable restore
 #else
             [QueryParameter("metric")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_MetricName[] Metric { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_MetricName_1[] Metric { get; set; }
 #endif
             /// <summary>Start date of the period to analyze, in `YYYY-MM-DD` format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

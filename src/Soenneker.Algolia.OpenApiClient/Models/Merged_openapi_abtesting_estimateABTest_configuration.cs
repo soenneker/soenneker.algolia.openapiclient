@@ -18,34 +18,34 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Configuration for handling empty searches.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_EmptySearch_1? EmptySearch { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_EmptySearch_2? EmptySearch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_EmptySearch_1 EmptySearch { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_EmptySearch_2 EmptySearch { get; set; }
 #endif
         /// <summary>Configuration of feature-based filters applied to the A/B test population.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_FeatureFilters_1? FeatureFilters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_FeatureFilters_2? FeatureFilters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_FeatureFilters_1 FeatureFilters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_FeatureFilters_2 FeatureFilters { get; set; }
 #endif
         /// <summary>Configuration for the smallest difference between test variants you want to detect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_abtesting_MinimumDetectableEffect_1? MinimumDetectableEffect { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_abtesting_MinimumDetectableEffect_2? MinimumDetectableEffect { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_abtesting_MinimumDetectableEffect_1 MinimumDetectableEffect { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_abtesting_MinimumDetectableEffect_2 MinimumDetectableEffect { get; set; }
 #endif
         /// <summary>Configuration for handling outliers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_Outliers_1? Outliers { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_Outliers_2? Outliers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_Outliers_1 Outliers { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_Outliers_2 Outliers { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_abtesting_estimateABTest_configuration"/> and sets the default values.
@@ -72,10 +72,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "emptySearch", n => { EmptySearch = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_EmptySearch_1>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_EmptySearch_1.CreateFromDiscriminatorValue); } },
-                { "featureFilters", n => { FeatureFilters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_FeatureFilters_1>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_FeatureFilters_1.CreateFromDiscriminatorValue); } },
-                { "minimumDetectableEffect", n => { MinimumDetectableEffect = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_abtesting_MinimumDetectableEffect_1>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_abtesting_MinimumDetectableEffect_1.CreateFromDiscriminatorValue); } },
-                { "outliers", n => { Outliers = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_Outliers_1>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_Outliers_1.CreateFromDiscriminatorValue); } },
+                { "emptySearch", n => { EmptySearch = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_EmptySearch_2>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_EmptySearch_2.CreateFromDiscriminatorValue); } },
+                { "featureFilters", n => { FeatureFilters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_FeatureFilters_2>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_FeatureFilters_2.CreateFromDiscriminatorValue); } },
+                { "minimumDetectableEffect", n => { MinimumDetectableEffect = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_abtesting_MinimumDetectableEffect_2>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_abtesting_MinimumDetectableEffect_2.CreateFromDiscriminatorValue); } },
+                { "outliers", n => { Outliers = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_Outliers_2>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_Outliers_2.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -85,10 +85,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_EmptySearch_1>("emptySearch", EmptySearch);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_FeatureFilters_1>("featureFilters", FeatureFilters);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_abtesting_MinimumDetectableEffect_1>("minimumDetectableEffect", MinimumDetectableEffect);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_Outliers_1>("outliers", Outliers);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_EmptySearch_2>("emptySearch", EmptySearch);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_FeatureFilters_2>("featureFilters", FeatureFilters);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_abtesting_MinimumDetectableEffect_2>("minimumDetectableEffect", MinimumDetectableEffect);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_Outliers_2>("outliers", Outliers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

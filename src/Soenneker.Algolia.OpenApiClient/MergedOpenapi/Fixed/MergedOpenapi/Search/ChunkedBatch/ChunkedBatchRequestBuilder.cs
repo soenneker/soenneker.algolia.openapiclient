@@ -36,25 +36,25 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Sear
         /// <summary>
         /// &quot;Helper: Chunks the given `objects` list in subset of 1000 elements max in order to make it fit in `batch` requests.&quot;
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_batchResponse&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_batchResponse_1&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_search_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_search_ErrorBase_1">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_batchResponse>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Search.ChunkedBatch.ChunkedBatchRequestBuilder.ChunkedBatchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_batchResponse_1>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Search.ChunkedBatch.ChunkedBatchRequestBuilder.ChunkedBatchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_batchResponse>> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Search.ChunkedBatch.ChunkedBatchRequestBuilder.ChunkedBatchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_batchResponse_1>> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Search.ChunkedBatch.ChunkedBatchRequestBuilder.ChunkedBatchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_search_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_search_ErrorBase_1.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_batchResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_batchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_batchResponse_1>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_batchResponse_1.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -93,7 +93,7 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Sear
         {
             /// <summary>The `batch` `action` to perform on the given array of `objects`, defaults to `addObject`.</summary>
             [QueryParameter("action")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_search_action? Action { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_search_action_1? Action { get; set; }
             /// <summary>The size of the chunk of `objects`. The number of `batch` calls will be equal to `length(objects) / batchSize`. Defaults to 1,000.</summary>
             [QueryParameter("batchSize")]
             public int? BatchSize { get; set; }

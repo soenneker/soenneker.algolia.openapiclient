@@ -31,7 +31,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string LastUpdatedAt { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_status? Type { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_Status? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_Configuration_status"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_errorCodes>()?.AsList(); } },
                 { "lastUpdatedAt", n => { LastUpdatedAt = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_status>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_Status>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_errorCodes>("errors", Errors);
             writer.WriteStringValue("lastUpdatedAt", LastUpdatedAt);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_status>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_fixed_Status>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -19,10 +19,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.UrlsCrawledGroup>? Data { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_UrlsCrawledGroup>? Data { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.UrlsCrawledGroup> Data { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_UrlsCrawledGroup> Data { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Crawler_getStats_200_Response_application_json_3"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "count", n => { Count = n.GetIntValue(); } },
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.UrlsCrawledGroup>(global::Soenneker.Algolia.OpenApiClient.Models.UrlsCrawledGroup.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_UrlsCrawledGroup>(global::Soenneker.Algolia.OpenApiClient.Models.Fixed_UrlsCrawledGroup.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.UrlsCrawledGroup>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_UrlsCrawledGroup>("data", Data);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

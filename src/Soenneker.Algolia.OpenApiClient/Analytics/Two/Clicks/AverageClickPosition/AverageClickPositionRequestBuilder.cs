@@ -36,7 +36,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Clicks.AverageClickPosit
         /// <summary>
         /// Retrieves the average click position of your search results, including a daily breakdown.The average click position is the average of all clicked search result positions.For example, if users only ever click on the first result for any search, the average click position is 1.By default, the analyzed period includes the last eight days including the current day.An average of `null` when `clickAnalytics` is enabled means Algolia didn&apos;t receive any [click events](https://www.algolia.com/doc/guides/sending-events/getting-started) for the queries.The average is `null` until Algolia receives at least one click event.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getAverageClickPosition_200_Response_application_json_3"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getAverageClickPosition_200_Response_application_json_4"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Analytics_ErrorBase">When receiving a 400 status code</exception>
@@ -45,11 +45,11 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Clicks.AverageClickPosit
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Analytics_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getAverageClickPosition_200_Response_application_json_3?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Clicks.AverageClickPosition.AverageClickPositionRequestBuilder.AverageClickPositionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getAverageClickPosition_200_Response_application_json_4?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Clicks.AverageClickPosition.AverageClickPositionRequestBuilder.AverageClickPositionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getAverageClickPosition_200_Response_application_json_3> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Clicks.AverageClickPosition.AverageClickPositionRequestBuilder.AverageClickPositionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getAverageClickPosition_200_Response_application_json_4> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Clicks.AverageClickPosition.AverageClickPositionRequestBuilder.AverageClickPositionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -60,7 +60,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Clicks.AverageClickPosit
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.Analytics_ErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.Analytics_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getAverageClickPosition_200_Response_application_json_3>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getAverageClickPosition_200_Response_application_json_3.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getAverageClickPosition_200_Response_application_json_4>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getAverageClickPosition_200_Response_application_json_4.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the average click position of your search results, including a daily breakdown.The average click position is the average of all clicked search result positions.For example, if users only ever click on the first result for any search, the average click position is 1.By default, the analyzed period includes the last eight days including the current day.An average of `null` when `clickAnalytics` is enabled means Algolia didn&apos;t receive any [click events](https://www.algolia.com/doc/guides/sending-events/getting-started) for the queries.The average is `null` until Algolia receives at least one click event.

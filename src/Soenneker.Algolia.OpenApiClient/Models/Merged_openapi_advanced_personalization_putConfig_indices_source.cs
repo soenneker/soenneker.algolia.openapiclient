@@ -17,13 +17,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The events property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_events_1? Events { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_events_2? Events { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_events_1 Events { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_events_2 Events { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_sourceType_2? Type { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_sourceType_4? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_advanced_personalization_putConfig_indices_source"/> and sets the default values.
         /// </summary>
@@ -49,8 +49,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "events", n => { Events = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_events_1>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_events_1.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_sourceType_2>(); } },
+                { "events", n => { Events = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_events_2>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_events_2.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_sourceType_4>(); } },
             };
         }
         /// <summary>
@@ -60,8 +60,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_events_1>("events", Events);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_sourceType_2>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_events_2>("events", Events);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_sourceType_4>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

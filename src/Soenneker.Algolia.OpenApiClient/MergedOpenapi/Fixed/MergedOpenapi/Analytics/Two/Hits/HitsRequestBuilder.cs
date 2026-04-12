@@ -36,31 +36,31 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Anal
         /// <summary>
         /// Retrieves the object IDs of the 1,000 most frequent search results.If you set the `clickAnalytics` query parameter to `true`, the response also includes:- Tracked searches count.  Tracked searches are Search API requests with `clickAnalytics` set to `true`.  This differs from the response&apos;s `count`, which includes searches where `clickAnalytics` is `false`.- Click count- Click-through rate (CTR)- Conversion count- Conversion rate (CR)- Average click positionIf you set the `revenueAnalytics` parameter to `true`, the response also includes:- Add-to-cart count- Add-to-cart rate (ATCR)- Purchase count- Purchase rate- Revenue details for each currency**There&apos;s a difference between 0% rates and null rates:**- **Null** means there were no queries. Algolia didn&apos;t receive any events, so rates are null.- **0% rates** mean there were queries but no [click or conversion events](https://www.algolia.com/doc/guides/sending-events/getting-started) were received.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_getTopHitsResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_getTopHitsResponse_1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_analytics_ErrorBase">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_analytics_ErrorBase">When receiving a 402 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_analytics_ErrorBase">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_analytics_ErrorBase">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_analytics_ErrorBase_1">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_analytics_ErrorBase_1">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_analytics_ErrorBase_1">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_analytics_ErrorBase_1">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_getTopHitsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Analytics.Two.Hits.HitsRequestBuilder.HitsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_getTopHitsResponse_1?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Analytics.Two.Hits.HitsRequestBuilder.HitsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_getTopHitsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Analytics.Two.Hits.HitsRequestBuilder.HitsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_getTopHitsResponse_1> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Analytics.Two.Hits.HitsRequestBuilder.HitsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_analytics_ErrorBase.CreateFromDiscriminatorValue },
-                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_analytics_ErrorBase.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_analytics_ErrorBase.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_analytics_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_analytics_ErrorBase_1.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_analytics_ErrorBase_1.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_analytics_ErrorBase_1.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_analytics_ErrorBase_1.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_getTopHitsResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_getTopHitsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_getTopHitsResponse_1>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_getTopHitsResponse_1.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the object IDs of the 1,000 most frequent search results.If you set the `clickAnalytics` query parameter to `true`, the response also includes:- Tracked searches count.  Tracked searches are Search API requests with `clickAnalytics` set to `true`.  This differs from the response&apos;s `count`, which includes searches where `clickAnalytics` is `false`.- Click count- Click-through rate (CTR)- Conversion count- Conversion rate (CR)- Average click positionIf you set the `revenueAnalytics` parameter to `true`, the response also includes:- Add-to-cart count- Add-to-cart rate (ATCR)- Purchase count- Purchase rate- Revenue details for each currency**There&apos;s a difference between 0% rates and null rates:**- **Null** means there were no queries. Algolia didn&apos;t receive any events, so rates are null.- **0% rates** mean there were queries but no [click or conversion events](https://www.algolia.com/doc/guides/sending-events/getting-started) were received.

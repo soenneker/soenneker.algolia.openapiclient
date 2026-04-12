@@ -25,10 +25,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>List of positions in the search results and clicks associated with this search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ClickPositions_item_2>? ClickPositions { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ClickPositions_item_3>? ClickPositions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ClickPositions_item_2> ClickPositions { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ClickPositions_item_3> ClickPositions { get; set; }
 #endif
         /// <summary>The clickThroughRate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "averageClickPosition", n => { AverageClickPosition = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_averageClickPosition>(global::Soenneker.Algolia.OpenApiClient.Models.Fixed_averageClickPosition.CreateFromDiscriminatorValue); } },
                 { "clickCount", n => { ClickCount = n.GetIntValue(); } },
-                { "clickPositions", n => { ClickPositions = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ClickPositions_item_2>(global::Soenneker.Algolia.OpenApiClient.Models.ClickPositions_item_2.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "clickPositions", n => { ClickPositions = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ClickPositions_item_3>(global::Soenneker.Algolia.OpenApiClient.Models.ClickPositions_item_3.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "clickThroughRate", n => { ClickThroughRate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_clickThroughRate>(global::Soenneker.Algolia.OpenApiClient.Models.Fixed_clickThroughRate.CreateFromDiscriminatorValue); } },
                 { "conversionCount", n => { ConversionCount = n.GetIntValue(); } },
                 { "conversionRate", n => { ConversionRate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_conversionRate>(global::Soenneker.Algolia.OpenApiClient.Models.Fixed_conversionRate.CreateFromDiscriminatorValue); } },
@@ -101,7 +101,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_averageClickPosition>("averageClickPosition", AverageClickPosition);
             writer.WriteIntValue("clickCount", ClickCount);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ClickPositions_item_2>("clickPositions", ClickPositions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ClickPositions_item_3>("clickPositions", ClickPositions);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_clickThroughRate>("clickThroughRate", ClickThroughRate);
             writer.WriteIntValue("conversionCount", ConversionCount);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_conversionRate>("conversionRate", ConversionRate);

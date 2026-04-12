@@ -36,7 +36,7 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Asterisk.
         /// <summary>
         /// Adds, updates, or deletes compositions with a single API request.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Composition_multipleBatch_200_Response_application_json_3"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Composition_multipleBatch_200_Response_application_json_4"/></returns>
         /// <param name="body">Batch parameters.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -46,11 +46,11 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Asterisk.
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Composition_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Composition_multipleBatch_200_Response_application_json_3?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Composition_multipleBatch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Composition_multipleBatch_200_Response_application_json_4?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Composition_multipleBatch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Composition_multipleBatch_200_Response_application_json_3> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Composition_multipleBatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Composition_multipleBatch_200_Response_application_json_4> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Composition_multipleBatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -62,7 +62,7 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Asterisk.
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.Composition_ErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.Composition_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Composition_multipleBatch_200_Response_application_json_3>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Composition_multipleBatch_200_Response_application_json_3.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Composition_multipleBatch_200_Response_application_json_4>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Composition_multipleBatch_200_Response_application_json_4.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Adds, updates, or deletes compositions with a single API request.

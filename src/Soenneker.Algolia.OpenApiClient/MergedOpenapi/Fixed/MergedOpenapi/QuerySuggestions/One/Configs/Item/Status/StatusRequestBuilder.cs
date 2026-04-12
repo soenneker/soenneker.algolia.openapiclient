@@ -36,27 +36,27 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Quer
         /// <summary>
         /// Reports the status of a Query Suggestions index.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_query_suggestions_getConfigStatus_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_query_suggestions_getConfigStatus_200_1"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_query_suggestions_BaseResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_query_suggestions_BaseResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_query_suggestions_BaseResponse_1">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_query_suggestions_BaseResponse_1">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_query_suggestions_getConfigStatus_200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_query_suggestions_getConfigStatus_200_1?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_query_suggestions_getConfigStatus_200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_query_suggestions_getConfigStatus_200_1> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_query_suggestions_BaseResponse.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_query_suggestions_BaseResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_query_suggestions_BaseResponse_1.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_query_suggestions_BaseResponse_1.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_query_suggestions_getConfigStatus_200>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_query_suggestions_getConfigStatus_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_query_suggestions_getConfigStatus_200_1>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_merged_openapi_query_suggestions_getConfigStatus_200_1.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Reports the status of a Query Suggestions index.

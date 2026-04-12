@@ -22,8 +22,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>Return all records with a valid `_geoloc` attribute. Don&apos;t filter by distance.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.AroundRadiusAll? Value { get; set; }
+        /// <summary>The value property</summary>
+        public global::Soenneker.Algolia.OpenApiClient.Models.AroundRadiusAll_Wrapper_4_value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AroundRadiusAll_Wrapper_4"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.AroundRadiusAll>(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.AroundRadiusAll_Wrapper_4_value>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.AroundRadiusAll>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.AroundRadiusAll_Wrapper_4_value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

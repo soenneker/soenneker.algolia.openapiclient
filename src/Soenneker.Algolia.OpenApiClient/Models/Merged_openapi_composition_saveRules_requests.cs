@@ -13,14 +13,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>Type of Composition Batch operation.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_action_2? Action { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_action_4? Action { get; set; }
         /// <summary>The body property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_rulesBatchCompositionAction_1? Body { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_rulesBatchCompositionAction_2? Body { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_rulesBatchCompositionAction_1 Body { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_rulesBatchCompositionAction_2 Body { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -40,8 +40,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_action_2>(); } },
-                { "body", n => { Body = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_rulesBatchCompositionAction_1>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_rulesBatchCompositionAction_1.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_action_4>(); } },
+                { "body", n => { Body = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_rulesBatchCompositionAction_2>(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_rulesBatchCompositionAction_2.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -51,8 +51,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_action_2>("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_rulesBatchCompositionAction_1>("body", Body);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_action_4>("action", Action);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_rulesBatchCompositionAction_2>("body", Body);
         }
     }
 }

@@ -25,10 +25,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The rate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate? Rate { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Fixed_conversionRate? Rate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate Rate { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Fixed_conversionRate Rate { get; set; }
 #endif
         /// <summary>Number of tracked searches. Tracked searches are search requests where the `clickAnalytics` parameter is true.</summary>
         public int? TrackedSearchCount { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "conversionCount", n => { ConversionCount = n.GetIntValue(); } },
                 { "dates", n => { Dates = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getConversionRate_200_Response_application_json_3_dates>(global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getConversionRate_200_Response_application_json_3_dates.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "rate", n => { Rate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate>(global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate.CreateFromDiscriminatorValue); } },
+                { "rate", n => { Rate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_conversionRate>(global::Soenneker.Algolia.OpenApiClient.Models.Fixed_conversionRate.CreateFromDiscriminatorValue); } },
                 { "trackedSearchCount", n => { TrackedSearchCount = n.GetIntValue(); } },
             };
         }
@@ -65,7 +65,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("conversionCount", ConversionCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getConversionRate_200_Response_application_json_3_dates>("dates", Dates);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate>("rate", Rate);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_conversionRate>("rate", Rate);
             writer.WriteIntValue("trackedSearchCount", TrackedSearchCount);
         }
     }

@@ -25,10 +25,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The rate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ClickThroughRate? Rate { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Fixed_clickThroughRate? Rate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ClickThroughRate Rate { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Fixed_clickThroughRate Rate { get; set; }
 #endif
         /// <summary>Number of tracked searches. Tracked searches are search requests where the `clickAnalytics` parameter is true.</summary>
         public int? TrackedSearchCount { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "clickCount", n => { ClickCount = n.GetIntValue(); } },
                 { "dates", n => { Dates = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getClickThroughRate_200_Response_application_json_3_dates>(global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getClickThroughRate_200_Response_application_json_3_dates.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "rate", n => { Rate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ClickThroughRate>(global::Soenneker.Algolia.OpenApiClient.Models.ClickThroughRate.CreateFromDiscriminatorValue); } },
+                { "rate", n => { Rate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_clickThroughRate>(global::Soenneker.Algolia.OpenApiClient.Models.Fixed_clickThroughRate.CreateFromDiscriminatorValue); } },
                 { "trackedSearchCount", n => { TrackedSearchCount = n.GetIntValue(); } },
             };
         }
@@ -65,7 +65,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("clickCount", ClickCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getClickThroughRate_200_Response_application_json_3_dates>("dates", Dates);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ClickThroughRate>("rate", Rate);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_clickThroughRate>("rate", Rate);
             writer.WriteIntValue("trackedSearchCount", TrackedSearchCount);
         }
     }

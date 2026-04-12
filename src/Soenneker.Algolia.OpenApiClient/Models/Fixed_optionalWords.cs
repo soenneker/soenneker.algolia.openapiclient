@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Fixed_optionalWordsMember1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsArray_Wrapper_3"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OptionalWords_Branch1_Wrapper_2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Fixed_optionalWordsMember1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsArray_Wrapper_4"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OptionalWords_Branch1_Wrapper_3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Fixed_optionalWords : IComposedTypeWrapper, IParsable
@@ -21,21 +21,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.Fixed_optionalWordsMember1 FixedOptionalWordsMember1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsArray_Wrapper_3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsArray_Wrapper_4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsArray_Wrapper_3? OptionalWordsArrayWrapper3 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsArray_Wrapper_4? OptionalWordsArrayWrapper4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsArray_Wrapper_3 OptionalWordsArrayWrapper3 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsArray_Wrapper_4 OptionalWordsArrayWrapper4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OptionalWords_Branch1_Wrapper_2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OptionalWords_Branch1_Wrapper_3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.OptionalWords_Branch1_Wrapper_2? OptionalWordsBranch1Wrapper2 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.OptionalWords_Branch1_Wrapper_3? OptionalWordsBranch1Wrapper3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.OptionalWords_Branch1_Wrapper_2 OptionalWordsBranch1Wrapper2 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.OptionalWords_Branch1_Wrapper_3 OptionalWordsBranch1Wrapper3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -53,11 +53,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             }
             else if("optionalWordsArray".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.OptionalWordsArrayWrapper3 = new global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsArray_Wrapper_3();
+                result.OptionalWordsArrayWrapper4 = new global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsArray_Wrapper_4();
             }
             else if("optionalWords_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.OptionalWordsBranch1Wrapper2 = new global::Soenneker.Algolia.OpenApiClient.Models.OptionalWords_Branch1_Wrapper_2();
+                result.OptionalWordsBranch1Wrapper3 = new global::Soenneker.Algolia.OpenApiClient.Models.OptionalWords_Branch1_Wrapper_3();
             }
             return result;
         }
@@ -71,13 +71,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 return FixedOptionalWordsMember1.GetFieldDeserializers();
             }
-            else if(OptionalWordsArrayWrapper3 != null)
+            else if(OptionalWordsArrayWrapper4 != null)
             {
-                return OptionalWordsArrayWrapper3.GetFieldDeserializers();
+                return OptionalWordsArrayWrapper4.GetFieldDeserializers();
             }
-            else if(OptionalWordsBranch1Wrapper2 != null)
+            else if(OptionalWordsBranch1Wrapper3 != null)
             {
-                return OptionalWordsBranch1Wrapper2.GetFieldDeserializers();
+                return OptionalWordsBranch1Wrapper3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -92,13 +92,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_optionalWordsMember1>(null, FixedOptionalWordsMember1);
             }
-            else if(OptionalWordsArrayWrapper3 != null)
+            else if(OptionalWordsArrayWrapper4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsArray_Wrapper_3>(null, OptionalWordsArrayWrapper3);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsArray_Wrapper_4>(null, OptionalWordsArrayWrapper4);
             }
-            else if(OptionalWordsBranch1Wrapper2 != null)
+            else if(OptionalWordsBranch1Wrapper3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.OptionalWords_Branch1_Wrapper_2>(null, OptionalWordsBranch1Wrapper2);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.OptionalWords_Branch1_Wrapper_3>(null, OptionalWordsBranch1Wrapper3);
             }
         }
     }

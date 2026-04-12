@@ -122,10 +122,10 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.Crawler.One.Crawle
 #endif
             /// <summary>Order of the query &apos;ASC&apos; or &apos;DESC&apos;.</summary>
             [QueryParameter("order")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_parameters_order? Order { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_parameters_order_1? Order { get; set; }
             /// <summary>Status to filter &apos;DONE&apos;, &apos;SKIPPED&apos; or &apos;FAILED&apos;.</summary>
             [QueryParameter("status")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_urlsCrawledGroupStatus? Status { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_fixed_urlsCrawledGroupStatus_1? Status { get; set; }
             /// <summary>Date &apos;until&apos; filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
