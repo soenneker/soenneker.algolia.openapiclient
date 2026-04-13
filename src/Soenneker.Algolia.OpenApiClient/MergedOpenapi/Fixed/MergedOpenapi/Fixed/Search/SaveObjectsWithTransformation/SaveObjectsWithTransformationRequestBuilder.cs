@@ -36,25 +36,25 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Fixe
         /// <summary>
         /// &quot;Helper: Similar to the `saveObjects` method but requires a Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push) to be created first, in order to transform records before indexing them to Algolia. The `region` must have been passed to the client instantiation method.&quot;
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_search_WatchResponse&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_search_WatchResponse&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_search_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_search_ErrorBase">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_search_WatchResponse>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Fixed.Search.SaveObjectsWithTransformation.SaveObjectsWithTransformationRequestBuilder.SaveObjectsWithTransformationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_search_WatchResponse>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Fixed.Search.SaveObjectsWithTransformation.SaveObjectsWithTransformationRequestBuilder.SaveObjectsWithTransformationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_search_WatchResponse>> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Fixed.Search.SaveObjectsWithTransformation.SaveObjectsWithTransformationRequestBuilder.SaveObjectsWithTransformationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_search_WatchResponse>> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Fixed.Search.SaveObjectsWithTransformation.SaveObjectsWithTransformationRequestBuilder.SaveObjectsWithTransformationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_search_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_search_ErrorBase.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_search_WatchResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_search_WatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_search_WatchResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_search_WatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>

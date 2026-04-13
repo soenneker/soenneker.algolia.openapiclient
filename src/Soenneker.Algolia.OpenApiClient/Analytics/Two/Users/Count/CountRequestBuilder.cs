@@ -37,7 +37,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Users.Count
         /// Retrieves the number of unique users within a time range, including a daily breakdown.Since it returns the number of unique users, the sum of the daily values might be different from the total number.By default:- Algolia distinguishes search users by their IP address, _unless_ you include a pseudonymous user identifier in your search requests with the `userToken` API parameter or `x-algolia-usertoken` request header.- The analyzed period includes the last eight days including the current day.
         /// Distinguish users for analytics. <see href="https://www.algolia.com/doc/guides/search-analytics/guides/usertoken" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getUsersCount_200_Response_application_json_4"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getUsersCount_200_Response_application_json_5"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Analytics_ErrorBase">When receiving a 400 status code</exception>
@@ -46,11 +46,11 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Users.Count
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Analytics_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getUsersCount_200_Response_application_json_4?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Users.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getUsersCount_200_Response_application_json_5?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Users.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getUsersCount_200_Response_application_json_4> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Users.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getUsersCount_200_Response_application_json_5> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Users.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -61,7 +61,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Users.Count
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.Analytics_ErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.Analytics_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getUsersCount_200_Response_application_json_4>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getUsersCount_200_Response_application_json_4.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getUsersCount_200_Response_application_json_5>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Analytics_getUsersCount_200_Response_application_json_5.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the number of unique users within a time range, including a daily breakdown.Since it returns the number of unique users, the sum of the daily values might be different from the total number.By default:- Algolia distinguishes search users by their IP address, _unless_ you include a pseudonymous user identifier in your search requests with the `userToken` API parameter or `x-algolia-usertoken` request header.- The analyzed period includes the last eight days including the current day.

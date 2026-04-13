@@ -15,10 +15,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Composition rules that matched the search criteria.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRule>? Hits { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_compositionRule>? Hits { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRule> Hits { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_compositionRule> Hits { get; set; }
 #endif
         /// <summary>Number of composition rules that matched the search criteria.</summary>
         public int? NbHits { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "hits", n => { Hits = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRule>(global::Soenneker.Algolia.OpenApiClient.Models.CompositionRule.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "hits", n => { Hits = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_compositionRule>(global::Soenneker.Algolia.OpenApiClient.Models.Fixed_compositionRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "nbHits", n => { NbHits = n.GetIntValue(); } },
                 { "nbPages", n => { NbPages = n.GetIntValue(); } },
                 { "page", n => { Page = n.GetIntValue(); } },
@@ -57,7 +57,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRule>("hits", Hits);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_compositionRule>("hits", Hits);
             writer.WriteIntValue("nbHits", NbHits);
             writer.WriteIntValue("nbPages", NbPages);
             writer.WriteIntValue("page", Page);

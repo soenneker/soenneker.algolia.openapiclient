@@ -61,50 +61,50 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Fixe
         /// <summary>
         /// Retrieves a list of transformations.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_ingestion_listTransformations_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_ingestion_listTransformations_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_ingestion_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_ingestion_ErrorBase">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_ingestion_listTransformations_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Fixed.Ingestion.One.Transformations.TransformationsRequestBuilder.TransformationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_ingestion_listTransformations_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Fixed.Ingestion.One.Transformations.TransformationsRequestBuilder.TransformationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_ingestion_listTransformations_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Fixed.Ingestion.One.Transformations.TransformationsRequestBuilder.TransformationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_ingestion_listTransformations_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Fixed.Ingestion.One.Transformations.TransformationsRequestBuilder.TransformationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_ingestion_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_ingestion_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_ingestion_listTransformations_200>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_ingestion_listTransformations_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_ingestion_listTransformations_200>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_ingestion_listTransformations_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new transformation.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_TransformationCreateResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_TransformationCreateResponse"/></returns>
         /// <param name="body">API request body for creating a transformation.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_ingestion_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_ingestion_ErrorBase">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_TransformationCreateResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_TransformationCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_TransformationCreateResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_TransformationCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_TransformationCreateResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_TransformationCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_TransformationCreateResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_TransformationCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_ingestion_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_ingestion_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_TransformationCreateResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_TransformationCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_TransformationCreateResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_TransformationCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of transformations.
@@ -133,11 +133,11 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Fixe
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_TransformationCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_TransformationCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_TransformationCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_TransformationCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -174,7 +174,7 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Fixe
 #endif
             /// <summary>Sort order of the response, ascending or descending.</summary>
             [QueryParameter("order")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_orderKeys? Order { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_orderKeys? Order { get; set; }
             /// <summary>Page number of the paginated API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -187,10 +187,10 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Fixed.MergedOpenapi.Fixe
 #endif
             /// <summary>Property by which to sort the list of transformations.</summary>
             [QueryParameter("sort")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_transformationSortKeys? Sort { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_transformationSortKeys? Sort { get; set; }
             /// <summary>Whether to filter the list of transformations by the type of transformation.</summary>
             [QueryParameter("type")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_C_merged_openapi_TransformationType? Type { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.C_merged_openapi_C_merged_openapi_TransformationType? Type { get; set; }
         }
     }
 }

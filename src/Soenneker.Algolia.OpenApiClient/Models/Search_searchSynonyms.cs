@@ -25,7 +25,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string Query { get; set; }
 #endif
         /// <summary>Synonym type.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.C___search_SynonymType? Type { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C____search_SynonymType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +47,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "hitsPerPage", n => { HitsPerPage = n.GetIntValue(); } },
                 { "page", n => { Page = n.GetIntValue(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C___search_SynonymType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C____search_SynonymType>(); } },
             };
         }
         /// <summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("hitsPerPage", HitsPerPage);
             writer.WriteIntValue("page", Page);
             writer.WriteStringValue("query", Query);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C___search_SynonymType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C____search_SynonymType>("type", Type);
         }
     }
 }

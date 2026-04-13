@@ -36,31 +36,31 @@ namespace Soenneker.Algolia.OpenApiClient.MergedOpenapi.Search.One.Keys.Item.Res
         /// <summary>
         /// Restores a deleted API key.Restoring resets the `validity` attribute to `0`.Algolia stores up to 1,000 API keys per application.If you create more, the oldest API keys are deleted and can&apos;t be restored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_addApiKeyResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_merged_openapi_addApiKeyResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_search_ErrorBase">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_search_ErrorBase">When receiving a 402 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_search_ErrorBase">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_search_ErrorBase">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_merged_openapi_search_ErrorBase">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_merged_openapi_search_ErrorBase">When receiving a 402 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_merged_openapi_search_ErrorBase">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_merged_openapi_search_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_addApiKeyResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_merged_openapi_addApiKeyResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_addApiKeyResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_merged_openapi_addApiKeyResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_search_ErrorBase.CreateFromDiscriminatorValue },
-                { "402", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_search_ErrorBase.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_search_ErrorBase.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_search_ErrorBase.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_merged_openapi_search_ErrorBase.CreateFromDiscriminatorValue },
+                { "402", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_merged_openapi_search_ErrorBase.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_merged_openapi_search_ErrorBase.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_merged_openapi_search_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_addApiKeyResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_addApiKeyResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_merged_openapi_addApiKeyResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Merged_openapi_merged_openapi_merged_openapi_merged_openapi_merged_openapi_addApiKeyResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Restores a deleted API key.Restoring resets the `validity` attribute to `0`.Algolia stores up to 1,000 API keys per application.If you create more, the oldest API keys are deleted and can&apos;t be restored.

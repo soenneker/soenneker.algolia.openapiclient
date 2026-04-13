@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper_3"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper_3"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper_4"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper_4"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Fixed_ignoreCanonicalTo : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper_3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper_4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper_3? IgnoreCanonicalToBranch1Wrapper3 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper_4? IgnoreCanonicalToBranch1Wrapper4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper_3 IgnoreCanonicalToBranch1Wrapper3 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper_4 IgnoreCanonicalToBranch1Wrapper4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper_3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper_4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper_3? IgnoreCanonicalToBranch2Wrapper3 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper_4? IgnoreCanonicalToBranch2Wrapper4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper_3 IgnoreCanonicalToBranch2Wrapper3 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper_4 IgnoreCanonicalToBranch2Wrapper4 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -41,11 +41,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.Fixed_ignoreCanonicalTo();
             if("ignoreCanonicalTo_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.IgnoreCanonicalToBranch1Wrapper3 = new global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper_3();
+                result.IgnoreCanonicalToBranch1Wrapper4 = new global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper_4();
             }
             else if("ignoreCanonicalTo_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.IgnoreCanonicalToBranch2Wrapper3 = new global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper_3();
+                result.IgnoreCanonicalToBranch2Wrapper4 = new global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper_4();
             }
             return result;
         }
@@ -55,13 +55,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(IgnoreCanonicalToBranch1Wrapper3 != null)
+            if(IgnoreCanonicalToBranch1Wrapper4 != null)
             {
-                return IgnoreCanonicalToBranch1Wrapper3.GetFieldDeserializers();
+                return IgnoreCanonicalToBranch1Wrapper4.GetFieldDeserializers();
             }
-            else if(IgnoreCanonicalToBranch2Wrapper3 != null)
+            else if(IgnoreCanonicalToBranch2Wrapper4 != null)
             {
-                return IgnoreCanonicalToBranch2Wrapper3.GetFieldDeserializers();
+                return IgnoreCanonicalToBranch2Wrapper4.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +72,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(IgnoreCanonicalToBranch1Wrapper3 != null)
+            if(IgnoreCanonicalToBranch1Wrapper4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper_3>(null, IgnoreCanonicalToBranch1Wrapper3);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch1_Wrapper_4>(null, IgnoreCanonicalToBranch1Wrapper4);
             }
-            else if(IgnoreCanonicalToBranch2Wrapper3 != null)
+            else if(IgnoreCanonicalToBranch2Wrapper4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper_3>(null, IgnoreCanonicalToBranch2Wrapper3);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IgnoreCanonicalTo_Branch2_Wrapper_4>(null, IgnoreCanonicalToBranch2Wrapper4);
             }
         }
     }

@@ -13,14 +13,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>Actions to perform.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.C___search_dictionaryAction? Action { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C____search_dictionaryAction? Action { get; set; }
         /// <summary>Dictionary entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.C___search_dictionaryEntry? Body { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C____search_dictionaryEntry? Body { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.C___search_dictionaryEntry Body { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.C____search_dictionaryEntry Body { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -40,8 +40,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C___search_dictionaryAction>(); } },
-                { "body", n => { Body = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C___search_dictionaryEntry>(global::Soenneker.Algolia.OpenApiClient.Models.C___search_dictionaryEntry.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C____search_dictionaryAction>(); } },
+                { "body", n => { Body = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C____search_dictionaryEntry>(global::Soenneker.Algolia.OpenApiClient.Models.C____search_dictionaryEntry.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -51,8 +51,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C___search_dictionaryAction>("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C___search_dictionaryEntry>("body", Body);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.C____search_dictionaryAction>("action", Action);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.C____search_dictionaryEntry>("body", Body);
         }
     }
 }

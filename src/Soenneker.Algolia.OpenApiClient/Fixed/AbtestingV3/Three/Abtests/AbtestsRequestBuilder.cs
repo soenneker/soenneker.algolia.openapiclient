@@ -55,7 +55,7 @@ namespace Soenneker.Algolia.OpenApiClient.Fixed.AbtestingV3.Three.Abtests
         /// <summary>
         /// Lists all A/B tests you configured for this application.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_v3_listABTests_200_Response_application_json_3"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_v3_listABTests_200_Response_application_json_4"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Fixed_ErrorBase">When receiving a 400 status code</exception>
@@ -64,11 +64,11 @@ namespace Soenneker.Algolia.OpenApiClient.Fixed.AbtestingV3.Three.Abtests
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Fixed_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_v3_listABTests_200_Response_application_json_3?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Fixed.AbtestingV3.Three.Abtests.AbtestsRequestBuilder.AbtestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_v3_listABTests_200_Response_application_json_4?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Fixed.AbtestingV3.Three.Abtests.AbtestsRequestBuilder.AbtestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_v3_listABTests_200_Response_application_json_3> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Fixed.AbtestingV3.Three.Abtests.AbtestsRequestBuilder.AbtestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_v3_listABTests_200_Response_application_json_4> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Fixed.AbtestingV3.Three.Abtests.AbtestsRequestBuilder.AbtestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -79,7 +79,7 @@ namespace Soenneker.Algolia.OpenApiClient.Fixed.AbtestingV3.Three.Abtests
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.Fixed_ErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.Fixed_ErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_v3_listABTests_200_Response_application_json_3>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_v3_listABTests_200_Response_application_json_3.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_v3_listABTests_200_Response_application_json_4>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_v3_listABTests_200_Response_application_json_4.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new A/B test.
@@ -94,11 +94,11 @@ namespace Soenneker.Algolia.OpenApiClient.Fixed.AbtestingV3.Three.Abtests
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Fixed_ErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_ABTestResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_v3_addABTestsBody4 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_ABTestResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_v3_addABTestsBody5 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_ABTestResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_v3_addABTestsBody4 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.Fixed_ABTestResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_v3_addABTestsBody5 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -139,11 +139,11 @@ namespace Soenneker.Algolia.OpenApiClient.Fixed.AbtestingV3.Three.Abtests
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_v3_addABTestsBody4 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_v3_addABTestsBody5 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_v3_addABTestsBody4 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.Abtesting_v3_addABTestsBody5 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

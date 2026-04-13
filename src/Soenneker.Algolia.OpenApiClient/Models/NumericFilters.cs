@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch1_Wrapper_4"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch2_Wrapper_4"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch1_Wrapper_5"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch2_Wrapper_5"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NumericFilters : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch1_Wrapper_4"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch1_Wrapper_5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch1_Wrapper_4? NumericFiltersBranch1Wrapper4 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch1_Wrapper_5? NumericFiltersBranch1Wrapper5 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch1_Wrapper_4 NumericFiltersBranch1Wrapper4 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch1_Wrapper_5 NumericFiltersBranch1Wrapper5 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch2_Wrapper_4"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch2_Wrapper_5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch2_Wrapper_4? NumericFiltersBranch2Wrapper4 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch2_Wrapper_5? NumericFiltersBranch2Wrapper5 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch2_Wrapper_4 NumericFiltersBranch2Wrapper4 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch2_Wrapper_5 NumericFiltersBranch2Wrapper5 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -41,11 +41,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters();
             if("numericFilters_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.NumericFiltersBranch1Wrapper4 = new global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch1_Wrapper_4();
+                result.NumericFiltersBranch1Wrapper5 = new global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch1_Wrapper_5();
             }
             else if("numericFilters_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.NumericFiltersBranch2Wrapper4 = new global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch2_Wrapper_4();
+                result.NumericFiltersBranch2Wrapper5 = new global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch2_Wrapper_5();
             }
             return result;
         }
@@ -55,13 +55,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(NumericFiltersBranch1Wrapper4 != null)
+            if(NumericFiltersBranch1Wrapper5 != null)
             {
-                return NumericFiltersBranch1Wrapper4.GetFieldDeserializers();
+                return NumericFiltersBranch1Wrapper5.GetFieldDeserializers();
             }
-            else if(NumericFiltersBranch2Wrapper4 != null)
+            else if(NumericFiltersBranch2Wrapper5 != null)
             {
-                return NumericFiltersBranch2Wrapper4.GetFieldDeserializers();
+                return NumericFiltersBranch2Wrapper5.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +72,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(NumericFiltersBranch1Wrapper4 != null)
+            if(NumericFiltersBranch1Wrapper5 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch1_Wrapper_4>(null, NumericFiltersBranch1Wrapper4);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch1_Wrapper_5>(null, NumericFiltersBranch1Wrapper5);
             }
-            else if(NumericFiltersBranch2Wrapper4 != null)
+            else if(NumericFiltersBranch2Wrapper5 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch2_Wrapper_4>(null, NumericFiltersBranch2Wrapper4);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters_Branch2_Wrapper_5>(null, NumericFiltersBranch2Wrapper5);
             }
         }
     }
