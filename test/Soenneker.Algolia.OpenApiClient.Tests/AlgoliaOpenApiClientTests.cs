@@ -1,16 +1,15 @@
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Algolia.OpenApiClient.Tests;
 
-[Collection("Collection")]
-public sealed class AlgoliaOpenApiClientTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class AlgoliaOpenApiClientTests : HostedUnitTest
 {
-    public AlgoliaOpenApiClientTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public AlgoliaOpenApiClientTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
