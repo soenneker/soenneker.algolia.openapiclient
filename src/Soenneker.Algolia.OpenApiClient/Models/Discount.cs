@@ -39,11 +39,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.Discount();
-            if("discount_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("Discount_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DiscountBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.Discount_Branch1();
             }
-            else if("discount_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("Discount_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DiscountBranch2 = new global::Soenneker.Algolia.OpenApiClient.Models.Discount_Branch2();
             }

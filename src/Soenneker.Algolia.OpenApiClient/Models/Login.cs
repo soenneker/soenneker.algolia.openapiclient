@@ -47,15 +47,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.Login();
-            if("browserRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("BrowserRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BrowserRequest = new global::Soenneker.Algolia.OpenApiClient.Models.BrowserRequest();
             }
-            else if("fetchRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("FetchRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FetchRequest = new global::Soenneker.Algolia.OpenApiClient.Models.FetchRequest();
             }
-            else if("oauthRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("OauthRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.OauthRequest = new global::Soenneker.Algolia.OpenApiClient.Models.OauthRequest();
             }

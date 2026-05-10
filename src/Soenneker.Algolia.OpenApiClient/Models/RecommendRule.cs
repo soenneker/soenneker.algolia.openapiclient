@@ -13,7 +13,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecommendRule : IParsable
     {
-        /// <summary>Condition that triggers the rule.If not specified, the rule is triggered for all recommendations.</summary>
+        /// <summary>The condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.Condition? Condition { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.Condition Condition { get; set; }
 #endif
-        /// <summary>Effect of the rule.</summary>
+        /// <summary>Effect of the rule.For more information, see [Consequences](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/#consequences).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.Consequence? Consequence { get; set; }
@@ -42,10 +42,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Rule metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendRule_metadata? Metadata { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendRuleMetadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendRule_metadata Metadata { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendRuleMetadata Metadata { get; set; }
 #endif
         /// <summary>Unique identifier of a rule object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,10 +58,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Time periods when the rule is active.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Recommend_timeRange>? Validity { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.RecommendTimeRange>? Validity { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Recommend_timeRange> Validity { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.RecommendTimeRange> Validity { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -85,9 +85,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "consequence", n => { Consequence = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Consequence>(global::Soenneker.Algolia.OpenApiClient.Models.Consequence.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "_metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRule_metadata>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendRule_metadata.CreateFromDiscriminatorValue); } },
+                { "_metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRuleMetadata>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendRuleMetadata.CreateFromDiscriminatorValue); } },
                 { "objectID", n => { ObjectID = n.GetStringValue(); } },
-                { "validity", n => { Validity = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Recommend_timeRange>(global::Soenneker.Algolia.OpenApiClient.Models.Recommend_timeRange.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "validity", n => { Validity = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendTimeRange>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendTimeRange.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -101,9 +101,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Consequence>("consequence", Consequence);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRule_metadata>("_metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRuleMetadata>("_metadata", Metadata);
             writer.WriteStringValue("objectID", ObjectID);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Recommend_timeRange>("validity", Validity);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendTimeRange>("validity", Validity);
         }
     }
 }

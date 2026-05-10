@@ -15,10 +15,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The error if the transformation failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTryResponse_error? Error { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTryResponseError? Error { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTryResponse_error Error { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTryResponseError Error { get; set; }
 #endif
         /// <summary>The array of stringified records returned by the transformation service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,7 +46,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "error", n => { Error = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationTryResponse_error>(global::Soenneker.Algolia.OpenApiClient.Models.TransformationTryResponse_error.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationTryResponseError>(global::Soenneker.Algolia.OpenApiClient.Models.TransformationTryResponseError.CreateFromDiscriminatorValue); } },
                 { "payloads", n => { Payloads = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -57,7 +57,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationTryResponse_error>("error", Error);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationTryResponseError>("error", Error);
             writer.WriteCollectionOfPrimitiveValues<string>("payloads", Payloads);
         }
     }

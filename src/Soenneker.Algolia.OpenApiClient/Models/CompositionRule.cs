@@ -23,10 +23,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Effect of the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionRule_consequence? Consequence { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionRuleConsequence? Consequence { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionRule_consequence Consequence { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionRuleConsequence Consequence { get; set; }
 #endif
         /// <summary>Description of the rule&apos;s purpose to help you distinguish between different rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Condition>(global::Soenneker.Algolia.OpenApiClient.Models.Condition.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "consequence", n => { Consequence = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRule_consequence>(global::Soenneker.Algolia.OpenApiClient.Models.CompositionRule_consequence.CreateFromDiscriminatorValue); } },
+                { "consequence", n => { Consequence = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRuleConsequence>(global::Soenneker.Algolia.OpenApiClient.Models.CompositionRuleConsequence.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "objectID", n => { ObjectID = n.GetStringValue(); } },
@@ -97,7 +97,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Condition>("conditions", Conditions);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRule_consequence>("consequence", Consequence);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRuleConsequence>("consequence", Consequence);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("objectID", ObjectID);

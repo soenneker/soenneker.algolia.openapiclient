@@ -39,11 +39,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.Price();
-            if("price_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("Price_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PriceBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.Price_Branch1();
             }
-            else if("price_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("Price_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PriceBranch2 = new global::Soenneker.Algolia.OpenApiClient.Models.Price_Branch2();
             }

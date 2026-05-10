@@ -18,18 +18,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Empty searches removed from the A/B test as a result of configuration settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.FilterEffects_emptySearch? EmptySearch { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FilterEffectsEmptySearch? EmptySearch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.FilterEffects_emptySearch EmptySearch { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FilterEffectsEmptySearch EmptySearch { get; set; }
 #endif
         /// <summary>Outliers removed from the A/B test as a result of configuration settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.FilterEffects_outliers? Outliers { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FilterEffectsOutliers? Outliers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.FilterEffects_outliers Outliers { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FilterEffectsOutliers Outliers { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.FilterEffects"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "emptySearch", n => { EmptySearch = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FilterEffects_emptySearch>(global::Soenneker.Algolia.OpenApiClient.Models.FilterEffects_emptySearch.CreateFromDiscriminatorValue); } },
-                { "outliers", n => { Outliers = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FilterEffects_outliers>(global::Soenneker.Algolia.OpenApiClient.Models.FilterEffects_outliers.CreateFromDiscriminatorValue); } },
+                { "emptySearch", n => { EmptySearch = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FilterEffectsEmptySearch>(global::Soenneker.Algolia.OpenApiClient.Models.FilterEffectsEmptySearch.CreateFromDiscriminatorValue); } },
+                { "outliers", n => { Outliers = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FilterEffectsOutliers>(global::Soenneker.Algolia.OpenApiClient.Models.FilterEffectsOutliers.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FilterEffects_emptySearch>("emptySearch", EmptySearch);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FilterEffects_outliers>("outliers", Outliers);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FilterEffectsEmptySearch>("emptySearch", EmptySearch);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FilterEffectsOutliers>("outliers", Outliers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

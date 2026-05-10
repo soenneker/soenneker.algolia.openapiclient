@@ -11,9 +11,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Query Suggestions configuration.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ConfigurationWithIndex : global::Soenneker.Algolia.OpenApiClient.Models.Query_suggestions_Configuration, IParsable
+    public partial class ConfigurationWithIndex : global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsConfiguration, IParsable
     {
-        /// <summary>Name of the Query Suggestions index (case-sensitive).</summary>
+        /// <summary>Index name (case-sensitive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IndexName { get; set; }

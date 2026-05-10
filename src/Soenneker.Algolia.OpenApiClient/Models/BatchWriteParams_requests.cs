@@ -13,7 +13,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>&quot;Which indexing operation to perform:- `addObject`: adds records to an index.   Equivalent to the \&quot;Add a new record (with auto-generated object ID)\&quot; operation.- `updateObject`: adds or replaces records in an index.   Equivalent to the \&quot;Add or replace a record\&quot; operation.- `partialUpdateObject`: adds or updates attributes within records.   Equivalent to the \&quot;Add or update attributes\&quot; operation with the `createIfNoExists` parameter set to true.   (If a record with the specified `objectID` doesn&apos;t exist in the specified index, this action creates adds the record to the index)- `partialUpdateObjectNoCreate`: same as `partialUpdateObject`, but with `createIfNoExists` set to false.   (A record isn&apos;t added to the index if its `objectID` doesn&apos;t exist)- `deleteObject`: delete records from an index.  Equivalent to the \&quot;Delete a record\&quot; operation.- `delete`. Delete an index. Equivalent to the \&quot;Delete an index\&quot; operation.- `clear`: delete all records from an index. Equivalent to the \&quot;Delete all records from an index operation\&quot;.&quot;</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_action? Action { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchAction? Action { get; set; }
         /// <summary>Operation arguments (varies with specified `action`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,7 +40,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_action>(); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchAction>(); } },
                 { "body", n => { Body = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParams_requests_body>(global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParams_requests_body.CreateFromDiscriminatorValue); } },
             };
         }
@@ -51,7 +51,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_action>("action", Action);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchAction>("action", Action);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParams_requests_body>("body", Body);
         }
     }

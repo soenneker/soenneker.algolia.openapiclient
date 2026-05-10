@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_searchForFacetValuesResponse"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_searchResponse"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchForFacetValuesResponse"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchResponse"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchResult : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_searchForFacetValuesResponse"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchForFacetValuesResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_searchForFacetValuesResponse? SearchSearchForFacetValuesResponse { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchForFacetValuesResponse? SearchSearchForFacetValuesResponse { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_searchForFacetValuesResponse SearchSearchForFacetValuesResponse { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchForFacetValuesResponse SearchSearchForFacetValuesResponse { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Search_searchResponse"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_searchResponse? SearchSearchResponse { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchResponse? SearchSearchResponse { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_searchResponse SearchSearchResponse { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchResponse SearchSearchResponse { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,13 +39,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.SearchResult();
-            if("search_searchForFacetValuesResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("SearchSearchForFacetValuesResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SearchSearchForFacetValuesResponse = new global::Soenneker.Algolia.OpenApiClient.Models.Search_searchForFacetValuesResponse();
+                result.SearchSearchForFacetValuesResponse = new global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchForFacetValuesResponse();
             }
-            else if("search_searchResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SearchSearchResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SearchSearchResponse = new global::Soenneker.Algolia.OpenApiClient.Models.Search_searchResponse();
+                result.SearchSearchResponse = new global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchResponse();
             }
             return result;
         }
@@ -74,11 +74,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(SearchSearchForFacetValuesResponse != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_searchForFacetValuesResponse>(null, SearchSearchForFacetValuesResponse);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchForFacetValuesResponse>(null, SearchSearchForFacetValuesResponse);
             }
             else if(SearchSearchResponse != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_searchResponse>(null, SearchSearchResponse);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchResponse>(null, SearchSearchResponse);
             }
         }
     }

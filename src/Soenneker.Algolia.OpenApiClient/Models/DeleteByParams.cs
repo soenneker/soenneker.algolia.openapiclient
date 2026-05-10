@@ -23,18 +23,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Maximum radius for a search around a central location.This parameter works in combination with the `aroundLatLng` and `aroundLatLngViaIP` parameters.By default, the search radius is determined automatically from the density of hits around the central location.The search radius is small if there are many hits close to the central coordinates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_aroundRadius? AroundRadius { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius? AroundRadius { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_aroundRadius AroundRadius { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius AroundRadius { get; set; }
 #endif
         /// <summary>Filter the search by facet values, so that only records with the same facet values are retrieved.**Prefer using the `filters` parameter, which supports all filter types and combinations with boolean operators.**- `[filter1, filter2]` is interpreted as `filter1 AND filter2`.- `[[filter1, filter2], filter3]` is interpreted as `filter1 OR filter2 AND filter3`.- `facet:-value` is interpreted as `NOT facet:value`.While it&apos;s best to avoid attributes that start with a `-`, you can still filter them by escaping with a backslash:`facet:\-value`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_facetFilters? FacetFilters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters? FacetFilters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_facetFilters FacetFilters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters FacetFilters { get; set; }
 #endif
         /// <summary>&quot;Filter expression to only include items that match the filter criteria in the response.You can use these filter expressions:- **Numeric filters.** `&lt;facet&gt; &lt;op&gt; &lt;number&gt;`, where `&lt;op&gt;` is one of `&lt;`, `&lt;=`, `=`, `!=`, `&gt;`, `&gt;=`.- **Ranges.** `&lt;facet&gt;:&lt;lower&gt; TO &lt;upper&gt;`, where `&lt;lower&gt;` and `&lt;upper&gt;` are the lower and upper limits of the range (inclusive).- **Facet filters.** `&lt;facet&gt;:&lt;value&gt;`, where `&lt;facet&gt;` is a facet attribute (case-sensitive) and `&lt;value&gt;` a facet value.- **Tag filters.** `_tags:&lt;value&gt;` or just `&lt;value&gt;` (case-sensitive).- **Boolean filters.** `&lt;facet&gt;: true | false`.You can combine filters with `AND`, `OR`, and `NOT` operators with the following restrictions:- You can only combine filters of the same type with `OR`.  **Not supported:** `facet:value OR num &gt; 3`.- You can&apos;t use `NOT` with combinations of filters.  **Not supported:** `NOT(facet:value OR facet:value)`- You can&apos;t combine conjunctions (`AND`) with `OR`.  **Not supported:** `facet:value OR (facet:value AND facet:value)`Use quotes if the facet attribute name or facet value contains spaces, keywords (`OR`, `AND`, `NOT`), or quotes.If a facet attribute is an array, the filter matches if it matches at least one element of the array.For more information, see [Filters](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering).&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,10 +47,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The insideBoundingBox property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_insideBoundingBox? InsideBoundingBox { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox? InsideBoundingBox { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_insideBoundingBox InsideBoundingBox { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox InsideBoundingBox { get; set; }
 #endif
         /// <summary>Coordinates of a polygon in which to search.Polygons are defined by 3 to 10,000 points. Each point is represented by its latitude and longitude.Provide multiple polygons as nested arrays.For more information, see [filtering inside polygons](https://www.algolia.com/doc/guides/managing-results/refine-results/geolocation/#filtering-inside-rectangular-or-polygonal-areas).This parameter is ignored if you also specify `insideBoundingBox`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,18 +63,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>&quot;Filter by numeric facets.**Prefer using the `filters` parameter, which supports all filter types and combinations with boolean operators.**You can use numeric comparison operators: `&lt;`, `&lt;=`, `=`, `!=`, `&gt;`, `&gt;=`.Comparisons are precise up to 3 decimals.You can also provide ranges: `facet:&lt;lower&gt; TO &lt;upper&gt;`. The range includes the lower and upper boundaries.The same combination rules apply as for `facetFilters`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_numericFilters? NumericFilters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchNumericFilters? NumericFilters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_numericFilters NumericFilters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchNumericFilters NumericFilters { get; set; }
 #endif
         /// <summary>Filter the search by values of the special `_tags` attribute.**Prefer using the `filters` parameter, which supports all filter types and combinations with boolean operators.**Different from regular facets, `_tags` can only be used for filtering (including or excluding records).You won&apos;t get a facet count.The same combination and escaping rules apply as for `facetFilters`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_tagFilters? TagFilters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters? TagFilters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_tagFilters TagFilters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters TagFilters { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -95,13 +95,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "aroundLatLng", n => { AroundLatLng = n.GetStringValue(); } },
-                { "aroundRadius", n => { AroundRadius = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_aroundRadius>(global::Soenneker.Algolia.OpenApiClient.Models.Search_aroundRadius.CreateFromDiscriminatorValue); } },
-                { "facetFilters", n => { FacetFilters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_facetFilters>(global::Soenneker.Algolia.OpenApiClient.Models.Search_facetFilters.CreateFromDiscriminatorValue); } },
+                { "aroundRadius", n => { AroundRadius = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius>(global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius.CreateFromDiscriminatorValue); } },
+                { "facetFilters", n => { FacetFilters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters>(global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters.CreateFromDiscriminatorValue); } },
                 { "filters", n => { Filters = n.GetStringValue(); } },
-                { "insideBoundingBox", n => { InsideBoundingBox = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_insideBoundingBox>(global::Soenneker.Algolia.OpenApiClient.Models.Search_insideBoundingBox.CreateFromDiscriminatorValue); } },
+                { "insideBoundingBox", n => { InsideBoundingBox = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox>(global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox.CreateFromDiscriminatorValue); } },
                 { "insidePolygon", n => { InsidePolygon = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "numericFilters", n => { NumericFilters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_numericFilters>(global::Soenneker.Algolia.OpenApiClient.Models.Search_numericFilters.CreateFromDiscriminatorValue); } },
-                { "tagFilters", n => { TagFilters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_tagFilters>(global::Soenneker.Algolia.OpenApiClient.Models.Search_tagFilters.CreateFromDiscriminatorValue); } },
+                { "numericFilters", n => { NumericFilters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchNumericFilters>(global::Soenneker.Algolia.OpenApiClient.Models.SearchNumericFilters.CreateFromDiscriminatorValue); } },
+                { "tagFilters", n => { TagFilters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters>(global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -112,13 +112,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("aroundLatLng", AroundLatLng);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_aroundRadius>("aroundRadius", AroundRadius);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_facetFilters>("facetFilters", FacetFilters);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius>("aroundRadius", AroundRadius);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters>("facetFilters", FacetFilters);
             writer.WriteStringValue("filters", Filters);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_insideBoundingBox>("insideBoundingBox", InsideBoundingBox);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox>("insideBoundingBox", InsideBoundingBox);
             writer.WriteObjectValue<UntypedNode>("insidePolygon", InsidePolygon);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_numericFilters>("numericFilters", NumericFilters);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_tagFilters>("tagFilters", TagFilters);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchNumericFilters>("numericFilters", NumericFilters);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters>("tagFilters", TagFilters);
         }
     }
 }

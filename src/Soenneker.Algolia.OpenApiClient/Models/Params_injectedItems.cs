@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// A list of extenrally injected objectID groups into from an external source.
+    /// An object containing keys corresponding to the `key`s from an injection&apos;s `injectedItems` and values containing a list of hits to inject.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Params_injectedItems : IAdditionalDataHolder, IParsable

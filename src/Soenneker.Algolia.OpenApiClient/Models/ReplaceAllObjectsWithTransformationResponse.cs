@@ -31,10 +31,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The response of the `push` request(s).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Search_WatchResponse>? WatchResponses { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponse>? WatchResponses { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Search_WatchResponse> WatchResponses { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponse> WatchResponses { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +56,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "copyOperationResponse", n => { CopyOperationResponse = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse>(global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse.CreateFromDiscriminatorValue); } },
                 { "moveOperationResponse", n => { MoveOperationResponse = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse>(global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse.CreateFromDiscriminatorValue); } },
-                { "watchResponses", n => { WatchResponses = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Search_WatchResponse>(global::Soenneker.Algolia.OpenApiClient.Models.Search_WatchResponse.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "watchResponses", n => { WatchResponses = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponse>(global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponse.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse>("copyOperationResponse", CopyOperationResponse);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse>("moveOperationResponse", MoveOperationResponse);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Search_WatchResponse>("watchResponses", WatchResponses);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponse>("watchResponses", WatchResponses);
         }
     }
 }

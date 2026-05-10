@@ -21,7 +21,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string EventName { get; set; }
 #endif
         /// <summary>Event type.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.Personalization_EventType? EventType { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationEventType? EventType { get; set; }
         /// <summary>Event score.</summary>
         public int? Score { get; set; }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "eventName", n => { EventName = n.GetStringValue(); } },
-                { "eventType", n => { EventType = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Personalization_EventType>(); } },
+                { "eventType", n => { EventType = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationEventType>(); } },
                 { "score", n => { Score = n.GetIntValue(); } },
             };
         }
@@ -55,7 +55,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("eventName", EventName);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Personalization_EventType>("eventType", EventType);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationEventType>("eventType", EventType);
             writer.WriteIntValue("score", Score);
         }
     }

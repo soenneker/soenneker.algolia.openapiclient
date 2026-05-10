@@ -36,35 +36,35 @@ namespace Soenneker.Algolia.OpenApiClient.Insights.One.Events
         /// <summary>
         /// Sends a list of events to the Insights API.You can include up to 1,000 events in a single request,but the request body must be smaller than 2&amp;nbsp;MB.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.C_insights_EventsResponse_3"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_insights_EventsResponse_3">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_insights_EventsResponse_3">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_insights_EventsResponse_3">When receiving a 405 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_insights_EventsResponse_3">When receiving a 413 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.C_insights_EventsResponse_3">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse">When receiving a 405 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse">When receiving a 413 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_insights_EventsResponse_3?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Insights_pushEvents body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.InsightsPushEvents body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.C_insights_EventsResponse_3> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.Insights_pushEvents body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.InsightsPushEvents body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Algolia.OpenApiClient.Models.C_insights_EventsResponse_3.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Algolia.OpenApiClient.Models.C_insights_EventsResponse_3.CreateFromDiscriminatorValue },
-                { "405", global::Soenneker.Algolia.OpenApiClient.Models.C_insights_EventsResponse_3.CreateFromDiscriminatorValue },
-                { "413", global::Soenneker.Algolia.OpenApiClient.Models.C_insights_EventsResponse_3.CreateFromDiscriminatorValue },
-                { "422", global::Soenneker.Algolia.OpenApiClient.Models.C_insights_EventsResponse_3.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse.CreateFromDiscriminatorValue },
+                { "405", global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse.CreateFromDiscriminatorValue },
+                { "413", global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.C_insights_EventsResponse_3>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.C_insights_EventsResponse_3.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Sends a list of events to the Insights API.You can include up to 1,000 events in a single request,but the request body must be smaller than 2&amp;nbsp;MB.
@@ -74,11 +74,11 @@ namespace Soenneker.Algolia.OpenApiClient.Insights.One.Events
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.Insights_pushEvents body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.InsightsPushEvents body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.Insights_pushEvents body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.InsightsPushEvents body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

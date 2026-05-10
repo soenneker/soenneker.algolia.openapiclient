@@ -63,23 +63,23 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsRequest();
-            if("boughtTogetherQuery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("BoughtTogetherQuery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BoughtTogetherQuery = new global::Soenneker.Algolia.OpenApiClient.Models.BoughtTogetherQuery();
             }
-            else if("lookingSimilarQuery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("LookingSimilarQuery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.LookingSimilarQuery = new global::Soenneker.Algolia.OpenApiClient.Models.LookingSimilarQuery();
             }
-            else if("relatedQuery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RelatedQuery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RelatedQuery = new global::Soenneker.Algolia.OpenApiClient.Models.RelatedQuery();
             }
-            else if("trendingFacetsQuery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TrendingFacetsQuery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TrendingFacetsQuery = new global::Soenneker.Algolia.OpenApiClient.Models.TrendingFacetsQuery();
             }
-            else if("trendingItemsQuery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TrendingItemsQuery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TrendingItemsQuery = new global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsQuery();
             }

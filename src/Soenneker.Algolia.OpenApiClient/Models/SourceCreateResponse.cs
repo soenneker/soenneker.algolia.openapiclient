@@ -12,7 +12,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     public partial class SourceCreateResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Date and time when the resource was created, in RFC 3339 format.</summary>
+        /// <summary>Date and time when the A/B test was created, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedAt { get; set; }

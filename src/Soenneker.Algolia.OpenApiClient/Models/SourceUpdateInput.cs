@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceBigQuery"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceCSV"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceGA4BigQueryExport"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceJSON"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateCommercetools"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateDocker"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopify"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceBigQuery"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceCSV"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceGA4BigQueryExport"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceJSON"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateAlgoliaIndex"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateCommercetools"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateDocker"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopify"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SourceUpdateInput : IComposedTypeWrapper, IParsable
@@ -44,6 +44,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.SourceJSON SourceJSON { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateAlgoliaIndex"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateAlgoliaIndex? SourceUpdateAlgoliaIndex { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateAlgoliaIndex SourceUpdateAlgoliaIndex { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateCommercetools"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,6 +103,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 result.SourceJSON = new global::Soenneker.Algolia.OpenApiClient.Models.SourceJSON();
             }
+            else if("SourceUpdateAlgoliaIndex".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SourceUpdateAlgoliaIndex = new global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateAlgoliaIndex();
+            }
             else if("SourceUpdateCommercetools".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SourceUpdateCommercetools = new global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateCommercetools();
@@ -130,6 +142,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             else if(SourceJSON != null)
             {
                 return SourceJSON.GetFieldDeserializers();
+            }
+            else if(SourceUpdateAlgoliaIndex != null)
+            {
+                return SourceUpdateAlgoliaIndex.GetFieldDeserializers();
             }
             else if(SourceUpdateCommercetools != null)
             {
@@ -167,6 +183,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             else if(SourceJSON != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceJSON>(null, SourceJSON);
+            }
+            else if(SourceUpdateAlgoliaIndex != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateAlgoliaIndex>(null, SourceUpdateAlgoliaIndex);
             }
             else if(SourceUpdateCommercetools != null)
             {

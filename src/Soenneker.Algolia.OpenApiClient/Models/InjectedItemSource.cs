@@ -8,26 +8,34 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ExternalSource"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSource"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalSource"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemRecommendSource"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearchSource"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InjectedItemSource : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ExternalSource"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalSource"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ExternalSource? ExternalSource { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalSource? InjectedItemExternalSource { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ExternalSource ExternalSource { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalSource InjectedItemExternalSource { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSource"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemRecommendSource"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSource? SearchSource { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemRecommendSource? InjectedItemRecommendSource { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSource SearchSource { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemRecommendSource InjectedItemRecommendSource { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearchSource"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearchSource? InjectedItemSearchSource { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearchSource InjectedItemSearchSource { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,13 +47,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSource();
-            if("ExternalSource".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("InjectedItemExternalSource".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ExternalSource = new global::Soenneker.Algolia.OpenApiClient.Models.ExternalSource();
+                result.InjectedItemExternalSource = new global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalSource();
             }
-            else if("SearchSource".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("InjectedItemRecommendSource".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SearchSource = new global::Soenneker.Algolia.OpenApiClient.Models.SearchSource();
+                result.InjectedItemRecommendSource = new global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemRecommendSource();
+            }
+            else if("InjectedItemSearchSource".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.InjectedItemSearchSource = new global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearchSource();
             }
             return result;
         }
@@ -55,13 +67,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ExternalSource != null)
+            if(InjectedItemExternalSource != null)
             {
-                return ExternalSource.GetFieldDeserializers();
+                return InjectedItemExternalSource.GetFieldDeserializers();
             }
-            else if(SearchSource != null)
+            else if(InjectedItemRecommendSource != null)
             {
-                return SearchSource.GetFieldDeserializers();
+                return InjectedItemRecommendSource.GetFieldDeserializers();
+            }
+            else if(InjectedItemSearchSource != null)
+            {
+                return InjectedItemSearchSource.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +88,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ExternalSource != null)
+            if(InjectedItemExternalSource != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ExternalSource>(null, ExternalSource);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalSource>(null, InjectedItemExternalSource);
             }
-            else if(SearchSource != null)
+            else if(InjectedItemRecommendSource != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchSource>(null, SearchSource);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemRecommendSource>(null, InjectedItemRecommendSource);
+            }
+            else if(InjectedItemSearchSource != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearchSource>(null, InjectedItemSearchSource);
             }
         }
     }

@@ -24,10 +24,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The input property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.DestinationInput? Input { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.DestinationUpdateInput? Input { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.DestinationInput Input { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.DestinationUpdateInput Input { get; set; }
 #endif
         /// <summary>Descriptive name for the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,8 +45,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<string> TransformationIDs { get; set; }
 #endif
-        /// <summary>Destination type.- `search`.  Data is stored in an Algolia index.- `insights`.  Data is recorded as user events in the Insights API.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.DestinationType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -66,10 +64,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "authenticationID", n => { AuthenticationID = n.GetStringValue(); } },
-                { "input", n => { Input = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.DestinationInput>(global::Soenneker.Algolia.OpenApiClient.Models.DestinationInput.CreateFromDiscriminatorValue); } },
+                { "input", n => { Input = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.DestinationUpdateInput>(global::Soenneker.Algolia.OpenApiClient.Models.DestinationUpdateInput.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "transformationIDs", n => { TransformationIDs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.DestinationType>(); } },
             };
         }
         /// <summary>
@@ -80,10 +77,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("authenticationID", AuthenticationID);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.DestinationInput>("input", Input);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.DestinationUpdateInput>("input", Input);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("transformationIDs", TransformationIDs);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.DestinationType>("type", Type);
         }
     }
 }

@@ -3104,17 +3104,26 @@ components:
             $ref: '#/components/schemas/destinationID'
       required:
         - destinationIDs
+    DestinationUpdateInput:
+      type: object
+      additionalProperties: false
+      properties:
+        indexName:
+          type: string
+          description: Algolia index name (case-sensitive).
+        recordType:
+          $ref: '#/components/schemas/RecordType'
+        attributesToExclude:
+          $ref: '#/components/schemas/AttributesToExclude'
     DestinationUpdate:
       type: object
       additionalProperties: false
       description: API request body for updating a destination.
       properties:
-        type:
-          $ref: '#/components/schemas/DestinationType'
         name:
           $ref: '#/components/schemas/name'
         input:
-          $ref: '#/components/schemas/DestinationInput'
+          $ref: '#/components/schemas/DestinationUpdateInput'
         authenticationID:
           $ref: '#/components/schemas/authenticationID'
         transformationIDs:
@@ -3137,6 +3146,7 @@ components:
     SourceType:
       type: string
       enum:
+        - algoliaIndex
         - bigcommerce
         - bigquery
         - commercetools
@@ -3457,6 +3467,25 @@ components:
       allOf:
         - $ref: '#/components/schemas/SourceUpdateShopify'
         - $ref: '#/components/schemas/sourceShopifyBase'
+    SourceAlgoliaIndex:
+      type: object
+      description: Specific configuration attributes of an `algoliaIndex` source.
+      additionalProperties: false
+      properties:
+        indexName:
+          type: string
+          description: Name of the Algolia index to read records from.
+        filters:
+          type: string
+          description: >
+            SQL-like filter expression applied while browsing the source index.
+
+            See
+            [filters](https://www.algolia.com/doc/api-reference/api-parameters/filters/).
+      required:
+        - indexName
+      x-discriminator-fields:
+        - indexName
     SourceInput:
       oneOf:
         - $ref: '#/components/schemas/SourceCommercetools'
@@ -3467,6 +3496,7 @@ components:
         - $ref: '#/components/schemas/SourceGA4BigQueryExport'
         - $ref: '#/components/schemas/SourceDocker'
         - $ref: '#/components/schemas/SourceShopify'
+        - $ref: '#/components/schemas/SourceAlgoliaIndex'
     Source:
       type: object
       additionalProperties: false
@@ -3586,6 +3616,21 @@ components:
         - configuration
       x-discriminator-fields:
         - configuration
+    SourceUpdateAlgoliaIndex:
+      type: object
+      description: Specific configuration attributes of an `algoliaIndex` source.
+      additionalProperties: false
+      properties:
+        indexName:
+          type: string
+          description: Name of the Algolia index to read records from.
+        filters:
+          type: string
+          description: >
+            SQL-like filter expression applied while browsing the source index.
+
+            See
+            [filters](https://www.algolia.com/doc/api-reference/api-parameters/filters/).
     SourceUpdateInput:
       oneOf:
         - $ref: '#/components/schemas/SourceUpdateCommercetools'
@@ -3595,6 +3640,7 @@ components:
         - $ref: '#/components/schemas/SourceGA4BigQueryExport'
         - $ref: '#/components/schemas/SourceUpdateDocker'
         - $ref: '#/components/schemas/SourceUpdateShopify'
+        - $ref: '#/components/schemas/SourceUpdateAlgoliaIndex'
     SourceUpdate:
       type: object
       additionalProperties: false

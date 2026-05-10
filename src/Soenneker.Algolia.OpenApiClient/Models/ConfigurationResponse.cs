@@ -35,7 +35,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.Exclude Exclude { get; set; }
 #endif
-        /// <summary>Name of the Query Suggestions index (case-sensitive).</summary>
+        /// <summary>Index name (case-sensitive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IndexName { get; set; }
@@ -43,7 +43,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string IndexName { get; set; }
 #endif
-        /// <summary>Languages for deduplicating singular and plural suggestions.If specified, only the more popular form is included.</summary>
+        /// <summary>Dictionary language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.Languages? Languages { get; set; }

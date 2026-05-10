@@ -29,7 +29,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>A descriptive name for your transformation of what it does.</summary>
+        /// <summary>Description for this variant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -45,7 +45,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput Input { get; set; }
 #endif
-        /// <summary>The uniquely identified name of your transformation.</summary>
+        /// <summary>A/B test name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

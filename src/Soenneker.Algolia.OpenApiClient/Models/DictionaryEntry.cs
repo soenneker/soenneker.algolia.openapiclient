@@ -24,7 +24,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public List<string> Decomposition { get; set; }
 #endif
         /// <summary>ISO code for a supported language.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_supportedLanguage? Language { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage? Language { get; set; }
         /// <summary>Unique identifier for the dictionary entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,7 +80,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "decomposition", n => { Decomposition = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "language", n => { Language = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_supportedLanguage>(); } },
+                { "language", n => { Language = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage>(); } },
                 { "objectID", n => { ObjectID = n.GetStringValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.DictionaryEntryState>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.DictionaryEntryType>(); } },
@@ -96,7 +96,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("decomposition", Decomposition);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_supportedLanguage>("language", Language);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage>("language", Language);
             writer.WriteStringValue("objectID", ObjectID);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.DictionaryEntryState>("state", State);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.DictionaryEntryType>("type", Type);

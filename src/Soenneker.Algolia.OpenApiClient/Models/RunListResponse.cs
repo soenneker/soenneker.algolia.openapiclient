@@ -15,10 +15,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Paginated API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_Pagination? Pagination { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination? Pagination { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_Pagination Pagination { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination Pagination { get; set; }
 #endif
         /// <summary>The runs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,7 +54,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_Pagination>(global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_Pagination.CreateFromDiscriminatorValue); } },
+                { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination>(global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination.CreateFromDiscriminatorValue); } },
                 { "runs", n => { Runs = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Run>(global::Soenneker.Algolia.OpenApiClient.Models.Run.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "window", n => { Window = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Window>(global::Soenneker.Algolia.OpenApiClient.Models.Window.CreateFromDiscriminatorValue); } },
             };
@@ -66,7 +66,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Ingestion_Pagination>("pagination", Pagination);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination>("pagination", Pagination);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Run>("runs", Runs);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Window>("window", Window);
         }

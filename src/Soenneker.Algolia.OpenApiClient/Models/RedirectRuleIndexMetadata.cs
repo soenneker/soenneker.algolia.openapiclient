@@ -17,10 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Redirect rule data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RedirectRuleIndexMetadata_data? Data { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RedirectRuleIndexMetadataData? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RedirectRuleIndexMetadata_data Data { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RedirectRuleIndexMetadataData Data { get; set; }
 #endif
         /// <summary>Destination index for the redirect rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RedirectRuleIndexMetadata_data>(global::Soenneker.Algolia.OpenApiClient.Models.RedirectRuleIndexMetadata_data.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RedirectRuleIndexMetadataData>(global::Soenneker.Algolia.OpenApiClient.Models.RedirectRuleIndexMetadataData.CreateFromDiscriminatorValue); } },
                 { "dest", n => { Dest = n.GetStringValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
@@ -87,7 +87,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RedirectRuleIndexMetadata_data>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RedirectRuleIndexMetadataData>("data", Data);
             writer.WriteStringValue("dest", Dest);
             writer.WriteStringValue("reason", Reason);
             writer.WriteStringValue("source", Source);

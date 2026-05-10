@@ -122,7 +122,7 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Crawl_runs
 #endif
             /// <summary>Order of the query &apos;ASC&apos; or &apos;DESC&apos;.</summary>
             [QueryParameter("order")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.Parameters_order? Order { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.ParametersOrder? Order { get; set; }
             /// <summary>Status to filter &apos;DONE&apos;, &apos;SKIPPED&apos; or &apos;FAILED&apos;.</summary>
             [QueryParameter("status")]
             public global::Soenneker.Algolia.OpenApiClient.Models.UrlsCrawledGroupStatus? Status { get; set; }

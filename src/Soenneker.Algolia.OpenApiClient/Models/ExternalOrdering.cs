@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
+    /// <summary>Ordering to apply on the injected items coming from the external source. &apos;default&apos; means the items will be ordered as they are in the index (natural relevance) in the smart group. &apos;userDefined&apos; means the order in which the objectIDs are provided in the run request payload will be preserved in the smart group.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ExternalOrdering
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "default")]
         #pragma warning disable CS1591

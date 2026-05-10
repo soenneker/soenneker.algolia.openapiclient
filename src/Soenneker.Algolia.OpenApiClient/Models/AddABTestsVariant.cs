@@ -39,11 +39,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.AddABTestsVariant();
-            if("abTestsVariant".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("AbTestsVariant".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AbTestsVariant = new global::Soenneker.Algolia.OpenApiClient.Models.AbTestsVariant();
             }
-            else if("abTestsVariantSearchParams".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("AbTestsVariantSearchParams".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AbTestsVariantSearchParams = new global::Soenneker.Algolia.OpenApiClient.Models.AbTestsVariantSearchParams();
             }

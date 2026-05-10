@@ -20,7 +20,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string AppID { get; set; }
 #endif
-        /// <summary>Date and time when the resource was created, in RFC 3339 format.</summary>
+        /// <summary>Date and time when the A/B test was created, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedAt { get; set; }
@@ -43,10 +43,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The progress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Run_progress? Progress { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunProgress? Progress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Run_progress Progress { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunProgress Progress { get; set; }
 #endif
         /// <summary>More information about the task run&apos;s outcome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,7 +109,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "failureThreshold", n => { FailureThreshold = n.GetIntValue(); } },
                 { "finishedAt", n => { FinishedAt = n.GetStringValue(); } },
                 { "outcome", n => { Outcome = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RunOutcome>(); } },
-                { "progress", n => { Progress = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Run_progress>(global::Soenneker.Algolia.OpenApiClient.Models.Run_progress.CreateFromDiscriminatorValue); } },
+                { "progress", n => { Progress = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunProgress>(global::Soenneker.Algolia.OpenApiClient.Models.RunProgress.CreateFromDiscriminatorValue); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "reasonCode", n => { ReasonCode = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RunReasonCode>(); } },
                 { "runID", n => { RunID = n.GetStringValue(); } },
@@ -131,7 +131,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("failureThreshold", FailureThreshold);
             writer.WriteStringValue("finishedAt", FinishedAt);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RunOutcome>("outcome", Outcome);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Run_progress>("progress", Progress);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunProgress>("progress", Progress);
             writer.WriteStringValue("reason", Reason);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RunReasonCode>("reasonCode", ReasonCode);
             writer.WriteStringValue("runID", RunID);

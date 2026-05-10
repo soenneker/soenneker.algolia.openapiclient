@@ -86,7 +86,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public bool? GetRankingInfo { get; set; }
         /// <summary>Number of hits per page.</summary>
         public int? HitsPerPage { get; set; }
-        /// <summary>A list of extenrally injected objectID groups into from an external source.</summary>
+        /// <summary>An object containing keys corresponding to the `key`s from an injection&apos;s `injectedItems` and values containing a list of hits to inject.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.Params_injectedItems? InjectedItems { get; set; }

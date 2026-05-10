@@ -16,18 +16,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_condition? Condition { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition? Condition { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Search_condition Condition { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition Condition { get; set; }
 #endif
         /// <summary>Conditions that trigger a rule.Some consequences require specific conditions or don&apos;t require any condition.For more information, see [Conditions](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/#conditions).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Search_condition>? Conditions { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition>? Conditions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Search_condition> Conditions { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition> Conditions { get; set; }
 #endif
         /// <summary>Effect of the rule.For more information, see [Consequences](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/#consequences).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,10 +74,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Time periods when the rule is active.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Search_timeRange>? Validity { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchTimeRange>? Validity { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Search_timeRange> Validity { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchTimeRange> Validity { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -97,15 +97,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "condition", n => { Condition = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_condition>(global::Soenneker.Algolia.OpenApiClient.Models.Search_condition.CreateFromDiscriminatorValue); } },
-                { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Search_condition>(global::Soenneker.Algolia.OpenApiClient.Models.Search_condition.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "condition", n => { Condition = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition>(global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition.CreateFromDiscriminatorValue); } },
+                { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition>(global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "consequence", n => { Consequence = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Consequence>(global::Soenneker.Algolia.OpenApiClient.Models.Consequence.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "objectID", n => { ObjectID = n.GetStringValue(); } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "validity", n => { Validity = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Search_timeRange>(global::Soenneker.Algolia.OpenApiClient.Models.Search_timeRange.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "validity", n => { Validity = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchTimeRange>(global::Soenneker.Algolia.OpenApiClient.Models.SearchTimeRange.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -115,15 +115,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Search_condition>("condition", Condition);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Search_condition>("conditions", Conditions);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition>("condition", Condition);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition>("conditions", Conditions);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Consequence>("consequence", Consequence);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("objectID", ObjectID);
             writer.WriteStringValue("scope", Scope);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Search_timeRange>("validity", Validity);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchTimeRange>("validity", Validity);
         }
     }
 }

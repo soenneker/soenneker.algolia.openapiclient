@@ -34,7 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Monitoring.One.Indexing.Item
         {
         }
         /// <summary>
-        /// Retrieves average times for indexing operations for selected clusters.
+        /// Retrieves indexing latency metrics for selected clusters.This endpoint is intended for infrastructure-level monitoring and availability checks.The returned value reflects latency measured on Algolia&apos;s internal monitoring indexand is reported in milliseconds.This metric isn&apos;t intended to represent the indexing performance of an individualapplication or index. To measure when an indexing operation has completed for yourapplication, use the `waitTask` method.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Monitoring.One.Indexing.Item.WithClustersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Algolia.OpenApiClient.Monitoring.One.Indexing.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Monitoring.One.Indexing.Item.WithClustersGetResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Monitoring.One.Indexing.Item.WithClustersGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves average times for indexing operations for selected clusters.
+        /// Retrieves indexing latency metrics for selected clusters.This endpoint is intended for infrastructure-level monitoring and availability checks.The returned value reflects latency measured on Algolia&apos;s internal monitoring indexand is reported in milliseconds.This metric isn&apos;t intended to represent the indexing performance of an individualapplication or index. To measure when an indexing operation has completed for yourapplication, use the `waitTask` method.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

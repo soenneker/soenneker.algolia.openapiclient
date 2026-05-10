@@ -47,15 +47,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.GetTopSearchesResponse();
-            if("topSearchesResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("TopSearchesResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TopSearchesResponse = new global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponse();
             }
-            else if("topSearchesResponseWithAnalytics".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TopSearchesResponseWithAnalytics".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TopSearchesResponseWithAnalytics = new global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithAnalytics();
             }
-            else if("topSearchesResponseWithRevenueAnalytics".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TopSearchesResponseWithRevenueAnalytics".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TopSearchesResponseWithRevenueAnalytics = new global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithRevenueAnalytics();
             }

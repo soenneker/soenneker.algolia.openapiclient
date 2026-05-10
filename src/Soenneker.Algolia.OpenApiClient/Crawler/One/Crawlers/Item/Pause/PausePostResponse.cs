@@ -14,14 +14,8 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Pause
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Universally unique identifier (UUID) of the task.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TaskId { get; set; }
-#nullable restore
-#else
-        public string TaskId { get; set; }
-#endif
+        /// <summary>Unique identifier of a task.A successful API response means that a task was added to a queue.It might not run immediately.You can check the task&apos;s progress with the [`task` operation](https://www.algolia.com/doc/rest-api/search/get-task) and this task ID.</summary>
+        public long? TaskId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Pause.PausePostResponse"/> and sets the default values.
         /// </summary>
@@ -47,7 +41,7 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Pause
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "taskId", n => { TaskId = n.GetStringValue(); } },
+                { "taskId", n => { TaskId = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +51,7 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Pause
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("taskId", TaskId);
+            writer.WriteLongValue("taskId", TaskId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>A/B test status.- `active`. The A/B test is live and search traffic is split between the two variants.- `stopped`. You stopped the A/B test. The A/B test data is still available for analysis.- `expired`. The A/B test was automatically stopped after reaching its end date.- `failed`. Creating the A/B test failed.</summary>
+        /// <summary>The status property</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.Status? Status { get; set; }
         /// <summary>Date and time when the A/B test was stopped, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

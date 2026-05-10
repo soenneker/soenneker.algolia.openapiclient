@@ -36,10 +36,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Object with detailed information about the record&apos;s ranking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Recommend_rankingInfo? RankingInfo { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendRankingInfo? RankingInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Recommend_rankingInfo RankingInfo { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendRankingInfo RankingInfo { get; set; }
 #endif
         /// <summary>Recommendation score.</summary>
         public double? Score { get; set; }
@@ -79,7 +79,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "_distinctSeqID", n => { DistinctSeqID = n.GetIntValue(); } },
                 { "_highlightResult", n => { HighlightResult = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendHit_highlightResult>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendHit_highlightResult.CreateFromDiscriminatorValue); } },
                 { "objectID", n => { ObjectID = n.GetStringValue(); } },
-                { "_rankingInfo", n => { RankingInfo = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Recommend_rankingInfo>(global::Soenneker.Algolia.OpenApiClient.Models.Recommend_rankingInfo.CreateFromDiscriminatorValue); } },
+                { "_rankingInfo", n => { RankingInfo = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRankingInfo>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendRankingInfo.CreateFromDiscriminatorValue); } },
                 { "_score", n => { Score = n.GetDoubleValue(); } },
                 { "_snippetResult", n => { SnippetResult = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendHit_snippetResult>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendHit_snippetResult.CreateFromDiscriminatorValue); } },
             };
@@ -94,7 +94,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("_distinctSeqID", DistinctSeqID);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendHit_highlightResult>("_highlightResult", HighlightResult);
             writer.WriteStringValue("objectID", ObjectID);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Recommend_rankingInfo>("_rankingInfo", RankingInfo);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRankingInfo>("_rankingInfo", RankingInfo);
             writer.WriteDoubleValue("_score", Score);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendHit_snippetResult>("_snippetResult", SnippetResult);
             writer.WriteAdditionalData(AdditionalData);

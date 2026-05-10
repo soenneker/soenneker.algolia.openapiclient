@@ -15,26 +15,26 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Deduplication configures the methods used to resolve duplicate items between main search results and injected group results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Injection_deduplication? Deduplication { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionDeduplication? Deduplication { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Injection_deduplication Deduplication { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionDeduplication Deduplication { get; set; }
 #endif
         /// <summary>list of injected items of the current Composition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.InjectedItem>? InjectedItems { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItem>? InjectedItems { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.InjectedItem> InjectedItems { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItem> InjectedItems { get; set; }
 #endif
-        /// <summary>The main property</summary>
+        /// <summary>Main defines the organic result set of the injection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Injection_main? Main { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMain? Main { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Injection_main Main { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMain Main { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,9 +54,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deduplication", n => { Deduplication = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Injection_deduplication>(global::Soenneker.Algolia.OpenApiClient.Models.Injection_deduplication.CreateFromDiscriminatorValue); } },
-                { "injectedItems", n => { InjectedItems = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.InjectedItem>(global::Soenneker.Algolia.OpenApiClient.Models.InjectedItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "main", n => { Main = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Injection_main>(global::Soenneker.Algolia.OpenApiClient.Models.Injection_main.CreateFromDiscriminatorValue); } },
+                { "deduplication", n => { Deduplication = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionDeduplication>(global::Soenneker.Algolia.OpenApiClient.Models.InjectionDeduplication.CreateFromDiscriminatorValue); } },
+                { "injectedItems", n => { InjectedItems = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItem>(global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "main", n => { Main = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionMain>(global::Soenneker.Algolia.OpenApiClient.Models.InjectionMain.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,9 +66,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Injection_deduplication>("deduplication", Deduplication);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.InjectedItem>("injectedItems", InjectedItems);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Injection_main>("main", Main);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionDeduplication>("deduplication", Deduplication);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItem>("injectedItems", InjectedItems);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionMain>("main", Main);
         }
     }
 }

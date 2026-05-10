@@ -16,10 +16,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>A list of actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ActionObject>? Actions { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ActionObject?>? Actions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ActionObject> Actions { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ActionObject?> Actions { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -106,10 +106,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Function for extracting URLs from links on crawled pages.For more information, see the [`linkExtractor` documentation](https://www.algolia.com/doc/tools/crawler/apis/configuration/link-extractor).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Configuration_linkExtractor? LinkExtractor { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationLinkExtractor? LinkExtractor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Configuration_linkExtractor LinkExtractor { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationLinkExtractor LinkExtractor { get; set; }
 #endif
         /// <summary>Authorization method and credentials for crawling protected content.The Crawler supports these authentication methods:- **Basic authentication**.  The Crawler obtains a session cookie from the login page.- **OAuth 2.0 authentication** (`oauthRequest`).  The Crawler uses OAuth 2.0 client credentials to obtain an access token for authentication.**Basic authentication**The Crawler extracts the `Set-Cookie` response header from the login page, stores that cookie,and sends it in the `Cookie` header when crawling all pages defined in the configuration.This cookie is retrieved only at the start of each full crawl.If it expires, it isn&apos;t automatically renewed.The Crawler can obtain the session cookie in one of two ways:- **HTTP request authentication** (`fetchRequest`).  The Crawler sends a direct request with your credentials to the login endpoint, similar to a `curl` command.- **Browser-based authentication** (`browserRequest`).  The Crawler emulates a web browser by loading the login page, entering the credentials,  and submitting the login form as a real user would.**OAuth 2.0**The crawler supports [OAuth 2.0 client credentials grant flow](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4):1. It performs an access token request with the provided credentials1. Stores the fetched token in an `Authorization` header1. Sends the token when crawling site pages.This token is only fetched at the beginning of each complete crawl.If it expires, it isn&apos;t automatically renewed.Client authentication passes the credentials (`client_id` and `client_secret`) [in the request body](https://datatracker.ietf.org/doc/html/rfc6749#section-2.3.1).The [Azure AD v1.0](https://learn.microsoft.com/en-us/previous-versions/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow) provider is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -200,7 +200,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ActionObject>(global::Soenneker.Algolia.OpenApiClient.Models.ActionObject.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "actions", n => { Actions = n.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.ActionObject>()?.AsList(); } },
                 { "apiKey", n => { ApiKey = n.GetStringValue(); } },
                 { "appId", n => { AppId = n.GetStringValue(); } },
                 { "exclusionPatterns", n => { ExclusionPatterns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -214,7 +214,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "ignoreRobotsTxtRules", n => { IgnoreRobotsTxtRules = n.GetBoolValue(); } },
                 { "indexPrefix", n => { IndexPrefix = n.GetStringValue(); } },
                 { "initialIndexSettings", n => { InitialIndexSettings = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Configuration_initialIndexSettings>(global::Soenneker.Algolia.OpenApiClient.Models.Configuration_initialIndexSettings.CreateFromDiscriminatorValue); } },
-                { "linkExtractor", n => { LinkExtractor = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Configuration_linkExtractor>(global::Soenneker.Algolia.OpenApiClient.Models.Configuration_linkExtractor.CreateFromDiscriminatorValue); } },
+                { "linkExtractor", n => { LinkExtractor = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationLinkExtractor>(global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationLinkExtractor.CreateFromDiscriminatorValue); } },
                 { "login", n => { Login = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Login>(global::Soenneker.Algolia.OpenApiClient.Models.Login.CreateFromDiscriminatorValue); } },
                 { "maxDepth", n => { MaxDepth = n.GetIntValue(); } },
                 { "maxUrls", n => { MaxUrls = n.GetIntValue(); } },
@@ -235,7 +235,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ActionObject>("actions", Actions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.ActionObject>("actions", Actions);
             writer.WriteStringValue("apiKey", ApiKey);
             writer.WriteStringValue("appId", AppId);
             writer.WriteCollectionOfPrimitiveValues<string>("exclusionPatterns", ExclusionPatterns);
@@ -249,7 +249,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteBoolValue("ignoreRobotsTxtRules", IgnoreRobotsTxtRules);
             writer.WriteStringValue("indexPrefix", IndexPrefix);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Configuration_initialIndexSettings>("initialIndexSettings", InitialIndexSettings);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Configuration_linkExtractor>("linkExtractor", LinkExtractor);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationLinkExtractor>("linkExtractor", LinkExtractor);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Login>("login", Login);
             writer.WriteIntValue("maxDepth", MaxDepth);
             writer.WriteIntValue("maxUrls", MaxUrls);

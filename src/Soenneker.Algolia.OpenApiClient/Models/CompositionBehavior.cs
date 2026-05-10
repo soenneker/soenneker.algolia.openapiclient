@@ -39,11 +39,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.CompositionBehavior();
-            if("compositionInjectionBehavior".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CompositionInjectionBehavior".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CompositionInjectionBehavior = new global::Soenneker.Algolia.OpenApiClient.Models.CompositionInjectionBehavior();
             }
-            else if("compositionMultifeedBehavior".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CompositionMultifeedBehavior".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CompositionMultifeedBehavior = new global::Soenneker.Algolia.OpenApiClient.Models.CompositionMultifeedBehavior();
             }

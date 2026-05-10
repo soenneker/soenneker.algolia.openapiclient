@@ -88,10 +88,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Total monetary value of this event in units of `currency`.This should be equal to the sum of `price` times `quantity`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Insights_value? Value { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InsightsValue? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Insights_value Value { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InsightsValue Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AddedToCartObjectIDsAfterSearch"/> and sets the default values.
@@ -129,7 +129,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "queryID", n => { QueryID = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetLongValue(); } },
                 { "userToken", n => { UserToken = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Insights_value>(global::Soenneker.Algolia.OpenApiClient.Models.Insights_value.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InsightsValue>(global::Soenneker.Algolia.OpenApiClient.Models.InsightsValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -150,7 +150,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("queryID", QueryID);
             writer.WriteLongValue("timestamp", Timestamp);
             writer.WriteStringValue("userToken", UserToken);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Insights_value>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InsightsValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

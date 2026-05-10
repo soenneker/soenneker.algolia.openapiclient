@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceBigCommerce"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceBigQuery"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceCommercetools"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceCSV"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceDocker"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceGA4BigQueryExport"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceJSON"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceShopify"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceAlgoliaIndex"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceBigCommerce"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceBigQuery"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceCommercetools"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceCSV"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceDocker"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceGA4BigQueryExport"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceJSON"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceShopify"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SourceInput : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceAlgoliaIndex"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceAlgoliaIndex? SourceAlgoliaIndex { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceAlgoliaIndex SourceAlgoliaIndex { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceBigCommerce"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,7 +95,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.SourceInput();
-            if("SourceBigCommerce".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("SourceAlgoliaIndex".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SourceAlgoliaIndex = new global::Soenneker.Algolia.OpenApiClient.Models.SourceAlgoliaIndex();
+            }
+            else if("SourceBigCommerce".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SourceBigCommerce = new global::Soenneker.Algolia.OpenApiClient.Models.SourceBigCommerce();
             }
@@ -127,7 +139,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(SourceBigCommerce != null)
+            if(SourceAlgoliaIndex != null)
+            {
+                return SourceAlgoliaIndex.GetFieldDeserializers();
+            }
+            else if(SourceBigCommerce != null)
             {
                 return SourceBigCommerce.GetFieldDeserializers();
             }
@@ -168,7 +184,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(SourceBigCommerce != null)
+            if(SourceAlgoliaIndex != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceAlgoliaIndex>(null, SourceAlgoliaIndex);
+            }
+            else if(SourceBigCommerce != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceBigCommerce>(null, SourceBigCommerce);
             }
