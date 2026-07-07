@@ -21,10 +21,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Rules applied to the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_appliedRules>? AppliedRules { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseSearchResponseAppliedRulesItemProperty>? AppliedRules { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_appliedRules> AppliedRules { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseSearchResponseAppliedRulesItemProperty> AppliedRules { get; set; }
 #endif
         /// <summary>Computed geographical location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,18 +80,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Facet counts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_facets? Facets { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseFacets? Facets { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_facets Facets { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseFacets Facets { get; set; }
 #endif
         /// <summary>Statistics for numerical facets.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_facets_stats? FacetsStats { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseFacetsStats? FacetsStats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_facets_stats FacetsStats { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseFacetsStats FacetsStats { get; set; }
 #endif
         /// <summary>Search results (hits).Hits are records from your index that match the search criteria, augmented with additional attributes, such as, for highlighting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -156,10 +156,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Experimental. List of processing steps and their times, in milliseconds. You can use this list to investigate performance issues.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_processingTimingsMS? ProcessingTimingsMS { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseProcessingTimingsMs? ProcessingTimingsMS { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_processingTimingsMS ProcessingTimingsMS { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseProcessingTimingsMs ProcessingTimingsMS { get; set; }
 #endif
         /// <summary>Search query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -214,10 +214,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>An object with custom data.You can store up to 32kB as custom data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_userData? UserData { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseUserData? UserData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_userData UserData { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseUserData UserData { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse"/> and sets the default values.
@@ -246,7 +246,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "abTestID", n => { AbTestID = n.GetIntValue(); } },
                 { "abTestVariantID", n => { AbTestVariantID = n.GetIntValue(); } },
-                { "appliedRules", n => { AppliedRules = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_appliedRules>(global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_appliedRules.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "appliedRules", n => { AppliedRules = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseSearchResponseAppliedRulesItemProperty>(global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseSearchResponseAppliedRulesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "aroundLatLng", n => { AroundLatLng = n.GetStringValue(); } },
                 { "_automaticInsights", n => { AutomaticInsights = n.GetBoolValue(); } },
                 { "automaticRadius", n => { AutomaticRadius = n.GetStringValue(); } },
@@ -256,8 +256,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "exhaustiveNbHits", n => { ExhaustiveNbHits = n.GetBoolValue(); } },
                 { "exhaustiveTypo", n => { ExhaustiveTypo = n.GetBoolValue(); } },
                 { "extensions", n => { Extensions = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ResponseExtensions>(global::Soenneker.Algolia.OpenApiClient.Models.ResponseExtensions.CreateFromDiscriminatorValue); } },
-                { "facets", n => { Facets = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_facets>(global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_facets.CreateFromDiscriminatorValue); } },
-                { "facets_stats", n => { FacetsStats = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_facets_stats>(global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_facets_stats.CreateFromDiscriminatorValue); } },
+                { "facets", n => { Facets = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseFacets>(global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseFacets.CreateFromDiscriminatorValue); } },
+                { "facets_stats", n => { FacetsStats = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseFacetsStats>(global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseFacetsStats.CreateFromDiscriminatorValue); } },
                 { "hits", n => { Hits = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchHit>(global::Soenneker.Algolia.OpenApiClient.Models.SearchHit.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hitsPerPage", n => { HitsPerPage = n.GetIntValue(); } },
                 { "index", n => { Index = n.GetStringValue(); } },
@@ -270,7 +270,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "params", n => { Params = n.GetStringValue(); } },
                 { "parsedQuery", n => { ParsedQuery = n.GetStringValue(); } },
                 { "processingTimeMS", n => { ProcessingTimeMS = n.GetIntValue(); } },
-                { "processingTimingsMS", n => { ProcessingTimingsMS = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_processingTimingsMS>(global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_processingTimingsMS.CreateFromDiscriminatorValue); } },
+                { "processingTimingsMS", n => { ProcessingTimingsMS = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseProcessingTimingsMs>(global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseProcessingTimingsMs.CreateFromDiscriminatorValue); } },
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "queryAfterRemoval", n => { QueryAfterRemoval = n.GetStringValue(); } },
                 { "queryID", n => { QueryID = n.GetStringValue(); } },
@@ -278,7 +278,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "renderingContent", n => { RenderingContent = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchRenderingContent>(global::Soenneker.Algolia.OpenApiClient.Models.SearchRenderingContent.CreateFromDiscriminatorValue); } },
                 { "serverTimeMS", n => { ServerTimeMS = n.GetIntValue(); } },
                 { "serverUsed", n => { ServerUsed = n.GetStringValue(); } },
-                { "userData", n => { UserData = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_userData>(global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_userData.CreateFromDiscriminatorValue); } },
+                { "userData", n => { UserData = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseUserData>(global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseUserData.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -290,7 +290,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("abTestID", AbTestID);
             writer.WriteIntValue("abTestVariantID", AbTestVariantID);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_appliedRules>("appliedRules", AppliedRules);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseSearchResponseAppliedRulesItemProperty>("appliedRules", AppliedRules);
             writer.WriteStringValue("aroundLatLng", AroundLatLng);
             writer.WriteBoolValue("_automaticInsights", AutomaticInsights);
             writer.WriteStringValue("automaticRadius", AutomaticRadius);
@@ -300,8 +300,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteBoolValue("exhaustiveNbHits", ExhaustiveNbHits);
             writer.WriteBoolValue("exhaustiveTypo", ExhaustiveTypo);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ResponseExtensions>("extensions", Extensions);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_facets>("facets", Facets);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_facets_stats>("facets_stats", FacetsStats);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseFacets>("facets", Facets);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseFacetsStats>("facets_stats", FacetsStats);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchHit>("hits", Hits);
             writer.WriteIntValue("hitsPerPage", HitsPerPage);
             writer.WriteStringValue("index", Index);
@@ -314,7 +314,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("params", Params);
             writer.WriteStringValue("parsedQuery", ParsedQuery);
             writer.WriteIntValue("processingTimeMS", ProcessingTimeMS);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_processingTimingsMS>("processingTimingsMS", ProcessingTimingsMS);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseProcessingTimingsMs>("processingTimingsMS", ProcessingTimingsMS);
             writer.WriteStringValue("query", Query);
             writer.WriteStringValue("queryAfterRemoval", QueryAfterRemoval);
             writer.WriteStringValue("queryID", QueryID);
@@ -322,7 +322,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchRenderingContent>("renderingContent", RenderingContent);
             writer.WriteIntValue("serverTimeMS", ServerTimeMS);
             writer.WriteStringValue("serverUsed", ServerUsed);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponse_userData>("userData", UserData);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BrowseResponseUserData>("userData", UserData);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

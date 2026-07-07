@@ -16,7 +16,7 @@ info:
 
 
     For more information, see [Algolia's
-    ecosystem](https://www.algolia.com/doc/guides/getting-started/how-algolia-works/in-depth/ecosystem).
+    ecosystem](https://www.algolia.com/doc/libraries).
 
 
     ## Base URLs
@@ -1267,7 +1267,13 @@ paths:
                     description: Retrieved records.
                     items:
                       type: object
-                      description: Retrieved record.
+                      description: >
+                        Retrieved record.
+
+
+                        `null` if the requested `objectID` doesn't exist in the
+                        index.
+                      nullable: true
                       x-is-generic: true
                 required:
                   - results
@@ -3646,12 +3652,16 @@ paths:
         - search
       x-available-languages:
         - csharp
+        - dart
         - go
         - java
         - javascript
+        - kotlin
         - php
         - python
+        - ruby
         - scala
+        - swift
       x-acl:
         - addObject
         - deleteIndex
@@ -3879,12 +3889,16 @@ paths:
         - search
       x-available-languages:
         - csharp
+        - dart
         - go
         - java
         - javascript
+        - kotlin
         - php
         - python
+        - ruby
         - scala
+        - swift
       x-acl:
         - addObject
         - deleteIndex
@@ -4113,12 +4127,16 @@ paths:
       x-helper: true
       x-available-languages:
         - csharp
+        - dart
         - go
         - java
         - javascript
+        - kotlin
         - php
         - python
+        - ruby
         - scala
+        - swift
       tags:
         - search
       x-acl:
@@ -6899,10 +6917,46 @@ components:
             accurate](https://support.algolia.com/hc/articles/4406975248145-Why-are-my-facet-and-hit-counts-not-accurate).
         processingTimeMS:
           $ref: '#/components/schemas/processingTimeMS'
+    searchResponsePartial:
+      description: >
+        Partial search response returned when the `responseFields` parameter
+        excludes
+
+        fields like `hits`. Contains all possible search response properties but
+
+        none are required, so it acts as an unconditional fallback during oneOf
+
+        deserialization.
+      additionalProperties: true
+      allOf:
+        - $ref: '#/components/schemas/baseSearchResponse'
+        - $ref: '#/components/schemas/SearchPagination'
+        - type: object
+          additionalProperties: true
+          properties:
+            hits:
+              type: array
+              description: >
+                Search results (hits).
+
+
+                Hits are records from your index that match the search criteria,
+                augmented with additional attributes, such as, for highlighting.
+              items:
+                $ref: '#/components/schemas/hit'
+            query:
+              $ref: '#/components/schemas/query'
+            params:
+              type: string
+              description: URL-encoded string of all search parameters.
+              example: query=a&hitsPerPage=20
+            extensions:
+              $ref: '#/components/schemas/responseExtensions'
     searchResult:
       oneOf:
         - $ref: '#/components/schemas/searchResponse'
         - $ref: '#/components/schemas/searchForFacetValuesResponse'
+        - $ref: '#/components/schemas/searchResponsePartial'
     cursor:
       type: object
       additionalProperties: false
@@ -8537,6 +8591,76 @@ components:
         - settings
         - synonyms
         - rules
+    fetchedIndexAbTestTarget:
+      title: abTestTarget
+      type: object
+      description: A/B test target criteria. Only present for v2 and later tests.
+      properties:
+        indexName:
+          type: string
+          description: Index name to match. Use `*` to target the entire application.
+          example: movies
+      required:
+        - indexName
+    fetchedIndexAbTestVariant:
+      title: abTestVariant
+      type: object
+      description: A/B test variant for an index.
+      properties:
+        indexName:
+          type: string
+          description: >-
+            Index name of the variant. Only present for v0/v1 tests; in v2 this
+            moves into `payload`.
+          example: movies
+        percentage:
+          type: integer
+          description: Percentage of search traffic routed to this variant.
+          example: 50
+        customSearchParameters:
+          type: string
+          description: >-
+            URL-encoded custom search parameters applied to this variant. Only
+            present for v0/v1 tests; in v2 this moves into `payload`.
+        payload:
+          type: object
+          additionalProperties: true
+          description: >-
+            Type-specific configuration. Only present for v2 and later tests.
+            Shape depends on the parent A/B test's `type`.
+      required:
+        - percentage
+    fetchedIndexAbTest:
+      title: abTest
+      type: object
+      description: >-
+        A/B test metadata. Only present if the index is part of an active A/B
+        test.
+      properties:
+        id:
+          type: integer
+          description: A/B test ID.
+          example: 12345
+        version:
+          type: integer
+          description: A/B test schema version. Only present for v2 and later tests.
+          example: 2
+        type:
+          type: string
+          description: >-
+            A/B test type. Only present for v2 and later tests. Currently always
+            `index-configuration`.
+          example: index-configuration
+        target:
+          $ref: '#/components/schemas/fetchedIndexAbTestTarget'
+        variants:
+          type: array
+          description: A/B test variants.
+          items:
+            $ref: '#/components/schemas/fetchedIndexAbTestVariant'
+      required:
+        - id
+        - variants
     fetchedIndex:
       type: object
       additionalProperties: false
@@ -8606,6 +8730,15 @@ components:
             replica](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/how-to/sort-an-index-alphabetically/#virtual-replicas).
           x-categories:
             - Ranking
+        abTest:
+          $ref: '#/components/schemas/fetchedIndexAbTest'
+        sourceABTest:
+          type: string
+          description: >-
+            Name of the index that owns the A/B test configuration. Only present
+            when this index participates in an A/B test configured on another
+            index.
+          example: movies_dev_a
       required:
         - name
         - createdAt

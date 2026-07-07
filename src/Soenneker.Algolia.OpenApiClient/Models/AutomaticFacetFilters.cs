@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilters_Branch1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilters_Branch2"/>
+    /// Composed type wrapper for classes List&lt;global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilter&gt;, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AutomaticFacetFilters : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilters_Branch1"/></summary>
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilter&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilters_Branch1? AutomaticFacetFiltersBranch1 { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilter>? AutomaticFacetFilter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilters_Branch1 AutomaticFacetFiltersBranch1 { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilter> AutomaticFacetFilter { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilters_Branch2"/></summary>
+        /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilters_Branch2? AutomaticFacetFiltersBranch2 { get; set; }
+        public List<string>? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilters_Branch2 AutomaticFacetFiltersBranch2 { get; set; }
+        public List<string> String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,15 +37,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilters();
-            if("AutomaticFacetFilters_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilter>(global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilter.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilter> automaticFacetFilterValue)
             {
-                result.AutomaticFacetFiltersBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilters_Branch1();
+                result.AutomaticFacetFilter = automaticFacetFilterValue;
             }
-            else if("AutomaticFacetFilters_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
             {
-                result.AutomaticFacetFiltersBranch2 = new global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilters_Branch2();
+                result.String = stringValue;
             }
             return result;
         }
@@ -55,14 +55,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(AutomaticFacetFiltersBranch1 != null)
-            {
-                return AutomaticFacetFiltersBranch1.GetFieldDeserializers();
-            }
-            else if(AutomaticFacetFiltersBranch2 != null)
-            {
-                return AutomaticFacetFiltersBranch2.GetFieldDeserializers();
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -72,13 +64,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(AutomaticFacetFiltersBranch1 != null)
+            if(AutomaticFacetFilter != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilters_Branch1>(null, AutomaticFacetFiltersBranch1);
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilter>(null, AutomaticFacetFilter);
             }
-            else if(AutomaticFacetFiltersBranch2 != null)
+            else if(String != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilters_Branch2>(null, AutomaticFacetFiltersBranch2);
+                writer.WriteCollectionOfPrimitiveValues<string>(null, String);
             }
         }
     }

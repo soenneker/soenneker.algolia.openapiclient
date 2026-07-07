@@ -26,7 +26,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("runID", position);
+                urlTplParams.Add("runId", position);
                 return new global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs.Item.WithRunItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }

@@ -16,10 +16,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Configuration of the spec.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateDocker_configuration? Configuration { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateDockerConfigurationProperty? Configuration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateDocker_configuration Configuration { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateDockerConfigurationProperty Configuration { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateDocker_configuration>(global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateDocker_configuration.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateDockerConfigurationProperty>(global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateDockerConfigurationProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateDocker_configuration>("configuration", Configuration);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateDockerConfigurationProperty>("configuration", Configuration);
         }
     }
 }

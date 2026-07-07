@@ -23,10 +23,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>This field is always null when used with the Push endpoint.When used for a source discover or source validate run, it will include the sampled data of the source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponse_data>? Data { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItemProperty>? Data { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponse_data> Data { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItemProperty> Data { get; set; }
 #endif
         /// <summary>Universally unique identifier (UUID) of an event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,7 +79,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponse_data>(global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponse_data.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItemProperty>(global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "eventID", n => { EventID = n.GetStringValue(); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchEvent>(global::Soenneker.Algolia.OpenApiClient.Models.SearchEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
@@ -94,7 +94,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("createdAt", CreatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponse_data>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItemProperty>("data", Data);
             writer.WriteStringValue("eventID", EventID);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchEvent>("events", Events);
             writer.WriteStringValue("message", Message);

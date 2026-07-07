@@ -23,7 +23,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Number of occurrences.</summary>
         public int? Count { get; set; }
         /// <summary>Character that characterizes how the filter is applied.For example, for a facet filter `facet:value`, `:` is the operator.For a numeric filter `count&gt;50`, `&gt;` is the operator.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.Operator? Operator { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.OperatorType? Operator { get; set; }
         /// <summary>Attribute value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,7 +52,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "attribute", n => { Attribute = n.GetStringValue(); } },
                 { "count", n => { Count = n.GetIntValue(); } },
-                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Operator>(); } },
+                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.OperatorType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -65,7 +65,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("attribute", Attribute);
             writer.WriteIntValue("count", Count);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Operator>("operator", Operator);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.OperatorType>("operator", Operator);
             writer.WriteStringValue("value", Value);
         }
     }

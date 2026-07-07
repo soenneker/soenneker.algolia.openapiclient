@@ -49,7 +49,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<string> ObjectIDs { get; set; }
 #endif
-        /// <summary>Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.If not provided, we use the time at which the request was received.</summary>
+        /// <summary>Timestamp, measured in milliseconds since the Unix epoch.</summary>
         public long? Timestamp { get; set; }
         /// <summary>Anonymous or pseudonymous user identifier.Don&apos;t use personally identifiable information in user tokens.For more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -36,7 +36,7 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Asterisk.Recomme
         /// <summary>
         /// Retrieves recommendations from selected AI models.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Asterisk.Recommendations.RecommendationsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetRecommendationsResponse"/></returns>
         /// <param name="body">Recommend request body.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -46,11 +46,11 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Asterisk.Recomme
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Asterisk.Recommendations.RecommendationsPostResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.RecommendGetRecommendations body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.GetRecommendationsResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.RecommendGetRecommendationsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Asterisk.Recommendations.RecommendationsPostResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.RecommendGetRecommendations body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.GetRecommendationsResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.RecommendGetRecommendationsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -62,7 +62,7 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Asterisk.Recomme
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.RecommendErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.RecommendErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Asterisk.Recommendations.RecommendationsPostResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Asterisk.Recommendations.RecommendationsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.GetRecommendationsResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.GetRecommendationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves recommendations from selected AI models.
@@ -72,11 +72,11 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Asterisk.Recomme
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.RecommendGetRecommendations body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.RecommendGetRecommendationsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.RecommendGetRecommendations body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.RecommendGetRecommendationsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

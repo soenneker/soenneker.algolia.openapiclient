@@ -15,10 +15,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Task IDs. One for each index.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.MultipleBatchResponse_taskID? TaskID { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MultipleBatchResponseTaskId? TaskID { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.MultipleBatchResponse_taskID TaskID { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MultipleBatchResponseTaskId TaskID { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "taskID", n => { TaskID = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MultipleBatchResponse_taskID>(global::Soenneker.Algolia.OpenApiClient.Models.MultipleBatchResponse_taskID.CreateFromDiscriminatorValue); } },
+                { "taskID", n => { TaskID = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MultipleBatchResponseTaskId>(global::Soenneker.Algolia.OpenApiClient.Models.MultipleBatchResponseTaskId.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MultipleBatchResponse_taskID>("taskID", TaskID);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MultipleBatchResponseTaskId>("taskID", TaskID);
         }
     }
 }

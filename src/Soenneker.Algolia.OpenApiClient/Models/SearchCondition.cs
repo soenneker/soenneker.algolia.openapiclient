@@ -41,6 +41,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string Pattern { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition"/> and sets the default values.
+        /// </summary>
+        public SearchCondition()
+        {
+            Alternatives = false;
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition"/></returns>

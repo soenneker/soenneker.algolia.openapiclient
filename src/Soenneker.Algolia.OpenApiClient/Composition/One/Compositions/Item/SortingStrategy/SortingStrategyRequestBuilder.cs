@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.SortingStrategy
 {
     /// <summary>
-    /// Builds and executes requests for operations under \composition\1\compositions\{compositionID}\sortingStrategy
+    /// Builds and executes requests for operations under \composition\1\compositions\{compositionId}\sortingStrategy
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SortingStrategyRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Sort
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SortingStrategyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/composition/1/compositions/{compositionID}/sortingStrategy", pathParameters)
+        public SortingStrategyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/composition/1/compositions/{compositionId}/sortingStrategy", pathParameters)
         {
         }
         /// <summary>
@@ -30,13 +30,13 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Sort
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SortingStrategyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/composition/1/compositions/{compositionID}/sortingStrategy", rawUrl)
+        public SortingStrategyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/composition/1/compositions/{compositionId}/sortingStrategy", rawUrl)
         {
         }
         /// <summary>
         /// Updates the &quot;sortingStrategy&quot; field of an existing composition.This endpoint lets you create a new sorting strategy mapping or replace the configured one.The provided sorting indices must be associated indices or replicas of the main targeted index.This endpoint can&apos;t validate whether the sort index is related to the composition&apos;s main index.Validation fails at runtime if the index you updated isn&apos;t related.The update is applied to the specified composition within the current Algolia application and returns a taskID that can be used to track the operation’s completion.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TaskIDResponseResponseApplicationJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TaskIdResponseResponseJson2"/></returns>
         /// <param name="body">A mapping of sorting labels to the indices (or replicas) that implement those sorting rules. The sorting indices MUST be related to the associated main targeted index in the composition.Each key is the label your frontend sends at runtime (for example, &quot;Price (asc)&quot;), and each value is the name of the index that should be queried when that label is selected.When a request includes a &quot;sortBy&quot; parameter, the platform looks up the corresponding index in this mapping and uses it to execute the query. The main targeted index is replacedwith the sorting strategy index it is mapped to.Up to 20 sorting strategies can be defined.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -46,11 +46,11 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Sort
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.TaskIDResponseResponseApplicationJson?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.SortingStrategy.SortingStrategyPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.TaskIdResponseResponseJson2?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.CompositionUpdateSortingStrategyCompositionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.TaskIDResponseResponseApplicationJson> PostAsync(global::Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.SortingStrategy.SortingStrategyPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.TaskIdResponseResponseJson2> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.CompositionUpdateSortingStrategyCompositionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -62,7 +62,7 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Sort
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.TaskIDResponseResponseApplicationJson>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.TaskIDResponseResponseApplicationJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.TaskIdResponseResponseJson2>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.TaskIdResponseResponseJson2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the &quot;sortingStrategy&quot; field of an existing composition.This endpoint lets you create a new sorting strategy mapping or replace the configured one.The provided sorting indices must be associated indices or replicas of the main targeted index.This endpoint can&apos;t validate whether the sort index is related to the composition&apos;s main index.Validation fails at runtime if the index you updated isn&apos;t related.The update is applied to the specified composition within the current Algolia application and returns a taskID that can be used to track the operation’s completion.
@@ -72,11 +72,11 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Sort
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.SortingStrategy.SortingStrategyPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.CompositionUpdateSortingStrategyCompositionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.SortingStrategy.SortingStrategyPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.CompositionUpdateSortingStrategyCompositionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

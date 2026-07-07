@@ -8,34 +8,20 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Dictionary language.
+    /// Composed type wrapper for classes <see cref="bool"/>, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Languages : IParsable
+    public partial class Languages : IComposedTypeWrapper, IParsable
     {
-        /// <summary>The compounds property</summary>
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.DictionaryLanguage? Compounds { get; set; }
+        public List<string>? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.DictionaryLanguage Compounds { get; set; }
-#endif
-        /// <summary>The plurals property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.DictionaryLanguage? Plurals { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.DictionaryLanguage Plurals { get; set; }
-#endif
-        /// <summary>The stopwords property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.DictionaryLanguage? Stopwords { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.DictionaryLanguage Stopwords { get; set; }
+        public List<string> String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +31,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.Languages CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.Languages();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Algolia.OpenApiClient.Models.Languages();
+            if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
+            }
+            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+            {
+                result.String = stringValue;
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,12 +49,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
-            {
-                { "compounds", n => { Compounds = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.DictionaryLanguage>(global::Soenneker.Algolia.OpenApiClient.Models.DictionaryLanguage.CreateFromDiscriminatorValue); } },
-                { "plurals", n => { Plurals = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.DictionaryLanguage>(global::Soenneker.Algolia.OpenApiClient.Models.DictionaryLanguage.CreateFromDiscriminatorValue); } },
-                { "stopwords", n => { Stopwords = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.DictionaryLanguage>(global::Soenneker.Algolia.OpenApiClient.Models.DictionaryLanguage.CreateFromDiscriminatorValue); } },
-            };
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -67,9 +58,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.DictionaryLanguage>("compounds", Compounds);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.DictionaryLanguage>("plurals", Plurals);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.DictionaryLanguage>("stopwords", Stopwords);
+            if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
+            }
+            else if(String != null)
+            {
+                writer.WriteCollectionOfPrimitiveValues<string>(null, String);
+            }
         }
     }
 }

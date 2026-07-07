@@ -7,28 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters_Branch1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters_Branch2"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecommendNumericFilters : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class RecommendNumericFilters : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters_Branch1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters_Branch1? RecommendNumericFiltersBranch1 { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters>? RecommendNumericFiltersProp { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters_Branch1 RecommendNumericFiltersBranch1 { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters> RecommendNumericFiltersProp { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters_Branch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters_Branch2? RecommendNumericFiltersBranch2 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters_Branch2 RecommendNumericFiltersBranch2 { get; set; }
+        public string String { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters"/> and sets the default values.
+        /// </summary>
+        public RecommendNumericFilters()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,15 +45,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters();
-            if("RecommendNumericFilters_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetStringValue() is string stringValue)
             {
-                result.RecommendNumericFiltersBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters_Branch1();
+                result.String = stringValue;
             }
-            else if("RecommendNumericFilters_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters> recommendNumericFiltersPropValue)
             {
-                result.RecommendNumericFiltersBranch2 = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters_Branch2();
+                result.RecommendNumericFiltersProp = recommendNumericFiltersPropValue;
             }
             return result;
         }
@@ -55,14 +63,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RecommendNumericFiltersBranch1 != null)
-            {
-                return RecommendNumericFiltersBranch1.GetFieldDeserializers();
-            }
-            else if(RecommendNumericFiltersBranch2 != null)
-            {
-                return RecommendNumericFiltersBranch2.GetFieldDeserializers();
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -72,14 +72,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(RecommendNumericFiltersBranch1 != null)
+            if(String != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters_Branch1>(null, RecommendNumericFiltersBranch1);
+                writer.WriteStringValue(null, String);
             }
-            else if(RecommendNumericFiltersBranch2 != null)
+            else if(RecommendNumericFiltersProp != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters_Branch2>(null, RecommendNumericFiltersBranch2);
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendNumericFilters>(null, RecommendNumericFiltersProp);
             }
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

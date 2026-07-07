@@ -8,53 +8,44 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Effect of the rule.For more information, see [Consequences](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/#consequences).
+    /// Effect of the rule.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Consequence : IParsable
+    public partial class Consequence : IAdditionalDataHolder, IParsable
     {
-        /// <summary>&quot;Determines whether promoted records must also match active filters for the consequence to apply.This ensures user-applied filters take priority and irrelevant matches aren&apos;t shown.For example, if you promote a record with `color: red` but the user filters for `color: blue`,the \&quot;red\&quot; record won&apos;t be shown.&gt; In the Algolia dashboard, when you use the **Pin an item** consequence, `filterPromotes` appears as the checkbox: **Pinned items must match active filters to be displayed.** For examples, see [Promote results with rules](https://www.algolia.com/doc/guides/managing-results/rules/merchandising-and-promoting/how-to/promote-hits/#promote-results-matching-active-filters).&quot;</summary>
-        public bool? FilterPromotes { get; set; }
-        /// <summary>Records you want to hide from the search results.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Exclude items from recommendations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Consequence_hide>? Hide { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.HideConsequenceObject>? Hide { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Consequence_hide> Hide { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.HideConsequenceObject> Hide { get; set; }
 #endif
-        /// <summary>The params property</summary>
+        /// <summary>Filter or boost recommendations matching a facet filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceParams? Params { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ParamsConsequence? Params { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceParams Params { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ParamsConsequence Params { get; set; }
 #endif
-        /// <summary>Records you want to pin to a specific position in the search results.You can promote up to 300 records, either individually, or as groups of up to 100 records each.</summary>
+        /// <summary>Place items at specific positions in the list of recommendations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Promote>? Promote { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.PromoteConsequenceObject>? Promote { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Promote> Promote { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.PromoteConsequenceObject> Promote { get; set; }
 #endif
-        /// <summary>&quot;Redirect to a virtual replica index.This consequence is only valid for rules with `scope: redirect`.&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceRedirect? Redirect { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceRedirect Redirect { get; set; }
-#endif
-        /// <summary>A JSON object with custom data that will be appended to the `userData` array in the response.This object isn&apos;t interpreted by the API and is limited to 1&amp;nbsp;kB of minified JSON.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Consequence_userData? UserData { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Consequence_userData UserData { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Consequence"/> and sets the default values.
+        /// </summary>
+        public Consequence()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,12 +64,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "filterPromotes", n => { FilterPromotes = n.GetBoolValue(); } },
-                { "hide", n => { Hide = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Consequence_hide>(global::Soenneker.Algolia.OpenApiClient.Models.Consequence_hide.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "params", n => { Params = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceParams>(global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceParams.CreateFromDiscriminatorValue); } },
-                { "promote", n => { Promote = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Promote>(global::Soenneker.Algolia.OpenApiClient.Models.Promote.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "redirect", n => { Redirect = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceRedirect>(global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceRedirect.CreateFromDiscriminatorValue); } },
-                { "userData", n => { UserData = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Consequence_userData>(global::Soenneker.Algolia.OpenApiClient.Models.Consequence_userData.CreateFromDiscriminatorValue); } },
+                { "hide", n => { Hide = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.HideConsequenceObject>(global::Soenneker.Algolia.OpenApiClient.Models.HideConsequenceObject.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "params", n => { Params = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ParamsConsequence>(global::Soenneker.Algolia.OpenApiClient.Models.ParamsConsequence.CreateFromDiscriminatorValue); } },
+                { "promote", n => { Promote = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.PromoteConsequenceObject>(global::Soenneker.Algolia.OpenApiClient.Models.PromoteConsequenceObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -88,12 +76,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("filterPromotes", FilterPromotes);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Consequence_hide>("hide", Hide);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceParams>("params", Params);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Promote>("promote", Promote);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceRedirect>("redirect", Redirect);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Consequence_userData>("userData", UserData);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.HideConsequenceObject>("hide", Hide);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ParamsConsequence>("params", Params);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.PromoteConsequenceObject>("promote", Promote);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

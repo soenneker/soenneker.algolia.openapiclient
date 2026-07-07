@@ -31,7 +31,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string LastUpdatedAt { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.Status? Type { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Status2? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationStatus"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.ErrorCodes>()?.AsList(); } },
                 { "lastUpdatedAt", n => { LastUpdatedAt = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Status>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Status2>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.ErrorCodes>("errors", Errors);
             writer.WriteStringValue("lastUpdatedAt", LastUpdatedAt);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Status>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Status2>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

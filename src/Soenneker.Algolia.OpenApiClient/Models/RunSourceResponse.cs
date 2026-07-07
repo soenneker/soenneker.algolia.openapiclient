@@ -14,7 +14,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Date and time when the A/B test was created, in RFC 3339 format.</summary>
+        /// <summary>Date and time when the resource was created, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedAt { get; set; }
@@ -25,10 +25,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Map of taskID sent for reindex with the corresponding runID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourceResponse_taskWithRunID? TaskWithRunID { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourceResponseTaskWithRunId? TaskWithRunID { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourceResponse_taskWithRunID TaskWithRunID { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourceResponseTaskWithRunId TaskWithRunID { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RunSourceResponse"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
-                { "taskWithRunID", n => { TaskWithRunID = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunSourceResponse_taskWithRunID>(global::Soenneker.Algolia.OpenApiClient.Models.RunSourceResponse_taskWithRunID.CreateFromDiscriminatorValue); } },
+                { "taskWithRunID", n => { TaskWithRunID = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunSourceResponseTaskWithRunId>(global::Soenneker.Algolia.OpenApiClient.Models.RunSourceResponseTaskWithRunId.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("createdAt", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunSourceResponse_taskWithRunID>("taskWithRunID", TaskWithRunID);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunSourceResponseTaskWithRunId>("taskWithRunID", TaskWithRunID);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

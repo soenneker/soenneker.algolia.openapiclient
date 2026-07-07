@@ -17,10 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The affinities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.User_affinities>? Affinities { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.UserAffinitiesItem>? Affinities { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.User_affinities> Affinities { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.UserAffinitiesItem> Affinities { get; set; }
 #endif
         /// <summary>The lastUpdatedAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "affinities", n => { Affinities = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.User_affinities>(global::Soenneker.Algolia.OpenApiClient.Models.User_affinities.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "affinities", n => { Affinities = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.UserAffinitiesItem>(global::Soenneker.Algolia.OpenApiClient.Models.UserAffinitiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "lastUpdatedAt", n => { LastUpdatedAt = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.UserType>(); } },
                 { "userID", n => { UserID = n.GetStringValue(); } },
@@ -78,7 +78,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.User_affinities>("affinities", Affinities);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.UserAffinitiesItem>("affinities", Affinities);
             writer.WriteStringValue("lastUpdatedAt", LastUpdatedAt);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.UserType>("type", Type);
             writer.WriteStringValue("userID", UserID);

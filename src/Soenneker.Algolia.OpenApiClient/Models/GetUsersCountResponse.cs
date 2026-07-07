@@ -17,10 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Daily number of unique users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetUsersCountResponse_dates>? Dates { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetUsersCountResponseDatesItem>? Dates { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetUsersCountResponse_dates> Dates { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetUsersCountResponseDatesItem> Dates { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -41,7 +41,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "count", n => { Count = n.GetIntValue(); } },
-                { "dates", n => { Dates = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetUsersCountResponse_dates>(global::Soenneker.Algolia.OpenApiClient.Models.GetUsersCountResponse_dates.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "dates", n => { Dates = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetUsersCountResponseDatesItem>(global::Soenneker.Algolia.OpenApiClient.Models.GetUsersCountResponseDatesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetUsersCountResponse_dates>("dates", Dates);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetUsersCountResponseDatesItem>("dates", Dates);
         }
     }
 }

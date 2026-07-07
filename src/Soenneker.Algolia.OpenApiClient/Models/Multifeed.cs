@@ -15,10 +15,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>A key-value store of Feed ID to Feed. Currently, the only supported Feed type is an Injection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Multifeed_feeds? Feeds { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty? Feeds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Multifeed_feeds Feeds { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty Feeds { get; set; }
 #endif
         /// <summary>A list of Feed IDs that specifies the order in which to order the results in the response. The IDs should be a subset of those in the Feeds object, and only those specified will be processed. When this field is not set, all Feeds are processed and returned with a default ordering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,7 +46,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "feeds", n => { Feeds = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Multifeed_feeds>(global::Soenneker.Algolia.OpenApiClient.Models.Multifeed_feeds.CreateFromDiscriminatorValue); } },
+                { "feeds", n => { Feeds = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty>(global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty.CreateFromDiscriminatorValue); } },
                 { "feedsOrder", n => { FeedsOrder = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -57,7 +57,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Multifeed_feeds>("feeds", Feeds);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty>("feeds", Feeds);
             writer.WriteCollectionOfPrimitiveValues<string>("feedsOrder", FeedsOrder);
         }
     }

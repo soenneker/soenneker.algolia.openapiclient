@@ -17,10 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Daily no results rates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetNoResultsRateResponse_dates>? Dates { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetNoResultsRateResponseDatesItem>? Dates { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetNoResultsRateResponse_dates> Dates { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetNoResultsRateResponseDatesItem> Dates { get; set; }
 #endif
         /// <summary>Number of searches without any results.</summary>
         public int? NoResultCount { get; set; }
@@ -45,7 +45,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "count", n => { Count = n.GetIntValue(); } },
-                { "dates", n => { Dates = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetNoResultsRateResponse_dates>(global::Soenneker.Algolia.OpenApiClient.Models.GetNoResultsRateResponse_dates.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "dates", n => { Dates = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetNoResultsRateResponseDatesItem>(global::Soenneker.Algolia.OpenApiClient.Models.GetNoResultsRateResponseDatesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "noResultCount", n => { NoResultCount = n.GetIntValue(); } },
                 { "rate", n => { Rate = n.GetDoubleValue(); } },
             };
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetNoResultsRateResponse_dates>("dates", Dates);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetNoResultsRateResponseDatesItem>("dates", Dates);
             writer.WriteIntValue("noResultCount", NoResultCount);
             writer.WriteDoubleValue("rate", Rate);
         }

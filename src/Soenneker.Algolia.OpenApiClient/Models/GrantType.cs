@@ -9,7 +9,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     {
         [EnumMember(Value = "client_credentials")]
         #pragma warning disable CS1591
-        Client_credentials,
+        ClientCredentials,
         #pragma warning restore CS1591
     }
 }

@@ -38,7 +38,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Sources
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("sourceID", position);
+                urlTplParams.Add("sourceId", position);
                 return new global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Sources.Item.WithSourceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
@@ -202,11 +202,11 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Sources
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.SourceType[]? Type { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.SourceType2[]? Type { get; set; }
 #nullable restore
 #else
             [QueryParameter("type")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.SourceType[] Type { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.SourceType2[] Type { get; set; }
 #endif
         }
     }

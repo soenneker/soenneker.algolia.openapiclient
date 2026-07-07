@@ -17,10 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The composed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.HitRankingInfo_composed? Composed { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.HitRankingInfoComposed? Composed { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.HitRankingInfo_composed Composed { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.HitRankingInfoComposed Composed { get; set; }
 #endif
         /// <summary>Whether a filter matched the query.</summary>
         public int? Filters { get; set; }
@@ -85,7 +85,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "composed", n => { Composed = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.HitRankingInfo_composed>(global::Soenneker.Algolia.OpenApiClient.Models.HitRankingInfo_composed.CreateFromDiscriminatorValue); } },
+                { "composed", n => { Composed = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.HitRankingInfoComposed>(global::Soenneker.Algolia.OpenApiClient.Models.HitRankingInfoComposed.CreateFromDiscriminatorValue); } },
                 { "filters", n => { Filters = n.GetIntValue(); } },
                 { "firstMatchedWord", n => { FirstMatchedWord = n.GetIntValue(); } },
                 { "geoDistance", n => { GeoDistance = n.GetIntValue(); } },
@@ -108,7 +108,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.HitRankingInfo_composed>("composed", Composed);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.HitRankingInfoComposed>("composed", Composed);
             writer.WriteIntValue("filters", Filters);
             writer.WriteIntValue("firstMatchedWord", FirstMatchedWord);
             writer.WriteIntValue("geoDistance", GeoDistance);

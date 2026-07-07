@@ -9,7 +9,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     {
         [EnumMember(Value = "is")]
         #pragma warning disable CS1591
-        Is,
+        IsValue,
         #pragma warning restore CS1591
         [EnumMember(Value = "startsWith")]
         #pragma warning disable CS1591

@@ -1897,8 +1897,10 @@ paths:
         - go
         - java
         - javascript
+        - kotlin
         - php
         - python
+        - ruby
         - scala
       x-acl:
         - addObject

@@ -36,25 +36,25 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Item.Downloa
         /// <summary>
         /// The Crawler Logs file lets you monitor and debug your crawler’s activity by recordingdetailed logs for each crawl run. Logs are useful for troubleshooting crawl issues,verifying site coverage, and monitoring crawler performance over time.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Item.Download.DownloadGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.CrawlerLogsFileResponseResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Download400Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.InvalidRequestResponse">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Item.Download.DownloadGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.CrawlerLogsFileResponseResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Item.Download.DownloadGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.CrawlerLogsFileResponseResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Download400Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.InvalidRequestResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Item.Download.DownloadGetResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Item.Download.DownloadGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.CrawlerLogsFileResponseResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.CrawlerLogsFileResponseResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The Crawler Logs file lets you monitor and debug your crawler’s activity by recordingdetailed logs for each crawl run. Logs are useful for troubleshooting crawl issues,verifying site coverage, and monitoring crawler performance over time.

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.BrowserRequest"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.FetchRequest"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OauthRequest"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.BrowserRequest"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.FetchRequest"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OAuthRequest"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Login : IComposedTypeWrapper, IParsable
@@ -29,13 +29,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.FetchRequest FetchRequest { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OauthRequest"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OAuthRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.OauthRequest? OauthRequest { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.OAuthRequest? OAuthRequest { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.OauthRequest OauthRequest { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.OAuthRequest OAuthRequest { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,9 +55,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 result.FetchRequest = new global::Soenneker.Algolia.OpenApiClient.Models.FetchRequest();
             }
-            else if("OauthRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("OAuthRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.OauthRequest = new global::Soenneker.Algolia.OpenApiClient.Models.OauthRequest();
+                result.OAuthRequest = new global::Soenneker.Algolia.OpenApiClient.Models.OAuthRequest();
             }
             return result;
         }
@@ -75,9 +75,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 return FetchRequest.GetFieldDeserializers();
             }
-            else if(OauthRequest != null)
+            else if(OAuthRequest != null)
             {
-                return OauthRequest.GetFieldDeserializers();
+                return OAuthRequest.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -96,9 +96,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FetchRequest>(null, FetchRequest);
             }
-            else if(OauthRequest != null)
+            else if(OAuthRequest != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.OauthRequest>(null, OauthRequest);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.OAuthRequest>(null, OAuthRequest);
             }
         }
     }

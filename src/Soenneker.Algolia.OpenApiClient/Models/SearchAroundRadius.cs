@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadiusAll_Wrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius_Branch1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadiusAllWrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadiusBranch1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchAroundRadius : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadiusAll_Wrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadiusAllWrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadiusAll_Wrapper? SearchAroundRadiusAllWrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadiusAllWrapper? SearchAroundRadiusAllWrapper { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadiusAll_Wrapper SearchAroundRadiusAllWrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadiusAllWrapper SearchAroundRadiusAllWrapper { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius_Branch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadiusBranch1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius_Branch1? SearchAroundRadiusBranch1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadiusBranch1? SearchAroundRadiusBranch1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius_Branch1 SearchAroundRadiusBranch1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadiusBranch1 SearchAroundRadiusBranch1 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,15 +37,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius();
-            if("SearchAroundRadiusAll".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("SearchAroundRadiusAllWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SearchAroundRadiusAllWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadiusAll_Wrapper();
+                result.SearchAroundRadiusAllWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadiusAllWrapper();
             }
-            else if("SearchAroundRadius_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SearchAroundRadiusBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SearchAroundRadiusBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius_Branch1();
+                result.SearchAroundRadiusBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadiusBranch1();
             }
             return result;
         }
@@ -74,11 +74,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(SearchAroundRadiusAllWrapper != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadiusAll_Wrapper>(null, SearchAroundRadiusAllWrapper);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadiusAllWrapper>(null, SearchAroundRadiusAllWrapper);
             }
             else if(SearchAroundRadiusBranch1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius_Branch1>(null, SearchAroundRadiusBranch1);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadiusBranch1>(null, SearchAroundRadiusBranch1);
             }
         }
     }

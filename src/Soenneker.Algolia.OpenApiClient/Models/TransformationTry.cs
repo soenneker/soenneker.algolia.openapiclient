@@ -39,10 +39,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The record to apply the given code to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTry_sampleRecord? SampleRecord { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty? SampleRecord { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTry_sampleRecord SampleRecord { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty SampleRecord { get; set; }
 #endif
         /// <summary>The type of transformation, which can be either &apos;code&apos; or &apos;noCode&apos;.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.TransformationType? Type { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "authentications", n => { Authentications = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AuthenticationCreate>(global::Soenneker.Algolia.OpenApiClient.Models.AuthenticationCreate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput>(global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput.CreateFromDiscriminatorValue); } },
-                { "sampleRecord", n => { SampleRecord = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationTry_sampleRecord>(global::Soenneker.Algolia.OpenApiClient.Models.TransformationTry_sampleRecord.CreateFromDiscriminatorValue); } },
+                { "sampleRecord", n => { SampleRecord = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty>(global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationType>(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AuthenticationCreate>("authentications", Authentications);
             writer.WriteStringValue("code", Code);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput>("input", Input);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationTry_sampleRecord>("sampleRecord", SampleRecord);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty>("sampleRecord", SampleRecord);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationType>("type", Type);
         }
     }

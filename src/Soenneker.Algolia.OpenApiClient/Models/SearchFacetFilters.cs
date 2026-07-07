@@ -7,28 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters_Branch1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters_Branch2"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SearchFacetFilters : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class SearchFacetFilters : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters_Branch1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters_Branch1? SearchFacetFiltersBranch1 { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters>? SearchFacetFiltersProp { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters_Branch1 SearchFacetFiltersBranch1 { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters> SearchFacetFiltersProp { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters_Branch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters_Branch2? SearchFacetFiltersBranch2 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters_Branch2 SearchFacetFiltersBranch2 { get; set; }
+        public string String { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters"/> and sets the default values.
+        /// </summary>
+        public SearchFacetFilters()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,15 +45,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters();
-            if("SearchFacetFilters_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetStringValue() is string stringValue)
             {
-                result.SearchFacetFiltersBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters_Branch1();
+                result.String = stringValue;
             }
-            else if("SearchFacetFilters_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters>(global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters> searchFacetFiltersPropValue)
             {
-                result.SearchFacetFiltersBranch2 = new global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters_Branch2();
+                result.SearchFacetFiltersProp = searchFacetFiltersPropValue;
             }
             return result;
         }
@@ -55,14 +63,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(SearchFacetFiltersBranch1 != null)
-            {
-                return SearchFacetFiltersBranch1.GetFieldDeserializers();
-            }
-            else if(SearchFacetFiltersBranch2 != null)
-            {
-                return SearchFacetFiltersBranch2.GetFieldDeserializers();
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -72,14 +72,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(SearchFacetFiltersBranch1 != null)
+            if(String != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters_Branch1>(null, SearchFacetFiltersBranch1);
+                writer.WriteStringValue(null, String);
             }
-            else if(SearchFacetFiltersBranch2 != null)
+            else if(SearchFacetFiltersProp != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters_Branch2>(null, SearchFacetFiltersBranch2);
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters>(null, SearchFacetFiltersProp);
             }
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

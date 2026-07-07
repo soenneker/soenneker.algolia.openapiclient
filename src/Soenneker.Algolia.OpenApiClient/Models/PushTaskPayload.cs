@@ -19,10 +19,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The records property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.PushTaskPayload_records>? Records { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.PushTaskPayloadRecordsItem>? Records { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.PushTaskPayload_records> Records { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.PushTaskPayloadRecordsItem> Records { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.PushTaskPayload"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.IngestionAction>(); } },
-                { "records", n => { Records = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.PushTaskPayload_records>(global::Soenneker.Algolia.OpenApiClient.Models.PushTaskPayload_records.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "records", n => { Records = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.PushTaskPayloadRecordsItem>(global::Soenneker.Algolia.OpenApiClient.Models.PushTaskPayloadRecordsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.IngestionAction>("action", Action);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.PushTaskPayload_records>("records", Records);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.PushTaskPayloadRecordsItem>("records", Records);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

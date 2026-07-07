@@ -7,37 +7,69 @@ using System.IO;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
-    /// <summary>
-    /// Source.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Source : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class Source : IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Source description.</summary>
+        /// <summary>Universally unique identifier (UUID) of an authentication resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? AuthenticationID { get; set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string AuthenticationID { get; set; }
 #endif
-        /// <summary>IP address range of the source.</summary>
+        /// <summary>Date and time when the resource was created, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceProp { get; set; }
+        public string? CreatedAt { get; set; }
 #nullable restore
 #else
-        public string SourceProp { get; set; }
+        public string CreatedAt { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Source"/> and sets the default values.
-        /// </summary>
-        public Source()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>The input property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceInput? Input { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceInput Input { get; set; }
+#endif
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>The owner property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.Owner? Owner { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.Owner Owner { get; set; }
+#endif
+        /// <summary>Universally uniqud identifier (UUID) of a source.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceID { get; set; }
+#nullable restore
+#else
+        public string SourceID { get; set; }
+#endif
+        /// <summary>The type property</summary>
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceType2? Type { get; set; }
+        /// <summary>Date and time when the resource was last updated, in RFC 3339 format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UpdatedAt { get; set; }
+#nullable restore
+#else
+        public string UpdatedAt { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -56,8 +88,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "source", n => { SourceProp = n.GetStringValue(); } },
+                { "authenticationID", n => { AuthenticationID = n.GetStringValue(); } },
+                { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
+                { "input", n => { Input = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceInput>(global::Soenneker.Algolia.OpenApiClient.Models.SourceInput.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Owner>(global::Soenneker.Algolia.OpenApiClient.Models.Owner.CreateFromDiscriminatorValue); } },
+                { "sourceID", n => { SourceID = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceType2>(); } },
+                { "updatedAt", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,9 +105,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("source", SourceProp);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteStringValue("authenticationID", AuthenticationID);
+            writer.WriteStringValue("createdAt", CreatedAt);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceInput>("input", Input);
+            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Owner>("owner", Owner);
+            writer.WriteStringValue("sourceID", SourceID);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceType2>("type", Type);
+            writer.WriteStringValue("updatedAt", UpdatedAt);
         }
     }
 }

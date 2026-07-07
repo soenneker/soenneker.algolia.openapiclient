@@ -17,34 +17,34 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The addToCart property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Event>? AddToCart { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>? AddToCart { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Event> AddToCart { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2> AddToCart { get; set; }
 #endif
         /// <summary>The purchase property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Event>? Purchase { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>? Purchase { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Event> Purchase { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2> Purchase { get; set; }
 #endif
         /// <summary>The viewDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Event>? ViewDetails { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>? ViewDetails { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Event> ViewDetails { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2> ViewDetails { get; set; }
 #endif
         /// <summary>The viewListing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Event>? ViewListing { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>? ViewListing { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Event> ViewListing { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2> ViewListing { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Events"/> and sets the default values.
@@ -71,10 +71,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "addToCart", n => { AddToCart = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Event>(global::Soenneker.Algolia.OpenApiClient.Models.Event.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "purchase", n => { Purchase = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Event>(global::Soenneker.Algolia.OpenApiClient.Models.Event.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "viewDetails", n => { ViewDetails = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Event>(global::Soenneker.Algolia.OpenApiClient.Models.Event.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "viewListing", n => { ViewListing = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Event>(global::Soenneker.Algolia.OpenApiClient.Models.Event.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "addToCart", n => { AddToCart = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>(global::Soenneker.Algolia.OpenApiClient.Models.EventType2.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "purchase", n => { Purchase = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>(global::Soenneker.Algolia.OpenApiClient.Models.EventType2.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "viewDetails", n => { ViewDetails = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>(global::Soenneker.Algolia.OpenApiClient.Models.EventType2.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "viewListing", n => { ViewListing = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>(global::Soenneker.Algolia.OpenApiClient.Models.EventType2.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -84,10 +84,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Event>("addToCart", AddToCart);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Event>("purchase", Purchase);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Event>("viewDetails", ViewDetails);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Event>("viewListing", ViewListing);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>("addToCart", AddToCart);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>("purchase", Purchase);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>("viewDetails", ViewDetails);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>("viewListing", ViewListing);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

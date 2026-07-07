@@ -41,7 +41,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Synonyms
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("objectID", position);
+                urlTplParams.Add("objectId", position);
                 return new global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Synonyms.Item.WithObjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }

@@ -18,31 +18,31 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "no_perso_access")]
         #pragma warning disable CS1591
-        No_perso_access,
+        NoPersoAccess,
         #pragma warning restore CS1591
         [EnumMember(Value = "all_attr_value_filtered")]
         #pragma warning disable CS1591
-        All_attr_value_filtered,
+        AllAttrValueFiltered,
         #pragma warning restore CS1591
         [EnumMember(Value = "missing_index")]
         #pragma warning disable CS1591
-        Missing_index,
+        MissingIndex,
         #pragma warning restore CS1591
         [EnumMember(Value = "no_events_last_30_days")]
         #pragma warning disable CS1591
-        No_events_last_30_days,
+        NoEventsLast30Days,
         #pragma warning restore CS1591
         [EnumMember(Value = "pending_pipelines")]
         #pragma warning disable CS1591
-        Pending_pipelines,
+        PendingPipelines,
         #pragma warning restore CS1591
         [EnumMember(Value = "invalid_config")]
         #pragma warning disable CS1591
-        Invalid_config,
+        InvalidConfig,
         #pragma warning restore CS1591
         [EnumMember(Value = "all_facets_invalid")]
         #pragma warning disable CS1591
-        All_facets_invalid,
+        AllFacetsInvalid,
         #pragma warning restore CS1591
     }
 }

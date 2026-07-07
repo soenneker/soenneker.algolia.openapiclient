@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaInsightsPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthAPIKeyPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthBasicPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthGoogleServiceAccountPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartialMember1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthOAuthPartial"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaInsightsPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthApiKeyPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthBasicPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthGoogleServiceAccountPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartialMember1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthOAuthPartial"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthInputPartial : IComposedTypeWrapper, IParsable
@@ -29,13 +29,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaPartial AuthAlgoliaPartial { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthAPIKeyPartial"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthApiKeyPartial"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AuthAPIKeyPartial? AuthAPIKeyPartial { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AuthApiKeyPartial? AuthApiKeyPartial { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AuthAPIKeyPartial AuthAPIKeyPartial { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AuthApiKeyPartial AuthApiKeyPartial { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthBasicPartial"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,17 +79,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartial();
-            if("AuthAPIKeyPartial".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.AuthAPIKeyPartial = new global::Soenneker.Algolia.OpenApiClient.Models.AuthAPIKeyPartial();
-            }
-            else if("AuthAlgoliaInsightsPartial".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("AuthAlgoliaInsightsPartial".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AuthAlgoliaInsightsPartial = new global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaInsightsPartial();
             }
             else if("AuthAlgoliaPartial".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AuthAlgoliaPartial = new global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaPartial();
+            }
+            else if("AuthApiKeyPartial".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AuthApiKeyPartial = new global::Soenneker.Algolia.OpenApiClient.Models.AuthApiKeyPartial();
             }
             else if("AuthBasicPartial".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -98,10 +98,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             else if("AuthGoogleServiceAccountPartial".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AuthGoogleServiceAccountPartial = new global::Soenneker.Algolia.OpenApiClient.Models.AuthGoogleServiceAccountPartial();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.AuthInputPartialMember1 = new global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartialMember1();
             }
             else if("AuthOAuthPartial".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -123,9 +119,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 return AuthAlgoliaPartial.GetFieldDeserializers();
             }
-            else if(AuthAPIKeyPartial != null)
+            else if(AuthApiKeyPartial != null)
             {
-                return AuthAPIKeyPartial.GetFieldDeserializers();
+                return AuthApiKeyPartial.GetFieldDeserializers();
             }
             else if(AuthBasicPartial != null)
             {
@@ -160,9 +156,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaPartial>(null, AuthAlgoliaPartial);
             }
-            else if(AuthAPIKeyPartial != null)
+            else if(AuthApiKeyPartial != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthAPIKeyPartial>(null, AuthAPIKeyPartial);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthApiKeyPartial>(null, AuthApiKeyPartial);
             }
             else if(AuthBasicPartial != null)
             {

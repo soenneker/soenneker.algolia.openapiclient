@@ -41,10 +41,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Additional information that will be passed to the created runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayload_runMetadata? RunMetadata { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty? RunMetadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayload_runMetadata RunMetadata { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty RunMetadata { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -68,7 +68,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "entityType", n => { EntityType = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.EntityType>(); } },
                 { "indexToExclude", n => { IndexToExclude = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "indexToInclude", n => { IndexToInclude = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "runMetadata", n => { RunMetadata = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayload_runMetadata>(global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayload_runMetadata.CreateFromDiscriminatorValue); } },
+                { "runMetadata", n => { RunMetadata = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty>(global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.EntityType>("entityType", EntityType);
             writer.WriteCollectionOfPrimitiveValues<string>("indexToExclude", IndexToExclude);
             writer.WriteCollectionOfPrimitiveValues<string>("indexToInclude", IndexToInclude);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayload_runMetadata>("runMetadata", RunMetadata);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty>("runMetadata", RunMetadata);
         }
     }
 }

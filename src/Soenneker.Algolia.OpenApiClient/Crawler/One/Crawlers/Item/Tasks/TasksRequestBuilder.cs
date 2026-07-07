@@ -23,7 +23,7 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Tasks
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("taskID", position);
+                urlTplParams.Add("taskId", position);
                 return new global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Tasks.Item.WithTaskItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }

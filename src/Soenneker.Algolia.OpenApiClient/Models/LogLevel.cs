@@ -9,15 +9,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     {
         [EnumMember(Value = "SKIP")]
         #pragma warning disable CS1591
-        SKIP,
+        Skip,
         #pragma warning restore CS1591
         [EnumMember(Value = "INFO")]
         #pragma warning disable CS1591
-        INFO,
+        Info,
         #pragma warning restore CS1591
         [EnumMember(Value = "ERROR")]
         #pragma warning disable CS1591
-        ERROR,
+        Error,
         #pragma warning restore CS1591
     }
 }

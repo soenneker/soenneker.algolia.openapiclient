@@ -17,10 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Feature flags for the Shopify source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceShopify_featureFlags? FeatureFlags { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceShopifyFeatureFlags? FeatureFlags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceShopify_featureFlags FeatureFlags { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceShopifyFeatureFlags FeatureFlags { get; set; }
 #endif
         /// <summary>URL of the Shopify store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "featureFlags", n => { FeatureFlags = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceShopify_featureFlags>(global::Soenneker.Algolia.OpenApiClient.Models.SourceShopify_featureFlags.CreateFromDiscriminatorValue); } },
+                { "featureFlags", n => { FeatureFlags = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceShopifyFeatureFlags>(global::Soenneker.Algolia.OpenApiClient.Models.SourceShopifyFeatureFlags.CreateFromDiscriminatorValue); } },
                 { "shopURL", n => { ShopURL = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceShopify_featureFlags>("featureFlags", FeatureFlags);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceShopifyFeatureFlags>("featureFlags", FeatureFlags);
             writer.WriteStringValue("shopURL", ShopURL);
             writer.WriteAdditionalData(AdditionalData);
         }

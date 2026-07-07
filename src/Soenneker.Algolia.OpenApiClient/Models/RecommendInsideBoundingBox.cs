@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxArray_Wrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxMember1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBox_Branch1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxArrayWrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxBranch1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecommendInsideBoundingBox : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxArray_Wrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxArrayWrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxArray_Wrapper? RecommendInsideBoundingBoxArrayWrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxArrayWrapper? RecommendInsideBoundingBoxArrayWrapper { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxArray_Wrapper RecommendInsideBoundingBoxArrayWrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxArrayWrapper RecommendInsideBoundingBoxArrayWrapper { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBox_Branch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxBranch1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBox_Branch1? RecommendInsideBoundingBoxBranch1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxBranch1? RecommendInsideBoundingBoxBranch1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBox_Branch1 RecommendInsideBoundingBoxBranch1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxBranch1 RecommendInsideBoundingBoxBranch1 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,19 +45,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBox CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBox();
-            if("RecommendInsideBoundingBoxArray".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("RecommendInsideBoundingBoxArrayWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RecommendInsideBoundingBoxArrayWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxArray_Wrapper();
+                result.RecommendInsideBoundingBoxArrayWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxArrayWrapper();
             }
-            else if("RecommendInsideBoundingBox_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RecommendInsideBoundingBoxBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RecommendInsideBoundingBoxBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBox_Branch1();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.RecommendInsideBoundingBoxMember1 = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxMember1();
+                result.RecommendInsideBoundingBoxBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxBranch1();
             }
             return result;
         }
@@ -90,11 +86,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(RecommendInsideBoundingBoxArrayWrapper != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxArray_Wrapper>(null, RecommendInsideBoundingBoxArrayWrapper);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxArrayWrapper>(null, RecommendInsideBoundingBoxArrayWrapper);
             }
             else if(RecommendInsideBoundingBoxBranch1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBox_Branch1>(null, RecommendInsideBoundingBoxBranch1);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxBranch1>(null, RecommendInsideBoundingBoxBranch1);
             }
             else if(RecommendInsideBoundingBoxMember1 != null)
             {

@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Facets
 {
     /// <summary>
-    /// Builds and executes requests for operations under \composition\1\compositions\{compositionID}\facets
+    /// Builds and executes requests for operations under \composition\1\compositions\{compositionId}\facets
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FacetsRequestBuilder : BaseRequestBuilder
@@ -32,7 +32,7 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Face
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FacetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/composition/1/compositions/{compositionID}/facets", pathParameters)
+        public FacetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/composition/1/compositions/{compositionId}/facets", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Face
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FacetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/composition/1/compositions/{compositionID}/facets", rawUrl)
+        public FacetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/composition/1/compositions/{compositionId}/facets", rawUrl)
         {
         }
     }

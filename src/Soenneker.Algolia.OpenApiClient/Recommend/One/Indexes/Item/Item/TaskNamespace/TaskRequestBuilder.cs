@@ -23,7 +23,7 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.TaskNa
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("taskID", position);
+                urlTplParams.Add("taskId", position);
                 return new global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.TaskNamespace.Item.WithTaskItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }

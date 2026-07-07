@@ -10,59 +10,59 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     {
         [EnumMember(Value = "search_count")]
         #pragma warning disable CS1591
-        Search_count,
+        SearchCount,
         #pragma warning restore CS1591
         [EnumMember(Value = "tracked_search_count")]
         #pragma warning disable CS1591
-        Tracked_search_count,
+        TrackedSearchCount,
         #pragma warning restore CS1591
         [EnumMember(Value = "user_count")]
         #pragma warning disable CS1591
-        User_count,
+        UserCount,
         #pragma warning restore CS1591
         [EnumMember(Value = "tracked_user_count")]
         #pragma warning disable CS1591
-        Tracked_user_count,
+        TrackedUserCount,
         #pragma warning restore CS1591
         [EnumMember(Value = "no_result_count")]
         #pragma warning disable CS1591
-        No_result_count,
+        NoResultCount,
         #pragma warning restore CS1591
         [EnumMember(Value = "add_to_cart_count")]
         #pragma warning disable CS1591
-        Add_to_cart_count,
+        AddToCartCount,
         #pragma warning restore CS1591
         [EnumMember(Value = "purchase_count")]
         #pragma warning disable CS1591
-        Purchase_count,
+        PurchaseCount,
         #pragma warning restore CS1591
         [EnumMember(Value = "clicked_search_count")]
         #pragma warning disable CS1591
-        Clicked_search_count,
+        ClickedSearchCount,
         #pragma warning restore CS1591
         [EnumMember(Value = "converted_search_count")]
         #pragma warning disable CS1591
-        Converted_search_count,
+        ConvertedSearchCount,
         #pragma warning restore CS1591
         [EnumMember(Value = "click_through_rate")]
         #pragma warning disable CS1591
-        Click_through_rate,
+        ClickThroughRate,
         #pragma warning restore CS1591
         [EnumMember(Value = "conversion_rate")]
         #pragma warning disable CS1591
-        Conversion_rate,
+        ConversionRate,
         #pragma warning restore CS1591
         [EnumMember(Value = "add_to_cart_rate")]
         #pragma warning disable CS1591
-        Add_to_cart_rate,
+        AddToCartRate,
         #pragma warning restore CS1591
         [EnumMember(Value = "purchase_rate")]
         #pragma warning disable CS1591
-        Purchase_rate,
+        PurchaseRate,
         #pragma warning restore CS1591
         [EnumMember(Value = "average_click_position")]
         #pragma warning disable CS1591
-        Average_click_position,
+        AverageClickPosition,
         #pragma warning restore CS1591
         [EnumMember(Value = "revenue")]
         #pragma warning disable CS1591

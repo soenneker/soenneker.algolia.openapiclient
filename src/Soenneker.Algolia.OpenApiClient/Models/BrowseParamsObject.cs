@@ -317,10 +317,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The reRankingApplyFilter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BrowseParamsObject_reRankingApplyFilter? ReRankingApplyFilter { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchIndexSettingsAsSearchParamsReRankingApplyFilter? ReRankingApplyFilter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BrowseParamsObject_reRankingApplyFilter ReRankingApplyFilter { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchIndexSettingsAsSearchParamsReRankingApplyFilter ReRankingApplyFilter { get; set; }
 #endif
         /// <summary>Properties to include in the API response of search and browse requestsBy default, all response properties are included.To reduce the response size, you can select which properties should be includedAn empty list may lead to an empty API response (except properties you can&apos;t exclude)You can&apos;t exclude these properties:`message`, `warning`, `cursor`, `abTestVariantID`,or any property added by setting `getRankingInfo` to trueYour search depends on the `hits` field. If you omit this field, searches won&apos;t return any results.Your UI might also depend on other properties, for example, for pagination.Before restricting the response size, check the impact on your search experience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -414,10 +414,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public BrowseParamsObject()
         {
             AdditionalData = new Dictionary<string, object>();
-            ExactOnSingleWordQuery = global::Soenneker.Algolia.OpenApiClient.Models.SearchExactOnSingleWordQuery.Attribute;
-            Mode = global::Soenneker.Algolia.OpenApiClient.Models.SearchMode.KeywordSearch;
-            QueryType = global::Soenneker.Algolia.OpenApiClient.Models.SearchQueryType.PrefixLast;
-            RemoveWordsIfNoResults = global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveWordsIfNoResults.None;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -492,7 +488,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "queryLanguages", n => { QueryLanguages = n.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage>()?.AsList(); } },
                 { "queryType", n => { QueryType = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchQueryType>(); } },
                 { "ranking", n => { Ranking = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "reRankingApplyFilter", n => { ReRankingApplyFilter = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BrowseParamsObject_reRankingApplyFilter>(global::Soenneker.Algolia.OpenApiClient.Models.BrowseParamsObject_reRankingApplyFilter.CreateFromDiscriminatorValue); } },
+                { "reRankingApplyFilter", n => { ReRankingApplyFilter = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchIndexSettingsAsSearchParamsReRankingApplyFilter>(global::Soenneker.Algolia.OpenApiClient.Models.SearchIndexSettingsAsSearchParamsReRankingApplyFilter.CreateFromDiscriminatorValue); } },
                 { "relevancyStrictness", n => { RelevancyStrictness = n.GetIntValue(); } },
                 { "removeStopWords", n => { RemoveStopWords = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveStopWords>(global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveStopWords.CreateFromDiscriminatorValue); } },
                 { "removeWordsIfNoResults", n => { RemoveWordsIfNoResults = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveWordsIfNoResults>(); } },
@@ -580,7 +576,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveWordsIfNoResults>("removeWordsIfNoResults", RemoveWordsIfNoResults);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchRenderingContent>("renderingContent", RenderingContent);
             writer.WriteBoolValue("replaceSynonymsInHighlight", ReplaceSynonymsInHighlight);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BrowseParamsObject_reRankingApplyFilter>("reRankingApplyFilter", ReRankingApplyFilter);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchIndexSettingsAsSearchParamsReRankingApplyFilter>("reRankingApplyFilter", ReRankingApplyFilter);
             writer.WriteCollectionOfPrimitiveValues<string>("responseFields", ResponseFields);
             writer.WriteBoolValue("restrictHighlightAndSnippetArrays", RestrictHighlightAndSnippetArrays);
             writer.WriteCollectionOfPrimitiveValues<string>("restrictSearchableAttributes", RestrictSearchableAttributes);

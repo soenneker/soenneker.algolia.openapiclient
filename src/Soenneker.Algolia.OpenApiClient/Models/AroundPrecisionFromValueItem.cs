@@ -7,18 +7,13 @@ using System.IO;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
-    /// <summary>
-    /// Range object with lower and upper values in meters to define custom ranges.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class AroundPrecisionFromValueItem : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Lower boundary of a range in meters. The Geo ranking criterion considers all records within the range to be equal.</summary>
-        public int? From { get; set; }
-        /// <summary>Upper boundary of a range in meters. The Geo ranking criterion considers all records within the range to be equal.</summary>
-        public int? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AroundPrecisionFromValueItem"/> and sets the default values.
         /// </summary>
@@ -44,8 +39,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "from", n => { From = n.GetIntValue(); } },
-                { "value", n => { Value = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -55,8 +48,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("from", From);
-            writer.WriteIntValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

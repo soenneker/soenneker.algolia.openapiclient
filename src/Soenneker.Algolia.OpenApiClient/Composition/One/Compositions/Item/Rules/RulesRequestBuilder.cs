@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rules
 {
     /// <summary>
-    /// Builds and executes requests for operations under \composition\1\compositions\{compositionID}\rules
+    /// Builds and executes requests for operations under \composition\1\compositions\{compositionId}\rules
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RulesRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rule
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("objectID", position);
+                urlTplParams.Add("objectId", position);
                 return new global::Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rules.Item.WithObjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
@@ -44,7 +44,7 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rule
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/composition/1/compositions/{compositionID}/rules", pathParameters)
+        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/composition/1/compositions/{compositionId}/rules", pathParameters)
         {
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rule
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/composition/1/compositions/{compositionID}/rules", rawUrl)
+        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/composition/1/compositions/{compositionId}/rules", rawUrl)
         {
         }
     }

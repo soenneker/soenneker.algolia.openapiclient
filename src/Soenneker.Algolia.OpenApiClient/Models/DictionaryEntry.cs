@@ -59,7 +59,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public DictionaryEntry()
         {
             AdditionalData = new Dictionary<string, object>();
-            State = global::Soenneker.Algolia.OpenApiClient.Models.DictionaryEntryState.Enabled;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

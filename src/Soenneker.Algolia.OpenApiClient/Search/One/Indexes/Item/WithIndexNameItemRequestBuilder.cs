@@ -92,7 +92,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("objectID", position);
+                urlTplParams.Add("objectId", position);
                 return new global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.WithObjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
@@ -116,7 +116,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item
         /// Deletes an index and all its settings.- Deleting an index doesn&apos;t delete its analytics data.- If you try to delete a non-existing index, the operation is ignored without warning.- If the index you want to delete has replica indices, the replicas become independent indices.- If the index you want to delete is a replica index, you must first unlink it from its primary index before you can delete it.  For more information, see [Delete replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/how-to/deleting-replicas).
         /// Delete indices. <see href="https://www.algolia.com/doc/guides/sending-and-managing-data/manage-indices-and-apps/manage-indices/how-to/delete-indices" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.WithIndexNameDeleteResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchDeletedAtResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase">When receiving a 400 status code</exception>
@@ -125,11 +125,11 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.WithIndexNameDeleteResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SearchDeletedAtResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.WithIndexNameDeleteResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SearchDeletedAtResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -140,7 +140,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.WithIndexNameDeleteResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.WithIndexNameDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.SearchDeletedAtResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.SearchDeletedAtResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Adds a record to an index or replaces it.- If the record doesn&apos;t have an object ID, a new record with an auto-generated object ID is added to your index.- If a record with the specified object ID exists, the existing record is replaced.- If a record with the specified object ID doesn&apos;t exist, a new record is added to your index.- If you add a record to an index that doesn&apos;t exist yet, a new index is created.To update _some_ attributes of a record, use the [`partial` operation](https://www.algolia.com/doc/rest-api/search/partial-update-object).To add, update, or replace multiple records, use the [`batch` operation](https://www.algolia.com/doc/rest-api/search/batch).This operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).
@@ -155,11 +155,11 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SaveObjectResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.WithIndexNamePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SaveObjectResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.SearchSaveObjectRequestRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SaveObjectResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.WithIndexNamePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SaveObjectResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.SearchSaveObjectRequestRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -200,11 +200,11 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.WithIndexNamePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.SearchSaveObjectRequestRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.WithIndexNamePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.SearchSaveObjectRequestRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

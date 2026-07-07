@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Rules.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \search\1\indexes\{indexName}\rules\{objectID}
+    /// Builds and executes requests for operations under \search\1\indexes\{indexName}\rules\{objectId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithObjectItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Rules.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithObjectItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/1/indexes/{indexName}/rules/{objectID}{?forwardToReplicas*}", pathParameters)
+        public WithObjectItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/1/indexes/{indexName}/rules/{objectId}{?forwardToReplicas*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Rules.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/1/indexes/{indexName}/rules/{objectID}{?forwardToReplicas*}", rawUrl)
+        public WithObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/1/indexes/{indexName}/rules/{objectId}{?forwardToReplicas*}", rawUrl)
         {
         }
         /// <summary>

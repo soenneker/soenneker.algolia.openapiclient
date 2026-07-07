@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rules.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \composition\1\compositions\{compositionID}\rules\{objectID}
+    /// Builds and executes requests for operations under \composition\1\compositions\{compositionId}\rules\{objectId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithObjectItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rule
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithObjectItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/composition/1/compositions/{compositionID}/rules/{objectID}", pathParameters)
+        public WithObjectItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/composition/1/compositions/{compositionId}/rules/{objectId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,13 +30,13 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rule
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/composition/1/compositions/{compositionID}/rules/{objectID}", rawUrl)
+        public WithObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/composition/1/compositions/{compositionId}/rules/{objectId}", rawUrl)
         {
         }
         /// <summary>
         /// Delete a Composition Rule from the specified Composition ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TaskIDResponseResponseApplicationJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TaskIdResponseResponseJson4"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase">When receiving a 400 status code</exception>
@@ -45,11 +45,11 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rule
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.TaskIDResponseResponseApplicationJson?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.TaskIdResponseResponseJson4?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.TaskIDResponseResponseApplicationJson> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.TaskIdResponseResponseJson4> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -60,7 +60,7 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rule
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.TaskIDResponseResponseApplicationJson>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.TaskIDResponseResponseApplicationJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.TaskIdResponseResponseJson4>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.TaskIdResponseResponseJson4.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a rule by its ID.To find the object ID of a rule, use the [`search` operation](https://www.algolia.com/doc/rest-api/composition/search-composition-rules).
@@ -94,7 +94,7 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rule
         /// <summary>
         /// If a composition rule with the provided ID already exists,it&apos;s replaced. Otherwise, a new one is added.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TaskIDResponseResponseApplicationJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TaskIdResponseResponseJson3"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,11 +105,11 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rule
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.TaskIDResponseResponseApplicationJson?> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.CompositionRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.TaskIdResponseResponseJson3?> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.CompositionRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.TaskIDResponseResponseApplicationJson> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.CompositionRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.TaskIdResponseResponseJson3> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.CompositionRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -122,7 +122,7 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rule
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.TaskIDResponseResponseApplicationJson>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.TaskIDResponseResponseApplicationJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.TaskIdResponseResponseJson3>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.TaskIdResponseResponseJson3.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a Composition Rule from the specified Composition ID.

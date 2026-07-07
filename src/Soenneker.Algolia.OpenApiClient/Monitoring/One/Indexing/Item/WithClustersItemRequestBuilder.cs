@@ -36,25 +36,25 @@ namespace Soenneker.Algolia.OpenApiClient.Monitoring.One.Indexing.Item
         /// <summary>
         /// Retrieves indexing latency metrics for selected clusters.This endpoint is intended for infrastructure-level monitoring and availability checks.The returned value reflects latency measured on Algolia&apos;s internal monitoring indexand is reported in milliseconds.This metric isn&apos;t intended to represent the indexing performance of an individualapplication or index. To measure when an indexing operation has completed for yourapplication, use the `waitTask` method.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Monitoring.One.Indexing.Item.WithClustersGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.WithClusters400Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.BadRequestResponseResponse">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Monitoring.One.Indexing.Item.WithClustersGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Monitoring.One.Indexing.Item.WithClustersGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.WithClusters400Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.BadRequestResponseResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Monitoring.One.Indexing.Item.WithClustersGetResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Monitoring.One.Indexing.Item.WithClustersGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves indexing latency metrics for selected clusters.This endpoint is intended for infrastructure-level monitoring and availability checks.The returned value reflects latency measured on Algolia&apos;s internal monitoring indexand is reported in milliseconds.This metric isn&apos;t intended to represent the indexing performance of an individualapplication or index. To measure when an indexing operation has completed for yourapplication, use the `waitTask` method.

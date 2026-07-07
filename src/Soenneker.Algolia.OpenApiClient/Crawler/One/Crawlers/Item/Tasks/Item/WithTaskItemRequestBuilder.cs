@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Tasks.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \crawler\1\crawlers\{id}\tasks\{taskID}
+    /// Builds and executes requests for operations under \crawler\1\crawlers\{id}\tasks\{taskId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithTaskItemRequestBuilder : BaseRequestBuilder
@@ -28,7 +28,7 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Tasks.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTaskItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crawler/1/crawlers/{id}/tasks/{taskID}", pathParameters)
+        public WithTaskItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crawler/1/crawlers/{id}/tasks/{taskId}", pathParameters)
         {
         }
         /// <summary>
@@ -36,26 +36,26 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Tasks.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTaskItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crawler/1/crawlers/{id}/tasks/{taskID}", rawUrl)
+        public WithTaskItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/crawler/1/crawlers/{id}/tasks/{taskId}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieves the status of the specified tasks, whether they&apos;re pending or completed.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TaskStatusResponseApplicationJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TaskStatusResponseJson"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.TaskStatusResponseApplicationJson?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.TaskStatusResponseJson?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.TaskStatusResponseApplicationJson> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.TaskStatusResponseJson> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.TaskStatusResponseApplicationJson>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.TaskStatusResponseApplicationJson.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.TaskStatusResponseJson>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.TaskStatusResponseJson.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the status of the specified tasks, whether they&apos;re pending or completed.

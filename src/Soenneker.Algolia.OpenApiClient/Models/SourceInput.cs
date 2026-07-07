@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceAlgoliaIndex"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceBigCommerce"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceBigQuery"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceCommercetools"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceCSV"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceDocker"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceGA4BigQueryExport"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceJSON"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceShopify"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceAlgoliaIndex"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceBigCommerce"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceBigQuery"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceCommercetools"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceCsv"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceDocker"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceGa4BigQueryExport"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceJson"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceShopify"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SourceInput : IComposedTypeWrapper, IParsable
@@ -45,13 +45,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.SourceCommercetools SourceCommercetools { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceCSV"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceCsv"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceCSV? SourceCSV { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceCsv? SourceCsv { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceCSV SourceCSV { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceCsv SourceCsv { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceDocker"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,21 +61,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.SourceDocker SourceDocker { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceGA4BigQueryExport"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceGa4BigQueryExport"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceGA4BigQueryExport? SourceGA4BigQueryExport { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceGa4BigQueryExport? SourceGa4BigQueryExport { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceGA4BigQueryExport SourceGA4BigQueryExport { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceGa4BigQueryExport SourceGa4BigQueryExport { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceJSON"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceJson"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceJSON? SourceJSON { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceJson? SourceJson { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceJSON SourceJSON { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceJson SourceJson { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceShopify"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,25 +107,25 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 result.SourceBigQuery = new global::Soenneker.Algolia.OpenApiClient.Models.SourceBigQuery();
             }
-            else if("SourceCSV".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SourceCSV = new global::Soenneker.Algolia.OpenApiClient.Models.SourceCSV();
-            }
             else if("SourceCommercetools".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SourceCommercetools = new global::Soenneker.Algolia.OpenApiClient.Models.SourceCommercetools();
+            }
+            else if("SourceCsv".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SourceCsv = new global::Soenneker.Algolia.OpenApiClient.Models.SourceCsv();
             }
             else if("SourceDocker".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SourceDocker = new global::Soenneker.Algolia.OpenApiClient.Models.SourceDocker();
             }
-            else if("SourceGA4BigQueryExport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SourceGa4BigQueryExport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SourceGA4BigQueryExport = new global::Soenneker.Algolia.OpenApiClient.Models.SourceGA4BigQueryExport();
+                result.SourceGa4BigQueryExport = new global::Soenneker.Algolia.OpenApiClient.Models.SourceGa4BigQueryExport();
             }
-            else if("SourceJSON".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SourceJson".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SourceJSON = new global::Soenneker.Algolia.OpenApiClient.Models.SourceJSON();
+                result.SourceJson = new global::Soenneker.Algolia.OpenApiClient.Models.SourceJson();
             }
             else if("SourceShopify".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -155,21 +155,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 return SourceCommercetools.GetFieldDeserializers();
             }
-            else if(SourceCSV != null)
+            else if(SourceCsv != null)
             {
-                return SourceCSV.GetFieldDeserializers();
+                return SourceCsv.GetFieldDeserializers();
             }
             else if(SourceDocker != null)
             {
                 return SourceDocker.GetFieldDeserializers();
             }
-            else if(SourceGA4BigQueryExport != null)
+            else if(SourceGa4BigQueryExport != null)
             {
-                return SourceGA4BigQueryExport.GetFieldDeserializers();
+                return SourceGa4BigQueryExport.GetFieldDeserializers();
             }
-            else if(SourceJSON != null)
+            else if(SourceJson != null)
             {
-                return SourceJSON.GetFieldDeserializers();
+                return SourceJson.GetFieldDeserializers();
             }
             else if(SourceShopify != null)
             {
@@ -200,21 +200,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceCommercetools>(null, SourceCommercetools);
             }
-            else if(SourceCSV != null)
+            else if(SourceCsv != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceCSV>(null, SourceCSV);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceCsv>(null, SourceCsv);
             }
             else if(SourceDocker != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceDocker>(null, SourceDocker);
             }
-            else if(SourceGA4BigQueryExport != null)
+            else if(SourceGa4BigQueryExport != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceGA4BigQueryExport>(null, SourceGA4BigQueryExport);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceGa4BigQueryExport>(null, SourceGa4BigQueryExport);
             }
-            else if(SourceJSON != null)
+            else if(SourceJson != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceJSON>(null, SourceJSON);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceJson>(null, SourceJson);
             }
             else if(SourceShopify != null)
             {

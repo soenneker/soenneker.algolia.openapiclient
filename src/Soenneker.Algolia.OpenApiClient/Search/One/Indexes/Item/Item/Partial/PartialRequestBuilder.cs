@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial
 {
     /// <summary>
-    /// Builds and executes requests for operations under \search\1\indexes\{indexName}\{objectID}\partial
+    /// Builds and executes requests for operations under \search\1\indexes\{indexName}\{objectId}\partial
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PartialRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PartialRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/1/indexes/{indexName}/{objectID}/partial{?createIfNotExists*}", pathParameters)
+        public PartialRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/1/indexes/{indexName}/{objectId}/partial{?createIfNotExists*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,13 +30,13 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PartialRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/1/indexes/{indexName}/{objectID}/partial{?createIfNotExists*}", rawUrl)
+        public PartialRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/1/indexes/{indexName}/{objectId}/partial{?createIfNotExists*}", rawUrl)
         {
         }
         /// <summary>
         /// &quot;Adds new attributes to a record, or updates existing ones.- If a record with the specified object ID doesn&apos;t exist,  a new record is added to the index **if** `createIfNotExists` is true.- If the index doesn&apos;t exist yet, this method creates a new index.- Use first-level attributes only. Nested attributes aren&apos;t supported.  If you specify a nested attribute, this operation replaces its first-level ancestor.To update attributes without replacing the full record, use these built-in operations.These operations are useful when the initial data isn&apos;t available.- `Increment`: increment a numeric attribute.- `Decrement`: decrement a numeric attribute.- `Add`: append a number or string element to an array attribute.- `Remove`: remove all matching number or string elements from an array attribute made of numbers or strings.- `AddUnique`: add a number or string element to an array attribute made of numbers or strings only if it&apos;s not already present.- `IncrementFrom`: increment a numeric integer attribute only if the provided value matches the current value. Otherwise, the update is ignored.  Example: If you pass an `IncrementFrom` value of 2 for the `version` attribute but the current value is 1, the API ignores the update.  If the object doesn&apos;t exist, the API only creates it if you pass an `IncrementFrom` value of 0.- `IncrementSet`: increment a numeric integer attribute only if the provided value is greater than the current value. Otherwise, the update is ignored.  Example: If you pass an `IncrementSet` value of 2 for the `version` attribute and the current value is 1, the API updates the object.  If the object doesn&apos;t exist yet, the API only creates it if you pass an `IncrementSet` value greater than 0.Specify an operation by providing an object with the attribute to update as the key and its value as an object with these properties:- `_operation`: the operation to apply on the attribute.- `value`: the right-hand side argument to the operation, for example, increment or decrement step, or a value to add or remove.When updating multiple attributes or using multiple operations targeting the same record, use a single partial update for faster processing.This operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtWithObjectIdResponse"/></returns>
         /// <param name="body">Attributes to update.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -46,11 +46,11 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialPostResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialRequestBuilder.PartialRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtWithObjectIdResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.SearchPartialUpdateObjectRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialRequestBuilder.PartialRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialPostResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialRequestBuilder.PartialRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtWithObjectIdResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.SearchPartialUpdateObjectRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialRequestBuilder.PartialRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -62,7 +62,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialPostResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtWithObjectIdResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtWithObjectIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Adds new attributes to a record, or updates existing ones.- If a record with the specified object ID doesn&apos;t exist,  a new record is added to the index **if** `createIfNotExists` is true.- If the index doesn&apos;t exist yet, this method creates a new index.- Use first-level attributes only. Nested attributes aren&apos;t supported.  If you specify a nested attribute, this operation replaces its first-level ancestor.To update attributes without replacing the full record, use these built-in operations.These operations are useful when the initial data isn&apos;t available.- `Increment`: increment a numeric attribute.- `Decrement`: decrement a numeric attribute.- `Add`: append a number or string element to an array attribute.- `Remove`: remove all matching number or string elements from an array attribute made of numbers or strings.- `AddUnique`: add a number or string element to an array attribute made of numbers or strings only if it&apos;s not already present.- `IncrementFrom`: increment a numeric integer attribute only if the provided value matches the current value. Otherwise, the update is ignored.  Example: If you pass an `IncrementFrom` value of 2 for the `version` attribute but the current value is 1, the API ignores the update.  If the object doesn&apos;t exist, the API only creates it if you pass an `IncrementFrom` value of 0.- `IncrementSet`: increment a numeric integer attribute only if the provided value is greater than the current value. Otherwise, the update is ignored.  Example: If you pass an `IncrementSet` value of 2 for the `version` attribute and the current value is 1, the API updates the object.  If the object doesn&apos;t exist yet, the API only creates it if you pass an `IncrementSet` value greater than 0.Specify an operation by providing an object with the attribute to update as the key and its value as an object with these properties:- `_operation`: the operation to apply on the attribute.- `value`: the right-hand side argument to the operation, for example, increment or decrement step, or a value to add or remove.When updating multiple attributes or using multiple operations targeting the same record, use a single partial update for faster processing.This operation is subject to [indexing rate limits](https://support.algolia.com/hc/articles/4406975251089-Is-there-a-rate-limit-for-indexing-on-Algolia).&quot;
@@ -72,11 +72,11 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialRequestBuilder.PartialRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.SearchPartialUpdateObjectRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialRequestBuilder.PartialRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialRequestBuilder.PartialRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.SearchPartialUpdateObjectRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialRequestBuilder.PartialRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -29,7 +29,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string IndexName { get; set; }
 #endif
         /// <summary>Recommendation model to use for retrieving recommendations.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.Model? Model { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ModelValue? Model { get; set; }
         /// <summary>The queryParameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,7 +60,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "fallbackParameters", n => { FallbackParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters>(global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters.CreateFromDiscriminatorValue); } },
                 { "indexName", n => { IndexName = n.GetStringValue(); } },
-                { "model", n => { Model = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Model>(); } },
+                { "model", n => { Model = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ModelValue>(); } },
                 { "queryParameters", n => { QueryParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters>(global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters.CreateFromDiscriminatorValue); } },
                 { "threshold", n => { Threshold = n.GetIntValue(); } },
             };
@@ -74,7 +74,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters>("fallbackParameters", FallbackParameters);
             writer.WriteStringValue("indexName", IndexName);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Model>("model", Model);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ModelValue>("model", Model);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters>("queryParameters", QueryParameters);
             writer.WriteIntValue("threshold", Threshold);
         }

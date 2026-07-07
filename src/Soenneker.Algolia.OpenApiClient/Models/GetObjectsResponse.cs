@@ -23,10 +23,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Retrieved records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponse_results>? Results { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponseResultsItem>? Results { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponse_results> Results { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponseResultsItem> Results { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponse_results>(global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponse_results.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponseResultsItem>(global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponseResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("message", Message);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponse_results>("results", Results);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponseResultsItem>("results", Results);
         }
     }
 }

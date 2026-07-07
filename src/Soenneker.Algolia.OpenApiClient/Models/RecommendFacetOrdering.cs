@@ -24,10 +24,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Order of facet values. One object for each facet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetOrdering_values? Values { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetOrderingValues? Values { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetOrdering_values Values { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetOrderingValues Values { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "facets", n => { Facets = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendIndexSettingsFacets>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendIndexSettingsFacets.CreateFromDiscriminatorValue); } },
-                { "values", n => { Values = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetOrdering_values>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetOrdering_values.CreateFromDiscriminatorValue); } },
+                { "values", n => { Values = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetOrderingValues>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetOrderingValues.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendIndexSettingsFacets>("facets", Facets);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetOrdering_values>("values", Values);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetOrderingValues>("values", Values);
         }
     }
 }

@@ -32,7 +32,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Destinations
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("destinationID", position);
+                urlTplParams.Add("destinationId", position);
                 return new global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Destinations.Item.WithDestinationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }

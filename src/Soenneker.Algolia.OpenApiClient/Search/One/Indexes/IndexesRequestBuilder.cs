@@ -119,15 +119,8 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes
             [QueryParameter("hitsPerPage")]
             public int? HitsPerPage { get; set; }
             /// <summary>Requested page of the API response.If `null`, the API response is not paginated.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
+            public int? Page { get; set; }
         }
     }
 }

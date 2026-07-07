@@ -33,7 +33,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "in")]
         #pragma warning disable CS1591
-        In,
+        InValue,
         #pragma warning restore CS1591
         [EnumMember(Value = "jp")]
         #pragma warning disable CS1591

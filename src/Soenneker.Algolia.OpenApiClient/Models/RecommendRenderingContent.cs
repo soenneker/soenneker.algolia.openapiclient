@@ -24,10 +24,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The redirect rule container.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendRedirectURL? Redirect { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendRedirectUrl? Redirect { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendRedirectURL Redirect { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendRedirectUrl Redirect { get; set; }
 #endif
         /// <summary>Widgets returned from any rules that are applied to the current search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "facetOrdering", n => { FacetOrdering = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetOrdering>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetOrdering.CreateFromDiscriminatorValue); } },
-                { "redirect", n => { Redirect = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRedirectURL>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendRedirectURL.CreateFromDiscriminatorValue); } },
+                { "redirect", n => { Redirect = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRedirectUrl>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendRedirectUrl.CreateFromDiscriminatorValue); } },
                 { "widgets", n => { Widgets = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendWidgets>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendWidgets.CreateFromDiscriminatorValue); } },
             };
         }
@@ -68,7 +68,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetOrdering>("facetOrdering", FacetOrdering);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRedirectURL>("redirect", Redirect);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRedirectUrl>("redirect", Redirect);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendWidgets>("widgets", Widgets);
         }
     }

@@ -15,10 +15,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Search parameters applied to this variant when the same index is used for multiple variants.Only present if custom search parameters were provided during test creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Variant_customSearchParameters? CustomSearchParameters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.VariantCustomSearchParametersProperty? CustomSearchParameters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Variant_customSearchParameters CustomSearchParameters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.VariantCustomSearchParametersProperty CustomSearchParameters { get; set; }
 #endif
         /// <summary>Description for this variant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "customSearchParameters", n => { CustomSearchParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Variant_customSearchParameters>(global::Soenneker.Algolia.OpenApiClient.Models.Variant_customSearchParameters.CreateFromDiscriminatorValue); } },
+                { "customSearchParameters", n => { CustomSearchParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.VariantCustomSearchParametersProperty>(global::Soenneker.Algolia.OpenApiClient.Models.VariantCustomSearchParametersProperty.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "estimatedSampleSize", n => { EstimatedSampleSize = n.GetIntValue(); } },
                 { "index", n => { Index = n.GetStringValue(); } },
@@ -90,7 +90,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Variant_customSearchParameters>("customSearchParameters", CustomSearchParameters);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.VariantCustomSearchParametersProperty>("customSearchParameters", CustomSearchParameters);
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("estimatedSampleSize", EstimatedSampleSize);
             writer.WriteStringValue("index", Index);

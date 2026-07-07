@@ -12,7 +12,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     public partial class WatchResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Date and time when the A/B test was created, in RFC 3339 format.</summary>
+        /// <summary>Date and time when the resource was created, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedAt { get; set; }
@@ -23,10 +23,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>This field is always null when used with the Push endpoint.When used for a source discover or source validate run, it will include the sampled data of the source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.WatchResponse_data>? Data { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.WatchResponseDataItemProperty>? Data { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.WatchResponse_data> Data { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.WatchResponseDataItemProperty> Data { get; set; }
 #endif
         /// <summary>Universally unique identifier (UUID) of an event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,10 +39,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>in case of error, observability events will be added to the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Event>? Events { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType4>? Events { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Event> Events { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType4> Events { get; set; }
 #endif
         /// <summary>a message describing the outcome of the operation that has been ran (push, discover or validate) run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,9 +79,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.WatchResponse_data>(global::Soenneker.Algolia.OpenApiClient.Models.WatchResponse_data.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.WatchResponseDataItemProperty>(global::Soenneker.Algolia.OpenApiClient.Models.WatchResponseDataItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "eventID", n => { EventID = n.GetStringValue(); } },
-                { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Event>(global::Soenneker.Algolia.OpenApiClient.Models.Event.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventType4>(global::Soenneker.Algolia.OpenApiClient.Models.EventType4.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "runID", n => { RunID = n.GetStringValue(); } },
             };
@@ -94,9 +94,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("createdAt", CreatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.WatchResponse_data>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.WatchResponseDataItemProperty>("data", Data);
             writer.WriteStringValue("eventID", EventID);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Event>("events", Events);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventType4>("events", Events);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("runID", RunID);
         }

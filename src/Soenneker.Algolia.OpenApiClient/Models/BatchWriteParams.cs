@@ -16,10 +16,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The requests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParams_requests>? Requests { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItem>? Requests { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParams_requests> Requests { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItem> Requests { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "requests", n => { Requests = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParams_requests>(global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParams_requests.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "requests", n => { Requests = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItem>(global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParams_requests>("requests", Requests);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItem>("requests", Requests);
         }
     }
 }

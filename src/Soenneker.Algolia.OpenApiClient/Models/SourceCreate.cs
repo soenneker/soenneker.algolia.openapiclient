@@ -37,7 +37,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceType? Type { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceType2? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "authenticationID", n => { AuthenticationID = n.GetStringValue(); } },
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceInput>(global::Soenneker.Algolia.OpenApiClient.Models.SourceInput.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceType2>(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("authenticationID", AuthenticationID);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceInput>("input", Input);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceType2>("type", Type);
         }
     }
 }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \advanced-personalization\2\users\{userID}
+    /// Builds and executes requests for operations under \advanced-personalization\2\users\{userId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithUserItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithUserItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/advanced-personalization/2/users/{userID}", pathParameters)
+        public WithUserItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/advanced-personalization/2/users/{userId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithUserItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/advanced-personalization/2/users/{userID}", rawUrl)
+        public WithUserItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/advanced-personalization/2/users/{userId}", rawUrl)
         {
         }
         /// <summary>
@@ -39,9 +39,9 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users.Item
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.DeleteUserResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesBadUserID">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesBadUserId">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesUnauthorized">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesInvalidUserID">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesInvalidUserId">When receiving a 422 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesInternalServerError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,9 +55,9 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesBadUserID.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesBadUserId.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesUnauthorized.CreateFromDiscriminatorValue },
-                { "422", global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesInvalidUserID.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesInvalidUserId.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesInternalServerError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.DeleteUserResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.DeleteUserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -68,10 +68,10 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users.Item
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.User"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesBadUserID">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesBadUserId">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesUnauthorized">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesGenericNotFound">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesInvalidUserID">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesInvalidUserId">When receiving a 422 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesInternalServerError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,10 +85,10 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesBadUserID.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesBadUserId.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesUnauthorized.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesGenericNotFound.CreateFromDiscriminatorValue },
-                { "422", global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesInvalidUserID.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesInvalidUserId.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Algolia.OpenApiClient.Models.ErrorResponsesInternalServerError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.User>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgolia"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaInsights"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthAPIKey"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthBasic"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthGoogleServiceAccount"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthInputMember1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthOAuth"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgolia"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaInsights"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthApiKey"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthBasic"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthGoogleServiceAccount"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthInputMember1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthOAuth"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthInput : IComposedTypeWrapper, IParsable
@@ -29,13 +29,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaInsights AuthAlgoliaInsights { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthAPIKey"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthApiKey"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AuthAPIKey? AuthAPIKey { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AuthApiKey? AuthApiKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AuthAPIKey AuthAPIKey { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AuthApiKey AuthApiKey { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthBasic"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,17 +79,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.AuthInput();
-            if("AuthAPIKey".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.AuthAPIKey = new global::Soenneker.Algolia.OpenApiClient.Models.AuthAPIKey();
-            }
-            else if("AuthAlgolia".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("AuthAlgolia".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AuthAlgolia = new global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgolia();
             }
             else if("AuthAlgoliaInsights".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AuthAlgoliaInsights = new global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaInsights();
+            }
+            else if("AuthApiKey".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AuthApiKey = new global::Soenneker.Algolia.OpenApiClient.Models.AuthApiKey();
             }
             else if("AuthBasic".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -98,10 +98,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             else if("AuthGoogleServiceAccount".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AuthGoogleServiceAccount = new global::Soenneker.Algolia.OpenApiClient.Models.AuthGoogleServiceAccount();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.AuthInputMember1 = new global::Soenneker.Algolia.OpenApiClient.Models.AuthInputMember1();
             }
             else if("AuthOAuth".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -123,9 +119,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 return AuthAlgoliaInsights.GetFieldDeserializers();
             }
-            else if(AuthAPIKey != null)
+            else if(AuthApiKey != null)
             {
-                return AuthAPIKey.GetFieldDeserializers();
+                return AuthApiKey.GetFieldDeserializers();
             }
             else if(AuthBasic != null)
             {
@@ -160,9 +156,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaInsights>(null, AuthAlgoliaInsights);
             }
-            else if(AuthAPIKey != null)
+            else if(AuthApiKey != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthAPIKey>(null, AuthAPIKey);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthApiKey>(null, AuthApiKey);
             }
             else if(AuthBasic != null)
             {

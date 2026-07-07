@@ -12,7 +12,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     public partial class ConfigStatus : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Index name (case-sensitive).</summary>
+        /// <summary>Name of the Query Suggestions index (case-sensitive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IndexName { get; set; }

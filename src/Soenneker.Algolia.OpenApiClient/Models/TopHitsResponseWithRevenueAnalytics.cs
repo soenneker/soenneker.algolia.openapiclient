@@ -15,10 +15,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Most frequent search results with click, conversion, and revenue metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.TopHitsResponseWithRevenueAnalytics_hits>? Hits { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.TopHitsResponseWithRevenueAnalyticsHitsItem>? Hits { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.TopHitsResponseWithRevenueAnalytics_hits> Hits { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.TopHitsResponseWithRevenueAnalyticsHitsItem> Hits { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "hits", n => { Hits = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.TopHitsResponseWithRevenueAnalytics_hits>(global::Soenneker.Algolia.OpenApiClient.Models.TopHitsResponseWithRevenueAnalytics_hits.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "hits", n => { Hits = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.TopHitsResponseWithRevenueAnalyticsHitsItem>(global::Soenneker.Algolia.OpenApiClient.Models.TopHitsResponseWithRevenueAnalyticsHitsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.TopHitsResponseWithRevenueAnalytics_hits>("hits", Hits);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.TopHitsResponseWithRevenueAnalyticsHitsItem>("hits", Hits);
         }
     }
 }

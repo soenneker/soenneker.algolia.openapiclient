@@ -63,6 +63,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public List<global::Soenneker.Algolia.OpenApiClient.Models.TimeRange> Validity { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.CompositionRule"/> and sets the default values.
+        /// </summary>
+        public CompositionRule()
+        {
+            Enabled = true;
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.CompositionRule"/></returns>

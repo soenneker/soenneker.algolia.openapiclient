@@ -136,10 +136,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Characters and their normalized replacements.This overrides Algolia&apos;s default [normalization](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/normalization).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams_customNormalization? CustomNormalization { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParamsCustomNormalization? CustomNormalization { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams_customNormalization CustomNormalization { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParamsCustomNormalization CustomNormalization { get; set; }
 #endif
         /// <summary>Attributes to use as [custom ranking](https://www.algolia.com/doc/guides/managing-results/must-do/custom-ranking).Attribute names are case-sensitive.The custom ranking attributes decide which items are shown first if the other ranking criteria are equal.Records with missing values for your selected custom ranking attributes are always sorted last.Boolean attributes are sorted based on their alphabetical order.**Modifiers**- `asc(&quot;ATTRIBUTE&quot;)`.  Sort the index by the values of an attribute, in ascending order.- `desc(&quot;ATTRIBUTE&quot;)`.  Sort the index by the values of an attribute, in descending order.If you use two or more custom ranking attributes,[reduce the precision](https://www.algolia.com/doc/guides/managing-results/must-do/custom-ranking/how-to/controlling-custom-ranking-metrics-precision) of your first attributes,or the other attributes will never be applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -152,10 +152,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Searchable attributes to which Algolia should apply [word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/how-to/customize-segmentation) (decompounding).Attribute names are case-sensitive.Compound words are formed by combining two or more individual words,and are particularly prevalent in Germanic languages—for example, &quot;firefighter&quot;.With decompounding, the individual components are indexed separately.You can specify different lists for different languages.Decompounding is supported for these languages:Dutch (`nl`), German (`de`), Finnish (`fi`), Danish (`da`), Swedish (`sv`), and Norwegian (`no`).Decompounding doesn&apos;t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).For example, `Gartenstühle` won&apos;t be decompounded if the `ü` consists of `u` (U+0075) and `◌̈` (U+0308).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams_decompoundedAttributes? DecompoundedAttributes { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParamsDecompoundedAttributes? DecompoundedAttributes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams_decompoundedAttributes DecompoundedAttributes { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParamsDecompoundedAttributes DecompoundedAttributes { get; set; }
 #endif
         /// <summary>&quot;Whether to split compound words in the query into their building blocksFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#splitting-compound-words).Word segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.Decompounding doesn&apos;t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).For example, `Gartenstühle` won&apos;t be decompounded if the `ü` consists of `u` (U+0075) and `◌̈` (U+0308).&quot;</summary>
         public bool? DecompoundQuery { get; set; }
@@ -199,8 +199,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.RecommendDistinct Distinct { get; set; }
 #endif
-        /// <summary>Whether to enable A/B testing for this search.</summary>
-        public bool? EnableABTest { get; set; }
         /// <summary>Whether to enable Personalization.</summary>
         public bool? EnablePersonalization { get; set; }
         /// <summary>Whether this search will use [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking)This setting only has an effect if you activated Dynamic Re-Ranking for this index in the Algolia dashboard.</summary>
@@ -209,14 +207,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public bool? EnableRules { get; set; }
         /// <summary>Determines how the [Exact ranking criterion](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/in-depth/adjust-exact-settings/#turn-off-exact-for-some-attributes) is computed when the search query has only one word.- `attribute`.  The Exact ranking criterion is 1 if the query word and attribute value are the same.  For example, a search for &quot;road&quot; will match the value &quot;road&quot;, but not &quot;road trip&quot;.- `none`.  The Exact ranking criterion is ignored on single-word searches.- `word`.  The Exact ranking criterion is 1 if the query word is found in the attribute value.  The query word must have at least 3 characters and must not be a stop word.  Only exact matches will be highlighted,  partial and prefix matches won&apos;t.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.RecommendExactOnSingleWordQuery? ExactOnSingleWordQuery { get; set; }
-        /// <summary>Filter the search by facet values, so that only records with the same facet values are retrieved.**Prefer using the `filters` parameter, which supports all filter types and combinations with boolean operators.**- `[filter1, filter2]` is interpreted as `filter1 AND filter2`.- `[[filter1, filter2], filter3]` is interpreted as `filter1 OR filter2 AND filter3`.- `facet:-value` is interpreted as `NOT facet:value`.While it&apos;s best to avoid attributes that start with a `-`, you can still filter them by escaping with a backslash:`facet:\-value`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetFilters? FacetFilters { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetFilters FacetFilters { get; set; }
-#endif
         /// <summary>Whether faceting should be applied after deduplication with `distinct`This leads to accurate facet counts when using faceting in combination with `distinct`.It&apos;s usually better to use `afterDistinct` modifiers in the `attributesForFaceting` setting,as `facetingAfterDistinct` only computes correct facet counts if all records have the same facet values for the `attributeForDistinct`.</summary>
         public bool? FacetingAfterDistinct { get; set; }
         /// <summary>Facets for which to retrieve facet values that match the search criteria and the number of matching facet valuesTo retrieve all facets, use the wildcard character `*`.For more information, see [facets](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#contextual-facet-values-and-counts).</summary>
@@ -369,14 +359,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Determines if and how query words are interpreted as prefixes.By default, only the last query word is treated as a prefix (`prefixLast`).To turn off prefix search, use `prefixNone`.Avoid `prefixAll`, which treats all query words as prefixes.This might lead to counterintuitive results and makes your search slower.For more information, see [Prefix searching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/in-depth/prefix-searching).</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.RecommendQueryType? QueryType { get; set; }
-        /// <summary>Determines the order in which Algolia returns your results.By default, each entry corresponds to a [ranking criteria](https://www.algolia.com/doc/guides/managing-results/relevance-overview/in-depth/ranking-criteria).The tie-breaking algorithm sequentially applies each criterion in the order they&apos;re specified.If you configure a replica index for [sorting by an attribute](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/how-to/sort-by-attribute),you put the sorting attribute at the top of the list.**Modifiers**- `asc(&quot;ATTRIBUTE&quot;)`.  Sort the index by the values of an attribute, in ascending order.- `desc(&quot;ATTRIBUTE&quot;)`.  Sort the index by the values of an attribute, in descending order.Before you modify the default setting,test your changes in the dashboard,and by [A/B testing](https://www.algolia.com/doc/guides/ab-testing/what-is-ab-testing).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Ranking { get; set; }
-#nullable restore
-#else
-        public List<string> Ranking { get; set; }
-#endif
         /// <summary>Relevancy threshold below which less relevant results aren&apos;t included in the resultsYou can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).Use this setting to strike a balance between the relevance and number of returned results.</summary>
         public int? RelevancyStrictness { get; set; }
         /// <summary>Removes stop words from the search query.Stop words are common words like articles, conjunctions, prepositions, or pronouns that have little or no meaning on their own.In English, &quot;the&quot;, &quot;a&quot;, or &quot;and&quot; are stop words.Only use this feature for the languages used in your index.</summary>
@@ -410,10 +392,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The reRankingApplyFilter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.PropertiesReRankingApplyFilter? ReRankingApplyFilter { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseRecommendIndexSettingsReRankingApplyFilter? ReRankingApplyFilter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.PropertiesReRankingApplyFilter ReRankingApplyFilter { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseRecommendIndexSettingsReRankingApplyFilter ReRankingApplyFilter { get; set; }
 #endif
         /// <summary>Properties to include in the API response of search and browse requestsBy default, all response properties are included.To reduce the response size, you can select which properties should be includedAn empty list may lead to an empty API response (except properties you can&apos;t exclude)You can&apos;t exclude these properties:`message`, `warning`, `cursor`, `abTestVariantID`,or any property added by setting `getRankingInfo` to trueYour search depends on the `hits` field. If you omit this field, searches won&apos;t return any results.Your UI might also depend on other properties, for example, for pagination.Before restricting the response size, check the impact on your search experience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -512,10 +494,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>An object with custom data.You can store up to 32kB as custom data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams_userData? UserData { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParamsUserData? UserData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams_userData UserData { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParamsUserData UserData { get; set; }
 #endif
         /// <summary>Unique pseudonymous or anonymous user identifier.This helps with analytics and click and conversion events.For more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -531,9 +513,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public RecommendSearchParams()
         {
             AdditionalData = new Dictionary<string, object>();
-            ExactOnSingleWordQuery = global::Soenneker.Algolia.OpenApiClient.Models.RecommendExactOnSingleWordQuery.Attribute;
-            QueryType = global::Soenneker.Algolia.OpenApiClient.Models.RecommendQueryType.PrefixLast;
-            RemoveWordsIfNoResults = global::Soenneker.Algolia.OpenApiClient.Models.RecommendRemoveWordsIfNoResults.None;
+            AllowCompressionOfIntegerArray = false;
+            PaginationLimitedTo = 1000;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -573,21 +554,19 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "attributesToTransliterate", n => { AttributesToTransliterate = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "camelCaseAttributes", n => { CamelCaseAttributes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "clickAnalytics", n => { ClickAnalytics = n.GetBoolValue(); } },
-                { "customNormalization", n => { CustomNormalization = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams_customNormalization>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams_customNormalization.CreateFromDiscriminatorValue); } },
+                { "customNormalization", n => { CustomNormalization = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParamsCustomNormalization>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParamsCustomNormalization.CreateFromDiscriminatorValue); } },
                 { "customRanking", n => { CustomRanking = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "decompoundQuery", n => { DecompoundQuery = n.GetBoolValue(); } },
-                { "decompoundedAttributes", n => { DecompoundedAttributes = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams_decompoundedAttributes>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams_decompoundedAttributes.CreateFromDiscriminatorValue); } },
+                { "decompoundedAttributes", n => { DecompoundedAttributes = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParamsDecompoundedAttributes>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParamsDecompoundedAttributes.CreateFromDiscriminatorValue); } },
                 { "disableExactOnAttributes", n => { DisableExactOnAttributes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "disablePrefixOnAttributes", n => { DisablePrefixOnAttributes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "disableTypoToleranceOnAttributes", n => { DisableTypoToleranceOnAttributes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "disableTypoToleranceOnWords", n => { DisableTypoToleranceOnWords = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "distinct", n => { Distinct = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendDistinct>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendDistinct.CreateFromDiscriminatorValue); } },
-                { "enableABTest", n => { EnableABTest = n.GetBoolValue(); } },
                 { "enablePersonalization", n => { EnablePersonalization = n.GetBoolValue(); } },
                 { "enableReRanking", n => { EnableReRanking = n.GetBoolValue(); } },
                 { "enableRules", n => { EnableRules = n.GetBoolValue(); } },
                 { "exactOnSingleWordQuery", n => { ExactOnSingleWordQuery = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendExactOnSingleWordQuery>(); } },
-                { "facetFilters", n => { FacetFilters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetFilters>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetFilters.CreateFromDiscriminatorValue); } },
                 { "facetingAfterDistinct", n => { FacetingAfterDistinct = n.GetBoolValue(); } },
                 { "facets", n => { Facets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "filters", n => { Filters = n.GetStringValue(); } },
@@ -616,8 +595,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "queryLanguages", n => { QueryLanguages = n.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSupportedLanguage>()?.AsList(); } },
                 { "queryType", n => { QueryType = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendQueryType>(); } },
-                { "ranking", n => { Ranking = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "reRankingApplyFilter", n => { ReRankingApplyFilter = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.PropertiesReRankingApplyFilter>(global::Soenneker.Algolia.OpenApiClient.Models.PropertiesReRankingApplyFilter.CreateFromDiscriminatorValue); } },
+                { "reRankingApplyFilter", n => { ReRankingApplyFilter = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseRecommendIndexSettingsReRankingApplyFilter>(global::Soenneker.Algolia.OpenApiClient.Models.BaseRecommendIndexSettingsReRankingApplyFilter.CreateFromDiscriminatorValue); } },
                 { "relevancyStrictness", n => { RelevancyStrictness = n.GetIntValue(); } },
                 { "removeStopWords", n => { RemoveStopWords = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRemoveStopWords>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendRemoveStopWords.CreateFromDiscriminatorValue); } },
                 { "removeWordsIfNoResults", n => { RemoveWordsIfNoResults = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRemoveWordsIfNoResults>(); } },
@@ -638,7 +616,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "tagFilters", n => { TagFilters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TagFilters>(global::Soenneker.Algolia.OpenApiClient.Models.TagFilters.CreateFromDiscriminatorValue); } },
                 { "typoTolerance", n => { TypoTolerance = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendTypoTolerance>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendTypoTolerance.CreateFromDiscriminatorValue); } },
                 { "unretrievableAttributes", n => { UnretrievableAttributes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "userData", n => { UserData = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams_userData>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams_userData.CreateFromDiscriminatorValue); } },
+                { "userData", n => { UserData = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParamsUserData>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParamsUserData.CreateFromDiscriminatorValue); } },
                 { "userToken", n => { UserToken = n.GetStringValue(); } },
             };
         }
@@ -669,21 +647,19 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("attributesToTransliterate", AttributesToTransliterate);
             writer.WriteCollectionOfPrimitiveValues<string>("camelCaseAttributes", CamelCaseAttributes);
             writer.WriteBoolValue("clickAnalytics", ClickAnalytics);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams_customNormalization>("customNormalization", CustomNormalization);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParamsCustomNormalization>("customNormalization", CustomNormalization);
             writer.WriteCollectionOfPrimitiveValues<string>("customRanking", CustomRanking);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams_decompoundedAttributes>("decompoundedAttributes", DecompoundedAttributes);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParamsDecompoundedAttributes>("decompoundedAttributes", DecompoundedAttributes);
             writer.WriteBoolValue("decompoundQuery", DecompoundQuery);
             writer.WriteCollectionOfPrimitiveValues<string>("disableExactOnAttributes", DisableExactOnAttributes);
             writer.WriteCollectionOfPrimitiveValues<string>("disablePrefixOnAttributes", DisablePrefixOnAttributes);
             writer.WriteCollectionOfPrimitiveValues<string>("disableTypoToleranceOnAttributes", DisableTypoToleranceOnAttributes);
             writer.WriteCollectionOfPrimitiveValues<string>("disableTypoToleranceOnWords", DisableTypoToleranceOnWords);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendDistinct>("distinct", Distinct);
-            writer.WriteBoolValue("enableABTest", EnableABTest);
             writer.WriteBoolValue("enablePersonalization", EnablePersonalization);
             writer.WriteBoolValue("enableReRanking", EnableReRanking);
             writer.WriteBoolValue("enableRules", EnableRules);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendExactOnSingleWordQuery>("exactOnSingleWordQuery", ExactOnSingleWordQuery);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetFilters>("facetFilters", FacetFilters);
             writer.WriteBoolValue("facetingAfterDistinct", FacetingAfterDistinct);
             writer.WriteCollectionOfPrimitiveValues<string>("facets", Facets);
             writer.WriteStringValue("filters", Filters);
@@ -712,14 +688,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("query", Query);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSupportedLanguage>("queryLanguages", QueryLanguages);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendQueryType>("queryType", QueryType);
-            writer.WriteCollectionOfPrimitiveValues<string>("ranking", Ranking);
             writer.WriteIntValue("relevancyStrictness", RelevancyStrictness);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRemoveStopWords>("removeStopWords", RemoveStopWords);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRemoveWordsIfNoResults>("removeWordsIfNoResults", RemoveWordsIfNoResults);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRenderingContent>("renderingContent", RenderingContent);
             writer.WriteBoolValue("replaceSynonymsInHighlight", ReplaceSynonymsInHighlight);
             writer.WriteCollectionOfPrimitiveValues<string>("replicas", Replicas);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.PropertiesReRankingApplyFilter>("reRankingApplyFilter", ReRankingApplyFilter);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseRecommendIndexSettingsReRankingApplyFilter>("reRankingApplyFilter", ReRankingApplyFilter);
             writer.WriteCollectionOfPrimitiveValues<string>("responseFields", ResponseFields);
             writer.WriteBoolValue("restrictHighlightAndSnippetArrays", RestrictHighlightAndSnippetArrays);
             writer.WriteCollectionOfPrimitiveValues<string>("restrictSearchableAttributes", RestrictSearchableAttributes);
@@ -734,7 +709,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TagFilters>("tagFilters", TagFilters);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendTypoTolerance>("typoTolerance", TypoTolerance);
             writer.WriteCollectionOfPrimitiveValues<string>("unretrievableAttributes", UnretrievableAttributes);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams_userData>("userData", UserData);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParamsUserData>("userData", UserData);
             writer.WriteStringValue("userToken", UserToken);
             writer.WriteAdditionalData(AdditionalData);
         }

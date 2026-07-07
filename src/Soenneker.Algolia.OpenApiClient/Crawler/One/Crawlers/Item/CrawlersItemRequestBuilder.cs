@@ -109,25 +109,25 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item
         /// <summary>
         /// Delete the specified crawler.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.CrawlersDeleteResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ActionAcknowledgedResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Crawlers400Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.InvalidRequestResponse">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.CrawlersDeleteResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.ActionAcknowledgedResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.CrawlersDeleteResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.ActionAcknowledgedResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Crawlers400Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.InvalidRequestResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.CrawlersDeleteResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.CrawlersDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.ActionAcknowledgedResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.ActionAcknowledgedResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves details about the specified crawler, optionally with its configuration.
@@ -135,7 +135,7 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetCrawlerResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.GetCrawlerResponse400Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.InvalidRequestResponse">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Algolia.OpenApiClient.Models.GetCrawlerResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.CrawlersItemRequestBuilder.CrawlersItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -148,7 +148,7 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.GetCrawlerResponse400Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.InvalidRequestResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.GetCrawlerResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.GetCrawlerResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -156,27 +156,27 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item
         /// Replaces the crawler configuration with a new one.If you only want to change the crawler&apos;s name, you can use this operation.For other configuration changes, use the &quot;Update configuration&quot; endpoint instead instead,because changes made here aren&apos;t versioned.When replacing the configuration, you must provide the full configuration,including any settings you want to keep.
         /// Update configuration. <see href="https://www.algolia.com/doc/rest-api/crawler/patch-config" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.CrawlersPatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ActionAcknowledgedResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.Crawlers400Error">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.InvalidRequestResponse">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.CrawlersPatchResponse?> PatchAsync(global::Soenneker.Algolia.OpenApiClient.Models.CrawlerPatchCrawler body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.ActionAcknowledgedResponse?> PatchAsync(global::Soenneker.Algolia.OpenApiClient.Models.CrawlerPatchCrawlerRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.CrawlersPatchResponse> PatchAsync(global::Soenneker.Algolia.OpenApiClient.Models.CrawlerPatchCrawler body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.ActionAcknowledgedResponse> PatchAsync(global::Soenneker.Algolia.OpenApiClient.Models.CrawlerPatchCrawlerRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Algolia.OpenApiClient.Models.Crawlers400Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Algolia.OpenApiClient.Models.InvalidRequestResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.CrawlersPatchResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.CrawlersPatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.ActionAcknowledgedResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.ActionAcknowledgedResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete the specified crawler.
@@ -224,11 +224,11 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.CrawlerPatchCrawler body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.CrawlerPatchCrawlerRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.CrawlerPatchCrawler body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.CrawlerPatchCrawlerRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

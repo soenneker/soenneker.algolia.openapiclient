@@ -28,10 +28,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Surround words that match the query with HTML tags for highlighting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit_highlightResult? HighlightResult { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionHitHighlightResult? HighlightResult { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit_highlightResult HighlightResult { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionHitHighlightResult HighlightResult { get; set; }
 #endif
         /// <summary>Unique record identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,10 +52,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Snippets that show the context around a matching search query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit_snippetResult? SnippetResult { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionHitSnippetResult? SnippetResult { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit_snippetResult SnippetResult { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionHitSnippetResult SnippetResult { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit"/> and sets the default values.
@@ -84,10 +84,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "_distinctSeqID", n => { DistinctSeqID = n.GetIntValue(); } },
                 { "_extra", n => { Extra = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.HitMetadata>(global::Soenneker.Algolia.OpenApiClient.Models.HitMetadata.CreateFromDiscriminatorValue); } },
-                { "_highlightResult", n => { HighlightResult = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit_highlightResult>(global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit_highlightResult.CreateFromDiscriminatorValue); } },
+                { "_highlightResult", n => { HighlightResult = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHitHighlightResult>(global::Soenneker.Algolia.OpenApiClient.Models.CompositionHitHighlightResult.CreateFromDiscriminatorValue); } },
                 { "objectID", n => { ObjectID = n.GetStringValue(); } },
                 { "_rankingInfo", n => { RankingInfo = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.HitRankingInfo>(global::Soenneker.Algolia.OpenApiClient.Models.HitRankingInfo.CreateFromDiscriminatorValue); } },
-                { "_snippetResult", n => { SnippetResult = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit_snippetResult>(global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit_snippetResult.CreateFromDiscriminatorValue); } },
+                { "_snippetResult", n => { SnippetResult = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHitSnippetResult>(global::Soenneker.Algolia.OpenApiClient.Models.CompositionHitSnippetResult.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -99,10 +99,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("_distinctSeqID", DistinctSeqID);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.HitMetadata>("_extra", Extra);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit_highlightResult>("_highlightResult", HighlightResult);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHitHighlightResult>("_highlightResult", HighlightResult);
             writer.WriteStringValue("objectID", ObjectID);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.HitRankingInfo>("_rankingInfo", RankingInfo);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit_snippetResult>("_snippetResult", SnippetResult);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHitSnippetResult>("_snippetResult", SnippetResult);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

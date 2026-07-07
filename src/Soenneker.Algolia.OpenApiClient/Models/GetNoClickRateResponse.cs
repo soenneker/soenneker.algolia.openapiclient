@@ -17,10 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Daily no click rates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetNoClickRateResponse_dates>? Dates { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetNoClickRateResponseDatesItem>? Dates { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetNoClickRateResponse_dates> Dates { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetNoClickRateResponseDatesItem> Dates { get; set; }
 #endif
         /// <summary>Number of times this search was returned as a result without any click.</summary>
         public int? NoClickCount { get; set; }
@@ -45,7 +45,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "count", n => { Count = n.GetIntValue(); } },
-                { "dates", n => { Dates = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetNoClickRateResponse_dates>(global::Soenneker.Algolia.OpenApiClient.Models.GetNoClickRateResponse_dates.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "dates", n => { Dates = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetNoClickRateResponseDatesItem>(global::Soenneker.Algolia.OpenApiClient.Models.GetNoClickRateResponseDatesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "noClickCount", n => { NoClickCount = n.GetIntValue(); } },
                 { "rate", n => { Rate = n.GetDoubleValue(); } },
             };
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetNoClickRateResponse_dates>("dates", Dates);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetNoClickRateResponseDatesItem>("dates", Dates);
             writer.WriteIntValue("noClickCount", NoClickCount);
             writer.WriteDoubleValue("rate", Rate);
         }

@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchForFacetValuesResponse"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchResponse"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchResponsePartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchForFacetValuesResponse"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchResponse"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchResult : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchResponsePartial"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResponsePartial? SearchResponsePartial { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResponsePartial SearchResponsePartial { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchForFacetValuesResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,7 +47,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.SearchResult();
-            if("SearchSearchForFacetValuesResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("SearchResponsePartial".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SearchResponsePartial = new global::Soenneker.Algolia.OpenApiClient.Models.SearchResponsePartial();
+            }
+            else if("SearchSearchForFacetValuesResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SearchSearchForFacetValuesResponse = new global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchForFacetValuesResponse();
             }
@@ -55,7 +67,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(SearchSearchForFacetValuesResponse != null)
+            if(SearchResponsePartial != null)
+            {
+                return SearchResponsePartial.GetFieldDeserializers();
+            }
+            else if(SearchSearchForFacetValuesResponse != null)
             {
                 return SearchSearchForFacetValuesResponse.GetFieldDeserializers();
             }
@@ -72,7 +88,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(SearchSearchForFacetValuesResponse != null)
+            if(SearchResponsePartial != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchResponsePartial>(null, SearchResponsePartial);
+            }
+            else if(SearchSearchForFacetValuesResponse != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchForFacetValuesResponse>(null, SearchSearchForFacetValuesResponse);
             }

@@ -17,10 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Matching facet values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResults_facetHits>? FacetHits { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResultsFacetHitsItem>? FacetHits { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResults_facetHits> FacetHits { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResultsFacetHitsItem> FacetHits { get; set; }
 #endif
         /// <summary>The indexName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,7 +51,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "exhaustiveFacetsCount", n => { ExhaustiveFacetsCount = n.GetBoolValue(); } },
-                { "facetHits", n => { FacetHits = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResults_facetHits>(global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResults_facetHits.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "facetHits", n => { FacetHits = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResultsFacetHitsItem>(global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResultsFacetHitsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "indexName", n => { IndexName = n.GetStringValue(); } },
                 { "processingTimeMS", n => { ProcessingTimeMS = n.GetIntValue(); } },
             };
@@ -64,7 +64,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("exhaustiveFacetsCount", ExhaustiveFacetsCount);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResults_facetHits>("facetHits", FacetHits);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResultsFacetHitsItem>("facetHits", FacetHits);
             writer.WriteStringValue("indexName", IndexName);
             writer.WriteIntValue("processingTimeMS", ProcessingTimeMS);
         }

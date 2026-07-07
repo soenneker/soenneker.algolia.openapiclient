@@ -38,7 +38,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The status property</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.ServerStatus? Status { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.TypeObject? Type { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TypeValue? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Server"/> and sets the default values.
+        /// </summary>
+        public Server()
+        {
+            IsReplica = false;
+            IsSlave = false;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,7 +71,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Region>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ServerStatus>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TypeObject>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TypeValue>(); } },
             };
         }
         /// <summary>
@@ -79,7 +87,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Region>("region", Region);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ServerStatus>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TypeObject>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TypeValue>("type", Type);
         }
     }
 }

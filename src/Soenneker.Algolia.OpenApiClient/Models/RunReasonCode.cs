@@ -9,7 +9,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     {
         [EnumMember(Value = "internal")]
         #pragma warning disable CS1591
-        Internal,
+        InternalValue,
         #pragma warning restore CS1591
         [EnumMember(Value = "cancelled")]
         #pragma warning disable CS1591
@@ -21,15 +21,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "no_events")]
         #pragma warning disable CS1591
-        No_events,
+        NoEvents,
         #pragma warning restore CS1591
         [EnumMember(Value = "too_many_errors")]
         #pragma warning disable CS1591
-        Too_many_errors,
+        TooManyErrors,
         #pragma warning restore CS1591
         [EnumMember(Value = "lacking_events")]
         #pragma warning disable CS1591
-        Lacking_events,
+        LackingEvents,
         #pragma warning restore CS1591
         [EnumMember(Value = "ok")]
         #pragma warning disable CS1591

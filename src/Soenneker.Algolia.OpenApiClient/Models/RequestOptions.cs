@@ -41,6 +41,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public RequestOptions()
         {
             AdditionalData = new Dictionary<string, object>();
+            Retries = 3;
+            Timeout = 30000;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

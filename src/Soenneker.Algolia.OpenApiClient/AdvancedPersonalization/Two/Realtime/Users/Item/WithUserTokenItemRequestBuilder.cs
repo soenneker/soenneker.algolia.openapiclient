@@ -41,7 +41,7 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Realtime.U
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationErrorBase">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationErrorBase">When receiving a 402 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUser421Error">When receiving a 421 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.TooManyRequestsResponse">When receiving a 421 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationErrorBase">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +57,7 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Realtime.U
             {
                 { "400", global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationErrorBase.CreateFromDiscriminatorValue },
                 { "402", global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationErrorBase.CreateFromDiscriminatorValue },
-                { "421", global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUser421Error.CreateFromDiscriminatorValue },
+                { "421", global::Soenneker.Algolia.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationErrorBase.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUser>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

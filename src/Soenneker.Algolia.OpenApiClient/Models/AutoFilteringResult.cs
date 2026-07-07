@@ -20,20 +20,20 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Facet filters automatically applied to the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.AutoFilteringFilterEntry>? FacetFilters { get; set; }
+        public List<string>? FacetFilters { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.AutoFilteringFilterEntry> FacetFilters { get; set; }
+        public List<string> FacetFilters { get; set; }
 #endif
         /// <summary>Maximum category hierarchy depth used for filtering.</summary>
         public int? MaxDepth { get; set; }
         /// <summary>Optional filters automatically applied to boost relevant categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.AutoFilteringFilterEntry>? OptionalFilters { get; set; }
+        public List<string>? OptionalFilters { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.AutoFilteringFilterEntry> OptionalFilters { get; set; }
+        public List<string> OptionalFilters { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AutoFilteringResult"/> and sets the default values.
@@ -61,9 +61,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "facetFilters", n => { FacetFilters = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AutoFilteringFilterEntry>(global::Soenneker.Algolia.OpenApiClient.Models.AutoFilteringFilterEntry.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "facetFilters", n => { FacetFilters = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "maxDepth", n => { MaxDepth = n.GetIntValue(); } },
-                { "optionalFilters", n => { OptionalFilters = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AutoFilteringFilterEntry>(global::Soenneker.Algolia.OpenApiClient.Models.AutoFilteringFilterEntry.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "optionalFilters", n => { OptionalFilters = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -74,9 +74,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AutoFilteringFilterEntry>("facetFilters", FacetFilters);
+            writer.WriteCollectionOfPrimitiveValues<string>("facetFilters", FacetFilters);
             writer.WriteIntValue("maxDepth", MaxDepth);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AutoFilteringFilterEntry>("optionalFilters", OptionalFilters);
+            writer.WriteCollectionOfPrimitiveValues<string>("optionalFilters", OptionalFilters);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

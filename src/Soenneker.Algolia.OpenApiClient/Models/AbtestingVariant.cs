@@ -17,46 +17,46 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The addToCartRate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_addToCartRate? AddToCartRate { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantAddToCartRate? AddToCartRate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_addToCartRate AddToCartRate { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantAddToCartRate AddToCartRate { get; set; }
 #endif
         /// <summary>The averageClickPosition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_averageClickPosition? AverageClickPosition { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantAverageClickPosition? AverageClickPosition { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_averageClickPosition AverageClickPosition { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantAverageClickPosition AverageClickPosition { get; set; }
 #endif
         /// <summary>Number of click events for this variant.</summary>
         public int? ClickCount { get; set; }
         /// <summary>The clickThroughRate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_clickThroughRate? ClickThroughRate { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantClickThroughRate? ClickThroughRate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_clickThroughRate ClickThroughRate { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantClickThroughRate ClickThroughRate { get; set; }
 #endif
         /// <summary>Number of click events for this variant.</summary>
         public int? ConversionCount { get; set; }
         /// <summary>The conversionRate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_conversionRate? ConversionRate { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantConversionRate? ConversionRate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_conversionRate ConversionRate { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantConversionRate ConversionRate { get; set; }
 #endif
         /// <summary>A/B test currencies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_currencies? Currencies { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantCurrencies? Currencies { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_currencies Currencies { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantCurrencies Currencies { get; set; }
 #endif
         /// <summary>Description for this variant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,48 +87,48 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The noResultCount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_noResultCount? NoResultCount { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantNoResultCount? NoResultCount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_noResultCount NoResultCount { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantNoResultCount NoResultCount { get; set; }
 #endif
         /// <summary>Number of purchase events for this variant.</summary>
         public int? PurchaseCount { get; set; }
         /// <summary>The purchaseRate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_purchaseRate? PurchaseRate { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantPurchaseRate? PurchaseRate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_purchaseRate PurchaseRate { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantPurchaseRate PurchaseRate { get; set; }
 #endif
         /// <summary>The searchCount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_searchCount? SearchCount { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantSearchCount? SearchCount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_searchCount SearchCount { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantSearchCount SearchCount { get; set; }
 #endif
         /// <summary>Number of tracked searches. Tracked searches are search requests where the `clickAnalytics` parameter is true.</summary>
         public int? TrackedSearchCount { get; set; }
         /// <summary>The trackedUserCount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_trackedUserCount? TrackedUserCount { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantTrackedUserCount? TrackedUserCount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_trackedUserCount TrackedUserCount { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantTrackedUserCount TrackedUserCount { get; set; }
 #endif
         /// <summary>Percentage of search requests each variant receives.</summary>
         public int? TrafficPercentage { get; set; }
         /// <summary>The userCount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_userCount? UserCount { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantUserCount? UserCount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_userCount UserCount { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantUserCount UserCount { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -149,25 +149,25 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "addToCartCount", n => { AddToCartCount = n.GetIntValue(); } },
-                { "addToCartRate", n => { AddToCartRate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_addToCartRate>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_addToCartRate.CreateFromDiscriminatorValue); } },
-                { "averageClickPosition", n => { AverageClickPosition = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_averageClickPosition>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_averageClickPosition.CreateFromDiscriminatorValue); } },
+                { "addToCartRate", n => { AddToCartRate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantAddToCartRate>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantAddToCartRate.CreateFromDiscriminatorValue); } },
+                { "averageClickPosition", n => { AverageClickPosition = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantAverageClickPosition>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantAverageClickPosition.CreateFromDiscriminatorValue); } },
                 { "clickCount", n => { ClickCount = n.GetIntValue(); } },
-                { "clickThroughRate", n => { ClickThroughRate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_clickThroughRate>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_clickThroughRate.CreateFromDiscriminatorValue); } },
+                { "clickThroughRate", n => { ClickThroughRate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantClickThroughRate>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantClickThroughRate.CreateFromDiscriminatorValue); } },
                 { "conversionCount", n => { ConversionCount = n.GetIntValue(); } },
-                { "conversionRate", n => { ConversionRate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_conversionRate>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_conversionRate.CreateFromDiscriminatorValue); } },
-                { "currencies", n => { Currencies = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_currencies>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_currencies.CreateFromDiscriminatorValue); } },
+                { "conversionRate", n => { ConversionRate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantConversionRate>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantConversionRate.CreateFromDiscriminatorValue); } },
+                { "currencies", n => { Currencies = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantCurrencies>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantCurrencies.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "estimatedSampleSize", n => { EstimatedSampleSize = n.GetIntValue(); } },
                 { "filterEffects", n => { FilterEffects = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingFilterEffects>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingFilterEffects.CreateFromDiscriminatorValue); } },
                 { "index", n => { Index = n.GetStringValue(); } },
-                { "noResultCount", n => { NoResultCount = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_noResultCount>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_noResultCount.CreateFromDiscriminatorValue); } },
+                { "noResultCount", n => { NoResultCount = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantNoResultCount>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantNoResultCount.CreateFromDiscriminatorValue); } },
                 { "purchaseCount", n => { PurchaseCount = n.GetIntValue(); } },
-                { "purchaseRate", n => { PurchaseRate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_purchaseRate>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_purchaseRate.CreateFromDiscriminatorValue); } },
-                { "searchCount", n => { SearchCount = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_searchCount>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_searchCount.CreateFromDiscriminatorValue); } },
+                { "purchaseRate", n => { PurchaseRate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantPurchaseRate>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantPurchaseRate.CreateFromDiscriminatorValue); } },
+                { "searchCount", n => { SearchCount = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantSearchCount>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantSearchCount.CreateFromDiscriminatorValue); } },
                 { "trackedSearchCount", n => { TrackedSearchCount = n.GetIntValue(); } },
-                { "trackedUserCount", n => { TrackedUserCount = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_trackedUserCount>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_trackedUserCount.CreateFromDiscriminatorValue); } },
+                { "trackedUserCount", n => { TrackedUserCount = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantTrackedUserCount>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantTrackedUserCount.CreateFromDiscriminatorValue); } },
                 { "trafficPercentage", n => { TrafficPercentage = n.GetIntValue(); } },
-                { "userCount", n => { UserCount = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_userCount>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_userCount.CreateFromDiscriminatorValue); } },
+                { "userCount", n => { UserCount = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantUserCount>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantUserCount.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -178,25 +178,25 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("addToCartCount", AddToCartCount);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_addToCartRate>("addToCartRate", AddToCartRate);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_averageClickPosition>("averageClickPosition", AverageClickPosition);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantAddToCartRate>("addToCartRate", AddToCartRate);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantAverageClickPosition>("averageClickPosition", AverageClickPosition);
             writer.WriteIntValue("clickCount", ClickCount);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_clickThroughRate>("clickThroughRate", ClickThroughRate);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantClickThroughRate>("clickThroughRate", ClickThroughRate);
             writer.WriteIntValue("conversionCount", ConversionCount);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_conversionRate>("conversionRate", ConversionRate);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_currencies>("currencies", Currencies);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantConversionRate>("conversionRate", ConversionRate);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantCurrencies>("currencies", Currencies);
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("estimatedSampleSize", EstimatedSampleSize);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingFilterEffects>("filterEffects", FilterEffects);
             writer.WriteStringValue("index", Index);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_noResultCount>("noResultCount", NoResultCount);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantNoResultCount>("noResultCount", NoResultCount);
             writer.WriteIntValue("purchaseCount", PurchaseCount);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_purchaseRate>("purchaseRate", PurchaseRate);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_searchCount>("searchCount", SearchCount);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantPurchaseRate>("purchaseRate", PurchaseRate);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantSearchCount>("searchCount", SearchCount);
             writer.WriteIntValue("trackedSearchCount", TrackedSearchCount);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_trackedUserCount>("trackedUserCount", TrackedUserCount);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantTrackedUserCount>("trackedUserCount", TrackedUserCount);
             writer.WriteIntValue("trafficPercentage", TrafficPercentage);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant_userCount>("userCount", UserCount);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantUserCount>("userCount", UserCount);
         }
     }
 }

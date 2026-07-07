@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs.Item.Events
 {
     /// <summary>
-    /// Builds and executes requests for operations under \ingestion\1\runs\{runID}\events
+    /// Builds and executes requests for operations under \ingestion\1\runs\{runId}\events
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventsRequestBuilder : BaseRequestBuilder
@@ -26,7 +26,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs.Item.Events
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("eventID", position);
+                urlTplParams.Add("eventId", position);
                 return new global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs.Item.Events.Item.WithEventItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
@@ -35,7 +35,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs.Item.Events
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ingestion/1/runs/{runID}/events{?endDate*,itemsPerPage*,order*,page*,sort*,startDate*,status*,type*}", pathParameters)
+        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ingestion/1/runs/{runId}/events{?endDate*,itemsPerPage*,order*,page*,sort*,startDate*,status*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs.Item.Events
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ingestion/1/runs/{runID}/events{?endDate*,itemsPerPage*,order*,page*,sort*,startDate*,status*,type*}", rawUrl)
+        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ingestion/1/runs/{runId}/events{?endDate*,itemsPerPage*,order*,page*,sort*,startDate*,status*,type*}", rawUrl)
         {
         }
         /// <summary>
@@ -163,11 +163,11 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs.Item.Events
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.EventType[]? Type { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.EventType3[]? Type { get; set; }
 #nullable restore
 #else
             [QueryParameter("type")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.EventType[] Type { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.EventType3[] Type { get; set; }
 #endif
         }
     }

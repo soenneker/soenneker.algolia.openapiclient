@@ -43,18 +43,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The lastReindexEndedAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseResponse_lastReindexEndedAt? LastReindexEndedAt { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexEndedAt? LastReindexEndedAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseResponse_lastReindexEndedAt LastReindexEndedAt { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexEndedAt LastReindexEndedAt { get; set; }
 #endif
         /// <summary>The lastReindexStartAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseResponse_lastReindexStartAt? LastReindexStartAt { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexStartAt? LastReindexStartAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseResponse_lastReindexStartAt LastReindexStartAt { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexStartAt LastReindexStartAt { get; set; }
 #endif
         /// <summary>Name of the crawler.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -105,8 +105,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "blockingError", n => { BlockingError = n.GetStringValue(); } },
                 { "blockingTaskId", n => { BlockingTaskId = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
-                { "lastReindexEndedAt", n => { LastReindexEndedAt = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseResponse_lastReindexEndedAt>(global::Soenneker.Algolia.OpenApiClient.Models.BaseResponse_lastReindexEndedAt.CreateFromDiscriminatorValue); } },
-                { "lastReindexStartAt", n => { LastReindexStartAt = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseResponse_lastReindexStartAt>(global::Soenneker.Algolia.OpenApiClient.Models.BaseResponse_lastReindexStartAt.CreateFromDiscriminatorValue); } },
+                { "lastReindexEndedAt", n => { LastReindexEndedAt = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexEndedAt>(global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexEndedAt.CreateFromDiscriminatorValue); } },
+                { "lastReindexStartAt", n => { LastReindexStartAt = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexStartAt>(global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexStartAt.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "reindexing", n => { Reindexing = n.GetBoolValue(); } },
                 { "running", n => { Running = n.GetBoolValue(); } },
@@ -124,8 +124,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("blockingError", BlockingError);
             writer.WriteStringValue("blockingTaskId", BlockingTaskId);
             writer.WriteStringValue("createdAt", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseResponse_lastReindexEndedAt>("lastReindexEndedAt", LastReindexEndedAt);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseResponse_lastReindexStartAt>("lastReindexStartAt", LastReindexStartAt);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexEndedAt>("lastReindexEndedAt", LastReindexEndedAt);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexStartAt>("lastReindexStartAt", LastReindexStartAt);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("reindexing", Reindexing);
             writer.WriteBoolValue("running", Running);

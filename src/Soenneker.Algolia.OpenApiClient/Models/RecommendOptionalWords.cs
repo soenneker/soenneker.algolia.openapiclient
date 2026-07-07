@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsArray_Wrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsMember1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWords_Branch1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsArrayWrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsBranch1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecommendOptionalWords : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsArray_Wrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsArrayWrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsArray_Wrapper? RecommendOptionalWordsArrayWrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsArrayWrapper? RecommendOptionalWordsArrayWrapper { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsArray_Wrapper RecommendOptionalWordsArrayWrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsArrayWrapper RecommendOptionalWordsArrayWrapper { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWords_Branch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsBranch1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWords_Branch1? RecommendOptionalWordsBranch1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsBranch1? RecommendOptionalWordsBranch1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWords_Branch1 RecommendOptionalWordsBranch1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsBranch1 RecommendOptionalWordsBranch1 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,19 +45,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWords CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWords();
-            if("RecommendOptionalWordsArray".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("RecommendOptionalWordsArrayWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RecommendOptionalWordsArrayWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsArray_Wrapper();
+                result.RecommendOptionalWordsArrayWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsArrayWrapper();
             }
-            else if("RecommendOptionalWords_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RecommendOptionalWordsBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RecommendOptionalWordsBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWords_Branch1();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.RecommendOptionalWordsMember1 = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsMember1();
+                result.RecommendOptionalWordsBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsBranch1();
             }
             return result;
         }
@@ -90,11 +86,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(RecommendOptionalWordsArrayWrapper != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsArray_Wrapper>(null, RecommendOptionalWordsArrayWrapper);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsArrayWrapper>(null, RecommendOptionalWordsArrayWrapper);
             }
             else if(RecommendOptionalWordsBranch1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWords_Branch1>(null, RecommendOptionalWordsBranch1);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsBranch1>(null, RecommendOptionalWordsBranch1);
             }
             else if(RecommendOptionalWordsMember1 != null)
             {

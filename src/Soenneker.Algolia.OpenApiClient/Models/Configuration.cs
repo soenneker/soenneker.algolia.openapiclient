@@ -16,10 +16,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>A list of actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ActionObject?>? Actions { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Action2>? Actions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ActionObject?> Actions { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Action2> Actions { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -98,10 +98,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Crawler index settings.These index settings are only applied during the first crawl of an index.Any subsequent changes won&apos;t be applied to the index.Instead, make changes to your index settings in the [Algolia dashboard](https://dashboard.algolia.com/explorer/configuration).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Configuration_initialIndexSettings? InitialIndexSettings { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationInitialIndexSettingsProperty? InitialIndexSettings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Configuration_initialIndexSettings InitialIndexSettings { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationInitialIndexSettingsProperty InitialIndexSettings { get; set; }
 #endif
         /// <summary>Function for extracting URLs from links on crawled pages.For more information, see the [`linkExtractor` documentation](https://www.algolia.com/doc/tools/crawler/apis/configuration/link-extractor).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,6 +181,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public Configuration()
         {
             AdditionalData = new Dictionary<string, object>();
+            IgnorePaginationAttributes = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -200,7 +201,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actions", n => { Actions = n.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.ActionObject>()?.AsList(); } },
+                { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Action2>(global::Soenneker.Algolia.OpenApiClient.Models.Action2.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "apiKey", n => { ApiKey = n.GetStringValue(); } },
                 { "appId", n => { AppId = n.GetStringValue(); } },
                 { "exclusionPatterns", n => { ExclusionPatterns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -213,7 +214,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "ignoreQueryParams", n => { IgnoreQueryParams = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ignoreRobotsTxtRules", n => { IgnoreRobotsTxtRules = n.GetBoolValue(); } },
                 { "indexPrefix", n => { IndexPrefix = n.GetStringValue(); } },
-                { "initialIndexSettings", n => { InitialIndexSettings = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Configuration_initialIndexSettings>(global::Soenneker.Algolia.OpenApiClient.Models.Configuration_initialIndexSettings.CreateFromDiscriminatorValue); } },
+                { "initialIndexSettings", n => { InitialIndexSettings = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationInitialIndexSettingsProperty>(global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationInitialIndexSettingsProperty.CreateFromDiscriminatorValue); } },
                 { "linkExtractor", n => { LinkExtractor = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationLinkExtractor>(global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationLinkExtractor.CreateFromDiscriminatorValue); } },
                 { "login", n => { Login = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Login>(global::Soenneker.Algolia.OpenApiClient.Models.Login.CreateFromDiscriminatorValue); } },
                 { "maxDepth", n => { MaxDepth = n.GetIntValue(); } },
@@ -235,7 +236,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.ActionObject>("actions", Actions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Action2>("actions", Actions);
             writer.WriteStringValue("apiKey", ApiKey);
             writer.WriteStringValue("appId", AppId);
             writer.WriteCollectionOfPrimitiveValues<string>("exclusionPatterns", ExclusionPatterns);
@@ -248,7 +249,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("ignoreQueryParams", IgnoreQueryParams);
             writer.WriteBoolValue("ignoreRobotsTxtRules", IgnoreRobotsTxtRules);
             writer.WriteStringValue("indexPrefix", IndexPrefix);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Configuration_initialIndexSettings>("initialIndexSettings", InitialIndexSettings);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationInitialIndexSettingsProperty>("initialIndexSettings", InitialIndexSettings);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationLinkExtractor>("linkExtractor", LinkExtractor);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Login>("login", Login);
             writer.WriteIntValue("maxDepth", MaxDepth);

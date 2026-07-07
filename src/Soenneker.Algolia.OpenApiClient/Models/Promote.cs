@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.PromoteObjectID"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.PromoteObjectIDs"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.PromoteObjectId"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.PromoteObjectIDs"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Promote : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.PromoteObjectID"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.PromoteObjectId"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.PromoteObjectID? PromoteObjectID { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.PromoteObjectId? PromoteObjectId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.PromoteObjectID PromoteObjectID { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.PromoteObjectId PromoteObjectId { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.PromoteObjectIDs"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,13 +39,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.Promote();
-            if("PromoteObjectID".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.PromoteObjectID = new global::Soenneker.Algolia.OpenApiClient.Models.PromoteObjectID();
-            }
-            else if("PromoteObjectIDs".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("PromoteObjectIDs".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PromoteObjectIDs = new global::Soenneker.Algolia.OpenApiClient.Models.PromoteObjectIDs();
+            }
+            else if("PromoteObjectId".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PromoteObjectId = new global::Soenneker.Algolia.OpenApiClient.Models.PromoteObjectId();
             }
             return result;
         }
@@ -55,9 +55,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PromoteObjectID != null)
+            if(PromoteObjectId != null)
             {
-                return PromoteObjectID.GetFieldDeserializers();
+                return PromoteObjectId.GetFieldDeserializers();
             }
             else if(PromoteObjectIDs != null)
             {
@@ -72,9 +72,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(PromoteObjectID != null)
+            if(PromoteObjectId != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.PromoteObjectID>(null, PromoteObjectID);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.PromoteObjectId>(null, PromoteObjectId);
             }
             else if(PromoteObjectIDs != null)
             {

@@ -15,10 +15,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Searches without results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetSearchesNoResultsResponse_searches>? Searches { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetSearchesNoResultsResponseSearchesItem>? Searches { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetSearchesNoResultsResponse_searches> Searches { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetSearchesNoResultsResponseSearchesItem> Searches { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "searches", n => { Searches = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetSearchesNoResultsResponse_searches>(global::Soenneker.Algolia.OpenApiClient.Models.GetSearchesNoResultsResponse_searches.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "searches", n => { Searches = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetSearchesNoResultsResponseSearchesItem>(global::Soenneker.Algolia.OpenApiClient.Models.GetSearchesNoResultsResponseSearchesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetSearchesNoResultsResponse_searches>("searches", Searches);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetSearchesNoResultsResponseSearchesItem>("searches", Searches);
         }
     }
 }

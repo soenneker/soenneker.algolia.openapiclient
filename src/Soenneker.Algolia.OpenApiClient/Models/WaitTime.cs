@@ -25,6 +25,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public WaitTime()
         {
             AdditionalData = new Dictionary<string, object>();
+            Max = 20000;
+            Min = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

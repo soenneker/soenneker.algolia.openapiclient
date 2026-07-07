@@ -15,10 +15,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Additional information that will be passed to the created run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayload_runMetadata? RunMetadata { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadataProperty? RunMetadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayload_runMetadata RunMetadata { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadataProperty RunMetadata { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "runMetadata", n => { RunMetadata = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayload_runMetadata>(global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayload_runMetadata.CreateFromDiscriminatorValue); } },
+                { "runMetadata", n => { RunMetadata = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadataProperty>(global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadataProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayload_runMetadata>("runMetadata", RunMetadata);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadataProperty>("runMetadata", RunMetadata);
         }
     }
 }

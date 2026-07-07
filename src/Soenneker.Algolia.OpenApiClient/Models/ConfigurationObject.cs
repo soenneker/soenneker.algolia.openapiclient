@@ -25,10 +25,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The indices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObject_indices>? Indices { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObjectIndicesItem>? Indices { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObject_indices> Indices { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObjectIndicesItem> Indices { get; set; }
 #endif
         /// <summary>The impact that personalization has on the re-ranking of search results.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationReRanking? PersonalizationReRanking { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "features", n => { Features = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Features>(global::Soenneker.Algolia.OpenApiClient.Models.Features.CreateFromDiscriminatorValue); } },
-                { "indices", n => { Indices = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObject_indices>(global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObject_indices.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "indices", n => { Indices = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObjectIndicesItem>(global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObjectIndicesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "personalizationReRanking", n => { PersonalizationReRanking = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationReRanking>(); } },
                 { "profileType", n => { ProfileType = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ProfileType>(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationStatus>(global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationStatus.CreateFromDiscriminatorValue); } },
@@ -82,7 +82,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Features>("features", Features);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObject_indices>("indices", Indices);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObjectIndicesItem>("indices", Indices);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationReRanking>("personalizationReRanking", PersonalizationReRanking);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ProfileType>("profileType", ProfileType);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationStatus>("status", Status);

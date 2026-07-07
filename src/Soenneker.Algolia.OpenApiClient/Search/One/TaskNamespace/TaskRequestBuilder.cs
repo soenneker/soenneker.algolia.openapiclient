@@ -23,7 +23,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.TaskNamespace
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("taskID", position);
+                urlTplParams.Add("taskId", position);
                 return new global::Soenneker.Algolia.OpenApiClient.Search.One.TaskNamespace.Item.WithTaskItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }

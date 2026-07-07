@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQueryObject"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQuery_Branch2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQueryBranch2"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQueryObject"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConsequenceQuery : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQuery_Branch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQueryBranch2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQuery_Branch2? ConsequenceQueryBranch2 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQueryBranch2? ConsequenceQueryBranch2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQuery_Branch2 ConsequenceQueryBranch2 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQueryBranch2 ConsequenceQueryBranch2 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQueryObject"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,7 +41,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQuery();
             if("ConsequenceQuery_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ConsequenceQueryBranch2 = new global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQuery_Branch2();
+                result.ConsequenceQueryBranch2 = new global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQueryBranch2();
             }
             else if("ConsequenceQueryObject".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -74,7 +74,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ConsequenceQueryBranch2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQuery_Branch2>(null, ConsequenceQueryBranch2);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQueryBranch2>(null, ConsequenceQueryBranch2);
             }
             else if(ConsequenceQueryObject != null)
             {

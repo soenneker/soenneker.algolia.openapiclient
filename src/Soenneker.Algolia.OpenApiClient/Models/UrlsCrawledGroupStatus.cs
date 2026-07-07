@@ -9,15 +9,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     {
         [EnumMember(Value = "DONE")]
         #pragma warning disable CS1591
-        DONE,
+        Done,
         #pragma warning restore CS1591
         [EnumMember(Value = "SKIPPED")]
         #pragma warning disable CS1591
-        SKIPPED,
+        Skipped,
         #pragma warning restore CS1591
         [EnumMember(Value = "FAILED")]
         #pragma warning disable CS1591
-        FAILED,
+        Failed,
         #pragma warning restore CS1591
     }
 }

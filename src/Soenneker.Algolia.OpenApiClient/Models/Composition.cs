@@ -47,10 +47,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>A mapping of sorting labels to the indices (or replicas) that implement those sorting rules. The sorting indices MUST be related to the associated main targeted index in the composition.Each key is the label your frontend sends at runtime (for example, &quot;Price (asc)&quot;), and each value is the name of the index that should be queried when that label is selected.When a request includes a &quot;sortBy&quot; parameter, the platform looks up the corresponding index in this mapping and uses it to execute the query. The main targeted index is replacedwith the sorting strategy index it is mapped to.Up to 20 sorting strategies can be defined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Composition_sortingStrategy? SortingStrategy { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionSortingStrategy? SortingStrategy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Composition_sortingStrategy SortingStrategy { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionSortingStrategy SortingStrategy { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -74,7 +74,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "objectID", n => { ObjectID = n.GetStringValue(); } },
-                { "sortingStrategy", n => { SortingStrategy = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Composition_sortingStrategy>(global::Soenneker.Algolia.OpenApiClient.Models.Composition_sortingStrategy.CreateFromDiscriminatorValue); } },
+                { "sortingStrategy", n => { SortingStrategy = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionSortingStrategy>(global::Soenneker.Algolia.OpenApiClient.Models.CompositionSortingStrategy.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("objectID", ObjectID);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Composition_sortingStrategy>("sortingStrategy", SortingStrategy);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionSortingStrategy>("sortingStrategy", SortingStrategy);
         }
     }
 }

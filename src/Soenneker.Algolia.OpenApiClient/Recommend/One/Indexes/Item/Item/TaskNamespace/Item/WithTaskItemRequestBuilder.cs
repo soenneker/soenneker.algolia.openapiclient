@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.TaskNamespace.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \recommend\1\indexes\{indexName}\{model}\task\{taskID}
+    /// Builds and executes requests for operations under \recommend\1\indexes\{indexName}\{model}\task\{taskId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithTaskItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.TaskNa
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTaskItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recommend/1/indexes/{indexName}/{model}/task/{taskID}", pathParameters)
+        public WithTaskItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recommend/1/indexes/{indexName}/{model}/task/{taskId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,13 +30,13 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.TaskNa
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTaskItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recommend/1/indexes/{indexName}/{model}/task/{taskID}", rawUrl)
+        public WithTaskItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recommend/1/indexes/{indexName}/{model}/task/{taskId}", rawUrl)
         {
         }
         /// <summary>
         /// Checks the status of a given task.Deleting a Recommend rule is asynchronous.When you delete a rule, a task is created on a queue and completed depending on the load on the server.The API response includes a task ID that you can use to check the status.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.TaskNamespace.Item.WithTaskGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetRecommendTaskResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendErrorBase">When receiving a 400 status code</exception>
@@ -45,11 +45,11 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.TaskNa
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.TaskNamespace.Item.WithTaskGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.GetRecommendTaskResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.TaskNamespace.Item.WithTaskGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.GetRecommendTaskResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -60,7 +60,7 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.TaskNa
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.RecommendErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.RecommendErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.TaskNamespace.Item.WithTaskGetResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.TaskNamespace.Item.WithTaskGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.GetRecommendTaskResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.GetRecommendTaskResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Checks the status of a given task.Deleting a Recommend rule is asynchronous.When you delete a rule, a task is created on a queue and completed depending on the load on the server.The API response includes a task ID that you can use to check the status.

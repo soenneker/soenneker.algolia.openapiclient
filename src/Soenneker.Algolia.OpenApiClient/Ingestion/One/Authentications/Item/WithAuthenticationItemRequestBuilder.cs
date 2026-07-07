@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Authentications.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \ingestion\1\authentications\{authenticationID}
+    /// Builds and executes requests for operations under \ingestion\1\authentications\{authenticationId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithAuthenticationItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Authentications.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAuthenticationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ingestion/1/authentications/{authenticationID}", pathParameters)
+        public WithAuthenticationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ingestion/1/authentications/{authenticationId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Authentications.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAuthenticationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ingestion/1/authentications/{authenticationID}", rawUrl)
+        public WithAuthenticationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ingestion/1/authentications/{authenticationId}", rawUrl)
         {
         }
         /// <summary>

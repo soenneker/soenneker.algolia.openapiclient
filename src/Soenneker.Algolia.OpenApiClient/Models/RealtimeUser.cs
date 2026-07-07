@@ -23,10 +23,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Index personalization filters by index name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUser_search? Search { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearchProperty? Search { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUser_search Search { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearchProperty Search { get; set; }
 #endif
         /// <summary>User ID of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "lastUpdatedAt", n => { LastUpdatedAt = n.GetStringValue(); } },
-                { "search", n => { Search = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUser_search>(global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUser_search.CreateFromDiscriminatorValue); } },
+                { "search", n => { Search = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearchProperty>(global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearchProperty.CreateFromDiscriminatorValue); } },
                 { "userID", n => { UserID = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
@@ -76,7 +76,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("lastUpdatedAt", LastUpdatedAt);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUser_search>("search", Search);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearchProperty>("search", Search);
             writer.WriteStringValue("userID", UserID);
             writer.WriteStringValue("version", Version);
         }

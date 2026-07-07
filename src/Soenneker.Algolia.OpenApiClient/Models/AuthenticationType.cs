@@ -21,7 +21,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "oauth")]
         #pragma warning disable CS1591
-        Oauth,
+        OAuth,
         #pragma warning restore CS1591
         [EnumMember(Value = "algolia")]
         #pragma warning disable CS1591

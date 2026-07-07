@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Sources.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \ingestion\1\sources\{sourceID}
+    /// Builds and executes requests for operations under \ingestion\1\sources\{sourceId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithSourceItemRequestBuilder : BaseRequestBuilder
@@ -40,7 +40,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Sources.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSourceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ingestion/1/sources/{sourceID}", pathParameters)
+        public WithSourceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ingestion/1/sources/{sourceId}", pathParameters)
         {
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Sources.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSourceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ingestion/1/sources/{sourceID}", rawUrl)
+        public WithSourceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ingestion/1/sources/{sourceId}", rawUrl)
         {
         }
         /// <summary>

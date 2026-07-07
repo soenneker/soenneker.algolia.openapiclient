@@ -8,26 +8,20 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecisionFromValue_Wrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecision_Branch1"/>
+    /// Composed type wrapper for classes <see cref="int"/>, List&lt;global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecisionFromValueItem&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecommendAroundPrecision : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecision_Branch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="int"/></summary>
+        public int? Integer { get; set; }
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecisionFromValueItem&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecision_Branch1? RecommendAroundPrecisionBranch1 { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecisionFromValueItem>? RecommendAroundPrecisionFromValueItem { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecision_Branch1 RecommendAroundPrecisionBranch1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecisionFromValue_Wrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecisionFromValue_Wrapper? RecommendAroundPrecisionFromValueWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecisionFromValue_Wrapper RecommendAroundPrecisionFromValueWrapper { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecisionFromValueItem> RecommendAroundPrecisionFromValueItem { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,15 +31,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecision CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecision();
-            if("RecommendAroundPrecision_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetIntValue() is int integerValue)
             {
-                result.RecommendAroundPrecisionBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecision_Branch1();
+                result.Integer = integerValue;
             }
-            else if("RecommendAroundPrecisionFromValue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecisionFromValueItem>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecisionFromValueItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecisionFromValueItem> recommendAroundPrecisionFromValueItemValue)
             {
-                result.RecommendAroundPrecisionFromValueWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecisionFromValue_Wrapper();
+                result.RecommendAroundPrecisionFromValueItem = recommendAroundPrecisionFromValueItemValue;
             }
             return result;
         }
@@ -55,14 +49,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RecommendAroundPrecisionBranch1 != null)
-            {
-                return RecommendAroundPrecisionBranch1.GetFieldDeserializers();
-            }
-            else if(RecommendAroundPrecisionFromValueWrapper != null)
-            {
-                return RecommendAroundPrecisionFromValueWrapper.GetFieldDeserializers();
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -72,13 +58,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(RecommendAroundPrecisionBranch1 != null)
+            if(Integer != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecision_Branch1>(null, RecommendAroundPrecisionBranch1);
+                writer.WriteIntValue(null, Integer);
             }
-            else if(RecommendAroundPrecisionFromValueWrapper != null)
+            else if(RecommendAroundPrecisionFromValueItem != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecisionFromValue_Wrapper>(null, RecommendAroundPrecisionFromValueWrapper);
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundPrecisionFromValueItem>(null, RecommendAroundPrecisionFromValueItem);
             }
         }
     }

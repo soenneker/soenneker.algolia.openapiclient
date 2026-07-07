@@ -60,6 +60,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Duration (in seconds) after which the API key expires.By default, API keys don&apos;t expire.</summary>
         public int? Validity { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ApiKey"/> and sets the default values.
+        /// </summary>
+        public ApiKey()
+        {
+            MaxHitsPerQuery = 0;
+            MaxQueriesPerIPPerHour = 0;
+            Validity = 0;
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ApiKey"/></returns>

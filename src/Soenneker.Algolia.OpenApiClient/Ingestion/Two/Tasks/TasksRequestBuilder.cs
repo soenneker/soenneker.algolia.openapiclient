@@ -32,7 +32,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("taskID", position);
+                urlTplParams.Add("taskId", position);
                 return new global::Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.Item.WithTaskItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
@@ -219,11 +219,11 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sourceType")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.SourceType[]? SourceType { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.SourceType2[]? SourceType { get; set; }
 #nullable restore
 #else
             [QueryParameter("sourceType")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.SourceType[] SourceType { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.SourceType2[] SourceType { get; set; }
 #endif
             /// <summary>Type of task trigger for filtering the list of tasks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -9249,8 +9249,10 @@
           "go",
           "java",
           "javascript",
+          "kotlin",
           "php",
           "python",
+          "ruby",
           "scala"
         ],
         "x-acl": [
@@ -13277,7 +13279,8 @@
                       "type": "array",
                       "items": {
                         "type": "object",
-                        "description": "Retrieved record.",
+                        "description": "Retrieved record.\n\n`null` if the requested `objectID` doesn't exist in the index.\n",
+                        "nullable": true,
                         "x-is-generic": true
                       },
                       "description": "Retrieved records."
@@ -16380,12 +16383,16 @@
         "x-helper": true,
         "x-available-languages": [
           "csharp",
+          "dart",
           "go",
           "java",
           "javascript",
+          "kotlin",
           "php",
           "python",
-          "scala"
+          "ruby",
+          "scala",
+          "swift"
         ],
         "x-acl": [
           "addObject",
@@ -16644,12 +16651,16 @@
         "x-helper": true,
         "x-available-languages": [
           "csharp",
+          "dart",
           "go",
           "java",
           "javascript",
+          "kotlin",
           "php",
           "python",
-          "scala"
+          "ruby",
+          "scala",
+          "swift"
         ],
         "x-acl": [
           "addObject",
@@ -16938,12 +16949,16 @@
         "x-helper": true,
         "x-available-languages": [
           "csharp",
+          "dart",
           "go",
           "java",
           "javascript",
+          "kotlin",
           "php",
           "python",
-          "scala"
+          "ruby",
+          "scala",
+          "swift"
         ],
         "x-acl": [
           "addObject",
@@ -29741,30 +29756,6 @@
           "Filtering"
         ]
       },
-      "recommend_facetFilters": {
-        "oneOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/recommend_facetFilters"
-            }
-          },
-          {
-            "type": "string"
-          }
-        ],
-        "description": "Filter the search by facet values, so that only records with the same facet values are retrieved.\n\n**Prefer using the `filters` parameter, which supports all filter types and combinations with boolean operators.**\n\n- `[filter1, filter2]` is interpreted as `filter1 AND filter2`.\n- `[[filter1, filter2], filter3]` is interpreted as `filter1 OR filter2 AND filter3`.\n- `facet:-value` is interpreted as `NOT facet:value`.\n\nWhile it's best to avoid attributes that start with a `-`, you can still filter them by escaping with a backslash:\n`facet:\\-value`.\n",
-        "example": [
-          [
-            "category:Book",
-            "category:-Movie"
-          ],
-          "author:John Doe"
-        ],
-        "x-categories": [
-          "Filtering"
-        ]
-      },
       "recommend_optionalFilters": {
         "oneOf": [
           {
@@ -30204,14 +30195,6 @@
           "Advanced"
         ]
       },
-      "recommend_enableABTest": {
-        "type": "boolean",
-        "description": "Whether to enable A/B testing for this search.",
-        "default": true,
-        "x-categories": [
-          "Advanced"
-        ]
-      },
       "baseRecommendSearchParams": {
         "type": "object",
         "properties": {
@@ -30220,9 +30203,6 @@
           },
           "filters": {
             "$ref": "#/components/schemas/recommend_filters"
-          },
-          "facetFilters": {
-            "$ref": "#/components/schemas/recommend_facetFilters"
           },
           "optionalFilters": {
             "$ref": "#/components/schemas/recommend_optionalFilters"
@@ -30295,9 +30275,6 @@
           },
           "percentileComputation": {
             "$ref": "#/components/schemas/recommend_percentileComputation"
-          },
-          "enableABTest": {
-            "$ref": "#/components/schemas/recommend_enableABTest"
           }
         },
         "additionalProperties": false
@@ -30602,26 +30579,6 @@
           "Attributes"
         ]
       },
-      "ranking": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "Determines the order in which Algolia returns your results.\n\nBy default, each entry corresponds to a [ranking criteria](https://www.algolia.com/doc/guides/managing-results/relevance-overview/in-depth/ranking-criteria).\nThe tie-breaking algorithm sequentially applies each criterion in the order they're specified.\nIf you configure a replica index for [sorting by an attribute](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/how-to/sort-by-attribute),\nyou put the sorting attribute at the top of the list.\n\n**Modifiers**\n\n- `asc(\"ATTRIBUTE\")`.\n  Sort the index by the values of an attribute, in ascending order.\n- `desc(\"ATTRIBUTE\")`.\n  Sort the index by the values of an attribute, in descending order.\n\nBefore you modify the default setting,\ntest your changes in the dashboard,\nand by [A/B testing](https://www.algolia.com/doc/guides/ab-testing/what-is-ab-testing).\n",
-        "default": [
-          "typo",
-          "geo",
-          "words",
-          "filters",
-          "proximity",
-          "attribute",
-          "exact",
-          "custom"
-        ],
-        "x-categories": [
-          "Ranking"
-        ]
-      },
       "recommend_relevancyStrictness": {
         "type": "integer",
         "description": "Relevancy threshold below which less relevant results aren't included in the results\nYou can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n",
@@ -30837,14 +30794,6 @@
         "default": true,
         "x-categories": [
           "Languages"
-        ]
-      },
-      "recommend_enableRules": {
-        "type": "boolean",
-        "description": "Whether to enable rules.",
-        "default": true,
-        "x-categories": [
-          "Rules"
         ]
       },
       "recommend_enablePersonalization": {
@@ -31259,22 +31208,11 @@
         ],
         "description": "Restrict [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking) to records that match these filters.\n"
       },
-      "properties-reRankingApplyFilter": {
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/recommend_reRankingApplyFilter"
-          },
-          { }
-        ]
-      },
       "baseRecommendIndexSettings": {
         "type": "object",
         "properties": {
           "attributesToRetrieve": {
             "$ref": "#/components/schemas/recommend_attributesToRetrieve"
-          },
-          "ranking": {
-            "$ref": "#/components/schemas/ranking"
           },
           "relevancyStrictness": {
             "$ref": "#/components/schemas/recommend_relevancyStrictness"
@@ -31323,9 +31261,6 @@
           },
           "decompoundQuery": {
             "$ref": "#/components/schemas/recommend_decompoundQuery"
-          },
-          "enableRules": {
-            "$ref": "#/components/schemas/recommend_enableRules"
           },
           "enablePersonalization": {
             "$ref": "#/components/schemas/recommend_enablePersonalization"
@@ -31382,7 +31317,12 @@
             "$ref": "#/components/schemas/recommend_enableReRanking"
           },
           "reRankingApplyFilter": {
-            "$ref": "#/components/schemas/properties-reRankingApplyFilter"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/recommend_reRankingApplyFilter"
+              },
+              { }
+            ]
           }
         },
         "additionalProperties": false
@@ -31398,6 +31338,14 @@
         ],
         "description": "Index settings."
       },
+      "recommend_enableRules": {
+        "type": "boolean",
+        "description": "Whether to enable rules.",
+        "default": true,
+        "x-categories": [
+          "Rules"
+        ]
+      },
       "recommendSearchParams": {
         "title": "Search parameters as object",
         "allOf": [
@@ -31409,6 +31357,14 @@
           },
           {
             "$ref": "#/components/schemas/recommendIndexSettings"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "enableRules": {
+                "$ref": "#/components/schemas/recommend_enableRules"
+              }
+            }
           }
         ],
         "description": "Search parameters for filtering the recommendations."
@@ -31459,13 +31415,16 @@
         "title": "fallbackParameters",
         "allOf": [
           {
-            "$ref": "#/components/schemas/recommendSearchParams"
+            "$ref": "#/components/schemas/baseRecommendSearchParams"
           },
           {
-            "type": "object",
-            "description": "Search parameters to use for a fallback request if there aren't enough recommendations."
+            "$ref": "#/components/schemas/searchParamsQuery"
+          },
+          {
+            "$ref": "#/components/schemas/recommendIndexSettings"
           }
-        ]
+        ],
+        "description": "Search parameters to use for a fallback request if there aren't enough recommendations."
       },
       "frequentlyBoughtTogether": {
         "required": [
@@ -35031,6 +34990,40 @@
           "facetHits"
         ]
       },
+      "searchResponsePartial": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/search_baseSearchResponse"
+          },
+          {
+            "$ref": "#/components/schemas/search_SearchPagination"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "hits": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/search_hit"
+                },
+                "description": "Search results (hits).\n\nHits are records from your index that match the search criteria, augmented with additional attributes, such as, for highlighting.\n"
+              },
+              "query": {
+                "$ref": "#/components/schemas/search_query"
+              },
+              "params": {
+                "type": "string",
+                "description": "URL-encoded string of all search parameters.",
+                "example": "query=a&hitsPerPage=20"
+              },
+              "extensions": {
+                "$ref": "#/components/schemas/responseExtensions"
+              }
+            }
+          }
+        ],
+        "description": "Partial search response returned when the `responseFields` parameter excludes\nfields like `hits`. Contains all possible search response properties but\nnone are required, so it acts as an unconditional fallback during oneOf\ndeserialization.\n"
+      },
       "searchResult": {
         "oneOf": [
           {
@@ -35038,6 +35031,9 @@
           },
           {
             "$ref": "#/components/schemas/search_searchForFacetValuesResponse"
+          },
+          {
+            "$ref": "#/components/schemas/searchResponsePartial"
           }
         ]
       },
@@ -36511,6 +36507,85 @@
         ],
         "type": "string"
       },
+      "fetchedIndexAbTestTarget": {
+        "title": "abTestTarget",
+        "required": [
+          "indexName"
+        ],
+        "type": "object",
+        "properties": {
+          "indexName": {
+            "type": "string",
+            "description": "Index name to match. Use `*` to target the entire application.",
+            "example": "movies"
+          }
+        },
+        "description": "A/B test target criteria. Only present for v2 and later tests."
+      },
+      "fetchedIndexAbTestVariant": {
+        "title": "abTestVariant",
+        "required": [
+          "percentage"
+        ],
+        "type": "object",
+        "properties": {
+          "indexName": {
+            "type": "string",
+            "description": "Index name of the variant. Only present for v0/v1 tests; in v2 this moves into `payload`.",
+            "example": "movies"
+          },
+          "percentage": {
+            "type": "integer",
+            "description": "Percentage of search traffic routed to this variant.",
+            "example": 50
+          },
+          "customSearchParameters": {
+            "type": "string",
+            "description": "URL-encoded custom search parameters applied to this variant. Only present for v0/v1 tests; in v2 this moves into `payload`."
+          },
+          "payload": {
+            "type": "object",
+            "description": "Type-specific configuration. Only present for v2 and later tests. Shape depends on the parent A/B test's `type`."
+          }
+        },
+        "description": "A/B test variant for an index."
+      },
+      "fetchedIndexAbTest": {
+        "title": "abTest",
+        "required": [
+          "id",
+          "variants"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "A/B test ID.",
+            "example": 12345
+          },
+          "version": {
+            "type": "integer",
+            "description": "A/B test schema version. Only present for v2 and later tests.",
+            "example": 2
+          },
+          "type": {
+            "type": "string",
+            "description": "A/B test type. Only present for v2 and later tests. Currently always `index-configuration`.",
+            "example": "index-configuration"
+          },
+          "target": {
+            "$ref": "#/components/schemas/fetchedIndexAbTestTarget"
+          },
+          "variants": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/fetchedIndexAbTestVariant"
+            },
+            "description": "A/B test variants."
+          }
+        },
+        "description": "A/B test metadata. Only present if the index is part of an active A/B test."
+      },
       "fetchedIndex": {
         "required": [
           "name",
@@ -36592,6 +36667,14 @@
             "x-categories": [
               "Ranking"
             ]
+          },
+          "abTest": {
+            "$ref": "#/components/schemas/fetchedIndexAbTest"
+          },
+          "sourceABTest": {
+            "type": "string",
+            "description": "Name of the index that owns the A/B test configuration. Only present when this index participates in an A/B test configured on another index.",
+            "example": "movies_dev_a"
           }
         },
         "additionalProperties": false

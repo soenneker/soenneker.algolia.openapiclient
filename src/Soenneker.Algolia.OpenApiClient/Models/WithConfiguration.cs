@@ -9,9 +9,29 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithConfiguration : global::Soenneker.Algolia.OpenApiClient.Models.BaseResponse, IParsable
+    public partial class WithConfiguration : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether this crawler is blocked.If `true`, you can unblock it from the [Crawler page](https://dashboard.algolia.com/crawler) in the Algolia dashboardor by [cancelling the blocking task](https://www.algolia.com/doc/rest-api/crawler/cancel-blocking-action).</summary>
+        public bool? Blocked { get; set; }
+        /// <summary>Reason why the crawler is blocked.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BlockingError { get; set; }
+#nullable restore
+#else
+        public string BlockingError { get; set; }
+#endif
+        /// <summary>ID of the task that&apos;s blocking the crawler.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BlockingTaskId { get; set; }
+#nullable restore
+#else
+        public string BlockingTaskId { get; set; }
+#endif
         /// <summary>Crawler configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,12 +40,63 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.Configuration Config { get; set; }
 #endif
+        /// <summary>Date and time when the object was created, in RFC 3339 format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedAt { get; set; }
+#nullable restore
+#else
+        public string CreatedAt { get; set; }
+#endif
+        /// <summary>The lastReindexEndedAt property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexEndedAt? LastReindexEndedAt { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexEndedAt LastReindexEndedAt { get; set; }
+#endif
+        /// <summary>The lastReindexStartAt property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexStartAt? LastReindexStartAt { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexStartAt LastReindexStartAt { get; set; }
+#endif
+        /// <summary>Name of the crawler.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>Whether this crawler is completely reindexing your content.</summary>
+        public bool? Reindexing { get; set; }
+        /// <summary>Whether this crawler is active.</summary>
+        public bool? Running { get; set; }
+        /// <summary>Date and time when the object was updated, in RFC 3339 format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UpdatedAt { get; set; }
+#nullable restore
+#else
+        public string UpdatedAt { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.WithConfiguration"/> and sets the default values.
+        /// </summary>
+        public WithConfiguration()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.WithConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Algolia.OpenApiClient.Models.WithConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Algolia.OpenApiClient.Models.WithConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Algolia.OpenApiClient.Models.WithConfiguration();
@@ -34,22 +105,42 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
+                { "blocked", n => { Blocked = n.GetBoolValue(); } },
+                { "blockingError", n => { BlockingError = n.GetStringValue(); } },
+                { "blockingTaskId", n => { BlockingTaskId = n.GetStringValue(); } },
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Configuration>(global::Soenneker.Algolia.OpenApiClient.Models.Configuration.CreateFromDiscriminatorValue); } },
+                { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
+                { "lastReindexEndedAt", n => { LastReindexEndedAt = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexEndedAt>(global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexEndedAt.CreateFromDiscriminatorValue); } },
+                { "lastReindexStartAt", n => { LastReindexStartAt = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexStartAt>(global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexStartAt.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "reindexing", n => { Reindexing = n.GetBoolValue(); } },
+                { "running", n => { Running = n.GetBoolValue(); } },
+                { "updatedAt", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
+            writer.WriteBoolValue("blocked", Blocked);
+            writer.WriteStringValue("blockingError", BlockingError);
+            writer.WriteStringValue("blockingTaskId", BlockingTaskId);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Configuration>("config", Config);
+            writer.WriteStringValue("createdAt", CreatedAt);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexEndedAt>("lastReindexEndedAt", LastReindexEndedAt);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexStartAt>("lastReindexStartAt", LastReindexStartAt);
+            writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("reindexing", Reindexing);
+            writer.WriteBoolValue("running", Running);
+            writer.WriteStringValue("updatedAt", UpdatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

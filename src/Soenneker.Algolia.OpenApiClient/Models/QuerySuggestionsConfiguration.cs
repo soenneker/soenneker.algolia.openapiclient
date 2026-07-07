@@ -27,7 +27,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.Exclude Exclude { get; set; }
 #endif
-        /// <summary>Dictionary language.</summary>
+        /// <summary>Languages for deduplicating singular and plural suggestions.If specified, only the more popular form is included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.Languages? Languages { get; set; }
@@ -49,6 +49,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public QuerySuggestionsConfiguration()
         {
             AdditionalData = new Dictionary<string, object>();
+            AllowSpecialCharacters = false;
+            EnablePersonalization = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

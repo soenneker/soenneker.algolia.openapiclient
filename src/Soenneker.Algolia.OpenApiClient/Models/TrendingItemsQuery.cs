@@ -30,7 +30,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string FacetValue { get; set; }
 #endif
-        /// <summary>The fallbackParameters property</summary>
+        /// <summary>Search parameters to use for a fallback request if there aren&apos;t enough recommendations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams? FallbackParameters { get; set; }
@@ -66,6 +66,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public TrendingItemsQuery()
         {
             AdditionalData = new Dictionary<string, object>();
+            MaxRecommendations = 30;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

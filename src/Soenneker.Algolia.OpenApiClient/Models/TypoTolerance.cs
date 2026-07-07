@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnum_Wrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TypoTolerance_Branch1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceBranch1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnumWrapper"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TypoTolerance : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TypoTolerance_Branch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceBranch1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.TypoTolerance_Branch1? TypoToleranceBranch1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceBranch1? TypoToleranceBranch1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.TypoTolerance_Branch1 TypoToleranceBranch1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceBranch1 TypoToleranceBranch1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnum_Wrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnumWrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnum_Wrapper? TypoToleranceEnumWrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnumWrapper? TypoToleranceEnumWrapper { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnum_Wrapper TypoToleranceEnumWrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnumWrapper TypoToleranceEnumWrapper { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,15 +37,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.TypoTolerance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.TypoTolerance();
-            if("TypoTolerance_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("TypoToleranceBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TypoToleranceBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.TypoTolerance_Branch1();
+                result.TypoToleranceBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceBranch1();
             }
-            else if("TypoToleranceEnum".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TypoToleranceEnumWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TypoToleranceEnumWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnum_Wrapper();
+                result.TypoToleranceEnumWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnumWrapper();
             }
             return result;
         }
@@ -74,11 +74,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(TypoToleranceBranch1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TypoTolerance_Branch1>(null, TypoToleranceBranch1);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceBranch1>(null, TypoToleranceBranch1);
             }
             else if(TypoToleranceEnumWrapper != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnum_Wrapper>(null, TypoToleranceEnumWrapper);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnumWrapper>(null, TypoToleranceEnumWrapper);
             }
         }
     }

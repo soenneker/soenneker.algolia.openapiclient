@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadiusAll_Wrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadius_Branch1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadiusAllWrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadiusBranch1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecommendAroundRadius : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadiusAll_Wrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadiusAllWrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadiusAll_Wrapper? RecommendAroundRadiusAllWrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadiusAllWrapper? RecommendAroundRadiusAllWrapper { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadiusAll_Wrapper RecommendAroundRadiusAllWrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadiusAllWrapper RecommendAroundRadiusAllWrapper { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadius_Branch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadiusBranch1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadius_Branch1? RecommendAroundRadiusBranch1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadiusBranch1? RecommendAroundRadiusBranch1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadius_Branch1 RecommendAroundRadiusBranch1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadiusBranch1 RecommendAroundRadiusBranch1 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,15 +37,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadius CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadius();
-            if("RecommendAroundRadiusAll".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("RecommendAroundRadiusAllWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RecommendAroundRadiusAllWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadiusAll_Wrapper();
+                result.RecommendAroundRadiusAllWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadiusAllWrapper();
             }
-            else if("RecommendAroundRadius_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RecommendAroundRadiusBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RecommendAroundRadiusBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadius_Branch1();
+                result.RecommendAroundRadiusBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadiusBranch1();
             }
             return result;
         }
@@ -74,11 +74,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(RecommendAroundRadiusAllWrapper != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadiusAll_Wrapper>(null, RecommendAroundRadiusAllWrapper);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadiusAllWrapper>(null, RecommendAroundRadiusAllWrapper);
             }
             else if(RecommendAroundRadiusBranch1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadius_Branch1>(null, RecommendAroundRadiusBranch1);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendAroundRadiusBranch1>(null, RecommendAroundRadiusBranch1);
             }
         }
     }

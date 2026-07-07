@@ -36,7 +36,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.Revenue
         /// <summary>
         /// Retrieves revenue-related metrics, such as the total revenue or the average order value.To retrieve revenue-related metrics, send purchase events.By default, the analyzed period includes the last eight days including the current day.Revenue is based on purchase conversion events (a conversion event with an `eventSubtype` attribute of `purchase`).The revenue is the `price` attribute multiplied by the `quantity` attribute for each object in the event&apos;s `objectData` array.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.Revenue.RevenueGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetRevenue"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase">When receiving a 400 status code</exception>
@@ -45,11 +45,11 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.Revenue
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.Revenue.RevenueGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.Revenue.RevenueRequestBuilder.RevenueRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.GetRevenue?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.Revenue.RevenueRequestBuilder.RevenueRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.Revenue.RevenueGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.Revenue.RevenueRequestBuilder.RevenueRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.GetRevenue> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.Revenue.RevenueRequestBuilder.RevenueRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -60,7 +60,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.Revenue
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.Revenue.RevenueGetResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.Revenue.RevenueGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.GetRevenue>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.GetRevenue.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves revenue-related metrics, such as the total revenue or the average order value.To retrieve revenue-related metrics, send purchase events.By default, the analyzed period includes the last eight days including the current day.Revenue is based on purchase conversion events (a conversion event with an `eventSubtype` attribute of `purchase`).The revenue is the `price` attribute multiplied by the `quantity` attribute for each object in the event&apos;s `objectData` array.

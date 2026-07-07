@@ -23,6 +23,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public Outliers()
         {
             AdditionalData = new Dictionary<string, object>();
+            Exclude = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

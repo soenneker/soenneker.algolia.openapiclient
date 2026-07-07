@@ -32,7 +32,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Authentications
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("authenticationID", position);
+                urlTplParams.Add("authenticationId", position);
                 return new global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Authentications.Item.WithAuthenticationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }

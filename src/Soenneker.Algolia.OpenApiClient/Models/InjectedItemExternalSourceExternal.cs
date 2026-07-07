@@ -31,13 +31,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters Params { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalSourceExternal"/> and sets the default values.
-        /// </summary>
-        public InjectedItemExternalSourceExternal()
-        {
-            Ordering = global::Soenneker.Algolia.OpenApiClient.Models.ExternalOrdering.Default;
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalSourceExternal"/></returns>

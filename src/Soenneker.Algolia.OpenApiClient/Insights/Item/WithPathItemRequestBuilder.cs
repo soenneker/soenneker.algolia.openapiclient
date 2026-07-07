@@ -36,7 +36,7 @@ namespace Soenneker.Algolia.OpenApiClient.Insights.Item
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathDeleteResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomDelete200ResponseResponseJson"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.InsightsErrorBase">When receiving a 400 status code</exception>
@@ -45,11 +45,11 @@ namespace Soenneker.Algolia.OpenApiClient.Insights.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.InsightsErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathDeleteResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomDelete200ResponseResponseJson?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathDeleteResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomDelete200ResponseResponseJson> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -60,12 +60,12 @@ namespace Soenneker.Algolia.OpenApiClient.Insights.Item
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.InsightsErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.InsightsErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathDeleteResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomDelete200ResponseResponseJson>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomDelete200ResponseResponseJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomGet200ResponseResponseJson"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.InsightsErrorBase">When receiving a 400 status code</exception>
@@ -74,11 +74,11 @@ namespace Soenneker.Algolia.OpenApiClient.Insights.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.InsightsErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomGet200ResponseResponseJson?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomGet200ResponseResponseJson> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -89,12 +89,12 @@ namespace Soenneker.Algolia.OpenApiClient.Insights.Item
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.InsightsErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.InsightsErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathGetResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomGet200ResponseResponseJson>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomGet200ResponseResponseJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomPost200ResponseResponseJson"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,11 +104,11 @@ namespace Soenneker.Algolia.OpenApiClient.Insights.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.InsightsErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathPostResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomPost200ResponseResponseJson?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomPostRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathPostResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomPost200ResponseResponseJson> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomPostRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -120,12 +120,12 @@ namespace Soenneker.Algolia.OpenApiClient.Insights.Item
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.InsightsErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.InsightsErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathPostResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomPost200ResponseResponseJson>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomPost200ResponseResponseJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathPutResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomPut200ResponseResponseJson"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,11 +135,11 @@ namespace Soenneker.Algolia.OpenApiClient.Insights.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.InsightsErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathPutResponse?> PutAsync(global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomPut200ResponseResponseJson?> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomPutRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathPutResponse> PutAsync(global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomPut200ResponseResponseJson> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomPutRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -151,7 +151,7 @@ namespace Soenneker.Algolia.OpenApiClient.Insights.Item
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.InsightsErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.InsightsErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathPutResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathPutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomPut200ResponseResponseJson>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomPut200ResponseResponseJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.
@@ -199,11 +199,11 @@ namespace Soenneker.Algolia.OpenApiClient.Insights.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomPostRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomPostRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -221,11 +221,11 @@ namespace Soenneker.Algolia.OpenApiClient.Insights.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomPutRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.InsightsCustomPutRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Insights.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

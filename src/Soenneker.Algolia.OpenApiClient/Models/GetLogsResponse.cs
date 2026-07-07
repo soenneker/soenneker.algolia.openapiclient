@@ -15,10 +15,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The logs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponse_logs>? Logs { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponseLogsItem>? Logs { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponse_logs> Logs { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponseLogsItem> Logs { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "logs", n => { Logs = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponse_logs>(global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponse_logs.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "logs", n => { Logs = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponseLogsItem>(global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponseLogsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponse_logs>("logs", Logs);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponseLogsItem>("logs", Logs);
         }
     }
 }

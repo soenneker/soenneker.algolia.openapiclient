@@ -15,10 +15,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The events property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Event>? Events { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType4>? Events { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Event> Events { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType4> Events { get; set; }
 #endif
         /// <summary>Paginated API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,7 +54,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Event>(global::Soenneker.Algolia.OpenApiClient.Models.Event.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventType4>(global::Soenneker.Algolia.OpenApiClient.Models.EventType4.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination>(global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination.CreateFromDiscriminatorValue); } },
                 { "window", n => { Window = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Window>(global::Soenneker.Algolia.OpenApiClient.Models.Window.CreateFromDiscriminatorValue); } },
             };
@@ -66,7 +66,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Event>("events", Events);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventType4>("events", Events);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination>("pagination", Pagination);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Window>("window", Window);
         }

@@ -76,6 +76,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public GetApiKeyResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            MaxHitsPerQuery = 0;
+            MaxQueriesPerIPPerHour = 0;
+            Validity = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.Recommend.Rules.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \recommend\1\indexes\{indexName}\{model}\recommend\rules\{objectID}
+    /// Builds and executes requests for operations under \recommend\1\indexes\{indexName}\{model}\recommend\rules\{objectId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithObjectItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.Recomm
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithObjectItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recommend/1/indexes/{indexName}/{model}/recommend/rules/{objectID}", pathParameters)
+        public WithObjectItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recommend/1/indexes/{indexName}/{model}/recommend/rules/{objectId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,13 +30,13 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.Recomm
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recommend/1/indexes/{indexName}/{model}/recommend/rules/{objectID}", rawUrl)
+        public WithObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/recommend/1/indexes/{indexName}/{model}/recommend/rules/{objectId}", rawUrl)
         {
         }
         /// <summary>
         /// Deletes a Recommend rule from a recommendation scenario.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.Recommend.Rules.Item.WithObjectDeleteResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.DeletedAtResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendErrorBase">When receiving a 400 status code</exception>
@@ -45,11 +45,11 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.Recomm
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.Recommend.Rules.Item.WithObjectDeleteResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.DeletedAtResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.Recommend.Rules.Item.WithObjectDeleteResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.DeletedAtResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -60,7 +60,7 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.Recomm
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.RecommendErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.RecommendErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.Recommend.Rules.Item.WithObjectDeleteResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.Recommend.Rules.Item.WithObjectDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.DeletedAtResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.DeletedAtResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a Recommend rule that you previously created in the Algolia dashboard.

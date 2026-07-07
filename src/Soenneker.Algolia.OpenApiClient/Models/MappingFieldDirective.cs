@@ -24,10 +24,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>How the destination field should be resolved from the source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirective_value? Value { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValueProperty? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirective_value Value { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValueProperty Value { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "fieldKey", n => { FieldKey = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirective_value>(global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirective_value.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValueProperty>(global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValueProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("fieldKey", FieldKey);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirective_value>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValueProperty>("value", Value);
         }
     }
 }

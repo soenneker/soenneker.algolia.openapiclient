@@ -10,7 +10,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     {
         [EnumMember(Value = "PRODUCTION")]
         #pragma warning disable CS1591
-        PRODUCTION,
+        Production,
         #pragma warning restore CS1591
     }
 }

@@ -16,26 +16,26 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The category property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields_category? Category { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsCategory? Category { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields_category Category { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsCategory Category { get; set; }
 #endif
         /// <summary>The inventory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields_inventory? Inventory { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventory? Inventory { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields_inventory Inventory { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventory Inventory { get; set; }
 #endif
         /// <summary>The price property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields_price? Price { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsPrice? Price { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields_price Price { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsPrice Price { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,9 +55,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "category", n => { Category = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields_category>(global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields_category.CreateFromDiscriminatorValue); } },
-                { "inventory", n => { Inventory = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields_inventory>(global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields_inventory.CreateFromDiscriminatorValue); } },
-                { "price", n => { Price = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields_price>(global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields_price.CreateFromDiscriminatorValue); } },
+                { "category", n => { Category = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsCategory>(global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsCategory.CreateFromDiscriminatorValue); } },
+                { "inventory", n => { Inventory = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventory>(global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventory.CreateFromDiscriminatorValue); } },
+                { "price", n => { Price = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsPrice>(global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsPrice.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,9 +67,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields_category>("category", Category);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields_inventory>("inventory", Inventory);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields_price>("price", Price);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsCategory>("category", Category);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventory>("inventory", Inventory);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsPrice>("price", Price);
         }
     }
 }

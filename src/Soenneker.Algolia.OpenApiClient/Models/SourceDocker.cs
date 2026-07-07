@@ -16,10 +16,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Configuration of the spec.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceDocker_configuration? Configuration { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty? Configuration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceDocker_configuration Configuration { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty Configuration { get; set; }
 #endif
         /// <summary>Name of the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +47,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceDocker_configuration>(global::Soenneker.Algolia.OpenApiClient.Models.SourceDocker_configuration.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty>(global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty.CreateFromDiscriminatorValue); } },
                 { "image", n => { Image = n.GetStringValue(); } },
             };
         }
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceDocker_configuration>("configuration", Configuration);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty>("configuration", Configuration);
             writer.WriteStringValue("image", Image);
         }
     }

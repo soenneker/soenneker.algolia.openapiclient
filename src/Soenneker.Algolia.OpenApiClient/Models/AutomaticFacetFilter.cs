@@ -7,24 +7,20 @@ using System.IO;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
-    /// <summary>
-    /// Filter or optional filter to be applied to the search.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AutomaticFacetFilter : IParsable
+    #pragma warning disable CS1591
+    public partial class AutomaticFacetFilter : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Whether the filter is disjunctive or conjunctive.If true the filter has multiple matches, multiple occurrences are combined with the logical `OR` operation.If false, multiple occurrences are combined with the logical `AND` operation.</summary>
-        public bool? Disjunctive { get; set; }
-        /// <summary>&quot;Facet name to be applied as filter.The name must match placeholders in the `pattern` parameter.For example, with `pattern: {facet:genre}`, `automaticFacetFilters` must be `genre`.&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Facet { get; set; }
-#nullable restore
-#else
-        public string Facet { get; set; }
-#endif
-        /// <summary>Filter scores to give different weights to individual filters.</summary>
-        public int? Score { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AutomaticFacetFilter"/> and sets the default values.
+        /// </summary>
+        public AutomaticFacetFilter()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,9 +39,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "disjunctive", n => { Disjunctive = n.GetBoolValue(); } },
-                { "facet", n => { Facet = n.GetStringValue(); } },
-                { "score", n => { Score = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -55,9 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("disjunctive", Disjunctive);
-            writer.WriteStringValue("facet", Facet);
-            writer.WriteIntValue("score", Score);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

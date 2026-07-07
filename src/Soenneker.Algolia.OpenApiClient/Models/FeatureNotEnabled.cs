@@ -9,11 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     {
         [EnumMember(Value = "Predictive profiles are not allowed for this app. Please contact support to upgrade your plan: https://support.algolia.com/")]
         #pragma warning disable CS1591
-        PredictiveProfilesAreNotAllowedForThisAppPleaseContactSupportToUpgradeYourPlanHttpsSupportAlgoliaCom,
+        PredictiveProfilesAreNotAllowedForThisAppPleaseContactSupportToUpgradeYourPlanColonHttpsColonSlashSlashSupportAlgoliaComSlash,
         #pragma warning restore CS1591
         [EnumMember(Value = "Realtime Personalization is not allowed for this app. Please contact support to upgrade your plan: https://support.algolia.com/")]
         #pragma warning disable CS1591
-        RealtimePersonalizationIsNotAllowedForThisAppPleaseContactSupportToUpgradeYourPlanHttpsSupportAlgoliaCom,
+        RealtimePersonalizationIsNotAllowedForThisAppPleaseContactSupportToUpgradeYourPlanColonHttpsColonSlashSlashSupportAlgoliaComSlash,
         #pragma warning restore CS1591
     }
 }

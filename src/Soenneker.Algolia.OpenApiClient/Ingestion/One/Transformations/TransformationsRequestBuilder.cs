@@ -38,7 +38,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Transformations
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("transformationID", position);
+                urlTplParams.Add("transformationId", position);
                 return new global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Transformations.Item.WithTransformationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }

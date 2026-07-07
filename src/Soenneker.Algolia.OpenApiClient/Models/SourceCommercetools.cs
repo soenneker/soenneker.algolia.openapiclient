@@ -66,6 +66,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>When set to true, the connector indexes objects with all images attributes instead of only the URLs.</summary>
         public bool? UseImagesObjects { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceCommercetools"/> and sets the default values.
+        /// </summary>
+        public SourceCommercetools()
+        {
+            FallbackIsInStockValue = true;
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceCommercetools"/></returns>

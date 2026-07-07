@@ -17,10 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The customSearchParameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbTestsVariantSearchParams_customSearchParameters? CustomSearchParameters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbTestsVariantSearchParamsCustomSearchParameters? CustomSearchParameters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbTestsVariantSearchParams_customSearchParameters CustomSearchParameters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbTestsVariantSearchParamsCustomSearchParameters CustomSearchParameters { get; set; }
 #endif
         /// <summary>Description for this variant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "customSearchParameters", n => { CustomSearchParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbTestsVariantSearchParams_customSearchParameters>(global::Soenneker.Algolia.OpenApiClient.Models.AbTestsVariantSearchParams_customSearchParameters.CreateFromDiscriminatorValue); } },
+                { "customSearchParameters", n => { CustomSearchParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbTestsVariantSearchParamsCustomSearchParameters>(global::Soenneker.Algolia.OpenApiClient.Models.AbTestsVariantSearchParamsCustomSearchParameters.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "index", n => { Index = n.GetStringValue(); } },
                 { "trafficPercentage", n => { TrafficPercentage = n.GetIntValue(); } },
@@ -78,7 +78,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbTestsVariantSearchParams_customSearchParameters>("customSearchParameters", CustomSearchParameters);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbTestsVariantSearchParamsCustomSearchParameters>("customSearchParameters", CustomSearchParameters);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("index", Index);
             writer.WriteIntValue("trafficPercentage", TrafficPercentage);

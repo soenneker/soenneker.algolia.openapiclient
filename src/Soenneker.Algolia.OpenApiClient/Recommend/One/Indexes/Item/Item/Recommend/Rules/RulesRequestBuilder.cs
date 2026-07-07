@@ -35,7 +35,7 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.Recomm
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("objectID", position);
+                urlTplParams.Add("objectId", position);
                 return new global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.Recommend.Rules.Item.WithObjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }

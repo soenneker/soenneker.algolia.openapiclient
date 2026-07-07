@@ -245,15 +245,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public global::Soenneker.Algolia.OpenApiClient.Models.TypoTolerance TypoTolerance { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters"/> and sets the default values.
-        /// </summary>
-        public BaseInjectionQueryParameters()
-        {
-            ExactOnSingleWordQuery = global::Soenneker.Algolia.OpenApiClient.Models.ExactOnSingleWordQuery.Attribute;
-            QueryType = global::Soenneker.Algolia.OpenApiClient.Models.QueryType.PrefixLast;
-            RemoveWordsIfNoResults = global::Soenneker.Algolia.OpenApiClient.Models.RemoveWordsIfNoResults.None;
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters"/></returns>

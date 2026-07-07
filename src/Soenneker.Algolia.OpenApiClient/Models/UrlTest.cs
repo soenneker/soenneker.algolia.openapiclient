@@ -25,18 +25,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>An error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.UrlTest_error? Error { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.UrlTestError? Error { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.UrlTest_error Error { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.UrlTestError Error { get; set; }
 #endif
         /// <summary>External data associated with the tested URL.External data is refreshed automatically at the beginning of the crawl.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.UrlTest_externalData? ExternalData { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.UrlTestExternalData? ExternalData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.UrlTest_externalData ExternalData { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.UrlTestExternalData ExternalData { get; set; }
 #endif
         /// <summary>Links found on the page, which match the configuration and would be processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,10 +57,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Extracted records from the URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTest_records>? Records { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItem>? Records { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTest_records> Records { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItem> Records { get; set; }
 #endif
         /// <summary>Date and time when the test crawl started, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,11 +96,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "endDate", n => { EndDate = n.GetStringValue(); } },
-                { "error", n => { Error = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.UrlTest_error>(global::Soenneker.Algolia.OpenApiClient.Models.UrlTest_error.CreateFromDiscriminatorValue); } },
-                { "externalData", n => { ExternalData = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.UrlTest_externalData>(global::Soenneker.Algolia.OpenApiClient.Models.UrlTest_externalData.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestError>(global::Soenneker.Algolia.OpenApiClient.Models.UrlTestError.CreateFromDiscriminatorValue); } },
+                { "externalData", n => { ExternalData = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestExternalData>(global::Soenneker.Algolia.OpenApiClient.Models.UrlTestExternalData.CreateFromDiscriminatorValue); } },
                 { "links", n => { Links = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "logs", n => { Logs = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "records", n => { Records = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.UrlTest_records>(global::Soenneker.Algolia.OpenApiClient.Models.UrlTest_records.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "records", n => { Records = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItem>(global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "startDate", n => { StartDate = n.GetStringValue(); } },
             };
         }
@@ -112,11 +112,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("endDate", EndDate);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.UrlTest_error>("error", Error);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.UrlTest_externalData>("externalData", ExternalData);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestError>("error", Error);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestExternalData>("externalData", ExternalData);
             writer.WriteCollectionOfPrimitiveValues<string>("links", Links);
             writer.WriteObjectValue<UntypedNode>("logs", Logs);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.UrlTest_records>("records", Records);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItem>("records", Records);
             writer.WriteStringValue("startDate", StartDate);
             writer.WriteAdditionalData(AdditionalData);
         }

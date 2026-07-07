@@ -12,6 +12,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     public partial class FetchedIndex : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>A/B test metadata. Only present if the index is part of an active A/B test.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTest? AbTest { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTest AbTest { get; set; }
+#endif
         /// <summary>Index creation date. An empty string means that the index has no records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +64,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<string> Replicas { get; set; }
 #endif
+        /// <summary>Name of the index that owns the A/B test configuration. Only present when this index participates in an A/B test configured on another index.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceABTest { get; set; }
+#nullable restore
+#else
+        public string SourceABTest { get; set; }
+#endif
         /// <summary>Date and time when the object was updated, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +82,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Only present if the index is a [virtual replica](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/how-to/sort-an-index-alphabetically/#virtual-replicas).</summary>
         public bool? Virtual { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndex"/> and sets the default values.
+        /// </summary>
+        public FetchedIndex()
+        {
+            NumberOfPendingTasks = 0;
+            PendingTask = false;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -84,6 +108,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "abTest", n => { AbTest = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTest>(global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTest.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
                 { "dataSize", n => { DataSize = n.GetLongValue(); } },
                 { "entries", n => { Entries = n.GetIntValue(); } },
@@ -94,6 +119,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "pendingTask", n => { PendingTask = n.GetBoolValue(); } },
                 { "primary", n => { Primary = n.GetStringValue(); } },
                 { "replicas", n => { Replicas = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "sourceABTest", n => { SourceABTest = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetStringValue(); } },
                 { "virtual", n => { Virtual = n.GetBoolValue(); } },
             };
@@ -105,6 +131,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTest>("abTest", AbTest);
             writer.WriteStringValue("createdAt", CreatedAt);
             writer.WriteLongValue("dataSize", DataSize);
             writer.WriteIntValue("entries", Entries);
@@ -115,6 +142,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteBoolValue("pendingTask", PendingTask);
             writer.WriteStringValue("primary", Primary);
             writer.WriteCollectionOfPrimitiveValues<string>("replicas", Replicas);
+            writer.WriteStringValue("sourceABTest", SourceABTest);
             writer.WriteStringValue("updatedAt", UpdatedAt);
             writer.WriteBoolValue("virtual", Virtual);
         }

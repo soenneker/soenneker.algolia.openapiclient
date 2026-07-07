@@ -21,10 +21,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Rules applied to the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_appliedRules>? AppliedRules { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.RecommendBaseSearchResponseAppliedRulesItemProperty>? AppliedRules { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_appliedRules> AppliedRules { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.RecommendBaseSearchResponseAppliedRulesItemProperty> AppliedRules { get; set; }
 #endif
         /// <summary>Computed geographical location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,18 +64,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Facet counts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_facets? Facets { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsFacets? Facets { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_facets Facets { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsFacets Facets { get; set; }
 #endif
         /// <summary>Statistics for numerical facets.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_facets_stats? FacetsStats { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsFacetsStats? FacetsStats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_facets_stats FacetsStats { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsFacetsStats FacetsStats { get; set; }
 #endif
         /// <summary>The hits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,10 +132,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Experimental. List of processing steps and their times, in milliseconds. You can use this list to investigate performance issues.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_processingTimingsMS? ProcessingTimingsMS { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsProcessingTimingsMs? ProcessingTimingsMS { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_processingTimingsMS ProcessingTimingsMS { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsProcessingTimingsMs ProcessingTimingsMS { get; set; }
 #endif
         /// <summary>Markup text indicating which parts of the original query have been removed to retrieve a non-empty result set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -182,10 +182,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>An object with custom data.You can store up to 32kB as custom data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_userData? UserData { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsUserData? UserData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_userData UserData { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsUserData UserData { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults"/> and sets the default values.
@@ -214,7 +214,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "abTestID", n => { AbTestID = n.GetIntValue(); } },
                 { "abTestVariantID", n => { AbTestVariantID = n.GetIntValue(); } },
-                { "appliedRules", n => { AppliedRules = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_appliedRules>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_appliedRules.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "appliedRules", n => { AppliedRules = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendBaseSearchResponseAppliedRulesItemProperty>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendBaseSearchResponseAppliedRulesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "aroundLatLng", n => { AroundLatLng = n.GetStringValue(); } },
                 { "_automaticInsights", n => { AutomaticInsights = n.GetBoolValue(); } },
                 { "automaticRadius", n => { AutomaticRadius = n.GetStringValue(); } },
@@ -222,8 +222,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "exhaustiveFacetsCount", n => { ExhaustiveFacetsCount = n.GetBoolValue(); } },
                 { "exhaustiveNbHits", n => { ExhaustiveNbHits = n.GetBoolValue(); } },
                 { "exhaustiveTypo", n => { ExhaustiveTypo = n.GetBoolValue(); } },
-                { "facets", n => { Facets = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_facets>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_facets.CreateFromDiscriminatorValue); } },
-                { "facets_stats", n => { FacetsStats = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_facets_stats>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_facets_stats.CreateFromDiscriminatorValue); } },
+                { "facets", n => { Facets = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsFacets>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsFacets.CreateFromDiscriminatorValue); } },
+                { "facets_stats", n => { FacetsStats = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsFacetsStats>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsFacetsStats.CreateFromDiscriminatorValue); } },
                 { "hits", n => { Hits = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsHit>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsHit.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hitsPerPage", n => { HitsPerPage = n.GetIntValue(); } },
                 { "index", n => { Index = n.GetStringValue(); } },
@@ -235,14 +235,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "page", n => { Page = n.GetIntValue(); } },
                 { "parsedQuery", n => { ParsedQuery = n.GetStringValue(); } },
                 { "processingTimeMS", n => { ProcessingTimeMS = n.GetIntValue(); } },
-                { "processingTimingsMS", n => { ProcessingTimingsMS = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_processingTimingsMS>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_processingTimingsMS.CreateFromDiscriminatorValue); } },
+                { "processingTimingsMS", n => { ProcessingTimingsMS = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsProcessingTimingsMs>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsProcessingTimingsMs.CreateFromDiscriminatorValue); } },
                 { "queryAfterRemoval", n => { QueryAfterRemoval = n.GetStringValue(); } },
                 { "queryID", n => { QueryID = n.GetStringValue(); } },
                 { "redirect", n => { Redirect = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendBaseSearchResponseRedirect>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendBaseSearchResponseRedirect.CreateFromDiscriminatorValue); } },
                 { "renderingContent", n => { RenderingContent = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRenderingContent>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendRenderingContent.CreateFromDiscriminatorValue); } },
                 { "serverTimeMS", n => { ServerTimeMS = n.GetIntValue(); } },
                 { "serverUsed", n => { ServerUsed = n.GetStringValue(); } },
-                { "userData", n => { UserData = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_userData>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_userData.CreateFromDiscriminatorValue); } },
+                { "userData", n => { UserData = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsUserData>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsUserData.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -254,7 +254,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("abTestID", AbTestID);
             writer.WriteIntValue("abTestVariantID", AbTestVariantID);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_appliedRules>("appliedRules", AppliedRules);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendBaseSearchResponseAppliedRulesItemProperty>("appliedRules", AppliedRules);
             writer.WriteStringValue("aroundLatLng", AroundLatLng);
             writer.WriteBoolValue("_automaticInsights", AutomaticInsights);
             writer.WriteStringValue("automaticRadius", AutomaticRadius);
@@ -262,8 +262,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteBoolValue("exhaustiveFacetsCount", ExhaustiveFacetsCount);
             writer.WriteBoolValue("exhaustiveNbHits", ExhaustiveNbHits);
             writer.WriteBoolValue("exhaustiveTypo", ExhaustiveTypo);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_facets>("facets", Facets);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_facets_stats>("facets_stats", FacetsStats);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsFacets>("facets", Facets);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsFacetsStats>("facets_stats", FacetsStats);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsHit>("hits", Hits);
             writer.WriteIntValue("hitsPerPage", HitsPerPage);
             writer.WriteStringValue("index", Index);
@@ -275,14 +275,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("page", Page);
             writer.WriteStringValue("parsedQuery", ParsedQuery);
             writer.WriteIntValue("processingTimeMS", ProcessingTimeMS);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_processingTimingsMS>("processingTimingsMS", ProcessingTimingsMS);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsProcessingTimingsMs>("processingTimingsMS", ProcessingTimingsMS);
             writer.WriteStringValue("queryAfterRemoval", QueryAfterRemoval);
             writer.WriteStringValue("queryID", QueryID);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendBaseSearchResponseRedirect>("redirect", Redirect);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRenderingContent>("renderingContent", RenderingContent);
             writer.WriteIntValue("serverTimeMS", ServerTimeMS);
             writer.WriteStringValue("serverUsed", ServerUsed);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults_userData>("userData", UserData);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsUserData>("userData", UserData);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

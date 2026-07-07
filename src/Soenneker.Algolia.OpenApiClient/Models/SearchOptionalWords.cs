@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsArray_Wrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsMember1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords_Branch1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsArrayWrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsBranch1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchOptionalWords : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsArray_Wrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsArrayWrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsArray_Wrapper? SearchOptionalWordsArrayWrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsArrayWrapper? SearchOptionalWordsArrayWrapper { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsArray_Wrapper SearchOptionalWordsArrayWrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsArrayWrapper SearchOptionalWordsArrayWrapper { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords_Branch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsBranch1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords_Branch1? SearchOptionalWordsBranch1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsBranch1? SearchOptionalWordsBranch1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords_Branch1 SearchOptionalWordsBranch1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsBranch1 SearchOptionalWordsBranch1 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,19 +45,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords();
-            if("SearchOptionalWordsArray".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("SearchOptionalWordsArrayWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SearchOptionalWordsArrayWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsArray_Wrapper();
+                result.SearchOptionalWordsArrayWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsArrayWrapper();
             }
-            else if("SearchOptionalWords_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SearchOptionalWordsBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SearchOptionalWordsBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords_Branch1();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SearchOptionalWordsMember1 = new global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsMember1();
+                result.SearchOptionalWordsBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsBranch1();
             }
             return result;
         }
@@ -90,11 +86,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(SearchOptionalWordsArrayWrapper != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsArray_Wrapper>(null, SearchOptionalWordsArrayWrapper);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsArrayWrapper>(null, SearchOptionalWordsArrayWrapper);
             }
             else if(SearchOptionalWordsBranch1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords_Branch1>(null, SearchOptionalWordsBranch1);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsBranch1>(null, SearchOptionalWordsBranch1);
             }
             else if(SearchOptionalWordsMember1 != null)
             {

@@ -20,10 +20,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The user-defined key-value pairs that will be placed in the `_extra` field of each affected hit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHits_extra? Extra { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHitsExtraProperty? Extra { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHits_extra Extra { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHitsExtraProperty Extra { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHits"/> and sets the default values.
@@ -51,7 +51,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "addItemKey", n => { AddItemKey = n.GetBoolValue(); } },
-                { "extra", n => { Extra = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHits_extra>(global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHits_extra.CreateFromDiscriminatorValue); } },
+                { "extra", n => { Extra = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHitsExtraProperty>(global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHitsExtraProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("addItemKey", AddItemKey);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHits_extra>("extra", Extra);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHitsExtraProperty>("extra", Extra);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

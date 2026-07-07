@@ -16,10 +16,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The steps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCode_steps>? Steps { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCodeStepsItem>? Steps { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCode_steps> Steps { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCodeStepsItem> Steps { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "steps", n => { Steps = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCode_steps>(global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCode_steps.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "steps", n => { Steps = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCodeStepsItem>(global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCodeStepsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCode_steps>("steps", Steps);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCodeStepsItem>("steps", Steps);
         }
     }
 }

@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxArray_Wrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxMember1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox_Branch1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxArrayWrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxBranch1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchInsideBoundingBox : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxArray_Wrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxArrayWrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxArray_Wrapper? SearchInsideBoundingBoxArrayWrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxArrayWrapper? SearchInsideBoundingBoxArrayWrapper { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxArray_Wrapper SearchInsideBoundingBoxArrayWrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxArrayWrapper SearchInsideBoundingBoxArrayWrapper { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox_Branch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxBranch1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox_Branch1? SearchInsideBoundingBoxBranch1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxBranch1? SearchInsideBoundingBoxBranch1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox_Branch1 SearchInsideBoundingBoxBranch1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxBranch1 SearchInsideBoundingBoxBranch1 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,19 +45,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox();
-            if("SearchInsideBoundingBoxArray".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("SearchInsideBoundingBoxArrayWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SearchInsideBoundingBoxArrayWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxArray_Wrapper();
+                result.SearchInsideBoundingBoxArrayWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxArrayWrapper();
             }
-            else if("SearchInsideBoundingBox_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SearchInsideBoundingBoxBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SearchInsideBoundingBoxBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox_Branch1();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SearchInsideBoundingBoxMember1 = new global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxMember1();
+                result.SearchInsideBoundingBoxBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxBranch1();
             }
             return result;
         }
@@ -90,11 +86,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(SearchInsideBoundingBoxArrayWrapper != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxArray_Wrapper>(null, SearchInsideBoundingBoxArrayWrapper);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxArrayWrapper>(null, SearchInsideBoundingBoxArrayWrapper);
             }
             else if(SearchInsideBoundingBoxBranch1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox_Branch1>(null, SearchInsideBoundingBoxBranch1);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBoxBranch1>(null, SearchInsideBoundingBoxBranch1);
             }
             else if(SearchInsideBoundingBoxMember1 != null)
             {
