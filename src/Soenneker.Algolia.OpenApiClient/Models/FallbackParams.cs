@@ -205,6 +205,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public bool? EnableReRanking { get; set; }
         /// <summary>Determines how the [Exact ranking criterion](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/in-depth/adjust-exact-settings/#turn-off-exact-for-some-attributes) is computed when the search query has only one word.- `attribute`.  The Exact ranking criterion is 1 if the query word and attribute value are the same.  For example, a search for &quot;road&quot; will match the value &quot;road&quot;, but not &quot;road trip&quot;.- `none`.  The Exact ranking criterion is ignored on single-word searches.- `word`.  The Exact ranking criterion is 1 if the query word is found in the attribute value.  The query word must have at least 3 characters and must not be a stop word.  Only exact matches will be highlighted,  partial and prefix matches won&apos;t.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.RecommendExactOnSingleWordQuery? ExactOnSingleWordQuery { get; set; }
+        /// <summary>Filter the search by facet values, so that only records with the same facet values are retrieved.**Prefer using the `filters` parameter, which supports all filter types and combinations with boolean operators.**- `[filter1, filter2]` is interpreted as `filter1 AND filter2`.- `[[filter1, filter2], filter3]` is interpreted as `filter1 OR filter2 AND filter3`.- `facet:-value` is interpreted as `NOT facet:value`.While it&apos;s best to avoid attributes that start with a `-`, you can still filter them by escaping with a backslash:`facet:\-value`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetFilters? FacetFilters { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetFilters FacetFilters { get; set; }
+#endif
         /// <summary>Whether faceting should be applied after deduplication with `distinct`This leads to accurate facet counts when using faceting in combination with `distinct`.It&apos;s usually better to use `afterDistinct` modifiers in the `attributesForFaceting` setting,as `facetingAfterDistinct` only computes correct facet counts if all records have the same facet values for the `attributeForDistinct`.</summary>
         public bool? FacetingAfterDistinct { get; set; }
         /// <summary>Facets for which to retrieve facet values that match the search criteria and the number of matching facet valuesTo retrieve all facets, use the wildcard character `*`.For more information, see [facets](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#contextual-facet-values-and-counts).</summary>
@@ -564,6 +572,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "enablePersonalization", n => { EnablePersonalization = n.GetBoolValue(); } },
                 { "enableReRanking", n => { EnableReRanking = n.GetBoolValue(); } },
                 { "exactOnSingleWordQuery", n => { ExactOnSingleWordQuery = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendExactOnSingleWordQuery>(); } },
+                { "facetFilters", n => { FacetFilters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetFilters>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetFilters.CreateFromDiscriminatorValue); } },
                 { "facetingAfterDistinct", n => { FacetingAfterDistinct = n.GetBoolValue(); } },
                 { "facets", n => { Facets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "filters", n => { Filters = n.GetStringValue(); } },
@@ -656,6 +665,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteBoolValue("enablePersonalization", EnablePersonalization);
             writer.WriteBoolValue("enableReRanking", EnableReRanking);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendExactOnSingleWordQuery>("exactOnSingleWordQuery", ExactOnSingleWordQuery);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendFacetFilters>("facetFilters", FacetFilters);
             writer.WriteBoolValue("facetingAfterDistinct", FacetingAfterDistinct);
             writer.WriteCollectionOfPrimitiveValues<string>("facets", Facets);
             writer.WriteStringValue("filters", Filters);
