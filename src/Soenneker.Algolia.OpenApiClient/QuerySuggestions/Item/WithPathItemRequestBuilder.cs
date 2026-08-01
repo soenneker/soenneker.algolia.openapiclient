@@ -36,7 +36,7 @@ namespace Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomDelete200ResponseResponseJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomDelete200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsErrorBase">When receiving a 400 status code</exception>
@@ -45,11 +45,11 @@ namespace Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomDelete200ResponseResponseJson?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomDelete200ResponseSchema?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomDelete200ResponseResponseJson> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomDelete200ResponseSchema> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -60,12 +60,12 @@ namespace Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomDelete200ResponseResponseJson>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomDelete200ResponseResponseJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomDelete200ResponseSchema>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomDelete200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomGet200ResponseResponseJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomGet200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsErrorBase">When receiving a 400 status code</exception>
@@ -74,11 +74,11 @@ namespace Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomGet200ResponseResponseJson?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomGet200ResponseSchema?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomGet200ResponseResponseJson> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomGet200ResponseSchema> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -89,12 +89,12 @@ namespace Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomGet200ResponseResponseJson>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomGet200ResponseResponseJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomGet200ResponseSchema>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomGet200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPost200ResponseResponseJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPost200ResponseSchema"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,11 +104,11 @@ namespace Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPost200ResponseResponseJson?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPostRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPost200ResponseSchema?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPostRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPost200ResponseResponseJson> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPostRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPost200ResponseSchema> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPostRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -120,12 +120,12 @@ namespace Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPost200ResponseResponseJson>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPost200ResponseResponseJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPost200ResponseSchema>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPost200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPut200ResponseResponseJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPut200ResponseSchema"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,11 +135,11 @@ namespace Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPut200ResponseResponseJson?> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPutRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPut200ResponseSchema?> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPutRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPut200ResponseResponseJson> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPutRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPut200ResponseSchema> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPutRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -151,7 +151,7 @@ namespace Soenneker.Algolia.OpenApiClient.QuerySuggestions.Item
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPut200ResponseResponseJson>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPut200ResponseResponseJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPut200ResponseSchema>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsCustomPut200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.

@@ -36,20 +36,20 @@ namespace Soenneker.Algolia.OpenApiClient.QuerySuggestions.SetClientApiKey
         /// <summary>
         /// Switch the API key used to authenticate requests.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.DefaultResponseResponseJson9"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsSetClientApiKey200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.DefaultResponseResponseJson9?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.SetClientApiKey.SetClientApiKeyRequestBuilder.SetClientApiKeyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsSetClientApiKey200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.SetClientApiKey.SetClientApiKeyRequestBuilder.SetClientApiKeyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.DefaultResponseResponseJson9> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.SetClientApiKey.SetClientApiKeyRequestBuilder.SetClientApiKeyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsSetClientApiKey200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.QuerySuggestions.SetClientApiKey.SetClientApiKeyRequestBuilder.SetClientApiKeyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.DefaultResponseResponseJson9>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.DefaultResponseResponseJson9.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsSetClientApiKey200Response>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsSetClientApiKey200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Switch the API key used to authenticate requests.

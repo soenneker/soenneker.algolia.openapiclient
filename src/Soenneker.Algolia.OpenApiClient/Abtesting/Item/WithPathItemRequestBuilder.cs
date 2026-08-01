@@ -36,7 +36,7 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Item
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomDelete200ResponseResponseJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomDelete200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase">When receiving a 400 status code</exception>
@@ -45,11 +45,11 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomDelete200ResponseResponseJson?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Abtesting.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomDelete200ResponseSchema?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Abtesting.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomDelete200ResponseResponseJson> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Abtesting.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomDelete200ResponseSchema> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Abtesting.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -60,12 +60,12 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Item
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomDelete200ResponseResponseJson>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomDelete200ResponseResponseJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomDelete200ResponseSchema>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomDelete200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomGet200ResponseResponseJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomGet200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase">When receiving a 400 status code</exception>
@@ -74,11 +74,11 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomGet200ResponseResponseJson?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Abtesting.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomGet200ResponseSchema?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Abtesting.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomGet200ResponseResponseJson> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Abtesting.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomGet200ResponseSchema> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Abtesting.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -89,12 +89,12 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Item
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomGet200ResponseResponseJson>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomGet200ResponseResponseJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomGet200ResponseSchema>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomGet200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPost200ResponseResponseJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPost200ResponseSchema"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,11 +104,11 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPost200ResponseResponseJson?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPostRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Abtesting.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPost200ResponseSchema?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPostRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Abtesting.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPost200ResponseResponseJson> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPostRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Abtesting.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPost200ResponseSchema> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPostRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Abtesting.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -120,12 +120,12 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Item
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPost200ResponseResponseJson>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPost200ResponseResponseJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPost200ResponseSchema>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPost200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPut200ResponseResponseJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPut200ResponseSchema"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,11 +135,11 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPut200ResponseResponseJson?> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPutRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Abtesting.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPut200ResponseSchema?> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPutRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Abtesting.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPut200ResponseResponseJson> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPutRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Abtesting.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPut200ResponseSchema> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPutRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Abtesting.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -151,7 +151,7 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Item
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPut200ResponseResponseJson>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPut200ResponseResponseJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPut200ResponseSchema>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomPut200ResponseSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.

@@ -244,7 +244,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AbtestingV3CustomGet200ResponseResponseJson"
+                  "$ref": "#/components/schemas/AbtestingV3CustomGet200ResponseSchema"
                 }
               }
             }
@@ -294,7 +294,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AbtestingV3CustomPost200ResponseResponseJson"
+                  "$ref": "#/components/schemas/AbtestingV3CustomPost200ResponseSchema"
                 }
               }
             }
@@ -344,7 +344,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AbtestingV3CustomPut200ResponseResponseJson"
+                  "$ref": "#/components/schemas/AbtestingV3CustomPut200ResponseSchema"
                 }
               }
             }
@@ -384,7 +384,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AbtestingV3CustomDelete200ResponseResponseJson"
+                  "$ref": "#/components/schemas/AbtestingV3CustomDelete200ResponseSchema"
                 }
               }
             }
@@ -507,7 +507,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListAbTestsResponse"
+                  "$ref": "#/components/schemas/AbtestingV3ListAbTests200Response"
                 }
               }
             }
@@ -769,7 +769,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponse"
+                  "$ref": "#/components/schemas/AbtestingV3SetClientApiKey200Response"
                 }
               }
             }
@@ -799,7 +799,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AbtestingCustomGet200ResponseResponseJson"
+                  "$ref": "#/components/schemas/AbtestingCustomGet200ResponseSchema"
                 }
               }
             }
@@ -849,7 +849,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AbtestingCustomPost200ResponseResponseJson"
+                  "$ref": "#/components/schemas/AbtestingCustomPost200ResponseSchema"
                 }
               }
             }
@@ -899,7 +899,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AbtestingCustomPut200ResponseResponseJson"
+                  "$ref": "#/components/schemas/AbtestingCustomPut200ResponseSchema"
                 }
               }
             }
@@ -939,7 +939,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AbtestingCustomDelete200ResponseResponseJson"
+                  "$ref": "#/components/schemas/AbtestingCustomDelete200ResponseSchema"
                 }
               }
             }
@@ -1053,7 +1053,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListAbTestsResponseResponseJson"
+                  "$ref": "#/components/schemas/AbtestingListAbTests200Response"
                 }
               }
             }
@@ -1256,7 +1256,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson"
+                  "$ref": "#/components/schemas/AbtestingSetClientApiKey200Response"
                 }
               }
             }
@@ -1286,7 +1286,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AdvancedPersonalizationCustomGet200ResponseResponseJson"
+                  "$ref": "#/components/schemas/AdvancedPersonalizationCustomGet200ResponseSchema"
                 }
               }
             }
@@ -1336,7 +1336,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AdvancedPersonalizationCustomPost200ResponseResponseJson"
+                  "$ref": "#/components/schemas/AdvancedPersonalizationCustomPost200ResponseSchema"
                 }
               }
             }
@@ -1386,7 +1386,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AdvancedPersonalizationCustomPut200ResponseResponseJson"
+                  "$ref": "#/components/schemas/AdvancedPersonalizationCustomPut200ResponseSchema"
                 }
               }
             }
@@ -1426,7 +1426,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AdvancedPersonalizationCustomDelete200ResponseResponseJson"
+                  "$ref": "#/components/schemas/AdvancedPersonalizationCustomDelete200ResponseSchema"
                 }
               }
             }
@@ -1712,7 +1712,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson2"
+                  "$ref": "#/components/schemas/AdvancedPersonalizationSetClientApiKey200Response"
                 }
               }
             }
@@ -1742,7 +1742,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AnalyticsCustomGet200ResponseResponseJson"
+                  "$ref": "#/components/schemas/AnalyticsCustomGet200ResponseSchema"
                 }
               }
             }
@@ -1792,7 +1792,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AnalyticsCustomPost200ResponseResponseJson"
+                  "$ref": "#/components/schemas/AnalyticsCustomPost200ResponseSchema"
                 }
               }
             }
@@ -1842,7 +1842,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AnalyticsCustomPut200ResponseResponseJson"
+                  "$ref": "#/components/schemas/AnalyticsCustomPut200ResponseSchema"
                 }
               }
             }
@@ -1882,7 +1882,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AnalyticsCustomDelete200ResponseResponseJson"
+                  "$ref": "#/components/schemas/AnalyticsCustomDelete200ResponseSchema"
                 }
               }
             }
@@ -2963,7 +2963,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson3"
+                  "$ref": "#/components/schemas/AnalyticsSetClientApiKey200Response"
                 }
               }
             }
@@ -2993,7 +2993,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CompositionCustomGet200ResponseResponseJson"
+                  "$ref": "#/components/schemas/CompositionCustomGet200ResponseSchema"
                 }
               }
             }
@@ -3043,7 +3043,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CompositionCustomPost200ResponseResponseJson"
+                  "$ref": "#/components/schemas/CompositionCustomPost200ResponseSchema"
                 }
               }
             }
@@ -3093,7 +3093,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CompositionCustomPut200ResponseResponseJson"
+                  "$ref": "#/components/schemas/CompositionCustomPut200ResponseSchema"
                 }
               }
             }
@@ -3133,7 +3133,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CompositionCustomDelete200ResponseResponseJson"
+                  "$ref": "#/components/schemas/CompositionCustomDelete200ResponseSchema"
                 }
               }
             }
@@ -3365,7 +3365,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TaskIdResponse"
+                  "$ref": "#/components/schemas/CompositionPutComposition200Response"
                 }
               }
             }
@@ -3402,7 +3402,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TaskIdResponseResponseJson"
+                  "$ref": "#/components/schemas/CompositionDeleteComposition200Response"
                 }
               }
             }
@@ -3442,7 +3442,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MultipleBatchResponse"
+                  "$ref": "#/components/schemas/CompositionMultipleBatch200Response"
                 }
               }
             }
@@ -3490,7 +3490,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TaskIdResponseResponseJson2"
+                  "$ref": "#/components/schemas/CompositionUpdateSortingStrategyComposition200Response"
                 }
               }
             }
@@ -3581,7 +3581,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TaskIdResponseResponseJson3"
+                  "$ref": "#/components/schemas/CompositionPutCompositionRule200Response"
                 }
               }
             }
@@ -3624,7 +3624,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TaskIdResponseResponseJson4"
+                  "$ref": "#/components/schemas/CompositionDeleteCompositionRule200Response"
                 }
               }
             }
@@ -3815,7 +3815,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson4"
+                  "$ref": "#/components/schemas/CompositionSetClientApiKey200Response"
                 }
               }
             }
@@ -4507,7 +4507,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/TaskStatusResponseJson"
+                  "$ref": "#/components/schemas/TaskStatusSchema"
                 }
               }
             }
@@ -4614,7 +4614,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IngestionCustomGet200ResponseResponseJson"
+                  "$ref": "#/components/schemas/IngestionCustomGet200ResponseSchema"
                 }
               }
             }
@@ -4664,7 +4664,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IngestionCustomPost200ResponseResponseJson"
+                  "$ref": "#/components/schemas/IngestionCustomPost200ResponseSchema"
                 }
               }
             }
@@ -4714,7 +4714,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IngestionCustomPut200ResponseResponseJson"
+                  "$ref": "#/components/schemas/IngestionCustomPut200ResponseSchema"
                 }
               }
             }
@@ -4754,7 +4754,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IngestionCustomDelete200ResponseResponseJson"
+                  "$ref": "#/components/schemas/IngestionCustomDelete200ResponseSchema"
                 }
               }
             }
@@ -6490,7 +6490,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson5"
+                  "$ref": "#/components/schemas/IngestionSetClientApiKey200Response"
                 }
               }
             }
@@ -6559,7 +6559,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/IngestionChunkedPush200ResponseResponseJson"
+                  "$ref": "#/components/schemas/IngestionChunkedPush200ResponseSchema"
                 }
               }
             }
@@ -6592,7 +6592,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InsightsCustomGet200ResponseResponseJson"
+                  "$ref": "#/components/schemas/InsightsCustomGet200ResponseSchema"
                 }
               }
             }
@@ -6642,7 +6642,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InsightsCustomPost200ResponseResponseJson"
+                  "$ref": "#/components/schemas/InsightsCustomPost200ResponseSchema"
                 }
               }
             }
@@ -6692,7 +6692,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InsightsCustomPut200ResponseResponseJson"
+                  "$ref": "#/components/schemas/InsightsCustomPut200ResponseSchema"
                 }
               }
             }
@@ -6732,7 +6732,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InsightsCustomDelete200ResponseResponseJson"
+                  "$ref": "#/components/schemas/InsightsCustomDelete200ResponseSchema"
                 }
               }
             }
@@ -7055,7 +7055,7 @@
             "content": {
               "text/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/InsightsPushEvents400Response"
+                  "$ref": "#/components/schemas/InsightsPushEvents400HtmlResponse"
                 },
                 "examples": {
                   "BadRequest": {
@@ -7377,7 +7377,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson6"
+                  "$ref": "#/components/schemas/InsightsSetClientApiKey200Response"
                 }
               }
             }
@@ -7407,7 +7407,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MonitoringCustomGet200ResponseResponseJson"
+                  "$ref": "#/components/schemas/MonitoringCustomGet200ResponseSchema"
                 }
               }
             }
@@ -7457,7 +7457,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MonitoringCustomPost200ResponseResponseJson"
+                  "$ref": "#/components/schemas/MonitoringCustomPost200ResponseSchema"
                 }
               }
             }
@@ -7507,7 +7507,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MonitoringCustomPut200ResponseResponseJson"
+                  "$ref": "#/components/schemas/MonitoringCustomPut200ResponseSchema"
                 }
               }
             }
@@ -7547,7 +7547,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MonitoringCustomDelete200ResponseResponseJson"
+                  "$ref": "#/components/schemas/MonitoringCustomDelete200ResponseSchema"
                 }
               }
             }
@@ -7808,7 +7808,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson7"
+                  "$ref": "#/components/schemas/MonitoringSetClientApiKey200Response"
                 }
               }
             }
@@ -7838,7 +7838,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PersonalizationCustomGet200ResponseResponseJson"
+                  "$ref": "#/components/schemas/PersonalizationCustomGet200ResponseSchema"
                 }
               }
             }
@@ -7888,7 +7888,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PersonalizationCustomPost200ResponseResponseJson"
+                  "$ref": "#/components/schemas/PersonalizationCustomPost200ResponseSchema"
                 }
               }
             }
@@ -7938,7 +7938,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PersonalizationCustomPut200ResponseResponseJson"
+                  "$ref": "#/components/schemas/PersonalizationCustomPut200ResponseSchema"
                 }
               }
             }
@@ -7978,7 +7978,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PersonalizationCustomDelete200ResponseResponseJson"
+                  "$ref": "#/components/schemas/PersonalizationCustomDelete200ResponseSchema"
                 }
               }
             }
@@ -8176,7 +8176,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson8"
+                  "$ref": "#/components/schemas/PersonalizationSetClientApiKey200Response"
                 }
               }
             }
@@ -8206,7 +8206,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/QuerySuggestionsCustomGet200ResponseResponseJson"
+                  "$ref": "#/components/schemas/QuerySuggestionsCustomGet200ResponseSchema"
                 }
               }
             }
@@ -8256,7 +8256,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/QuerySuggestionsCustomPost200ResponseResponseJson"
+                  "$ref": "#/components/schemas/QuerySuggestionsCustomPost200ResponseSchema"
                 }
               }
             }
@@ -8306,7 +8306,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/QuerySuggestionsCustomPut200ResponseResponseJson"
+                  "$ref": "#/components/schemas/QuerySuggestionsCustomPut200ResponseSchema"
                 }
               }
             }
@@ -8346,7 +8346,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/QuerySuggestionsCustomDelete200ResponseResponseJson"
+                  "$ref": "#/components/schemas/QuerySuggestionsCustomDelete200ResponseSchema"
                 }
               }
             }
@@ -8380,7 +8380,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/QuerySuggestionsGetAllConfigs200ResponseResponseJson"
+                  "$ref": "#/components/schemas/QuerySuggestionsGetAllConfigs200ResponseSchema"
                 }
               }
             }
@@ -8657,7 +8657,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson9"
+                  "$ref": "#/components/schemas/QuerySuggestionsSetClientApiKey200Response"
                 }
               }
             }
@@ -8687,7 +8687,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RecommendCustomGet200ResponseResponseJson"
+                  "$ref": "#/components/schemas/RecommendCustomGet200ResponseSchema"
                 }
               }
             }
@@ -8737,7 +8737,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RecommendCustomPost200ResponseResponseJson"
+                  "$ref": "#/components/schemas/RecommendCustomPost200ResponseSchema"
                 }
               }
             }
@@ -8787,7 +8787,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RecommendCustomPut200ResponseResponseJson"
+                  "$ref": "#/components/schemas/RecommendCustomPut200ResponseSchema"
                 }
               }
             }
@@ -8827,7 +8827,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RecommendCustomDelete200ResponseResponseJson"
+                  "$ref": "#/components/schemas/RecommendCustomDelete200ResponseSchema"
                 }
               }
             }
@@ -9133,7 +9133,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson10"
+                  "$ref": "#/components/schemas/RecommendSetClientApiKey200Response"
                 }
               }
             }
@@ -9163,7 +9163,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchCustomGet200ResponseResponseJson"
+                  "$ref": "#/components/schemas/SearchCustomGet200ResponseSchema"
                 }
               }
             }
@@ -9213,7 +9213,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchCustomPost200ResponseResponseJson"
+                  "$ref": "#/components/schemas/SearchCustomPost200ResponseSchema"
                 }
               }
             }
@@ -9263,7 +9263,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchCustomPut200ResponseResponseJson"
+                  "$ref": "#/components/schemas/SearchCustomPut200ResponseSchema"
                 }
               }
             }
@@ -9303,7 +9303,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchCustomDelete200ResponseResponseJson"
+                  "$ref": "#/components/schemas/SearchCustomDelete200ResponseSchema"
                 }
               }
             }
@@ -9636,7 +9636,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchGetObject200ResponseResponseJson"
+                  "$ref": "#/components/schemas/SearchGetObject200ResponseSchema"
                 }
               }
             }
@@ -9961,7 +9961,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MultipleBatchResponseResponseJson"
+                  "$ref": "#/components/schemas/SearchMultipleBatch200Response"
                 }
               }
             }
@@ -11675,7 +11675,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchGenerateSecuredApiKey200ResponseResponseJson"
+                  "$ref": "#/components/schemas/SearchGenerateSecuredApiKey200ResponseSchema"
                 }
               }
             }
@@ -11951,7 +11951,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchChunkedBatch200ResponseResponseJson"
+                  "$ref": "#/components/schemas/SearchChunkedBatch200ResponseSchema"
                 }
               }
             }
@@ -12025,7 +12025,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchSaveObjects200ResponseResponseJson"
+                  "$ref": "#/components/schemas/SearchSaveObjects200ResponseSchema"
                 }
               }
             }
@@ -12099,7 +12099,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchSaveObjectsWithTransformation200ResponseResponseJson"
+                  "$ref": "#/components/schemas/SearchSaveObjectsWithTransformation200ResponseSchema"
                 }
               }
             }
@@ -12171,7 +12171,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchDeleteObjects200ResponseResponseJson"
+                  "$ref": "#/components/schemas/SearchDeleteObjects200ResponseSchema"
                 }
               }
             }
@@ -12254,7 +12254,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchPartialUpdateObjects200ResponseResponseJson"
+                  "$ref": "#/components/schemas/SearchPartialUpdateObjects200ResponseSchema"
                 }
               }
             }
@@ -12337,7 +12337,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchPartialUpdateObjectsWithTransformation200ResponseResponseJson"
+                  "$ref": "#/components/schemas/SearchPartialUpdateObjectsWithTransformation200ResponseSchema"
                 }
               }
             }
@@ -12373,7 +12373,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchIndexExists200ResponseResponseJson"
+                  "$ref": "#/components/schemas/SearchIndexExists200ResponseSchema"
                 }
               }
             }
@@ -12406,7 +12406,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson11"
+                  "$ref": "#/components/schemas/SearchSetClientApiKey200Response"
                 }
               }
             }
@@ -15467,7 +15467,7 @@
           "Faceting"
         ]
       },
-      "TaskStatusResponseJson": {
+      "TaskStatusSchema": {
         "title": "taskStatus",
         "required": [
           "pending"
@@ -17174,7 +17174,7 @@
           }
         }
       },
-      "TaskIdResponseResponseJson4": {
+      "CompositionDeleteCompositionRule200Response": {
         "title": "taskIDResponse",
         "required": [
           "taskID"
@@ -17235,7 +17235,7 @@
         },
         "description": "Search results (hits).\n\nHits are records from your index that match the search criteria, augmented with additional attributes, such as, for highlighting.\n"
       },
-      "TaskIdResponseResponseJson3": {
+      "CompositionPutCompositionRule200Response": {
         "title": "taskIDResponse",
         "required": [
           "taskID"
@@ -17250,7 +17250,7 @@
         },
         "additionalProperties": false
       },
-      "TaskIdResponseResponseJson2": {
+      "CompositionUpdateSortingStrategyComposition200Response": {
         "title": "taskIDResponse",
         "required": [
           "taskID"
@@ -17265,7 +17265,7 @@
         },
         "additionalProperties": false
       },
-      "MultipleBatchResponse": {
+      "CompositionMultipleBatch200Response": {
         "title": "multipleBatchResponse",
         "required": [
           "taskID"
@@ -17273,7 +17273,7 @@
         "type": "object",
         "properties": {
           "taskID": {
-            "$ref": "#/components/schemas/MultipleBatchResponseTaskId"
+            "$ref": "#/components/schemas/CompositionMultipleBatch200ResponseTaskId"
           }
         },
         "additionalProperties": false
@@ -17295,7 +17295,7 @@
         "additionalProperties": false,
         "description": "Batch parameters."
       },
-      "TaskIdResponseResponseJson": {
+      "CompositionDeleteComposition200Response": {
         "title": "taskIDResponse",
         "required": [
           "taskID"
@@ -17310,7 +17310,7 @@
         },
         "additionalProperties": false
       },
-      "TaskIdResponse": {
+      "CompositionPutComposition200Response": {
         "title": "taskIDResponse",
         "required": [
           "taskID"
@@ -43235,7 +43235,7 @@
         "additionalProperties": false,
         "description": "Batch parameters."
       },
-      "MultipleBatchResponseResponseJson": {
+      "SearchMultipleBatch200Response": {
         "title": "multipleBatchResponse",
         "required": [
           "taskID",
@@ -43244,7 +43244,7 @@
         "type": "object",
         "properties": {
           "taskID": {
-            "$ref": "#/components/schemas/MultipleBatchResponseResponseJsonTaskId"
+            "$ref": "#/components/schemas/SearchMultipleBatch200ResponseTaskId"
           },
           "objectIDs": {
             "type": "array",
@@ -44828,25 +44828,25 @@
           }
         }
       },
-      "AbtestingV3CustomGet200ResponseResponseJson": {
+      "AbtestingV3CustomGet200ResponseSchema": {
         "type": "object"
       },
       "AbtestingV3CustomPostRequestRequestBody": {
         "type": "object"
       },
-      "AbtestingV3CustomPost200ResponseResponseJson": {
+      "AbtestingV3CustomPost200ResponseSchema": {
         "type": "object"
       },
       "AbtestingV3CustomPutRequestRequestBody": {
         "type": "object"
       },
-      "AbtestingV3CustomPut200ResponseResponseJson": {
+      "AbtestingV3CustomPut200ResponseSchema": {
         "type": "object"
       },
-      "AbtestingV3CustomDelete200ResponseResponseJson": {
+      "AbtestingV3CustomDelete200ResponseSchema": {
         "type": "object"
       },
-      "ListAbTestsResponse": {
+      "AbtestingV3ListAbTests200Response": {
         "title": "listABTestsResponse",
         "required": [
           "abtests",
@@ -44871,30 +44871,30 @@
         },
         "additionalProperties": false
       },
-      "DefaultResponse": {
+      "AbtestingV3SetClientApiKey200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "AbtestingCustomGet200ResponseResponseJson": {
+      "AbtestingCustomGet200ResponseSchema": {
         "type": "object"
       },
       "AbtestingCustomPostRequestRequestBody": {
         "type": "object"
       },
-      "AbtestingCustomPost200ResponseResponseJson": {
+      "AbtestingCustomPost200ResponseSchema": {
         "type": "object"
       },
       "AbtestingCustomPutRequestRequestBody": {
         "type": "object"
       },
-      "AbtestingCustomPut200ResponseResponseJson": {
+      "AbtestingCustomPut200ResponseSchema": {
         "type": "object"
       },
-      "AbtestingCustomDelete200ResponseResponseJson": {
+      "AbtestingCustomDelete200ResponseSchema": {
         "type": "object"
       },
-      "ListAbTestsResponseResponseJson": {
+      "AbtestingListAbTests200Response": {
         "title": "listABTestsResponse",
         "required": [
           "abtests",
@@ -44919,27 +44919,27 @@
         },
         "additionalProperties": false
       },
-      "DefaultResponseResponseJson": {
+      "AbtestingSetClientApiKey200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "AdvancedPersonalizationCustomGet200ResponseResponseJson": {
+      "AdvancedPersonalizationCustomGet200ResponseSchema": {
         "type": "object"
       },
       "AdvancedPersonalizationCustomPostRequestRequestBody": {
         "type": "object"
       },
-      "AdvancedPersonalizationCustomPost200ResponseResponseJson": {
+      "AdvancedPersonalizationCustomPost200ResponseSchema": {
         "type": "object"
       },
       "AdvancedPersonalizationCustomPutRequestRequestBody": {
         "type": "object"
       },
-      "AdvancedPersonalizationCustomPut200ResponseResponseJson": {
+      "AdvancedPersonalizationCustomPut200ResponseSchema": {
         "type": "object"
       },
-      "AdvancedPersonalizationCustomDelete200ResponseResponseJson": {
+      "AdvancedPersonalizationCustomDelete200ResponseSchema": {
         "type": "object"
       },
       "GetUsersResponse": {
@@ -44963,27 +44963,27 @@
           }
         }
       },
-      "DefaultResponseResponseJson2": {
+      "AdvancedPersonalizationSetClientApiKey200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "AnalyticsCustomGet200ResponseResponseJson": {
+      "AnalyticsCustomGet200ResponseSchema": {
         "type": "object"
       },
       "AnalyticsCustomPostRequestRequestBody": {
         "type": "object"
       },
-      "AnalyticsCustomPost200ResponseResponseJson": {
+      "AnalyticsCustomPost200ResponseSchema": {
         "type": "object"
       },
       "AnalyticsCustomPutRequestRequestBody": {
         "type": "object"
       },
-      "AnalyticsCustomPut200ResponseResponseJson": {
+      "AnalyticsCustomPut200ResponseSchema": {
         "type": "object"
       },
-      "AnalyticsCustomDelete200ResponseResponseJson": {
+      "AnalyticsCustomDelete200ResponseSchema": {
         "type": "object"
       },
       "GetAverageClickPositionResponse": {
@@ -45193,27 +45193,27 @@
         },
         "additionalProperties": false
       },
-      "DefaultResponseResponseJson3": {
+      "AnalyticsSetClientApiKey200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "CompositionCustomGet200ResponseResponseJson": {
+      "CompositionCustomGet200ResponseSchema": {
         "type": "object"
       },
       "CompositionCustomPostRequestRequestBody": {
         "type": "object"
       },
-      "CompositionCustomPost200ResponseResponseJson": {
+      "CompositionCustomPost200ResponseSchema": {
         "type": "object"
       },
       "CompositionCustomPutRequestRequestBody": {
         "type": "object"
       },
-      "CompositionCustomPut200ResponseResponseJson": {
+      "CompositionCustomPut200ResponseSchema": {
         "type": "object"
       },
-      "CompositionCustomDelete200ResponseResponseJson": {
+      "CompositionCustomDelete200ResponseSchema": {
         "type": "object"
       },
       "CompositionUpdateSortingStrategyCompositionRequest": {
@@ -45255,7 +45255,7 @@
         },
         "additionalProperties": false
       },
-      "DefaultResponseResponseJson4": {
+      "CompositionSetClientApiKey200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -45310,22 +45310,22 @@
           }
         }
       },
-      "IngestionCustomGet200ResponseResponseJson": {
+      "IngestionCustomGet200ResponseSchema": {
         "type": "object"
       },
       "IngestionCustomPostRequestRequestBody": {
         "type": "object"
       },
-      "IngestionCustomPost200ResponseResponseJson": {
+      "IngestionCustomPost200ResponseSchema": {
         "type": "object"
       },
       "IngestionCustomPutRequestRequestBody": {
         "type": "object"
       },
-      "IngestionCustomPut200ResponseResponseJson": {
+      "IngestionCustomPut200ResponseSchema": {
         "type": "object"
       },
-      "IngestionCustomDelete200ResponseResponseJson": {
+      "IngestionCustomDelete200ResponseSchema": {
         "type": "object"
       },
       "IngestionSearchAuthentications200Response": {
@@ -45358,108 +45358,108 @@
           "$ref": "#/components/schemas/Transformation"
         }
       },
-      "DefaultResponseResponseJson5": {
+      "IngestionSetClientApiKey200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "IngestionChunkedPush200ResponseResponseJson": {
+      "IngestionChunkedPush200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/WatchResponse"
         }
       },
-      "InsightsCustomGet200ResponseResponseJson": {
+      "InsightsCustomGet200ResponseSchema": {
         "type": "object"
       },
       "InsightsCustomPostRequestRequestBody": {
         "type": "object"
       },
-      "InsightsCustomPost200ResponseResponseJson": {
+      "InsightsCustomPost200ResponseSchema": {
         "type": "object"
       },
       "InsightsCustomPutRequestRequestBody": {
         "type": "object"
       },
-      "InsightsCustomPut200ResponseResponseJson": {
+      "InsightsCustomPut200ResponseSchema": {
         "type": "object"
       },
-      "InsightsCustomDelete200ResponseResponseJson": {
+      "InsightsCustomDelete200ResponseSchema": {
         "type": "object"
       },
-      "InsightsPushEvents400Response": {
+      "InsightsPushEvents400HtmlResponse": {
         "type": "string"
       },
-      "DefaultResponseResponseJson6": {
+      "InsightsSetClientApiKey200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "MonitoringCustomGet200ResponseResponseJson": {
+      "MonitoringCustomGet200ResponseSchema": {
         "type": "object"
       },
       "MonitoringCustomPostRequestRequestBody": {
         "type": "object"
       },
-      "MonitoringCustomPost200ResponseResponseJson": {
+      "MonitoringCustomPost200ResponseSchema": {
         "type": "object"
       },
       "MonitoringCustomPutRequestRequestBody": {
         "type": "object"
       },
-      "MonitoringCustomPut200ResponseResponseJson": {
+      "MonitoringCustomPut200ResponseSchema": {
         "type": "object"
       },
-      "MonitoringCustomDelete200ResponseResponseJson": {
+      "MonitoringCustomDelete200ResponseSchema": {
         "type": "object"
       },
-      "DefaultResponseResponseJson7": {
+      "MonitoringSetClientApiKey200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "PersonalizationCustomGet200ResponseResponseJson": {
+      "PersonalizationCustomGet200ResponseSchema": {
         "type": "object"
       },
       "PersonalizationCustomPostRequestRequestBody": {
         "type": "object"
       },
-      "PersonalizationCustomPost200ResponseResponseJson": {
+      "PersonalizationCustomPost200ResponseSchema": {
         "type": "object"
       },
       "PersonalizationCustomPutRequestRequestBody": {
         "type": "object"
       },
-      "PersonalizationCustomPut200ResponseResponseJson": {
+      "PersonalizationCustomPut200ResponseSchema": {
         "type": "object"
       },
-      "PersonalizationCustomDelete200ResponseResponseJson": {
+      "PersonalizationCustomDelete200ResponseSchema": {
         "type": "object"
       },
-      "DefaultResponseResponseJson8": {
+      "PersonalizationSetClientApiKey200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "QuerySuggestionsCustomGet200ResponseResponseJson": {
+      "QuerySuggestionsCustomGet200ResponseSchema": {
         "type": "object"
       },
       "QuerySuggestionsCustomPostRequestRequestBody": {
         "type": "object"
       },
-      "QuerySuggestionsCustomPost200ResponseResponseJson": {
+      "QuerySuggestionsCustomPost200ResponseSchema": {
         "type": "object"
       },
       "QuerySuggestionsCustomPutRequestRequestBody": {
         "type": "object"
       },
-      "QuerySuggestionsCustomPut200ResponseResponseJson": {
+      "QuerySuggestionsCustomPut200ResponseSchema": {
         "type": "object"
       },
-      "QuerySuggestionsCustomDelete200ResponseResponseJson": {
+      "QuerySuggestionsCustomDelete200ResponseSchema": {
         "type": "object"
       },
-      "QuerySuggestionsGetAllConfigs200ResponseResponseJson": {
+      "QuerySuggestionsGetAllConfigs200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ConfigurationResponse"
@@ -45490,27 +45490,27 @@
         },
         "additionalProperties": false
       },
-      "DefaultResponseResponseJson9": {
+      "QuerySuggestionsSetClientApiKey200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "RecommendCustomGet200ResponseResponseJson": {
+      "RecommendCustomGet200ResponseSchema": {
         "type": "object"
       },
       "RecommendCustomPostRequestRequestBody": {
         "type": "object"
       },
-      "RecommendCustomPost200ResponseResponseJson": {
+      "RecommendCustomPost200ResponseSchema": {
         "type": "object"
       },
       "RecommendCustomPutRequestRequestBody": {
         "type": "object"
       },
-      "RecommendCustomPut200ResponseResponseJson": {
+      "RecommendCustomPut200ResponseSchema": {
         "type": "object"
       },
-      "RecommendCustomDelete200ResponseResponseJson": {
+      "RecommendCustomDelete200ResponseSchema": {
         "type": "object"
       },
       "GetRecommendationsResponse": {
@@ -45582,27 +45582,27 @@
         },
         "description": "Recommend rules."
       },
-      "DefaultResponseResponseJson10": {
+      "RecommendSetClientApiKey200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "SearchCustomGet200ResponseResponseJson": {
+      "SearchCustomGet200ResponseSchema": {
         "type": "object"
       },
       "SearchCustomPostRequestRequestBody": {
         "type": "object"
       },
-      "SearchCustomPost200ResponseResponseJson": {
+      "SearchCustomPost200ResponseSchema": {
         "type": "object"
       },
       "SearchCustomPutRequestRequestBody": {
         "type": "object"
       },
-      "SearchCustomPut200ResponseResponseJson": {
+      "SearchCustomPut200ResponseSchema": {
         "type": "object"
       },
-      "SearchCustomDelete200ResponseResponseJson": {
+      "SearchCustomDelete200ResponseSchema": {
         "type": "object"
       },
       "SearchResponses": {
@@ -45624,7 +45624,7 @@
       "SearchSaveObjectRequestRequestBody": {
         "type": "object"
       },
-      "SearchGetObject200ResponseResponseJson": {
+      "SearchGetObject200ResponseSchema": {
         "type": "object",
         "description": "The requested record."
       },
@@ -45731,49 +45731,49 @@
         },
         "description": "Sources."
       },
-      "SearchGenerateSecuredApiKey200ResponseResponseJson": {
+      "SearchGenerateSecuredApiKey200ResponseSchema": {
         "type": "string"
       },
-      "SearchChunkedBatch200ResponseResponseJson": {
+      "SearchChunkedBatch200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/BatchResponse"
         }
       },
-      "SearchSaveObjects200ResponseResponseJson": {
+      "SearchSaveObjects200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/BatchResponse"
         }
       },
-      "SearchSaveObjectsWithTransformation200ResponseResponseJson": {
+      "SearchSaveObjectsWithTransformation200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/SearchWatchResponse"
         }
       },
-      "SearchDeleteObjects200ResponseResponseJson": {
+      "SearchDeleteObjects200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/BatchResponse"
         }
       },
-      "SearchPartialUpdateObjects200ResponseResponseJson": {
+      "SearchPartialUpdateObjects200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/BatchResponse"
         }
       },
-      "SearchPartialUpdateObjectsWithTransformation200ResponseResponseJson": {
+      "SearchPartialUpdateObjectsWithTransformation200ResponseSchema": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/SearchWatchResponse"
         }
       },
-      "SearchIndexExists200ResponseResponseJson": {
+      "SearchIndexExists200ResponseSchema": {
         "type": "boolean"
       },
-      "DefaultResponseResponseJson11": {
+      "SearchSetClientApiKey200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -45989,7 +45989,7 @@
         },
         "description": "Snippets that show the context around a matching search query."
       },
-      "MultipleBatchResponseTaskId": {
+      "CompositionMultipleBatch200ResponseTaskId": {
         "type": "object",
         "additionalProperties": {
           "type": "integer",
@@ -46914,7 +46914,7 @@
         },
         "additionalProperties": false
       },
-      "MultipleBatchResponseResponseJsonTaskId": {
+      "SearchMultipleBatch200ResponseTaskId": {
         "type": "object",
         "additionalProperties": {
           "type": "integer",
