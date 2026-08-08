@@ -17946,8 +17946,26 @@
         "additionalProperties": false
       },
       "BooleanString": {
-        "type": "boolean",
-        "additionalProperties": false
+        "enum": [
+          "true",
+          "false"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "BooleanString",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "true",
+              "name": "TrueValue"
+            },
+            {
+              "value": "false",
+              "name": "FalseValue"
+            }
+          ]
+        }
       },
       "IgnorePlurals": {
         "type": "object",
@@ -18261,8 +18279,8 @@
         "enum": [
           "min",
           "strict",
-          true,
-          false
+          "true",
+          "false"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -18278,6 +18296,14 @@
             {
               "value": "strict",
               "name": "Strict"
+            },
+            {
+              "value": "true",
+              "name": "TrueValue"
+            },
+            {
+              "value": "false",
+              "name": "FalseValue"
             }
           ]
         }
@@ -20625,8 +20651,8 @@
         "enum": [
           "min",
           "strict",
-          true,
-          false
+          "true",
+          "false"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -20642,6 +20668,14 @@
             {
               "value": "strict",
               "name": "Strict"
+            },
+            {
+              "value": "true",
+              "name": "TrueValue"
+            },
+            {
+              "value": "false",
+              "name": "FalseValue"
             }
           ]
         }
@@ -20677,8 +20711,26 @@
         ]
       },
       "CrawlerBooleanString": {
-        "type": "boolean",
-        "additionalProperties": false
+        "enum": [
+          "true",
+          "false"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CrawlerBooleanString",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "true",
+              "name": "TrueValue"
+            },
+            {
+              "value": "false",
+              "name": "FalseValue"
+            }
+          ]
+        }
       },
       "CrawlerIgnorePlurals": {
         "type": "object",
@@ -27492,7 +27544,7 @@
           },
           {
             "type": "string",
-            "example": 9.99
+            "example": "9.99"
           }
         ],
         "description": "Final price of a single product, including any discounts, in units of \u0060currency\u0060."
@@ -27514,7 +27566,7 @@
           },
           {
             "type": "string",
-            "example": 20
+            "example": "20"
           }
         ],
         "description": "Absolute value of the discount for this product, in units of \u0060currency\u0060."
@@ -27564,7 +27616,7 @@
           {
             "maxLength": 16,
             "type": "string",
-            "example": 1000
+            "example": "1000.00"
           }
         ],
         "description": "Total monetary value of this event in units of \u0060currency\u0060.\nThis should be equal to the sum of \u0060price\u0060 times \u0060quantity\u0060.\n"
@@ -30478,8 +30530,8 @@
         "enum": [
           "min",
           "strict",
-          true,
-          false
+          "true",
+          "false"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -30495,6 +30547,14 @@
             {
               "value": "strict",
               "name": "Strict"
+            },
+            {
+              "value": "true",
+              "name": "TrueValue"
+            },
+            {
+              "value": "false",
+              "name": "FalseValue"
             }
           ]
         }
@@ -30536,8 +30596,26 @@
         ]
       },
       "RecommendBooleanString": {
-        "type": "boolean",
-        "additionalProperties": false
+        "enum": [
+          "true",
+          "false"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "RecommendBooleanString",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "true",
+              "name": "TrueValue"
+            },
+            {
+              "value": "false",
+              "name": "FalseValue"
+            }
+          ]
+        }
       },
       "RecommendIgnorePlurals": {
         "type": "object",
@@ -36101,8 +36179,8 @@
         "enum": [
           "min",
           "strict",
-          true,
-          false
+          "true",
+          "false"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -36118,6 +36196,14 @@
             {
               "value": "strict",
               "name": "Strict"
+            },
+            {
+              "value": "true",
+              "name": "TrueValue"
+            },
+            {
+              "value": "false",
+              "name": "FalseValue"
             }
           ]
         }
@@ -36160,8 +36246,26 @@
         ]
       },
       "SearchBooleanString": {
-        "type": "boolean",
-        "additionalProperties": false
+        "enum": [
+          "true",
+          "false"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "SearchBooleanString",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "true",
+              "name": "TrueValue"
+            },
+            {
+              "value": "false",
+              "name": "FalseValue"
+            }
+          ]
+        }
       },
       "SearchIgnorePlurals": {
         "type": "object",
@@ -43621,7 +43725,7 @@
         "type": "object",
         "properties": {
           "value": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/BooleanString"
           }
         }
       },
@@ -43654,7 +43758,7 @@
         "type": "object",
         "properties": {
           "value": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/CrawlerBooleanString"
           }
         }
       },
@@ -43720,7 +43824,7 @@
         "type": "object",
         "properties": {
           "value": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/RecommendBooleanString"
           }
         }
       },
@@ -43753,7 +43857,7 @@
         "type": "object",
         "properties": {
           "value": {
-            "type": "boolean"
+            "$ref": "#/components/schemas/SearchBooleanString"
           }
         }
       },
@@ -47004,7 +47108,7 @@
           "answer_code": {
             "type": "string",
             "description": "HTTP status code of the response.",
-            "example": 200
+            "example": "200"
           },
           "query_body": {
             "maxLength": 1000,
@@ -47043,12 +47147,12 @@
           "nb_api_calls": {
             "type": "string",
             "description": "Number of API requests.",
-            "example": 1
+            "example": "1"
           },
           "processing_time_ms": {
             "type": "string",
             "description": "Processing time for the query in milliseconds.\nThis doesn\u0027t include latency due to the network.\n",
-            "example": 2
+            "example": "2"
           },
           "index": {
             "type": "string",
@@ -47063,7 +47167,7 @@
           "query_nb_hits": {
             "type": "string",
             "description": "Number of search results (hits) returned for the query.",
-            "example": 1
+            "example": "1"
           },
           "inner_queries": {
             "type": "array",

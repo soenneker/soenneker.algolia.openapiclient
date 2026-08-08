@@ -15,5 +15,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         #pragma warning disable CS1591
         Strict,
         #pragma warning restore CS1591
+        [EnumMember(Value = "true")]
+        #pragma warning disable CS1591
+        TrueValue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "false")]
+        #pragma warning disable CS1591
+        FalseValue,
+        #pragma warning restore CS1591
     }
 }

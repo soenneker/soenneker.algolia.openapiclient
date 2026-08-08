@@ -15,7 +15,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The value property</summary>
-        public bool? Value { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchBooleanString? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchBooleanStringWrapper"/> and sets the default values.
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetBoolValue(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchBooleanString>(); } },
             };
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchBooleanString>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
