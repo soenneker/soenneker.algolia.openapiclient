@@ -7024,6 +7024,33 @@
                       }
                     ]
                   }
+                },
+                "InstantsearchMinimum": {
+                  "summary": "Minimum instantsearch event",
+                  "description": "Minimum valid instantsearch event for agentic analytics telemetry.\n",
+                  "value": {
+                    "events": [
+                      {
+                        "eventName": "Instantsearch Telemetry",
+                        "eventType": "instantsearch",
+                        "userToken": "anonymous-user-1"
+                      }
+                    ]
+                  }
+                },
+                "InstantsearchWithAgentID": {
+                  "summary": "Instantsearch event with agentID",
+                  "description": "Instantsearch event with agentID to correlate events within a single agent session.\n",
+                  "value": {
+                    "events": [
+                      {
+                        "eventName": "Instantsearch Telemetry",
+                        "eventType": "instantsearch",
+                        "userToken": "anonymous-user-1",
+                        "agentID": "agent-session-123"
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -7202,7 +7229,7 @@
                     "summary": "Wrong event type",
                     "value": {
                       "status": 422,
-                      "message": "EventType must be one of \u0022click\u0022, \u0022conversion\u0022 or \u0022view\u0022"
+                      "message": "EventType must be one of \u0022click\u0022, \u0022conversion\u0022, \u0022view\u0022 or \u0022instantsearch\u0022"
                     }
                   },
                   "IndexRequired": {
@@ -12452,6 +12479,12 @@
           ]
         }
       },
+      "QuerySuggestionsGetAllConfigs200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ConfigurationResponse"
+        }
+      },
       "QuerySuggestionsCustomDelete200Response": {
         "type": "object"
       },
@@ -12461,16 +12494,13 @@
       "QuerySuggestionsCustomPutRequest": {
         "type": "object"
       },
-      "QuerySuggestionsCustomPost200Response": {
-        "type": "object"
-      },
       "StoppedAt": {
         "type": "string",
         "description": "Date and time when the A/B test was stopped, in RFC 3339 format.",
         "nullable": true,
         "example": "2023-06-15T15:06:44.400601Z"
       },
-      "QuerySuggestionsCustomPostRequest": {
+      "QuerySuggestionsCustomPost200Response": {
         "type": "object"
       },
       "Status": {
@@ -12507,6 +12537,9 @@
           ]
         }
       },
+      "QuerySuggestionsCustomPostRequest": {
+        "type": "object"
+      },
       "QuerySuggestionsCustomGet200Response": {
         "type": "object"
       },
@@ -12521,25 +12554,6 @@
             "type": "string",
             "description": "A message confirming the strategy update.",
             "example": "Strategy was successfully updated."
-          }
-        },
-        "additionalProperties": false
-      },
-      "DeleteUserProfileResponse": {
-        "title": "deleteUserProfileResponse",
-        "required": [
-          "userToken",
-          "deletedUntil"
-        ],
-        "type": "object",
-        "properties": {
-          "userToken": {
-            "type": "string",
-            "description": "Unique pseudonymous or anonymous user identifier.\n\nThis helps with analytics and click and conversion events.\nFor more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
-          },
-          "deletedUntil": {
-            "type": "string",
-            "description": "Date and time when the user profile can be safely considered to be deleted.\nAny events received after the \u0060deletedUntil\u0060 date start a new user profile.\n"
           }
         },
         "additionalProperties": false
@@ -12834,12 +12848,11 @@
         },
         "description": "A/B test configuration."
       },
-      "GetUserTokenResponse": {
-        "title": "getUserTokenResponse",
+      "DeleteUserProfileResponse": {
+        "title": "deleteUserProfileResponse",
         "required": [
           "userToken",
-          "scores",
-          "lastEventAt"
+          "deletedUntil"
         ],
         "type": "object",
         "properties": {
@@ -12847,12 +12860,9 @@
             "type": "string",
             "description": "Unique pseudonymous or anonymous user identifier.\n\nThis helps with analytics and click and conversion events.\nFor more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
           },
-          "lastEventAt": {
+          "deletedUntil": {
             "type": "string",
-            "description": "Date and time of the last event from this user, in RFC 3339 format."
-          },
-          "scores": {
-            "$ref": "#/components/schemas/GetUserTokenResponseScores"
+            "description": "Date and time when the user profile can be safely considered to be deleted.\nAny events received after the \u0060deletedUntil\u0060 date start a new user profile.\n"
           }
         },
         "additionalProperties": false
@@ -13038,8 +13048,28 @@
         },
         "description": "Defines a metric to be retrieved during an A/B test."
       },
-      "PersonalizationCustomDelete200Response": {
-        "type": "object"
+      "GetUserTokenResponse": {
+        "title": "getUserTokenResponse",
+        "required": [
+          "userToken",
+          "scores",
+          "lastEventAt"
+        ],
+        "type": "object",
+        "properties": {
+          "userToken": {
+            "type": "string",
+            "description": "Unique pseudonymous or anonymous user identifier.\n\nThis helps with analytics and click and conversion events.\nFor more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+          },
+          "lastEventAt": {
+            "type": "string",
+            "description": "Date and time of the last event from this user, in RFC 3339 format."
+          },
+          "scores": {
+            "$ref": "#/components/schemas/GetUserTokenResponseScores"
+          }
+        },
+        "additionalProperties": false
       },
       "AbTestResponse": {
         "required": [
@@ -13246,6 +13276,9 @@
         "description": "Error.",
         "x-keep-model": true
       },
+      "PersonalizationCustomDelete200Response": {
+        "type": "object"
+      },
       "PersonalizationCustomPut200Response": {
         "type": "object"
       },
@@ -13255,16 +13288,13 @@
       "PersonalizationCustomPost200Response": {
         "type": "object"
       },
-      "PersonalizationCustomPostRequest": {
-        "type": "object"
-      },
       "AbtestingStoppedAt": {
         "type": "string",
         "description": "Date and time when the A/B test was stopped, in RFC 3339 format.",
         "nullable": true,
         "example": "2023-06-15T15:06:44.400601Z"
       },
-      "PersonalizationCustomGet200Response": {
+      "PersonalizationCustomPostRequest": {
         "type": "object"
       },
       "AbtestingStatus": {
@@ -13358,7 +13388,7 @@
           }
         }
       },
-      "MonitoringCustomDelete200Response": {
+      "PersonalizationCustomGet200Response": {
         "type": "object"
       },
       "AbtestingFilterEffects": {
@@ -13373,13 +13403,13 @@
         },
         "description": "A/B test filter effects resulting from configuration settings."
       },
+      "MonitoringCustomDelete200Response": {
+        "type": "object"
+      },
       "MonitoringCustomPut200Response": {
         "type": "object"
       },
       "MonitoringCustomPutRequest": {
-        "type": "object"
-      },
-      "MonitoringCustomPost200Response": {
         "type": "object"
       },
       "AbtestingVariant": {
@@ -13769,7 +13799,7 @@
           }
         }
       },
-      "MonitoringCustomPostRequest": {
+      "MonitoringCustomPost200Response": {
         "type": "object"
       },
       "AbtestingAbTestResponse": {
@@ -14533,7 +14563,7 @@
           }
         }
       },
-      "MonitoringCustomGet200Response": {
+      "MonitoringCustomPostRequest": {
         "type": "object"
       },
       "Strategy": {
@@ -14689,6 +14719,9 @@
           ]
         }
       },
+      "MonitoringCustomGet200Response": {
+        "type": "object"
+      },
       "Html": {
         "title": "HTML",
         "type": "string"
@@ -14710,9 +14743,6 @@
             "description": "Click and conversion events.\n\n**All** events must be valid, otherwise the API returns an error.\n"
           }
         }
-      },
-      "InsightsCustomDelete200Response": {
-        "type": "object"
       },
       "TopSearchesResponse": {
         "title": "Top searches",
@@ -14773,13 +14803,13 @@
           }
         ]
       },
+      "InsightsCustomDelete200Response": {
+        "type": "object"
+      },
       "InsightsCustomPut200Response": {
         "type": "object"
       },
       "InsightsCustomPutRequest": {
-        "type": "object"
-      },
-      "InsightsCustomPost200Response": {
         "type": "object"
       },
       "TopSearchesResponseWithAnalytics": {
@@ -14817,7 +14847,7 @@
           }
         ]
       },
-      "InsightsCustomPostRequest": {
+      "InsightsCustomPost200Response": {
         "type": "object"
       },
       "PurchaseRate": {
@@ -14831,7 +14861,7 @@
           }
         ]
       },
-      "InsightsCustomGet200Response": {
+      "InsightsCustomPostRequest": {
         "type": "object"
       },
       "TopSearchesResponseWithRevenueAnalytics": {
@@ -14881,6 +14911,9 @@
             "TopSearchesResponseWithRevenueAnalytics": "#/components/schemas/TopSearchesResponseWithRevenueAnalytics"
           }
         }
+      },
+      "InsightsCustomGet200Response": {
+        "type": "object"
       },
       "IngestionChunkedPush200Response": {
         "type": "array",
@@ -14985,13 +15018,6 @@
           }
         }
       },
-      "SearchSourcesResponse": {
-        "title": "searchSourcesResponse",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Source"
-        }
-      },
       "TopHitsResponse": {
         "title": "Top search results",
         "required": [
@@ -15074,25 +15100,12 @@
           }
         }
       },
-      "ListSourcesResponse": {
-        "title": "listSourcesResponse",
-        "required": [
-          "sources",
-          "pagination"
-        ],
-        "type": "object",
-        "properties": {
-          "sources": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Source"
-            }
-          },
-          "pagination": {
-            "$ref": "#/components/schemas/IngestionPagination"
-          }
-        },
-        "additionalProperties": false
+      "SearchSourcesResponse": {
+        "title": "searchSourcesResponse",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Source"
+        }
       },
       "GetTopFilterAttribute": {
         "required": [
@@ -15177,12 +15190,25 @@
           ]
         }
       },
-      "SearchDestinationsResponse": {
-        "title": "searchDestinationsResponse",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Destination"
-        }
+      "ListSourcesResponse": {
+        "title": "listSourcesResponse",
+        "required": [
+          "sources",
+          "pagination"
+        ],
+        "type": "object",
+        "properties": {
+          "sources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            }
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/IngestionPagination"
+          }
+        },
+        "additionalProperties": false
       },
       "GetTopFilterForAttribute": {
         "required": [
@@ -15304,6 +15330,13 @@
         "description": "Error.",
         "x-keep-model": true
       },
+      "SearchDestinationsResponse": {
+        "title": "searchDestinationsResponse",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Destination"
+        }
+      },
       "ListDestinationsResponse": {
         "title": "listDestinationsResponse",
         "required": [
@@ -15324,13 +15357,6 @@
         },
         "additionalProperties": false
       },
-      "SearchAuthenticationsResponse": {
-        "title": "searchAuthenticationsResponse",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Authentication"
-        }
-      },
       "AnalyticsTags": {
         "type": "array",
         "items": {
@@ -15338,6 +15364,13 @@
         },
         "description": "Tags to apply to the query for [segmenting analytics data](https://www.algolia.com/doc/guides/search-analytics/guides/segments).",
         "default": []
+      },
+      "SearchAuthenticationsResponse": {
+        "title": "searchAuthenticationsResponse",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Authentication"
+        }
       },
       "ListAuthenticationsResponse": {
         "title": "listAuthenticationsResponse",
@@ -15358,9 +15391,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "IngestionCustomDelete200Response": {
-        "type": "object"
       },
       "AroundRadiusAll": {
         "title": "all",
@@ -15423,6 +15453,9 @@
           "Geo-Search"
         ]
       },
+      "IngestionCustomDelete200Response": {
+        "type": "object"
+      },
       "IngestionCustomPut200Response": {
         "type": "object"
       },
@@ -15433,9 +15466,6 @@
         "type": "object"
       },
       "IngestionCustomPostRequest": {
-        "type": "object"
-      },
-      "IngestionCustomGet200Response": {
         "type": "object"
       },
       "FacetFilters": {
@@ -15467,6 +15497,9 @@
           "Faceting"
         ]
       },
+      "IngestionCustomGet200Response": {
+        "type": "object"
+      },
       "TaskStatusSchema": {
         "title": "taskStatus",
         "required": [
@@ -15482,14 +15515,6 @@
       },
       "DeletedCrawlerLogIds": {
         "title": "deletedCrawlerLogIds",
-        "type": "array",
-        "items": {
-          "type": "object",
-          "description": "Fallback array item schema"
-        }
-      },
-      "CrawlerDeleteCrawlRunRequest": {
-        "title": "crawlerLogIds",
         "type": "array",
         "items": {
           "type": "object",
@@ -15595,24 +15620,12 @@
           "Geo-Search"
         ]
       },
-      "CrawlerCrawlUrlsRequest": {
-        "title": "crawlUrls",
-        "required": [
-          "urls"
-        ],
-        "type": "object",
-        "properties": {
-          "urls": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "URLs to crawl."
-          },
-          "save": {
-            "type": "boolean",
-            "description": "Whether the specified URLs should be added to the \u0060extraURLs\u0060 property of the crawler configuration.\nIf unspecified, the URLs are added to the \u0060extraUrls\u0060 field only if they haven\u0027t been indexed during the last reindex.\n"
-          }
+      "CrawlerDeleteCrawlRunRequest": {
+        "title": "crawlerLogIds",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "description": "Fallback array item schema"
         }
       },
       "SupportedLanguage": {
@@ -16015,6 +16028,26 @@
           "Filtering"
         ]
       },
+      "CrawlerCrawlUrlsRequest": {
+        "title": "crawlUrls",
+        "required": [
+          "urls"
+        ],
+        "type": "object",
+        "properties": {
+          "urls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "URLs to crawl."
+          },
+          "save": {
+            "type": "boolean",
+            "description": "Whether the specified URLs should be added to the \u0060extraURLs\u0060 property of the crawler configuration.\nIf unspecified, the URLs are added to the \u0060extraUrls\u0060 field only if they haven\u0027t been indexed during the last reindex.\n"
+          }
+        }
+      },
       "UrlTest": {
         "title": "urlTest",
         "required": [
@@ -16070,6 +16103,17 @@
           }
         }
       },
+      "QueryLanguages": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/SupportedLanguage"
+        },
+        "description": "Languages for language-specific query processing steps such as plurals, stop-word removal, and word-detection dictionaries.\nThis setting sets a default list of languages used by the \u0060removeStopWords\u0060 and \u0060ignorePlurals\u0060 settings.\nThis setting also sets a dictionary for word detection in the logogram-based [CJK](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/normalization/#normalization-for-logogram-based-languages-cjk) languages.\nTo support this, place the CJK language **first**.\n**Always specify a query language.**\nIf you don\u0027t specify an indexing language, the search engine uses all [supported languages](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/supported-languages),\nor the languages you specified with the \u0060ignorePlurals\u0060 or \u0060removeStopWords\u0060 parameters.\nThis can lead to unexpected search results.\nFor more information, see [Language-specific configuration](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations).\n",
+        "default": [],
+        "x-categories": [
+          "Languages"
+        ]
+      },
       "CrawlerTestUrlRequest": {
         "title": "testUrl",
         "required": [
@@ -16087,15 +16131,15 @@
           }
         }
       },
-      "QueryLanguages": {
+      "RuleContexts": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/SupportedLanguage"
+          "type": "string"
         },
-        "description": "Languages for language-specific query processing steps such as plurals, stop-word removal, and word-detection dictionaries.\nThis setting sets a default list of languages used by the \u0060removeStopWords\u0060 and \u0060ignorePlurals\u0060 settings.\nThis setting also sets a dictionary for word detection in the logogram-based [CJK](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/normalization/#normalization-for-logogram-based-languages-cjk) languages.\nTo support this, place the CJK language **first**.\n**Always specify a query language.**\nIf you don\u0027t specify an indexing language, the search engine uses all [supported languages](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/supported-languages),\nor the languages you specified with the \u0060ignorePlurals\u0060 or \u0060removeStopWords\u0060 parameters.\nThis can lead to unexpected search results.\nFor more information, see [Language-specific configuration](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations).\n",
+        "description": "Assigns a rule context to the run query\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.\n",
         "default": [],
         "x-categories": [
-          "Languages"
+          "Composition Rules"
         ]
       },
       "CrawlerPatchCrawlerRequest": {
@@ -16112,17 +16156,6 @@
           }
         }
       },
-      "RuleContexts": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "Assigns a rule context to the run query\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.\n",
-        "default": [],
-        "x-categories": [
-          "Composition Rules"
-        ]
-      },
       "CrawlerCreateResponse": {
         "title": "crawlerCreateResponse",
         "required": [
@@ -16133,24 +16166,6 @@
           "id": {
             "type": "string",
             "description": "Universally unique identifier (UUID) of the crawler."
-          }
-        }
-      },
-      "CrawlerCreateCrawlerRequest": {
-        "title": "crawlerCreate",
-        "required": [
-          "name",
-          "config"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "maxLength": 64,
-            "type": "string",
-            "description": "Name of the crawler."
-          },
-          "config": {
-            "$ref": "#/components/schemas/Configuration"
           }
         }
       },
@@ -16373,39 +16388,23 @@
           }
         }
       },
-      "CompositionSearchCompositionRulesRequest": {
-        "title": "searchCompositionRulesParams",
+      "CrawlerCreateCrawlerRequest": {
+        "title": "crawlerCreate",
+        "required": [
+          "name",
+          "config"
+        ],
         "type": "object",
         "properties": {
-          "query": {
+          "name": {
+            "maxLength": 64,
             "type": "string",
-            "description": "Search query for rules."
+            "description": "Name of the crawler."
           },
-          "anchoring": {
-            "$ref": "#/components/schemas/Anchoring"
-          },
-          "context": {
-            "type": "string",
-            "description": "Only return composition rules that match the context (exact match).",
-            "example": "mobile"
-          },
-          "page": {
-            "minimum": 0,
-            "type": "integer",
-            "description": "\u0022Requested page of the API response.\n\nAlgolia uses \u0060page\u0060 and \u0060hitsPerPage\u0060 to control how search results are displayed ([paginated](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/pagination/js)).\n\n- \u0060hitsPerPage\u0060: sets the number of search results (_hits_) displayed per page.\n- \u0060page\u0060: specifies the page number of the search results you want to retrieve. Page numbering starts at 0, so the first page is \u0060page=0\u0060, the second is \u0060page=1\u0060, and so on.\n\nFor example, to display 10 results per page starting from the third page, set \u0060hitsPerPage\u0060 to 10 and \u0060page\u0060 to 2.\n\u0022"
-          },
-          "hitsPerPage": {
-            "maximum": 1000,
-            "minimum": 1,
-            "type": "integer",
-            "description": "\u0022Maximum number of hits per page.\n\nAlgolia uses \u0060page\u0060 and \u0060hitsPerPage\u0060 to control how search results are displayed ([paginated](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/pagination/js)).\n\n- \u0060hitsPerPage\u0060: sets the number of search results (_hits_) displayed per page.\n- \u0060page\u0060: specifies the page number of the search results you want to retrieve. Page numbering starts at 0, so the first page is \u0060page=0\u0060, the second is \u0060page=1\u0060, and so on.\n\nFor example, to display 10 results per page starting from the third page, set \u0060hitsPerPage\u0060 to 10 and \u0060page\u0060 to 2.\n\u0022"
-          },
-          "enabled": {
-            "$ref": "#/components/schemas/CompositionSearchCompositionRulesRequestEnabled"
+          "config": {
+            "$ref": "#/components/schemas/Configuration"
           }
-        },
-        "additionalProperties": false,
-        "description": "Composition Rules search parameters."
+        }
       },
       "RedirectRuleIndexMetadata": {
         "required": [
@@ -16766,6 +16765,40 @@
           }
         }
       },
+      "CompositionSearchCompositionRulesRequest": {
+        "title": "searchCompositionRulesParams",
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query for rules."
+          },
+          "anchoring": {
+            "$ref": "#/components/schemas/Anchoring"
+          },
+          "context": {
+            "type": "string",
+            "description": "Only return composition rules that match the context (exact match).",
+            "example": "mobile"
+          },
+          "page": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "\u0022Requested page of the API response.\n\nAlgolia uses \u0060page\u0060 and \u0060hitsPerPage\u0060 to control how search results are displayed ([paginated](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/pagination/js)).\n\n- \u0060hitsPerPage\u0060: sets the number of search results (_hits_) displayed per page.\n- \u0060page\u0060: specifies the page number of the search results you want to retrieve. Page numbering starts at 0, so the first page is \u0060page=0\u0060, the second is \u0060page=1\u0060, and so on.\n\nFor example, to display 10 results per page starting from the third page, set \u0060hitsPerPage\u0060 to 10 and \u0060page\u0060 to 2.\n\u0022"
+          },
+          "hitsPerPage": {
+            "maximum": 1000,
+            "minimum": 1,
+            "type": "integer",
+            "description": "\u0022Maximum number of hits per page.\n\nAlgolia uses \u0060page\u0060 and \u0060hitsPerPage\u0060 to control how search results are displayed ([paginated](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/pagination/js)).\n\n- \u0060hitsPerPage\u0060: sets the number of search results (_hits_) displayed per page.\n- \u0060page\u0060: specifies the page number of the search results you want to retrieve. Page numbering starts at 0, so the first page is \u0060page=0\u0060, the second is \u0060page=1\u0060, and so on.\n\nFor example, to display 10 results per page starting from the third page, set \u0060hitsPerPage\u0060 to 10 and \u0060page\u0060 to 2.\n\u0022"
+          },
+          "enabled": {
+            "$ref": "#/components/schemas/CompositionSearchCompositionRulesRequestEnabled"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Composition Rules search parameters."
+      },
       "RulesMultipleBatchResponse": {
         "title": "rulesMultipleBatchResponse",
         "required": [
@@ -16780,20 +16813,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "CompositionSaveRulesRequest": {
-        "title": "compositionRulesBatchParams",
-        "type": "object",
-        "properties": {
-          "requests": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CompositionSaveRulesRequestRequestsItem"
-            }
-          }
-        },
-        "additionalProperties": false,
-        "description": "Composition rules batch parameters."
       },
       "MatchLevel": {
         "enum": [
@@ -17174,20 +17193,19 @@
           }
         }
       },
-      "CompositionDeleteCompositionRule200Response": {
-        "title": "taskIDResponse",
-        "required": [
-          "taskID"
-        ],
+      "CompositionSaveRulesRequest": {
+        "title": "compositionRulesBatchParams",
         "type": "object",
         "properties": {
-          "taskID": {
-            "type": "integer",
-            "description": "Unique identifier of a task.\n\nA successful API response means that a task was added to a queue.\nIt might not run immediately.\nYou can check the task\u0027s progress with the [\u0060task\u0060 operation](https://www.algolia.com/doc/rest-api/search/get-task) and this task ID.\n",
-            "format": "int64"
+          "requests": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CompositionSaveRulesRequestRequestsItem"
+            }
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Composition rules batch parameters."
       },
       "HitMetadata": {
         "type": "object",
@@ -17234,6 +17252,21 @@
           "$ref": "#/components/schemas/CompositionHit"
         },
         "description": "Search results (hits).\n\nHits are records from your index that match the search criteria, augmented with additional attributes, such as, for highlighting.\n"
+      },
+      "CompositionDeleteCompositionRule200Response": {
+        "title": "taskIDResponse",
+        "required": [
+          "taskID"
+        ],
+        "type": "object",
+        "properties": {
+          "taskID": {
+            "type": "integer",
+            "description": "Unique identifier of a task.\n\nA successful API response means that a task was added to a queue.\nIt might not run immediately.\nYou can check the task\u0027s progress with the [\u0060task\u0060 operation](https://www.algolia.com/doc/rest-api/search/get-task) and this task ID.\n",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
       },
       "CompositionPutCompositionRule200Response": {
         "title": "taskIDResponse",
@@ -17310,21 +17343,6 @@
         },
         "additionalProperties": false
       },
-      "CompositionPutComposition200Response": {
-        "title": "taskIDResponse",
-        "required": [
-          "taskID"
-        ],
-        "type": "object",
-        "properties": {
-          "taskID": {
-            "type": "integer",
-            "description": "Unique identifier of a task.\n\nA successful API response means that a task was added to a queue.\nIt might not run immediately.\nYou can check the task\u0027s progress with the [\u0060task\u0060 operation](https://www.algolia.com/doc/rest-api/search/get-task) and this task ID.\n",
-            "format": "int64"
-          }
-        },
-        "additionalProperties": false
-      },
       "SearchFields": {
         "type": "object",
         "properties": {
@@ -17362,12 +17380,17 @@
         },
         "additionalProperties": false
       },
-      "CompositionSearchForFacetValuesRequest": {
-        "title": "searchForFacetValuesRequest",
+      "CompositionPutComposition200Response": {
+        "title": "taskIDResponse",
+        "required": [
+          "taskID"
+        ],
         "type": "object",
         "properties": {
-          "params": {
-            "$ref": "#/components/schemas/CompositionSearchForFacetValuesRequestParams"
+          "taskID": {
+            "type": "integer",
+            "description": "Unique identifier of a task.\n\nA successful API response means that a task was added to a queue.\nIt might not run immediately.\nYou can check the task\u0027s progress with the [\u0060task\u0060 operation](https://www.algolia.com/doc/rest-api/search/get-task) and this task ID.\n",
+            "format": "int64"
           }
         },
         "additionalProperties": false
@@ -17630,19 +17653,12 @@
           }
         }
       },
-      "CompositionSearchRequest": {
-        "title": "requestBody",
+      "CompositionSearchForFacetValuesRequest": {
+        "title": "searchForFacetValuesRequest",
         "type": "object",
         "properties": {
           "params": {
-            "$ref": "#/components/schemas/ParamsType"
-          },
-          "feedsOrder": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of Feed IDs that specifies the order in which to order the results in the response. \nThe IDs should be a subset of those in the \u0060feeds\u0060 object of the targeted \u0060multifeed\u0060 Composition / Composition Rule, and only those specified will be processed. \n\nThe value overrides the value in the defined behavior, and when unspecified, the value defined in the behavior is used. When neither value is present, all feeds are processed.\n"
+            "$ref": "#/components/schemas/CompositionSearchForFacetValuesRequestParams"
           }
         },
         "additionalProperties": false
@@ -17692,8 +17708,22 @@
         },
         "additionalProperties": false
       },
-      "CompositionCustomDelete200Response": {
-        "type": "object"
+      "CompositionSearchRequest": {
+        "title": "requestBody",
+        "type": "object",
+        "properties": {
+          "params": {
+            "$ref": "#/components/schemas/ParamsType"
+          },
+          "feedsOrder": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "A list of Feed IDs that specifies the order in which to order the results in the response. \nThe IDs should be a subset of those in the \u0060feeds\u0060 object of the targeted \u0060multifeed\u0060 Composition / Composition Rule, and only those specified will be processed. \n\nThe value overrides the value in the defined behavior, and when unspecified, the value defined in the behavior is used. When neither value is present, all feeds are processed.\n"
+          }
+        },
+        "additionalProperties": false
       },
       "AdvancedSyntaxFeatures": {
         "enum": [
@@ -17734,7 +17764,7 @@
           "Query strategy"
         ]
       },
-      "CompositionCustomPut200Response": {
+      "CompositionCustomDelete200Response": {
         "type": "object"
       },
       "AlternativesAsExact": {
@@ -17786,7 +17816,7 @@
           "Query strategy"
         ]
       },
-      "CompositionCustomPutRequest": {
+      "CompositionCustomPut200Response": {
         "type": "object"
       },
       "AttributesToHighlight": {
@@ -17866,10 +17896,10 @@
           "Advanced"
         ]
       },
-      "CompositionCustomPost200Response": {
+      "CompositionCustomPutRequest": {
         "type": "object"
       },
-      "CompositionCustomPostRequest": {
+      "CompositionCustomPost200Response": {
         "type": "object"
       },
       "ExactOnSingleWordQuery": {
@@ -17903,6 +17933,9 @@
           ]
         }
       },
+      "CompositionCustomPostRequest": {
+        "type": "object"
+      },
       "CompositionCustomGet200Response": {
         "type": "object"
       },
@@ -17919,28 +17952,6 @@
               "$ref": "#/components/schemas/GetTopCountriesResponseCountriesItem"
             },
             "description": "Countries and number of searches."
-          }
-        },
-        "additionalProperties": false
-      },
-      "GetUsersCountResponse": {
-        "title": "getUsersCountResponse",
-        "required": [
-          "dates",
-          "count"
-        ],
-        "type": "object",
-        "properties": {
-          "count": {
-            "type": "integer",
-            "description": "Number of unique users."
-          },
-          "dates": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetUsersCountResponseDatesItem"
-            },
-            "description": "Daily number of unique users."
           }
         },
         "additionalProperties": false
@@ -17984,6 +17995,28 @@
         "x-categories": [
           "Languages"
         ]
+      },
+      "GetUsersCountResponse": {
+        "title": "getUsersCountResponse",
+        "required": [
+          "dates",
+          "count"
+        ],
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Number of unique users."
+          },
+          "dates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetUsersCountResponseDatesItem"
+            },
+            "description": "Daily number of unique users."
+          }
+        },
+        "additionalProperties": false
       },
       "GetNoClickRateResponse": {
         "title": "getNoClickRateResponse",
@@ -18056,23 +18089,6 @@
         },
         "additionalProperties": false
       },
-      "GetSearchesNoClicksResponse": {
-        "title": "getSearchesNoClicksResponse",
-        "required": [
-          "searches"
-        ],
-        "type": "object",
-        "properties": {
-          "searches": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetSearchesNoClicksResponseSearchesItem"
-            },
-            "description": "Searches without any clicks."
-          }
-        },
-        "additionalProperties": false
-      },
       "OptionalWordsArray": {
         "type": "array",
         "items": {
@@ -18099,6 +18115,23 @@
         ],
         "description": "\u0022Words that should be considered optional when found in the query.\n\nBy default, records must match all words in the search query to be included in the search results.\nAdding optional words can increase the number of search results by running an additional search query that doesn\u0027t include the optional words.\nFor example, if the search query is \\\u0022action video\\\u0022 and \\\u0022video\\\u0022 is optional,\nthe search engine runs two queries: one for \\\u0022action video\\\u0022 and one for \\\u0022action\\\u0022.\nRecords that match all words are ranked higher.\n\nFor a search query with 4 or more words **and** all its words are optional,\nthe number of matched words required for a record to be included in the search results increases for every 1,000 records:\n\n- If \u0060optionalWords\u0060 has fewer than 10 words, the required number of matched words increases by 1:\n  results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 2 matched words.\n- If \u0060optionalWords\u0060 has 10 or more words, the required number of matched words increases by the number of optional words divided by 5 (rounded down).\n  Example: with 18 optional words, results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 4 matched words.\n\nFor more information, see [Optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#creating-a-list-of-optional-words).\n\u0022"
       },
+      "GetSearchesNoClicksResponse": {
+        "title": "getSearchesNoClicksResponse",
+        "required": [
+          "searches"
+        ],
+        "type": "object",
+        "properties": {
+          "searches": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetSearchesNoClicksResponseSearchesItem"
+            },
+            "description": "Searches without any clicks."
+          }
+        },
+        "additionalProperties": false
+      },
       "GetSearchesNoResultsResponse": {
         "title": "getSearchesNoResultsResponse",
         "required": [
@@ -18112,28 +18145,6 @@
               "$ref": "#/components/schemas/GetSearchesNoResultsResponseSearchesItem"
             },
             "description": "Searches without results."
-          }
-        },
-        "additionalProperties": false
-      },
-      "GetSearchesCountResponse": {
-        "title": "getSearchesCountResponse",
-        "required": [
-          "dates",
-          "count"
-        ],
-        "type": "object",
-        "properties": {
-          "count": {
-            "type": "integer",
-            "description": "Number of occurrences."
-          },
-          "dates": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetSearchesCountResponseDatesItem"
-            },
-            "description": "Daily number of searches."
           }
         },
         "additionalProperties": false
@@ -18227,8 +18238,27 @@
           ]
         }
       },
-      "AnalyticsCustomDelete200Response": {
-        "type": "object"
+      "GetSearchesCountResponse": {
+        "title": "getSearchesCountResponse",
+        "required": [
+          "dates",
+          "count"
+        ],
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Number of occurrences."
+          },
+          "dates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetSearchesCountResponseDatesItem"
+            },
+            "description": "Daily number of searches."
+          }
+        },
+        "additionalProperties": false
       },
       "ResponseFields": {
         "type": "array",
@@ -18243,7 +18273,7 @@
           "Advanced"
         ]
       },
-      "AnalyticsCustomPut200Response": {
+      "AnalyticsCustomDelete200Response": {
         "type": "object"
       },
       "RestrictSearchableAttributes": {
@@ -18268,10 +18298,10 @@
           "Rules"
         ]
       },
-      "AnalyticsCustomPutRequest": {
+      "AnalyticsCustomPut200Response": {
         "type": "object"
       },
-      "AnalyticsCustomPost200Response": {
+      "AnalyticsCustomPutRequest": {
         "type": "object"
       },
       "TypoToleranceEnum": {
@@ -18535,6 +18565,9 @@
         },
         "additionalProperties": false
       },
+      "AnalyticsCustomPost200Response": {
+        "type": "object"
+      },
       "AnalyticsCustomPostRequest": {
         "type": "object"
       },
@@ -18558,36 +18591,6 @@
             "type": "string"
           },
           "deletedAt": {
-            "type": "string"
-          }
-        }
-      },
-      "PutConfigResponse": {
-        "title": "putConfigResponse",
-        "required": [
-          "status",
-          "errors",
-          "warnings",
-          "message"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "number"
-          },
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Issue"
-            }
-          },
-          "warnings": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Issue"
-            }
-          },
-          "message": {
             "type": "string"
           }
         }
@@ -19348,35 +19351,33 @@
         },
         "additionalProperties": false
       },
-      "AdvancedPersonalizationPutConfigRequest": {
-        "title": "configurationParameters",
+      "PutConfigResponse": {
+        "title": "putConfigResponse",
         "required": [
-          "indices",
-          "personalizationReRanking",
-          "profileType",
-          "features"
+          "status",
+          "errors",
+          "warnings",
+          "message"
         ],
         "type": "object",
         "properties": {
-          "indices": {
-            "required": [
-              "index",
-              "affinities",
-              "source"
-            ],
+          "status": {
+            "type": "number"
+          },
+          "errors": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/AdvancedPersonalizationPutConfigRequestIndicesItem"
+              "$ref": "#/components/schemas/Issue"
             }
           },
-          "personalizationReRanking": {
-            "$ref": "#/components/schemas/PersonalizationReRanking"
+          "warnings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Issue"
+            }
           },
-          "profileType": {
-            "$ref": "#/components/schemas/ProfileType"
-          },
-          "features": {
-            "$ref": "#/components/schemas/Features"
+          "message": {
+            "type": "string"
           }
         }
       },
@@ -19444,10 +19445,39 @@
           }
         }
       },
-      "AdvancedPersonalizationCustomDelete200Response": {
-        "type": "object"
+      "AdvancedPersonalizationPutConfigRequest": {
+        "title": "configurationParameters",
+        "required": [
+          "indices",
+          "personalizationReRanking",
+          "profileType",
+          "features"
+        ],
+        "type": "object",
+        "properties": {
+          "indices": {
+            "required": [
+              "index",
+              "affinities",
+              "source"
+            ],
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdvancedPersonalizationPutConfigRequestIndicesItem"
+            }
+          },
+          "personalizationReRanking": {
+            "$ref": "#/components/schemas/PersonalizationReRanking"
+          },
+          "profileType": {
+            "$ref": "#/components/schemas/ProfileType"
+          },
+          "features": {
+            "$ref": "#/components/schemas/Features"
+          }
+        }
       },
-      "AdvancedPersonalizationCustomPut200Response": {
+      "AdvancedPersonalizationCustomDelete200Response": {
         "type": "object"
       },
       "Anchoring": {
@@ -19483,7 +19513,7 @@
           ]
         }
       },
-      "AdvancedPersonalizationCustomPutRequest": {
+      "AdvancedPersonalizationCustomPut200Response": {
         "type": "object"
       },
       "Condition": {
@@ -19622,13 +19652,13 @@
           }
         }
       },
+      "AdvancedPersonalizationCustomPutRequest": {
+        "type": "object"
+      },
       "AdvancedPersonalizationCustomPost200Response": {
         "type": "object"
       },
       "AdvancedPersonalizationCustomPostRequest": {
-        "type": "object"
-      },
-      "AdvancedPersonalizationCustomGet200Response": {
         "type": "object"
       },
       "TaskStatus": {
@@ -19666,6 +19696,9 @@
           }
         },
         "additionalProperties": false
+      },
+      "AdvancedPersonalizationCustomGet200Response": {
+        "type": "object"
       },
       "AbtestingEstimateAbTestRequest": {
         "title": "estimateABTestRequest",
@@ -19725,9 +19758,6 @@
       "AbtestingCustomPut200Response": {
         "type": "object"
       },
-      "AbtestingCustomPutRequest": {
-        "type": "object"
-      },
       "Pagination": {
         "type": "object",
         "properties": {
@@ -19750,7 +19780,7 @@
         },
         "description": "Pagination information."
       },
-      "AbtestingCustomPost200Response": {
+      "AbtestingCustomPutRequest": {
         "type": "object"
       },
       "CrawlersResponse": {
@@ -19792,7 +19822,7 @@
         },
         "description": "Whether the crawler should cache crawled pages.\n\nFor more information, see [Partial crawls with caching](https://www.algolia.com/doc/tools/crawler/getting-started/crawler-configuration/#partial-crawls-with-caching).\n"
       },
-      "AbtestingCustomPostRequest": {
+      "AbtestingCustomPost200Response": {
         "type": "object"
       },
       "FileTypes": {
@@ -20354,7 +20384,7 @@
           "Advanced"
         ]
       },
-      "AbtestingCustomGet200Response": {
+      "AbtestingCustomPostRequest": {
         "type": "object"
       },
       "BaseIndexSettings": {
@@ -20546,27 +20576,8 @@
           "Attributes"
         ]
       },
-      "AbtestingV3EstimateAbTestRequest": {
-        "title": "estimateABTestRequest",
-        "required": [
-          "configuration",
-          "variants"
-        ],
-        "type": "object",
-        "properties": {
-          "configuration": {
-            "$ref": "#/components/schemas/AbtestingV3EstimateAbTestRequestConfiguration"
-          },
-          "variants": {
-            "minItems": 2,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AddAbTestsVariant"
-            },
-            "description": "A/B test variants."
-          }
-        },
-        "additionalProperties": false
+      "AbtestingCustomGet200Response": {
+        "type": "object"
       },
       "CrawlerAttributesToHighlight": {
         "type": "array",
@@ -20588,6 +20599,28 @@
         "x-categories": [
           "Highlighting and Snippeting"
         ]
+      },
+      "AbtestingV3EstimateAbTestRequest": {
+        "title": "estimateABTestRequest",
+        "required": [
+          "configuration",
+          "variants"
+        ],
+        "type": "object",
+        "properties": {
+          "configuration": {
+            "$ref": "#/components/schemas/AbtestingV3EstimateAbTestRequestConfiguration"
+          },
+          "variants": {
+            "minItems": 2,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AddAbTestsVariant"
+            },
+            "description": "A/B test variants."
+          }
+        },
+        "additionalProperties": false
       },
       "AbtestingV3AddAbTestsRequest": {
         "title": "addABTestsRequest",
@@ -20643,9 +20676,6 @@
       "AbtestingV3CustomPostRequest": {
         "type": "object"
       },
-      "AbtestingV3CustomGet200Response": {
-        "type": "object"
-      },
       "CrawlerTypoToleranceEnum": {
         "title": "typo tolerance",
         "enum": [
@@ -20695,9 +20725,8 @@
           "Typos"
         ]
       },
-      "InjectionInjectedItemMetadataHitsExtra": {
-        "type": "object",
-        "description": "The user-defined key-value pairs that will be placed in the \u0060_extra\u0060 field of each affected hit."
+      "AbtestingV3CustomGet200Response": {
+        "type": "object"
       },
       "CrawlerDisableTypoToleranceOnAttributes": {
         "type": "array",
@@ -20782,6 +20811,10 @@
           "Languages"
         ]
       },
+      "InjectionInjectedItemMetadataHitsExtra": {
+        "type": "object",
+        "description": "The user-defined key-value pairs that will be placed in the \u0060_extra\u0060 field of each affected hit."
+      },
       "ConfigurationObjectIndicesItemSource": {
         "title": "source",
         "type": "object",
@@ -20800,14 +20833,6 @@
         "example": {
           "my-field": "my-value"
         }
-      },
-      "BaseSearchResponseFacetsAdditionalProperties": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "integer",
-          "x-additionalPropertiesName": "facet count"
-        },
-        "x-additionalPropertiesName": "facet"
       },
       "CrawlerQueryType": {
         "enum": [
@@ -20912,31 +20937,13 @@
         },
         "description": "Settings for the semantic search part of NeuralSearch.\nOnly used when \u0060mode\u0060 is \u0060neuralSearch\u0060.\n"
       },
-      "BaseSearchResponseFacetsStatsAdditionalProperties": {
-        "title": "facetStats",
+      "BaseSearchResponseFacetsAdditionalProperties": {
         "type": "object",
-        "properties": {
-          "min": {
-            "type": "number",
-            "description": "Minimum value in the results.",
-            "format": "double"
-          },
-          "max": {
-            "type": "number",
-            "description": "Maximum value in the results.",
-            "format": "double"
-          },
-          "avg": {
-            "type": "number",
-            "description": "Average facet value in the results.",
-            "format": "double"
-          },
-          "sum": {
-            "type": "number",
-            "description": "Sum of all values in the results.",
-            "format": "double"
-          }
-        }
+        "additionalProperties": {
+          "type": "integer",
+          "x-additionalPropertiesName": "facet count"
+        },
+        "x-additionalPropertiesName": "facet"
       },
       "CrawlerOptionalWordsArray": {
         "type": "array",
@@ -21115,6 +21122,32 @@
           "Advanced"
         ]
       },
+      "BaseSearchResponseFacetsStatsAdditionalProperties": {
+        "title": "facetStats",
+        "type": "object",
+        "properties": {
+          "min": {
+            "type": "number",
+            "description": "Minimum value in the results.",
+            "format": "double"
+          },
+          "max": {
+            "type": "number",
+            "description": "Maximum value in the results.",
+            "format": "double"
+          },
+          "avg": {
+            "type": "number",
+            "description": "Average facet value in the results.",
+            "format": "double"
+          },
+          "sum": {
+            "type": "number",
+            "description": "Sum of all values in the results.",
+            "format": "double"
+          }
+        }
+      },
       "CompositionRankingInfoComposedAdditionalProperties": {
         "title": "compositionIdRankingInfo",
         "required": [
@@ -21134,6 +21167,19 @@
         },
         "x-additionalPropertiesName": "composition-id"
       },
+      "CrawlerResponseFields": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Properties to include in the API response of search and browse requests\nBy default, all response properties are included.\nTo reduce the response size, you can select which properties should be included\nAn empty list may lead to an empty API response (except properties you can\u0027t exclude)\nYou can\u0027t exclude these properties:\n\u0060message\u0060, \u0060warning\u0060, \u0060cursor\u0060, \u0060abTestVariantID\u0060,\nor any property added by setting \u0060getRankingInfo\u0060 to true\nYour search depends on the \u0060hits\u0060 field. If you omit this field, searches won\u0027t return any results.\nYour UI might also depend on other properties, for example, for pagination.\nBefore restricting the response size, check the impact on your search experience.\n",
+        "default": [
+          "*"
+        ],
+        "x-categories": [
+          "Advanced"
+        ]
+      },
       "InjectionInjectedItemMetadataHits": {
         "title": "injectedItemHitsMetadata",
         "type": "object",
@@ -21148,19 +21194,6 @@
         },
         "description": "Adds the provided metadata to each injected hit via an \u0060_extra\u0060 attribute."
       },
-      "CrawlerResponseFields": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "Properties to include in the API response of search and browse requests\nBy default, all response properties are included.\nTo reduce the response size, you can select which properties should be included\nAn empty list may lead to an empty API response (except properties you can\u0027t exclude)\nYou can\u0027t exclude these properties:\n\u0060message\u0060, \u0060warning\u0060, \u0060cursor\u0060, \u0060abTestVariantID\u0060,\nor any property added by setting \u0060getRankingInfo\u0060 to true\nYour search depends on the \u0060hits\u0060 field. If you omit this field, searches won\u0027t return any results.\nYour UI might also depend on other properties, for example, for pagination.\nBefore restricting the response size, check the impact on your search experience.\n",
-        "default": [
-          "*"
-        ],
-        "x-categories": [
-          "Advanced"
-        ]
-      },
       "BaseIndexSettingsCustomNormalizationAdditionalProperties": {
         "type": "object",
         "additionalProperties": {
@@ -21172,14 +21205,6 @@
         "additionalProperties": {
           "type": "string"
         }
-      },
-      "RecommendBaseSearchResponseFacetsAdditionalProperties": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "integer",
-          "x-additionalPropertiesName": "facet count"
-        },
-        "x-additionalPropertiesName": "facet"
       },
       "CrawlerOrder": {
         "type": "array",
@@ -21379,31 +21404,13 @@
           "Advanced"
         ]
       },
-      "RecommendBaseSearchResponseFacetsStatsAdditionalProperties": {
-        "title": "facetStats",
+      "RecommendBaseSearchResponseFacetsAdditionalProperties": {
         "type": "object",
-        "properties": {
-          "min": {
-            "type": "number",
-            "description": "Minimum value in the results.",
-            "format": "double"
-          },
-          "max": {
-            "type": "number",
-            "description": "Maximum value in the results.",
-            "format": "double"
-          },
-          "avg": {
-            "type": "number",
-            "description": "Average facet value in the results.",
-            "format": "double"
-          },
-          "sum": {
-            "type": "number",
-            "description": "Sum of all values in the results.",
-            "format": "double"
-          }
-        }
+        "additionalProperties": {
+          "type": "integer",
+          "x-additionalPropertiesName": "facet count"
+        },
+        "x-additionalPropertiesName": "facet"
       },
       "ReRankingApplyFilter": {
         "type": "object",
@@ -22331,13 +22338,31 @@
         },
         "description": "Checks to ensure the crawl was successful.\n\nFor more information, see the [Safety checks](https://www.algolia.com/doc/tools/crawler/getting-started/crawler-configuration/#safety-checks) documentation.\n"
       },
-      "SearchBaseSearchResponseFacetsAdditionalProperties": {
+      "RecommendBaseSearchResponseFacetsStatsAdditionalProperties": {
+        "title": "facetStats",
         "type": "object",
-        "additionalProperties": {
-          "type": "integer",
-          "x-additionalPropertiesName": "facet count"
-        },
-        "x-additionalPropertiesName": "facet"
+        "properties": {
+          "min": {
+            "type": "number",
+            "description": "Minimum value in the results.",
+            "format": "double"
+          },
+          "max": {
+            "type": "number",
+            "description": "Maximum value in the results.",
+            "format": "double"
+          },
+          "avg": {
+            "type": "number",
+            "description": "Average facet value in the results.",
+            "format": "double"
+          },
+          "sum": {
+            "type": "number",
+            "description": "Sum of all values in the results.",
+            "format": "double"
+          }
+        }
       },
       "Configuration": {
         "required": [
@@ -22494,6 +22519,14 @@
         },
         "description": "Crawler configuration."
       },
+      "SearchBaseSearchResponseFacetsAdditionalProperties": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "integer",
+          "x-additionalPropertiesName": "facet count"
+        },
+        "x-additionalPropertiesName": "facet"
+      },
       "SearchBaseSearchResponseFacetsStatsAdditionalProperties": {
         "title": "facetStats",
         "type": "object",
@@ -22519,16 +22552,6 @@
             "format": "double"
           }
         }
-      },
-      "InfrastructureResponseResponseMetricsAvgBuildTime": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/ProbesMetric"
-          }
-        },
-        "description": "Average build time of the indices in seconds."
       },
       "BaseResponse": {
         "title": "Without configuration",
@@ -22674,7 +22697,7 @@
           }
         }
       },
-      "InfrastructureResponseResponseMetricsSsdUsage": {
+      "InfrastructureResponseResponseMetricsAvgBuildTime": {
         "type": "object",
         "additionalProperties": {
           "type": "array",
@@ -22682,7 +22705,7 @@
             "$ref": "#/components/schemas/ProbesMetric"
           }
         },
-        "description": "Solid-state disk (SSD) usage expressed as % of RAM. \n0% means no SSD usage. A value of 50% indicates 32\u0026nbsp;GB SSD usage for a machine with 64\u0026nbsp;RAM.\n"
+        "description": "Average build time of the indices in seconds."
       },
       "PartialConfig": {
         "required": [
@@ -22931,6 +22954,16 @@
           "readable": "Forbidden by robots.txt"
         }
       },
+      "InfrastructureResponseResponseMetricsSsdUsage": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ProbesMetric"
+          }
+        },
+        "description": "Solid-state disk (SSD) usage expressed as % of RAM. \n0% means no SSD usage. A value of 50% indicates 32\u0026nbsp;GB SSD usage for a machine with 64\u0026nbsp;RAM.\n"
+      },
       "InfrastructureResponseResponseMetricsRamSearchUsage": {
         "type": "object",
         "additionalProperties": {
@@ -22961,16 +22994,6 @@
         },
         "description": "CPU idleness in %."
       },
-      "IndexingResponseResponseMetricsIndexing": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/TimeItem"
-          },
-          "description": "Time measured by a probe."
-        }
-      },
       "ParametersOrder": {
         "enum": [
           "ASC",
@@ -22994,6 +23017,16 @@
           ]
         }
       },
+      "IndexingResponseResponseMetricsIndexing": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/TimeItem"
+          },
+          "description": "Time measured by a probe."
+        }
+      },
       "BatchWriteParamsRequestsItemBody": {
         "type": "object",
         "description": "Operation arguments (varies with specified \u0060action\u0060).",
@@ -23007,16 +23040,6 @@
         "type": "object",
         "additionalProperties": {
           "type": "string"
-        }
-      },
-      "LatencyResponseResponseMetricsLatency": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/TimeItem"
-          },
-          "description": "Time measured by a probe."
         }
       },
       "CrawlerConfigVersionsResponse": {
@@ -23133,6 +23156,35 @@
           ]
         }
       },
+      "LatencyResponseResponseMetricsLatency": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/TimeItem"
+          },
+          "description": "Time measured by a probe."
+        }
+      },
+      "PushTaskPayload": {
+        "title": "pushTaskPayload",
+        "required": [
+          "action",
+          "records"
+        ],
+        "type": "object",
+        "properties": {
+          "action": {
+            "$ref": "#/components/schemas/IngestionAction"
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PushTaskPayloadRecordsItem"
+            }
+          }
+        }
+      },
       "ForbiddenResponseErrorErrorsItem": {
         "title": "errorItem",
         "required": [
@@ -23156,25 +23208,6 @@
         "example": {
           "message": "url is not defined",
           "line": 5
-        }
-      },
-      "PushTaskPayload": {
-        "title": "pushTaskPayload",
-        "required": [
-          "action",
-          "records"
-        ],
-        "type": "object",
-        "properties": {
-          "action": {
-            "$ref": "#/components/schemas/IngestionAction"
-          },
-          "records": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PushTaskPayloadRecordsItem"
-            }
-          }
         }
       },
       "InvalidRequestResponseErrorErrorsItem": {
@@ -23201,9 +23234,6 @@
           "message": "url is not defined",
           "line": 5
         }
-      },
-      "SearchWatchResponseDataItem": {
-        "type": "object"
       },
       "EventStatus": {
         "type": "object",
@@ -23248,9 +23278,8 @@
           ]
         }
       },
-      "FetchedIndexAbTestVariantPayload": {
-        "type": "object",
-        "description": "Type-specific configuration. Only present for v2 and later tests. Shape depends on the parent A/B test\u0027s \u0060type\u0060."
+      "SearchWatchResponseDataItem": {
+        "type": "object"
       },
       "EventType4": {
         "required": [
@@ -23295,26 +23324,9 @@
         "additionalProperties": false,
         "description": "An event describe a step of the task execution flow."
       },
-      "InvalidRequestResponseError": {
-        "title": "invalidRequestError",
+      "FetchedIndexAbTestVariantPayload": {
         "type": "object",
-        "properties": {
-          "code": {
-            "type": "string"
-          },
-          "message": {
-            "type": "string"
-          },
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/InvalidRequestResponseErrorErrorsItem"
-            }
-          }
-        },
-        "example": {
-          "code": "malformed_id"
-        }
+        "description": "Type-specific configuration. Only present for v2 and later tests. Shape depends on the parent A/B test\u0027s \u0060type\u0060."
       },
       "WatchResponse": {
         "required": [
@@ -23355,6 +23367,27 @@
         },
         "additionalProperties": false
       },
+      "InvalidRequestResponseError": {
+        "title": "invalidRequestError",
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InvalidRequestResponseErrorErrorsItem"
+            }
+          }
+        },
+        "example": {
+          "code": "malformed_id"
+        }
+      },
       "CrawlerLogsResponseResponseMeta": {
         "title": "crawlerLogsMeta",
         "type": "object",
@@ -23362,73 +23395,6 @@
           "total": {
             "type": "integer",
             "description": "Total of records found."
-          }
-        }
-      },
-      "CrawlerLogsResponseResponseLogsItem": {
-        "title": "crawlerLogItem",
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "ID of the crawler log."
-          },
-          "configId": {
-            "type": "string",
-            "description": "Crawler Config identifier."
-          },
-          "reindexId": {
-            "type": "string",
-            "description": "Identifier of Reindex."
-          },
-          "fileSizeBytes": {
-            "type": "integer",
-            "description": "Size of the compressed crawler log."
-          },
-          "uncompressedSizeBytes": {
-            "type": "integer",
-            "description": "Size of the uncompressed crawler log."
-          },
-          "crawlStartedAt": {
-            "type": "string",
-            "description": "Crawl started at date."
-          },
-          "crawlCompletedAt": {
-            "type": "string",
-            "description": "Crawl started at date."
-          },
-          "fileCreatedAt": {
-            "type": "string",
-            "description": "File created date."
-          },
-          "expiresAt": {
-            "type": "string",
-            "description": "File expiration date."
-          },
-          "status": {
-            "type": "string",
-            "description": "File status."
-          },
-          "accessCount": {
-            "type": "integer",
-            "description": "File access count."
-          },
-          "lastAccessedAt": {
-            "type": "string",
-            "description": "File last accessed date.",
-            "nullable": true
-          },
-          "urlsDone": {
-            "type": "integer",
-            "description": "Crawler urls done."
-          },
-          "urlsSkipped": {
-            "type": "integer",
-            "description": "Crawler urls skipped."
-          },
-          "urlsFailed": {
-            "type": "integer",
-            "description": "Crawler urls failed."
           }
         }
       },
@@ -23581,6 +23547,73 @@
           ]
         }
       },
+      "CrawlerLogsResponseResponseLogsItem": {
+        "title": "crawlerLogItem",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID of the crawler log."
+          },
+          "configId": {
+            "type": "string",
+            "description": "Crawler Config identifier."
+          },
+          "reindexId": {
+            "type": "string",
+            "description": "Identifier of Reindex."
+          },
+          "fileSizeBytes": {
+            "type": "integer",
+            "description": "Size of the compressed crawler log."
+          },
+          "uncompressedSizeBytes": {
+            "type": "integer",
+            "description": "Size of the uncompressed crawler log."
+          },
+          "crawlStartedAt": {
+            "type": "string",
+            "description": "Crawl started at date."
+          },
+          "crawlCompletedAt": {
+            "type": "string",
+            "description": "Crawl started at date."
+          },
+          "fileCreatedAt": {
+            "type": "string",
+            "description": "File created date."
+          },
+          "expiresAt": {
+            "type": "string",
+            "description": "File expiration date."
+          },
+          "status": {
+            "type": "string",
+            "description": "File status."
+          },
+          "accessCount": {
+            "type": "integer",
+            "description": "File access count."
+          },
+          "lastAccessedAt": {
+            "type": "string",
+            "description": "File last accessed date.",
+            "nullable": true
+          },
+          "urlsDone": {
+            "type": "integer",
+            "description": "Crawler urls done."
+          },
+          "urlsSkipped": {
+            "type": "integer",
+            "description": "Crawler urls skipped."
+          },
+          "urlsFailed": {
+            "type": "integer",
+            "description": "Crawler urls failed."
+          }
+        }
+      },
       "ForbiddenResponseError": {
         "title": "forbiddenError",
         "type": "object",
@@ -23600,12 +23633,6 @@
         },
         "example": {
           "code": "malformed_id"
-        }
-      },
-      "StatusResponseResponseStatus": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/MonitoringStatus"
         }
       },
       "Owner": {
@@ -23789,12 +23816,10 @@
           }
         }
       },
-      "Consequence2UserData": {
+      "StatusResponseResponseStatus": {
         "type": "object",
-        "description": "A JSON object with custom data that will be appended to the \u0060userData\u0060 array in the response.\nThis object isn\u0027t interpreted by the API and is limited to 1\u0026nbsp;kB of minified JSON.\n",
-        "example": {
-          "settingID": "f2a7b51e3503acc6a39b3784ffb84300",
-          "pluginVersion": "1.6.0"
+        "additionalProperties": {
+          "$ref": "#/components/schemas/MonitoringStatus"
         }
       },
       "Authentication": {
@@ -24208,20 +24233,13 @@
           ]
         }
       },
-      "Consequence2Redirect": {
-        "title": "consequenceRedirect",
-        "required": [
-          "indexName"
-        ],
+      "Consequence2UserData": {
         "type": "object",
-        "properties": {
-          "indexName": {
-            "type": "string",
-            "description": "Name of the virtual replica index to redirect searches to."
-          }
-        },
-        "additionalProperties": false,
-        "description": "\u0022Redirect to a virtual replica index.\n\nThis consequence is only valid for rules with \u0060scope: redirect\u0060.\n\u0022"
+        "description": "A JSON object with custom data that will be appended to the \u0060userData\u0060 array in the response.\nThis object isn\u0027t interpreted by the API and is limited to 1\u0026nbsp;kB of minified JSON.\n",
+        "example": {
+          "settingID": "f2a7b51e3503acc6a39b3784ffb84300",
+          "pluginVersion": "1.6.0"
+        }
       },
       "DestinationSortKeys": {
         "enum": [
@@ -24256,20 +24274,20 @@
           ]
         }
       },
-      "Consequence2HideItem": {
-        "title": "consequenceHide",
+      "Consequence2Redirect": {
+        "title": "consequenceRedirect",
         "required": [
-          "objectID"
+          "indexName"
         ],
         "type": "object",
         "properties": {
-          "objectID": {
+          "indexName": {
             "type": "string",
-            "description": "Unique record identifier."
+            "description": "Name of the virtual replica index to redirect searches to."
           }
         },
         "additionalProperties": false,
-        "description": "Object ID of the record to hide."
+        "description": "\u0022Redirect to a virtual replica index.\n\nThis consequence is only valid for rules with \u0060scope: redirect\u0060.\n\u0022"
       },
       "RecordType": {
         "enum": [
@@ -24625,15 +24643,20 @@
           ]
         }
       },
-      "IncidentsResponseResponseIncidents": {
+      "Consequence2HideItem": {
+        "title": "consequenceHide",
+        "required": [
+          "objectID"
+        ],
         "type": "object",
-        "additionalProperties": {
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/IncidentsItem"
-          },
-          "description": "Key-value pairs with the cluster names as keys and the list of incidents reported for this cluster as values."
-        }
+        "properties": {
+          "objectID": {
+            "type": "string",
+            "description": "Unique record identifier."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Object ID of the record to hide."
       },
       "CommercetoolsCustomFields": {
         "type": "object",
@@ -24782,15 +24805,15 @@
           "storeHash"
         ]
       },
-      "LatencyResponseResponseMetrics": {
-        "title": "latencyMetric",
+      "IncidentsResponseResponseIncidents": {
         "type": "object",
-        "properties": {
-          "latency": {
-            "$ref": "#/components/schemas/LatencyResponseResponseMetricsLatencyProperty"
-          }
-        },
-        "additionalProperties": false
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/IncidentsItem"
+          },
+          "description": "Key-value pairs with the cluster names as keys and the list of incidents reported for this cluster as values."
+        }
       },
       "MethodType": {
         "enum": [
@@ -25569,6 +25592,16 @@
           ]
         }
       },
+      "LatencyResponseResponseMetrics": {
+        "title": "latencyMetric",
+        "type": "object",
+        "properties": {
+          "latency": {
+            "$ref": "#/components/schemas/LatencyResponseResponseMetricsLatencyProperty"
+          }
+        },
+        "additionalProperties": false
+      },
       "SearchBaseIndexSettingsCustomNormalization": {
         "type": "object",
         "additionalProperties": {
@@ -25610,16 +25643,6 @@
           },
           "body": {
             "$ref": "#/components/schemas/BatchWriteParamsRequestsItemBodyProperty"
-          }
-        },
-        "additionalProperties": false
-      },
-      "IndexingResponseResponseMetrics": {
-        "title": "indexingMetric",
-        "type": "object",
-        "properties": {
-          "indexing": {
-            "$ref": "#/components/schemas/IndexingResponseResponseMetricsIndexingProperty"
           }
         },
         "additionalProperties": false
@@ -25900,6 +25923,16 @@
           }
         }
       },
+      "IndexingResponseResponseMetrics": {
+        "title": "indexingMetric",
+        "type": "object",
+        "properties": {
+          "indexing": {
+            "$ref": "#/components/schemas/IndexingResponseResponseMetricsIndexingProperty"
+          }
+        },
+        "additionalProperties": false
+      },
       "InfrastructureResponseResponseMetrics": {
         "title": "metrics",
         "type": "object",
@@ -25918,31 +25951,6 @@
           },
           "avg_build_time": {
             "$ref": "#/components/schemas/InfrastructureResponseResponseMetricsAvgBuildTimeProperty"
-          }
-        },
-        "additionalProperties": false
-      },
-      "SearchSearchForFacetValuesResponseFacetHitsItem": {
-        "title": "facetHits",
-        "required": [
-          "value",
-          "highlighted",
-          "count"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string",
-            "description": "Facet value.",
-            "example": "Mobile phone"
-          },
-          "highlighted": {
-            "type": "string",
-            "description": "Highlighted attribute value, including HTML tags."
-          },
-          "count": {
-            "type": "integer",
-            "description": "Number of records with this facet value. [The count may be approximated](https://support.algolia.com/hc/articles/4406975248145-Why-are-my-facet-and-hit-counts-not-accurate)."
           }
         },
         "additionalProperties": false
@@ -26563,18 +26571,30 @@
         "additionalProperties": false,
         "description": "Trigger for a task update."
       },
-      "SearchBaseSearchResponseRedirect": {
-        "title": "redirect",
+      "SearchSearchForFacetValuesResponseFacetHitsItem": {
+        "title": "facetHits",
+        "required": [
+          "value",
+          "highlighted",
+          "count"
+        ],
         "type": "object",
         "properties": {
-          "index": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SearchRedirectRuleIndexMetadata"
-            }
+          "value": {
+            "type": "string",
+            "description": "Facet value.",
+            "example": "Mobile phone"
+          },
+          "highlighted": {
+            "type": "string",
+            "description": "Highlighted attribute value, including HTML tags."
+          },
+          "count": {
+            "type": "integer",
+            "description": "Number of records with this facet value. [The count may be approximated](https://support.algolia.com/hc/articles/4406975248145-Why-are-my-facet-and-hit-counts-not-accurate)."
           }
         },
-        "description": "[Redirect results to a URL](https://www.algolia.com/doc/guides/managing-results/rules/merchandising-and-promoting/how-to/redirects), this this parameter is for internal use only.\n"
+        "additionalProperties": false
       },
       "AroundPrecisionFromValueItem": {
         "title": "range",
@@ -26651,9 +26671,18 @@
         },
         "description": "The authentications associated with the current transformation."
       },
-      "SearchBaseSearchResponseProcessingTimingsMs": {
+      "SearchBaseSearchResponseRedirect": {
+        "title": "redirect",
         "type": "object",
-        "description": "Experimental. List of processing steps and their times, in milliseconds. You can use this list to investigate performance issues."
+        "properties": {
+          "index": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SearchRedirectRuleIndexMetadata"
+            }
+          }
+        },
+        "description": "[Redirect results to a URL](https://www.algolia.com/doc/guides/managing-results/rules/merchandising-and-promoting/how-to/redirects), this this parameter is for internal use only.\n"
       },
       "TransformationCode": {
         "title": "Code",
@@ -26719,26 +26748,16 @@
           }
         }
       },
+      "SearchBaseSearchResponseProcessingTimingsMs": {
+        "type": "object",
+        "description": "Experimental. List of processing steps and their times, in milliseconds. You can use this list to investigate performance issues."
+      },
       "SearchBaseSearchResponseFacetsStats": {
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/SearchBaseSearchResponseFacetsStatsAdditionalProperties"
         },
         "description": "Statistics for numerical facets."
-      },
-      "SearchBaseSearchResponseFacets": {
-        "title": "facets",
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/SearchBaseSearchResponseFacetsAdditionalPropertiesProperty"
-        },
-        "description": "Facet counts.",
-        "example": {
-          "category": {
-            "food": 1,
-            "tech": 42
-          }
-        }
       },
       "Transformation": {
         "required": [
@@ -27111,40 +27130,22 @@
           ]
         }
       },
+      "SearchBaseSearchResponseFacets": {
+        "title": "facets",
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/SearchBaseSearchResponseFacetsAdditionalPropertiesProperty"
+        },
+        "description": "Facet counts.",
+        "example": {
+          "category": {
+            "food": 1,
+            "tech": 42
+          }
+        }
+      },
       "SearchBaseSearchResponseAppliedRulesItem": {
         "type": "object"
-      },
-      "SearchBaseSearchResponseExhaustive": {
-        "title": "exhaustive",
-        "type": "object",
-        "properties": {
-          "facetsCount": {
-            "title": "facetsCount",
-            "type": "boolean",
-            "description": "Whether the facet count is exhaustive (\u0060true\u0060) or approximate (\u0060false\u0060). See the [related discussion](https://support.algolia.com/hc/articles/4406975248145-Why-are-my-facet-and-hit-counts-not-accurate)."
-          },
-          "facetValues": {
-            "title": "facetValues",
-            "type": "boolean",
-            "description": "The value is \u0060false\u0060 if not all facet values are retrieved."
-          },
-          "nbHits": {
-            "title": "nbHits",
-            "type": "boolean",
-            "description": "Whether the \u0060nbHits\u0060 is exhaustive (\u0060true\u0060) or approximate (\u0060false\u0060). When the query takes more than 50ms to be processed, the engine makes an approximation. This can happen when using complex filters on millions of records, when typo-tolerance was not exhaustive, or when enough hits have been retrieved (for example, after the engine finds 10,000 exact matches). \u0060nbHits\u0060 is reported as non-exhaustive whenever an approximation is made, even if the approximation didn\u2019t, in the end, impact the exhaustivity of the query."
-          },
-          "rulesMatch": {
-            "title": "rulesMatch",
-            "type": "boolean",
-            "description": "Rules matching exhaustivity. The value is \u0060false\u0060 if rules were enable for this query, and could not be fully processed due a timeout. This is generally caused by the number of alternatives (such as typos) which is too large."
-          },
-          "typo": {
-            "title": "typo",
-            "type": "boolean",
-            "description": "Whether the typo search was exhaustive (\u0060true\u0060) or approximate (\u0060false\u0060). An approximation is done when the typo search query part takes more than 10% of the query budget (ie. 5ms by default) to be processed (this can happen when a lot of typo alternatives exist for the query). This field will not be included when typo-tolerance is entirely disabled."
-          }
-        },
-        "description": "Whether certain properties of the search response are calculated exhaustive (exact) or approximated."
       },
       "Run": {
         "required": [
@@ -27289,18 +27290,37 @@
         "description": "Error.",
         "x-keep-model": true
       },
-      "SearchRedirectRuleIndexMetadataData": {
-        "title": "redirectRuleIndexData",
-        "required": [
-          "ruleObjectID"
-        ],
+      "SearchBaseSearchResponseExhaustive": {
+        "title": "exhaustive",
         "type": "object",
         "properties": {
-          "ruleObjectID": {
-            "type": "string"
+          "facetsCount": {
+            "title": "facetsCount",
+            "type": "boolean",
+            "description": "Whether the facet count is exhaustive (\u0060true\u0060) or approximate (\u0060false\u0060). See the [related discussion](https://support.algolia.com/hc/articles/4406975248145-Why-are-my-facet-and-hit-counts-not-accurate)."
+          },
+          "facetValues": {
+            "title": "facetValues",
+            "type": "boolean",
+            "description": "The value is \u0060false\u0060 if not all facet values are retrieved."
+          },
+          "nbHits": {
+            "title": "nbHits",
+            "type": "boolean",
+            "description": "Whether the \u0060nbHits\u0060 is exhaustive (\u0060true\u0060) or approximate (\u0060false\u0060). When the query takes more than 50ms to be processed, the engine makes an approximation. This can happen when using complex filters on millions of records, when typo-tolerance was not exhaustive, or when enough hits have been retrieved (for example, after the engine finds 10,000 exact matches). \u0060nbHits\u0060 is reported as non-exhaustive whenever an approximation is made, even if the approximation didn\u2019t, in the end, impact the exhaustivity of the query."
+          },
+          "rulesMatch": {
+            "title": "rulesMatch",
+            "type": "boolean",
+            "description": "Rules matching exhaustivity. The value is \u0060false\u0060 if rules were enable for this query, and could not be fully processed due a timeout. This is generally caused by the number of alternatives (such as typos) which is too large."
+          },
+          "typo": {
+            "title": "typo",
+            "type": "boolean",
+            "description": "Whether the typo search was exhaustive (\u0060true\u0060) or approximate (\u0060false\u0060). An approximation is done when the typo search query part takes more than 10% of the query budget (ie. 5ms by default) to be processed (this can happen when a lot of typo alternatives exist for the query). This field will not be included when typo-tolerance is entirely disabled."
           }
         },
-        "description": "Redirect rule data."
+        "description": "Whether certain properties of the search response are calculated exhaustive (exact) or approximated."
       },
       "ClickEvent": {
         "enum": [
@@ -27319,20 +27339,18 @@
           ]
         }
       },
-      "CrawlersResponseAllOf2ItemsItem": {
-        "title": "crawlerResponse",
+      "SearchRedirectRuleIndexMetadataData": {
+        "title": "redirectRuleIndexData",
+        "required": [
+          "ruleObjectID"
+        ],
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "description": "Universally unique identifier (UUID) of the crawler."
-          },
-          "name": {
-            "maxLength": 64,
-            "type": "string",
-            "description": "Name of the crawler."
+          "ruleObjectID": {
+            "type": "string"
           }
-        }
+        },
+        "description": "Redirect rule data."
       },
       "ObjectIDs": {
         "maxItems": 20,
@@ -27352,6 +27370,21 @@
           "type": "integer"
         },
         "description": "Position of the clicked item the search results.\n\nYou must provide 1 \u0060position\u0060 for each \u0060objectID\u0060.\n"
+      },
+      "CrawlersResponseAllOf2ItemsItem": {
+        "title": "crawlerResponse",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Universally unique identifier (UUID) of the crawler."
+          },
+          "name": {
+            "maxLength": 64,
+            "type": "string",
+            "description": "Name of the crawler."
+          }
+        }
       },
       "CrawlerConfigVersionsResponseAllOf2ItemsItem": {
         "title": "crawlerConfigVersionsResponse",
@@ -27407,19 +27440,6 @@
         },
         "description": "Rule metadata."
       },
-      "RecommendBaseSearchResponseRedirect": {
-        "title": "redirect",
-        "type": "object",
-        "properties": {
-          "index": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RecommendRedirectRuleIndexMetadata"
-            }
-          }
-        },
-        "description": "[Redirect results to a URL](https://www.algolia.com/doc/guides/managing-results/rules/merchandising-and-promoting/how-to/redirects), this this parameter is for internal use only.\n"
-      },
       "ClickedObjectIDsAfterSearch": {
         "title": "Clicked object IDs after search",
         "required": [
@@ -27466,10 +27486,10 @@
             "description": "Position of the clicked item the search results.\n\nYou must provide 1 \u0060position\u0060 for each \u0060objectID\u0060.\n"
           },
           "queryID": {
-            "maxLength": 32,
-            "pattern": "[0-9a-f]{32}",
+            "maxLength": 128,
+            "pattern": "^([0-9a-f]{32}|message_[!-~]\u002B)$",
             "type": "string",
-            "description": "\u0022Unique identifier for a search query.\n\nThe query ID is required for events related to search or browse requests.\nIf you add \u0060clickAnalytics: true\u0060 as a search request parameter, the query ID is included in the API response.\n\u0022"
+            "description": "\u0022Unique identifier for a search query.\n\nThe query ID is required for events related to search or browse requests.\nIf you add \u0060clickAnalytics: true\u0060 as a search request parameter, the query ID is included in the API response.\nFor agentic analytics events, the query ID may be prefixed with \u0060message_\u0060 followed by any printable string.\n\u0022"
           },
           "userToken": {
             "maxLength": 129,
@@ -27530,9 +27550,18 @@
           ]
         }
       },
-      "RecommendBaseSearchResponseProcessingTimingsMs": {
+      "RecommendBaseSearchResponseRedirect": {
+        "title": "redirect",
         "type": "object",
-        "description": "Experimental. List of processing steps and their times, in milliseconds. You can use this list to investigate performance issues."
+        "properties": {
+          "index": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RecommendRedirectRuleIndexMetadata"
+            }
+          }
+        },
+        "description": "[Redirect results to a URL](https://www.algolia.com/doc/guides/managing-results/rules/merchandising-and-promoting/how-to/redirects), this this parameter is for internal use only.\n"
       },
       "Price": {
         "type": "object",
@@ -27549,12 +27578,9 @@
         ],
         "description": "Final price of a single product, including any discounts, in units of \u0060currency\u0060."
       },
-      "RecommendBaseSearchResponseFacetsStats": {
+      "RecommendBaseSearchResponseProcessingTimingsMs": {
         "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/RecommendBaseSearchResponseFacetsStatsAdditionalProperties"
-        },
-        "description": "Statistics for numerical facets."
+        "description": "Experimental. List of processing steps and their times, in milliseconds. You can use this list to investigate performance issues."
       },
       "Discount": {
         "type": "object",
@@ -27651,10 +27677,10 @@
             "description": "Index name (case-sensitive) to which the event\u0027s items belong."
           },
           "queryID": {
-            "maxLength": 32,
-            "pattern": "[0-9a-f]{32}",
+            "maxLength": 128,
+            "pattern": "^([0-9a-f]{32}|message_[!-~]\u002B)$",
             "type": "string",
-            "description": "\u0022Unique identifier for a search query.\n\nThe query ID is required for events related to search or browse requests.\nIf you add \u0060clickAnalytics: true\u0060 as a search request parameter, the query ID is included in the API response.\n\u0022"
+            "description": "\u0022Unique identifier for a search query.\n\nThe query ID is required for events related to search or browse requests.\nIf you add \u0060clickAnalytics: true\u0060 as a search request parameter, the query ID is included in the API response.\nFor agentic analytics events, the query ID may be prefixed with \u0060message_\u0060 followed by any printable string.\n\u0022"
           },
           "objectIDs": {
             "maxItems": 20,
@@ -27843,10 +27869,10 @@
             "description": "Object IDs of the records that are part of the event."
           },
           "queryID": {
-            "maxLength": 32,
-            "pattern": "[0-9a-f]{32}",
+            "maxLength": 128,
+            "pattern": "^([0-9a-f]{32}|message_[!-~]\u002B)$",
             "type": "string",
-            "description": "\u0022Unique identifier for a search query.\n\nThe query ID is required for events related to search or browse requests.\nIf you add \u0060clickAnalytics: true\u0060 as a search request parameter, the query ID is included in the API response.\n\u0022"
+            "description": "\u0022Unique identifier for a search query.\n\nThe query ID is required for events related to search or browse requests.\nIf you add \u0060clickAnalytics: true\u0060 as a search request parameter, the query ID is included in the API response.\nFor agentic analytics events, the query ID may be prefixed with \u0060message_\u0060 followed by any printable string.\n\u0022"
           },
           "userToken": {
             "maxLength": 129,
@@ -28425,6 +28451,73 @@
           "filters"
         ]
       },
+      "InstantsearchEvent": {
+        "enum": [
+          "instantsearch"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "InstantsearchEvent",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "instantsearch",
+              "name": "Instantsearch"
+            }
+          ]
+        }
+      },
+      "RecommendBaseSearchResponseFacetsStats": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/RecommendBaseSearchResponseFacetsStatsAdditionalProperties"
+        },
+        "description": "Statistics for numerical facets."
+      },
+      "Instantsearch": {
+        "required": [
+          "eventName",
+          "eventType",
+          "userToken"
+        ],
+        "type": "object",
+        "properties": {
+          "eventName": {
+            "maxLength": 64,
+            "pattern": "[\\x20-\\x7E]{1,64}",
+            "type": "string",
+            "description": "Event name, up to 64 ASCII characters.\n\nConsider naming events consistently\u2014for example, by adopting Segment\u0027s\n[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)\nframework.\n"
+          },
+          "eventType": {
+            "$ref": "#/components/schemas/InstantsearchEvent"
+          },
+          "userToken": {
+            "maxLength": 129,
+            "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
+            "type": "string",
+            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+          },
+          "authenticatedUserToken": {
+            "maxLength": 129,
+            "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
+            "type": "string",
+            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+          },
+          "timestamp": {
+            "type": "integer",
+            "description": "Timestamp, measured in milliseconds since the Unix epoch.",
+            "format": "int64"
+          },
+          "agentID": {
+            "type": "string",
+            "description": "Unique identifier for an agent session. Used to correlate instantsearch events with a specific agent interaction.\n"
+          }
+        },
+        "x-discriminator-fields": [
+          "eventType"
+        ]
+      },
       "EventsItems": {
         "required": [
           "type"
@@ -28466,6 +28559,9 @@
           },
           {
             "$ref": "#/components/schemas/ViewedFilters"
+          },
+          {
+            "$ref": "#/components/schemas/Instantsearch"
           }
         ],
         "properties": {
@@ -28488,7 +28584,8 @@
             "ClickedFilters": "#/components/schemas/ClickedFilters",
             "ConvertedFilters": "#/components/schemas/ConvertedFilters",
             "ViewedObjectIDs": "#/components/schemas/ViewedObjectIDs",
-            "ViewedFilters": "#/components/schemas/ViewedFilters"
+            "ViewedFilters": "#/components/schemas/ViewedFilters",
+            "Instantsearch": "#/components/schemas/Instantsearch"
           }
         }
       },
@@ -43083,12 +43180,6 @@
         "additionalProperties": false,
         "description": "Update to perform on the attribute."
       },
-      "QuerySuggestionsGetAllConfigs200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ConfigurationResponse"
-        }
-      },
       "ConfigStatus": {
         "title": "configStatus",
         "type": "object",
@@ -45920,15 +46011,15 @@
         "type": "object",
         "description": "Search parameters applied to this variant when the same index is used for multiple variants.\nOnly present if custom search parameters were provided during test creation.\n"
       },
-      "GetUserTokenResponseScores": {
-        "type": "object",
-        "description": "Scores for different facet values.\n\nScores represent the user affinity for a user profile towards specific facet values,\ngiven the personalization strategy and past events.\n"
-      },
       "CustomSearchParamsCustomSearchParametersProperty": {
         "type": "object"
       },
       "AbTestsVariantSearchParamsCustomSearchParameters": {
         "type": "object"
+      },
+      "GetUserTokenResponseScores": {
+        "type": "object",
+        "description": "Scores for different facet values.\n\nScores represent the user affinity for a user profile towards specific facet values,\ngiven the personalization strategy and past events.\n"
       },
       "AbtestingVariantCurrencies": {
         "type": "object",
@@ -46050,6 +46141,18 @@
         "type": "object",
         "description": "An object with custom data.\n\nYou can store up to 32kB as custom data.\n"
       },
+      "CompositionRankingInfoComposedProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/CompositionRankingInfoComposedAdditionalProperties"
+        }
+      },
+      "HitRankingInfoComposed": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/CompositionRankingInfoComposedAdditionalProperties"
+        }
+      },
       "CompositionSaveRulesRequestRequestsItem": {
         "title": "rulesMultipleBatchRequest",
         "required": [
@@ -46066,18 +46169,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "CompositionRankingInfoComposedProperty": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/CompositionRankingInfoComposedAdditionalProperties"
-        }
-      },
-      "HitRankingInfoComposed": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/CompositionRankingInfoComposedAdditionalProperties"
-        }
       },
       "CompositionHitHighlightResult": {
         "type": "object",
@@ -46119,24 +46210,6 @@
         },
         "additionalProperties": false
       },
-      "CompositionSearchForFacetValuesRequestParams": {
-        "title": "searchForFacetValuesParams",
-        "type": "object",
-        "properties": {
-          "query": {
-            "type": "string",
-            "description": "Search query."
-          },
-          "maxFacetHits": {
-            "maximum": 100,
-            "type": "integer",
-            "description": "Maximum number of facet values to return when [searching for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values)."
-          },
-          "searchQuery": {
-            "$ref": "#/components/schemas/ParamsType"
-          }
-        }
-      },
       "ResultsCompositionsResponseCompositionsProperty": {
         "type": "object",
         "additionalProperties": {
@@ -46169,6 +46242,24 @@
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/ResultsCompositionInfoResponse"
+        }
+      },
+      "CompositionSearchForFacetValuesRequestParams": {
+        "title": "searchForFacetValuesParams",
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query."
+          },
+          "maxFacetHits": {
+            "maximum": 100,
+            "type": "integer",
+            "description": "Maximum number of facet values to return when [searching for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values)."
+          },
+          "searchQuery": {
+            "$ref": "#/components/schemas/ParamsType"
+          }
         }
       },
       "GetTopCountriesResponseCountriesItem": {
@@ -46502,16 +46593,6 @@
       "WatchResponseDataItemProperty": {
         "type": "object"
       },
-      "LatencyResponseResponseMetricsLatencyProperty": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/TimeItem"
-          },
-          "description": "Time measured by a probe."
-        }
-      },
       "SourceCsvMappingProperty": {
         "type": "object",
         "additionalProperties": {
@@ -46539,6 +46620,16 @@
         "type": "object",
         "description": "Additional information that will be passed to the created runs."
       },
+      "LatencyResponseResponseMetricsLatencyProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/TimeItem"
+          },
+          "description": "Time measured by a probe."
+        }
+      },
       "SearchBaseIndexSettingsCustomNormalizationAdditionalPropertiesProperty": {
         "type": "object",
         "additionalProperties": {
@@ -46549,6 +46640,10 @@
         "type": "object",
         "description": "Operation arguments (varies with specified \u0060action\u0060)."
       },
+      "MappingFieldDirectiveValueProperty": {
+        "type": "object",
+        "description": "How the destination field should be resolved from the source."
+      },
       "IndexingResponseResponseMetricsIndexingProperty": {
         "type": "object",
         "additionalProperties": {
@@ -46558,10 +46653,6 @@
           },
           "description": "Time measured by a probe."
         }
-      },
-      "MappingFieldDirectiveValueProperty": {
-        "type": "object",
-        "description": "How the destination field should be resolved from the source."
       },
       "InfrastructureResponseResponseMetricsCpuUsageProperty": {
         "type": "object",
@@ -46621,16 +46712,16 @@
         "type": "object",
         "description": "A step in a no-code transformation."
       },
+      "TransformationTrySampleRecordProperty": {
+        "type": "object",
+        "description": "The record to apply the given code to."
+      },
       "SearchBaseSearchResponseFacetsAdditionalPropertiesProperty": {
         "type": "object",
         "additionalProperties": {
           "type": "integer",
           "x-additionalPropertiesName": "facet count"
         }
-      },
-      "TransformationTrySampleRecordProperty": {
-        "type": "object",
-        "description": "The record to apply the given code to."
       },
       "RecommendBaseSearchResponseFacetsAdditionalPropertiesProperty": {
         "type": "object",

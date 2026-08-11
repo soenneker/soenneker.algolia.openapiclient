@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AddedToCartObjectIDs"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AddedToCartObjectIDsAfterSearch"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ClickedFilters"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ClickedObjectIDs"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ClickedObjectIDsAfterSearch"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ConvertedFilters"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ConvertedObjectIDs"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ConvertedObjectIDsAfterSearch"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.PurchasedObjectIDs"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.PurchasedObjectIDsAfterSearch"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ViewedFilters"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ViewedObjectIDs"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AddedToCartObjectIDs"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AddedToCartObjectIDsAfterSearch"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ClickedFilters"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ClickedObjectIDs"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ClickedObjectIDsAfterSearch"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ConvertedFilters"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ConvertedObjectIDs"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ConvertedObjectIDsAfterSearch"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Instantsearch"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.PurchasedObjectIDs"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.PurchasedObjectIDsAfterSearch"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ViewedFilters"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ViewedObjectIDs"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventsItems : IComposedTypeWrapper, IParsable
@@ -76,6 +76,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.ConvertedObjectIDsAfterSearch ConvertedObjectIDsAfterSearch { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Instantsearch"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.Instantsearch? Instantsearch { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.Instantsearch Instantsearch { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.PurchasedObjectIDs"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,6 +159,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 result.ConvertedObjectIDsAfterSearch = new global::Soenneker.Algolia.OpenApiClient.Models.ConvertedObjectIDsAfterSearch();
             }
+            else if("Instantsearch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.Instantsearch = new global::Soenneker.Algolia.OpenApiClient.Models.Instantsearch();
+            }
             else if("PurchasedObjectIDs".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PurchasedObjectIDs = new global::Soenneker.Algolia.OpenApiClient.Models.PurchasedObjectIDs();
@@ -206,6 +218,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             else if(ConvertedObjectIDsAfterSearch != null)
             {
                 return ConvertedObjectIDsAfterSearch.GetFieldDeserializers();
+            }
+            else if(Instantsearch != null)
+            {
+                return Instantsearch.GetFieldDeserializers();
             }
             else if(PurchasedObjectIDs != null)
             {
@@ -263,6 +279,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             else if(ConvertedObjectIDsAfterSearch != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConvertedObjectIDsAfterSearch>(null, ConvertedObjectIDsAfterSearch);
+            }
+            else if(Instantsearch != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Instantsearch>(null, Instantsearch);
             }
             else if(PurchasedObjectIDs != null)
             {

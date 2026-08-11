@@ -7,14 +7,21 @@ using System.IO;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
-    /// <summary>
-    /// Click event after an Algolia request.Use this event to track when users click items in the search results.If you&apos;re building your category pages with Algolia,you&apos;ll also use this event.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ClickedObjectIDsAfterSearch : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class Instantsearch : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Unique identifier for an agent session. Used to correlate instantsearch events with a specific agent interaction.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AgentID { get; set; }
+#nullable restore
+#else
+        public string AgentID { get; set; }
+#endif
         /// <summary>Identifier for authenticated users.When the user signs in, you can get an identifier from your system and send it as `authenticatedUserToken`.This lets you keep using the `userToken` from before the user signed in, while providing a reliable way to identify users across sessions.Don&apos;t use personally identifiable information in user tokens.For more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,39 +39,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string EventName { get; set; }
 #endif
         /// <summary>The eventType property</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.ClickEvent? EventType { get; set; }
-        /// <summary>Index name (case-sensitive) to which the event&apos;s items belong.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Index { get; set; }
-#nullable restore
-#else
-        public string Index { get; set; }
-#endif
-        /// <summary>Object IDs of the records that are part of the event.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? ObjectIDs { get; set; }
-#nullable restore
-#else
-        public List<string> ObjectIDs { get; set; }
-#endif
-        /// <summary>Position of the clicked item the search results.You must provide 1 `position` for each `objectID`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<int?>? Positions { get; set; }
-#nullable restore
-#else
-        public List<int?> Positions { get; set; }
-#endif
-        /// <summary>&quot;Unique identifier for a search query.The query ID is required for events related to search or browse requests.If you add `clickAnalytics: true` as a search request parameter, the query ID is included in the API response.For agentic analytics events, the query ID may be prefixed with `message_` followed by any printable string.&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? QueryID { get; set; }
-#nullable restore
-#else
-        public string QueryID { get; set; }
-#endif
+        public global::Soenneker.Algolia.OpenApiClient.Models.InstantsearchEvent? EventType { get; set; }
         /// <summary>Timestamp, measured in milliseconds since the Unix epoch.</summary>
         public long? Timestamp { get; set; }
         /// <summary>Anonymous or pseudonymous user identifier.Don&apos;t use personally identifiable information in user tokens.For more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).</summary>
@@ -76,21 +51,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string UserToken { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ClickedObjectIDsAfterSearch"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Instantsearch"/> and sets the default values.
         /// </summary>
-        public ClickedObjectIDsAfterSearch()
+        public Instantsearch()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ClickedObjectIDsAfterSearch"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Instantsearch"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Algolia.OpenApiClient.Models.ClickedObjectIDsAfterSearch CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Algolia.OpenApiClient.Models.Instantsearch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.ClickedObjectIDsAfterSearch();
+            return new global::Soenneker.Algolia.OpenApiClient.Models.Instantsearch();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,13 +75,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "agentID", n => { AgentID = n.GetStringValue(); } },
                 { "authenticatedUserToken", n => { AuthenticatedUserToken = n.GetStringValue(); } },
                 { "eventName", n => { EventName = n.GetStringValue(); } },
-                { "eventType", n => { EventType = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ClickEvent>(); } },
-                { "index", n => { Index = n.GetStringValue(); } },
-                { "objectIDs", n => { ObjectIDs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "positions", n => { Positions = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
-                { "queryID", n => { QueryID = n.GetStringValue(); } },
+                { "eventType", n => { EventType = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.InstantsearchEvent>(); } },
                 { "timestamp", n => { Timestamp = n.GetLongValue(); } },
                 { "userToken", n => { UserToken = n.GetStringValue(); } },
             };
@@ -118,13 +90,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("agentID", AgentID);
             writer.WriteStringValue("authenticatedUserToken", AuthenticatedUserToken);
             writer.WriteStringValue("eventName", EventName);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ClickEvent>("eventType", EventType);
-            writer.WriteStringValue("index", Index);
-            writer.WriteCollectionOfPrimitiveValues<string>("objectIDs", ObjectIDs);
-            writer.WriteCollectionOfPrimitiveValues<int?>("positions", Positions);
-            writer.WriteStringValue("queryID", QueryID);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.InstantsearchEvent>("eventType", EventType);
             writer.WriteLongValue("timestamp", Timestamp);
             writer.WriteStringValue("userToken", UserToken);
             writer.WriteAdditionalData(AdditionalData);
