@@ -30,6 +30,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
+        /// <summary>Outcome of the A/B test once a winner has been declared.Only present when a winning variant has been declared, so its presence indicates the test has been decided.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.Decision? Decision { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.Decision Decision { get; set; }
+#endif
         /// <summary>End date and time of the A/B test, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,6 +103,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "abTestID", n => { AbTestID = n.GetIntValue(); } },
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbTestConfiguration>(global::Soenneker.Algolia.OpenApiClient.Models.AbTestConfiguration.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
+                { "decision", n => { Decision = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Decision>(global::Soenneker.Algolia.OpenApiClient.Models.Decision.CreateFromDiscriminatorValue); } },
                 { "endAt", n => { EndAt = n.GetStringValue(); } },
                 { "migratedAbTestID", n => { MigratedAbTestID = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -114,6 +123,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("abTestID", AbTestID);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbTestConfiguration>("configuration", Configuration);
             writer.WriteStringValue("createdAt", CreatedAt);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Decision>("decision", Decision);
             writer.WriteStringValue("endAt", EndAt);
             writer.WriteIntValue("migratedAbTestID", MigratedAbTestID);
             writer.WriteStringValue("name", Name);

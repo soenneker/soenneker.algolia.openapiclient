@@ -17469,6 +17469,27 @@
         "description": "Unique migrated A/B test identifier.",
         "example": 224
       },
+      "Decision": {
+        "required": [
+          "winnerVariantId",
+          "declaredAt"
+        ],
+        "type": "object",
+        "properties": {
+          "winnerVariantId": {
+            "type": "integer",
+            "description": "Identifier of the declared winning variant. The control variant is 1.",
+            "example": 2
+          },
+          "declaredAt": {
+            "type": "string",
+            "description": "Date and time when the winning variant was declared, in RFC 3339 format.",
+            "example": "2026-06-16T00:00:00Z"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Outcome of the A/B test once a winner has been declared.\nOnly present when a winning variant has been declared, so its presence indicates the test has been decided.\n"
+      },
       "ABTest": {
         "required": [
           "status",
@@ -17510,6 +17531,9 @@
           },
           "migratedAbTestID": {
             "$ref": "#/components/schemas/MigratedABTestId"
+          },
+          "decision": {
+            "$ref": "#/components/schemas/Decision"
           }
         },
         "additionalProperties": false
