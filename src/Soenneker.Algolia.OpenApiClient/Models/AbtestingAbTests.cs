@@ -7,28 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestsMember1"/>, List&lt;global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest&gt;
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class AbtestingAbTests : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class AbtestingAbTests : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The list of A/B tests, null if no A/B tests are configured for this application.</summary>
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest>? Value { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest>? AbtestingAbTest { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest> Value { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest> AbtestingAbTest { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTests"/> and sets the default values.
-        /// </summary>
-        public AbtestingAbTests()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestsMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestsMember1? AbtestingAbTestsMember1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestsMember1 AbtestingAbTestsMember1 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +37,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTests CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTests();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTests();
+            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest> abtestingAbTestValue)
+            {
+                result.AbtestingAbTest = abtestingAbTestValue;
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +51,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(AbtestingAbTestsMember1 != null)
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest.CreateFromDiscriminatorValue)?.AsList(); } },
-            };
+                return AbtestingAbTestsMember1.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,8 +64,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest>("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(AbtestingAbTestsMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestsMember1>(null, AbtestingAbTestsMember1);
+            }
+            else if(AbtestingAbTest != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest>(null, AbtestingAbTest);
+            }
         }
     }
 }

@@ -7,81 +7,21 @@ using System.IO;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
+    /// <summary>
+    /// A/B tests.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class AbTest : IParsable
-    #pragma warning restore CS1591
+    public partial class AbTest : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Unique A/B test identifier.</summary>
-        public int? AbTestID { get; set; }
-        /// <summary>A/B test configuration.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbTestConfiguration? Configuration { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbTestConfiguration Configuration { get; set; }
-#endif
-        /// <summary>Date and time when the A/B test was created, in RFC 3339 format.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatedAt { get; set; }
-#nullable restore
-#else
-        public string CreatedAt { get; set; }
-#endif
-        /// <summary>Outcome of the A/B test once a winner has been declared.Only present when a winning variant has been declared, so its presence indicates the test has been decided.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Decision? Decision { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Decision Decision { get; set; }
-#endif
-        /// <summary>End date and time of the A/B test, in RFC 3339 format.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EndAt { get; set; }
-#nullable restore
-#else
-        public string EndAt { get; set; }
-#endif
-        /// <summary>Unique migrated A/B test identifier.</summary>
-        public int? MigratedAbTestID { get; set; }
-        /// <summary>A/B test name.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>A/B test status.- `active`. The A/B test is live and search traffic is split between the two variants.- `stopped`. You stopped the A/B test. The A/B test data is still available for analysis.- `expired`. The A/B test was automatically stopped after reaching its end date.- `failed`. Creating the A/B test failed.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.Status? Status { get; set; }
-        /// <summary>Date and time when the A/B test was stopped, in RFC 3339 format.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StoppedAt { get; set; }
-#nullable restore
-#else
-        public string StoppedAt { get; set; }
-#endif
-        /// <summary>Date and time when the A/B test was last updated, in RFC 3339 format.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UpdatedAt { get; set; }
-#nullable restore
-#else
-        public string UpdatedAt { get; set; }
-#endif
-        /// <summary>A/B test variants.The first variant is your _control_ index, typically your production index.All of the additional variants are indexes with changed settings that you want to test against the control.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Variant>? Variants { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Variant> Variants { get; set; }
-#endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbTest"/> and sets the default values.
+        /// </summary>
+        public AbTest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -100,17 +40,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "abTestID", n => { AbTestID = n.GetIntValue(); } },
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbTestConfiguration>(global::Soenneker.Algolia.OpenApiClient.Models.AbTestConfiguration.CreateFromDiscriminatorValue); } },
-                { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
-                { "decision", n => { Decision = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Decision>(global::Soenneker.Algolia.OpenApiClient.Models.Decision.CreateFromDiscriminatorValue); } },
-                { "endAt", n => { EndAt = n.GetStringValue(); } },
-                { "migratedAbTestID", n => { MigratedAbTestID = n.GetIntValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Status>(); } },
-                { "stoppedAt", n => { StoppedAt = n.GetStringValue(); } },
-                { "updatedAt", n => { UpdatedAt = n.GetStringValue(); } },
-                { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Variant>(global::Soenneker.Algolia.OpenApiClient.Models.Variant.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -120,17 +49,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("abTestID", AbTestID);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbTestConfiguration>("configuration", Configuration);
-            writer.WriteStringValue("createdAt", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Decision>("decision", Decision);
-            writer.WriteStringValue("endAt", EndAt);
-            writer.WriteIntValue("migratedAbTestID", MigratedAbTestID);
-            writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Status>("status", Status);
-            writer.WriteStringValue("stoppedAt", StoppedAt);
-            writer.WriteStringValue("updatedAt", UpdatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Variant>("variants", Variants);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

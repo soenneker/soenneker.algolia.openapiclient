@@ -12,14 +12,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     public partial class GetAverageClickPositionResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The average property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AverageClickPosition? Average { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AverageClickPosition Average { get; set; }
-#endif
+        /// <summary>Average position of a clicked search result in the list of search results.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.</summary>
+        public double? Average { get; set; }
         /// <summary>Number of clicks associated with this search.</summary>
         public int? ClickCount { get; set; }
         /// <summary>Daily average click positions.</summary>
@@ -48,7 +42,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "average", n => { Average = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AverageClickPosition>(global::Soenneker.Algolia.OpenApiClient.Models.AverageClickPosition.CreateFromDiscriminatorValue); } },
+                { "average", n => { Average = n.GetDoubleValue(); } },
                 { "clickCount", n => { ClickCount = n.GetIntValue(); } },
                 { "dates", n => { Dates = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetAverageClickPositionResponseDatesItem>(global::Soenneker.Algolia.OpenApiClient.Models.GetAverageClickPositionResponseDatesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -60,7 +54,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AverageClickPosition>("average", Average);
+            writer.WriteDoubleValue("average", Average);
             writer.WriteIntValue("clickCount", ClickCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetAverageClickPositionResponseDatesItem>("dates", Dates);
         }

@@ -8,28 +8,27 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Facets to use as top categories with your suggestions.If provided, Query Suggestions adds the top facet values to each suggestion.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Facets2Member1"/>, List&lt;global::Soenneker.Algolia.OpenApiClient.Models.Facet&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Facets2 : IAdditionalDataHolder, IParsable
+    public partial class Facets2 : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Algolia.OpenApiClient.Models.Facet&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Facet>? Value { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Facet>? Facet { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Facet> Value { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Facet> Facet { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Facets2"/> and sets the default values.
-        /// </summary>
-        public Facets2()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Facets2Member1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.Facets2Member1? Facets2Member1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.Facets2Member1 Facets2Member1 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +37,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.Facets2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.Facets2();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Algolia.OpenApiClient.Models.Facets2();
+            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Facet>(global::Soenneker.Algolia.OpenApiClient.Models.Facet.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.Facet> facetValue)
+            {
+                result.Facet = facetValue;
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,10 +51,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(Facets2Member1 != null)
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Facet>(global::Soenneker.Algolia.OpenApiClient.Models.Facet.CreateFromDiscriminatorValue)?.AsList(); } },
-            };
+                return Facets2Member1.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -58,8 +64,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Facet>("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(Facets2Member1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Facets2Member1>(null, Facets2Member1);
+            }
+            else if(Facet != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Facet>(null, Facet);
+            }
         }
     }
 }

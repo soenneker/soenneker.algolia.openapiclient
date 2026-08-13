@@ -14,34 +14,16 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     {
         /// <summary>Number of add-to-cart events from this search.</summary>
         public int? AddToCartCount { get; set; }
-        /// <summary>The addToCartRate property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AddToCartRate? AddToCartRate { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AddToCartRate AddToCartRate { get; set; }
-#endif
+        /// <summary>&quot;Add-to-cart rate: calculated as the number of tracked searches with at least one add-to-cart event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.&quot;</summary>
+        public double? AddToCartRate { get; set; }
         /// <summary>Number of clicks associated with this search.</summary>
         public int? ClickCount { get; set; }
-        /// <summary>The clickThroughRate property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ClickThroughRate? ClickThroughRate { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ClickThroughRate ClickThroughRate { get; set; }
-#endif
+        /// <summary>&quot;Click-through rate: calculated as the number of tracked searches with at least one click event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.&quot;</summary>
+        public double? ClickThroughRate { get; set; }
         /// <summary>Number of conversions from this search.</summary>
         public int? ConversionCount { get; set; }
-        /// <summary>The conversionRate property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate? ConversionRate { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate ConversionRate { get; set; }
-#endif
+        /// <summary>&quot;Conversion rate: calculated as the number of tracked searches with at least one conversion event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.&quot;</summary>
+        public double? ConversionRate { get; set; }
         /// <summary>Number of occurrences.</summary>
         public int? Count { get; set; }
         /// <summary>&quot;Revenue associated with this search: broken down by currency.&quot;</summary>
@@ -62,14 +44,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Number of purchase events from this search.</summary>
         public int? PurchaseCount { get; set; }
-        /// <summary>The purchaseRate property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.PurchaseRate? PurchaseRate { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.PurchaseRate PurchaseRate { get; set; }
-#endif
+        /// <summary>&quot;Purchase rate: calculated as the number of tracked searches with at least one purchase event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.&quot;</summary>
+        public double? PurchaseRate { get; set; }
         /// <summary>Number of tracked searches. Tracked searches are search requests where the `clickAnalytics` parameter is true.</summary>
         public int? TrackedHitCount { get; set; }
         /// <summary>
@@ -91,16 +67,16 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "addToCartCount", n => { AddToCartCount = n.GetIntValue(); } },
-                { "addToCartRate", n => { AddToCartRate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AddToCartRate>(global::Soenneker.Algolia.OpenApiClient.Models.AddToCartRate.CreateFromDiscriminatorValue); } },
+                { "addToCartRate", n => { AddToCartRate = n.GetDoubleValue(); } },
                 { "clickCount", n => { ClickCount = n.GetIntValue(); } },
-                { "clickThroughRate", n => { ClickThroughRate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ClickThroughRate>(global::Soenneker.Algolia.OpenApiClient.Models.ClickThroughRate.CreateFromDiscriminatorValue); } },
+                { "clickThroughRate", n => { ClickThroughRate = n.GetDoubleValue(); } },
                 { "conversionCount", n => { ConversionCount = n.GetIntValue(); } },
-                { "conversionRate", n => { ConversionRate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate>(global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate.CreateFromDiscriminatorValue); } },
+                { "conversionRate", n => { ConversionRate = n.GetDoubleValue(); } },
                 { "count", n => { Count = n.GetIntValue(); } },
                 { "currencies", n => { Currencies = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TopHitsResponseWithRevenueAnalyticsHitsItemCurrencies>(global::Soenneker.Algolia.OpenApiClient.Models.TopHitsResponseWithRevenueAnalyticsHitsItemCurrencies.CreateFromDiscriminatorValue); } },
                 { "hit", n => { Hit = n.GetStringValue(); } },
                 { "purchaseCount", n => { PurchaseCount = n.GetIntValue(); } },
-                { "purchaseRate", n => { PurchaseRate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.PurchaseRate>(global::Soenneker.Algolia.OpenApiClient.Models.PurchaseRate.CreateFromDiscriminatorValue); } },
+                { "purchaseRate", n => { PurchaseRate = n.GetDoubleValue(); } },
                 { "trackedHitCount", n => { TrackedHitCount = n.GetIntValue(); } },
             };
         }
@@ -112,16 +88,16 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("addToCartCount", AddToCartCount);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AddToCartRate>("addToCartRate", AddToCartRate);
+            writer.WriteDoubleValue("addToCartRate", AddToCartRate);
             writer.WriteIntValue("clickCount", ClickCount);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ClickThroughRate>("clickThroughRate", ClickThroughRate);
+            writer.WriteDoubleValue("clickThroughRate", ClickThroughRate);
             writer.WriteIntValue("conversionCount", ConversionCount);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate>("conversionRate", ConversionRate);
+            writer.WriteDoubleValue("conversionRate", ConversionRate);
             writer.WriteIntValue("count", Count);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TopHitsResponseWithRevenueAnalyticsHitsItemCurrencies>("currencies", Currencies);
             writer.WriteStringValue("hit", Hit);
             writer.WriteIntValue("purchaseCount", PurchaseCount);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.PurchaseRate>("purchaseRate", PurchaseRate);
+            writer.WriteDoubleValue("purchaseRate", PurchaseRate);
             writer.WriteIntValue("trackedHitCount", TrackedHitCount);
         }
     }

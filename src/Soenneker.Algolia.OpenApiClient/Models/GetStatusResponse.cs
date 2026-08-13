@@ -12,13 +12,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     public partial class GetStatusResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The updatedAt property</summary>
+        /// <summary>Date and time when the object was updated, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtNullable? UpdatedAt { get; set; }
+        public string? UpdatedAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtNullable UpdatedAt { get; set; }
+        public string UpdatedAt { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "updatedAt", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtNullable>(global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtNullable.CreateFromDiscriminatorValue); } },
+                { "updatedAt", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtNullable>("updatedAt", UpdatedAt);
+            writer.WriteStringValue("updatedAt", UpdatedAt);
         }
     }
 }

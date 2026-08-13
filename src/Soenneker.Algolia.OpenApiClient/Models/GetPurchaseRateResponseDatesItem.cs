@@ -22,14 +22,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Number of purchase events from this search.</summary>
         public int? PurchaseCount { get; set; }
-        /// <summary>The rate property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.PurchaseRate? Rate { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.PurchaseRate Rate { get; set; }
-#endif
+        /// <summary>&quot;Purchase rate: calculated as the number of tracked searches with at least one purchase event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.&quot;</summary>
+        public double? Rate { get; set; }
         /// <summary>Number of tracked searches. Tracked searches are search requests where the `clickAnalytics` parameter is true.</summary>
         public int? TrackedSearchCount { get; set; }
         /// <summary>
@@ -52,7 +46,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "date", n => { Date = n.GetStringValue(); } },
                 { "purchaseCount", n => { PurchaseCount = n.GetIntValue(); } },
-                { "rate", n => { Rate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.PurchaseRate>(global::Soenneker.Algolia.OpenApiClient.Models.PurchaseRate.CreateFromDiscriminatorValue); } },
+                { "rate", n => { Rate = n.GetDoubleValue(); } },
                 { "trackedSearchCount", n => { TrackedSearchCount = n.GetIntValue(); } },
             };
         }
@@ -65,7 +59,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("date", Date);
             writer.WriteIntValue("purchaseCount", PurchaseCount);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.PurchaseRate>("rate", Rate);
+            writer.WriteDoubleValue("rate", Rate);
             writer.WriteIntValue("trackedSearchCount", TrackedSearchCount);
         }
     }

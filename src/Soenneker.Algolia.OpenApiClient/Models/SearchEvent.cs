@@ -48,13 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string RunID { get; set; }
 #endif
         /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.SearchEventStatus? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchEventStatus Status { get; set; }
-#endif
         /// <summary>The type property</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.SearchEventType? Type { get; set; }
         /// <summary>
@@ -80,7 +74,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "eventID", n => { EventID = n.GetStringValue(); } },
                 { "publishedAt", n => { PublishedAt = n.GetStringValue(); } },
                 { "runID", n => { RunID = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchEventStatus>(global::Soenneker.Algolia.OpenApiClient.Models.SearchEventStatus.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchEventStatus>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchEventType>(); } },
             };
         }
@@ -96,7 +90,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("eventID", EventID);
             writer.WriteStringValue("publishedAt", PublishedAt);
             writer.WriteStringValue("runID", RunID);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchEventStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchEventStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchEventType>("type", Type);
         }
     }

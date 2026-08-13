@@ -29,14 +29,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The platform property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Name of an ecommerce platform with which to authenticate.This determines which authentication type you can select.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.Platform? Platform { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Platform Platform { get; set; }
-#endif
         /// <summary>Type of authentication. This determines the type of credentials required in the `input` object.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.AuthenticationType? Type { get; set; }
         /// <summary>
@@ -59,7 +53,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthInput>(global::Soenneker.Algolia.OpenApiClient.Models.AuthInput.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "platform", n => { Platform = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Platform>(global::Soenneker.Algolia.OpenApiClient.Models.Platform.CreateFromDiscriminatorValue); } },
+                { "platform", n => { Platform = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Platform>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthenticationType>(); } },
             };
         }
@@ -72,7 +66,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthInput>("input", Input);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Platform>("platform", Platform);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Platform>("platform", Platform);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthenticationType>("type", Type);
         }
     }

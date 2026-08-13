@@ -7,21 +7,21 @@ using System.IO;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
+    /// <summary>
+    /// Filters for searches without any results.If null, the search term specified with the `search` parameter isn&apos;t a search without results,or the `search` parameter is absent from the request.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetTopFiltersNoResultsValues : IParsable
-    #pragma warning restore CS1591
+    public partial class GetTopFiltersNoResultsValues : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Number of occurrences.</summary>
-        public int? Count { get; set; }
-        /// <summary>Filters with no results.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValue>? Values { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValue> Values { get; set; }
-#endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues"/> and sets the default values.
+        /// </summary>
+        public GetTopFiltersNoResultsValues()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,8 +40,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "count", n => { Count = n.GetIntValue(); } },
-                { "values", n => { Values = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValue>(global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValue.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -51,8 +49,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("count", Count);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValue>("values", Values);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

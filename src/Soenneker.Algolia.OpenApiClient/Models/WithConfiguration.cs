@@ -48,21 +48,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string CreatedAt { get; set; }
 #endif
-        /// <summary>The lastReindexEndedAt property</summary>
+        /// <summary>Date and time when the last crawl finished, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexEndedAt? LastReindexEndedAt { get; set; }
+        public string? LastReindexEndedAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexEndedAt LastReindexEndedAt { get; set; }
+        public string LastReindexEndedAt { get; set; }
 #endif
-        /// <summary>The lastReindexStartAt property</summary>
+        /// <summary>Date and time when the last crawl started, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexStartAt? LastReindexStartAt { get; set; }
+        public string? LastReindexStartAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexStartAt LastReindexStartAt { get; set; }
+        public string LastReindexStartAt { get; set; }
 #endif
         /// <summary>Name of the crawler.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,8 +114,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "blockingTaskId", n => { BlockingTaskId = n.GetStringValue(); } },
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Configuration>(global::Soenneker.Algolia.OpenApiClient.Models.Configuration.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
-                { "lastReindexEndedAt", n => { LastReindexEndedAt = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexEndedAt>(global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexEndedAt.CreateFromDiscriminatorValue); } },
-                { "lastReindexStartAt", n => { LastReindexStartAt = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexStartAt>(global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexStartAt.CreateFromDiscriminatorValue); } },
+                { "lastReindexEndedAt", n => { LastReindexEndedAt = n.GetStringValue(); } },
+                { "lastReindexStartAt", n => { LastReindexStartAt = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "reindexing", n => { Reindexing = n.GetBoolValue(); } },
                 { "running", n => { Running = n.GetBoolValue(); } },
@@ -134,8 +134,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("blockingTaskId", BlockingTaskId);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Configuration>("config", Config);
             writer.WriteStringValue("createdAt", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexEndedAt>("lastReindexEndedAt", LastReindexEndedAt);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseResponseLastReindexStartAt>("lastReindexStartAt", LastReindexStartAt);
+            writer.WriteStringValue("lastReindexEndedAt", LastReindexEndedAt);
+            writer.WriteStringValue("lastReindexStartAt", LastReindexStartAt);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("reindexing", Reindexing);
             writer.WriteBoolValue("running", Running);

@@ -23,14 +23,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Context { get; set; }
 #endif
-        /// <summary>The enabled property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchRulesRequestEnabled? Enabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchRulesRequestEnabled Enabled { get; set; }
-#endif
+        /// <summary>If `true`, return only enabled rules.If `false`, return only inactive rules.By default, _all_ rules are returned.</summary>
+        public bool? Enabled { get; set; }
         /// <summary>&quot;Maximum number of hits per page.Algolia uses `page` and `hitsPerPage` to control how search results are displayed ([paginated](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/pagination/js)).- `hitsPerPage`: sets the number of search results (_hits_) displayed per page.- `page`: specifies the page number of the search results you want to retrieve. Page numbering starts at 0, so the first page is `page=0`, the second is `page=1`, and so on.For example, to display 10 results per page starting from the third page, set `hitsPerPage` to 10 and `page` to 2.&quot;</summary>
         public int? HitsPerPage { get; set; }
         /// <summary>&quot;Requested page of the API response.Algolia uses `page` and `hitsPerPage` to control how search results are displayed ([paginated](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/pagination/js)).- `hitsPerPage`: sets the number of search results (_hits_) displayed per page.- `page`: specifies the page number of the search results you want to retrieve. Page numbering starts at 0, so the first page is `page=0`, the second is `page=1`, and so on.For example, to display 10 results per page starting from the third page, set `hitsPerPage` to 10 and `page` to 2.&quot;</summary>
@@ -63,7 +57,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "anchoring", n => { Anchoring = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchAnchoring>(); } },
                 { "context", n => { Context = n.GetStringValue(); } },
-                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchRulesRequestEnabled>(global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchRulesRequestEnabled.CreateFromDiscriminatorValue); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "hitsPerPage", n => { HitsPerPage = n.GetIntValue(); } },
                 { "page", n => { Page = n.GetIntValue(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
@@ -78,7 +72,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchAnchoring>("anchoring", Anchoring);
             writer.WriteStringValue("context", Context);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchRulesRequestEnabled>("enabled", Enabled);
+            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteIntValue("hitsPerPage", HitsPerPage);
             writer.WriteIntValue("page", Page);
             writer.WriteStringValue("query", Query);

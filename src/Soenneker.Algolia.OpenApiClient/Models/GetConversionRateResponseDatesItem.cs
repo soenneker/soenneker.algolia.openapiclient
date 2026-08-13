@@ -22,14 +22,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Date { get; set; }
 #endif
-        /// <summary>The rate property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate? Rate { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate Rate { get; set; }
-#endif
+        /// <summary>&quot;Conversion rate: calculated as the number of tracked searches with at least one conversion event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.&quot;</summary>
+        public double? Rate { get; set; }
         /// <summary>Number of tracked searches. Tracked searches are search requests where the `clickAnalytics` parameter is true.</summary>
         public int? TrackedSearchCount { get; set; }
         /// <summary>
@@ -52,7 +46,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "conversionCount", n => { ConversionCount = n.GetIntValue(); } },
                 { "date", n => { Date = n.GetStringValue(); } },
-                { "rate", n => { Rate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate>(global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate.CreateFromDiscriminatorValue); } },
+                { "rate", n => { Rate = n.GetDoubleValue(); } },
                 { "trackedSearchCount", n => { TrackedSearchCount = n.GetIntValue(); } },
             };
         }
@@ -65,7 +59,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("conversionCount", ConversionCount);
             writer.WriteStringValue("date", Date);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate>("rate", Rate);
+            writer.WriteDoubleValue("rate", Rate);
             writer.WriteIntValue("trackedSearchCount", TrackedSearchCount);
         }
     }

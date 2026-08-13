@@ -8,28 +8,27 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Facets used for generating query suggestions from facet values.For example, if you set `generate: [\&quot;color\&quot;, \&quot;brand\&quot;]`, combinations from the facet values are added as query suggestions,such as \&quot;blue adidas\&quot;, \&quot;red adidas\&quot;, \&quot;blue nike\&quot;, \&quot;red nike\&quot;, etc.You can include nested lists.&quot;
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GenerateMember2"/>, List&lt;global::Soenneker.Algolia.OpenApiClient.Models.GenerateMember1&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Generate : IAdditionalDataHolder, IParsable
+    public partial class Generate : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Algolia.OpenApiClient.Models.GenerateMember1&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Value { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GenerateMember1>? GenerateMember1 { get; set; }
 #nullable restore
 #else
-        public UntypedNode Value { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GenerateMember1> GenerateMember1 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Generate"/> and sets the default values.
-        /// </summary>
-        public Generate()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GenerateMember2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.GenerateMember2? GenerateMember2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.GenerateMember2 GenerateMember2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +37,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.Generate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.Generate();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Algolia.OpenApiClient.Models.Generate();
+            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GenerateMember1>(global::Soenneker.Algolia.OpenApiClient.Models.GenerateMember1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.GenerateMember1> generateMember1Value)
+            {
+                result.GenerateMember1 = generateMember1Value;
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,10 +51,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GenerateMember2 != null)
             {
-                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-            };
+                return GenerateMember2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -58,8 +64,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(GenerateMember2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.GenerateMember2>(null, GenerateMember2);
+            }
+            else if(GenerateMember1 != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GenerateMember1>(null, GenerateMember1);
+            }
         }
     }
 }

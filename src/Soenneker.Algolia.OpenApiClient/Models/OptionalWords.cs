@@ -8,27 +8,11 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsArrayWrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsBranch1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsMember1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsMember1"/>, <see cref="string"/>, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OptionalWords : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsArrayWrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsArrayWrapper? OptionalWordsArrayWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsArrayWrapper OptionalWordsArrayWrapper { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsBranch1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsBranch1? OptionalWordsBranch1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsBranch1 OptionalWordsBranch1 { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,6 +20,22 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsMember1 OptionalWordsMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OptionalWordsString { get; set; }
+#nullable restore
+#else
+        public string OptionalWordsString { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? String { get; set; }
+#nullable restore
+#else
+        public List<string> String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,13 +47,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.OptionalWords();
-            if("OptionalWordsArrayWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetStringValue() is string optionalWordsStringValue)
             {
-                result.OptionalWordsArrayWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsArrayWrapper();
+                result.OptionalWordsString = optionalWordsStringValue;
             }
-            else if("OptionalWordsBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
             {
-                result.OptionalWordsBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsBranch1();
+                result.String = stringValue;
             }
             return result;
         }
@@ -63,15 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(OptionalWordsArrayWrapper != null)
-            {
-                return OptionalWordsArrayWrapper.GetFieldDeserializers();
-            }
-            else if(OptionalWordsBranch1 != null)
-            {
-                return OptionalWordsBranch1.GetFieldDeserializers();
-            }
-            else if(OptionalWordsMember1 != null)
+            if(OptionalWordsMember1 != null)
             {
                 return OptionalWordsMember1.GetFieldDeserializers();
             }
@@ -84,17 +76,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(OptionalWordsArrayWrapper != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsArrayWrapper>(null, OptionalWordsArrayWrapper);
-            }
-            else if(OptionalWordsBranch1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsBranch1>(null, OptionalWordsBranch1);
-            }
-            else if(OptionalWordsMember1 != null)
+            if(OptionalWordsMember1 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.OptionalWordsMember1>(null, OptionalWordsMember1);
+            }
+            else if(OptionalWordsString != null)
+            {
+                writer.WriteStringValue(null, OptionalWordsString);
+            }
+            else if(String != null)
+            {
+                writer.WriteCollectionOfPrimitiveValues<string>(null, String);
             }
         }
     }

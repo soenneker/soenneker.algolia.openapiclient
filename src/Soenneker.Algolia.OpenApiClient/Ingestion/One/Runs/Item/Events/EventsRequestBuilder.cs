@@ -153,11 +153,11 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs.Item.Events
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]
-            public string[]? Status { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.EventStatus[]? Status { get; set; }
 #nullable restore
 #else
             [QueryParameter("status")]
-            public string[] Status { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.EventStatus[] Status { get; set; }
 #endif
             /// <summary>Event type for filtering the list of task runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

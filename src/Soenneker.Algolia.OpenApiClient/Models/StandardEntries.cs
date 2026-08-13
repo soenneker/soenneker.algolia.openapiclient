@@ -13,7 +13,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StandardEntries : IParsable
     {
-        /// <summary>The compounds property</summary>
+        /// <summary>Key-value pair of a language ISO code and a boolean value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry? Compounds { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry Compounds { get; set; }
 #endif
-        /// <summary>The plurals property</summary>
+        /// <summary>Key-value pair of a language ISO code and a boolean value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry? Plurals { get; set; }
@@ -29,7 +29,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry Plurals { get; set; }
 #endif
-        /// <summary>The stopwords property</summary>
+        /// <summary>Key-value pair of a language ISO code and a boolean value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry? Stopwords { get; set; }

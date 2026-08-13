@@ -8,27 +8,11 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsArrayWrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsBranch1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsMember1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsMember1"/>, <see cref="string"/>, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecommendOptionalWords : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsArrayWrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsArrayWrapper? RecommendOptionalWordsArrayWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsArrayWrapper RecommendOptionalWordsArrayWrapper { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsBranch1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsBranch1? RecommendOptionalWordsBranch1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsBranch1 RecommendOptionalWordsBranch1 { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,6 +20,22 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsMember1 RecommendOptionalWordsMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RecommendOptionalWordsString { get; set; }
+#nullable restore
+#else
+        public string RecommendOptionalWordsString { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? String { get; set; }
+#nullable restore
+#else
+        public List<string> String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,13 +47,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWords();
-            if("RecommendOptionalWordsArrayWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetStringValue() is string recommendOptionalWordsStringValue)
             {
-                result.RecommendOptionalWordsArrayWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsArrayWrapper();
+                result.RecommendOptionalWordsString = recommendOptionalWordsStringValue;
             }
-            else if("RecommendOptionalWordsBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
             {
-                result.RecommendOptionalWordsBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsBranch1();
+                result.String = stringValue;
             }
             return result;
         }
@@ -63,15 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RecommendOptionalWordsArrayWrapper != null)
-            {
-                return RecommendOptionalWordsArrayWrapper.GetFieldDeserializers();
-            }
-            else if(RecommendOptionalWordsBranch1 != null)
-            {
-                return RecommendOptionalWordsBranch1.GetFieldDeserializers();
-            }
-            else if(RecommendOptionalWordsMember1 != null)
+            if(RecommendOptionalWordsMember1 != null)
             {
                 return RecommendOptionalWordsMember1.GetFieldDeserializers();
             }
@@ -84,17 +76,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(RecommendOptionalWordsArrayWrapper != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsArrayWrapper>(null, RecommendOptionalWordsArrayWrapper);
-            }
-            else if(RecommendOptionalWordsBranch1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsBranch1>(null, RecommendOptionalWordsBranch1);
-            }
-            else if(RecommendOptionalWordsMember1 != null)
+            if(RecommendOptionalWordsMember1 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendOptionalWordsMember1>(null, RecommendOptionalWordsMember1);
+            }
+            else if(RecommendOptionalWordsString != null)
+            {
+                writer.WriteStringValue(null, RecommendOptionalWordsString);
+            }
+            else if(String != null)
+            {
+                writer.WriteCollectionOfPrimitiveValues<string>(null, String);
             }
         }
     }

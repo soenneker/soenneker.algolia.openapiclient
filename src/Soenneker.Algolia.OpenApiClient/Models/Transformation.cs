@@ -60,13 +60,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The owner property</summary>
+        /// <summary>Owner of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Owner? Owner { get; set; }
+        public string? Owner { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Owner Owner { get; set; }
+        public string Owner { get; set; }
 #endif
         /// <summary>Universally unique identifier (UUID) of a transformation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput>(global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Owner>(global::Soenneker.Algolia.OpenApiClient.Models.Owner.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetStringValue(); } },
                 { "transformationID", n => { TransformationID = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationType>(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetStringValue(); } },
@@ -129,7 +129,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput>("input", Input);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Owner>("owner", Owner);
+            writer.WriteStringValue("owner", Owner);
             writer.WriteStringValue("transformationID", TransformationID);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationType>("type", Type);
             writer.WriteStringValue("updatedAt", UpdatedAt);

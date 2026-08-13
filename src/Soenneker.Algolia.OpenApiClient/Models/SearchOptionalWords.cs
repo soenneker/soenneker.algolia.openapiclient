@@ -8,27 +8,11 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsArrayWrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsBranch1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsMember1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsMember1"/>, <see cref="string"/>, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchOptionalWords : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsArrayWrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsArrayWrapper? SearchOptionalWordsArrayWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsArrayWrapper SearchOptionalWordsArrayWrapper { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsBranch1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsBranch1? SearchOptionalWordsBranch1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsBranch1 SearchOptionalWordsBranch1 { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,6 +20,22 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsMember1 SearchOptionalWordsMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SearchOptionalWordsString { get; set; }
+#nullable restore
+#else
+        public string SearchOptionalWordsString { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? String { get; set; }
+#nullable restore
+#else
+        public List<string> String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,13 +47,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords();
-            if("SearchOptionalWordsArrayWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetStringValue() is string searchOptionalWordsStringValue)
             {
-                result.SearchOptionalWordsArrayWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsArrayWrapper();
+                result.SearchOptionalWordsString = searchOptionalWordsStringValue;
             }
-            else if("SearchOptionalWordsBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
             {
-                result.SearchOptionalWordsBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsBranch1();
+                result.String = stringValue;
             }
             return result;
         }
@@ -63,15 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(SearchOptionalWordsArrayWrapper != null)
-            {
-                return SearchOptionalWordsArrayWrapper.GetFieldDeserializers();
-            }
-            else if(SearchOptionalWordsBranch1 != null)
-            {
-                return SearchOptionalWordsBranch1.GetFieldDeserializers();
-            }
-            else if(SearchOptionalWordsMember1 != null)
+            if(SearchOptionalWordsMember1 != null)
             {
                 return SearchOptionalWordsMember1.GetFieldDeserializers();
             }
@@ -84,17 +76,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(SearchOptionalWordsArrayWrapper != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsArrayWrapper>(null, SearchOptionalWordsArrayWrapper);
-            }
-            else if(SearchOptionalWordsBranch1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsBranch1>(null, SearchOptionalWordsBranch1);
-            }
-            else if(SearchOptionalWordsMember1 != null)
+            if(SearchOptionalWordsMember1 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsMember1>(null, SearchOptionalWordsMember1);
+            }
+            else if(SearchOptionalWordsString != null)
+            {
+                writer.WriteStringValue(null, SearchOptionalWordsString);
+            }
+            else if(String != null)
+            {
+                writer.WriteCollectionOfPrimitiveValues<string>(null, String);
             }
         }
     }

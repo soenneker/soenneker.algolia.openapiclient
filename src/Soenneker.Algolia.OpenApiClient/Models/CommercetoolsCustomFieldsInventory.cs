@@ -7,28 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventoryMember1"/>, List&lt;string&gt;
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CommercetoolsCustomFieldsInventory : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class CommercetoolsCustomFieldsInventory : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Inventory custom fields.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventoryMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Value { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventoryMember1? CommercetoolsCustomFieldsInventoryMember1 { get; set; }
 #nullable restore
 #else
-        public List<string> Value { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventoryMember1 CommercetoolsCustomFieldsInventoryMember1 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventory"/> and sets the default values.
-        /// </summary>
-        public CommercetoolsCustomFieldsInventory()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? String { get; set; }
+#nullable restore
+#else
+        public List<string> String { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +37,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventory();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventory();
+            if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+            {
+                result.String = stringValue;
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +51,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CommercetoolsCustomFieldsInventoryMember1 != null)
             {
-                { "value", n => { Value = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-            };
+                return CommercetoolsCustomFieldsInventoryMember1.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,8 +64,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CommercetoolsCustomFieldsInventoryMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventoryMember1>(null, CommercetoolsCustomFieldsInventoryMember1);
+            }
+            else if(String != null)
+            {
+                writer.WriteCollectionOfPrimitiveValues<string>(null, String);
+            }
         }
     }
 }

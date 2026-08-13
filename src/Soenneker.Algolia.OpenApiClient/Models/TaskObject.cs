@@ -82,13 +82,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.Notifications Notifications { get; set; }
 #endif
-        /// <summary>The owner property</summary>
+        /// <summary>Owner of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Owner? Owner { get; set; }
+        public string? Owner { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Owner Owner { get; set; }
+        public string Owner { get; set; }
 #endif
         /// <summary>Set of rules for a task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -160,7 +160,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "lastRun", n => { LastRun = n.GetStringValue(); } },
                 { "nextRun", n => { NextRun = n.GetStringValue(); } },
                 { "notifications", n => { Notifications = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Notifications>(global::Soenneker.Algolia.OpenApiClient.Models.Notifications.CreateFromDiscriminatorValue); } },
-                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Owner>(global::Soenneker.Algolia.OpenApiClient.Models.Owner.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetStringValue(); } },
                 { "policies", n => { Policies = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Policies>(global::Soenneker.Algolia.OpenApiClient.Models.Policies.CreateFromDiscriminatorValue); } },
                 { "sourceID", n => { SourceID = n.GetStringValue(); } },
                 { "subscriptionAction", n => { SubscriptionAction = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ActionType>(); } },
@@ -186,7 +186,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("lastRun", LastRun);
             writer.WriteStringValue("nextRun", NextRun);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Notifications>("notifications", Notifications);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Owner>("owner", Owner);
+            writer.WriteStringValue("owner", Owner);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Policies>("policies", Policies);
             writer.WriteStringValue("sourceID", SourceID);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ActionType>("subscriptionAction", SubscriptionAction);

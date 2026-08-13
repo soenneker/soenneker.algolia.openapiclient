@@ -7,28 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsResponseValuesMember1"/>, List&lt;global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues&gt;
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetTopFiltersNoResultsResponseValues : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class GetTopFiltersNoResultsResponseValues : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Filters for searches without any results.If null, the search term specified with the `search` parameter isn&apos;t a search without results,or the `search` parameter is absent from the request.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsResponseValuesMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues>? Value { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsResponseValuesMember1? GetTopFiltersNoResultsResponseValuesMember1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues> Value { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsResponseValuesMember1 GetTopFiltersNoResultsResponseValuesMember1 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsResponseValues"/> and sets the default values.
-        /// </summary>
-        public GetTopFiltersNoResultsResponseValues()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues>? GetTopFiltersNoResultsValues { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues> GetTopFiltersNoResultsValues { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +37,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsResponseValues CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsResponseValues();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsResponseValues();
+            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues>(global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues> getTopFiltersNoResultsValuesValue)
+            {
+                result.GetTopFiltersNoResultsValues = getTopFiltersNoResultsValuesValue;
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +51,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GetTopFiltersNoResultsResponseValuesMember1 != null)
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues>(global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues.CreateFromDiscriminatorValue)?.AsList(); } },
-            };
+                return GetTopFiltersNoResultsResponseValuesMember1.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,8 +64,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues>("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(GetTopFiltersNoResultsResponseValuesMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsResponseValuesMember1>(null, GetTopFiltersNoResultsResponseValuesMember1);
+            }
+            else if(GetTopFiltersNoResultsValues != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues>(null, GetTopFiltersNoResultsValues);
+            }
         }
     }
 }

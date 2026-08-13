@@ -12,14 +12,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     public partial class TopSearchesResponseWithAnalyticsSearchesItem : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The averageClickPosition property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AverageClickPosition? AverageClickPosition { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AverageClickPosition AverageClickPosition { get; set; }
-#endif
+        /// <summary>Average position of a clicked search result in the list of search results.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.</summary>
+        public double? AverageClickPosition { get; set; }
         /// <summary>Number of clicks associated with this search.</summary>
         public int? ClickCount { get; set; }
         /// <summary>List of positions in the search results and clicks associated with this search.</summary>
@@ -30,24 +24,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<global::Soenneker.Algolia.OpenApiClient.Models.ClickPositionsItem> ClickPositions { get; set; }
 #endif
-        /// <summary>The clickThroughRate property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ClickThroughRate? ClickThroughRate { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ClickThroughRate ClickThroughRate { get; set; }
-#endif
+        /// <summary>&quot;Click-through rate: calculated as the number of tracked searches with at least one click event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.&quot;</summary>
+        public double? ClickThroughRate { get; set; }
         /// <summary>Number of conversions from this search.</summary>
         public int? ConversionCount { get; set; }
-        /// <summary>The conversionRate property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate? ConversionRate { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate ConversionRate { get; set; }
-#endif
+        /// <summary>&quot;Conversion rate: calculated as the number of tracked searches with at least one conversion event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.&quot;</summary>
+        public double? ConversionRate { get; set; }
         /// <summary>Number of searches.</summary>
         public int? Count { get; set; }
         /// <summary>Number of results (hits).</summary>
@@ -80,12 +62,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "averageClickPosition", n => { AverageClickPosition = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AverageClickPosition>(global::Soenneker.Algolia.OpenApiClient.Models.AverageClickPosition.CreateFromDiscriminatorValue); } },
+                { "averageClickPosition", n => { AverageClickPosition = n.GetDoubleValue(); } },
                 { "clickCount", n => { ClickCount = n.GetIntValue(); } },
                 { "clickPositions", n => { ClickPositions = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ClickPositionsItem>(global::Soenneker.Algolia.OpenApiClient.Models.ClickPositionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "clickThroughRate", n => { ClickThroughRate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ClickThroughRate>(global::Soenneker.Algolia.OpenApiClient.Models.ClickThroughRate.CreateFromDiscriminatorValue); } },
+                { "clickThroughRate", n => { ClickThroughRate = n.GetDoubleValue(); } },
                 { "conversionCount", n => { ConversionCount = n.GetIntValue(); } },
-                { "conversionRate", n => { ConversionRate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate>(global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate.CreateFromDiscriminatorValue); } },
+                { "conversionRate", n => { ConversionRate = n.GetDoubleValue(); } },
                 { "count", n => { Count = n.GetIntValue(); } },
                 { "nbHits", n => { NbHits = n.GetIntValue(); } },
                 { "search", n => { Search = n.GetStringValue(); } },
@@ -99,12 +81,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AverageClickPosition>("averageClickPosition", AverageClickPosition);
+            writer.WriteDoubleValue("averageClickPosition", AverageClickPosition);
             writer.WriteIntValue("clickCount", ClickCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ClickPositionsItem>("clickPositions", ClickPositions);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ClickThroughRate>("clickThroughRate", ClickThroughRate);
+            writer.WriteDoubleValue("clickThroughRate", ClickThroughRate);
             writer.WriteIntValue("conversionCount", ConversionCount);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConversionRate>("conversionRate", ConversionRate);
+            writer.WriteDoubleValue("conversionRate", ConversionRate);
             writer.WriteIntValue("count", Count);
             writer.WriteIntValue("nbHits", NbHits);
             writer.WriteStringValue("search", Search);
