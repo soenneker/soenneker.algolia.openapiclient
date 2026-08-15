@@ -24,11 +24,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<global::Soenneker.Algolia.OpenApiClient.Models.ClickPositionsItem> ClickPositions { get; set; }
 #endif
-        /// <summary>&quot;Click-through rate: calculated as the number of tracked searches with at least one click event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.&quot;</summary>
+        /// <summary>Click-through rate: calculated as the number of tracked searches with at least one click event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.</summary>
         public double? ClickThroughRate { get; set; }
         /// <summary>Number of conversions from this search.</summary>
         public int? ConversionCount { get; set; }
-        /// <summary>&quot;Conversion rate: calculated as the number of tracked searches with at least one conversion event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.&quot;</summary>
+        /// <summary>Conversion rate: calculated as the number of tracked searches with at least one conversion event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.</summary>
         public double? ConversionRate { get; set; }
         /// <summary>Number of searches.</summary>
         public int? Count { get; set; }

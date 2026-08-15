@@ -34,7 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.DeleteObjects
         {
         }
         /// <summary>
-        /// &quot;Helper: Deletes every records for the given objectIDs. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objectIDs each.&quot;
+        /// Helper: Deletes every records for the given objectIDs. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objectIDs each.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Algolia.OpenApiClient.Models.BatchResponse&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.DeleteObjects
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;Helper: Deletes every records for the given objectIDs. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objectIDs each.&quot;
+        /// Helper: Deletes every records for the given objectIDs. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objectIDs each.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.DeleteObjects
             return new global::Soenneker.Algolia.OpenApiClient.Search.DeleteObjects.DeleteObjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Helper: Deletes every records for the given objectIDs. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objectIDs each.&quot;
+        /// Helper: Deletes every records for the given objectIDs. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objectIDs each.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeleteObjectsRequestBuilderPostQueryParameters 

@@ -23,7 +23,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsTags2 AnalyticsTags { get; set; }
 #endif
-        /// <summary>&quot;Algolia indices with popular searches to use as query suggestions.Records of these indices must have these attributes:- `query`: search query which will be added as a suggestion- `count`: measure of popularity of that search queryFor example, you can export popular searches from an external analytics provider, such as Google Analytics or Adobe Analytics,and feed this data into an Algolia index.You can use this index to generate query suggestions until your Algolia Analytics has collected enough data.&quot;</summary>
+        /// <summary>Algolia indices with popular searches to use as query suggestions.Records of these indices must have these attributes:- `query`: search query which will be added as a suggestion- `count`: measure of popularity of that search queryFor example, you can export popular searches from an external analytics provider, such as Google Analytics or Adobe Analytics,and feed this data into an Algolia index.You can use this index to generate query suggestions until your Algolia Analytics has collected enough data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.External? External { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.Facets2 Facets { get; set; }
 #endif
-        /// <summary>&quot;Facets used for generating query suggestions from facet values.For example, if you set `generate: [\&quot;color\&quot;, \&quot;brand\&quot;]`, combinations from the facet values are added as query suggestions,such as \&quot;blue adidas\&quot;, \&quot;red adidas\&quot;, \&quot;blue nike\&quot;, \&quot;red nike\&quot;, etc.You can include nested lists.&quot;</summary>
+        /// <summary>Facets used for generating query suggestions from facet values.For example, if you set `generate: [&quot;color&quot;, &quot;brand&quot;]`, combinations from the facet values are added as query suggestions,such as &quot;blue adidas&quot;, &quot;red adidas&quot;, &quot;blue nike&quot;, &quot;red nike&quot;, etc.You can include nested lists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.Generate? Generate { get; set; }

@@ -36,18 +36,17 @@ namespace Soenneker.Algolia.OpenApiClient.Insights.One.Usertokens.Item
         /// <summary>
         /// Deletes all events related to the specified user token from events metrics and analytics.The deletion is asynchronous, and processed within 48 hours.To delete a personalization user profile, see `Delete a user profile` in the Personalization API.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse">When receiving a 422 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -56,7 +55,7 @@ namespace Soenneker.Algolia.OpenApiClient.Insights.One.Usertokens.Item
                 { "422", global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes all events related to the specified user token from events metrics and analytics.The deletion is asynchronous, and processed within 48 hours.To delete a personalization user profile, see `Delete a user profile` in the Personalization API.

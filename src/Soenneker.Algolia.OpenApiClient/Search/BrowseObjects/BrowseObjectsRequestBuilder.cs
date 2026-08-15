@@ -36,17 +36,16 @@ namespace Soenneker.Algolia.OpenApiClient.Search.BrowseObjects
         /// <summary>
         /// You can use the browse method to get records from an index—for example, to export your index as a backup. To export all records, use an empty query.Use browse instead of search when exporting records from your index, when ranking, or analytics, isn&apos;t important. The Analytics API doesn&apos;t collect data when using browse.Don&apos;t use this method for building a search UI. Use search instead.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.BrowseObjects.BrowseObjectsRequestBuilder.BrowseObjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.BrowseObjects.BrowseObjectsRequestBuilder.BrowseObjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.BrowseObjects.BrowseObjectsRequestBuilder.BrowseObjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.BrowseObjects.BrowseObjectsRequestBuilder.BrowseObjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,7 +53,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.BrowseObjects
             {
                 { "400", global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// You can use the browse method to get records from an index—for example, to export your index as a backup. To export all records, use an empty query.Use browse instead of search when exporting records from your index, when ranking, or analytics, isn&apos;t important. The Analytics API doesn&apos;t collect data when using browse.Don&apos;t use this method for building a search UI. Use search instead.

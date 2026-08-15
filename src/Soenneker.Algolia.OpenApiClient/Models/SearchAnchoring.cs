@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
-    /// <summary>&quot;Which part of the search query the pattern should match:- `startsWith`. The pattern must match the beginning of the query.- `endsWith`. The pattern must match the end of the query.- `is`. The pattern must match the query exactly.- `contains`. The pattern must match anywhere in the query.Empty queries are only allowed as patterns with `anchoring: is`.&quot;</summary>
+    /// <summary>Which part of the search query the pattern should match:- `startsWith`. The pattern must match the beginning of the query.- `endsWith`. The pattern must match the end of the query.- `is`. The pattern must match the query exactly.- `contains`. The pattern must match anywhere in the query.Empty queries are only allowed as patterns with `anchoring: is`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum SearchAnchoring
     {

@@ -14,19 +14,19 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     {
         /// <summary>Number of add-to-cart events from this search.</summary>
         public int? AddToCartCount { get; set; }
-        /// <summary>&quot;Add-to-cart rate: calculated as the number of tracked searches with at least one add-to-cart event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.&quot;</summary>
+        /// <summary>Add-to-cart rate: calculated as the number of tracked searches with at least one add-to-cart event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.</summary>
         public double? AddToCartRate { get; set; }
         /// <summary>Number of clicks associated with this search.</summary>
         public int? ClickCount { get; set; }
-        /// <summary>&quot;Click-through rate: calculated as the number of tracked searches with at least one click event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.&quot;</summary>
+        /// <summary>Click-through rate: calculated as the number of tracked searches with at least one click event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.</summary>
         public double? ClickThroughRate { get; set; }
         /// <summary>Number of conversions from this search.</summary>
         public int? ConversionCount { get; set; }
-        /// <summary>&quot;Conversion rate: calculated as the number of tracked searches with at least one conversion event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.&quot;</summary>
+        /// <summary>Conversion rate: calculated as the number of tracked searches with at least one conversion event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.</summary>
         public double? ConversionRate { get; set; }
         /// <summary>Number of occurrences.</summary>
         public int? Count { get; set; }
-        /// <summary>&quot;Revenue associated with this search: broken down by currency.&quot;</summary>
+        /// <summary>Revenue associated with this search: broken down by currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.TopHitsResponseWithRevenueAnalyticsHitsItemCurrencies? Currencies { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Number of purchase events from this search.</summary>
         public int? PurchaseCount { get; set; }
-        /// <summary>&quot;Purchase rate: calculated as the number of tracked searches with at least one purchase event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.&quot;</summary>
+        /// <summary>Purchase rate: calculated as the number of tracked searches with at least one purchase event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.</summary>
         public double? PurchaseRate { get; set; }
         /// <summary>Number of tracked searches. Tracked searches are search requests where the `clickAnalytics` parameter is true.</summary>
         public int? TrackedHitCount { get; set; }

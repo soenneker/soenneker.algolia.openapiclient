@@ -45,13 +45,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript();
-            if("RenderJavaScript_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("RenderJavaScriptBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RenderJavaScriptBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptBranch1();
             }
-            else if("RenderJavaScript_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RenderJavaScriptBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RenderJavaScriptBranch2 = new global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptBranch2();
             }

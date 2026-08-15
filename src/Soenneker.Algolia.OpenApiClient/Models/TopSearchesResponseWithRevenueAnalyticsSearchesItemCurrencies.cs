@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Revenue associated with this search: broken down by currency.&quot;
+    /// Revenue associated with this search: broken down by currency.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TopSearchesResponseWithRevenueAnalyticsSearchesItemCurrencies : IAdditionalDataHolder, IParsable

@@ -34,7 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.ChunkedBatch
         {
         }
         /// <summary>
-        /// &quot;Helper: Chunks the given `objects` list in subset of 1000 elements max in order to make it fit in `batch` requests.&quot;
+        /// Helper: Chunks the given `objects` list in subset of 1000 elements max in order to make it fit in `batch` requests.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Algolia.OpenApiClient.Models.BatchResponse&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.ChunkedBatch
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;Helper: Chunks the given `objects` list in subset of 1000 elements max in order to make it fit in `batch` requests.&quot;
+        /// Helper: Chunks the given `objects` list in subset of 1000 elements max in order to make it fit in `batch` requests.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.ChunkedBatch
             return new global::Soenneker.Algolia.OpenApiClient.Search.ChunkedBatch.ChunkedBatchRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Helper: Chunks the given `objects` list in subset of 1000 elements max in order to make it fit in `batch` requests.&quot;
+        /// Helper: Chunks the given `objects` list in subset of 1000 elements max in order to make it fit in `batch` requests.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChunkedBatchRequestBuilderGetQueryParameters 

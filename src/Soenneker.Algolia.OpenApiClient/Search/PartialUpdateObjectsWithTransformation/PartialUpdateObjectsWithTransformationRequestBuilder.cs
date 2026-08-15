@@ -34,7 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.PartialUpdateObjectsWithTransfo
         {
         }
         /// <summary>
-        /// &quot;Helper: Similar to the `partialUpdateObjects` method but requires a Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push) to be created first, in order to transform records before indexing them to Algolia. The `region` must have been passed to the client instantiation method.&quot;
+        /// Helper: Similar to the `partialUpdateObjects` method but requires a Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push) to be created first, in order to transform records before indexing them to Algolia. The `region` must have been passed to the client instantiation method.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponse&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.PartialUpdateObjectsWithTransfo
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;Helper: Similar to the `partialUpdateObjects` method but requires a Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push) to be created first, in order to transform records before indexing them to Algolia. The `region` must have been passed to the client instantiation method.&quot;
+        /// Helper: Similar to the `partialUpdateObjects` method but requires a Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push) to be created first, in order to transform records before indexing them to Algolia. The `region` must have been passed to the client instantiation method.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.PartialUpdateObjectsWithTransfo
             return new global::Soenneker.Algolia.OpenApiClient.Search.PartialUpdateObjectsWithTransformation.PartialUpdateObjectsWithTransformationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Helper: Similar to the `partialUpdateObjects` method but requires a Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push) to be created first, in order to transform records before indexing them to Algolia. The `region` must have been passed to the client instantiation method.&quot;
+        /// Helper: Similar to the `partialUpdateObjects` method but requires a Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push) to be created first, in order to transform records before indexing them to Algolia. The `region` must have been passed to the client instantiation method.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PartialUpdateObjectsWithTransformationRequestBuilderPostQueryParameters 

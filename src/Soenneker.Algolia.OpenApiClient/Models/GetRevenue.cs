@@ -12,7 +12,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     public partial class GetRevenue : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Revenue associated with this search: broken down by currency.&quot;</summary>
+        /// <summary>Revenue associated with this search: broken down by currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueCurrencies? Currencies { get; set; }

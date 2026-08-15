@@ -38,6 +38,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Maximum number of facet values to return when [searching for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).</summary>
         public int? MaxFacetHits { get; set; }
+        /// <summary>- `default`: perform a search query- `facet` [searches for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).</summary>
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeFacet? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +62,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "facetQuery", n => { FacetQuery = n.GetStringValue(); } },
                 { "indexName", n => { IndexName = n.GetStringValue(); } },
                 { "maxFacetHits", n => { MaxFacetHits = n.GetIntValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeFacet>(); } },
             };
         }
         /// <summary>
@@ -74,6 +77,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("facetQuery", FacetQuery);
             writer.WriteStringValue("indexName", IndexName);
             writer.WriteIntValue("maxFacetHits", MaxFacetHits);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeFacet>("type", Type);
         }
     }
 }

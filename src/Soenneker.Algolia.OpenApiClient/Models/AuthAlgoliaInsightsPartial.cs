@@ -13,7 +13,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthAlgoliaInsightsPartial : IParsable
     {
-        /// <summary>&quot;Algolia API key with the ACL: `search`.This field is `null` in the API response.&quot;</summary>
+        /// <summary>Algolia API key with the ACL: `search`.This field is `null` in the API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiKey { get; set; }

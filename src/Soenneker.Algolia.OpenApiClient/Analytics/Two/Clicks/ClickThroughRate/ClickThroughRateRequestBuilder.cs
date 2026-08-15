@@ -34,7 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Clicks.ClickThroughRate
         {
         }
         /// <summary>
-        /// &quot;Retrieves the click-through rate (CTR) for all your searches with at least one click event, including a daily breakdown.By default, the analyzed period includes the last eight days including the current day.**There&apos;s a difference between a 0 and null CTR when `clickAnalytics` is enabled:**- **Null** means there were no queries: since Algolia didn&apos;t receive any events, CTR is null.- **0** mean there _were_ queries but no [click events](https://www.algolia.com/doc/guides/sending-events/getting-started) were received.&quot;
+        /// Retrieves the click-through rate (CTR) for all your searches with at least one click event, including a daily breakdown.By default, the analyzed period includes the last eight days including the current day.**There&apos;s a difference between a 0 and null CTR when `clickAnalytics` is enabled:**- **Null** means there were no queries: since Algolia didn&apos;t receive any events, CTR is null.- **0** mean there _were_ queries but no [click events](https://www.algolia.com/doc/guides/sending-events/getting-started) were received.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetClickThroughRateResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Clicks.ClickThroughRate
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.GetClickThroughRateResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.GetClickThroughRateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieves the click-through rate (CTR) for all your searches with at least one click event, including a daily breakdown.By default, the analyzed period includes the last eight days including the current day.**There&apos;s a difference between a 0 and null CTR when `clickAnalytics` is enabled:**- **Null** means there were no queries: since Algolia didn&apos;t receive any events, CTR is null.- **0** mean there _were_ queries but no [click events](https://www.algolia.com/doc/guides/sending-events/getting-started) were received.&quot;
+        /// Retrieves the click-through rate (CTR) for all your searches with at least one click event, including a daily breakdown.By default, the analyzed period includes the last eight days including the current day.**There&apos;s a difference between a 0 and null CTR when `clickAnalytics` is enabled:**- **Null** means there were no queries: since Algolia didn&apos;t receive any events, CTR is null.- **0** mean there _were_ queries but no [click events](https://www.algolia.com/doc/guides/sending-events/getting-started) were received.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Clicks.ClickThroughRate
             return new global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Clicks.ClickThroughRate.ClickThroughRateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Retrieves the click-through rate (CTR) for all your searches with at least one click event, including a daily breakdown.By default, the analyzed period includes the last eight days including the current day.**There&apos;s a difference between a 0 and null CTR when `clickAnalytics` is enabled:**- **Null** means there were no queries: since Algolia didn&apos;t receive any events, CTR is null.- **0** mean there _were_ queries but no [click events](https://www.algolia.com/doc/guides/sending-events/getting-started) were received.&quot;
+        /// Retrieves the click-through rate (CTR) for all your searches with at least one click event, including a daily breakdown.By default, the analyzed period includes the last eight days including the current day.**There&apos;s a difference between a 0 and null CTR when `clickAnalytics` is enabled:**- **Null** means there were no queries: since Algolia didn&apos;t receive any events, CTR is null.- **0** mean there _were_ queries but no [click events](https://www.algolia.com/doc/guides/sending-events/getting-started) were received.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ClickThroughRateRequestBuilderGetQueryParameters 

@@ -24,7 +24,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Number of times this search was returned as a result without any click.</summary>
         public int? NoClickCount { get; set; }
-        /// <summary>&quot;No click rate: calculated as the number of tracked searches without clicks divided by the number of tracked searches.&quot;</summary>
+        /// <summary>No click rate: calculated as the number of tracked searches without clicks divided by the number of tracked searches.</summary>
         public double? Rate { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

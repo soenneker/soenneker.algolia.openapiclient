@@ -34,7 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Sources.Item.Discover
         {
         }
         /// <summary>
-        /// &quot;Triggers a stream-listing request for a source.Triggering stream-listing requests only works with sources with `type: docker` and `imageType: airbyte`.&quot;
+        /// Triggers a stream-listing request for a source.Triggering stream-listing requests only works with sources with `type: docker` and `imageType: airbyte`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.WatchResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Sources.Item.Discover
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.WatchResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.WatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Triggers a stream-listing request for a source.Triggering stream-listing requests only works with sources with `type: docker` and `imageType: airbyte`.&quot;
+        /// Triggers a stream-listing request for a source.Triggering stream-listing requests only works with sources with `type: docker` and `imageType: airbyte`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

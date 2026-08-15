@@ -12,7 +12,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     public partial class DestinationInput : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Attributes from your source to exclude from Algolia records.Not all your data attributes will be useful for searching.Keeping your Algolia records small increases indexing and search performance.- Exclude nested attributes with `.` notation. For example, `foo.bar` indexes the `foo` attribute and all its children **except** the `bar` attribute.- Exclude attributes from arrays with `[i]`, where `i` is the index of the array element.  For example, `foo.[0].bar` only excludes the `bar` attribute from the first element of the `foo` array, but indexes the complete `foo` attribute for all other elements.  Use `*` as wildcard: `foo.[*].bar` excludes `bar` from all elements of the `foo` array.&quot;</summary>
+        /// <summary>Attributes from your source to exclude from Algolia records.Not all your data attributes will be useful for searching.Keeping your Algolia records small increases indexing and search performance.- Exclude nested attributes with `.` notation. For example, `foo.bar` indexes the `foo` attribute and all its children **except** the `bar` attribute.- Exclude attributes from arrays with `[i]`, where `i` is the index of the array element.  For example, `foo.[0].bar` only excludes the `bar` attribute from the first element of the `foo` array, but indexes the complete `foo` attribute for all other elements.  Use `*` as wildcard: `foo.[*].bar` excludes `bar` from all elements of the `foo` array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AttributesToExclude { get; set; }

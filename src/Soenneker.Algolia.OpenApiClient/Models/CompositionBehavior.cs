@@ -37,7 +37,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.CompositionBehavior CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.CompositionBehavior();
             if("CompositionInjectionBehavior".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {

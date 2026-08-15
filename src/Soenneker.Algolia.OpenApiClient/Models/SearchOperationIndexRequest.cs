@@ -22,7 +22,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Operation to perform on the index.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.OperationType? Operation { get; set; }
-        /// <summary>&quot;**Only for copying.**If you specify a scope, only the selected scopes are copied. Records and the other scopes are left unchanged.If you omit the `scope` parameter, everything is copied: records, settings, synonyms, and rules.&quot;</summary>
+        /// <summary>**Only for copying.**If you specify a scope, only the selected scopes are copied. Records and the other scopes are left unchanged.If you omit the `scope` parameter, everything is copied: records, settings, synonyms, and rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Algolia.OpenApiClient.Models.ScopeType?>? Scope { get; set; }

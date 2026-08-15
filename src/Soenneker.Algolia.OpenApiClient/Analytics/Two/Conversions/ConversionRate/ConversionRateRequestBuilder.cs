@@ -34,7 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.ConversionRa
         {
         }
         /// <summary>
-        /// &quot;Retrieves the conversion rate (CR) for all your searches with at least one conversion event, including a daily breakdown.By default, the analyzed period includes the last eight days including the current day.**There&apos;s a difference between a 0 and null CR when `clickAnalytics` is enabled:**- **Null** means there were no queries: since Algolia didn&apos;t receive any events, CR is null.- **0** mean there _were_ queries but no [conversion events](https://www.algolia.com/doc/guides/sending-events/getting-started) were received.&quot;
+        /// Retrieves the conversion rate (CR) for all your searches with at least one conversion event, including a daily breakdown.By default, the analyzed period includes the last eight days including the current day.**There&apos;s a difference between a 0 and null CR when `clickAnalytics` is enabled:**- **Null** means there were no queries: since Algolia didn&apos;t receive any events, CR is null.- **0** mean there _were_ queries but no [conversion events](https://www.algolia.com/doc/guides/sending-events/getting-started) were received.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetConversionRateResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.ConversionRa
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.GetConversionRateResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.GetConversionRateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieves the conversion rate (CR) for all your searches with at least one conversion event, including a daily breakdown.By default, the analyzed period includes the last eight days including the current day.**There&apos;s a difference between a 0 and null CR when `clickAnalytics` is enabled:**- **Null** means there were no queries: since Algolia didn&apos;t receive any events, CR is null.- **0** mean there _were_ queries but no [conversion events](https://www.algolia.com/doc/guides/sending-events/getting-started) were received.&quot;
+        /// Retrieves the conversion rate (CR) for all your searches with at least one conversion event, including a daily breakdown.By default, the analyzed period includes the last eight days including the current day.**There&apos;s a difference between a 0 and null CR when `clickAnalytics` is enabled:**- **Null** means there were no queries: since Algolia didn&apos;t receive any events, CR is null.- **0** mean there _were_ queries but no [conversion events](https://www.algolia.com/doc/guides/sending-events/getting-started) were received.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.ConversionRa
             return new global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Conversions.ConversionRate.ConversionRateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Retrieves the conversion rate (CR) for all your searches with at least one conversion event, including a daily breakdown.By default, the analyzed period includes the last eight days including the current day.**There&apos;s a difference between a 0 and null CR when `clickAnalytics` is enabled:**- **Null** means there were no queries: since Algolia didn&apos;t receive any events, CR is null.- **0** mean there _were_ queries but no [conversion events](https://www.algolia.com/doc/guides/sending-events/getting-started) were received.&quot;
+        /// Retrieves the conversion rate (CR) for all your searches with at least one conversion event, including a daily breakdown.By default, the analyzed period includes the last eight days including the current day.**There&apos;s a difference between a 0 and null CR when `clickAnalytics` is enabled:**- **Null** means there were no queries: since Algolia didn&apos;t receive any events, CR is null.- **0** mean there _were_ queries but no [conversion events](https://www.algolia.com/doc/guides/sending-events/getting-started) were received.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConversionRateRequestBuilderGetQueryParameters 

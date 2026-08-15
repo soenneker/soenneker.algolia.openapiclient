@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Key-value pairs to replace matching paths with new values.It doesn&apos;t replace:- URLs in the `startUrls`, `sitemaps`, `pathsToMatch`, and other settings- Paths found in extracted textThe crawl continues from the _transformed_ URLs.For example, if you create a mapping for `{ \&quot;dev.example.com\&quot;: { &apos;/foo&apos;: &apos;/bar&apos; } }` and the crawler encounters `https://dev.example.com/foo/hello/`,it’s transformed to `https://dev.example.com/bar/hello/`.&gt; Compare with the `hostnameAliases` action.&quot;
+    /// Key-value pairs to replace matching paths with new values.It doesn&apos;t replace:- URLs in the `startUrls`, `sitemaps`, `pathsToMatch`, and other settings- Paths found in extracted textThe crawl continues from the _transformed_ URLs.For example, if you create a mapping for `{ &quot;dev.example.com&quot;: { &apos;/foo&apos;: &apos;/bar&apos; } }` and the crawler encounters `https://dev.example.com/foo/hello/`,it’s transformed to `https://dev.example.com/bar/hello/`.&gt; Compare with the `hostnameAliases` action.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Action2PathAliases : IAdditionalDataHolder, IParsable

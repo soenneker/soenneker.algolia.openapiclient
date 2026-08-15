@@ -24,7 +24,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Number of searches without any results.</summary>
         public int? NoResultCount { get; set; }
-        /// <summary>&quot;No results rate: calculated as the number of searches with zero results divided by the total number of searches.&quot;</summary>
+        /// <summary>No results rate: calculated as the number of searches with zero results divided by the total number of searches.</summary>
         public double? Rate { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

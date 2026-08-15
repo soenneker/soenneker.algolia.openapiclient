@@ -8,29 +8,29 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Default response schema
+    /// Cluster pending mapping state: migrating, creating, deleting.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InsightsSetClientApiKey200Response : IAdditionalDataHolder, IParsable
+    public partial class HasPendingMappingsResponseClusters : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InsightsSetClientApiKey200Response"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.HasPendingMappingsResponseClusters"/> and sets the default values.
         /// </summary>
-        public InsightsSetClientApiKey200Response()
+        public HasPendingMappingsResponseClusters()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InsightsSetClientApiKey200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.HasPendingMappingsResponseClusters"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Algolia.OpenApiClient.Models.InsightsSetClientApiKey200Response CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Algolia.OpenApiClient.Models.HasPendingMappingsResponseClusters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.InsightsSetClientApiKey200Response();
+            return new global::Soenneker.Algolia.OpenApiClient.Models.HasPendingMappingsResponseClusters();
         }
         /// <summary>
         /// The deserialization information for the current model

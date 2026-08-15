@@ -34,7 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.SaveObjects
         {
         }
         /// <summary>
-        /// &quot;Helper: Saves the given array of objects in the given index. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objects each.&quot;
+        /// Helper: Saves the given array of objects in the given index. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objects each.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Algolia.OpenApiClient.Models.BatchResponse&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.SaveObjects
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;Helper: Saves the given array of objects in the given index. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objects each.&quot;
+        /// Helper: Saves the given array of objects in the given index. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objects each.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.SaveObjects
             return new global::Soenneker.Algolia.OpenApiClient.Search.SaveObjects.SaveObjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Helper: Saves the given array of objects in the given index. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objects each.&quot;
+        /// Helper: Saves the given array of objects in the given index. The `chunkedBatch` helper splits this into `batch` requests with at most 1,000 objects each.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SaveObjectsRequestBuilderGetQueryParameters 

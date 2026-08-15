@@ -12,9 +12,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     public partial class Condition : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;Which part of the search query the pattern should match:- `startsWith`. The pattern must match the beginning of the query.- `endsWith`. The pattern must match the end of the query.- `is`. The pattern must match the query exactly.- `contains`. The pattern must match anywhere in the query.Empty queries are only allowed as patterns with `anchoring: is`.&quot;</summary>
+        /// <summary>Which part of the search query the pattern should match:- `startsWith`. The pattern must match the beginning of the query.- `endsWith`. The pattern must match the end of the query.- `is`. The pattern must match the query exactly.- `contains`. The pattern must match anywhere in the query.Empty queries are only allowed as patterns with `anchoring: is`.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.Anchoring? Anchoring { get; set; }
-        /// <summary>&quot;An additional restriction that only triggers the rule, when the search has the same value as `ruleContexts` parameter.For example, if `context: mobile`, the rule is only triggered when the search request has a matching `ruleContexts: mobile`.A rule context must only contain alphanumeric characters.&quot;</summary>
+        /// <summary>An additional restriction that only triggers the rule, when the search has the same value as `ruleContexts` parameter.For example, if `context: mobile`, the rule is only triggered when the search request has a matching `ruleContexts: mobile`.A rule context must only contain alphanumeric characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Context { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Filters { get; set; }
 #endif
-        /// <summary>&quot;Query pattern that triggers the rule.You can use either a literal string, or a special pattern `{facet:ATTRIBUTE}`, where `ATTRIBUTE` is a facet name.The rule is triggered if the query matches the literal string or a value of the specified facet.For example, with `pattern: {facet:genre}`, the rule is triggered when users search for a genre, such as \&quot;comedy\&quot;.&quot;</summary>
+        /// <summary>Query pattern that triggers the rule.You can use either a literal string, or a special pattern `{facet:ATTRIBUTE}`, where `ATTRIBUTE` is a facet name.The rule is triggered if the query matches the literal string or a value of the specified facet.For example, with `pattern: {facet:genre}`, the rule is triggered when users search for a genre, such as &quot;comedy&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Pattern { get; set; }

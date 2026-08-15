@@ -13,7 +13,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Consequence2 : IParsable
     {
-        /// <summary>&quot;Determines whether promoted records must also match active filters for the consequence to apply.This ensures user-applied filters take priority and irrelevant matches aren&apos;t shown.For example, if you promote a record with `color: red` but the user filters for `color: blue`,the \&quot;red\&quot; record won&apos;t be shown.&gt; In the Algolia dashboard, when you use the **Pin an item** consequence, `filterPromotes` appears as the checkbox: **Pinned items must match active filters to be displayed.** For examples, see [Promote results with rules](https://www.algolia.com/doc/guides/managing-results/rules/merchandising-and-promoting/how-to/promote-hits/#promote-results-matching-active-filters).&quot;</summary>
+        /// <summary>Determines whether promoted records must also match active filters for the consequence to apply.This ensures user-applied filters take priority and irrelevant matches aren&apos;t shown.For example, if you promote a record with `color: red` but the user filters for `color: blue`,the &quot;red&quot; record won&apos;t be shown.&gt; In the Algolia dashboard, when you use the **Pin an item** consequence, `filterPromotes` appears as the checkbox: **Pinned items must match active filters to be displayed.** For examples, see [Promote results with rules](https://www.algolia.com/doc/guides/managing-results/rules/merchandising-and-promoting/how-to/promote-hits/#promote-results-matching-active-filters).</summary>
         public bool? FilterPromotes { get; set; }
         /// <summary>Records you want to hide from the search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,7 +39,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<global::Soenneker.Algolia.OpenApiClient.Models.Promote> Promote { get; set; }
 #endif
-        /// <summary>&quot;Redirect to a virtual replica index.This consequence is only valid for rules with `scope: redirect`.&quot;</summary>
+        /// <summary>Redirect to a virtual replica index.This consequence is only valid for rules with `scope: redirect`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.Consequence2Redirect? Redirect { get; set; }

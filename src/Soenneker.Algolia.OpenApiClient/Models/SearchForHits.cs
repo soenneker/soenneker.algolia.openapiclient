@@ -28,6 +28,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string IndexName { get; set; }
 #endif
+        /// <summary>- `default`: perform a search query- `facet` [searches for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).</summary>
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeDefault? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +50,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "extensions", n => { Extensions = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchExtensions>(global::Soenneker.Algolia.OpenApiClient.Models.SearchExtensions.CreateFromDiscriminatorValue); } },
                 { "indexName", n => { IndexName = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeDefault>(); } },
             };
         }
         /// <summary>
@@ -60,6 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchExtensions>("extensions", Extensions);
             writer.WriteStringValue("indexName", IndexName);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeDefault>("type", Type);
         }
     }
 }

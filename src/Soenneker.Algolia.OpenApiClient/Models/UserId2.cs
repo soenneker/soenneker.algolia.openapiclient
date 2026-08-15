@@ -8,29 +8,49 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Default response schema
+    /// Unique user ID.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CompositionSetClientApiKey200Response : IAdditionalDataHolder, IParsable
+    public partial class UserId2 : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Cluster to which the user is assigned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClusterName { get; set; }
+#nullable restore
+#else
+        public string ClusterName { get; set; }
+#endif
+        /// <summary>Data size used by the user.</summary>
+        public int? DataSize { get; set; }
+        /// <summary>Number of records belonging to the user.</summary>
+        public int? NbRecords { get; set; }
+        /// <summary>Unique identifier of the user who makes the search request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserID { get; set; }
+#nullable restore
+#else
+        public string UserID { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.CompositionSetClientApiKey200Response"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.UserId2"/> and sets the default values.
         /// </summary>
-        public CompositionSetClientApiKey200Response()
+        public UserId2()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.CompositionSetClientApiKey200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.UserId2"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Algolia.OpenApiClient.Models.CompositionSetClientApiKey200Response CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Algolia.OpenApiClient.Models.UserId2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.CompositionSetClientApiKey200Response();
+            return new global::Soenneker.Algolia.OpenApiClient.Models.UserId2();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -40,6 +60,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "clusterName", n => { ClusterName = n.GetStringValue(); } },
+                { "dataSize", n => { DataSize = n.GetIntValue(); } },
+                { "nbRecords", n => { NbRecords = n.GetIntValue(); } },
+                { "userID", n => { UserID = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +73,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("clusterName", ClusterName);
+            writer.WriteIntValue("dataSize", DataSize);
+            writer.WriteIntValue("nbRecords", NbRecords);
+            writer.WriteStringValue("userID", UserID);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

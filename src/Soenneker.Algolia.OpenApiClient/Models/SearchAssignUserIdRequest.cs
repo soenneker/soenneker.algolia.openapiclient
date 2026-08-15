@@ -8,29 +8,28 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Default response schema
+    /// Assign userID parameters.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class IngestionSetClientApiKey200Response : IAdditionalDataHolder, IParsable
+    public partial class SearchAssignUserIdRequest : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IngestionSetClientApiKey200Response"/> and sets the default values.
-        /// </summary>
-        public IngestionSetClientApiKey200Response()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Cluster name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Cluster { get; set; }
+#nullable restore
+#else
+        public string Cluster { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IngestionSetClientApiKey200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchAssignUserIdRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Algolia.OpenApiClient.Models.IngestionSetClientApiKey200Response CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Algolia.OpenApiClient.Models.SearchAssignUserIdRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.IngestionSetClientApiKey200Response();
+            return new global::Soenneker.Algolia.OpenApiClient.Models.SearchAssignUserIdRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -40,6 +39,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "cluster", n => { Cluster = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteStringValue("cluster", Cluster);
         }
     }
 }

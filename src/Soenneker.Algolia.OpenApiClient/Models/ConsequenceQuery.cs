@@ -37,9 +37,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQuery CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQuery();
-            if("ConsequenceQuery_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ConsequenceQueryBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ConsequenceQueryBranch2 = new global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceQueryBranch2();
             }

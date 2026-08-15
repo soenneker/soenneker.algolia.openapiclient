@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Redirect to a virtual replica index.This consequence is only valid for rules with `scope: redirect`.&quot;
+    /// Redirect to a virtual replica index.This consequence is only valid for rules with `scope: redirect`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Consequence2Redirect : IParsable

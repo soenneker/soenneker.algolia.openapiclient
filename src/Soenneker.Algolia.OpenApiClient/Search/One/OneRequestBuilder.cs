@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Algolia.OpenApiClient.Search.One.Clusters;
 using Soenneker.Algolia.OpenApiClient.Search.One.Dictionaries;
 using Soenneker.Algolia.OpenApiClient.Search.One.Indexes;
 using Soenneker.Algolia.OpenApiClient.Search.One.Keys;
@@ -20,6 +21,11 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OneRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The clusters property</summary>
+        public global::Soenneker.Algolia.OpenApiClient.Search.One.Clusters.ClustersRequestBuilder Clusters
+        {
+            get => new global::Soenneker.Algolia.OpenApiClient.Search.One.Clusters.ClustersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The dictionaries property</summary>
         public global::Soenneker.Algolia.OpenApiClient.Search.One.Dictionaries.DictionariesRequestBuilder Dictionaries
         {

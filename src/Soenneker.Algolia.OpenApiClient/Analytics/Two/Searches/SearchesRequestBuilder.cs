@@ -129,7 +129,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Searches
             /// <summary>Whether to include metrics related to click and conversion events in the response.</summary>
             [QueryParameter("clickAnalytics")]
             public bool? ClickAnalytics { get; set; }
-            /// <summary>&quot;Sorting direction of the results: ascending or descending.&quot;</summary>
+            /// <summary>Sorting direction of the results: ascending or descending.</summary>
             [QueryParameter("direction")]
             public global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsDirection? Direction { get; set; }
             /// <summary>End date of the period to analyze, in `YYYY-MM-DD` format.</summary>

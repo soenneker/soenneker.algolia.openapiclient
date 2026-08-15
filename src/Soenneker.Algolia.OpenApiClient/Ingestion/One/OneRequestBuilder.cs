@@ -7,6 +7,7 @@ using Soenneker.Algolia.OpenApiClient.Ingestion.One.Destinations;
 using Soenneker.Algolia.OpenApiClient.Ingestion.One.Push;
 using Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs;
 using Soenneker.Algolia.OpenApiClient.Ingestion.One.Sources;
+using Soenneker.Algolia.OpenApiClient.Ingestion.One.Tasks;
 using Soenneker.Algolia.OpenApiClient.Ingestion.One.Transformations;
 using System.Collections.Generic;
 using System.IO;
@@ -44,6 +45,11 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One
         public global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Sources.SourcesRequestBuilder Sources
         {
             get => new global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Sources.SourcesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The tasks property</summary>
+        public global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Tasks.TasksRequestBuilder Tasks
+        {
+            get => new global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Tasks.TasksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The transformations property</summary>
         public global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Transformations.TransformationsRequestBuilder Transformations

@@ -8,29 +8,29 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Default response schema
+    /// Surround words that match the query with HTML tags for highlighting.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SearchSetClientApiKey200Response : IAdditionalDataHolder, IParsable
+    public partial class SearchHighlightResultMember1 : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSetClientApiKey200Response"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMember1"/> and sets the default values.
         /// </summary>
-        public SearchSetClientApiKey200Response()
+        public SearchHighlightResultMember1()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSetClientApiKey200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMember1"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Algolia.OpenApiClient.Models.SearchSetClientApiKey200Response CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.SearchSetClientApiKey200Response();
+            return new global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMember1();
         }
         /// <summary>
         /// The deserialization information for the current model

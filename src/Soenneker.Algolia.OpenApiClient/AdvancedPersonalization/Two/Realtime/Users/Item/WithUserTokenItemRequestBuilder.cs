@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Realtime.Users.Item.Compute;
 using Soenneker.Algolia.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,11 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Realtime.U
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithUserTokenItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The compute property</summary>
+        public global::Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Realtime.Users.Item.Compute.ComputeRequestBuilder Compute
+        {
+            get => new global::Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Realtime.Users.Item.Compute.ComputeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Realtime.Users.Item.WithUserTokenItemRequestBuilder"/> and sets the default values.
         /// </summary>
