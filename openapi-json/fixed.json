@@ -13774,7 +13774,7 @@
             "example": 1
           },
           "revenueSignificance": {
-            "$ref": "#/components/schemas/AbtestingAbTestRevenueSignificance"
+            "$ref": "#/components/schemas/AbtestingAbTestRevenueSignificanceProperty"
           },
           "updatedAt": {
             "type": "string",
@@ -23407,7 +23407,7 @@
             "example": 10
           },
           "data": {
-            "$ref": "#/components/schemas/EventType4Data"
+            "$ref": "#/components/schemas/EventType4DataProperty"
           },
           "publishedAt": {
             "type": "string",
@@ -42516,13 +42516,13 @@
         "type": "object",
         "properties": {
           "plurals": {
-            "$ref": "#/components/schemas/StandardEntry"
+            "$ref": "#/components/schemas/StandardEntriesPlurals"
           },
           "stopwords": {
-            "$ref": "#/components/schemas/StandardEntry"
+            "$ref": "#/components/schemas/StandardEntriesStopwords"
           },
           "compounds": {
-            "$ref": "#/components/schemas/StandardEntry"
+            "$ref": "#/components/schemas/StandardEntriesCompounds"
           }
         },
         "additionalProperties": false,
@@ -43244,7 +43244,7 @@
             "example": 10
           },
           "data": {
-            "$ref": "#/components/schemas/SearchEventData"
+            "$ref": "#/components/schemas/SearchEventDataProperty"
           },
           "publishedAt": {
             "type": "string",
@@ -45314,6 +45314,15 @@
         },
         "description": "A/B test currencies."
       },
+      "AbtestingAbTestRevenueSignificanceProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number",
+          "format": "double",
+          "x-additionalPropertiesName": "currency code"
+        },
+        "description": "A/B test significance calculated from revenue data.\n\nValues of 0.95 or higher can be considered significant,\nthat is, the difference between A and B variants is _not_ due to random variations.\n"
+      },
       "AbtestingCustomSearchParamsCustomSearchParametersProperty": {
         "type": "object"
       },
@@ -45880,6 +45889,9 @@
         "type": "object",
         "description": "The user-defined key-value pairs that will be placed in the \u0060_extra\u0060 field of each affected hit."
       },
+      "EventType4DataProperty": {
+        "type": "object"
+      },
       "WatchResponseDataItemProperty": {
         "type": "object"
       },
@@ -46371,9 +46383,36 @@
           "$ref": "#/components/schemas/MonitoringStatus"
         }
       },
+      "StandardEntriesPlurals": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "boolean",
+          "x-additionalPropertiesName": "language"
+        },
+        "description": "Key-value pair of a language ISO code and a boolean value."
+      },
+      "StandardEntriesStopwords": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "boolean",
+          "x-additionalPropertiesName": "language"
+        },
+        "description": "Key-value pair of a language ISO code and a boolean value."
+      },
+      "StandardEntriesCompounds": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "boolean",
+          "x-additionalPropertiesName": "language"
+        },
+        "description": "Key-value pair of a language ISO code and a boolean value."
+      },
       "FetchedIndexAbTestVariantPayloadProperty": {
         "type": "object",
         "description": "Type-specific configuration. Only present for v2 and later tests. Shape depends on the parent A/B test\u0027s \u0060type\u0060."
+      },
+      "SearchEventDataProperty": {
+        "type": "object"
       },
       "SearchWatchResponseDataItemProperty": {
         "type": "object"

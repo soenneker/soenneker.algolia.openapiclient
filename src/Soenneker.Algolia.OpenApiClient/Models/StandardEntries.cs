@@ -16,26 +16,26 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Key-value pair of a language ISO code and a boolean value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry? Compounds { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesCompounds? Compounds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry Compounds { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesCompounds Compounds { get; set; }
 #endif
         /// <summary>Key-value pair of a language ISO code and a boolean value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry? Plurals { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesPlurals? Plurals { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry Plurals { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesPlurals Plurals { get; set; }
 #endif
         /// <summary>Key-value pair of a language ISO code and a boolean value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry? Stopwords { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesStopwords? Stopwords { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry Stopwords { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesStopwords Stopwords { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,9 +55,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "compounds", n => { Compounds = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry>(global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry.CreateFromDiscriminatorValue); } },
-                { "plurals", n => { Plurals = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry>(global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry.CreateFromDiscriminatorValue); } },
-                { "stopwords", n => { Stopwords = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry>(global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry.CreateFromDiscriminatorValue); } },
+                { "compounds", n => { Compounds = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesCompounds>(global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesCompounds.CreateFromDiscriminatorValue); } },
+                { "plurals", n => { Plurals = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesPlurals>(global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesPlurals.CreateFromDiscriminatorValue); } },
+                { "stopwords", n => { Stopwords = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesStopwords>(global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesStopwords.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,9 +67,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry>("compounds", Compounds);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry>("plurals", Plurals);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StandardEntry>("stopwords", Stopwords);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesCompounds>("compounds", Compounds);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesPlurals>("plurals", Plurals);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesStopwords>("stopwords", Stopwords);
         }
     }
 }

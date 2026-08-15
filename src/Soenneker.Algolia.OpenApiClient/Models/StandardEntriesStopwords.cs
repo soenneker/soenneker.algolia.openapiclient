@@ -7,29 +7,30 @@ using System.IO;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
+    /// <summary>
+    /// Key-value pair of a language ISO code and a boolean value.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class SearchEventData : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class StandardEntriesStopwords : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchEventData"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesStopwords"/> and sets the default values.
         /// </summary>
-        public SearchEventData()
+        public StandardEntriesStopwords()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchEventData"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesStopwords"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Algolia.OpenApiClient.Models.SearchEventData CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesStopwords CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.SearchEventData();
+            return new global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesStopwords();
         }
         /// <summary>
         /// The deserialization information for the current model

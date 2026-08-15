@@ -18,10 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.EventType4Data? Data { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.EventType4DataProperty? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.EventType4Data Data { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.EventType4DataProperty Data { get; set; }
 #endif
         /// <summary>Universally unique identifier (UUID) of an event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,7 +70,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "batchSize", n => { BatchSize = n.GetIntValue(); } },
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.EventType4Data>(global::Soenneker.Algolia.OpenApiClient.Models.EventType4Data.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.EventType4DataProperty>(global::Soenneker.Algolia.OpenApiClient.Models.EventType4DataProperty.CreateFromDiscriminatorValue); } },
                 { "eventID", n => { EventID = n.GetStringValue(); } },
                 { "publishedAt", n => { PublishedAt = n.GetStringValue(); } },
                 { "runID", n => { RunID = n.GetStringValue(); } },
@@ -86,7 +86,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("batchSize", BatchSize);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.EventType4Data>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.EventType4DataProperty>("data", Data);
             writer.WriteStringValue("eventID", EventID);
             writer.WriteStringValue("publishedAt", PublishedAt);
             writer.WriteStringValue("runID", RunID);
