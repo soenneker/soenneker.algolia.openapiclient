@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Algolia.OpenApiClient.Analytics.Item;
 using Soenneker.Algolia.OpenApiClient.Analytics.SetClientApiKey;
+using Soenneker.Algolia.OpenApiClient.Analytics.Three;
 using Soenneker.Algolia.OpenApiClient.Analytics.Two;
 using System.Collections.Generic;
 using System.IO;
@@ -21,6 +22,11 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics
         public global::Soenneker.Algolia.OpenApiClient.Analytics.SetClientApiKey.SetClientApiKeyRequestBuilder SetClientApiKey
         {
             get => new global::Soenneker.Algolia.OpenApiClient.Analytics.SetClientApiKey.SetClientApiKeyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The Three property</summary>
+        public global::Soenneker.Algolia.OpenApiClient.Analytics.Three.ThreeRequestBuilder Three
+        {
+            get => new global::Soenneker.Algolia.OpenApiClient.Analytics.Three.ThreeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Two property</summary>
         public global::Soenneker.Algolia.OpenApiClient.Analytics.Two.TwoRequestBuilder Two
