@@ -1065,7 +1065,7 @@
           "abtesting"
         ],
         "summary": "Create an A/B test",
-        "description": "Creates a new A/B test.",
+        "description": "This endpoint is deprecated. Use the A/B Testing API v3 instead.\n\nReplaced by `POST /3/abtests`.\n\nCreates a new A/B test.\n",
         "operationId": "abtesting_addABTests",
         "requestBody": {
           "content": {
@@ -1136,6 +1136,7 @@
             "$ref": "#/components/responses/abtesting_IndexNotFound"
           }
         },
+        "deprecated": true,
         "x-acl": [
           "editSettings"
         ]
@@ -1145,7 +1146,7 @@
           "abtesting"
         ],
         "summary": "List all A/B tests",
-        "description": "Lists all A/B tests you configured for this application.",
+        "description": "This endpoint is deprecated. Use the A/B Testing API v3 instead.\n\nReplaced by `GET /3/abtests`.\n\nLists all A/B tests you configured for this application.\n",
         "operationId": "abtesting_listABTests",
         "parameters": [
           {
@@ -1243,6 +1244,7 @@
             "$ref": "#/components/responses/abtesting_IndexNotFound"
           }
         },
+        "deprecated": true,
         "x-mcp-tool": true,
         "x-acl": [
           "analytics"
@@ -1255,7 +1257,7 @@
           "abtesting"
         ],
         "summary": "Retrieve A/B test details",
-        "description": "Retrieves the details for an A/B test by its ID.",
+        "description": "This endpoint is deprecated. Use the A/B Testing API v3 instead.\n\nReplaced by `GET /3/abtests/{id}`.\n\nRetrieves the details for an A/B test by its ID.\n",
         "operationId": "abtesting_getABTest",
         "parameters": [
           {
@@ -1297,6 +1299,7 @@
             "$ref": "#/components/responses/abtesting_IndexNotFound"
           }
         },
+        "deprecated": true,
         "x-acl": [
           "analytics"
         ]
@@ -1306,7 +1309,7 @@
           "abtesting"
         ],
         "summary": "Delete an A/B test",
-        "description": "Deletes an A/B test by its ID.",
+        "description": "This endpoint is deprecated. Use the A/B Testing API v3 instead.\n\nReplaced by `DELETE /3/abtests/{id}`.\n\nDeletes an A/B test by its ID.\n",
         "operationId": "abtesting_deleteABTest",
         "parameters": [
           {
@@ -1348,6 +1351,7 @@
             "$ref": "#/components/responses/abtesting_IndexNotFound"
           }
         },
+        "deprecated": true,
         "x-acl": [
           "editSettings"
         ]
@@ -1359,7 +1363,7 @@
           "abtesting"
         ],
         "summary": "Stop an A/B test",
-        "description": "Stops an A/B test by its ID.\n\nYou can't restart stopped A/B tests.\n",
+        "description": "This endpoint is deprecated. Use the A/B Testing API v3 instead.\n\nReplaced by `POST /3/abtests/{id}/stop`.\n\nStops an A/B test by its ID.\n\nYou can't restart stopped A/B tests.\n",
         "operationId": "abtesting_stopABTest",
         "parameters": [
           {
@@ -1401,6 +1405,7 @@
             "$ref": "#/components/responses/abtesting_IndexNotFound"
           }
         },
+        "deprecated": true,
         "x-acl": [
           "editSettings"
         ]
@@ -1412,7 +1417,7 @@
           "abtesting"
         ],
         "summary": "Estimate the sample size and duration of an A/B test",
-        "description": "Given the traffic percentage and the expected effect size, this endpoint estimates the sample size and duration of an A/B test based on historical traffic.",
+        "description": "This endpoint is deprecated. Use the A/B Testing API v3 instead.\n\nReplaced by `POST /3/abtests/estimate`.\n\nGiven the traffic percentage and the expected effect size, this endpoint estimates the sample size and duration of an A/B test based on historical traffic.\n",
         "operationId": "abtesting_estimateABTest",
         "requestBody": {
           "content": {
@@ -1498,6 +1503,7 @@
             "$ref": "#/components/responses/abtesting_IndexNotFound"
           }
         },
+        "deprecated": true,
         "x-acl": [
           "analytics"
         ]

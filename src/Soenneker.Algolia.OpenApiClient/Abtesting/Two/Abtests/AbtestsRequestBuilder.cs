@@ -20,6 +20,7 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests
     public partial class AbtestsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The estimate property</summary>
+        [Obsolete("")]
         public global::Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.Estimate.EstimateRequestBuilder Estimate
         {
             get => new global::Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.Estimate.EstimateRequestBuilder(PathParameters, RequestAdapter);
@@ -27,6 +28,7 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests
         /// <summary>Gets an item from the Soenneker.Algolia.OpenApiClient.abtesting.Two.abtests.item collection</summary>
         /// <param name="position">Unique A/B test identifier.</param>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.Item.AbtestsItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.Item.AbtestsItemRequestBuilder this[string position]
         {
             get
@@ -53,7 +55,7 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests
         {
         }
         /// <summary>
-        /// Lists all A/B tests you configured for this application.
+        /// This endpoint is deprecated. Use the A/B Testing API v3 instead.Replaced by `GET /3/abtests`.Lists all A/B tests you configured for this application.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingListAbTests200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,6 +64,7 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase">When receiving a 402 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase">When receiving a 404 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingListAbTests200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.AbtestsRequestBuilder.AbtestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -82,7 +85,7 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingListAbTests200Response>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AbtestingListAbTests200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new A/B test.
+        /// This endpoint is deprecated. Use the A/B Testing API v3 instead.Replaced by `POST /3/abtests`.Creates a new A/B test.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -92,6 +95,7 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase">When receiving a 402 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase">When receiving a 404 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAddAbTestsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -113,10 +117,11 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists all A/B tests you configured for this application.
+        /// This endpoint is deprecated. Use the A/B Testing API v3 instead.Replaced by `GET /3/abtests`.Lists all A/B tests you configured for this application.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.AbtestsRequestBuilder.AbtestsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -132,11 +137,12 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new A/B test.
+        /// This endpoint is deprecated. Use the A/B Testing API v3 instead.Replaced by `POST /3/abtests`.Creates a new A/B test.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAddAbTestsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -158,12 +164,13 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.AbtestsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.AbtestsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.AbtestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists all A/B tests you configured for this application.
+        /// This endpoint is deprecated. Use the A/B Testing API v3 instead.Replaced by `GET /3/abtests`.Lists all A/B tests you configured for this application.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AbtestsRequestBuilderGetQueryParameters 

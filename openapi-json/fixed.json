@@ -1037,7 +1037,7 @@
           "abtesting"
         ],
         "summary": "Create an A/B test",
-        "description": "Creates a new A/B test.",
+        "description": "This endpoint is deprecated. Use the A/B Testing API v3 instead.\n\nReplaced by \u0060POST /3/abtests\u0060.\n\nCreates a new A/B test.\n",
         "operationId": "AbtestingAddAbTests",
         "requestBody": {
           "content": {
@@ -1083,14 +1083,15 @@
           "404": {
             "$ref": "#/components/responses/abtesting_IndexNotFound"
           }
-        }
+        },
+        "deprecated": true
       },
       "get": {
         "tags": [
           "abtesting"
         ],
         "summary": "List all A/B tests",
-        "description": "Lists all A/B tests you configured for this application.",
+        "description": "This endpoint is deprecated. Use the A/B Testing API v3 instead.\n\nReplaced by \u0060GET /3/abtests\u0060.\n\nLists all A/B tests you configured for this application.\n",
         "operationId": "AbtestingListAbTests",
         "parameters": [
           {
@@ -1165,7 +1166,8 @@
           "404": {
             "$ref": "#/components/responses/abtesting_IndexNotFound"
           }
-        }
+        },
+        "deprecated": true
       }
     },
     "/abtesting/2/abtests/{id}": {
@@ -1174,7 +1176,7 @@
           "abtesting"
         ],
         "summary": "Retrieve A/B test details",
-        "description": "Retrieves the details for an A/B test by its ID.",
+        "description": "This endpoint is deprecated. Use the A/B Testing API v3 instead.\n\nReplaced by \u0060GET /3/abtests/{id}\u0060.\n\nRetrieves the details for an A/B test by its ID.\n",
         "operationId": "AbtestingGetAbTest",
         "parameters": [
           {
@@ -1215,14 +1217,15 @@
           "404": {
             "$ref": "#/components/responses/abtesting_IndexNotFound"
           }
-        }
+        },
+        "deprecated": true
       },
       "delete": {
         "tags": [
           "abtesting"
         ],
         "summary": "Delete an A/B test",
-        "description": "Deletes an A/B test by its ID.",
+        "description": "This endpoint is deprecated. Use the A/B Testing API v3 instead.\n\nReplaced by \u0060DELETE /3/abtests/{id}\u0060.\n\nDeletes an A/B test by its ID.\n",
         "operationId": "AbtestingDeleteAbTest",
         "parameters": [
           {
@@ -1263,7 +1266,8 @@
           "404": {
             "$ref": "#/components/responses/abtesting_IndexNotFound"
           }
-        }
+        },
+        "deprecated": true
       }
     },
     "/abtesting/2/abtests/{id}/stop": {
@@ -1272,7 +1276,7 @@
           "abtesting"
         ],
         "summary": "Stop an A/B test",
-        "description": "Stops an A/B test by its ID.\n\nYou can\u0027t restart stopped A/B tests.\n",
+        "description": "This endpoint is deprecated. Use the A/B Testing API v3 instead.\n\nReplaced by \u0060POST /3/abtests/{id}/stop\u0060.\n\nStops an A/B test by its ID.\n\nYou can\u0027t restart stopped A/B tests.\n",
         "operationId": "AbtestingStopAbTest",
         "parameters": [
           {
@@ -1313,7 +1317,8 @@
           "404": {
             "$ref": "#/components/responses/abtesting_IndexNotFound"
           }
-        }
+        },
+        "deprecated": true
       }
     },
     "/abtesting/2/abtests/estimate": {
@@ -1322,7 +1327,7 @@
           "abtesting"
         ],
         "summary": "Estimate the sample size and duration of an A/B test",
-        "description": "Given the traffic percentage and the expected effect size, this endpoint estimates the sample size and duration of an A/B test based on historical traffic.",
+        "description": "This endpoint is deprecated. Use the A/B Testing API v3 instead.\n\nReplaced by \u0060POST /3/abtests/estimate\u0060.\n\nGiven the traffic percentage and the expected effect size, this endpoint estimates the sample size and duration of an A/B test based on historical traffic.\n",
         "operationId": "AbtestingEstimateAbTest",
         "requestBody": {
           "content": {
@@ -1368,7 +1373,8 @@
           "404": {
             "$ref": "#/components/responses/abtesting_IndexNotFound"
           }
-        }
+        },
+        "deprecated": true
       }
     },
     "/abtesting/setClientApiKey": {

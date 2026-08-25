@@ -34,7 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.Estimate
         {
         }
         /// <summary>
-        /// Given the traffic percentage and the expected effect size, this endpoint estimates the sample size and duration of an A/B test based on historical traffic.
+        /// This endpoint is deprecated. Use the A/B Testing API v3 instead.Replaced by `POST /3/abtests/estimate`.Given the traffic percentage and the expected effect size, this endpoint estimates the sample size and duration of an A/B test based on historical traffic.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingEstimateAbTestResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -44,6 +44,7 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.Estimate
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase">When receiving a 402 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase">When receiving a 404 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingEstimateAbTestResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingEstimateAbTestRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,11 +66,12 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.Estimate
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingEstimateAbTestResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AbtestingEstimateAbTestResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Given the traffic percentage and the expected effect size, this endpoint estimates the sample size and duration of an A/B test based on historical traffic.
+        /// This endpoint is deprecated. Use the A/B Testing API v3 instead.Replaced by `POST /3/abtests/estimate`.Given the traffic percentage and the expected effect size, this endpoint estimates the sample size and duration of an A/B test based on historical traffic.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingEstimateAbTestRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -91,6 +93,7 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.Estimate
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.Estimate.EstimateRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.Estimate.EstimateRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.Estimate.EstimateRequestBuilder(rawUrl, RequestAdapter);

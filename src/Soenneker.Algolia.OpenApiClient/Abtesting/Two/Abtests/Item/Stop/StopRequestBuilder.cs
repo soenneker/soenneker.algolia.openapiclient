@@ -34,7 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.Item.Stop
         {
         }
         /// <summary>
-        /// Stops an A/B test by its ID.You can&apos;t restart stopped A/B tests.
+        /// This endpoint is deprecated. Use the A/B Testing API v3 instead.Replaced by `POST /3/abtests/{id}/stop`.Stops an A/B test by its ID.You can&apos;t restart stopped A/B tests.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -43,6 +43,7 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.Item.Stop
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase">When receiving a 402 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingErrorBase">When receiving a 404 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,10 +64,11 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.Item.Stop
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Stops an A/B test by its ID.You can&apos;t restart stopped A/B tests.
+        /// This endpoint is deprecated. Use the A/B Testing API v3 instead.Replaced by `POST /3/abtests/{id}/stop`.Stops an A/B test by its ID.You can&apos;t restart stopped A/B tests.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -86,6 +88,7 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.Item.Stop
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.Item.Stop.StopRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.Item.Stop.StopRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.Item.Stop.StopRequestBuilder(rawUrl, RequestAdapter);
