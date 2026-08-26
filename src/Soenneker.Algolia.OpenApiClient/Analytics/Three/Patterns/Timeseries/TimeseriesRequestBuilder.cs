@@ -34,7 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Timeseries
         {
         }
         /// <summary>
-        /// **Beta**: this endpoint is under active development and may change without notice.Returns one time series per `groupBy` combination, each with period `totals` and a per-day metricbreakdown. `metrics` and `parameters` are required; `groupBy` and `filters` are optional. Discovervalid field kinds per domain with `/3/patterns/fields`.
+        /// Returns one time series per `groupBy` combination, each with period `totals` and a per-day metricbreakdown. `metrics` and `parameters` are required; `groupBy` and `filters` are optional. Discovervalid field kinds per domain with `/3/patterns/fields`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Timeseries
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **Beta**: this endpoint is under active development and may change without notice.Returns one time series per `groupBy` combination, each with period `totals` and a per-day metricbreakdown. `metrics` and `parameters` are required; `groupBy` and `filters` are optional. Discovervalid field kinds per domain with `/3/patterns/fields`.
+        /// Returns one time series per `groupBy` combination, each with period `totals` and a per-day metricbreakdown. `metrics` and `parameters` are required; `groupBy` and `filters` are optional. Discovervalid field kinds per domain with `/3/patterns/fields`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -96,7 +96,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Timeseries
             return new global::Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Timeseries.TimeseriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// **Beta**: this endpoint is under active development and may change without notice.Returns one time series per `groupBy` combination, each with period `totals` and a per-day metricbreakdown. `metrics` and `parameters` are required; `groupBy` and `filters` are optional. Discovervalid field kinds per domain with `/3/patterns/fields`.
+        /// Returns one time series per `groupBy` combination, each with period `totals` and a per-day metricbreakdown. `metrics` and `parameters` are required; `groupBy` and `filters` are optional. Discovervalid field kinds per domain with `/3/patterns/fields`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TimeseriesRequestBuilderPostQueryParameters 

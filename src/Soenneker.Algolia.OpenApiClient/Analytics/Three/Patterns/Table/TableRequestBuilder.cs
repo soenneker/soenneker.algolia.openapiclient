@@ -34,7 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Table
         {
         }
         /// <summary>
-        /// **Beta**: this endpoint is under active development and may change without notice.Returns `rows`, each a flat object of the requested fields. `metrics` and `parameters` are required;`groupBy`, `filters`, and `orderBy` are optional, though `orderBy` is required when `groupBy` is set.Discover valid field kinds per domain with `/3/patterns/fields`.
+        /// Returns `rows`, each a flat object of the requested fields. `metrics` and `parameters` are required;`groupBy`, `filters`, and `orderBy` are optional, though `orderBy` is required when `groupBy` is set.Discover valid field kinds per domain with `/3/patterns/fields`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TableResponse"/></returns>
         /// <param name="body">When `groupBy` is set, `orderBy` is required.</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Table
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.TableResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.TableResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **Beta**: this endpoint is under active development and may change without notice.Returns `rows`, each a flat object of the requested fields. `metrics` and `parameters` are required;`groupBy`, `filters`, and `orderBy` are optional, though `orderBy` is required when `groupBy` is set.Discover valid field kinds per domain with `/3/patterns/fields`.
+        /// Returns `rows`, each a flat object of the requested fields. `metrics` and `parameters` are required;`groupBy`, `filters`, and `orderBy` are optional, though `orderBy` is required when `groupBy` is set.Discover valid field kinds per domain with `/3/patterns/fields`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">When `groupBy` is set, `orderBy` is required.</param>
@@ -96,7 +96,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Table
             return new global::Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Table.TableRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// **Beta**: this endpoint is under active development and may change without notice.Returns `rows`, each a flat object of the requested fields. `metrics` and `parameters` are required;`groupBy`, `filters`, and `orderBy` are optional, though `orderBy` is required when `groupBy` is set.Discover valid field kinds per domain with `/3/patterns/fields`.
+        /// Returns `rows`, each a flat object of the requested fields. `metrics` and `parameters` are required;`groupBy`, `filters`, and `orderBy` are optional, though `orderBy` is required when `groupBy` is set.Discover valid field kinds per domain with `/3/patterns/fields`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TableRequestBuilderPostQueryParameters 

@@ -34,7 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Fields
         {
         }
         /// <summary>
-        /// **Beta**: this endpoint is under active development and may change without notice.Returns the static catalog of analytics fields, grouped by domain and usage (metrics, filters,groups, distributions). No authentication is required. Use it to discover valid `(domain, kind)`pairs before building the other `/3/patterns/*` queries; two fields are combinable in one queryonly when their `roots` intersect. Each entry&apos;s `requires` lists the ACLs needed when that fieldis actually used in a query.
+        /// Returns the static catalog of analytics fields, grouped by domain and usage (metrics, filters,groups, distributions). No authentication is required. Use it to discover valid `(domain, kind)`pairs before building the other `/3/patterns/*` queries; two fields are combinable in one queryonly when their `roots` intersect. Each entry&apos;s `requires` lists the ACLs needed when that fieldis actually used in a query.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Catalog"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Fields
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.Catalog>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.Catalog.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **Beta**: this endpoint is under active development and may change without notice.Returns the static catalog of analytics fields, grouped by domain and usage (metrics, filters,groups, distributions). No authentication is required. Use it to discover valid `(domain, kind)`pairs before building the other `/3/patterns/*` queries; two fields are combinable in one queryonly when their `roots` intersect. Each entry&apos;s `requires` lists the ACLs needed when that fieldis actually used in a query.
+        /// Returns the static catalog of analytics fields, grouped by domain and usage (metrics, filters,groups, distributions). No authentication is required. Use it to discover valid `(domain, kind)`pairs before building the other `/3/patterns/*` queries; two fields are combinable in one queryonly when their `roots` intersect. Each entry&apos;s `requires` lists the ACLs needed when that fieldis actually used in a query.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

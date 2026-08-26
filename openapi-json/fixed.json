@@ -3313,8 +3313,8 @@
         "tags": [
           "analytics"
         ],
-        "summary": "(Beta) Retrieve the field catalog",
-        "description": "**Beta**: this endpoint is under active development and may change without notice.\n\nReturns the static catalog of analytics fields, grouped by domain and usage (metrics, filters,\ngroups, distributions). No authentication is required. Use it to discover valid \u0060(domain, kind)\u0060\npairs before building the other \u0060/3/patterns/*\u0060 queries; two fields are combinable in one query\nonly when their \u0060roots\u0060 intersect. Each entry\u0027s \u0060requires\u0060 lists the ACLs needed when that field\nis actually used in a query.\n",
+        "summary": "Retrieve the field catalog",
+        "description": "Returns the static catalog of analytics fields, grouped by domain and usage (metrics, filters,\ngroups, distributions). No authentication is required. Use it to discover valid \u0060(domain, kind)\u0060\npairs before building the other \u0060/3/patterns/*\u0060 queries; two fields are combinable in one query\nonly when their \u0060roots\u0060 intersect. Each entry\u0027s \u0060requires\u0060 lists the ACLs needed when that field\nis actually used in a query.\n",
         "operationId": "AnalyticsGetPatternsFields",
         "responses": {
           "200": {
@@ -3353,8 +3353,8 @@
         "tags": [
           "analytics"
         ],
-        "summary": "(Beta) Query a metrics time series",
-        "description": "**Beta**: this endpoint is under active development and may change without notice.\n\nReturns one time series per \u0060groupBy\u0060 combination, each with period \u0060totals\u0060 and a per-day metric\nbreakdown. \u0060metrics\u0060 and \u0060parameters\u0060 are required; \u0060groupBy\u0060 and \u0060filters\u0060 are optional. Discover\nvalid field kinds per domain with \u0060/3/patterns/fields\u0060.\n",
+        "summary": "Query a metrics time series",
+        "description": "Returns one time series per \u0060groupBy\u0060 combination, each with period \u0060totals\u0060 and a per-day metric\nbreakdown. \u0060metrics\u0060 and \u0060parameters\u0060 are required; \u0060groupBy\u0060 and \u0060filters\u0060 are optional. Discover\nvalid field kinds per domain with \u0060/3/patterns/fields\u0060.\n",
         "operationId": "AnalyticsQueryPatternsTimeseries",
         "parameters": [
           {
@@ -3413,8 +3413,8 @@
         "tags": [
           "analytics"
         ],
-        "summary": "(Beta) Query single-row aggregates",
-        "description": "**Beta**: this endpoint is under active development and may change without notice.\n\nAggregates the requested \u0060metrics\u0060 over the whole period and returns a single object keyed by metric\nkind. \u0060metrics\u0060 and \u0060parameters\u0060 are required; \u0060filters\u0060 is optional. Discover valid field kinds per\ndomain with \u0060/3/patterns/fields\u0060.\n",
+        "summary": "Query single-row aggregates",
+        "description": "Aggregates the requested \u0060metrics\u0060 over the whole period and returns a single object keyed by metric\nkind. \u0060metrics\u0060 and \u0060parameters\u0060 are required; \u0060filters\u0060 is optional. Discover valid field kinds per\ndomain with \u0060/3/patterns/fields\u0060.\n",
         "operationId": "AnalyticsQueryPatternsScalar",
         "parameters": [
           {
@@ -3473,8 +3473,8 @@
         "tags": [
           "analytics"
         ],
-        "summary": "(Beta) Query a grouped table",
-        "description": "**Beta**: this endpoint is under active development and may change without notice.\n\nReturns \u0060rows\u0060, each a flat object of the requested fields. \u0060metrics\u0060 and \u0060parameters\u0060 are required;\n\u0060groupBy\u0060, \u0060filters\u0060, and \u0060orderBy\u0060 are optional, though \u0060orderBy\u0060 is required when \u0060groupBy\u0060 is set.\nDiscover valid field kinds per domain with \u0060/3/patterns/fields\u0060.\n",
+        "summary": "Query a grouped table",
+        "description": "Returns \u0060rows\u0060, each a flat object of the requested fields. \u0060metrics\u0060 and \u0060parameters\u0060 are required;\n\u0060groupBy\u0060, \u0060filters\u0060, and \u0060orderBy\u0060 are optional, though \u0060orderBy\u0060 is required when \u0060groupBy\u0060 is set.\nDiscover valid field kinds per domain with \u0060/3/patterns/fields\u0060.\n",
         "operationId": "AnalyticsQueryPatternsTable",
         "parameters": [
           {
@@ -3533,8 +3533,8 @@
         "tags": [
           "analytics"
         ],
-        "summary": "(Beta) Query a numeric distribution",
-        "description": "**Beta**: this endpoint is under active development and may change without notice.\n\nBuckets one or more numeric fields into histograms and returns an object keyed by \u0060histogram\u003CField\u003E\u0060,\neach mapping a bin label to a count. \u0060distributions\u0060 and \u0060parameters\u0060 are required; \u0060filters\u0060 is\noptional. Discover valid field kinds per domain with \u0060/3/patterns/fields\u0060.\n",
+        "summary": "Query a numeric distribution",
+        "description": "Buckets one or more numeric fields into histograms and returns an object keyed by \u0060histogram\u003CField\u003E\u0060,\neach mapping a bin label to a count. \u0060distributions\u0060 and \u0060parameters\u0060 are required; \u0060filters\u0060 is\noptional. Discover valid field kinds per domain with \u0060/3/patterns/fields\u0060.\n",
         "operationId": "AnalyticsQueryPatternsDistribution",
         "parameters": [
           {
@@ -53664,8 +53664,8 @@
     },
     {
       "name": "pattern",
-      "description": "Beta \u2014 the semantic patterns query framework (\u0060/3/patterns/*\u0060).\nBuild custom analytics queries from metrics, groupBy, filters, and parameters.\nThese endpoints are under active development and may change without notice.\n",
-      "x-displayName": "Patterns (Beta)"
+      "description": "The semantic patterns query framework (\u0060/3/patterns/*\u0060).\nBuild custom analytics queries from metrics, groupBy, filters, and parameters.\n",
+      "x-displayName": "Patterns"
     },
     {
       "name": "revenue",

@@ -34,7 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Scalar
         {
         }
         /// <summary>
-        /// **Beta**: this endpoint is under active development and may change without notice.Aggregates the requested `metrics` over the whole period and returns a single object keyed by metrickind. `metrics` and `parameters` are required; `filters` is optional. Discover valid field kinds perdomain with `/3/patterns/fields`.
+        /// Aggregates the requested `metrics` over the whole period and returns a single object keyed by metrickind. `metrics` and `parameters` are required; `filters` is optional. Discover valid field kinds perdomain with `/3/patterns/fields`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsQueryPatternsScalar200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Scalar
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsQueryPatternsScalar200Response>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsQueryPatternsScalar200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **Beta**: this endpoint is under active development and may change without notice.Aggregates the requested `metrics` over the whole period and returns a single object keyed by metrickind. `metrics` and `parameters` are required; `filters` is optional. Discover valid field kinds perdomain with `/3/patterns/fields`.
+        /// Aggregates the requested `metrics` over the whole period and returns a single object keyed by metrickind. `metrics` and `parameters` are required; `filters` is optional. Discover valid field kinds perdomain with `/3/patterns/fields`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -96,7 +96,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Scalar
             return new global::Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Scalar.ScalarRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// **Beta**: this endpoint is under active development and may change without notice.Aggregates the requested `metrics` over the whole period and returns a single object keyed by metrickind. `metrics` and `parameters` are required; `filters` is optional. Discover valid field kinds perdomain with `/3/patterns/fields`.
+        /// Aggregates the requested `metrics` over the whole period and returns a single object keyed by metrickind. `metrics` and `parameters` are required; `filters` is optional. Discover valid field kinds perdomain with `/3/patterns/fields`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ScalarRequestBuilderPostQueryParameters 
