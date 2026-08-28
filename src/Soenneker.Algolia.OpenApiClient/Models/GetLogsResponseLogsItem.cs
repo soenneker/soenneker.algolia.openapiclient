@@ -30,6 +30,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string AnswerCode { get; set; }
 #endif
+        /// <summary>Correlation ID of the logged API request, also returned in that request&apos;s `Correlation-ID` response header.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Cid { get; set; }
+#nullable restore
+#else
+        public string Cid { get; set; }
+#endif
         /// <summary>Index targeted by the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,6 +169,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "answer", n => { Answer = n.GetStringValue(); } },
                 { "answer_code", n => { AnswerCode = n.GetStringValue(); } },
+                { "cid", n => { Cid = n.GetStringValue(); } },
                 { "index", n => { Index = n.GetStringValue(); } },
                 { "inner_queries", n => { InnerQueries = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponseLogsItemInnerQueriesItem>(global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponseLogsItemInnerQueriesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ip", n => { Ip = n.GetStringValue(); } },
@@ -185,6 +194,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("answer", Answer);
             writer.WriteStringValue("answer_code", AnswerCode);
+            writer.WriteStringValue("cid", Cid);
             writer.WriteStringValue("index", Index);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponseLogsItemInnerQueriesItem>("inner_queries", InnerQueries);
             writer.WriteStringValue("ip", Ip);

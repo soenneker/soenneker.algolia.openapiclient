@@ -15864,6 +15864,11 @@
                         ],
                         "type": "object",
                         "properties": {
+                          "cid": {
+                            "type": "string",
+                            "description": "Correlation ID of the logged API request, also returned in that request's `Correlation-ID` response header.",
+                            "example": "MyAppl-1tMcE-a7BqLm2Pd0Z"
+                          },
                           "timestamp": {
                             "type": "string",
                             "description": "Date and time of the API request, in RFC 3339 format.",
@@ -17774,11 +17779,6 @@
         },
         "description": "A/B test configuration."
       },
-      "MigratedABTestId": {
-        "type": "integer",
-        "description": "Unique migrated A/B test identifier.",
-        "example": 224
-      },
       "Decision": {
         "required": [
           "winnerVariantId",
@@ -17838,9 +17838,6 @@
           },
           "configuration": {
             "$ref": "#/components/schemas/ABTestConfiguration"
-          },
-          "migratedAbTestID": {
-            "$ref": "#/components/schemas/MigratedABTestId"
           },
           "decision": {
             "$ref": "#/components/schemas/Decision"

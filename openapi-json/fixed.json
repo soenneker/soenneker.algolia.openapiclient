@@ -13873,9 +13873,6 @@
           ]
         }
       },
-      "RecommendCustomPost200Response": {
-        "type": "object"
-      },
       "RecommendCustomPostRequest": {
         "type": "object"
       },
@@ -13913,17 +13910,20 @@
         },
         "additionalProperties": false
       },
+      "QuerySuggestionsGetAllConfigs200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ConfigurationResponse"
+        }
+      },
       "StoppedAt": {
         "type": "string",
         "description": "Date and time when the A/B test was stopped, in RFC 3339 format.",
         "nullable": true,
         "example": "2023-06-15T15:06:44.400601Z"
       },
-      "QuerySuggestionsGetAllConfigs200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ConfigurationResponse"
-        }
+      "QuerySuggestionsCustomDelete200Response": {
+        "type": "object"
       },
       "Status": {
         "enum": [
@@ -13959,13 +13959,13 @@
           ]
         }
       },
-      "QuerySuggestionsCustomDelete200Response": {
-        "type": "object"
-      },
       "QuerySuggestionsCustomPut200Response": {
         "type": "object"
       },
       "QuerySuggestionsCustomPutRequest": {
+        "type": "object"
+      },
+      "QuerySuggestionsCustomPost200Response": {
         "type": "object"
       },
       "MetricMetadata": {
@@ -14258,9 +14258,6 @@
         },
         "description": "A/B test configuration."
       },
-      "QuerySuggestionsCustomPost200Response": {
-        "type": "object"
-      },
       "Decision": {
         "required": [
           "winnerVariantId",
@@ -14329,10 +14326,6 @@
           },
           "configuration": {
             "$ref": "#/components/schemas/AbTestConfiguration"
-          },
-          "migratedAbTestID": {
-            "type": "integer",
-            "description": "Unique migrated A/B test identifier."
           },
           "decision": {
             "$ref": "#/components/schemas/Decision"
@@ -46963,6 +46956,9 @@
         "additionalProperties": false,
         "description": "Update to perform on the attribute."
       },
+      "RecommendCustomPost200Response": {
+        "type": "object"
+      },
       "RecommendCustomPutRequest": {
         "type": "object"
       },
@@ -50441,6 +50437,11 @@
         ],
         "type": "object",
         "properties": {
+          "cid": {
+            "type": "string",
+            "description": "Correlation ID of the logged API request, also returned in that request\u0027s \u0060Correlation-ID\u0060 response header.",
+            "example": "MyAppl-1tMcE-a7BqLm2Pd0Z"
+          },
           "timestamp": {
             "type": "string",
             "description": "Date and time of the API request, in RFC 3339 format.",
