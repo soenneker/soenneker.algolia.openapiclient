@@ -13,29 +13,29 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CommercetoolsCustomFields : IParsable
     {
-        /// <summary>The category property</summary>
+        /// <summary>Category custom fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsCategory? Category { get; set; }
+        public List<string>? Category { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsCategory Category { get; set; }
+        public List<string> Category { get; set; }
 #endif
-        /// <summary>The inventory property</summary>
+        /// <summary>Inventory custom fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventory? Inventory { get; set; }
+        public List<string>? Inventory { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventory Inventory { get; set; }
+        public List<string> Inventory { get; set; }
 #endif
-        /// <summary>The price property</summary>
+        /// <summary>Price custom fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsPrice? Price { get; set; }
+        public List<string>? Price { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsPrice Price { get; set; }
+        public List<string> Price { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,9 +55,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "category", n => { Category = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsCategory>(global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsCategory.CreateFromDiscriminatorValue); } },
-                { "inventory", n => { Inventory = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventory>(global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventory.CreateFromDiscriminatorValue); } },
-                { "price", n => { Price = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsPrice>(global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsPrice.CreateFromDiscriminatorValue); } },
+                { "category", n => { Category = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "inventory", n => { Inventory = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "price", n => { Price = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,9 +67,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsCategory>("category", Category);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsInventory>("inventory", Inventory);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFieldsPrice>("price", Price);
+            writer.WriteCollectionOfPrimitiveValues<string>("category", Category);
+            writer.WriteCollectionOfPrimitiveValues<string>("inventory", Inventory);
+            writer.WriteCollectionOfPrimitiveValues<string>("price", Price);
         }
     }
 }

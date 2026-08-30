@@ -12,13 +12,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     public partial class GetTopFiltersNoResultsResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The values property</summary>
+        /// <summary>Filters for searches without any results.If null, the search term specified with the `search` parameter isn&apos;t a search without results,or the `search` parameter is absent from the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsResponseValues? Values { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues>? Values { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsResponseValues Values { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues> Values { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "values", n => { Values = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsResponseValues>(global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsResponseValues.CreateFromDiscriminatorValue); } },
+                { "values", n => { Values = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues>(global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsResponseValues>("values", Values);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues>("values", Values);
         }
     }
 }

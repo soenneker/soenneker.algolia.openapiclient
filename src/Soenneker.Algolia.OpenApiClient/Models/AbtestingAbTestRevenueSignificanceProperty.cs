@@ -7,29 +7,30 @@ using System.IO;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
+    /// <summary>
+    /// A/B test significance calculated from revenue data.Values of 0.95 or higher can be considered significant,that is, the difference between A and B variants is _not_ due to random variations.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ExcludeMember1 : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class AbtestingAbTestRevenueSignificanceProperty : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ExcludeMember1"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestRevenueSignificanceProperty"/> and sets the default values.
         /// </summary>
-        public ExcludeMember1()
+        public AbtestingAbTestRevenueSignificanceProperty()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ExcludeMember1"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestRevenueSignificanceProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Algolia.OpenApiClient.Models.ExcludeMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestRevenueSignificanceProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.ExcludeMember1();
+            return new global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestRevenueSignificanceProperty();
         }
         /// <summary>
         /// The deserialization information for the current model

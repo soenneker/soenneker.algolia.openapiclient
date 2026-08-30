@@ -15,13 +15,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The eventSources property</summary>
+        /// <summary>Indices from which to collect click and conversion events.If null, the current index and all its replicas are used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSemanticSearchEventSources? EventSources { get; set; }
+        public List<string>? EventSources { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSemanticSearchEventSources EventSources { get; set; }
+        public List<string> EventSources { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSemanticSearch"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "eventSources", n => { EventSources = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchSemanticSearchEventSources>(global::Soenneker.Algolia.OpenApiClient.Models.SearchSemanticSearchEventSources.CreateFromDiscriminatorValue); } },
+                { "eventSources", n => { EventSources = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchSemanticSearchEventSources>("eventSources", EventSources);
+            writer.WriteCollectionOfPrimitiveValues<string>("eventSources", EventSources);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

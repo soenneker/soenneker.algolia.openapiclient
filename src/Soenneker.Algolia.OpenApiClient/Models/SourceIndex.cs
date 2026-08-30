@@ -18,34 +18,34 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Analytics tags for filtering the popular searches.For more information, see [Segment your analytics data](https://www.algolia.com/doc/guides/search-analytics/guides/segments).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsTags2? AnalyticsTags { get; set; }
+        public List<string>? AnalyticsTags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsTags2 AnalyticsTags { get; set; }
+        public List<string> AnalyticsTags { get; set; }
 #endif
         /// <summary>Algolia indices with popular searches to use as query suggestions.Records of these indices must have these attributes:- `query`: search query which will be added as a suggestion- `count`: measure of popularity of that search queryFor example, you can export popular searches from an external analytics provider, such as Google Analytics or Adobe Analytics,and feed this data into an Algolia index.You can use this index to generate query suggestions until your Algolia Analytics has collected enough data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.External? External { get; set; }
+        public List<string>? External { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.External External { get; set; }
+        public List<string> External { get; set; }
 #endif
         /// <summary>Facets to use as top categories with your suggestions.If provided, Query Suggestions adds the top facet values to each suggestion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Facets2? Facets { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Facet>? Facets { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Facets2 Facets { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Facet> Facets { get; set; }
 #endif
         /// <summary>Facets used for generating query suggestions from facet values.For example, if you set `generate: [&quot;color&quot;, &quot;brand&quot;]`, combinations from the facet values are added as query suggestions,such as &quot;blue adidas&quot;, &quot;red adidas&quot;, &quot;blue nike&quot;, &quot;red nike&quot;, etc.You can include nested lists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Generate? Generate { get; set; }
+        public UntypedNode? Generate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Generate Generate { get; set; }
+        public UntypedNode Generate { get; set; }
 #endif
         /// <summary>Name of the Algolia index (case-sensitive) to use as source for query suggestions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,10 +89,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "analyticsTags", n => { AnalyticsTags = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsTags2>(global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsTags2.CreateFromDiscriminatorValue); } },
-                { "external", n => { External = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.External>(global::Soenneker.Algolia.OpenApiClient.Models.External.CreateFromDiscriminatorValue); } },
-                { "facets", n => { Facets = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Facets2>(global::Soenneker.Algolia.OpenApiClient.Models.Facets2.CreateFromDiscriminatorValue); } },
-                { "generate", n => { Generate = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Generate>(global::Soenneker.Algolia.OpenApiClient.Models.Generate.CreateFromDiscriminatorValue); } },
+                { "analyticsTags", n => { AnalyticsTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "external", n => { External = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "facets", n => { Facets = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Facet>(global::Soenneker.Algolia.OpenApiClient.Models.Facet.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "generate", n => { Generate = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "indexName", n => { IndexName = n.GetStringValue(); } },
                 { "minHits", n => { MinHits = n.GetIntValue(); } },
                 { "minLetters", n => { MinLetters = n.GetIntValue(); } },
@@ -106,10 +106,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsTags2>("analyticsTags", AnalyticsTags);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.External>("external", External);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Facets2>("facets", Facets);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Generate>("generate", Generate);
+            writer.WriteCollectionOfPrimitiveValues<string>("analyticsTags", AnalyticsTags);
+            writer.WriteCollectionOfPrimitiveValues<string>("external", External);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Facet>("facets", Facets);
+            writer.WriteObjectValue<UntypedNode>("generate", Generate);
             writer.WriteStringValue("indexName", IndexName);
             writer.WriteIntValue("minHits", MinHits);
             writer.WriteIntValue("minLetters", MinLetters);

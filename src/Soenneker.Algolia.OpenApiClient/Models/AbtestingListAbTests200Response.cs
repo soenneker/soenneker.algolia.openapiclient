@@ -12,13 +12,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     public partial class AbtestingListAbTests200Response : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The abtests property</summary>
+        /// <summary>The list of A/B tests, null if no A/B tests are configured for this application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTests? Abtests { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest>? Abtests { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTests Abtests { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest> Abtests { get; set; }
 #endif
         /// <summary>Number of A/B tests.</summary>
         public int? Count { get; set; }
@@ -42,7 +42,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "abtests", n => { Abtests = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTests>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTests.CreateFromDiscriminatorValue); } },
+                { "abtests", n => { Abtests = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "count", n => { Count = n.GetIntValue(); } },
                 { "total", n => { Total = n.GetIntValue(); } },
             };
@@ -54,7 +54,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTests>("abtests", Abtests);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest>("abtests", Abtests);
             writer.WriteIntValue("count", Count);
             writer.WriteIntValue("total", Total);
         }

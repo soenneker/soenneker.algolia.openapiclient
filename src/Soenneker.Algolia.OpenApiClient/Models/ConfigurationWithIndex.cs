@@ -22,10 +22,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Words or regular expressions to exclude from the suggestions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Exclude? Exclude { get; set; }
+        public List<string>? Exclude { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Exclude Exclude { get; set; }
+        public List<string> Exclude { get; set; }
 #endif
         /// <summary>Name of the Query Suggestions index (case-sensitive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,7 +80,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "allowSpecialCharacters", n => { AllowSpecialCharacters = n.GetBoolValue(); } },
                 { "enablePersonalization", n => { EnablePersonalization = n.GetBoolValue(); } },
-                { "exclude", n => { Exclude = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Exclude>(global::Soenneker.Algolia.OpenApiClient.Models.Exclude.CreateFromDiscriminatorValue); } },
+                { "exclude", n => { Exclude = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "indexName", n => { IndexName = n.GetStringValue(); } },
                 { "languages", n => { Languages = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Languages>(global::Soenneker.Algolia.OpenApiClient.Models.Languages.CreateFromDiscriminatorValue); } },
                 { "sourceIndices", n => { SourceIndices = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SourceIndex>(global::Soenneker.Algolia.OpenApiClient.Models.SourceIndex.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -95,7 +95,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowSpecialCharacters", AllowSpecialCharacters);
             writer.WriteBoolValue("enablePersonalization", EnablePersonalization);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Exclude>("exclude", Exclude);
+            writer.WriteCollectionOfPrimitiveValues<string>("exclude", Exclude);
             writer.WriteStringValue("indexName", IndexName);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Languages>("languages", Languages);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SourceIndex>("sourceIndices", SourceIndices);

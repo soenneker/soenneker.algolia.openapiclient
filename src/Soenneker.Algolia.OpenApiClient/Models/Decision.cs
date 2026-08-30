@@ -7,29 +7,31 @@ using System.IO;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
+    /// <summary>
+    /// Outcome of the A/B test once a winner has been declared.Only present when a winning variant has been declared, so its presence indicates the test has been decided.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class SearchSemanticSearchEventSourcesMember1 : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class Decision : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSemanticSearchEventSourcesMember1"/> and sets the default values.
-        /// </summary>
-        public SearchSemanticSearchEventSourcesMember1()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Date and time when the winning variant was declared, in RFC 3339 format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeclaredAt { get; set; }
+#nullable restore
+#else
+        public string DeclaredAt { get; set; }
+#endif
+        /// <summary>Identifier of the declared winning variant. The control variant is 1.</summary>
+        public int? WinnerVariantId { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSemanticSearchEventSourcesMember1"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Decision"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Algolia.OpenApiClient.Models.SearchSemanticSearchEventSourcesMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Algolia.OpenApiClient.Models.Decision CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.SearchSemanticSearchEventSourcesMember1();
+            return new global::Soenneker.Algolia.OpenApiClient.Models.Decision();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -39,6 +41,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "declaredAt", n => { DeclaredAt = n.GetStringValue(); } },
+                { "winnerVariantId", n => { WinnerVariantId = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -48,7 +52,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteStringValue("declaredAt", DeclaredAt);
+            writer.WriteIntValue("winnerVariantId", WinnerVariantId);
         }
     }
 }
