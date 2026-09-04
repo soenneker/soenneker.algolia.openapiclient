@@ -22,7 +22,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.PartialUpdateObjectsWithTransfo
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PartialUpdateObjectsWithTransformationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/partialUpdateObjectsWithTransformation?indexName={indexName}&objects={objects}{&batchSize*,createIfNotExists*,requestOptions*,waitForTasks*}", pathParameters)
+        public PartialUpdateObjectsWithTransformationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/partialUpdateObjectsWithTransformation?indexName={indexName}{&batchSize*,createIfNotExists*,requestOptions*,waitForTasks*,objects*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.PartialUpdateObjectsWithTransfo
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PartialUpdateObjectsWithTransformationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/partialUpdateObjectsWithTransformation?indexName={indexName}&objects={objects}{&batchSize*,createIfNotExists*,requestOptions*,waitForTasks*}", rawUrl)
+        public PartialUpdateObjectsWithTransformationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/partialUpdateObjectsWithTransformation?indexName={indexName}{&batchSize*,createIfNotExists*,requestOptions*,waitForTasks*,objects*}", rawUrl)
         {
         }
         /// <summary>

@@ -22,7 +22,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.ChunkedPush
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChunkedPushRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ingestion/chunkedPush?indexName={indexName}&objects={objects}{&action*,batchSize*,waitForTasks*}", pathParameters)
+        public ChunkedPushRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ingestion/chunkedPush?indexName={indexName}{&action*,batchSize*,waitForTasks*,objects*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.ChunkedPush
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChunkedPushRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ingestion/chunkedPush?indexName={indexName}&objects={objects}{&action*,batchSize*,waitForTasks*}", rawUrl)
+        public ChunkedPushRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/ingestion/chunkedPush?indexName={indexName}{&action*,batchSize*,waitForTasks*,objects*}", rawUrl)
         {
         }
         /// <summary>

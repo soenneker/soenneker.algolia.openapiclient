@@ -317,10 +317,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The reRankingApplyFilter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchIndexSettingsAsSearchParamsReRankingApplyFilter? ReRankingApplyFilter { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchReRankingApplyFilter? ReRankingApplyFilter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchIndexSettingsAsSearchParamsReRankingApplyFilter ReRankingApplyFilter { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchReRankingApplyFilter ReRankingApplyFilter { get; set; }
 #endif
         /// <summary>Properties to include in the API response of search and browse requestsBy default, all response properties are included.To reduce the response size, you can select which properties should be includedAn empty list may lead to an empty API response (except properties you can&apos;t exclude)You can&apos;t exclude these properties:`message`, `warning`, `cursor`, `abTestVariantID`,or any property added by setting `getRankingInfo` to trueYour search depends on the `hits` field. If you omit this field, searches won&apos;t return any results.Your UI might also depend on other properties, for example, for pagination.Before restricting the response size, check the impact on your search experience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -832,7 +832,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             }
             else if(ReRankingApplyFilter != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchIndexSettingsAsSearchParamsReRankingApplyFilter>(null, ReRankingApplyFilter);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchReRankingApplyFilter>(null, ReRankingApplyFilter);
             }
             else if(SearchParamsObject != null)
             {

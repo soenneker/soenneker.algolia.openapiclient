@@ -22,7 +22,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.SaveObjectsWithTransformation
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SaveObjectsWithTransformationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/saveObjectsWithTransformation?indexName={indexName}&objects={objects}{&batchSize*,requestOptions*,waitForTasks*}", pathParameters)
+        public SaveObjectsWithTransformationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/saveObjectsWithTransformation?indexName={indexName}{&batchSize*,requestOptions*,waitForTasks*,objects*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.SaveObjectsWithTransformation
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SaveObjectsWithTransformationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/saveObjectsWithTransformation?indexName={indexName}&objects={objects}{&batchSize*,requestOptions*,waitForTasks*}", rawUrl)
+        public SaveObjectsWithTransformationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/saveObjectsWithTransformation?indexName={indexName}{&batchSize*,requestOptions*,waitForTasks*,objects*}", rawUrl)
         {
         }
         /// <summary>

@@ -22,7 +22,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.ReplaceAllObjects
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReplaceAllObjectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/replaceAllObjects?indexName={indexName}&objects={objects}{&batchSize*,scopes*}", pathParameters)
+        public ReplaceAllObjectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/replaceAllObjects?indexName={indexName}{&batchSize*,scopes*,objects*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.ReplaceAllObjects
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReplaceAllObjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/replaceAllObjects?indexName={indexName}&objects={objects}{&batchSize*,scopes*}", rawUrl)
+        public ReplaceAllObjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/replaceAllObjects?indexName={indexName}{&batchSize*,scopes*,objects*}", rawUrl)
         {
         }
         /// <summary>
