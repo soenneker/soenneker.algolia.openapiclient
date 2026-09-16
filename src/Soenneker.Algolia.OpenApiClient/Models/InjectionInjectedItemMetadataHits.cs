@@ -13,7 +13,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InjectionInjectedItemMetadataHits : IAdditionalDataHolder, IParsable
     {
-        /// <summary>When true, the `_injectedItemKey` field is set in the `_extra` object of each affected hit.</summary>
+        /// <summary>When true, each affected hit&apos;s `_extra` object includes an `_injectedItemKey` field identifying the injectedItem that inserted it. Defaults to false, meaning hits don&apos;t include `_injectedItemKey`. To identify injected hits without this flag, define your own key-value pairs in `extra`.</summary>
         public bool? AddItemKey { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

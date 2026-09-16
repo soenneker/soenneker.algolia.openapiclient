@@ -16785,7 +16785,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Public ACL identifiers required to read the field, for example \u0060clickAnalyticsEnabled\u0060."
+            "description": "Public ACL identifiers required to read the field, for example \u0060revenueAnalyticsEnabled\u0060."
           }
         },
         "additionalProperties": false
@@ -19127,10 +19127,10 @@
         "properties": {
           "_injectedItemKey": {
             "type": "string",
-            "description": "The key of the injectedItem that inserted this metadata."
+            "description": "The key of the injectedItem that inserted this metadata. Only present when the injectedItem\u0027s \u0060metadata.hits.addItemKey\u0060 is \u0060true\u0060."
           }
         },
-        "description": "An object that contains the extra key-value pairs provided in the injectedItem definition."
+        "description": "An object that contains the extra key-value pairs provided in the injectedItem definition. Only present on hits inserted by an injectedItem that defines metadata, either in its \u0060metadata\u0060 field or sent by an external source."
       },
       "CompositionHit": {
         "required": [
@@ -25239,7 +25239,7 @@
         "properties": {
           "addItemKey": {
             "type": "boolean",
-            "description": "When true, the \u0060_injectedItemKey\u0060 field is set in the \u0060_extra\u0060 object of each affected hit."
+            "description": "When true, each affected hit\u0027s \u0060_extra\u0060 object includes an \u0060_injectedItemKey\u0060 field identifying the injectedItem that inserted it. Defaults to false, meaning hits don\u0027t include \u0060_injectedItemKey\u0060. To identify injected hits without this flag, define your own key-value pairs in \u0060extra\u0060."
           },
           "extra": {
             "$ref": "#/components/schemas/InjectionInjectedItemMetadataHitsExtraProperty"

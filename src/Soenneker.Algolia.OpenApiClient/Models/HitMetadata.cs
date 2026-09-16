@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// An object that contains the extra key-value pairs provided in the injectedItem definition.
+    /// An object that contains the extra key-value pairs provided in the injectedItem definition. Only present on hits inserted by an injectedItem that defines metadata, either in its `metadata` field or sent by an external source.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class HitMetadata : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The key of the injectedItem that inserted this metadata.</summary>
+        /// <summary>The key of the injectedItem that inserted this metadata. Only present when the injectedItem&apos;s `metadata.hits.addItemKey` is `true`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InjectedItemKey { get; set; }

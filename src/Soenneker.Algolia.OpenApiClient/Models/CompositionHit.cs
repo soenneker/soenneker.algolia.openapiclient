@@ -17,7 +17,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The distinctSeqID property</summary>
         public int? DistinctSeqID { get; set; }
-        /// <summary>An object that contains the extra key-value pairs provided in the injectedItem definition.</summary>
+        /// <summary>An object that contains the extra key-value pairs provided in the injectedItem definition. Only present on hits inserted by an injectedItem that defines metadata, either in its `metadata` field or sent by an external source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.HitMetadata? Extra { get; set; }
