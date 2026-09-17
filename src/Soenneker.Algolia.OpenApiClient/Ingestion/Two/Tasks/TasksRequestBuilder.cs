@@ -25,7 +25,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks
             get => new global::Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Algolia.OpenApiClient.ingestion.Two.tasks.item collection</summary>
-        /// <param name="position">Unique identifier of a task.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.Item.WithTaskItemRequestBuilder"/></returns>
         public global::Soenneker.Algolia.OpenApiClient.Ingestion.Two.Tasks.Item.WithTaskItemRequestBuilder this[string position]
         {

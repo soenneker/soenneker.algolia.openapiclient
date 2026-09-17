@@ -16,7 +16,7 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Tasks
     public partial class TasksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Algolia.OpenApiClient.crawler.One.crawlers.item.tasks.item collection</summary>
-        /// <param name="position">Task ID.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Tasks.Item.WithTaskItemRequestBuilder"/></returns>
         public global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Tasks.Item.WithTaskItemRequestBuilder this[string position]
         {

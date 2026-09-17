@@ -19,7 +19,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs
     public partial class RunsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Algolia.OpenApiClient.ingestion.One.runs.item collection</summary>
-        /// <param name="position">Unique identifier of a task run.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs.Item.WithRunItemRequestBuilder"/></returns>
         public global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs.Item.WithRunItemRequestBuilder this[string position]
         {

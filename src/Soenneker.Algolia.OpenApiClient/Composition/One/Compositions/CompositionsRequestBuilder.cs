@@ -25,7 +25,7 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions
             get => new global::Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Asterisk.RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Algolia.OpenApiClient.composition.One.compositions.item collection</summary>
-        /// <param name="position">Unique Composition ObjectID.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.WithCompositionItemRequestBuilder"/></returns>
         public global::Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.WithCompositionItemRequestBuilder this[string position]
         {

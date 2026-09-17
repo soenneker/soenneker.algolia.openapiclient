@@ -34,7 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Synonyms
             get => new global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Synonyms.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Algolia.OpenApiClient.search.One.indexes.item.synonyms.item collection</summary>
-        /// <param name="position">Unique identifier of a synonym object.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Synonyms.Item.WithObjectItemRequestBuilder"/></returns>
         public global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Synonyms.Item.WithObjectItemRequestBuilder this[string position]
         {

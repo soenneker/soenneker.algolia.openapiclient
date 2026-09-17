@@ -25,7 +25,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Destinations
             get => new global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Destinations.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Algolia.OpenApiClient.ingestion.One.destinations.item collection</summary>
-        /// <param name="position">Unique identifier of a destination.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Destinations.Item.WithDestinationItemRequestBuilder"/></returns>
         public global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Destinations.Item.WithDestinationItemRequestBuilder this[string position]
         {

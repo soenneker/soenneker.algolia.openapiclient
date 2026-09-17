@@ -34,7 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Rules
             get => new global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Rules.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Algolia.OpenApiClient.search.One.indexes.item.rules.item collection</summary>
-        /// <param name="position">Unique identifier of a rule object.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Rules.Item.WithObjectItemRequestBuilder"/></returns>
         public global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Rules.Item.WithObjectItemRequestBuilder this[string position]
         {

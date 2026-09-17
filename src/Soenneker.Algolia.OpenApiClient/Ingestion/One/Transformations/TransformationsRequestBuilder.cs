@@ -31,7 +31,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Transformations
             get => new global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Transformations.Try.TryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Algolia.OpenApiClient.ingestion.One.transformations.item collection</summary>
-        /// <param name="position">Unique identifier of a transformation.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Transformations.Item.WithTransformationItemRequestBuilder"/></returns>
         public global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Transformations.Item.WithTransformationItemRequestBuilder this[string position]
         {

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item.Settings;
 using Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item.Stop;
 using Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item.Timeseries;
 using Soenneker.Algolia.OpenApiClient.Models;
@@ -19,6 +20,11 @@ namespace Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AbtestsItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The settings property</summary>
+        public global::Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item.Settings.SettingsRequestBuilder Settings
+        {
+            get => new global::Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The stop property</summary>
         public global::Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item.Stop.StopRequestBuilder Stop
         {

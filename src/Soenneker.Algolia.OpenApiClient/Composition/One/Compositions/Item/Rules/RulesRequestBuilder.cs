@@ -28,7 +28,7 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rule
             get => new global::Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rules.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Algolia.OpenApiClient.composition.One.compositions.item.rules.item collection</summary>
-        /// <param name="position">Unique identifier of a rule object.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rules.Item.WithObjectItemRequestBuilder"/></returns>
         public global::Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rules.Item.WithObjectItemRequestBuilder this[string position]
         {

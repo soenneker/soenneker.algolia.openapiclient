@@ -47,7 +47,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Clusters.Mapping
             get => new global::Soenneker.Algolia.OpenApiClient.Search.One.Clusters.Mapping.Top.TopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Algolia.OpenApiClient.search.One.clusters.mapping.item collection</summary>
-        /// <param name="position">Unique identifier of the user who makes the search request.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Search.One.Clusters.Mapping.Item.WithUserItemRequestBuilder"/></returns>
         [Obsolete("")]
         public global::Soenneker.Algolia.OpenApiClient.Search.One.Clusters.Mapping.Item.WithUserItemRequestBuilder this[string position]

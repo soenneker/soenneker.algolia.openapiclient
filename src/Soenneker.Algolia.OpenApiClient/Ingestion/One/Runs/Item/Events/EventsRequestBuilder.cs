@@ -19,7 +19,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs.Item.Events
     public partial class EventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Algolia.OpenApiClient.ingestion.One.runs.item.events.item collection</summary>
-        /// <param name="position">Unique identifier of an event.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs.Item.Events.Item.WithEventItemRequestBuilder"/></returns>
         public global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Runs.Item.Events.Item.WithEventItemRequestBuilder this[string position]
         {

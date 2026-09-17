@@ -31,7 +31,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Sources
             get => new global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Sources.Validate.ValidateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Algolia.OpenApiClient.ingestion.One.sources.item collection</summary>
-        /// <param name="position">Unique identifier of a source.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Sources.Item.WithSourceItemRequestBuilder"/></returns>
         public global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Sources.Item.WithSourceItemRequestBuilder this[string position]
         {

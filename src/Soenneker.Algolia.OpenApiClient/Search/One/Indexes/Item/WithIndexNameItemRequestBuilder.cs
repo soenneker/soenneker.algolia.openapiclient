@@ -85,7 +85,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item
             get => new global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.TaskNamespace.TaskRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Algolia.OpenApiClient.search.One.indexes.item.item collection</summary>
-        /// <param name="position">Unique record identifier.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.WithObjectItemRequestBuilder"/></returns>
         public global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.WithObjectItemRequestBuilder this[string position]
         {

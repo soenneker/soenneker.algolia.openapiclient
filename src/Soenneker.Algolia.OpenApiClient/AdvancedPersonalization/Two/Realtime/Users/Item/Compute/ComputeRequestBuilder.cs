@@ -41,7 +41,7 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Realtime.U
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationErrorBase">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationErrorBase">When receiving a 402 status code</exception>
-        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ConflictResponse">When receiving a 409 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationConflictResponse">When receiving a 409 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.TooManyRequestsResponse">When receiving a 421 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationErrorBase">When receiving a 422 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationErrorBase">When receiving a 500 status code</exception>
@@ -60,7 +60,7 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Realtime.U
             {
                 { "400", global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationErrorBase.CreateFromDiscriminatorValue },
                 { "402", global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationErrorBase.CreateFromDiscriminatorValue },
-                { "409", global::Soenneker.Algolia.OpenApiClient.Models.ConflictResponse.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationConflictResponse.CreateFromDiscriminatorValue },
                 { "421", global::Soenneker.Algolia.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationErrorBase.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationErrorBase.CreateFromDiscriminatorValue },

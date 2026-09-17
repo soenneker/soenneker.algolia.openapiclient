@@ -19,7 +19,7 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users
     public partial class UsersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Algolia.OpenApiClient.advancedPersonalization.Two.users.item collection</summary>
-        /// <param name="position">ID of the user.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users.Item.WithUserItemRequestBuilder"/></returns>
         public global::Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users.Item.WithUserItemRequestBuilder this[string position]
         {

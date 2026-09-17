@@ -25,7 +25,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Authentications
             get => new global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Authentications.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Algolia.OpenApiClient.ingestion.One.authentications.item collection</summary>
-        /// <param name="position">Unique identifier of an authentication resource.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Authentications.Item.WithAuthenticationItemRequestBuilder"/></returns>
         public global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Authentications.Item.WithAuthenticationItemRequestBuilder this[string position]
         {
