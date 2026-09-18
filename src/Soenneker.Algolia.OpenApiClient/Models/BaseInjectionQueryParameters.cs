@@ -12,9 +12,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     public partial class BaseInjectionQueryParameters : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Whether to support phrase matching and excluding words from search queriesUse the `advancedSyntaxFeatures` parameter to control which feature is supported.</summary>
+        /// <summary>Whether to support phrase matching and excluding words from search queries.Use the `advancedSyntaxFeatures` parameter to control which feature is supported.</summary>
         public bool? AdvancedSyntax { get; set; }
-        /// <summary>Advanced search syntax features you want to support- `exactPhrase`.  Phrases in quotes must match exactly.  For example, `sparkly blue &quot;iPhone case&quot;` only returns records with the exact string &quot;iPhone case&quot;- `excludeWords`.  Query words prefixed with a `-` must not occur in a record.  For example, `search -engine` matches records that contain &quot;search&quot; but not &quot;engine&quot;This setting only has an effect if `advancedSyntax` is true.</summary>
+        /// <summary>Advanced search syntax features you want to support.- `exactPhrase`.  Phrases in quotes must match exactly.  For example, `sparkly blue &quot;iPhone case&quot;` only returns records with the exact string &quot;iPhone case&quot;.- `excludeWords`.  Query words prefixed with a `-` must not occur in a record.  For example, `search -engine` matches records that contain &quot;search&quot; but not &quot;engine&quot;.This setting only has an effect if `advancedSyntax` is true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Algolia.OpenApiClient.Models.AdvancedSyntaxFeatures?>? AdvancedSyntaxFeatures { get; set; }
@@ -22,9 +22,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<global::Soenneker.Algolia.OpenApiClient.Models.AdvancedSyntaxFeatures?> AdvancedSyntaxFeatures { get; set; }
 #endif
-        /// <summary>Whether to allow typos on numbers in the search queryTurn off this setting to reduce the number of irrelevant matcheswhen searching in large sets of similar numbers.</summary>
+        /// <summary>Whether to allow typos on numbers in the search query.Turn off this setting to reduce the number of irrelevant matcheswhen searching in large sets of similar numbers.</summary>
         public bool? AllowTyposOnNumericTokens { get; set; }
-        /// <summary>Determine which plurals and synonyms should be considered an exact matchesBy default, Algolia treats singular and plural forms of a word, and single-word synonyms, as [exact](https://www.algolia.com/doc/guides/managing-results/relevance-overview/in-depth/ranking-criteria/#exact) matches when searching.For example- &quot;swimsuit&quot; and &quot;swimsuits&quot; are treated the same- &quot;swimsuit&quot; and &quot;swimwear&quot; are treated the same (if they are [synonyms](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/adding-synonyms/#regular-synonyms))- `ignorePlurals`.  Plurals and similar declensions added by the `ignorePlurals` setting are considered exact matches- `singleWordSynonym`.  Single-word synonyms, such as &quot;NY&quot; = &quot;NYC&quot;, are considered exact matches- `multiWordsSynonym`.  Multi-word synonyms, such as &quot;NY&quot; = &quot;New York&quot;, are considered exact matches.</summary>
+        /// <summary>Determine which plurals and synonyms should be considered an exact matches.By default, Algolia treats singular and plural forms of a word, and single-word synonyms, as [exact](https://www.algolia.com/doc/guides/managing-results/relevance-overview/in-depth/ranking-criteria/#exact) matches when searching.For example:- &quot;swimsuit&quot; and &quot;swimsuits&quot; are treated the same.- &quot;swimsuit&quot; and &quot;swimwear&quot; are treated the same (if they are [synonyms](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/adding-synonyms/#regular-synonyms)).- `ignorePlurals`.  Plurals and similar declensions added by the `ignorePlurals` setting are considered exact matches.- `singleWordSynonym`.  Single-word synonyms, such as &quot;NY&quot; = &quot;NYC&quot;, are considered exact matches.- `multiWordsSynonym`.  Multi-word synonyms, such as &quot;NY&quot; = &quot;New York&quot;, are considered exact matches.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Algolia.OpenApiClient.Models.AlternativesAsExact?>? AlternativesAsExact { get; set; }
@@ -32,9 +32,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<global::Soenneker.Algolia.OpenApiClient.Models.AlternativesAsExact?> AlternativesAsExact { get; set; }
 #endif
-        /// <summary>Whether the best matching attribute should be determined by minimum proximityThis setting only affects ranking if the Attribute ranking criterion comes before Proximity in the `ranking` setting.If true, the best matching attribute is selected based on the minimum proximity of multiple matches.Otherwise, the best matching attribute is determined by the order in the `searchableAttributes` setting.</summary>
+        /// <summary>Whether the best matching attribute should be determined by minimum proximity.This setting only affects ranking if the Attribute ranking criterion comes before Proximity in the `ranking` setting.If true, the best matching attribute is selected based on the minimum proximity of multiple matches.Otherwise, the best matching attribute is determined by the order in the `searchableAttributes` setting.Prefer `attributeCriteriaComputedBy`, which expresses the same two behaviors and adds the `sum` strategy.If you set both, `attributeCriteriaComputedBy` takes precedence.</summary>
         public bool? AttributeCriteriaComputedByMinProximity { get; set; }
-        /// <summary>Attributes to highlightBy default, all searchable attributes are highlighted.Use `*` to highlight all attributes or use an empty array `[]` to turn off highlighting.Attribute names are case-sensitiveWith highlighting, strings that match the search query are surrounded by HTML tags defined by `highlightPreTag` and `highlightPostTag`.You can use this to visually highlight matching parts of a search query in your UIFor more information, see [Highlighting and snippeting](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/highlighting-snippeting/js).</summary>
+        /// <summary>Attributes to highlight.By default, all searchable attributes are highlighted.Use `*` to highlight all attributes or use an empty array `[]` to turn off highlighting.Attribute names are case-sensitiveWith highlighting, strings that match the search query are surrounded by HTML tags defined by `highlightPreTag` and `highlightPostTag`.You can use this to visually highlight matching parts of a search query in your UIFor more information, see [Highlighting and snippeting](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/highlighting-snippeting/js).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AttributesToHighlight { get; set; }
@@ -42,7 +42,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<string> AttributesToHighlight { get; set; }
 #endif
-        /// <summary>Attributes to include in the API responseTo reduce the size of your response, you can retrieve only some of the attributes.Attribute names are case-sensitive- `*` retrieves all attributes, except attributes included in the `customRanking` and `unretrievableAttributes` settings.- To retrieve all attributes except a specific one, prefix the attribute with a dash and combine it with the `*`: `[&quot;*&quot;, &quot;-ATTRIBUTE&quot;]`.- The `objectID` attribute is always included.</summary>
+        /// <summary>Attributes to include in the API response.To reduce the size of your response, you can retrieve only some of the attributes.Attribute names are case-sensitive- `*` retrieves all attributes, except attributes included in the `customRanking` and `unretrievableAttributes` settings.- To retrieve all attributes except a specific one, prefix the attribute with a dash and combine it with the `*`: `[&quot;*&quot;, &quot;-ATTRIBUTE&quot;]`.- The `objectID` attribute is always included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AttributesToRetrieve { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<string> AttributesToSnippet { get; set; }
 #endif
-        /// <summary>Whether to include a `queryID` attribute in the responseThe query ID is a unique identifier for a search query and is required for tracking [click and conversion events](https://www.algolia.com/doc/guides/sending-events/getting-started).</summary>
+        /// <summary>Whether to include a `queryID` attribute in the response.The query ID is a unique identifier for a search query and is required for tracking [click and conversion events](https://www.algolia.com/doc/guides/sending-events/getting-started).</summary>
         public bool? ClickAnalytics { get; set; }
         /// <summary>Searchable attributes for which you want to [turn off the Exact ranking criterion](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/in-depth/adjust-exact-settings/#turn-off-exact-for-some-attributes).Attribute names are case-sensitiveThis can be useful for attributes with long values, where the likelihood of an exact match is high,such as product descriptions.Turning off the Exact ranking criterion for these attributes favors exact matching on other attributes.This reduces the impact of individual attributes with a lot of content on ranking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,7 +68,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<string> DisableExactOnAttributes { get; set; }
 #endif
-        /// <summary>Attributes for which you want to turn off [typo tolerance](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance).Attribute names are case-sensitiveReturning only exact matches can help when- [Searching in hyphenated attributes](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/how-to/how-to-search-in-hyphenated-attributes).- Reducing the number of matches when you have too many.  This can happen with attributes that are long blocks of text, such as product descriptionsConsider alternatives such as `disableTypoToleranceOnWords` or adding synonyms if your attributes have intentional unusual spellings that might look like typos.</summary>
+        /// <summary>Attributes for which you want to turn off [typo tolerance](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance).Attribute names are case-sensitiveReturning only exact matches can help when- [Searching in hyphenated attributes](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/how-to/how-to-search-in-hyphenated-attributes).- Reducing the number of matches when you have too many.  This can happen with attributes that are long blocks of text, such as product descriptions.Consider alternatives such as `disableTypoToleranceOnWords` or adding synonyms if your attributes have intentional unusual spellings that might look like typos.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DisableTypoToleranceOnAttributes { get; set; }
@@ -88,7 +88,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public bool? EnableABTest { get; set; }
         /// <summary>Whether to enable Personalization.</summary>
         public bool? EnablePersonalization { get; set; }
-        /// <summary>Whether this search will use [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking)This setting only has an effect if you activated Dynamic Re-Ranking for this index in the Algolia dashboard.</summary>
+        /// <summary>Whether this search will use [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking).This setting only has an effect if you activated Dynamic Re-Ranking for this index in the Algolia dashboard.</summary>
         public bool? EnableReRanking { get; set; }
         /// <summary>Whether to enable rules.</summary>
         public bool? EnableRules { get; set; }
@@ -136,13 +136,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.IgnorePlurals IgnorePlurals { get; set; }
 #endif
-        /// <summary>Minimum proximity score for two matching wordsThis adjusts the [Proximity ranking criterion](https://www.algolia.com/doc/guides/managing-results/relevance-overview/in-depth/ranking-criteria/#proximity)by equally scoring matches that are farther apartFor example, if `minProximity` is 2, neighboring matches and matches with one word between them would have the same score.</summary>
+        /// <summary>Minimum proximity score for two matching words.This adjusts the [Proximity ranking criterion](https://www.algolia.com/doc/guides/managing-results/relevance-overview/in-depth/ranking-criteria/#proximity)by equally scoring matches that are farther apartFor example, if `minProximity` is 2, neighboring matches and matches with one word between them would have the same score.</summary>
         public int? MinProximity { get; set; }
         /// <summary>Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos).</summary>
         public int? MinWordSizefor1Typo { get; set; }
         /// <summary>Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos).</summary>
         public int? MinWordSizefor2Typos { get; set; }
-        /// <summary>ISO language codes that adjust settings that are useful for processing natural language queries (as opposed to keyword searches)- Sets `removeStopWords` and `ignorePlurals` to the list of provided languages.- Sets `removeWordsIfNoResults` to `allOptional`.- Adds a `natural_language` attribute to `ruleContexts` and `analyticsTags`.</summary>
+        /// <summary>ISO language codes that adjust settings that are useful for processing natural language queries (as opposed to keyword searches).- Sets `removeStopWords` and `ignorePlurals` to the list of provided languages.- Sets `removeWordsIfNoResults` to `allOptional`.- Adds a `natural_language` attribute to `ruleContexts` and `analyticsTags`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage?>? NaturalLanguages { get; set; }
@@ -176,7 +176,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Whether to include this search when calculating processing-time percentiles.</summary>
         public bool? PercentileComputation { get; set; }
-        /// <summary>Impact that Personalization should have on this searchThe higher this value is, the more Personalization determines the ranking compared to other factors.For more information, see [Understanding Personalization impact](https://www.algolia.com/doc/guides/personalization/personalizing-results/in-depth/configuring-personalization/#understanding-personalization-impact).</summary>
+        /// <summary>Impact that Personalization should have on this search.The higher this value is, the more Personalization determines the ranking compared to other factors.For more information, see [Understanding Personalization impact](https://www.algolia.com/doc/guides/personalization/personalizing-results/in-depth/configuring-personalization/#understanding-personalization-impact).</summary>
         public int? PersonalizationImpact { get; set; }
         /// <summary>Languages for language-specific query processing steps such as plurals, stop-word removal, and word-detection dictionaries.This setting sets a default list of languages used by the `removeStopWords` and `ignorePlurals` settings.This setting also sets a dictionary for word detection in the logogram-based [CJK](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/normalization/#normalization-for-logogram-based-languages-cjk) languages.To support this, place the CJK language **first**.**Always specify a query language.**If you don&apos;t specify an indexing language, the search engine uses all [supported languages](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/supported-languages),or the languages you specified with the `ignorePlurals` or `removeStopWords` parameters.This can lead to unexpected search results.For more information, see [Language-specific configuration](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -198,9 +198,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Strategy for removing words from the query when it doesn&apos;t return any results.This helps to avoid returning empty search results.- `none`.  No words are removed when a query doesn&apos;t return results.- `lastWords`.  Treat the last (then second to last, then third to last) word as optional,  until there are results or at most 5 words have been removed.- `firstWords`.  Treat the first (then second, then third) word as optional,  until there are results or at most 5 words have been removed.- `allOptional`.  Treat all words as optional.For more information, see [Remove words to improve results](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/in-depth/why-use-remove-words-if-no-results).</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.RemoveWordsIfNoResults? RemoveWordsIfNoResults { get; set; }
-        /// <summary>Whether to replace a highlighted word with the matched synonymBy default, the original words are highlighted even if a synonym matches.For example, with `home` as a synonym for `house` and a search for `home`,records matching either &quot;home&quot; or &quot;house&quot; are included in the search results,and either &quot;home&quot; or &quot;house&quot; are highlightedWith `replaceSynonymsInHighlight` set to `true`, a search for `home` still matches the same records,but all occurrences of &quot;house&quot; are replaced by &quot;home&quot; in the highlighted response.</summary>
+        /// <summary>Whether to replace a highlighted word with the matched synonym.By default, the original words are highlighted even if a synonym matches.For example, with `home` as a synonym for `house` and a search for `home`,records matching either &quot;home&quot; or &quot;house&quot; are included in the search results,and either &quot;home&quot; or &quot;house&quot; are highlightedWith `replaceSynonymsInHighlight` set to `true`, a search for `home` still matches the same records,but all occurrences of &quot;house&quot; are replaced by &quot;home&quot; in the highlighted response.</summary>
         public bool? ReplaceSynonymsInHighlight { get; set; }
-        /// <summary>Properties to include in the API response of search and browse requestsBy default, all response properties are included.To reduce the response size, you can select which properties should be includedAn empty list may lead to an empty API response (except properties you can&apos;t exclude)You can&apos;t exclude these properties:`message`, `warning`, `cursor`, `abTestVariantID`,or any property added by setting `getRankingInfo` to trueYour search depends on the `hits` field. If you omit this field, searches won&apos;t return any results.Your UI might also depend on other properties, for example, for pagination.Before restricting the response size, check the impact on your search experience.</summary>
+        /// <summary>Properties to include in the API response of search and browse requests.By default, all response properties are included.To reduce the response size, you can select which properties should be includedAn empty list may lead to an empty API response (except properties you can&apos;t exclude)You can&apos;t exclude these properties:`message`, `warning`, `cursor`, `abTestVariantID`,or any property added by setting `getRankingInfo` to trueYour search depends on the `hits` field. If you omit this field, searches won&apos;t return any results.Your UI might also depend on other properties, for example, for pagination.Before restricting the response size, check the impact on your search experience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ResponseFields { get; set; }
@@ -218,7 +218,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<string> RestrictSearchableAttributes { get; set; }
 #endif
-        /// <summary>Assigns a rule context to the search query[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.</summary>
+        /// <summary>Assigns a rule context to the search query.[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RuleContexts { get; set; }

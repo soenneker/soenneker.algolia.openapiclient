@@ -48,13 +48,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.AroundRadius AroundRadius { get; set; }
 #endif
-        /// <summary>Whether to include a `queryID` attribute in the responseThe query ID is a unique identifier for a search query and is required for tracking [click and conversion events](https://www.algolia.com/doc/guides/sending-events/getting-started).</summary>
+        /// <summary>Whether to include a `queryID` attribute in the response.The query ID is a unique identifier for a search query and is required for tracking [click and conversion events](https://www.algolia.com/doc/guides/sending-events/getting-started).</summary>
         public bool? ClickAnalytics { get; set; }
         /// <summary>Whether to enable index level A/B testing for this run request.If the composition mixes multiple indices, the A/B test is ignored.</summary>
         public bool? EnableABTest { get; set; }
         /// <summary>Whether to enable Personalization.</summary>
         public bool? EnablePersonalization { get; set; }
-        /// <summary>Whether this search will use [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking)This setting only has an effect if you activated Dynamic Re-Ranking for this index in the Algolia dashboard.</summary>
+        /// <summary>Whether this search will use [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking).This setting only has an effect if you activated Dynamic Re-Ranking for this index in the Algolia dashboard.</summary>
         public bool? EnableReRanking { get; set; }
         /// <summary>Whether to enable composition rules.</summary>
         public bool? EnableRules { get; set; }
@@ -66,7 +66,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.FacetFilters FacetFilters { get; set; }
 #endif
-        /// <summary>Facets for which to retrieve facet values that match the search criteria and the number of matching facet valuesTo retrieve all facets, use the wildcard character `*`.To retrieve disjunctive facets lists, annotate any facets with the `disjunctive` modifier.For more information, see [facets](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#contextual-facet-values-and-counts) and [disjunctive faceting for Smart Groups](https://www.algolia.com/doc/guides/managing-results/compositions/search-based-groups#facets-including-disjunctive-faceting).</summary>
+        /// <summary>Facets for which to retrieve facet values that match the search criteria and the number of matching facet values.To retrieve all facets, use the wildcard character `*`.To retrieve disjunctive facets lists, annotate any facets with the `disjunctive` modifier.For more information, see [facets](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#contextual-facet-values-and-counts) and [disjunctive faceting for Smart Groups](https://www.algolia.com/doc/guides/managing-results/compositions/search-based-groups#facets-including-disjunctive-faceting).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Facets { get; set; }
@@ -112,7 +112,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Minimum radius (in meters) for a search around a location when `aroundRadius` isn&apos;t set.</summary>
         public int? MinimumAroundRadius { get; set; }
-        /// <summary>ISO language codes that adjust settings that are useful for processing natural language queries (as opposed to keyword searches)- Sets `removeStopWords` and `ignorePlurals` to the list of provided languages.- Sets `removeWordsIfNoResults` to `allOptional`.- Adds a `natural_language` attribute to `ruleContexts` and `analyticsTags`.</summary>
+        /// <summary>ISO language codes that adjust settings that are useful for processing natural language queries (as opposed to keyword searches).- Sets `removeStopWords` and `ignorePlurals` to the list of provided languages.- Sets `removeWordsIfNoResults` to `allOptional`.- Adds a `natural_language` attribute to `ruleContexts` and `analyticsTags`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage?>? NaturalLanguages { get; set; }
@@ -154,9 +154,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage?> QueryLanguages { get; set; }
 #endif
-        /// <summary>Relevancy threshold below which less relevant results aren&apos;t included in the resultsYou can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).Use this setting to strike a balance between the relevance and number of returned results.</summary>
+        /// <summary>Relevancy threshold below which less relevant results aren&apos;t included in the results.You can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).Use this setting to strike a balance between the relevance and number of returned results.</summary>
         public int? RelevancyStrictness { get; set; }
-        /// <summary>Assigns a rule context to the run query[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.</summary>
+        /// <summary>Assigns a rule context to the run query.[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RuleContexts { get; set; }

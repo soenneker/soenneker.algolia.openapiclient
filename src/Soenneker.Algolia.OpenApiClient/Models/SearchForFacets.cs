@@ -38,7 +38,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Maximum number of facet values to return when [searching for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).</summary>
         public int? MaxFacetHits { get; set; }
-        /// <summary>- `default`: perform a search query- `facet` [searches for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).</summary>
+        /// <summary>- `default`: perform a search query.- `facet` [searches for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeFacet? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -28,7 +28,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string IndexName { get; set; }
 #endif
-        /// <summary>- `default`: perform a search query- `facet` [searches for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).</summary>
+        /// <summary>- `default`: perform a search query.- `facet` [searches for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeDefault? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
