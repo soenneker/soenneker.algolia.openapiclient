@@ -9,17 +9,26 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Catalog : IParsable
+    public partial class Catalog : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Catalog entries grouped by domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.CatalogDomainsProperty? Domains { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CatalogDomainsProperty2? Domains { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.CatalogDomainsProperty Domains { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CatalogDomainsProperty2 Domains { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Catalog"/> and sets the default values.
+        /// </summary>
+        public Catalog()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +47,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "domains", n => { Domains = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CatalogDomainsProperty>(global::Soenneker.Algolia.OpenApiClient.Models.CatalogDomainsProperty.CreateFromDiscriminatorValue); } },
+                { "domains", n => { Domains = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CatalogDomainsProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.CatalogDomainsProperty2.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,7 +57,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CatalogDomainsProperty>("domains", Domains);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CatalogDomainsProperty2>("domains", Domains);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

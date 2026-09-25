@@ -75,7 +75,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string QueryID { get; set; }
 #endif
-        /// <summary>Timestamp, measured in milliseconds since the Unix epoch.</summary>
+        /// <summary>Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.If not provided, we use the time at which the request was received.</summary>
         public long? Timestamp { get; set; }
         /// <summary>Anonymous or pseudonymous user identifier.Don&apos;t use personally identifiable information in user tokens.For more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,10 +88,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Total monetary value of this event in units of `currency`.This should be equal to the sum of `price` times `quantity`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InsightsValue? Value { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InsightsValueValue? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InsightsValue Value { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InsightsValueValue Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AddedToCartObjectIDsAfterSearch"/> and sets the default values.
@@ -129,7 +129,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "queryID", n => { QueryID = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetLongValue(); } },
                 { "userToken", n => { UserToken = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InsightsValue>(global::Soenneker.Algolia.OpenApiClient.Models.InsightsValue.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InsightsValueValue>(global::Soenneker.Algolia.OpenApiClient.Models.InsightsValueValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -150,7 +150,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("queryID", QueryID);
             writer.WriteLongValue("timestamp", Timestamp);
             writer.WriteStringValue("userToken", UserToken);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InsightsValue>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InsightsValueValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -99,25 +99,11 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Config.Versi
         public partial class VersionsRequestBuilderGetQueryParameters 
         {
             /// <summary>Number of items per page to retrieve.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("itemsPerPage")]
-            public string? ItemsPerPage { get; set; }
-#nullable restore
-#else
-            [QueryParameter("itemsPerPage")]
-            public string ItemsPerPage { get; set; }
-#endif
+            public int? ItemsPerPage { get; set; }
             /// <summary>Page to retrieve.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
+            public int? Page { get; set; }
         }
     }
 }

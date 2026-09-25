@@ -14,8 +14,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>- `min`. Return matches with the lowest number of typos.  For example, if you have matches without typos, only include those.  But if there are no matches without typos (with 1 typo), include matches with 1 typo (2 typos).- `strict`. Return matches with the two lowest numbers of typos.  With `strict`, the Typo ranking criterion is applied first in the `ranking` setting.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnum? Value { get; set; }
+        /// <summary>The value property</summary>
+        public global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnumWrapperValue? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnumWrapper"/> and sets the default values.
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnum>(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnumWrapperValue>(); } },
             };
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnum>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TypoToleranceEnumWrapperValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

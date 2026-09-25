@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ObjectData : IParsable
+    public partial class ObjectData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Absolute value of the discount for this product, in units of `currency`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +32,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Quantity of a product that has been purchased or added to the cart.The total purchase value is the sum of `quantity` multiplied with the `price` for each purchased item.</summary>
         public int? Quantity { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ObjectData"/> and sets the default values.
+        /// </summary>
+        public ObjectData()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +72,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Discount>("discount", Discount);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Price>("price", Price);
             writer.WriteIntValue("quantity", Quantity);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

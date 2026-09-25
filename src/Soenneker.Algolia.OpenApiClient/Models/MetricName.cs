@@ -28,6 +28,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         #pragma warning disable CS1591
         NoResultCount,
         #pragma warning restore CS1591
+        [EnumMember(Value = "tracked_no_result_count")]
+        #pragma warning disable CS1591
+        TrackedNoResultCount,
+        #pragma warning restore CS1591
         [EnumMember(Value = "add_to_cart_count")]
         #pragma warning disable CS1591
         AddToCartCount,
@@ -67,6 +71,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         [EnumMember(Value = "revenue")]
         #pragma warning disable CS1591
         Revenue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "revenue_per_search")]
+        #pragma warning disable CS1591
+        RevenuePerSearch,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "average_order_value")]
+        #pragma warning disable CS1591
+        AverageOrderValue,
         #pragma warning restore CS1591
     }
 }

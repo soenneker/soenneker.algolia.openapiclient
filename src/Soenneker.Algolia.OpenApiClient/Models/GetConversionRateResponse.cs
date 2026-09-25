@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetConversionRateResponse : IParsable
+    public partial class GetConversionRateResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of conversions from this search.</summary>
         public int? ConversionCount { get; set; }
         /// <summary>Daily conversion rates.</summary>
@@ -26,6 +28,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public double? Rate { get; set; }
         /// <summary>Number of tracked searches. Tracked searches are search requests where the `clickAnalytics` parameter is true.</summary>
         public int? TrackedSearchCount { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetConversionRateResponse"/> and sets the default values.
+        /// </summary>
+        public GetConversionRateResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,6 +70,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetConversionRateResponseDatesItem>("dates", Dates);
             writer.WriteDoubleValue("rate", Rate);
             writer.WriteIntValue("trackedSearchCount", TrackedSearchCount);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

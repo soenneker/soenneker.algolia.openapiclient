@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TimeseriesPayload : IParsable
+    public partial class TimeseriesPayload : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Default domain propagated to entries that omit their own.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// </summary>
         public TimeseriesPayload()
         {
+            AdditionalData = new Dictionary<string, object>();
             Limit = 100;
             Offset = 0;
         }
@@ -105,6 +108,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.FieldReference>("metrics", Metrics);
             writer.WriteIntValue("offset", Offset);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ParameterDefinition>("parameters", Parameters);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Configuration for the smallest difference between test variants you want to detect.
+    /// Configuration for the smallest difference between test variants you want to detect, used to estimate the required sample size.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MinimumDetectableEffect : IAdditionalDataHolder, IParsable

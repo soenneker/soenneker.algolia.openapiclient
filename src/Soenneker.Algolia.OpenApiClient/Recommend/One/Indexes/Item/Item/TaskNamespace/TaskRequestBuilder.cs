@@ -18,7 +18,7 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.TaskNa
         /// <summary>Gets an item from the Soenneker.Algolia.OpenApiClient.recommend.One.indexes.item.item.task.item collection</summary>
         /// <param name="position">Unique task identifier.</param>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.TaskNamespace.Item.WithTaskItemRequestBuilder"/></returns>
-        public global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.TaskNamespace.Item.WithTaskItemRequestBuilder this[string position]
+        public global::Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.TaskNamespace.Item.WithTaskItemRequestBuilder this[long position]
         {
             get
             {

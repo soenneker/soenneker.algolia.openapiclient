@@ -12,10 +12,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TaskV1 : IParsable
+    public partial class TaskV1 : IAdditionalDataHolder, IParsable
     {
         /// <summary>Action to perform on the Algolia index.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.ActionType? Action { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Date and time when the resource was created, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,6 +107,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// </summary>
         public TaskV1()
         {
+            AdditionalData = new Dictionary<string, object>();
             Enabled = true;
         }
         /// <summary>
@@ -160,6 +163,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("taskID", TaskID);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Trigger>("trigger", Trigger);
             writer.WriteStringValue("updatedAt", UpdatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

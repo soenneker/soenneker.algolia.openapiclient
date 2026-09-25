@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TimeseriesResponseSeriesItem : IParsable
+    public partial class TimeseriesResponseSeriesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Per-day metric breakdown.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,19 +25,26 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The `groupBy` values identifying this series. Absent when the query has no `groupBy`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemKeyProperty? Key { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemKeyProperty2? Key { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemKeyProperty Key { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemKeyProperty2 Key { get; set; }
 #endif
         /// <summary>Metric totals over the whole period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemTotalsProperty? Totals { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemTotalsProperty2? Totals { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemTotalsProperty Totals { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemTotalsProperty2 Totals { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItem"/> and sets the default values.
+        /// </summary>
+        public TimeseriesResponseSeriesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,8 +64,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dates", n => { Dates = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemDatesItem>(global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemDatesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "key", n => { Key = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemKeyProperty>(global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemKeyProperty.CreateFromDiscriminatorValue); } },
-                { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemTotalsProperty>(global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemTotalsProperty.CreateFromDiscriminatorValue); } },
+                { "key", n => { Key = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemKeyProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemKeyProperty2.CreateFromDiscriminatorValue); } },
+                { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemTotalsProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemTotalsProperty2.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +76,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemDatesItem>("dates", Dates);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemKeyProperty>("key", Key);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemTotalsProperty>("totals", Totals);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemKeyProperty2>("key", Key);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemTotalsProperty2>("totals", Totals);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

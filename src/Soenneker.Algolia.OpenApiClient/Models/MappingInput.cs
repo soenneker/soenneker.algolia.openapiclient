@@ -11,7 +11,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Transformations to apply to the source, serialized as a JSON string.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MappingInput : IParsable
+    public partial class MappingInput : IAdditionalDataHolder, IParsable
     {
         /// <summary>The actions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,8 +21,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<global::Soenneker.Algolia.OpenApiClient.Models.MappingKitAction> Actions { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Mapping format schema.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.MappingFormatSchema? Format { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.MappingInput"/> and sets the default values.
+        /// </summary>
+        public MappingInput()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.MappingKitAction>("actions", Actions);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.MappingFormatSchema>("format", Format);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

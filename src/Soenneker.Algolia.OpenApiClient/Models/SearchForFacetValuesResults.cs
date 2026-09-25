@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SearchForFacetValuesResults : IParsable
+    public partial class SearchForFacetValuesResults : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the facet count is exhaustive (true) or approximate (false).For more information, see [Why are my facet and hit counts not accurate](https://support.algolia.com/hc/articles/4406975248145-Why-are-my-facet-and-hit-counts-not-accurate).</summary>
         public bool? ExhaustiveFacetsCount { get; set; }
         /// <summary>Matching facet values.</summary>
@@ -32,6 +34,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Time the server took to process the request, in milliseconds.</summary>
         public int? ProcessingTimeMS { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResults"/> and sets the default values.
+        /// </summary>
+        public SearchForFacetValuesResults()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,6 +76,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResultsFacetHitsItem>("facetHits", FacetHits);
             writer.WriteStringValue("indexName", IndexName);
             writer.WriteIntValue("processingTimeMS", ProcessingTimeMS);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

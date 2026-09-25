@@ -21,10 +21,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Rules applied to the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseSearchResponseAppliedRulesItemProperty>? AppliedRules { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchResponseAppliedRulesItem>? AppliedRules { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseSearchResponseAppliedRulesItemProperty> AppliedRules { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchResponseAppliedRulesItem> AppliedRules { get; set; }
 #endif
         /// <summary>Computed geographical location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -238,7 +238,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "abTestID", n => { AbTestID = n.GetIntValue(); } },
                 { "abTestVariantID", n => { AbTestVariantID = n.GetIntValue(); } },
-                { "appliedRules", n => { AppliedRules = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseSearchResponseAppliedRulesItemProperty>(global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseSearchResponseAppliedRulesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "appliedRules", n => { AppliedRules = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchResponseAppliedRulesItem>(global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchResponseAppliedRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "aroundLatLng", n => { AroundLatLng = n.GetStringValue(); } },
                 { "_automaticInsights", n => { AutomaticInsights = n.GetBoolValue(); } },
                 { "automaticRadius", n => { AutomaticRadius = n.GetStringValue(); } },
@@ -281,7 +281,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("abTestID", AbTestID);
             writer.WriteIntValue("abTestVariantID", AbTestVariantID);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseSearchResponseAppliedRulesItemProperty>("appliedRules", AppliedRules);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchResponseAppliedRulesItem>("appliedRules", AppliedRules);
             writer.WriteStringValue("aroundLatLng", AroundLatLng);
             writer.WriteBoolValue("_automaticInsights", AutomaticInsights);
             writer.WriteStringValue("automaticRadius", AutomaticRadius);

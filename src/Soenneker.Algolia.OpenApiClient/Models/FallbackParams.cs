@@ -136,10 +136,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Characters and their normalized replacements.This overrides Algolia&apos;s default [normalization](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/normalization).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsCustomNormalization? CustomNormalization { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsCustomNormalizationProperty? CustomNormalization { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsCustomNormalization CustomNormalization { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsCustomNormalizationProperty CustomNormalization { get; set; }
 #endif
         /// <summary>Attributes to use as [custom ranking](https://www.algolia.com/doc/guides/managing-results/must-do/custom-ranking).Attribute names are case-sensitive.The custom ranking attributes decide which items are shown first if the other ranking criteria are equal.Records with missing values for your selected custom ranking attributes are always sorted last.Boolean attributes are sorted based on their alphabetical order.**Modifiers**- `asc(&quot;ATTRIBUTE&quot;)`.  Sort the index by the values of an attribute, in ascending order.- `desc(&quot;ATTRIBUTE&quot;)`.  Sort the index by the values of an attribute, in descending order.If you use two or more custom ranking attributes,[reduce the precision](https://www.algolia.com/doc/guides/managing-results/must-do/custom-ranking/how-to/controlling-custom-ranking-metrics-precision) of your first attributes,or the other attributes will never be applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -152,10 +152,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Searchable attributes to which Algolia should apply [word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/how-to/customize-segmentation) (decompounding).Attribute names are case-sensitive.Compound words are formed by combining two or more individual words,and are particularly prevalent in Germanic languages—for example, &quot;firefighter&quot;.With decompounding, the individual components are indexed separately.You can specify different lists for different languages.Decompounding is supported for these languages:Dutch (`nl`), German (`de`), Finnish (`fi`), Danish (`da`), Swedish (`sv`), and Norwegian (`no`).Decompounding doesn&apos;t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).For example, `Gartenstühle` won&apos;t be decompounded if the `ü` consists of `u` (U+0075) and `◌̈` (U+0308).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsDecompoundedAttributes? DecompoundedAttributes { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsDecompoundedAttributesProperty? DecompoundedAttributes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsDecompoundedAttributes DecompoundedAttributes { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsDecompoundedAttributesProperty DecompoundedAttributes { get; set; }
 #endif
         /// <summary>Whether to split compound words in the query into their building blocks.For more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#splitting-compound-words).Word segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.Decompounding doesn&apos;t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).For example, `Gartenstühle` won&apos;t be decompounded if the `ü` consists of `u` (U+0075) and `◌̈` (U+0308).</summary>
         public bool? DecompoundQuery { get; set; }
@@ -500,10 +500,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>An object with custom data.You can store up to 32kB as custom data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsUserData? UserData { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsUserDataProperty? UserData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsUserData UserData { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsUserDataProperty UserData { get; set; }
 #endif
         /// <summary>Unique pseudonymous or anonymous user identifier.This helps with analytics and click and conversion events.For more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -560,10 +560,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "attributesToTransliterate", n => { AttributesToTransliterate = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "camelCaseAttributes", n => { CamelCaseAttributes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "clickAnalytics", n => { ClickAnalytics = n.GetBoolValue(); } },
-                { "customNormalization", n => { CustomNormalization = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsCustomNormalization>(global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsCustomNormalization.CreateFromDiscriminatorValue); } },
+                { "customNormalization", n => { CustomNormalization = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsCustomNormalizationProperty>(global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsCustomNormalizationProperty.CreateFromDiscriminatorValue); } },
                 { "customRanking", n => { CustomRanking = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "decompoundQuery", n => { DecompoundQuery = n.GetBoolValue(); } },
-                { "decompoundedAttributes", n => { DecompoundedAttributes = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsDecompoundedAttributes>(global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsDecompoundedAttributes.CreateFromDiscriminatorValue); } },
+                { "decompoundedAttributes", n => { DecompoundedAttributes = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsDecompoundedAttributesProperty>(global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsDecompoundedAttributesProperty.CreateFromDiscriminatorValue); } },
                 { "disableExactOnAttributes", n => { DisableExactOnAttributes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "disablePrefixOnAttributes", n => { DisablePrefixOnAttributes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "disableTypoToleranceOnAttributes", n => { DisableTypoToleranceOnAttributes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -622,7 +622,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "tagFilters", n => { TagFilters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TagFilters>(global::Soenneker.Algolia.OpenApiClient.Models.TagFilters.CreateFromDiscriminatorValue); } },
                 { "typoTolerance", n => { TypoTolerance = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendTypoTolerance>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendTypoTolerance.CreateFromDiscriminatorValue); } },
                 { "unretrievableAttributes", n => { UnretrievableAttributes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "userData", n => { UserData = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsUserData>(global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsUserData.CreateFromDiscriminatorValue); } },
+                { "userData", n => { UserData = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsUserDataProperty>(global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsUserDataProperty.CreateFromDiscriminatorValue); } },
                 { "userToken", n => { UserToken = n.GetStringValue(); } },
             };
         }
@@ -653,9 +653,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("attributesToTransliterate", AttributesToTransliterate);
             writer.WriteCollectionOfPrimitiveValues<string>("camelCaseAttributes", CamelCaseAttributes);
             writer.WriteBoolValue("clickAnalytics", ClickAnalytics);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsCustomNormalization>("customNormalization", CustomNormalization);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsCustomNormalizationProperty>("customNormalization", CustomNormalization);
             writer.WriteCollectionOfPrimitiveValues<string>("customRanking", CustomRanking);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsDecompoundedAttributes>("decompoundedAttributes", DecompoundedAttributes);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsDecompoundedAttributesProperty>("decompoundedAttributes", DecompoundedAttributes);
             writer.WriteBoolValue("decompoundQuery", DecompoundQuery);
             writer.WriteCollectionOfPrimitiveValues<string>("disableExactOnAttributes", DisableExactOnAttributes);
             writer.WriteCollectionOfPrimitiveValues<string>("disablePrefixOnAttributes", DisablePrefixOnAttributes);
@@ -715,7 +715,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TagFilters>("tagFilters", TagFilters);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendTypoTolerance>("typoTolerance", TypoTolerance);
             writer.WriteCollectionOfPrimitiveValues<string>("unretrievableAttributes", UnretrievableAttributes);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsUserData>("userData", UserData);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FallbackParamsUserDataProperty>("userData", UserData);
             writer.WriteStringValue("userToken", UserToken);
             writer.WriteAdditionalData(AdditionalData);
         }

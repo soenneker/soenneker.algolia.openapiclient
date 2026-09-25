@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Feature-specific settings captured for a variant.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class FeatureSettings : IParsable
+    public partial class FeatureSettings : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of the feature the settings belong to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,11 +26,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Feature settings payload. The shape depends on the feature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettingsSettings? Settings { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettingsSettingsProperty? Settings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettingsSettings Settings { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettingsSettingsProperty Settings { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettings"/> and sets the default values.
+        /// </summary>
+        public FeatureSettings()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,7 +57,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettingsSettings>(global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettingsSettings.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettingsSettingsProperty>(global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettingsSettingsProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -59,7 +68,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettingsSettings>("settings", Settings);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettingsSettingsProperty>("settings", Settings);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

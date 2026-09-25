@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RunSourcePayload : IParsable
+    public partial class RunSourcePayload : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of entityIDs to update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,11 +43,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Additional information that will be passed to the created runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty? RunMetadata { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2? RunMetadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty RunMetadata { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2 RunMetadata { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayload"/> and sets the default values.
+        /// </summary>
+        public RunSourcePayload()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,7 +77,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "entityType", n => { EntityType = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.EntityType>(); } },
                 { "indexToExclude", n => { IndexToExclude = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "indexToInclude", n => { IndexToInclude = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "runMetadata", n => { RunMetadata = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty>(global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty.CreateFromDiscriminatorValue); } },
+                { "runMetadata", n => { RunMetadata = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -82,7 +91,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.EntityType>("entityType", EntityType);
             writer.WriteCollectionOfPrimitiveValues<string>("indexToExclude", IndexToExclude);
             writer.WriteCollectionOfPrimitiveValues<string>("indexToInclude", IndexToInclude);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty>("runMetadata", RunMetadata);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2>("runMetadata", RunMetadata);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

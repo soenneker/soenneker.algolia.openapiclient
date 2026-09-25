@@ -9,49 +9,58 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class InfrastructureResponseResponseMetrics : IParsable
+    public partial class InfrastructureResponseResponseMetrics : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Average build time of the indices in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsAvgBuildTimeProperty? AvgBuildTime { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsAvgBuildTimeProperty2? AvgBuildTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsAvgBuildTimeProperty AvgBuildTime { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsAvgBuildTimeProperty2 AvgBuildTime { get; set; }
 #endif
         /// <summary>CPU idleness in %.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsCpuUsageProperty? CpuUsage { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsCpuUsageProperty2? CpuUsage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsCpuUsageProperty CpuUsage { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsCpuUsageProperty2 CpuUsage { get; set; }
 #endif
         /// <summary>RAM used for indexing in MB.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamIndexingUsageProperty? RamIndexingUsage { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamIndexingUsageProperty2? RamIndexingUsage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamIndexingUsageProperty RamIndexingUsage { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamIndexingUsageProperty2 RamIndexingUsage { get; set; }
 #endif
         /// <summary>RAM used for search in MB.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamSearchUsageProperty? RamSearchUsage { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamSearchUsageProperty2? RamSearchUsage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamSearchUsageProperty RamSearchUsage { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamSearchUsageProperty2 RamSearchUsage { get; set; }
 #endif
         /// <summary>Solid-state disk (SSD) usage expressed as % of RAM. 0% means no SSD usage. A value of 50% indicates 32&amp;nbsp;GB SSD usage for a machine with 64&amp;nbsp;RAM.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsSsdUsageProperty? SsdUsage { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsSsdUsageProperty2? SsdUsage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsSsdUsageProperty SsdUsage { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsSsdUsageProperty2 SsdUsage { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetrics"/> and sets the default values.
+        /// </summary>
+        public InfrastructureResponseResponseMetrics()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,11 +79,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "avg_build_time", n => { AvgBuildTime = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsAvgBuildTimeProperty>(global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsAvgBuildTimeProperty.CreateFromDiscriminatorValue); } },
-                { "cpu_usage", n => { CpuUsage = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsCpuUsageProperty>(global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsCpuUsageProperty.CreateFromDiscriminatorValue); } },
-                { "ram_indexing_usage", n => { RamIndexingUsage = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamIndexingUsageProperty>(global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamIndexingUsageProperty.CreateFromDiscriminatorValue); } },
-                { "ram_search_usage", n => { RamSearchUsage = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamSearchUsageProperty>(global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamSearchUsageProperty.CreateFromDiscriminatorValue); } },
-                { "ssd_usage", n => { SsdUsage = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsSsdUsageProperty>(global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsSsdUsageProperty.CreateFromDiscriminatorValue); } },
+                { "avg_build_time", n => { AvgBuildTime = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsAvgBuildTimeProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsAvgBuildTimeProperty2.CreateFromDiscriminatorValue); } },
+                { "cpu_usage", n => { CpuUsage = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsCpuUsageProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsCpuUsageProperty2.CreateFromDiscriminatorValue); } },
+                { "ram_indexing_usage", n => { RamIndexingUsage = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamIndexingUsageProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamIndexingUsageProperty2.CreateFromDiscriminatorValue); } },
+                { "ram_search_usage", n => { RamSearchUsage = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamSearchUsageProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamSearchUsageProperty2.CreateFromDiscriminatorValue); } },
+                { "ssd_usage", n => { SsdUsage = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsSsdUsageProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsSsdUsageProperty2.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -84,11 +93,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsAvgBuildTimeProperty>("avg_build_time", AvgBuildTime);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsCpuUsageProperty>("cpu_usage", CpuUsage);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamIndexingUsageProperty>("ram_indexing_usage", RamIndexingUsage);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamSearchUsageProperty>("ram_search_usage", RamSearchUsage);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsSsdUsageProperty>("ssd_usage", SsdUsage);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsAvgBuildTimeProperty2>("avg_build_time", AvgBuildTime);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsCpuUsageProperty2>("cpu_usage", CpuUsage);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamIndexingUsageProperty2>("ram_indexing_usage", RamIndexingUsage);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsRamSearchUsageProperty2>("ram_search_usage", RamSearchUsage);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsSsdUsageProperty2>("ssd_usage", SsdUsage);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

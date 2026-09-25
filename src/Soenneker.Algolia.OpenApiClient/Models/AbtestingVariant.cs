@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AbtestingVariant : IParsable
+    public partial class AbtestingVariant : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of add-to-cart events for this variant.</summary>
         public int? AddToCartCount { get; set; }
         /// <summary>[Add-to-cart rate](https://www.algolia.com/doc/guides/search-analytics/concepts/metrics/#add-to-cart-rate) for this variant.</summary>
@@ -76,6 +78,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public int? TrafficPercentage { get; set; }
         /// <summary>Number of users that made searches to this variant.</summary>
         public int? UserCount { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant"/> and sets the default values.
+        /// </summary>
+        public AbtestingVariant()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -143,6 +152,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("trackedUserCount", TrackedUserCount);
             writer.WriteIntValue("trafficPercentage", TrafficPercentage);
             writer.WriteIntValue("userCount", UserCount);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Order of facet names and facet values in your UI.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SearchFacetOrdering : IParsable
+    public partial class SearchFacetOrdering : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Order of facet names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,11 +26,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Order of facet values. One object for each facet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetOrderingValues? Values { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetOrderingValuesProperty? Values { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetOrderingValues Values { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetOrderingValuesProperty Values { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetOrdering"/> and sets the default values.
+        /// </summary>
+        public SearchFacetOrdering()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,7 +57,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "facets", n => { Facets = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchFacets>(global::Soenneker.Algolia.OpenApiClient.Models.SearchFacets.CreateFromDiscriminatorValue); } },
-                { "values", n => { Values = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetOrderingValues>(global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetOrderingValues.CreateFromDiscriminatorValue); } },
+                { "values", n => { Values = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetOrderingValuesProperty>(global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetOrderingValuesProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -59,7 +68,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchFacets>("facets", Facets);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetOrderingValues>("values", Values);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetOrderingValuesProperty>("values", Values);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

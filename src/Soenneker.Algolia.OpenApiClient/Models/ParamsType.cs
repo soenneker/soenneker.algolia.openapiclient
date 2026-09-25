@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ParamsType : IParsable
+    public partial class ParamsType : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether this search will be included in Analytics.</summary>
         public bool? Analytics { get; set; }
         /// <summary>Tags to apply to the query for [segmenting analytics data](https://www.algolia.com/doc/guides/search-analytics/guides/segments).</summary>
@@ -89,10 +91,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>An object containing keys corresponding to the `key`s from an injection&apos;s `injectedItems` and values containing a list of hits to inject.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ParamsTypeInjectedItems? InjectedItems { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ParamsTypeInjectedItemsProperty? InjectedItems { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ParamsTypeInjectedItems InjectedItems { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ParamsTypeInjectedItemsProperty InjectedItems { get; set; }
 #endif
         /// <summary>The insideBoundingBox property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,6 +183,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string UserToken { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ParamsType"/> and sets the default values.
+        /// </summary>
+        public ParamsType()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ParamsType"/></returns>
@@ -214,7 +223,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "filters", n => { Filters = n.GetStringValue(); } },
                 { "getRankingInfo", n => { GetRankingInfo = n.GetBoolValue(); } },
                 { "hitsPerPage", n => { HitsPerPage = n.GetIntValue(); } },
-                { "injectedItems", n => { InjectedItems = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ParamsTypeInjectedItems>(global::Soenneker.Algolia.OpenApiClient.Models.ParamsTypeInjectedItems.CreateFromDiscriminatorValue); } },
+                { "injectedItems", n => { InjectedItems = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ParamsTypeInjectedItemsProperty>(global::Soenneker.Algolia.OpenApiClient.Models.ParamsTypeInjectedItemsProperty.CreateFromDiscriminatorValue); } },
                 { "insideBoundingBox", n => { InsideBoundingBox = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBox>(global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBox.CreateFromDiscriminatorValue); } },
                 { "insidePolygon", n => { InsidePolygon = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "minimumAroundRadius", n => { MinimumAroundRadius = n.GetIntValue(); } },
@@ -253,7 +262,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("filters", Filters);
             writer.WriteBoolValue("getRankingInfo", GetRankingInfo);
             writer.WriteIntValue("hitsPerPage", HitsPerPage);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ParamsTypeInjectedItems>("injectedItems", InjectedItems);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ParamsTypeInjectedItemsProperty>("injectedItems", InjectedItems);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InsideBoundingBox>("insideBoundingBox", InsideBoundingBox);
             writer.WriteObjectValue<UntypedNode>("insidePolygon", InsidePolygon);
             writer.WriteIntValue("minimumAroundRadius", MinimumAroundRadius);
@@ -267,6 +276,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("ruleContexts", RuleContexts);
             writer.WriteStringValue("sortBy", SortBy);
             writer.WriteStringValue("userToken", UserToken);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

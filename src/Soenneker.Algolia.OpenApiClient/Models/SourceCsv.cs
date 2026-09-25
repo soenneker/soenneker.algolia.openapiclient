@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Specific configuration attributes of a `csv` source.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SourceCsv : IParsable
+    public partial class SourceCsv : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The character used to split the value on each line, default to a comma (\r, \n, 0xFFFD, and space are forbidden).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,10 +26,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Key-value pairs of column names and their expected types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty? Mapping { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2? Mapping { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty Mapping { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2 Mapping { get; set; }
 #endif
         /// <summary>HTTP method to be used for retrieving your data.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.MethodType? Method { get; set; }
@@ -52,6 +54,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// </summary>
         public SourceCsv()
         {
+            AdditionalData = new Dictionary<string, object>();
             Delimiter = ",";
         }
         /// <summary>
@@ -73,7 +76,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "delimiter", n => { Delimiter = n.GetStringValue(); } },
-                { "mapping", n => { Mapping = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty>(global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty.CreateFromDiscriminatorValue); } },
+                { "mapping", n => { Mapping = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2.CreateFromDiscriminatorValue); } },
                 { "method", n => { Method = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.MethodType>(); } },
                 { "uniqueIDColumn", n => { UniqueIDColumn = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -87,10 +90,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("delimiter", Delimiter);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty>("mapping", Mapping);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2>("mapping", Mapping);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.MethodType>("method", Method);
             writer.WriteStringValue("uniqueIDColumn", UniqueIDColumn);
             writer.WriteStringValue("url", Url);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

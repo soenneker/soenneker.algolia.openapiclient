@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TopSearchesResponseSearchesItem : IParsable
+    public partial class TopSearchesResponseSearchesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of searches.</summary>
         public int? Count { get; set; }
         /// <summary>Number of results (hits).</summary>
@@ -24,6 +26,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Search { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseSearchesItem"/> and sets the default values.
+        /// </summary>
+        public TopSearchesResponseSearchesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +66,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("count", Count);
             writer.WriteIntValue("nbHits", NbHits);
             writer.WriteStringValue("search", Search);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

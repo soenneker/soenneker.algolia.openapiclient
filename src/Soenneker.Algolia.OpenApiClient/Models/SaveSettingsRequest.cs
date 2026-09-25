@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Options for capturing a variant&apos;s settings.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SaveSettingsRequest : IParsable
+    public partial class SaveSettingsRequest : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to also capture the variant&apos;s index settings and feature-specific settings. This must be true for A/B tests whose variants use different indices so that the captured variant settings can later be applied.</summary>
         public bool? SaveFeaturesSettings { get; set; }
         /// <summary>
@@ -20,6 +22,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// </summary>
         public SaveSettingsRequest()
         {
+            AdditionalData = new Dictionary<string, object>();
             SaveFeaturesSettings = false;
         }
         /// <summary>
@@ -51,6 +54,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("saveFeaturesSettings", SaveFeaturesSettings);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

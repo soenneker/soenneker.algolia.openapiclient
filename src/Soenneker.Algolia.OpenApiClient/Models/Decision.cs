@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Outcome of the A/B test once a winner has been declared.Only present when a winning variant has been declared, so its presence indicates the test has been decided.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Decision : IParsable
+    public partial class Decision : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Date and time when the winning variant was declared, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Identifier of the declared winning variant. The control variant is 1.</summary>
         public int? WinnerVariantId { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Decision"/> and sets the default values.
+        /// </summary>
+        public Decision()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("declaredAt", DeclaredAt);
             writer.WriteIntValue("winnerVariantId", WinnerVariantId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

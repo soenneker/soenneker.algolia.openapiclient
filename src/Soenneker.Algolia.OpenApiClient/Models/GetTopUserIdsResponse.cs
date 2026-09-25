@@ -18,10 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Key-value pairs with cluster names as keys and lists of users with the highest number of records per cluster as values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponseTopUsersItem>? TopUsers { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponseTopUsersItemProperty>? TopUsers { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponseTopUsersItem> TopUsers { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponseTopUsersItemProperty> TopUsers { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponse"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "topUsers", n => { TopUsers = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponseTopUsersItem>(global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponseTopUsersItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "topUsers", n => { TopUsers = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponseTopUsersItemProperty>(global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponseTopUsersItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponseTopUsersItem>("topUsers", TopUsers);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponseTopUsersItemProperty>("topUsers", TopUsers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

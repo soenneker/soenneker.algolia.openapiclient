@@ -11,7 +11,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// API key object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ApiKey : IParsable
+    public partial class ApiKey : IAdditionalDataHolder, IParsable
     {
         /// <summary>Permissions that determine the type of API requests this key can make.The required ACL is listed in each endpoint&apos;s reference.For more information, see [access control list](https://www.algolia.com/doc/guides/security/api-keys/#access-control-list-acl).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,6 +21,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<global::Soenneker.Algolia.OpenApiClient.Models.Acl?> Acl { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Description of an API key to help you identify this API key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +66,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// </summary>
         public ApiKey()
         {
+            AdditionalData = new Dictionary<string, object>();
             MaxHitsPerQuery = 0;
             MaxQueriesPerIPPerHour = 0;
             Validity = 0;
@@ -111,6 +114,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("queryParameters", QueryParameters);
             writer.WriteCollectionOfPrimitiveValues<string>("referers", Referers);
             writer.WriteIntValue("validity", Validity);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

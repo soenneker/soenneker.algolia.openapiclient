@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Records to promote.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PromoteObjectIDs : IParsable
+    public partial class PromoteObjectIDs : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Object IDs of the records you want to promote.The records are placed as a group at the `position`.For example, if you want to promote four records to position `0`,they will be the first four search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Position in the search results where you want to show the promoted records.</summary>
         public int? Position { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.PromoteObjectIDs"/> and sets the default values.
+        /// </summary>
+        public PromoteObjectIDs()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("objectIDs", ObjectIDs);
             writer.WriteIntValue("position", Position);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

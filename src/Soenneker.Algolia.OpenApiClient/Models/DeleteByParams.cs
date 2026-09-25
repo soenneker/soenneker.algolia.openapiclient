@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class DeleteByParams : IParsable
+    public partial class DeleteByParams : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Coordinates for the center of a circle, expressed as a comma-separated string of latitude and longitude.Only records included within a circle around this central location are included in the results.The radius of the circle is determined by the `aroundRadius` and `minimumAroundRadius` settings.This parameter is ignored if you also specify `insidePolygon` or `insideBoundingBox`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,6 +79,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters TagFilters { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.DeleteByParams"/> and sets the default values.
+        /// </summary>
+        public DeleteByParams()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.DeleteByParams"/></returns>
@@ -119,6 +128,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("insidePolygon", InsidePolygon);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchNumericFilters>("numericFilters", NumericFilters);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters>("tagFilters", TagFilters);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

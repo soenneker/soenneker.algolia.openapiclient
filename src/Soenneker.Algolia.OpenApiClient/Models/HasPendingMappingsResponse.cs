@@ -9,19 +9,28 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class HasPendingMappingsResponse : IParsable
+    public partial class HasPendingMappingsResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Cluster pending mapping state: migrating, creating, deleting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.HasPendingMappingsResponseClusters? Clusters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.HasPendingMappingsResponseClustersProperty? Clusters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.HasPendingMappingsResponseClusters Clusters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.HasPendingMappingsResponseClustersProperty Clusters { get; set; }
 #endif
         /// <summary>Whether there are clusters undergoing migration, creation, or deletion.</summary>
         public bool? Pending { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.HasPendingMappingsResponse"/> and sets the default values.
+        /// </summary>
+        public HasPendingMappingsResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,7 +49,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "clusters", n => { Clusters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.HasPendingMappingsResponseClusters>(global::Soenneker.Algolia.OpenApiClient.Models.HasPendingMappingsResponseClusters.CreateFromDiscriminatorValue); } },
+                { "clusters", n => { Clusters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.HasPendingMappingsResponseClustersProperty>(global::Soenneker.Algolia.OpenApiClient.Models.HasPendingMappingsResponseClustersProperty.CreateFromDiscriminatorValue); } },
                 { "pending", n => { Pending = n.GetBoolValue(); } },
             };
         }
@@ -51,8 +60,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.HasPendingMappingsResponseClusters>("clusters", Clusters);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.HasPendingMappingsResponseClustersProperty>("clusters", Clusters);
             writer.WriteBoolValue("pending", Pending);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

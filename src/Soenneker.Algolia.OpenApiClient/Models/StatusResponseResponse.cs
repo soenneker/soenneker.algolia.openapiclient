@@ -17,10 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatusProperty? Status { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatusProperty2? Status { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatusProperty Status { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatusProperty2 Status { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponse"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatusProperty>(global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatusProperty.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatusProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatusProperty2.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatusProperty>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatusProperty2>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

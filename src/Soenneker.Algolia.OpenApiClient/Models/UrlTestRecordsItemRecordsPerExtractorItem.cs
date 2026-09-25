@@ -19,10 +19,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Extracted records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsPerExtractorItemRecordsItem>? Records { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsPerExtractorItemRecordsItemProperty>? Records { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsPerExtractorItemRecordsItem> Records { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsPerExtractorItemRecordsItemProperty> Records { get; set; }
 #endif
         /// <summary>Extractor type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "index", n => { Index = n.GetDoubleValue(); } },
-                { "records", n => { Records = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsPerExtractorItemRecordsItem>(global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsPerExtractorItemRecordsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "records", n => { Records = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsPerExtractorItemRecordsItemProperty>(global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsPerExtractorItemRecordsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("index", Index);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsPerExtractorItemRecordsItem>("records", Records);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsPerExtractorItemRecordsItemProperty>("records", Records);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

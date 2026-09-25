@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Settings captured for one A/B test variant.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class VariantSettings : IParsable
+    public partial class VariantSettings : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the variant&apos;s settings have been applied to the control index.</summary>
         public bool? Applied { get; set; }
         /// <summary>Date and time when the variant&apos;s settings were applied to the control index, in RFC 3339 format.</summary>
@@ -50,10 +52,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Index settings captured for the variant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty? IndexSettings { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2? IndexSettings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty IndexSettings { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2 IndexSettings { get; set; }
 #endif
         /// <summary>Date and time when the applied settings were reverted on the control index, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,6 +67,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>One-based index of the variant within the A/B test. The control is variant 1.</summary>
         public int? VariantId { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.VariantSettings"/> and sets the default values.
+        /// </summary>
+        public VariantSettings()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -88,7 +97,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "declaredTimestamp", n => { DeclaredTimestamp = n.GetStringValue(); } },
                 { "expiredTimestamp", n => { ExpiredTimestamp = n.GetStringValue(); } },
                 { "featuresSettings", n => { FeaturesSettings = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettings>(global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettings.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "indexSettings", n => { IndexSettings = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty>(global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty.CreateFromDiscriminatorValue); } },
+                { "indexSettings", n => { IndexSettings = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2.CreateFromDiscriminatorValue); } },
                 { "revertTimestamp", n => { RevertTimestamp = n.GetStringValue(); } },
                 { "variantId", n => { VariantId = n.GetIntValue(); } },
             };
@@ -105,9 +114,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("declaredTimestamp", DeclaredTimestamp);
             writer.WriteStringValue("expiredTimestamp", ExpiredTimestamp);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettings>("featuresSettings", FeaturesSettings);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty>("indexSettings", IndexSettings);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2>("indexSettings", IndexSettings);
             writer.WriteStringValue("revertTimestamp", RevertTimestamp);
             writer.WriteIntValue("variantId", VariantId);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

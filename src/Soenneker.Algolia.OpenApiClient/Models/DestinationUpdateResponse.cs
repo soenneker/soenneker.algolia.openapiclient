@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// API response for updating a destination.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DestinationUpdateResponse : IParsable
+    public partial class DestinationUpdateResponse : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Universally unique identifier (UUID) of a destination resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,7 +23,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string DestinationID { get; set; }
 #endif
-        /// <summary>Descriptive name for the resource.</summary>
+        /// <summary>The uniquely identified name of your transformation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -37,6 +39,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string UpdatedAt { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.DestinationUpdateResponse"/> and sets the default values.
+        /// </summary>
+        public DestinationUpdateResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("destinationID", DestinationID);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("updatedAt", UpdatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

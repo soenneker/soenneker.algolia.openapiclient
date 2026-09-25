@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Custom fields from commercetools to add to the records.For more information, see [Using Custom Types and Custom Fields](https://docs.commercetools.com/tutorials/custom-types).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CommercetoolsCustomFields : IParsable
+    public partial class CommercetoolsCustomFields : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Category custom fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<string> Price { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields"/> and sets the default values.
+        /// </summary>
+        public CommercetoolsCustomFields()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,6 +79,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("category", Category);
             writer.WriteCollectionOfPrimitiveValues<string>("inventory", Inventory);
             writer.WriteCollectionOfPrimitiveValues<string>("price", Price);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

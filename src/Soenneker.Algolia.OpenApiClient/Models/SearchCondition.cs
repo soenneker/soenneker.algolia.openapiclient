@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SearchCondition : IParsable
+    public partial class SearchCondition : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the pattern should match plurals, synonyms, and typos.</summary>
         public bool? Alternatives { get; set; }
         /// <summary>Which part of the search query the pattern should match:- `startsWith`. The pattern must match the beginning of the query.- `endsWith`. The pattern must match the end of the query.- `is`. The pattern must match the query exactly.- `contains`. The pattern must match anywhere in the query.Empty queries are only allowed as patterns with `anchoring: is`.</summary>
@@ -45,6 +47,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// </summary>
         public SearchCondition()
         {
+            AdditionalData = new Dictionary<string, object>();
             Alternatives = false;
         }
         /// <summary>
@@ -84,6 +87,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("context", Context);
             writer.WriteStringValue("filters", Filters);
             writer.WriteStringValue("pattern", Pattern);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

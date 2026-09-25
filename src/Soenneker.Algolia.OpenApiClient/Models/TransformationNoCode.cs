@@ -11,16 +11,25 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Input for a no-code transformation that contains a series of steps.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TransformationNoCode : IParsable
+    public partial class TransformationNoCode : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The steps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCodeStepsItem>? Steps { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCodeStepsItemProperty>? Steps { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCodeStepsItem> Steps { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCodeStepsItemProperty> Steps { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCode"/> and sets the default values.
+        /// </summary>
+        public TransformationNoCode()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "steps", n => { Steps = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCodeStepsItem>(global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCodeStepsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "steps", n => { Steps = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCodeStepsItemProperty>(global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCodeStepsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +58,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCodeStepsItem>("steps", Steps);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCodeStepsItemProperty>("steps", Steps);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

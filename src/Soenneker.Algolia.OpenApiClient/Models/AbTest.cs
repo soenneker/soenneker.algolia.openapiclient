@@ -9,11 +9,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AbTest : IParsable
+    public partial class AbTest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Unique A/B test identifier.</summary>
         public int? AbTestID { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A/B test configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +47,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #nullable restore
 #else
         public string EndAt { get; set; }
+#endif
+        /// <summary>Expected outcome of the A/B test.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Hypothesis { get; set; }
+#nullable restore
+#else
+        public string Hypothesis { get; set; }
 #endif
         /// <summary>A/B test name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,6 +91,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public List<global::Soenneker.Algolia.OpenApiClient.Models.Variant> Variants { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbTest"/> and sets the default values.
+        /// </summary>
+        public AbTest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbTest"/></returns>
@@ -103,6 +120,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
                 { "decision", n => { Decision = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Decision>(global::Soenneker.Algolia.OpenApiClient.Models.Decision.CreateFromDiscriminatorValue); } },
                 { "endAt", n => { EndAt = n.GetStringValue(); } },
+                { "hypothesis", n => { Hypothesis = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Status>(); } },
                 { "stoppedAt", n => { StoppedAt = n.GetStringValue(); } },
@@ -122,11 +140,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("createdAt", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Decision>("decision", Decision);
             writer.WriteStringValue("endAt", EndAt);
+            writer.WriteStringValue("hypothesis", Hypothesis);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Status>("status", Status);
             writer.WriteStringValue("stoppedAt", StoppedAt);
             writer.WriteStringValue("updatedAt", UpdatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Variant>("variants", Variants);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

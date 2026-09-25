@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TransformationTry : IParsable
+    public partial class TransformationTry : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The authentications property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,13 +41,20 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The record to apply the given code to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty? SampleRecord { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty2? SampleRecord { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty SampleRecord { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty2 SampleRecord { get; set; }
 #endif
         /// <summary>The type of transformation, which can be either &apos;code&apos; or &apos;noCode&apos;.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.TransformationType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TransformationTry"/> and sets the default values.
+        /// </summary>
+        public TransformationTry()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,7 +76,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "authentications", n => { Authentications = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AuthenticationCreate>(global::Soenneker.Algolia.OpenApiClient.Models.AuthenticationCreate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput>(global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput.CreateFromDiscriminatorValue); } },
-                { "sampleRecord", n => { SampleRecord = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty>(global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty.CreateFromDiscriminatorValue); } },
+                { "sampleRecord", n => { SampleRecord = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty2.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationType>(); } },
             };
         }
@@ -81,8 +90,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AuthenticationCreate>("authentications", Authentications);
             writer.WriteStringValue("code", Code);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput>("input", Input);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty>("sampleRecord", SampleRecord);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty2>("sampleRecord", SampleRecord);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

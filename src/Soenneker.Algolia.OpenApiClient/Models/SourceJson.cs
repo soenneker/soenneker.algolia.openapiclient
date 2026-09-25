@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Specific configuration attributes of a `json` source.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SourceJson : IParsable
+    public partial class SourceJson : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>HTTP method to be used for retrieving your data.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.MethodType? Method { get; set; }
         /// <summary>Name of a column that contains a unique ID which will be used as `objectID` in Algolia.</summary>
@@ -31,6 +33,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Url { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceJson"/> and sets the default values.
+        /// </summary>
+        public SourceJson()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +73,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.MethodType>("method", Method);
             writer.WriteStringValue("uniqueIDColumn", UniqueIDColumn);
             writer.WriteStringValue("url", Url);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

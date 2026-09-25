@@ -40,7 +40,7 @@ namespace Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AbtestsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/abtesting-v3/3/abtests/{id}", pathParameters)
+        public AbtestsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/abtesting-v3/3/abtests/{id}{?methods}", pathParameters)
         {
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AbtestsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/abtesting-v3/3/abtests/{id}", rawUrl)
+        public AbtestsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/abtesting-v3/3/abtests/{id}{?methods}", rawUrl)
         {
         }
         /// <summary>
@@ -90,13 +90,14 @@ namespace Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorBase">When receiving a 402 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorBase">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorBase">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.ErrorBase">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbTest?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbTest?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item.AbtestsItemRequestBuilder.AbtestsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbTest> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AbTest> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item.AbtestsItemRequestBuilder.AbtestsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -106,6 +107,7 @@ namespace Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item
                 { "402", global::Soenneker.Algolia.OpenApiClient.Models.ErrorBase.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.ErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.ErrorBase.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Algolia.OpenApiClient.Models.ErrorBase.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AbTest>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AbTest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -135,11 +137,11 @@ namespace Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item.AbtestsItemRequestBuilder.AbtestsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item.AbtestsItemRequestBuilder.AbtestsItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -155,6 +157,23 @@ namespace Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item
         public global::Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item.AbtestsItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item.AbtestsItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Retrieves the details for an A/B test by its ID.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class AbtestsItemRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Statistical analysis results to include, as a comma-separated list.When omitted, each test uses its configured method, or `frequentist` if no method is configured.Request both methods to include both sets of available results. This doesn&apos;t change the test configuration or compute missing results.Duplicate values aren&apos;t allowed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("methods")]
+            public global::Soenneker.Algolia.OpenApiClient.Models.AnalysisMethod[]? Methods { get; set; }
+#nullable restore
+#else
+            [QueryParameter("methods")]
+            public global::Soenneker.Algolia.OpenApiClient.Models.AnalysisMethod[] Methods { get; set; }
+#endif
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Object with detailed information about the record&apos;s ranking.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecommendRankingInfo : IParsable
+    public partial class RecommendRankingInfo : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether a filter matched the query.</summary>
         public int? Filters { get; set; }
         /// <summary>Position of the first matched word in the best matching attribute of the record.</summary>
@@ -51,6 +53,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public int? UserScore { get; set; }
         /// <summary>Number of matched words.</summary>
         public int? Words { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendRankingInfo"/> and sets the default values.
+        /// </summary>
+        public RecommendRankingInfo()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -104,6 +113,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("proximityDistance", ProximityDistance);
             writer.WriteIntValue("userScore", UserScore);
             writer.WriteIntValue("words", Words);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

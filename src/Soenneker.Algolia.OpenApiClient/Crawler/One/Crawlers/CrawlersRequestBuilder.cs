@@ -79,11 +79,11 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.InvalidRequestResponse">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.CrawlerCreateResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.CrawlerCreateCrawlerRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.CrawlerCreateResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.CreateCrawlerRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.CrawlerCreateResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.CrawlerCreateCrawlerRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.CrawlerCreateResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.CreateCrawlerRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -121,11 +121,11 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.CrawlerCreateCrawlerRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.CreateCrawlerRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.CrawlerCreateCrawlerRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.CreateCrawlerRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -161,15 +161,8 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers
             public string AppID { get; set; }
 #endif
             /// <summary>Number of items per page to retrieve.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("itemsPerPage")]
-            public string? ItemsPerPage { get; set; }
-#nullable restore
-#else
-            [QueryParameter("itemsPerPage")]
-            public string ItemsPerPage { get; set; }
-#endif
+            public int? ItemsPerPage { get; set; }
             /// <summary>Name of the crawler for filtering the API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -181,15 +174,8 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers
             public string Name { get; set; }
 #endif
             /// <summary>Page to retrieve.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
+            public int? Page { get; set; }
         }
     }
 }

@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Synonym object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SynonymHit : IParsable
+    public partial class SynonymHit : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Words to be matched in records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,6 +74,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string Word { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SynonymHit"/> and sets the default values.
+        /// </summary>
+        public SynonymHit()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SynonymHit"/></returns>
@@ -114,6 +123,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("synonyms", Synonyms);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SynonymType>("type", Type);
             writer.WriteStringValue("word", Word);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

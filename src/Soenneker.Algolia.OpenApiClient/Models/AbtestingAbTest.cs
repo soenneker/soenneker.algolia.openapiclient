@@ -9,11 +9,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AbtestingAbTest : IParsable
+    public partial class AbtestingAbTest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Unique A/B test identifier.</summary>
         public int? AbTestID { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A/B test significance calculated from add-to-cart events.Values of 0.95 or higher can be considered significant,that is, the difference between A and B variants is _not_ due to random variations.</summary>
         public double? AddToCartSignificance { get; set; }
         /// <summary>A/B test significance calculated from click events.Values of 0.95 or higher can be considered significant,that is, the difference between A and B variants is _not_ due to random variations.Lower values have a.</summary>
@@ -57,10 +59,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>A/B test significance calculated from revenue data.Values of 0.95 or higher can be considered significant,that is, the difference between A and B variants is _not_ due to random variations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestRevenueSignificanceProperty? RevenueSignificance { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestRevenueSignificance? RevenueSignificance { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestRevenueSignificanceProperty RevenueSignificance { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestRevenueSignificance RevenueSignificance { get; set; }
 #endif
         /// <summary>A/B test status.- `active`. The A/B test is live and search traffic is split between the two variants.- `stopped`. You stopped the A/B test. The A/B test data is still available for analysis.- `expired`. The A/B test was automatically stopped after reaching its end date.- `failed`. Creating the A/B test failed.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingStatus? Status { get; set; }
@@ -89,6 +91,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public List<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant> Variants { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest"/> and sets the default values.
+        /// </summary>
+        public AbtestingAbTest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTest"/></returns>
@@ -115,7 +124,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "endAt", n => { EndAt = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "purchaseSignificance", n => { PurchaseSignificance = n.GetDoubleValue(); } },
-                { "revenueSignificance", n => { RevenueSignificance = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestRevenueSignificanceProperty>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestRevenueSignificanceProperty.CreateFromDiscriminatorValue); } },
+                { "revenueSignificance", n => { RevenueSignificance = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestRevenueSignificance>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestRevenueSignificance.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingStatus>(); } },
                 { "stoppedAt", n => { StoppedAt = n.GetStringValue(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetStringValue(); } },
@@ -138,11 +147,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("endAt", EndAt);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("purchaseSignificance", PurchaseSignificance);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestRevenueSignificanceProperty>("revenueSignificance", RevenueSignificance);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAbTestRevenueSignificance>("revenueSignificance", RevenueSignificance);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingStatus>("status", Status);
             writer.WriteStringValue("stoppedAt", StoppedAt);
             writer.WriteStringValue("updatedAt", UpdatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant>("variants", Variants);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

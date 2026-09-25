@@ -9,7 +9,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class FetchedIndex : IParsable
+    public partial class FetchedIndex : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A/B test metadata. Only present if the index is part of an active A/B test.</summary>
@@ -20,6 +20,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTest AbTest { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Index creation date. An empty string means that the index has no records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +89,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// </summary>
         public FetchedIndex()
         {
+            AdditionalData = new Dictionary<string, object>();
             NumberOfPendingTasks = 0;
             PendingTask = false;
         }
@@ -145,6 +148,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("sourceABTest", SourceABTest);
             writer.WriteStringValue("updatedAt", UpdatedAt);
             writer.WriteBoolValue("virtual", Virtual);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

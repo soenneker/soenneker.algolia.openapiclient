@@ -11,10 +11,19 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Trigger input for subscription tasks.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SubscriptionTrigger : IParsable
+    public partial class SubscriptionTrigger : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Task runs after receiving subscribed event.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.SubscriptionTriggerType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SubscriptionTrigger"/> and sets the default values.
+        /// </summary>
+        public SubscriptionTrigger()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,6 +53,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SubscriptionTriggerType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetNoClickRateResponseDatesItem : IParsable
+    public partial class GetNoClickRateResponseDatesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of tracked searches. Tracked searches are search requests where the `clickAnalytics` parameter is true.</summary>
         public int? Count { get; set; }
         /// <summary>Date in the format YYYY-MM-DD.</summary>
@@ -26,6 +28,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public int? NoClickCount { get; set; }
         /// <summary>No click rate: calculated as the number of tracked searches without clicks divided by the number of tracked searches.</summary>
         public double? Rate { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetNoClickRateResponseDatesItem"/> and sets the default values.
+        /// </summary>
+        public GetNoClickRateResponseDatesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,6 +70,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("date", Date);
             writer.WriteIntValue("noClickCount", NoClickCount);
             writer.WriteDoubleValue("rate", Rate);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

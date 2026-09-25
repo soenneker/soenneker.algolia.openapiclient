@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TopSearchesResponseWithAnalyticsSearchesItem : IParsable
+    public partial class TopSearchesResponseWithAnalyticsSearchesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Average position of a clicked search result in the list of search results.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.</summary>
         public double? AverageClickPosition { get; set; }
         /// <summary>Number of clicks associated with this search.</summary>
@@ -44,6 +46,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Number of tracked searches. Tracked searches are search requests where the `clickAnalytics` parameter is true.</summary>
         public int? TrackedSearchCount { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithAnalyticsSearchesItem"/> and sets the default values.
+        /// </summary>
+        public TopSearchesResponseWithAnalyticsSearchesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -91,6 +100,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("nbHits", NbHits);
             writer.WriteStringValue("search", Search);
             writer.WriteIntValue("trackedSearchCount", TrackedSearchCount);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

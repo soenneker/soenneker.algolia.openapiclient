@@ -11,10 +11,19 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Deduplication configures the methods used to resolve duplicate items between main search results and injected group results.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class InjectionDeduplication : IParsable
+    public partial class InjectionDeduplication : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Deduplication positioning configures how a duplicate result should be resolved between an injected item and main search results.Current configuration supports:- &apos;highest&apos;: always select the item in the highest position, and remove duplicates that appear lower in the results.- &apos;highestInjected&apos;: duplicate result will be moved to its highest possible injected position, but not higher.   If a duplicate appears higher in main search results, it will be removed to stay it&apos;s intended group position (which could be lower than main).</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.DedupPositioning? Positioning { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectionDeduplication"/> and sets the default values.
+        /// </summary>
+        public InjectionDeduplication()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,6 +53,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.DedupPositioning>("positioning", Positioning);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

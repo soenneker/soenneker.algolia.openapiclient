@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Composition : IParsable
+    public partial class Composition : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An object containing either an `injection` or `multifeed` behavior schema, but not both.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,11 +49,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>A mapping of sorting labels to the indices (or replicas) that implement those sorting rules. The sorting indices MUST be related to the associated main targeted index in the composition.Each key is the label your frontend sends at runtime (for example, &quot;Price (asc)&quot;), and each value is the name of the index that should be queried when that label is selected.When a request includes a &quot;sortBy&quot; parameter, the platform looks up the corresponding index in this mapping and uses it to execute the query. The main targeted index is replacedwith the sorting strategy index it is mapped to.Up to 20 sorting strategies can be defined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionSortingStrategy? SortingStrategy { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionSortingStrategyProperty? SortingStrategy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionSortingStrategy SortingStrategy { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionSortingStrategyProperty SortingStrategy { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Composition"/> and sets the default values.
+        /// </summary>
+        public Composition()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,7 +83,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "objectID", n => { ObjectID = n.GetStringValue(); } },
-                { "sortingStrategy", n => { SortingStrategy = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionSortingStrategy>(global::Soenneker.Algolia.OpenApiClient.Models.CompositionSortingStrategy.CreateFromDiscriminatorValue); } },
+                { "sortingStrategy", n => { SortingStrategy = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionSortingStrategyProperty>(global::Soenneker.Algolia.OpenApiClient.Models.CompositionSortingStrategyProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -88,7 +97,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("objectID", ObjectID);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionSortingStrategy>("sortingStrategy", SortingStrategy);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionSortingStrategyProperty>("sortingStrategy", SortingStrategy);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

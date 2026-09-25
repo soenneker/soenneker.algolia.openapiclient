@@ -157,28 +157,14 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Authentications
         public partial class AuthenticationsRequestBuilderGetQueryParameters 
         {
             /// <summary>Number of items per page.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("itemsPerPage")]
-            public string? ItemsPerPage { get; set; }
-#nullable restore
-#else
-            [QueryParameter("itemsPerPage")]
-            public string ItemsPerPage { get; set; }
-#endif
+            public int? ItemsPerPage { get; set; }
             /// <summary>Sort order of the response, ascending or descending.</summary>
             [QueryParameter("order")]
             public global::Soenneker.Algolia.OpenApiClient.Models.OrderKeys? Order { get; set; }
             /// <summary>Page number of the paginated API response.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
+            public int? Page { get; set; }
             /// <summary>Ecommerce platform for which to retrieve authentications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

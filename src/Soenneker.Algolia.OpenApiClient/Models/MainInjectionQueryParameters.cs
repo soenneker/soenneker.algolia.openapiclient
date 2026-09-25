@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class MainInjectionQueryParameters : IParsable
+    public partial class MainInjectionQueryParameters : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to support phrase matching and excluding words from search queries.Use the `advancedSyntaxFeatures` parameter to control which feature is supported.</summary>
         public bool? AdvancedSyntax { get; set; }
         /// <summary>Advanced search syntax features you want to support.- `exactPhrase`.  Phrases in quotes must match exactly.  For example, `sparkly blue &quot;iPhone case&quot;` only returns records with the exact string &quot;iPhone case&quot;.- `excludeWords`.  Query words prefixed with a `-` must not occur in a record.  For example, `search -engine` matches records that contain &quot;search&quot; but not &quot;engine&quot;.This setting only has an effect if `advancedSyntax` is true.</summary>
@@ -277,6 +279,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public global::Soenneker.Algolia.OpenApiClient.Models.TypoTolerance TypoTolerance { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters"/> and sets the default values.
+        /// </summary>
+        public MainInjectionQueryParameters()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters"/></returns>
@@ -405,6 +414,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteBoolValue("sumOrFiltersScores", SumOrFiltersScores);
             writer.WriteBoolValue("synonyms", Synonyms);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TypoTolerance>("typoTolerance", TypoTolerance);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

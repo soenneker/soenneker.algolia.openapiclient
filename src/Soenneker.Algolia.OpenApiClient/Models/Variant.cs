@@ -9,16 +9,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Variant : IParsable
+    public partial class Variant : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Search parameters applied to this variant when the same index is used for multiple variants.Only present if custom search parameters were provided during test creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.VariantCustomSearchParametersProperty? CustomSearchParameters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.VariantCustomSearchParametersProperty2? CustomSearchParameters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.VariantCustomSearchParametersProperty CustomSearchParameters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.VariantCustomSearchParametersProperty2 CustomSearchParameters { get; set; }
 #endif
         /// <summary>Description for this variant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,6 +59,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Percentage of search requests each variant receives.</summary>
         public int? TrafficPercentage { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Variant"/> and sets the default values.
+        /// </summary>
+        public Variant()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Variant"/></returns>
@@ -74,7 +83,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "customSearchParameters", n => { CustomSearchParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.VariantCustomSearchParametersProperty>(global::Soenneker.Algolia.OpenApiClient.Models.VariantCustomSearchParametersProperty.CreateFromDiscriminatorValue); } },
+                { "customSearchParameters", n => { CustomSearchParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.VariantCustomSearchParametersProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.VariantCustomSearchParametersProperty2.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "estimatedSampleSize", n => { EstimatedSampleSize = n.GetIntValue(); } },
                 { "index", n => { Index = n.GetStringValue(); } },
@@ -90,13 +99,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.VariantCustomSearchParametersProperty>("customSearchParameters", CustomSearchParameters);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.VariantCustomSearchParametersProperty2>("customSearchParameters", CustomSearchParameters);
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("estimatedSampleSize", EstimatedSampleSize);
             writer.WriteStringValue("index", Index);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.VariantMetadata>("metadata", Metadata);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.MetricResult>("metrics", Metrics);
             writer.WriteIntValue("trafficPercentage", TrafficPercentage);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

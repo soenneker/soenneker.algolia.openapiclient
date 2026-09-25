@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LogFile : IParsable
+    public partial class LogFile : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Level indicating the position of a suggestion in a hierarchy of records.For example, a `contextLevel` of 1 indicates that this suggestion belongs to a previous suggestion with `contextLevel` 0.</summary>
         public int? ContextLevel { get; set; }
         /// <summary>Type of log entry.- `SKIP`. A query is skipped because it doesn&apos;t match the conditions for successful inclusion. For example, when a query doesn&apos;t generate enough search results.- `INFO`. An informative log entry.- `ERROR`. The Query Suggestions process encountered an error.</summary>
@@ -32,6 +34,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Timestamp { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.LogFile"/> and sets the default values.
+        /// </summary>
+        public LogFile()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,6 +76,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.LogLevel>("level", Level);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("timestamp", Timestamp);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

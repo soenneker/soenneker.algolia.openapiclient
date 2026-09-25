@@ -17,7 +17,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Mean value for this metric.</summary>
         public double? Mean { get; set; }
-        /// <summary>Only present in case the metric is &apos;revenue&apos;.It is the amount exceeding the 95th percentile of global revenue transactions involved in the AB Test. This amount is not considered when calculating statistical significance.It is tied to a per revenue-currency pair contrary to otherglobal filter effects (such as outliers and empty search count).</summary>
+        /// <summary>Only present for `revenue` metrics.It is the amount exceeding the 95th percentile of global revenue transactions involved in the AB Test. This amount is not considered when calculating statistical significance.It is tied to a per revenue-currency pair contrary to otherglobal filter effects (such as outliers and empty search count).</summary>
         public double? WinsorizedValue { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.MetricMetadata"/> and sets the default values.

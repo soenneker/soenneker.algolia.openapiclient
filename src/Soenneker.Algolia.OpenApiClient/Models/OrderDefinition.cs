@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class OrderDefinition : IParsable
+    public partial class OrderDefinition : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Sort direction.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.OrderDirection? Direction { get; set; }
         /// <summary>Domain the field belongs to.</summary>
@@ -30,6 +32,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Kind { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OrderDefinition"/> and sets the default values.
+        /// </summary>
+        public OrderDefinition()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +72,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.OrderDirection>("direction", Direction);
             writer.WriteStringValue("domain", Domain);
             writer.WriteStringValue("kind", Kind);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

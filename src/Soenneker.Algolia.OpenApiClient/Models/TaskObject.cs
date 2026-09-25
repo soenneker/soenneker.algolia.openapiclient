@@ -9,11 +9,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TaskObject : IParsable
+    public partial class TaskObject : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Action to perform on the Algolia index.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.ActionType? Action { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Date and time when the resource was created, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,6 +131,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// </summary>
         public TaskObject()
         {
+            AdditionalData = new Dictionary<string, object>();
             Enabled = true;
         }
         /// <summary>
@@ -192,6 +195,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ActionType>("subscriptionAction", SubscriptionAction);
             writer.WriteStringValue("taskID", TaskID);
             writer.WriteStringValue("updatedAt", UpdatedAt);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

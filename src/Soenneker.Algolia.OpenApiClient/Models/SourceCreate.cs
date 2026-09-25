@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SourceCreate : IParsable
+    public partial class SourceCreate : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Universally unique identifier (UUID) of an authentication resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,7 +39,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceType2? Type { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionSourceType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceCreate"/> and sets the default values.
+        /// </summary>
+        public SourceCreate()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +68,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "authenticationID", n => { AuthenticationID = n.GetStringValue(); } },
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceInput>(global::Soenneker.Algolia.OpenApiClient.Models.SourceInput.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceType2>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.IngestionSourceType>(); } },
             };
         }
         /// <summary>
@@ -72,7 +81,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("authenticationID", AuthenticationID);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceInput>("input", Input);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceType2>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.IngestionSourceType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

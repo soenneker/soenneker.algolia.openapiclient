@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Paginated API response.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class IngestionPagination : IParsable
+    public partial class IngestionPagination : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of items per page.</summary>
         public int? ItemsPerPage { get; set; }
         /// <summary>Number of items in the API response.</summary>
@@ -21,6 +23,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public int? NbPages { get; set; }
         /// <summary>Page of the API response to retrieve.</summary>
         public int? Page { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination"/> and sets the default values.
+        /// </summary>
+        public IngestionPagination()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -56,6 +65,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("nbItems", NbItems);
             writer.WriteIntValue("nbPages", NbPages);
             writer.WriteIntValue("page", Page);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class InjectedItemRecommendSourceRecommend : IParsable
+    public partial class InjectedItemRecommendSourceRecommend : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The fallbackParameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,6 +42,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Minimum score a recommendation must have to be included.</summary>
         public int? Threshold { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemRecommendSourceRecommend"/> and sets the default values.
+        /// </summary>
+        public InjectedItemRecommendSourceRecommend()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -77,6 +86,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ModelValue>("model", Model);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters>("queryParameters", QueryParameters);
             writer.WriteIntValue("threshold", Threshold);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

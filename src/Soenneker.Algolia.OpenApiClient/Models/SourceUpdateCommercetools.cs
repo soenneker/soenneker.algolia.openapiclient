@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Specific configuration attributes of a `commercetools` source.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SourceUpdateCommercetools : IParsable
+    public partial class SourceUpdateCommercetools : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Custom fields from commercetools to add to the records.For more information, see [Using Custom Types and Custom Fields](https://docs.commercetools.com/tutorials/custom-types).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +60,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>When set to true, the connector indexes objects with all images attributes instead of only the URLs.</summary>
         public bool? UseImagesObjects { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateCommercetools"/> and sets the default values.
+        /// </summary>
+        public SourceUpdateCommercetools()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateCommercetools"/></returns>
@@ -98,6 +107,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("storeKeys", StoreKeys);
             writer.WriteStringValue("url", Url);
             writer.WriteBoolValue("useImagesObjects", UseImagesObjects);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

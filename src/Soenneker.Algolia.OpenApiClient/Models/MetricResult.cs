@@ -14,9 +14,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Bayesian inference results for this variant metric.Omitted when Bayesian results aren&apos;t requested or no Bayesian result is available for this metric.Individual inference fields can be omitted when their values aren&apos;t available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.BayesianMetricResult? Bayesian { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.BayesianMetricResult Bayesian { get; set; }
+#endif
         /// <summary>The value that was computed during error correction. It is used to determine significance of the metric pValue.The critical value is calculated using Bonferroni or Benjamini-Hochberg corrections, based on the givenconfiguration during the A/B test creation.</summary>
         public double? CriticalValue { get; set; }
-        /// <summary>Dimension defined during test creation.</summary>
+        /// <summary>Dimension defined during test creation. For revenue metrics, including `revenue_per_search`, this is the currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Dimension { get; set; }
@@ -32,7 +40,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.MetricMetadata Metadata { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Metric name. Revenue per search results use `revenue_per_search`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -40,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>PValue for the first variant (control) will always be 0. For the other variants, pValue is calculated for the current variant based on the control.</summary>
+        /// <summary>P-value for this variant compared to the control.Omitted when no p-value is available for this metric.</summary>
         public double? PValue { get; set; }
         /// <summary>Whether the pValue is significant or not based on the critical value and the error correction algorithm used.</summary>
         public bool? Significant { get; set; }
@@ -52,7 +60,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string UpdatedAt { get; set; }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>Metric value. For `revenue_per_search`, this is the winsorized mean revenue per search in the specified currency.</summary>
         public double? Value { get; set; }
         /// <summary>The upper bound of the 95% confidence interval for the metric value. The confidence interval is calculated usingeither the relative ratio or relative difference between the metric values for the control and the variant.Relative ratio is used for metrics that are ratios (e.g., click-through rate, conversion rate),while relative difference is used for continuous metrics (e.g., revenue).</summary>
         public double? ValueCIHigh { get; set; }
@@ -83,6 +91,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "bayesian", n => { Bayesian = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BayesianMetricResult>(global::Soenneker.Algolia.OpenApiClient.Models.BayesianMetricResult.CreateFromDiscriminatorValue); } },
                 { "criticalValue", n => { CriticalValue = n.GetDoubleValue(); } },
                 { "dimension", n => { Dimension = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MetricMetadata>(global::Soenneker.Algolia.OpenApiClient.Models.MetricMetadata.CreateFromDiscriminatorValue); } },
@@ -102,6 +111,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BayesianMetricResult>("bayesian", Bayesian);
             writer.WriteDoubleValue("criticalValue", CriticalValue);
             writer.WriteStringValue("dimension", Dimension);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MetricMetadata>("metadata", Metadata);

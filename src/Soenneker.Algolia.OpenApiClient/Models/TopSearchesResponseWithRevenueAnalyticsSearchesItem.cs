@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TopSearchesResponseWithRevenueAnalyticsSearchesItem : IParsable
+    public partial class TopSearchesResponseWithRevenueAnalyticsSearchesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of add-to-cart events from this search.</summary>
         public int? AddToCartCount { get; set; }
         /// <summary>Add-to-cart rate: calculated as the number of tracked searches with at least one add-to-cart event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.</summary>
@@ -39,10 +41,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Revenue associated with this search: broken down by currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithRevenueAnalyticsSearchesItemCurrencies? Currencies { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithRevenueAnalyticsSearchesItemCurrenciesProperty? Currencies { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithRevenueAnalyticsSearchesItemCurrencies Currencies { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithRevenueAnalyticsSearchesItemCurrenciesProperty Currencies { get; set; }
 #endif
         /// <summary>Number of results (hits).</summary>
         public int? NbHits { get; set; }
@@ -60,6 +62,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Number of tracked searches. Tracked searches are search requests where the `clickAnalytics` parameter is true.</summary>
         public int? TrackedSearchCount { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithRevenueAnalyticsSearchesItem"/> and sets the default values.
+        /// </summary>
+        public TopSearchesResponseWithRevenueAnalyticsSearchesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -87,7 +96,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "conversionCount", n => { ConversionCount = n.GetIntValue(); } },
                 { "conversionRate", n => { ConversionRate = n.GetDoubleValue(); } },
                 { "count", n => { Count = n.GetIntValue(); } },
-                { "currencies", n => { Currencies = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithRevenueAnalyticsSearchesItemCurrencies>(global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithRevenueAnalyticsSearchesItemCurrencies.CreateFromDiscriminatorValue); } },
+                { "currencies", n => { Currencies = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithRevenueAnalyticsSearchesItemCurrenciesProperty>(global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithRevenueAnalyticsSearchesItemCurrenciesProperty.CreateFromDiscriminatorValue); } },
                 { "nbHits", n => { NbHits = n.GetIntValue(); } },
                 { "purchaseCount", n => { PurchaseCount = n.GetIntValue(); } },
                 { "purchaseRate", n => { PurchaseRate = n.GetDoubleValue(); } },
@@ -111,12 +120,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("conversionCount", ConversionCount);
             writer.WriteDoubleValue("conversionRate", ConversionRate);
             writer.WriteIntValue("count", Count);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithRevenueAnalyticsSearchesItemCurrencies>("currencies", Currencies);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithRevenueAnalyticsSearchesItemCurrenciesProperty>("currencies", Currencies);
             writer.WriteIntValue("nbHits", NbHits);
             writer.WriteIntValue("purchaseCount", PurchaseCount);
             writer.WriteDoubleValue("purchaseRate", PurchaseRate);
             writer.WriteStringValue("search", Search);
             writer.WriteIntValue("trackedSearchCount", TrackedSearchCount);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

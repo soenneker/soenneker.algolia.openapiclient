@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class DistributionDefinition : IParsable
+    public partial class DistributionDefinition : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Bin edges.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,6 +45,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// </summary>
         public DistributionDefinition()
         {
+            AdditionalData = new Dictionary<string, object>();
             Continuous = false;
         }
         /// <summary>
@@ -80,6 +83,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteBoolValue("continuous", Continuous);
             writer.WriteStringValue("domain", Domain);
             writer.WriteStringValue("kind", Kind);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

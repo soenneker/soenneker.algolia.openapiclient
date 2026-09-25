@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Describes how a destination object should be resolved by means of applying a set of directives.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MappingKitAction : IParsable
+    public partial class MappingKitAction : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether this action has any effect.</summary>
         public bool? Enabled { get; set; }
         /// <summary>The fieldDirectives property</summary>
@@ -39,6 +41,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Trigger { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.MappingKitAction"/> and sets the default values.
+        /// </summary>
+        public MappingKitAction()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,6 +83,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirective>("fieldDirectives", FieldDirectives);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("trigger", Trigger);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetObjectsResponse : IParsable
+    public partial class GetObjectsResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An optional status message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,11 +25,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Retrieved records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponseResultsItem>? Results { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponseResultsItemProperty>? Results { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponseResultsItem> Results { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponseResultsItemProperty> Results { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponse"/> and sets the default values.
+        /// </summary>
+        public GetObjectsResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +56,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponseResultsItem>(global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponseResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponseResultsItemProperty>(global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponseResultsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +67,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("message", Message);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponseResultsItem>("results", Results);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetObjectsResponseResultsItemProperty>("results", Results);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

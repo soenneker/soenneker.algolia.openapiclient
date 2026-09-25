@@ -10,9 +10,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class InfrastructureApiUnauthorizedResponse : ApiException, IParsable
+    public partial class InfrastructureApiUnauthorizedResponse : ApiException, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>The reason property</summary>
@@ -23,6 +25,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Reason { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureApiUnauthorizedResponse"/> and sets the default values.
+        /// </summary>
+        public InfrastructureApiUnauthorizedResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,6 +61,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("reason", Reason);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

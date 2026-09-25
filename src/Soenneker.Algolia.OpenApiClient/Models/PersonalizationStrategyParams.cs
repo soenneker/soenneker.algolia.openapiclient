@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PersonalizationStrategyParams : IParsable
+    public partial class PersonalizationStrategyParams : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Scores associated with each event.The higher the scores, the higher the impact of those events on the personalization of search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +32,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Impact of personalization on the search results.If set to 0, personalization has no impact on the search results.</summary>
         public int? PersonalizationImpact { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationStrategyParams"/> and sets the default values.
+        /// </summary>
+        public PersonalizationStrategyParams()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +72,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventsScoring>("eventsScoring", EventsScoring);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.FacetsScoring>("facetsScoring", FacetsScoring);
             writer.WriteIntValue("personalizationImpact", PersonalizationImpact);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

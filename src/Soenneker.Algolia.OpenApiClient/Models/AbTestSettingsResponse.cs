@@ -11,7 +11,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Captured settings of an A/B test.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AbTestSettingsResponse : IParsable
+    public partial class AbTestSettingsResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Captured settings for each variant of the A/B test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,8 +21,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<global::Soenneker.Algolia.OpenApiClient.Models.VariantSettings> AbtestSettings { get; set; }
 #endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether another active A/B test is using the control index.</summary>
         public bool? ControlIndexInUse { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbTestSettingsResponse"/> and sets the default values.
+        /// </summary>
+        public AbTestSettingsResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.VariantSettings>("abtestSettings", AbtestSettings);
             writer.WriteBoolValue("controlIndexInUse", ControlIndexInUse);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

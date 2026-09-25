@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ListCompositionsResponse : IParsable
+    public partial class ListCompositionsResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of items per page.</summary>
         public int? HitsPerPage { get; set; }
         /// <summary>All compositions in your Algolia application.</summary>
@@ -28,6 +30,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public int? NbPages { get; set; }
         /// <summary>Current page.</summary>
         public int? Page { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ListCompositionsResponse"/> and sets the default values.
+        /// </summary>
+        public ListCompositionsResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -65,6 +74,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("nbHits", NbHits);
             writer.WriteIntValue("nbPages", NbPages);
             writer.WriteIntValue("page", Page);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

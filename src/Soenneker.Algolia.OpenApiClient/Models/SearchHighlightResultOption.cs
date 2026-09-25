@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Surround words that match the query with HTML tags for highlighting.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SearchHighlightResultOption : IParsable
+    public partial class SearchHighlightResultOption : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the entire attribute value is highlighted.</summary>
         public bool? FullyHighlighted { get; set; }
         /// <summary>List of matched words from the search query.</summary>
@@ -33,6 +35,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Value { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultOption"/> and sets the default values.
+        /// </summary>
+        public SearchHighlightResultOption()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,6 +77,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("matchedWords", MatchedWords);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchMatchLevel>("matchLevel", MatchLevel);
             writer.WriteStringValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

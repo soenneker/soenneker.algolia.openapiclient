@@ -46,11 +46,11 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtWithObjectIdResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.SearchPartialUpdateObjectRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialRequestBuilder.PartialRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtWithObjectIdResponse?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.SearchPartialUpdateObjectRequest body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialRequestBuilder.PartialRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtWithObjectIdResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.SearchPartialUpdateObjectRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialRequestBuilder.PartialRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtWithObjectIdResponse> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.SearchPartialUpdateObjectRequest body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialRequestBuilder.PartialRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -72,11 +72,11 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.SearchPartialUpdateObjectRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialRequestBuilder.PartialRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.SearchPartialUpdateObjectRequest body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialRequestBuilder.PartialRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.SearchPartialUpdateObjectRequestRequestBody body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialRequestBuilder.PartialRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.SearchPartialUpdateObjectRequest body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.Item.Item.Partial.PartialRequestBuilder.PartialRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

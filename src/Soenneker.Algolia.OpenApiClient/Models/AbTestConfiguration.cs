@@ -25,7 +25,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<global::Soenneker.Algolia.OpenApiClient.Models.MetricsFilter> Filters { get; set; }
 #endif
-        /// <summary>Configuration for the smallest difference between test variants you want to detect.</summary>
+        /// <summary>A/B test statistical analysis method.When omitted, the test is treated as `frequentist`. The server doesn&apos;t write a default value back to the configuration.</summary>
+        public global::Soenneker.Algolia.OpenApiClient.Models.AnalysisMethod? Method { get; set; }
+        /// <summary>Configuration for the smallest difference between test variants you want to detect, used to estimate the required sample size.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.MinimumDetectableEffect? MinimumDetectableEffect { get; set; }
@@ -33,6 +35,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.MinimumDetectableEffect MinimumDetectableEffect { get; set; }
 #endif
+        /// <summary>Primary metric for Bayesian analysis. Required when `method` is `bayesian`.If the request includes a non-empty `metrics` list, this metric must be in that list.Revenue per search requires access to revenue analytics.</summary>
+        public global::Soenneker.Algolia.OpenApiClient.Models.PrimaryMetric? PrimaryMetric { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbTestConfiguration"/> and sets the default values.
         /// </summary>
@@ -60,7 +64,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "errorCorrection", n => { ErrorCorrection = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ErrorCorrectionType>(); } },
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.MetricsFilter>(global::Soenneker.Algolia.OpenApiClient.Models.MetricsFilter.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "method", n => { Method = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.AnalysisMethod>(); } },
                 { "minimumDetectableEffect", n => { MinimumDetectableEffect = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MinimumDetectableEffect>(global::Soenneker.Algolia.OpenApiClient.Models.MinimumDetectableEffect.CreateFromDiscriminatorValue); } },
+                { "primaryMetric", n => { PrimaryMetric = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.PrimaryMetric>(); } },
             };
         }
         /// <summary>
@@ -72,7 +78,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ErrorCorrectionType>("errorCorrection", ErrorCorrection);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.MetricsFilter>("filters", Filters);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.AnalysisMethod>("method", Method);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MinimumDetectableEffect>("minimumDetectableEffect", MinimumDetectableEffect);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.PrimaryMetric>("primaryMetric", PrimaryMetric);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

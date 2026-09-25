@@ -9,16 +9,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetRevenue : IParsable
+    public partial class GetRevenue : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Revenue associated with this search: broken down by currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueCurrencies? Currencies { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueCurrenciesProperty? Currencies { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueCurrencies Currencies { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueCurrenciesProperty Currencies { get; set; }
 #endif
         /// <summary>Daily revenue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,6 +30,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueDatesItem> Dates { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetRevenue"/> and sets the default values.
+        /// </summary>
+        public GetRevenue()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +55,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "currencies", n => { Currencies = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueCurrencies>(global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueCurrencies.CreateFromDiscriminatorValue); } },
+                { "currencies", n => { Currencies = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueCurrenciesProperty>(global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueCurrenciesProperty.CreateFromDiscriminatorValue); } },
                 { "dates", n => { Dates = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueDatesItem>(global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueDatesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -57,8 +66,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueCurrencies>("currencies", Currencies);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueCurrenciesProperty>("currencies", Currencies);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueDatesItem>("dates", Dates);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -9,17 +9,26 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LatencyResponseResponseMetrics : IParsable
+    public partial class LatencyResponseResponseMetrics : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The latency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.LatencyResponseResponseMetricsLatencyProperty? Latency { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.LatencyResponseResponseMetricsLatencyProperty2? Latency { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.LatencyResponseResponseMetricsLatencyProperty Latency { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.LatencyResponseResponseMetricsLatencyProperty2 Latency { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.LatencyResponseResponseMetrics"/> and sets the default values.
+        /// </summary>
+        public LatencyResponseResponseMetrics()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +47,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "latency", n => { Latency = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.LatencyResponseResponseMetricsLatencyProperty>(global::Soenneker.Algolia.OpenApiClient.Models.LatencyResponseResponseMetricsLatencyProperty.CreateFromDiscriminatorValue); } },
+                { "latency", n => { Latency = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.LatencyResponseResponseMetricsLatencyProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.LatencyResponseResponseMetricsLatencyProperty2.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,7 +57,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.LatencyResponseResponseMetricsLatencyProperty>("latency", Latency);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.LatencyResponseResponseMetricsLatencyProperty2>("latency", Latency);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

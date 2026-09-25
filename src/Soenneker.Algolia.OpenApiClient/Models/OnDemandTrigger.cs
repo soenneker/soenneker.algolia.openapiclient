@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Trigger information for manually-triggered tasks.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class OnDemandTrigger : IParsable
+    public partial class OnDemandTrigger : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The last time the scheduled task ran in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Task is run manually, with the `/run` endpoint.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.OnDemandTriggerType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OnDemandTrigger"/> and sets the default values.
+        /// </summary>
+        public OnDemandTrigger()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("lastRun", LastRun);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.OnDemandTriggerType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -11,15 +11,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Recommend rule.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecommendRule : IParsable
+    public partial class RecommendRule : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Condition that triggers the rule.If not specified, the rule is triggered for all recommendations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Condition2? Condition { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendCondition? Condition { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Condition2 Condition { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendCondition Condition { get; set; }
 #endif
         /// <summary>Effect of the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,6 +70,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// </summary>
         public RecommendRule()
         {
+            AdditionalData = new Dictionary<string, object>();
             Enabled = true;
         }
         /// <summary>
@@ -88,7 +91,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "condition", n => { Condition = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Condition2>(global::Soenneker.Algolia.OpenApiClient.Models.Condition2.CreateFromDiscriminatorValue); } },
+                { "condition", n => { Condition = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendCondition>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendCondition.CreateFromDiscriminatorValue); } },
                 { "consequence", n => { Consequence = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Consequence>(global::Soenneker.Algolia.OpenApiClient.Models.Consequence.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
@@ -104,13 +107,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Condition2>("condition", Condition);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendCondition>("condition", Condition);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Consequence>("consequence", Consequence);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRuleMetadata>("_metadata", Metadata);
             writer.WriteStringValue("objectID", ObjectID);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendTimeRange>("validity", Validity);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

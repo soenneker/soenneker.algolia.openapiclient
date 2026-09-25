@@ -101,25 +101,11 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Crawl_runs
             public string From { get; set; }
 #endif
             /// <summary>Limit of the query results.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("limit")]
-            public string? Limit { get; set; }
-#nullable restore
-#else
-            [QueryParameter("limit")]
-            public string Limit { get; set; }
-#endif
+            public int? Limit { get; set; }
             /// <summary>Offset of the query results.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("offset")]
-            public string? Offset { get; set; }
-#nullable restore
-#else
-            [QueryParameter("offset")]
-            public string Offset { get; set; }
-#endif
+            public int? Offset { get; set; }
             /// <summary>Order of the query &apos;ASC&apos; or &apos;DESC&apos;.</summary>
             [QueryParameter("order")]
             public global::Soenneker.Algolia.OpenApiClient.Models.ParametersOrder? Order { get; set; }

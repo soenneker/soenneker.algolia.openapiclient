@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetUserTokenResponse : IParsable
+    public partial class GetUserTokenResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Date and time of the last event from this user, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,10 +25,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Scores for different facet values.Scores represent the user affinity for a user profile towards specific facet values,given the personalization strategy and past events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.GetUserTokenResponseScores? Scores { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.GetUserTokenResponseScoresProperty? Scores { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.GetUserTokenResponseScores Scores { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.GetUserTokenResponseScoresProperty Scores { get; set; }
 #endif
         /// <summary>Unique pseudonymous or anonymous user identifier.This helps with analytics and click and conversion events.For more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,6 +38,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string UserToken { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetUserTokenResponse"/> and sets the default values.
+        /// </summary>
+        public GetUserTokenResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,7 +64,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "lastEventAt", n => { LastEventAt = n.GetStringValue(); } },
-                { "scores", n => { Scores = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.GetUserTokenResponseScores>(global::Soenneker.Algolia.OpenApiClient.Models.GetUserTokenResponseScores.CreateFromDiscriminatorValue); } },
+                { "scores", n => { Scores = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.GetUserTokenResponseScoresProperty>(global::Soenneker.Algolia.OpenApiClient.Models.GetUserTokenResponseScoresProperty.CreateFromDiscriminatorValue); } },
                 { "userToken", n => { UserToken = n.GetStringValue(); } },
             };
         }
@@ -67,8 +76,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("lastEventAt", LastEventAt);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.GetUserTokenResponseScores>("scores", Scores);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.GetUserTokenResponseScoresProperty>("scores", Scores);
             writer.WriteStringValue("userToken", UserToken);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

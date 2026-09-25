@@ -12,10 +12,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TaskCreateV1 : IParsable
+    public partial class TaskCreateV1 : IAdditionalDataHolder, IParsable
     {
         /// <summary>Action to perform on the Algolia index.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.ActionType? Action { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Date and time when the last cursor was created, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +63,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public global::Soenneker.Algolia.OpenApiClient.Models.TaskCreateTrigger Trigger { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TaskCreateV1"/> and sets the default values.
+        /// </summary>
+        public TaskCreateV1()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TaskCreateV1"/></returns>
@@ -103,6 +112,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TaskInput>("input", Input);
             writer.WriteStringValue("sourceID", SourceID);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TaskCreateTrigger>("trigger", Trigger);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

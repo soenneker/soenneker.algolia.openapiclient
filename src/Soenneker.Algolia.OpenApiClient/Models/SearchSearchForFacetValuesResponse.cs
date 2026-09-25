@@ -9,21 +9,30 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SearchSearchForFacetValuesResponse : IParsable
+    public partial class SearchSearchForFacetValuesResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the facet count is exhaustive (true) or approximate (false).For more information, see [Why are my facet and hit counts not accurate](https://support.algolia.com/hc/articles/4406975248145-Why-are-my-facet-and-hit-counts-not-accurate).</summary>
         public bool? ExhaustiveFacetsCount { get; set; }
         /// <summary>Matching facet values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchForFacetValuesResponseFacetHitsItem>? FacetHits { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResponseFacetHitsItem>? FacetHits { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchForFacetValuesResponseFacetHitsItem> FacetHits { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResponseFacetHitsItem> FacetHits { get; set; }
 #endif
         /// <summary>Time the server took to process the request, in milliseconds.</summary>
         public int? ProcessingTimeMS { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchForFacetValuesResponse"/> and sets the default values.
+        /// </summary>
+        public SearchSearchForFacetValuesResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,7 +52,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "exhaustiveFacetsCount", n => { ExhaustiveFacetsCount = n.GetBoolValue(); } },
-                { "facetHits", n => { FacetHits = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchForFacetValuesResponseFacetHitsItem>(global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchForFacetValuesResponseFacetHitsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "facetHits", n => { FacetHits = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResponseFacetHitsItem>(global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResponseFacetHitsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "processingTimeMS", n => { ProcessingTimeMS = n.GetIntValue(); } },
             };
         }
@@ -55,8 +64,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("exhaustiveFacetsCount", ExhaustiveFacetsCount);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchForFacetValuesResponseFacetHitsItem>("facetHits", FacetHits);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResponseFacetHitsItem>("facetHits", FacetHits);
             writer.WriteIntValue("processingTimeMS", ProcessingTimeMS);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

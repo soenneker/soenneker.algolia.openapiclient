@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Specific configuration attributes of a `bigquery` source.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SourceBigQuery : IParsable
+    public partial class SourceBigQuery : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Custom SQL request to extract data from the BigQuery table.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +66,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string UniqueIDColumn { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceBigQuery"/> and sets the default values.
+        /// </summary>
+        public SourceBigQuery()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceBigQuery"/></returns>
@@ -104,6 +113,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("table", Table);
             writer.WriteStringValue("tablePrefix", TablePrefix);
             writer.WriteStringValue("uniqueIDColumn", UniqueIDColumn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

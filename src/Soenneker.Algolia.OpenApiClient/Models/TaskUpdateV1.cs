@@ -12,8 +12,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TaskUpdateV1 : IParsable
+    public partial class TaskUpdateV1 : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Universally unique identifier (UUID) of a destination resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,6 +44,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.TriggerUpdateInput Trigger { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TaskUpdateV1"/> and sets the default values.
+        /// </summary>
+        public TaskUpdateV1()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,6 +88,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("failureThreshold", FailureThreshold);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TaskInput>("input", Input);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TriggerUpdateInput>("trigger", Trigger);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

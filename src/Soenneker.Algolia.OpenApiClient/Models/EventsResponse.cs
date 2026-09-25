@@ -12,8 +12,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// The response of the Insights API.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class EventsResponse : ApiException, IParsable
+    public partial class EventsResponse : ApiException, IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
         /// <summary>Details about the response, such as error messages.</summary>
@@ -26,6 +28,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>The HTTP status code of the response.</summary>
         public int? Status { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse"/> and sets the default values.
+        /// </summary>
+        public EventsResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +66,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("message", MessageEscaped);
             writer.WriteIntValue("status", Status);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

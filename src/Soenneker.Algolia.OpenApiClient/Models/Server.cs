@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Server : IParsable
+    public partial class Server : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of the cluster to which this server belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +46,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// </summary>
         public Server()
         {
+            AdditionalData = new Dictionary<string, object>();
             IsReplica = false;
             IsSlave = false;
         }
@@ -88,6 +91,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Region>("region", Region);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ServerStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TypeValue>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

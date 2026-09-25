@@ -11,15 +11,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Specific configuration attributes of a `docker` source.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SourceDocker : IParsable
+    public partial class SourceDocker : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Configuration of the spec.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty? Configuration { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty2? Configuration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty Configuration { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty2 Configuration { get; set; }
 #endif
         /// <summary>Name of the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,6 +31,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Image { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceDocker"/> and sets the default values.
+        /// </summary>
+        public SourceDocker()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +56,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty>(global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty2.CreateFromDiscriminatorValue); } },
                 { "image", n => { Image = n.GetStringValue(); } },
             };
         }
@@ -58,8 +67,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty>("configuration", Configuration);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty2>("configuration", Configuration);
             writer.WriteStringValue("image", Image);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

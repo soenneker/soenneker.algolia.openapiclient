@@ -34,10 +34,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Type-specific configuration. Only present for v2 and later tests. Shape depends on the parent A/B test&apos;s `type`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayloadProperty? Payload { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayloadProperty2? Payload { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayloadProperty Payload { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayloadProperty2 Payload { get; set; }
 #endif
         /// <summary>Percentage of search traffic routed to this variant.</summary>
         public int? Percentage { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "customSearchParameters", n => { CustomSearchParameters = n.GetStringValue(); } },
                 { "indexName", n => { IndexName = n.GetStringValue(); } },
-                { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayloadProperty>(global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayloadProperty.CreateFromDiscriminatorValue); } },
+                { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayloadProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayloadProperty2.CreateFromDiscriminatorValue); } },
                 { "percentage", n => { Percentage = n.GetIntValue(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("customSearchParameters", CustomSearchParameters);
             writer.WriteStringValue("indexName", IndexName);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayloadProperty>("payload", Payload);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayloadProperty2>("payload", Payload);
             writer.WriteIntValue("percentage", Percentage);
             writer.WriteAdditionalData(AdditionalData);
         }

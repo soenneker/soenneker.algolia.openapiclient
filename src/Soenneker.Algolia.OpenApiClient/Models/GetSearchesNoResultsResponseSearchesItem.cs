@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetSearchesNoResultsResponseSearchesItem : IParsable
+    public partial class GetSearchesNoResultsResponseSearchesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of occurrences.</summary>
         public int? Count { get; set; }
         /// <summary>Search query.</summary>
@@ -24,6 +26,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Number of searches for this term with applied filters.</summary>
         public int? WithFilterCount { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetSearchesNoResultsResponseSearchesItem"/> and sets the default values.
+        /// </summary>
+        public GetSearchesNoResultsResponseSearchesItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +66,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("count", Count);
             writer.WriteStringValue("search", Search);
             writer.WriteIntValue("withFilterCount", WithFilterCount);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

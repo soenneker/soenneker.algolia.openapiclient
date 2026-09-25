@@ -11,16 +11,25 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Specific configuration attributes of a `shopify` source.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SourceUpdateShopify : IParsable
+    public partial class SourceUpdateShopify : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Feature flags for the Shopify source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty? FeatureFlags { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty2? FeatureFlags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty FeatureFlags { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty2 FeatureFlags { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopify"/> and sets the default values.
+        /// </summary>
+        public SourceUpdateShopify()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "featureFlags", n => { FeatureFlags = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty>(global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty.CreateFromDiscriminatorValue); } },
+                { "featureFlags", n => { FeatureFlags = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty2.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +58,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty>("featureFlags", FeatureFlags);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty2>("featureFlags", FeatureFlags);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

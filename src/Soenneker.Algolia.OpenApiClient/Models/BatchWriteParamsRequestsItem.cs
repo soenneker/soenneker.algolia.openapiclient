@@ -9,19 +9,28 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BatchWriteParamsRequestsItem : IParsable
+    public partial class BatchWriteParamsRequestsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Which indexing operation to perform:- `addObject`: adds records to an index.   Equivalent to the &quot;Add a new record (with auto-generated object ID)&quot; operation.- `updateObject`: adds or replaces records in an index.   Equivalent to the &quot;Add or replace a record&quot; operation.- `partialUpdateObject`: adds or updates attributes within records.   Equivalent to the &quot;Add or update attributes&quot; operation with the `createIfNoExists` parameter set to true.   (If a record with the specified `objectID` doesn&apos;t exist in the specified index, this action adds the record to the index).- `partialUpdateObjectNoCreate`: same as `partialUpdateObject`, but with `createIfNoExists` set to false.   (A record isn&apos;t added to the index if its `objectID` doesn&apos;t exist).- `deleteObject`: delete records from an index.  Equivalent to the &quot;Delete a record&quot; operation.- `delete`. Delete an index. Equivalent to the &quot;Delete an index&quot; operation.- `clear`: delete all records from an index. Equivalent to the &quot;Delete all records from an index operation&quot;.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.SearchAction? Action { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Operation arguments (varies with specified `action`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBodyProperty? Body { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBodyProperty2? Body { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBodyProperty Body { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBodyProperty2 Body { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItem"/> and sets the default values.
+        /// </summary>
+        public BatchWriteParamsRequestsItem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +50,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchAction>(); } },
-                { "body", n => { Body = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBodyProperty>(global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBodyProperty.CreateFromDiscriminatorValue); } },
+                { "body", n => { Body = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBodyProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBodyProperty2.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -52,7 +61,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchAction>("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBodyProperty>("body", Body);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBodyProperty2>("body", Body);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

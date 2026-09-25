@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// Trigger input for scheduled tasks.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ScheduleTriggerInput : IParsable
+    public partial class ScheduleTriggerInput : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Cron expression for the task&apos;s schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,6 +25,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Task runs on a schedule.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.ScheduleTriggerType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ScheduleTriggerInput"/> and sets the default values.
+        /// </summary>
+        public ScheduleTriggerInput()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,6 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cron", Cron);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ScheduleTriggerType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -22,6 +22,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.CompositionsSearchResponse Compositions { get; set; }
 #endif
+        /// <summary>Non-critical errors encountered while processing the request that may have affected the returned results (for example, an external provider failure that fell back to another result set).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ProcessingError>? Errors { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ProcessingError> Errors { get; set; }
+#endif
         /// <summary>Search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +64,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "compositions", n => { Compositions = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionsSearchResponse>(global::Soenneker.Algolia.OpenApiClient.Models.CompositionsSearchResponse.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ProcessingError>(global::Soenneker.Algolia.OpenApiClient.Models.ProcessingError.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItem>(global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -67,6 +76,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionsSearchResponse>("compositions", Compositions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ProcessingError>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItem>("results", Results);
             writer.WriteAdditionalData(AdditionalData);
         }

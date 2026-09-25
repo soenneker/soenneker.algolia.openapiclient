@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetNoResultsRateResponse : IParsable
+    public partial class GetNoResultsRateResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of searches.</summary>
         public int? Count { get; set; }
         /// <summary>Daily no results rates.</summary>
@@ -26,6 +28,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public int? NoResultCount { get; set; }
         /// <summary>No results rate: calculated as the number of searches with zero results divided by the total number of searches.</summary>
         public double? Rate { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetNoResultsRateResponse"/> and sets the default values.
+        /// </summary>
+        public GetNoResultsRateResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,6 +70,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetNoResultsRateResponseDatesItem>("dates", Dates);
             writer.WriteIntValue("noResultCount", NoResultCount);
             writer.WriteDoubleValue("rate", Rate);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

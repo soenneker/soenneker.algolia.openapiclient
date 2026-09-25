@@ -11,8 +11,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// API request body for creating a new destination.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DestinationCreate : IParsable
+    public partial class DestinationCreate : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Universally unique identifier (UUID) of an authentication resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,7 +31,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.DestinationInput Input { get; set; }
 #endif
-        /// <summary>Descriptive name for the resource.</summary>
+        /// <summary>The uniquely identified name of your transformation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -47,6 +49,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Destination type.- `search`.  Data is stored in an Algolia index.- `insights`.  Data is recorded as user events in the Insights API.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.DestinationType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.DestinationCreate"/> and sets the default values.
+        /// </summary>
+        public DestinationCreate()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -84,6 +93,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("transformationIDs", TransformationIDs);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.DestinationType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

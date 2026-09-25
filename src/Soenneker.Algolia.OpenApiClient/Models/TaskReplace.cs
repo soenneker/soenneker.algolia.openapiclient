@@ -11,10 +11,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// API request body for updating a task.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TaskReplace : IParsable
+    public partial class TaskReplace : IAdditionalDataHolder, IParsable
     {
         /// <summary>Action to perform on the Algolia index.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.ActionType? Action { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Cron expression for the task&apos;s schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,6 +72,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Action to perform on the Algolia index.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.ActionType? SubscriptionAction { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TaskReplace"/> and sets the default values.
+        /// </summary>
+        public TaskReplace()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TaskReplace"/></returns>
@@ -116,6 +125,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Notifications>("notifications", Notifications);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Policies>("policies", Policies);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ActionType>("subscriptionAction", SubscriptionAction);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

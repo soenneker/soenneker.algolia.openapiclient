@@ -40,7 +40,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>The eventType property</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.InstantsearchEvent? EventType { get; set; }
-        /// <summary>Timestamp, measured in milliseconds since the Unix epoch.</summary>
+        /// <summary>Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.If not provided, we use the time at which the request was received.</summary>
         public long? Timestamp { get; set; }
         /// <summary>Anonymous or pseudonymous user identifier.Don&apos;t use personally identifiable information in user tokens.For more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

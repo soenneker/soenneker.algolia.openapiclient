@@ -163,28 +163,14 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Transformations
         public partial class TransformationsRequestBuilderGetQueryParameters 
         {
             /// <summary>Number of items per page.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("itemsPerPage")]
-            public string? ItemsPerPage { get; set; }
-#nullable restore
-#else
-            [QueryParameter("itemsPerPage")]
-            public string ItemsPerPage { get; set; }
-#endif
+            public int? ItemsPerPage { get; set; }
             /// <summary>Sort order of the response, ascending or descending.</summary>
             [QueryParameter("order")]
             public global::Soenneker.Algolia.OpenApiClient.Models.OrderKeys? Order { get; set; }
             /// <summary>Page number of the paginated API response.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
+            public int? Page { get; set; }
             /// <summary>Property by which to sort the list of transformations.</summary>
             [QueryParameter("sort")]
             public global::Soenneker.Algolia.OpenApiClient.Models.TransformationSortKeys? Sort { get; set; }

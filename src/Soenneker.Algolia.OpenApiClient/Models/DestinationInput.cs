@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class DestinationInput : IParsable
+    public partial class DestinationInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Attributes from your source to exclude from Algolia records.Not all your data attributes will be useful for searching.Keeping your Algolia records small increases indexing and search performance.- Exclude nested attributes with `.` notation. For example, `foo.bar` indexes the `foo` attribute and all its children **except** the `bar` attribute.- Exclude attributes from arrays with `[i]`, where `i` is the index of the array element.  For example, `foo.[0].bar` only excludes the `bar` attribute from the first element of the `foo` array, but indexes the complete `foo` attribute for all other elements.  Use `*` as wildcard: `foo.[*].bar` excludes `bar` from all elements of the `foo` array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +32,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Record type for ecommerce sources.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.RecordType? RecordType { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.DestinationInput"/> and sets the default values.
+        /// </summary>
+        public DestinationInput()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,6 +72,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("attributesToExclude", AttributesToExclude);
             writer.WriteStringValue("indexName", IndexName);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RecordType>("recordType", RecordType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }
