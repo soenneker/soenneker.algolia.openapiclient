@@ -31776,6 +31776,19 @@
         },
         "description": "Banners defined in the Merchandising Studio for a given search."
       },
+      "ResultCard": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether to show the Result Card for the current search."
+          }
+        },
+        "additionalProperties": {
+          "not": { }
+        },
+        "description": "Agent Studio Result Card to display for a given search."
+      },
       "Widgets": {
         "type": "object",
         "properties": {
@@ -31785,6 +31798,9 @@
               "$ref": "#/components/schemas/Banner"
             },
             "description": "Banners defined in the Merchandising Studio for a given search."
+          },
+          "resultCard": {
+            "$ref": "#/components/schemas/ResultCard"
           }
         },
         "additionalProperties": {
@@ -37734,6 +37750,19 @@
         },
         "description": "Banners defined in the Merchandising Studio for a given search."
       },
+      "crawler_ResultCard": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether to show the Result Card for the current search."
+          }
+        },
+        "additionalProperties": {
+          "not": { }
+        },
+        "description": "Agent Studio Result Card to display for a given search."
+      },
       "crawler_Widgets": {
         "type": "object",
         "properties": {
@@ -37743,6 +37772,9 @@
               "$ref": "#/components/schemas/crawler_Banner"
             },
             "description": "Banners defined in the Merchandising Studio for a given search."
+          },
+          "resultCard": {
+            "$ref": "#/components/schemas/crawler_ResultCard"
           }
         },
         "additionalProperties": {
@@ -50158,6 +50190,19 @@
         },
         "description": "Banners defined in the Merchandising Studio for a given search."
       },
+      "recommend_ResultCard": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether to show the Result Card for the current search."
+          }
+        },
+        "additionalProperties": {
+          "not": { }
+        },
+        "description": "Agent Studio Result Card to display for a given search."
+      },
       "recommend_Widgets": {
         "type": "object",
         "properties": {
@@ -50167,6 +50212,9 @@
               "$ref": "#/components/schemas/recommend_Banner"
             },
             "description": "Banners defined in the Merchandising Studio for a given search."
+          },
+          "resultCard": {
+            "$ref": "#/components/schemas/recommend_ResultCard"
           }
         },
         "additionalProperties": {
@@ -56016,6 +56064,19 @@
         },
         "description": "Banners defined in the Merchandising Studio for a given search."
       },
+      "search_ResultCard": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether to show the Result Card for the current search."
+          }
+        },
+        "additionalProperties": {
+          "not": { }
+        },
+        "description": "Agent Studio Result Card to display for a given search."
+      },
       "search_Widgets": {
         "type": "object",
         "properties": {
@@ -56025,6 +56086,9 @@
               "$ref": "#/components/schemas/search_Banner"
             },
             "description": "Banners defined in the Merchandising Studio for a given search."
+          },
+          "resultCard": {
+            "$ref": "#/components/schemas/search_ResultCard"
           }
         },
         "additionalProperties": {

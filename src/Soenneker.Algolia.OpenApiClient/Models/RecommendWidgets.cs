@@ -23,6 +23,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<global::Soenneker.Algolia.OpenApiClient.Models.RecommendBanner> Banners { get; set; }
 #endif
+        /// <summary>Agent Studio Result Card to display for a given search.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendResultCard? ResultCard { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendResultCard ResultCard { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendWidgets"/> and sets the default values.
         /// </summary>
@@ -49,6 +57,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "banners", n => { Banners = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendBanner>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendBanner.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "resultCard", n => { ResultCard = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendResultCard>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendResultCard.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -59,6 +68,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendBanner>("banners", Banners);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendResultCard>("resultCard", ResultCard);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
