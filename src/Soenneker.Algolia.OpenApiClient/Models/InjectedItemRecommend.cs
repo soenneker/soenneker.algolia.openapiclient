@@ -9,7 +9,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class InjectionMainRecommendSourceRecommend : IAdditionalDataHolder, IParsable
+    public partial class InjectedItemRecommend : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -17,10 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The fallbackParameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters? FallbackParameters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters? FallbackParameters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters FallbackParameters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters FallbackParameters { get; set; }
 #endif
         /// <summary>Index to retrieve recommendations from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,29 +35,29 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The queryParameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters? QueryParameters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters? QueryParameters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters QueryParameters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters QueryParameters { get; set; }
 #endif
         /// <summary>Minimum score a recommendation must have to be included.</summary>
         public int? Threshold { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommendSourceRecommend"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemRecommend"/> and sets the default values.
         /// </summary>
-        public InjectionMainRecommendSourceRecommend()
+        public InjectedItemRecommend()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommendSourceRecommend"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemRecommend"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommendSourceRecommend CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemRecommend CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommendSourceRecommend();
+            return new global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemRecommend();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,10 +67,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fallbackParameters", n => { FallbackParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters>(global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters.CreateFromDiscriminatorValue); } },
+                { "fallbackParameters", n => { FallbackParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters>(global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters.CreateFromDiscriminatorValue); } },
                 { "indexName", n => { IndexName = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ModelValue>(); } },
-                { "queryParameters", n => { QueryParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters>(global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters.CreateFromDiscriminatorValue); } },
+                { "queryParameters", n => { QueryParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters>(global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters.CreateFromDiscriminatorValue); } },
                 { "threshold", n => { Threshold = n.GetIntValue(); } },
             };
         }
@@ -81,10 +81,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters>("fallbackParameters", FallbackParameters);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters>("fallbackParameters", FallbackParameters);
             writer.WriteStringValue("indexName", IndexName);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ModelValue>("model", Model);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters>("queryParameters", QueryParameters);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters>("queryParameters", QueryParameters);
             writer.WriteIntValue("threshold", Threshold);
             writer.WriteAdditionalData(AdditionalData);
         }

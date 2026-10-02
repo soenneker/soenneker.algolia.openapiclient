@@ -32733,6 +32733,22 @@
           "$ref": "#/components/schemas/SearchForFacetValuesResponseAdditionalProperties"
         }
       },
+      "BaseSearchSource": {
+        "required": [
+          "index"
+        ],
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "string",
+            "description": "Algolia index used to retrieve records.",
+            "example": "Products"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/BaseSearchSourceAdditionalProperties"
+        }
+      },
       "AdvancedSyntax": {
         "type": "boolean",
         "description": "Whether to support phrase matching and excluding words from search queries.\nUse the \u0060advancedSyntaxFeatures\u0060 parameter to control which feature is supported.\n",
@@ -33809,6 +33825,25 @@
           "$ref": "#/components/schemas/MainInjectionQueryParametersAdditionalProperties"
         }
       },
+      "InjectionMainSearch": {
+        "required": [
+          "index"
+        ],
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "string",
+            "description": "Algolia index used to retrieve records.",
+            "example": "Products"
+          },
+          "params": {
+            "$ref": "#/components/schemas/MainInjectionQueryParameters"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/InjectionMainSearchAdditionalProperties"
+        }
+      },
       "InjectionMainSearchSource": {
         "required": [
           "search"
@@ -33816,7 +33851,7 @@
         "type": "object",
         "properties": {
           "search": {
-            "$ref": "#/components/schemas/InjectionMainSearchSourceSearch"
+            "$ref": "#/components/schemas/InjectionMainSearch"
           }
         },
         "additionalProperties": {
@@ -33846,6 +33881,66 @@
           ]
         }
       },
+      "BaseRecommendSource": {
+        "required": [
+          "indexName",
+          "model",
+          "threshold"
+        ],
+        "type": "object",
+        "properties": {
+          "indexName": {
+            "type": "string",
+            "description": "Index to retrieve recommendations from.",
+            "example": "Products"
+          },
+          "model": {
+            "$ref": "#/components/schemas/ModelValue"
+          },
+          "threshold": {
+            "maximum": 100,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Minimum score a recommendation must have to be included."
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/BaseRecommendSourceAdditionalProperties"
+        }
+      },
+      "InjectionMainRecommend": {
+        "required": [
+          "indexName",
+          "model",
+          "threshold"
+        ],
+        "type": "object",
+        "properties": {
+          "indexName": {
+            "type": "string",
+            "description": "Index to retrieve recommendations from.",
+            "example": "Products"
+          },
+          "model": {
+            "$ref": "#/components/schemas/ModelValue"
+          },
+          "threshold": {
+            "maximum": 100,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Minimum score a recommendation must have to be included."
+          },
+          "queryParameters": {
+            "$ref": "#/components/schemas/MainInjectionQueryParameters"
+          },
+          "fallbackParameters": {
+            "$ref": "#/components/schemas/MainInjectionQueryParameters"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/InjectionMainRecommendAdditionalProperties"
+        }
+      },
       "InjectionMainRecommendSource": {
         "required": [
           "recommend"
@@ -33853,7 +33948,7 @@
         "type": "object",
         "properties": {
           "recommend": {
-            "$ref": "#/components/schemas/InjectionMainRecommendSourceRecommend"
+            "$ref": "#/components/schemas/InjectionMainRecommend"
           }
         },
         "additionalProperties": {
@@ -33887,6 +33982,65 @@
           ]
         }
       },
+      "BaseExternalProviderSource": {
+        "required": [
+          "index",
+          "configurationID"
+        ],
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "string",
+            "description": "Algolia index used to fetch the records.",
+            "example": "Products"
+          },
+          "configurationID": {
+            "type": "string",
+            "description": "Identifier of the external provider configuration.",
+            "example": "my-rmn-connection"
+          },
+          "configurationParams": {
+            "$ref": "#/components/schemas/BaseExternalProviderSourceConfigurationParamsProperty2"
+          },
+          "ordering": {
+            "$ref": "#/components/schemas/ExternalProviderOrdering"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/BaseExternalProviderSourceAdditionalProperties"
+        }
+      },
+      "InjectionMainExternalProvider": {
+        "required": [
+          "index",
+          "configurationID"
+        ],
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "string",
+            "description": "Algolia index used to fetch the records.",
+            "example": "Products"
+          },
+          "configurationID": {
+            "type": "string",
+            "description": "Identifier of the external provider configuration.",
+            "example": "my-rmn-connection"
+          },
+          "configurationParams": {
+            "$ref": "#/components/schemas/InjectionMainExternalProviderConfigurationParamsProperty"
+          },
+          "ordering": {
+            "$ref": "#/components/schemas/ExternalProviderOrdering"
+          },
+          "params": {
+            "$ref": "#/components/schemas/MainInjectionQueryParameters"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/InjectionMainExternalProviderAdditionalProperties"
+        }
+      },
       "InjectionMainExternalProviderSource": {
         "required": [
           "externalProvider"
@@ -33894,7 +34048,7 @@
         "type": "object",
         "properties": {
           "externalProvider": {
-            "$ref": "#/components/schemas/InjectionMainExternalProviderSourceExternalProvider"
+            "$ref": "#/components/schemas/InjectionMainExternalProvider"
           }
         },
         "additionalProperties": {
@@ -33920,13 +34074,13 @@
         ],
         "properties": {
           "search": {
-            "$ref": "#/components/schemas/InjectionMainSearchSourceSearch"
+            "$ref": "#/components/schemas/InjectionMainSearch"
           },
           "recommend": {
-            "$ref": "#/components/schemas/InjectionMainRecommendSourceRecommend"
+            "$ref": "#/components/schemas/InjectionMainRecommend"
           },
           "externalProvider": {
-            "$ref": "#/components/schemas/InjectionMainExternalProviderSourceExternalProvider"
+            "$ref": "#/components/schemas/InjectionMainExternalProvider"
           }
         },
         "description": "Source to be used to retrieve organic result set."
@@ -33943,6 +34097,25 @@
         },
         "description": "Main defines the organic result set of the injection."
       },
+      "InjectedItemSearch": {
+        "required": [
+          "index"
+        ],
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "string",
+            "description": "Algolia index used to retrieve records.",
+            "example": "Products"
+          },
+          "params": {
+            "$ref": "#/components/schemas/BaseInjectionQueryParameters"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/InjectedItemSearchAdditionalProperties"
+        }
+      },
       "InjectedItemSearchSource": {
         "required": [
           "search"
@@ -33950,7 +34123,7 @@
         "type": "object",
         "properties": {
           "search": {
-            "$ref": "#/components/schemas/InjectedItemSearchSourceSearch"
+            "$ref": "#/components/schemas/InjectedItemSearch"
           }
         },
         "additionalProperties": {
@@ -33984,6 +34157,47 @@
           ]
         }
       },
+      "BaseExternalSource": {
+        "required": [
+          "index"
+        ],
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "string",
+            "description": "Algolia index used to retrieve records.",
+            "example": "Products"
+          },
+          "ordering": {
+            "$ref": "#/components/schemas/ExternalOrdering"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/BaseExternalSourceAdditionalProperties"
+        }
+      },
+      "InjectedItemExternal": {
+        "required": [
+          "index"
+        ],
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "string",
+            "description": "Algolia index used to retrieve records.",
+            "example": "Products"
+          },
+          "ordering": {
+            "$ref": "#/components/schemas/ExternalOrdering"
+          },
+          "params": {
+            "$ref": "#/components/schemas/BaseInjectionQueryParameters"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/InjectedItemExternalAdditionalProperties"
+        }
+      },
       "InjectedItemExternalSource": {
         "required": [
           "external"
@@ -33991,7 +34205,7 @@
         "type": "object",
         "properties": {
           "external": {
-            "$ref": "#/components/schemas/InjectedItemExternalSourceExternal"
+            "$ref": "#/components/schemas/InjectedItemExternal"
           }
         },
         "additionalProperties": {
@@ -34002,6 +34216,39 @@
           "external"
         ]
       },
+      "InjectedItemRecommend": {
+        "required": [
+          "indexName",
+          "model",
+          "threshold"
+        ],
+        "type": "object",
+        "properties": {
+          "indexName": {
+            "type": "string",
+            "description": "Index to retrieve recommendations from.",
+            "example": "Products"
+          },
+          "model": {
+            "$ref": "#/components/schemas/ModelValue"
+          },
+          "threshold": {
+            "maximum": 100,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Minimum score a recommendation must have to be included."
+          },
+          "queryParameters": {
+            "$ref": "#/components/schemas/BaseInjectionQueryParameters"
+          },
+          "fallbackParameters": {
+            "$ref": "#/components/schemas/BaseInjectionQueryParameters"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/InjectedItemRecommendAdditionalProperties"
+        }
+      },
       "InjectedItemRecommendSource": {
         "required": [
           "recommend"
@@ -34009,7 +34256,7 @@
         "type": "object",
         "properties": {
           "recommend": {
-            "$ref": "#/components/schemas/InjectedItemRecommendSourceRecommend"
+            "$ref": "#/components/schemas/InjectedItemRecommend"
           }
         },
         "additionalProperties": {
@@ -34020,6 +34267,37 @@
           "recommend"
         ]
       },
+      "InjectedItemExternalProvider": {
+        "required": [
+          "index",
+          "configurationID"
+        ],
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "string",
+            "description": "Algolia index used to fetch the records.",
+            "example": "Products"
+          },
+          "configurationID": {
+            "type": "string",
+            "description": "Identifier of the external provider configuration.",
+            "example": "my-rmn-connection"
+          },
+          "configurationParams": {
+            "$ref": "#/components/schemas/InjectedItemExternalProviderConfigurationParamsProperty"
+          },
+          "ordering": {
+            "$ref": "#/components/schemas/ExternalProviderOrdering"
+          },
+          "params": {
+            "$ref": "#/components/schemas/BaseInjectionQueryParameters"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/InjectedItemExternalProviderAdditionalProperties"
+        }
+      },
       "InjectedItemExternalProviderSource": {
         "required": [
           "externalProvider"
@@ -34027,7 +34305,7 @@
         "type": "object",
         "properties": {
           "externalProvider": {
-            "$ref": "#/components/schemas/InjectedItemExternalProviderSourceExternalProvider"
+            "$ref": "#/components/schemas/InjectedItemExternalProvider"
           }
         },
         "additionalProperties": {
@@ -34056,16 +34334,16 @@
         ],
         "properties": {
           "search": {
-            "$ref": "#/components/schemas/InjectedItemSearchSourceSearch"
+            "$ref": "#/components/schemas/InjectedItemSearch"
           },
           "external": {
-            "$ref": "#/components/schemas/InjectedItemExternalSourceExternal"
+            "$ref": "#/components/schemas/InjectedItemExternal"
           },
           "recommend": {
-            "$ref": "#/components/schemas/InjectedItemRecommendSourceRecommend"
+            "$ref": "#/components/schemas/InjectedItemRecommend"
           },
           "externalProvider": {
-            "$ref": "#/components/schemas/InjectedItemExternalProviderSourceExternalProvider"
+            "$ref": "#/components/schemas/InjectedItemExternalProvider"
           }
         }
       },
@@ -34796,6 +35074,89 @@
           "$ref": "#/components/schemas/MainInjectionQueryParametersAllOf2AdditionalProperties"
         }
       },
+      "InjectionMainSearchAllOf2": {
+        "type": "object",
+        "properties": {
+          "params": {
+            "$ref": "#/components/schemas/MainInjectionQueryParameters"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/InjectionMainSearchAllOf2AdditionalProperties"
+        }
+      },
+      "InjectionMainRecommendAllOf2": {
+        "type": "object",
+        "properties": {
+          "queryParameters": {
+            "$ref": "#/components/schemas/MainInjectionQueryParameters"
+          },
+          "fallbackParameters": {
+            "$ref": "#/components/schemas/MainInjectionQueryParameters"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/InjectionMainRecommendAllOf2AdditionalProperties"
+        }
+      },
+      "InjectionMainExternalProviderAllOf2": {
+        "type": "object",
+        "properties": {
+          "params": {
+            "$ref": "#/components/schemas/MainInjectionQueryParameters"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/InjectionMainExternalProviderAllOf2AdditionalProperties"
+        }
+      },
+      "InjectedItemSearchAllOf2": {
+        "type": "object",
+        "properties": {
+          "params": {
+            "$ref": "#/components/schemas/BaseInjectionQueryParameters"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/InjectedItemSearchAllOf2AdditionalProperties"
+        }
+      },
+      "InjectedItemExternalAllOf2": {
+        "type": "object",
+        "properties": {
+          "params": {
+            "$ref": "#/components/schemas/BaseInjectionQueryParameters"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/InjectedItemExternalAllOf2AdditionalProperties"
+        }
+      },
+      "InjectedItemRecommendAllOf2": {
+        "type": "object",
+        "properties": {
+          "queryParameters": {
+            "$ref": "#/components/schemas/BaseInjectionQueryParameters"
+          },
+          "fallbackParameters": {
+            "$ref": "#/components/schemas/BaseInjectionQueryParameters"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/InjectedItemRecommendAllOf2AdditionalProperties"
+        }
+      },
+      "InjectedItemExternalProviderAllOf2": {
+        "type": "object",
+        "properties": {
+          "params": {
+            "$ref": "#/components/schemas/BaseInjectionQueryParameters"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/InjectedItemExternalProviderAllOf2AdditionalProperties"
+        }
+      },
       "ExternalInjectedItemItemsItem": {
         "title": "externalInjection",
         "required": [
@@ -34960,199 +35321,12 @@
           "$ref": "#/components/schemas/SearchForFacetValuesResultsFacetHitsItemAdditionalProperties"
         }
       },
-      "InjectionMainSearchSourceSearch": {
-        "title": "mainSearch",
-        "required": [
-          "index"
-        ],
+      "BaseExternalProviderSourceConfigurationParams": {
         "type": "object",
-        "properties": {
-          "index": {
-            "type": "string",
-            "description": "Index to retrieve search results from.",
-            "example": "Products"
-          },
-          "params": {
-            "$ref": "#/components/schemas/MainInjectionQueryParameters"
-          }
-        },
-        "additionalProperties": {
-          "$ref": "#/components/schemas/InjectionMainSearchSourceSearchAdditionalProperties"
-        }
-      },
-      "InjectionMainRecommendSourceRecommend": {
-        "title": "mainRecommend",
-        "required": [
-          "indexName",
-          "model",
-          "threshold"
-        ],
-        "type": "object",
-        "properties": {
-          "indexName": {
-            "type": "string",
-            "description": "Index to retrieve recommendations from.",
-            "example": "Products"
-          },
-          "model": {
-            "$ref": "#/components/schemas/ModelValue"
-          },
-          "threshold": {
-            "maximum": 100,
-            "minimum": 0,
-            "type": "integer",
-            "description": "Minimum score a recommendation must have to be included."
-          },
-          "queryParameters": {
-            "$ref": "#/components/schemas/MainInjectionQueryParameters"
-          },
-          "fallbackParameters": {
-            "$ref": "#/components/schemas/MainInjectionQueryParameters"
-          }
-        },
-        "additionalProperties": {
-          "$ref": "#/components/schemas/InjectionMainRecommendSourceRecommendAdditionalProperties"
-        }
-      },
-      "InjectionMainExternalProviderSourceExternalProvider": {
-        "title": "mainExternalProvider",
-        "required": [
-          "index",
-          "configurationID"
-        ],
-        "type": "object",
-        "properties": {
-          "index": {
-            "type": "string",
-            "description": "Algolia index used to fetch the records.",
-            "example": "Products"
-          },
-          "configurationID": {
-            "type": "string",
-            "description": "Identifier of the external provider configuration.",
-            "example": "my-rmn-connection"
-          },
-          "configurationParams": {
-            "$ref": "#/components/schemas/InjectionMainExternalProviderSourceExternalProviderConfigurationParamsProperty2"
-          },
-          "params": {
-            "$ref": "#/components/schemas/MainInjectionQueryParameters"
-          },
-          "ordering": {
-            "$ref": "#/components/schemas/ExternalProviderOrdering"
-          }
-        },
-        "additionalProperties": {
-          "$ref": "#/components/schemas/InjectionMainExternalProviderSourceExternalProviderAdditionalProperties"
-        }
-      },
-      "InjectedItemSearchSourceSearch": {
-        "title": "injectedItemSearch",
-        "required": [
-          "index"
-        ],
-        "type": "object",
-        "properties": {
-          "index": {
-            "type": "string",
-            "description": "Composition Index name.",
-            "example": "Products"
-          },
-          "params": {
-            "$ref": "#/components/schemas/BaseInjectionQueryParameters"
-          }
-        },
-        "additionalProperties": {
-          "$ref": "#/components/schemas/InjectedItemSearchSourceSearchAdditionalProperties"
-        }
-      },
-      "InjectedItemExternalSourceExternal": {
-        "title": "injectedItemExternal",
-        "required": [
-          "index"
-        ],
-        "type": "object",
-        "properties": {
-          "index": {
-            "type": "string",
-            "description": "Composition Index name.",
-            "example": "Products"
-          },
-          "params": {
-            "$ref": "#/components/schemas/BaseInjectionQueryParameters"
-          },
-          "ordering": {
-            "$ref": "#/components/schemas/ExternalOrdering"
-          }
-        },
-        "additionalProperties": {
-          "$ref": "#/components/schemas/InjectedItemExternalSourceExternalAdditionalProperties"
-        }
-      },
-      "InjectedItemRecommendSourceRecommend": {
-        "title": "recommend",
-        "required": [
-          "indexName",
-          "model",
-          "threshold"
-        ],
-        "type": "object",
-        "properties": {
-          "indexName": {
-            "type": "string",
-            "description": "Index to retrieve recommendations from.",
-            "example": "Products"
-          },
-          "model": {
-            "$ref": "#/components/schemas/ModelValue"
-          },
-          "threshold": {
-            "maximum": 100,
-            "minimum": 0,
-            "type": "integer",
-            "description": "Minimum score a recommendation must have to be included."
-          },
-          "queryParameters": {
-            "$ref": "#/components/schemas/BaseInjectionQueryParameters"
-          },
-          "fallbackParameters": {
-            "$ref": "#/components/schemas/BaseInjectionQueryParameters"
-          }
-        },
-        "additionalProperties": {
-          "$ref": "#/components/schemas/InjectedItemRecommendSourceRecommendAdditionalProperties"
-        }
-      },
-      "InjectedItemExternalProviderSourceExternalProvider": {
-        "title": "injectedItemExternalProvider",
-        "required": [
-          "index",
-          "configurationID"
-        ],
-        "type": "object",
-        "properties": {
-          "index": {
-            "type": "string",
-            "description": "Algolia index used to fetch the records.",
-            "example": "Products"
-          },
-          "configurationID": {
-            "type": "string",
-            "description": "Identifier of the external provider configuration.",
-            "example": "my-rmn-connection"
-          },
-          "configurationParams": {
-            "$ref": "#/components/schemas/InjectedItemExternalProviderSourceExternalProviderConfigurationParamsProperty2"
-          },
-          "params": {
-            "$ref": "#/components/schemas/BaseInjectionQueryParameters"
-          },
-          "ordering": {
-            "$ref": "#/components/schemas/ExternalProviderOrdering"
-          }
-        },
-        "additionalProperties": {
-          "$ref": "#/components/schemas/InjectedItemExternalProviderSourceExternalProviderAdditionalProperties"
+        "description": "Default values for the configuration placeholders that are not reserved Composition placeholders.",
+        "example": {
+          "campaign_id": "winter-sale",
+          "customer_id": "user123"
         }
       },
       "InjectionInjectedItemMetadata": {
@@ -35263,22 +35437,6 @@
           }
         },
         "x-additionalPropertiesName": "composition-id"
-      },
-      "InjectionMainExternalProviderSourceExternalProviderConfigurationParams": {
-        "type": "object",
-        "description": "Default values for the configuration placeholders that are not reserved Composition placeholders.",
-        "example": {
-          "campaign_id": "winter-sale",
-          "customer_id": "user123"
-        }
-      },
-      "InjectedItemExternalProviderSourceExternalProviderConfigurationParams": {
-        "type": "object",
-        "description": "Default values for the configuration placeholders that are not reserved Composition placeholders.",
-        "example": {
-          "campaign_id": "winter-sale",
-          "customer_id": "user123"
-        }
       },
       "InjectionInjectedItemMetadataHits": {
         "title": "injectedItemHitsMetadata",
@@ -35824,6 +35982,18 @@
           "$ref": "#/components/schemas/ResultsCompositionInfoResponse"
         }
       },
+      "BaseExternalProviderSourceConfigurationParamsProperty": {
+        "type": "object",
+        "description": "Default values for the configuration placeholders that are not reserved Composition placeholders."
+      },
+      "InjectionMainExternalProviderConfigurationParams": {
+        "type": "object",
+        "description": "Default values for the configuration placeholders that are not reserved Composition placeholders."
+      },
+      "InjectedItemExternalProviderConfigurationParams": {
+        "type": "object",
+        "description": "Default values for the configuration placeholders that are not reserved Composition placeholders."
+      },
       "MultifeedFeedsProperty": {
         "type": "object",
         "additionalProperties": {
@@ -35848,14 +36018,6 @@
           "type": "integer",
           "x-additionalPropertiesName": "facet count"
         }
-      },
-      "InjectionMainExternalProviderSourceExternalProviderConfigurationParamsProperty": {
-        "type": "object",
-        "description": "Default values for the configuration placeholders that are not reserved Composition placeholders."
-      },
-      "InjectedItemExternalProviderSourceExternalProviderConfigurationParamsProperty": {
-        "type": "object",
-        "description": "Default values for the configuration placeholders that are not reserved Composition placeholders."
       },
       "InjectionInjectedItemMetadataHitsExtraProperty": {
         "type": "object",
@@ -66212,6 +66374,10 @@
         "type": "object",
         "not": {}
       },
+      "BaseSearchSourceAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
       "BaseInjectionQueryParametersAdditionalProperties": {
         "type": "object",
         "not": {}
@@ -66220,13 +66386,41 @@
         "type": "object",
         "not": {}
       },
+      "InjectionMainSearchAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
       "InjectionMainSearchSourceAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "BaseRecommendSourceAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "InjectionMainRecommendAdditionalProperties": {
         "type": "object",
         "not": {}
       },
       "InjectionMainRecommendSourceAdditionalProperties": {
         "type": "object",
         "not": {}
+      },
+      "BaseExternalProviderSourceAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "BaseExternalProviderSourceConfigurationParamsProperty2": {
+        "type": "object",
+        "description": "Default values for the configuration placeholders that are not reserved Composition placeholders."
+      },
+      "InjectionMainExternalProviderAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "InjectionMainExternalProviderConfigurationParamsProperty": {
+        "type": "object",
+        "description": "Default values for the configuration placeholders that are not reserved Composition placeholders."
       },
       "InjectionMainExternalProviderSourceAdditionalProperties": {
         "type": "object",
@@ -66236,7 +66430,19 @@
         "type": "object",
         "not": {}
       },
+      "InjectedItemSearchAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
       "InjectedItemSearchSourceAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "BaseExternalSourceAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "InjectedItemExternalAdditionalProperties": {
         "type": "object",
         "not": {}
       },
@@ -66244,9 +66450,21 @@
         "type": "object",
         "not": {}
       },
+      "InjectedItemRecommendAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
       "InjectedItemRecommendSourceAdditionalProperties": {
         "type": "object",
         "not": {}
+      },
+      "InjectedItemExternalProviderAdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "InjectedItemExternalProviderConfigurationParamsProperty": {
+        "type": "object",
+        "description": "Default values for the configuration placeholders that are not reserved Composition placeholders."
       },
       "InjectedItemExternalProviderSourceAdditionalProperties": {
         "type": "object",
@@ -66337,6 +66555,34 @@
         "type": "object",
         "not": {}
       },
+      "InjectionMainSearchAllOf2AdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "InjectionMainRecommendAllOf2AdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "InjectionMainExternalProviderAllOf2AdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "InjectedItemSearchAllOf2AdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "InjectedItemExternalAllOf2AdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "InjectedItemRecommendAllOf2AdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
+      "InjectedItemExternalProviderAllOf2AdditionalProperties": {
+        "type": "object",
+        "not": {}
+      },
       "ExternalInjectedItemItemsItemAdditionalProperties": {
         "type": "object",
         "not": {}
@@ -66355,42 +66601,6 @@
       "SearchForFacetValuesResultsFacetHitsItemAdditionalProperties": {
         "type": "object",
         "not": {}
-      },
-      "InjectionMainSearchSourceSearchAdditionalProperties": {
-        "type": "object",
-        "not": {}
-      },
-      "InjectionMainRecommendSourceRecommendAdditionalProperties": {
-        "type": "object",
-        "not": {}
-      },
-      "InjectionMainExternalProviderSourceExternalProviderAdditionalProperties": {
-        "type": "object",
-        "not": {}
-      },
-      "InjectionMainExternalProviderSourceExternalProviderConfigurationParamsProperty2": {
-        "type": "object",
-        "description": "Default values for the configuration placeholders that are not reserved Composition placeholders."
-      },
-      "InjectedItemSearchSourceSearchAdditionalProperties": {
-        "type": "object",
-        "not": {}
-      },
-      "InjectedItemExternalSourceExternalAdditionalProperties": {
-        "type": "object",
-        "not": {}
-      },
-      "InjectedItemRecommendSourceRecommendAdditionalProperties": {
-        "type": "object",
-        "not": {}
-      },
-      "InjectedItemExternalProviderSourceExternalProviderAdditionalProperties": {
-        "type": "object",
-        "not": {}
-      },
-      "InjectedItemExternalProviderSourceExternalProviderConfigurationParamsProperty2": {
-        "type": "object",
-        "description": "Default values for the configuration placeholders that are not reserved Composition placeholders."
       },
       "InjectionDeduplicationAdditionalProperties": {
         "type": "object",

@@ -18,10 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The recommend property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommendSourceRecommend? Recommend { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommend? Recommend { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommendSourceRecommend Recommend { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommend Recommend { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommendSource"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "recommend", n => { Recommend = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommendSourceRecommend>(global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommendSourceRecommend.CreateFromDiscriminatorValue); } },
+                { "recommend", n => { Recommend = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommend>(global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommend.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommendSourceRecommend>("recommend", Recommend);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommend>("recommend", Recommend);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

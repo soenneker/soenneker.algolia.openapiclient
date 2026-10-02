@@ -18,10 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The search property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainSearchSourceSearch? Search { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainSearch? Search { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainSearchSourceSearch Search { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainSearch Search { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainSearchSource"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "search", n => { Search = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainSearchSourceSearch>(global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainSearchSourceSearch.CreateFromDiscriminatorValue); } },
+                { "search", n => { Search = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainSearch>(global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainSearch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainSearchSourceSearch>("search", Search);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainSearch>("search", Search);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

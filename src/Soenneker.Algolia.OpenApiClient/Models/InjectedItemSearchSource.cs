@@ -18,10 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The search property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearchSourceSearch? Search { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearch? Search { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearchSourceSearch Search { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearch Search { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearchSource"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "search", n => { Search = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearchSourceSearch>(global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearchSourceSearch.CreateFromDiscriminatorValue); } },
+                { "search", n => { Search = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearch>(global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearchSourceSearch>("search", Search);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearch>("search", Search);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

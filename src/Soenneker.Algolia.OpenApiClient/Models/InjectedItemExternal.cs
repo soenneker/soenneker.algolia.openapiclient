@@ -9,12 +9,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class InjectedItemSearchSourceSearch : IAdditionalDataHolder, IParsable
+    public partial class InjectedItemExternal : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Composition Index name.</summary>
+        /// <summary>Algolia index used to retrieve records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Index { get; set; }
@@ -22,6 +22,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Index { get; set; }
 #endif
+        /// <summary>Ordering to apply on the injected items coming from the external source. &apos;default&apos; means the items will be ordered as they are in the index (natural relevance) in the smart group. &apos;userDefined&apos; means the order in which the objectIDs are provided in the run request payload will be preserved in the smart group.</summary>
+        public global::Soenneker.Algolia.OpenApiClient.Models.ExternalOrdering? Ordering { get; set; }
         /// <summary>The params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,21 +33,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters Params { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearchSourceSearch"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternal"/> and sets the default values.
         /// </summary>
-        public InjectedItemSearchSourceSearch()
+        public InjectedItemExternal()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearchSourceSearch"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternal"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearchSourceSearch CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternal CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSearchSourceSearch();
+            return new global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternal();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "index", n => { Index = n.GetStringValue(); } },
+                { "ordering", n => { Ordering = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ExternalOrdering>(); } },
                 { "params", n => { Params = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters>(global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters.CreateFromDiscriminatorValue); } },
             };
         }
@@ -67,6 +70,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("index", Index);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ExternalOrdering>("ordering", Ordering);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters>("params", Params);
             writer.WriteAdditionalData(AdditionalData);
         }

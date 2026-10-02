@@ -18,10 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The externalProvider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalProviderSourceExternalProvider? ExternalProvider { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalProvider? ExternalProvider { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalProviderSourceExternalProvider ExternalProvider { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalProvider ExternalProvider { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalProviderSource"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "externalProvider", n => { ExternalProvider = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalProviderSourceExternalProvider>(global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalProviderSourceExternalProvider.CreateFromDiscriminatorValue); } },
+                { "externalProvider", n => { ExternalProvider = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalProvider>(global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalProvider.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalProviderSourceExternalProvider>("externalProvider", ExternalProvider);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemExternalProvider>("externalProvider", ExternalProvider);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
