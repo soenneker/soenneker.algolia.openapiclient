@@ -156,9 +156,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage?> QueryLanguages { get; set; }
 #endif
-        /// <summary>Relevancy threshold below which less relevant results aren&apos;t included in the results.You can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).Use this setting to strike a balance between the relevance and number of returned results.</summary>
+        /// <summary>Relevancy threshold below which less relevant results aren&apos;t included in the results.You can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#standard-and-virtual-replicas).Use this setting to strike a balance between the relevance and number of returned results.</summary>
         public int? RelevancyStrictness { get; set; }
-        /// <summary>Assigns a rule context to the run query.[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.</summary>
+        /// <summary>Assigns a rule context to the run query.[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#assign-context) are strings that you can use to trigger matching rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RuleContexts { get; set; }

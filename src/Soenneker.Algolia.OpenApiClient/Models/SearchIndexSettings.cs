@@ -121,7 +121,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.SearchIndexSettingsDecompoundedAttributesProperty DecompoundedAttributes { get; set; }
 #endif
-        /// <summary>Whether to split compound words in the query into their building blocks.For more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#splitting-compound-words).Word segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.Decompounding doesn&apos;t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).For example, `Gartenstühle` won&apos;t be decompounded if the `ü` consists of `u` (U+0075) and `◌̈` (U+0308).</summary>
+        /// <summary>Whether to split compound words in the query into their building blocks.For more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#split-compound-words).Word segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.Decompounding doesn&apos;t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).For example, `Gartenstühle` won&apos;t be decompounded if the `ü` consists of `u` (U+0075) and `◌̈` (U+0308).</summary>
         public bool? DecompoundQuery { get; set; }
         /// <summary>Searchable attributes for which you want to [turn off the Exact ranking criterion](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/in-depth/adjust-exact-settings/#turn-off-exact-for-some-attributes).Attribute names are case-sensitiveThis can be useful for attributes with long values, where the likelihood of an exact match is high,such as product descriptions.Turning off the Exact ranking criterion for these attributes favors exact matching on other attributes.This reduces the impact of individual attributes with a lot of content on ranking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -131,7 +131,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<string> DisableExactOnAttributes { get; set; }
 #endif
-        /// <summary>Searchable attributes for which you want to turn off [prefix matching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/#adjusting-prefix-search).Attribute names are case-sensitive.</summary>
+        /// <summary>Searchable attributes for which you want to turn off [prefix matching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/#adjust-prefix-search).Attribute names are case-sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DisablePrefixOnAttributes { get; set; }
@@ -155,7 +155,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<string> DisableTypoToleranceOnWords { get; set; }
 #endif
-        /// <summary>Determines how many records of a group are included in the search results.Records with the same value for the `attributeForDistinct` attribute are considered a group.The `distinct` setting controls how many members of the group are returned.This is useful for [deduplication and grouping](https://www.algolia.com/doc/guides/managing-results/refine-results/grouping/#introducing-algolias-distinct-feature).The `distinct` setting is ignored if `attributeForDistinct` is not set.</summary>
+        /// <summary>Determines how many records of a group are included in the search results.Records with the same value for the `attributeForDistinct` attribute are considered a group.The `distinct` setting controls how many members of the group are returned.This is useful for [deduplication and grouping](https://www.algolia.com/doc/guides/managing-results/refine-results/grouping/#deduplicate-results-with-distinct).The `distinct` setting is ignored if `attributeForDistinct` is not set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.SearchDistinct? Distinct { get; set; }
@@ -219,9 +219,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public int? MaxValuesPerFacet { get; set; }
         /// <summary>Minimum proximity score for two matching words.This adjusts the [Proximity ranking criterion](https://www.algolia.com/doc/guides/managing-results/relevance-overview/in-depth/ranking-criteria/#proximity)by equally scoring matches that are farther apartFor example, if `minProximity` is 2, neighboring matches and matches with one word between them would have the same score.</summary>
         public int? MinProximity { get; set; }
-        /// <summary>Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos).</summary>
+        /// <summary>Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos).</summary>
         public int? MinWordSizefor1Typo { get; set; }
-        /// <summary>Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos).</summary>
+        /// <summary>Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos).</summary>
         public int? MinWordSizefor2Typos { get; set; }
         /// <summary>Search mode the index will use to query for results.This setting only applies to indices, for which Algolia enabled NeuralSearch for you.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.SearchMode? Mode { get; set; }
@@ -233,7 +233,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<string> NumericAttributesForFiltering { get; set; }
 #endif
-        /// <summary>Words that should be considered optional when found in the query.By default, records must match all words in the search query to be included in the search results.Adding optional words can increase the number of search results by running an additional search query that doesn&apos;t include the optional words.For example, if the search query is &quot;action video&quot; and &quot;video&quot; is optional,the search engine runs two queries: one for &quot;action video&quot; and one for &quot;action&quot;.Records that match all words are ranked higher.For a search query with 4 or more words **and** all its words are optional,the number of matched words required for a record to be included in the search results increases for every 1,000 records:- If `optionalWords` has fewer than 10 words, the required number of matched words increases by 1:  results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 2 matched words.- If `optionalWords` has 10 or more words, the required number of matched words increases by the number of optional words divided by 5 (rounded down).  Example: with 18 optional words, results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 4 matched words.For more information, see [Optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#creating-a-list-of-optional-words).</summary>
+        /// <summary>Words that should be considered optional when found in the query.By default, records must match all words in the search query to be included in the search results.Adding optional words can increase the number of search results by running an additional search query that doesn&apos;t include the optional words.For example, if the search query is &quot;action video&quot; and &quot;video&quot; is optional,the search engine runs two queries: one for &quot;action video&quot; and one for &quot;action&quot;.Records that match all words are ranked higher.For a search query with 4 or more words **and** all its words are optional,the number of matched words required for a record to be included in the search results increases for every 1,000 records:- If `optionalWords` has fewer than 10 words, the required number of matched words increases by 1:  results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 2 matched words.- If `optionalWords` has 10 or more words, the required number of matched words increases by the number of optional words divided by 5 (rounded down).  Example: with 18 optional words, results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 4 matched words.For more information, see [Optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#create-a-list-of-optional-words).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords? OptionalWords { get; set; }
@@ -261,7 +261,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<string> Ranking { get; set; }
 #endif
-        /// <summary>Relevancy threshold below which less relevant results aren&apos;t included in the results.You can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).Use this setting to strike a balance between the relevance and number of returned results.</summary>
+        /// <summary>Relevancy threshold below which less relevant results aren&apos;t included in the results.You can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#standard-and-virtual-replicas).Use this setting to strike a balance between the relevance and number of returned results.</summary>
         public int? RelevancyStrictness { get; set; }
         /// <summary>Removes stop words from the search query.Stop words are common words like articles, conjunctions, prepositions, or pronouns that have little or no meaning on their own.In English, &quot;the&quot;, &quot;a&quot;, or &quot;and&quot; are stop words.Only use this feature for the languages used in your index.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

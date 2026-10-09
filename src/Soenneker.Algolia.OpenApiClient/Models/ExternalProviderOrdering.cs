@@ -3,13 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
-    /// <summary>Ordering to apply on the items retrieved from the external provider. &apos;default&apos; uses the relevance ranking from the Algolia retrieval step. &apos;providerDefined&apos; uses the ordering returned by the external provider.</summary>
+    /// <summary>Ordering to apply on the items retrieved from the external provider. &apos;algoliaDefined&apos; uses the relevance ranking from the Algolia retrieval step. &apos;providerDefined&apos; uses the ordering returned by the external provider.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ExternalProviderOrdering
     {
-        [EnumMember(Value = "default")]
+        [EnumMember(Value = "algoliaDefined")]
         #pragma warning disable CS1591
-        DefaultValue,
+        AlgoliaDefined,
         #pragma warning restore CS1591
         [EnumMember(Value = "providerDefined")]
         #pragma warning disable CS1591

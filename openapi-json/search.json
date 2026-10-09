@@ -4534,7 +4534,7 @@
       },
       "SumOrFiltersScores": {
         "type": "boolean",
-        "description": "Whether to sum all filter scores.\nIf true, all filter scores are summed.\nOtherwise, the maximum filter score is kept.\nFor more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulating-scores-with-sumorfiltersscores).\n",
+        "description": "Whether to sum all filter scores.\nIf true, all filter scores are summed.\nOtherwise, the maximum filter score is kept.\nFor more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulate-scores-with-sumorfiltersscores).\n",
         "default": false,
         "x-categories": [
           "Filtering"
@@ -5090,7 +5090,7 @@
         "items": {
           "type": "string"
         },
-        "description": "Assigns a rule context to the search query.\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.\n",
+        "description": "Assigns a rule context to the search query.\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#assign-context) are strings that you can use to trigger matching rules.\n",
         "default": [],
         "x-categories": [
           "Rules"
@@ -5195,7 +5195,7 @@
           },
           "sumOrFiltersScores": {
             "type": "boolean",
-            "description": "Whether to sum all filter scores.\nIf true, all filter scores are summed.\nOtherwise, the maximum filter score is kept.\nFor more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulating-scores-with-sumorfiltersscores).\n"
+            "description": "Whether to sum all filter scores.\nIf true, all filter scores are summed.\nOtherwise, the maximum filter score is kept.\nFor more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulate-scores-with-sumorfiltersscores).\n"
           },
           "restrictSearchableAttributes": {
             "type": "array",
@@ -5284,7 +5284,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Assigns a rule context to the search query.\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.\n"
+            "description": "Assigns a rule context to the search query.\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#assign-context) are strings that you can use to trigger matching rules.\n"
           },
           "personalizationImpact": {
             "maximum": 100,
@@ -5359,7 +5359,7 @@
           },
           "sumOrFiltersScores": {
             "type": "boolean",
-            "description": "Whether to sum all filter scores.\nIf true, all filter scores are summed.\nOtherwise, the maximum filter score is kept.\nFor more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulating-scores-with-sumorfiltersscores).\n"
+            "description": "Whether to sum all filter scores.\nIf true, all filter scores are summed.\nOtherwise, the maximum filter score is kept.\nFor more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulate-scores-with-sumorfiltersscores).\n"
           },
           "restrictSearchableAttributes": {
             "type": "array",
@@ -5448,7 +5448,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Assigns a rule context to the search query.\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.\n"
+            "description": "Assigns a rule context to the search query.\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#assign-context) are strings that you can use to trigger matching rules.\n"
           },
           "personalizationImpact": {
             "maximum": 100,
@@ -5508,7 +5508,7 @@
       },
       "RelevancyStrictness": {
         "type": "integer",
-        "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n",
+        "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#standard-and-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n",
         "default": 100,
         "example": 90,
         "x-categories": [
@@ -5580,7 +5580,7 @@
       },
       "MinWordSizefor1Typo": {
         "type": "integer",
-        "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos).",
+        "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos).",
         "default": 4,
         "x-categories": [
           "Typos"
@@ -5588,7 +5588,7 @@
       },
       "MinWordSizefor2Typos": {
         "type": "integer",
-        "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos).",
+        "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos).",
         "default": 8,
         "x-categories": [
           "Typos"
@@ -5736,7 +5736,7 @@
       },
       "DecompoundQuery": {
         "type": "boolean",
-        "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#splitting-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n",
+        "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#split-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n",
         "default": true,
         "x-categories": [
           "Languages"
@@ -5879,7 +5879,7 @@
         "items": {
           "type": "string"
         },
-        "description": "List of [optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#creating-a-list-of-optional-words).",
+        "description": "List of [optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#create-a-list-of-optional-words).",
         "default": [],
         "x-categories": [
           "Query strategy"
@@ -5902,10 +5902,10 @@
             "items": {
               "type": "string"
             },
-            "description": "List of [optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#creating-a-list-of-optional-words)."
+            "description": "List of [optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#create-a-list-of-optional-words)."
           }
         ],
-        "description": "Words that should be considered optional when found in the query.\n\nBy default, records must match all words in the search query to be included in the search results.\nAdding optional words can increase the number of search results by running an additional search query that doesn\u0027t include the optional words.\nFor example, if the search query is \u0022action video\u0022 and \u0022video\u0022 is optional,\nthe search engine runs two queries: one for \u0022action video\u0022 and one for \u0022action\u0022.\nRecords that match all words are ranked higher.\n\nFor a search query with 4 or more words **and** all its words are optional,\nthe number of matched words required for a record to be included in the search results increases for every 1,000 records:\n\n- If \u0060optionalWords\u0060 has fewer than 10 words, the required number of matched words increases by 1:\n  results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 2 matched words.\n- If \u0060optionalWords\u0060 has 10 or more words, the required number of matched words increases by the number of optional words divided by 5 (rounded down).\n  Example: with 18 optional words, results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 4 matched words.\n\nFor more information, see [Optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#creating-a-list-of-optional-words).\n"
+        "description": "Words that should be considered optional when found in the query.\n\nBy default, records must match all words in the search query to be included in the search results.\nAdding optional words can increase the number of search results by running an additional search query that doesn\u0027t include the optional words.\nFor example, if the search query is \u0022action video\u0022 and \u0022video\u0022 is optional,\nthe search engine runs two queries: one for \u0022action video\u0022 and one for \u0022action\u0022.\nRecords that match all words are ranked higher.\n\nFor a search query with 4 or more words **and** all its words are optional,\nthe number of matched words required for a record to be included in the search results increases for every 1,000 records:\n\n- If \u0060optionalWords\u0060 has fewer than 10 words, the required number of matched words increases by 1:\n  results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 2 matched words.\n- If \u0060optionalWords\u0060 has 10 or more words, the required number of matched words increases by the number of optional words divided by 5 (rounded down).\n  Example: with 18 optional words, results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 4 matched words.\n\nFor more information, see [Optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#create-a-list-of-optional-words).\n"
       },
       "DisableExactOnAttributes": {
         "type": "array",
@@ -6052,7 +6052,7 @@
             "default": 0
           }
         ],
-        "description": "Determines how many records of a group are included in the search results.\n\nRecords with the same value for the \u0060attributeForDistinct\u0060 attribute are considered a group.\nThe \u0060distinct\u0060 setting controls how many members of the group are returned.\nThis is useful for [deduplication and grouping](https://www.algolia.com/doc/guides/managing-results/refine-results/grouping/#introducing-algolias-distinct-feature).\n\nThe \u0060distinct\u0060 setting is ignored if \u0060attributeForDistinct\u0060 is not set.\n",
+        "description": "Determines how many records of a group are included in the search results.\n\nRecords with the same value for the \u0060attributeForDistinct\u0060 attribute are considered a group.\nThe \u0060distinct\u0060 setting controls how many members of the group are returned.\nThis is useful for [deduplication and grouping](https://www.algolia.com/doc/guides/managing-results/refine-results/grouping/#deduplicate-results-with-distinct).\n\nThe \u0060distinct\u0060 setting is ignored if \u0060attributeForDistinct\u0060 is not set.\n",
         "example": 1,
         "x-categories": [
           "Advanced"
@@ -6416,7 +6416,7 @@
           },
           "relevancyStrictness": {
             "type": "integer",
-            "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n"
+            "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#standard-and-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n"
           },
           "attributesToHighlight": {
             "type": "array",
@@ -6456,11 +6456,11 @@
           },
           "minWordSizefor1Typo": {
             "type": "integer",
-            "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos)."
+            "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos)."
           },
           "minWordSizefor2Typos": {
             "type": "integer",
-            "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos)."
+            "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos)."
           },
           "typoTolerance": {
             "$ref": "#/components/schemas/TypoTolerance"
@@ -6491,7 +6491,7 @@
           },
           "decompoundQuery": {
             "type": "boolean",
-            "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#splitting-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n"
+            "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#split-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n"
           },
           "enableRules": {
             "type": "boolean",
@@ -6623,7 +6623,7 @@
           },
           "sumOrFiltersScores": {
             "type": "boolean",
-            "description": "Whether to sum all filter scores.\nIf true, all filter scores are summed.\nOtherwise, the maximum filter score is kept.\nFor more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulating-scores-with-sumorfiltersscores).\n"
+            "description": "Whether to sum all filter scores.\nIf true, all filter scores are summed.\nOtherwise, the maximum filter score is kept.\nFor more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulate-scores-with-sumorfiltersscores).\n"
           },
           "restrictSearchableAttributes": {
             "type": "array",
@@ -6712,7 +6712,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Assigns a rule context to the search query.\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.\n"
+            "description": "Assigns a rule context to the search query.\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#assign-context) are strings that you can use to trigger matching rules.\n"
           },
           "personalizationImpact": {
             "maximum": 100,
@@ -6784,7 +6784,7 @@
           },
           "relevancyStrictness": {
             "type": "integer",
-            "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n"
+            "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#standard-and-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n"
           },
           "attributesToHighlight": {
             "type": "array",
@@ -6824,11 +6824,11 @@
           },
           "minWordSizefor1Typo": {
             "type": "integer",
-            "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos)."
+            "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos)."
           },
           "minWordSizefor2Typos": {
             "type": "integer",
-            "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos)."
+            "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos)."
           },
           "typoTolerance": {
             "$ref": "#/components/schemas/TypoTolerance"
@@ -6859,7 +6859,7 @@
           },
           "decompoundQuery": {
             "type": "boolean",
-            "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#splitting-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n"
+            "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#split-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n"
           },
           "enableRules": {
             "type": "boolean",
@@ -7002,7 +7002,7 @@
           },
           "sumOrFiltersScores": {
             "type": "boolean",
-            "description": "Whether to sum all filter scores.\nIf true, all filter scores are summed.\nOtherwise, the maximum filter score is kept.\nFor more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulating-scores-with-sumorfiltersscores).\n"
+            "description": "Whether to sum all filter scores.\nIf true, all filter scores are summed.\nOtherwise, the maximum filter score is kept.\nFor more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulate-scores-with-sumorfiltersscores).\n"
           },
           "restrictSearchableAttributes": {
             "type": "array",
@@ -7091,7 +7091,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Assigns a rule context to the search query.\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.\n"
+            "description": "Assigns a rule context to the search query.\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#assign-context) are strings that you can use to trigger matching rules.\n"
           },
           "personalizationImpact": {
             "maximum": 100,
@@ -7163,7 +7163,7 @@
           },
           "relevancyStrictness": {
             "type": "integer",
-            "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n"
+            "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#standard-and-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n"
           },
           "attributesToHighlight": {
             "type": "array",
@@ -7203,11 +7203,11 @@
           },
           "minWordSizefor1Typo": {
             "type": "integer",
-            "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos)."
+            "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos)."
           },
           "minWordSizefor2Typos": {
             "type": "integer",
-            "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos)."
+            "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos)."
           },
           "typoTolerance": {
             "$ref": "#/components/schemas/TypoTolerance"
@@ -7238,7 +7238,7 @@
           },
           "decompoundQuery": {
             "type": "boolean",
-            "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#splitting-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n"
+            "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#split-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n"
           },
           "enableRules": {
             "type": "boolean",
@@ -8471,7 +8471,7 @@
           },
           "sumOrFiltersScores": {
             "type": "boolean",
-            "description": "Whether to sum all filter scores.\nIf true, all filter scores are summed.\nOtherwise, the maximum filter score is kept.\nFor more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulating-scores-with-sumorfiltersscores).\n"
+            "description": "Whether to sum all filter scores.\nIf true, all filter scores are summed.\nOtherwise, the maximum filter score is kept.\nFor more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulate-scores-with-sumorfiltersscores).\n"
           },
           "restrictSearchableAttributes": {
             "type": "array",
@@ -8560,7 +8560,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Assigns a rule context to the search query.\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.\n"
+            "description": "Assigns a rule context to the search query.\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#assign-context) are strings that you can use to trigger matching rules.\n"
           },
           "personalizationImpact": {
             "maximum": 100,
@@ -8632,7 +8632,7 @@
           },
           "relevancyStrictness": {
             "type": "integer",
-            "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n"
+            "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#standard-and-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n"
           },
           "attributesToHighlight": {
             "type": "array",
@@ -8672,11 +8672,11 @@
           },
           "minWordSizefor1Typo": {
             "type": "integer",
-            "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos)."
+            "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos)."
           },
           "minWordSizefor2Typos": {
             "type": "integer",
-            "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos)."
+            "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos)."
           },
           "typoTolerance": {
             "$ref": "#/components/schemas/TypoTolerance"
@@ -8707,7 +8707,7 @@
           },
           "decompoundQuery": {
             "type": "boolean",
-            "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#splitting-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n"
+            "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#split-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n"
           },
           "enableRules": {
             "type": "boolean",
@@ -9233,7 +9233,7 @@
           },
           "sumOrFiltersScores": {
             "type": "boolean",
-            "description": "Whether to sum all filter scores.\nIf true, all filter scores are summed.\nOtherwise, the maximum filter score is kept.\nFor more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulating-scores-with-sumorfiltersscores).\n"
+            "description": "Whether to sum all filter scores.\nIf true, all filter scores are summed.\nOtherwise, the maximum filter score is kept.\nFor more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulate-scores-with-sumorfiltersscores).\n"
           },
           "restrictSearchableAttributes": {
             "type": "array",
@@ -9322,7 +9322,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Assigns a rule context to the search query.\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.\n"
+            "description": "Assigns a rule context to the search query.\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#assign-context) are strings that you can use to trigger matching rules.\n"
           },
           "personalizationImpact": {
             "maximum": 100,
@@ -9394,7 +9394,7 @@
           },
           "relevancyStrictness": {
             "type": "integer",
-            "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n"
+            "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#standard-and-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n"
           },
           "attributesToHighlight": {
             "type": "array",
@@ -9434,11 +9434,11 @@
           },
           "minWordSizefor1Typo": {
             "type": "integer",
-            "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos)."
+            "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos)."
           },
           "minWordSizefor2Typos": {
             "type": "integer",
-            "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos)."
+            "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos)."
           },
           "typoTolerance": {
             "$ref": "#/components/schemas/TypoTolerance"
@@ -9469,7 +9469,7 @@
           },
           "decompoundQuery": {
             "type": "boolean",
-            "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#splitting-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n"
+            "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#split-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n"
           },
           "enableRules": {
             "type": "boolean",
@@ -9612,7 +9612,7 @@
           },
           "sumOrFiltersScores": {
             "type": "boolean",
-            "description": "Whether to sum all filter scores.\nIf true, all filter scores are summed.\nOtherwise, the maximum filter score is kept.\nFor more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulating-scores-with-sumorfiltersscores).\n"
+            "description": "Whether to sum all filter scores.\nIf true, all filter scores are summed.\nOtherwise, the maximum filter score is kept.\nFor more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulate-scores-with-sumorfiltersscores).\n"
           },
           "restrictSearchableAttributes": {
             "type": "array",
@@ -9701,7 +9701,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Assigns a rule context to the search query.\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.\n"
+            "description": "Assigns a rule context to the search query.\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#assign-context) are strings that you can use to trigger matching rules.\n"
           },
           "personalizationImpact": {
             "maximum": 100,
@@ -9773,7 +9773,7 @@
           },
           "relevancyStrictness": {
             "type": "integer",
-            "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n"
+            "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#standard-and-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n"
           },
           "attributesToHighlight": {
             "type": "array",
@@ -9813,11 +9813,11 @@
           },
           "minWordSizefor1Typo": {
             "type": "integer",
-            "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos)."
+            "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos)."
           },
           "minWordSizefor2Typos": {
             "type": "integer",
-            "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos)."
+            "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos)."
           },
           "typoTolerance": {
             "$ref": "#/components/schemas/TypoTolerance"
@@ -9848,7 +9848,7 @@
           },
           "decompoundQuery": {
             "type": "boolean",
-            "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#splitting-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n"
+            "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#split-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n"
           },
           "enableRules": {
             "type": "boolean",
@@ -10440,7 +10440,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Searchable attributes for which you want to turn off [prefix matching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/#adjusting-prefix-search).\nAttribute names are case-sensitive.\n",
+            "description": "Searchable attributes for which you want to turn off [prefix matching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/#adjust-prefix-search).\nAttribute names are case-sensitive.\n",
             "default": [],
             "x-categories": [
               "Query strategy"
@@ -10617,7 +10617,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Searchable attributes for which you want to turn off [prefix matching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/#adjusting-prefix-search).\nAttribute names are case-sensitive.\n",
+            "description": "Searchable attributes for which you want to turn off [prefix matching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/#adjust-prefix-search).\nAttribute names are case-sensitive.\n",
             "default": [],
             "x-categories": [
               "Query strategy"
@@ -10725,7 +10725,7 @@
           },
           "relevancyStrictness": {
             "type": "integer",
-            "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n"
+            "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#standard-and-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n"
           },
           "attributesToHighlight": {
             "type": "array",
@@ -10765,11 +10765,11 @@
           },
           "minWordSizefor1Typo": {
             "type": "integer",
-            "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos)."
+            "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos)."
           },
           "minWordSizefor2Typos": {
             "type": "integer",
-            "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos)."
+            "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos)."
           },
           "typoTolerance": {
             "$ref": "#/components/schemas/TypoTolerance"
@@ -10800,7 +10800,7 @@
           },
           "decompoundQuery": {
             "type": "boolean",
-            "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#splitting-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n"
+            "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#split-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n"
           },
           "enableRules": {
             "type": "boolean",
@@ -11007,7 +11007,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Searchable attributes for which you want to turn off [prefix matching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/#adjusting-prefix-search).\nAttribute names are case-sensitive.\n",
+            "description": "Searchable attributes for which you want to turn off [prefix matching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/#adjust-prefix-search).\nAttribute names are case-sensitive.\n",
             "default": [],
             "x-categories": [
               "Query strategy"
@@ -11115,7 +11115,7 @@
           },
           "relevancyStrictness": {
             "type": "integer",
-            "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n"
+            "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#standard-and-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n"
           },
           "attributesToHighlight": {
             "type": "array",
@@ -11155,11 +11155,11 @@
           },
           "minWordSizefor1Typo": {
             "type": "integer",
-            "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos)."
+            "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos)."
           },
           "minWordSizefor2Typos": {
             "type": "integer",
-            "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos)."
+            "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos)."
           },
           "typoTolerance": {
             "$ref": "#/components/schemas/TypoTolerance"
@@ -11190,7 +11190,7 @@
           },
           "decompoundQuery": {
             "type": "boolean",
-            "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#splitting-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n"
+            "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#split-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n"
           },
           "enableRules": {
             "type": "boolean",
@@ -11641,7 +11641,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Allowed HTTP referrers for this API key.\n\nBy default, all referrers are allowed.\nYou can use leading and trailing wildcard characters (\u0060*\u0060):\n\n- \u0060https://algolia.com/*\u0060 allows all referrers starting with \u0022https://algolia.com/\u0022.\n- \u0060*.algolia.com\u0060 allows all referrers ending with \u0022.algolia.com\u0022.\n- \u0060*algolia.com*\u0060 allows all referrers in the domain \u0022algolia.com\u0022.\n\nLike all HTTP headers, referrers can be spoofed. Don\u0027t rely on them to secure your data.\nFor more information, see [HTTP referrer restrictions](https://www.algolia.com/doc/guides/security/security-best-practices/#http-referrers-restrictions).\n",
+            "description": "Allowed HTTP referrers for this API key.\n\nBy default, all referrers are allowed.\nYou can use leading and trailing wildcard characters (\u0060*\u0060):\n\n- \u0060https://algolia.com/*\u0060 allows all referrers starting with \u0022https://algolia.com/\u0022.\n- \u0060*.algolia.com\u0060 allows all referrers ending with \u0022.algolia.com\u0022.\n- \u0060*algolia.com*\u0060 allows all referrers in the domain \u0022algolia.com\u0022.\n\nLike all HTTP headers, referrers can be spoofed. Don\u0027t rely on them to secure your data.\nFor more information, see [HTTP referrer restrictions](https://www.algolia.com/doc/guides/security/security-best-practices/#http-referrer-restrictions).\n",
             "default": []
           },
           "validity": {
@@ -11712,7 +11712,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Allowed HTTP referrers for this API key.\n\nBy default, all referrers are allowed.\nYou can use leading and trailing wildcard characters (\u0060*\u0060):\n\n- \u0060https://algolia.com/*\u0060 allows all referrers starting with \u0022https://algolia.com/\u0022.\n- \u0060*.algolia.com\u0060 allows all referrers ending with \u0022.algolia.com\u0022.\n- \u0060*algolia.com*\u0060 allows all referrers in the domain \u0022algolia.com\u0022.\n\nLike all HTTP headers, referrers can be spoofed. Don\u0027t rely on them to secure your data.\nFor more information, see [HTTP referrer restrictions](https://www.algolia.com/doc/guides/security/security-best-practices/#http-referrers-restrictions).\n",
+            "description": "Allowed HTTP referrers for this API key.\n\nBy default, all referrers are allowed.\nYou can use leading and trailing wildcard characters (\u0060*\u0060):\n\n- \u0060https://algolia.com/*\u0060 allows all referrers starting with \u0022https://algolia.com/\u0022.\n- \u0060*.algolia.com\u0060 allows all referrers ending with \u0022.algolia.com\u0022.\n- \u0060*algolia.com*\u0060 allows all referrers in the domain \u0022algolia.com\u0022.\n\nLike all HTTP headers, referrers can be spoofed. Don\u0027t rely on them to secure your data.\nFor more information, see [HTTP referrer restrictions](https://www.algolia.com/doc/guides/security/security-best-practices/#http-referrer-restrictions).\n",
             "default": []
           },
           "validity": {
@@ -11991,7 +11991,7 @@
           },
           "sumOrFiltersScores": {
             "type": "boolean",
-            "description": "Whether to sum all filter scores.\nIf true, all filter scores are summed.\nOtherwise, the maximum filter score is kept.\nFor more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulating-scores-with-sumorfiltersscores).\n"
+            "description": "Whether to sum all filter scores.\nIf true, all filter scores are summed.\nOtherwise, the maximum filter score is kept.\nFor more information, see [filter scores](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering/in-depth/filter-scoring/#accumulate-scores-with-sumorfiltersscores).\n"
           },
           "restrictSearchableAttributes": {
             "type": "array",
@@ -12080,7 +12080,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Assigns a rule context to the search query.\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.\n"
+            "description": "Assigns a rule context to the search query.\n[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#assign-context) are strings that you can use to trigger matching rules.\n"
           },
           "personalizationImpact": {
             "maximum": 100,
@@ -12152,7 +12152,7 @@
           },
           "relevancyStrictness": {
             "type": "integer",
-            "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#what-are-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n"
+            "description": "Relevancy threshold below which less relevant results aren\u0027t included in the results.\nYou can only set \u0060relevancyStrictness\u0060 on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#standard-and-virtual-replicas).\nUse this setting to strike a balance between the relevance and number of returned results.\n"
           },
           "attributesToHighlight": {
             "type": "array",
@@ -12192,11 +12192,11 @@
           },
           "minWordSizefor1Typo": {
             "type": "integer",
-            "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos)."
+            "description": "Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos)."
           },
           "minWordSizefor2Typos": {
             "type": "integer",
-            "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos)."
+            "description": "Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos)."
           },
           "typoTolerance": {
             "$ref": "#/components/schemas/TypoTolerance"
@@ -12227,7 +12227,7 @@
           },
           "decompoundQuery": {
             "type": "boolean",
-            "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#splitting-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n"
+            "description": "Whether to split compound words in the query into their building blocks.\nFor more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#split-compound-words).\nWord segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.\nDecompounding doesn\u0027t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).\nFor example, \u0060Gartenst\u00FChle\u0060 won\u0027t be decompounded if the \u0060\u00FC\u0060 consists of \u0060u\u0060 (U\u002B0075) and \u0060\u25CC\u0308\u0060 (U\u002B0308).\n"
           },
           "enableRules": {
             "type": "boolean",

@@ -78,7 +78,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<string> DisableTypoToleranceOnAttributes { get; set; }
 #endif
-        /// <summary>Determines how many records of a group are included in the search results.Records with the same value for the `attributeForDistinct` attribute are considered a group.The `distinct` setting controls how many members of the group are returned.This is useful for [deduplication and grouping](https://www.algolia.com/doc/guides/managing-results/refine-results/grouping/#introducing-algolias-distinct-feature).The `distinct` setting is ignored if `attributeForDistinct` is not set.</summary>
+        /// <summary>Determines how many records of a group are included in the search results.Records with the same value for the `attributeForDistinct` attribute are considered a group.The `distinct` setting controls how many members of the group are returned.This is useful for [deduplication and grouping](https://www.algolia.com/doc/guides/managing-results/refine-results/grouping/#deduplicate-results-with-distinct).The `distinct` setting is ignored if `attributeForDistinct` is not set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.Distinct? Distinct { get; set; }
@@ -140,9 +140,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #endif
         /// <summary>Minimum proximity score for two matching words.This adjusts the [Proximity ranking criterion](https://www.algolia.com/doc/guides/managing-results/relevance-overview/in-depth/ranking-criteria/#proximity)by equally scoring matches that are farther apartFor example, if `minProximity` is 2, neighboring matches and matches with one word between them would have the same score.</summary>
         public int? MinProximity { get; set; }
-        /// <summary>Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos).</summary>
+        /// <summary>Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos).</summary>
         public int? MinWordSizefor1Typo { get; set; }
-        /// <summary>Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configuring-word-length-for-typos).</summary>
+        /// <summary>Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos).</summary>
         public int? MinWordSizefor2Typos { get; set; }
         /// <summary>ISO language codes that adjust settings that are useful for processing natural language queries (as opposed to keyword searches).- Sets `removeStopWords` and `ignorePlurals` to the list of provided languages.- Sets `removeWordsIfNoResults` to `allOptional`.- Adds a `natural_language` attribute to `ruleContexts` and `analyticsTags`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -168,7 +168,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.OptionalFilters OptionalFilters { get; set; }
 #endif
-        /// <summary>Words that should be considered optional when found in the query.By default, records must match all words in the search query to be included in the search results.Adding optional words can increase the number of search results by running an additional search query that doesn&apos;t include the optional words.For example, if the search query is &quot;action video&quot; and &quot;video&quot; is optional,the search engine runs two queries: one for &quot;action video&quot; and one for &quot;action&quot;.Records that match all words are ranked higher.For a search query with 4 or more words **and** all its words are optional,the number of matched words required for a record to be included in the search results increases for every 1,000 records:- If `optionalWords` has fewer than 10 words, the required number of matched words increases by 1:  results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 2 matched words.- If `optionalWords` has 10 or more words, the required number of matched words increases by the number of optional words divided by 5 (rounded down).  Example: with 18 optional words, results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 4 matched words.For more information, see [Optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#creating-a-list-of-optional-words).</summary>
+        /// <summary>Words that should be considered optional when found in the query.By default, records must match all words in the search query to be included in the search results.Adding optional words can increase the number of search results by running an additional search query that doesn&apos;t include the optional words.For example, if the search query is &quot;action video&quot; and &quot;video&quot; is optional,the search engine runs two queries: one for &quot;action video&quot; and one for &quot;action&quot;.Records that match all words are ranked higher.For a search query with 4 or more words **and** all its words are optional,the number of matched words required for a record to be included in the search results increases for every 1,000 records:- If `optionalWords` has fewer than 10 words, the required number of matched words increases by 1:  results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 2 matched words.- If `optionalWords` has 10 or more words, the required number of matched words increases by the number of optional words divided by 5 (rounded down).  Example: with 18 optional words, results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 4 matched words.For more information, see [Optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#create-a-list-of-optional-words).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.OptionalWords? OptionalWords { get; set; }
@@ -220,7 +220,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public List<string> RestrictSearchableAttributes { get; set; }
 #endif
-        /// <summary>Assigns a rule context to the search query.[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#whats-a-context) are strings that you can use to trigger matching rules.</summary>
+        /// <summary>Assigns a rule context to the search query.[Rule contexts](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/how-to/customize-search-results-by-platform/#assign-context) are strings that you can use to trigger matching rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RuleContexts { get; set; }

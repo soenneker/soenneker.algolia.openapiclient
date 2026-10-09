@@ -52,7 +52,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string QueryParameters { get; set; }
 #endif
-        /// <summary>Allowed HTTP referrers for this API key.By default, all referrers are allowed.You can use leading and trailing wildcard characters (`*`):- `https://algolia.com/*` allows all referrers starting with &quot;https://algolia.com/&quot;.- `*.algolia.com` allows all referrers ending with &quot;.algolia.com&quot;.- `*algolia.com*` allows all referrers in the domain &quot;algolia.com&quot;.Like all HTTP headers, referrers can be spoofed. Don&apos;t rely on them to secure your data.For more information, see [HTTP referrer restrictions](https://www.algolia.com/doc/guides/security/security-best-practices/#http-referrers-restrictions).</summary>
+        /// <summary>Allowed HTTP referrers for this API key.By default, all referrers are allowed.You can use leading and trailing wildcard characters (`*`):- `https://algolia.com/*` allows all referrers starting with &quot;https://algolia.com/&quot;.- `*.algolia.com` allows all referrers ending with &quot;.algolia.com&quot;.- `*algolia.com*` allows all referrers in the domain &quot;algolia.com&quot;.Like all HTTP headers, referrers can be spoofed. Don&apos;t rely on them to secure your data.For more information, see [HTTP referrer restrictions](https://www.algolia.com/doc/guides/security/security-best-practices/#http-referrer-restrictions).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Referers { get; set; }

@@ -38,7 +38,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Index { get; set; }
 #endif
-        /// <summary>Ordering to apply on the items retrieved from the external provider. &apos;default&apos; uses the relevance ranking from the Algolia retrieval step. &apos;providerDefined&apos; uses the ordering returned by the external provider.</summary>
+        /// <summary>Ordering to apply on the items retrieved from the external provider. &apos;algoliaDefined&apos; uses the relevance ranking from the Algolia retrieval step. &apos;providerDefined&apos; uses the ordering returned by the external provider.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderOrdering? Ordering { get; set; }
         /// <summary>The params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -933,7 +933,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "A/B test statistical analysis method.\nWhen omitted, the test is treated as \u0060frequentist\u0060. The server doesn\u0027t write a default value back to the configuration.\n",
+        "description": "A/B test statistical analysis method.\nWhen omitted, new A/B tests use \u0060bayesian\u0060.\nThey use \u0060frequentist\u0060 instead only if no primary metric that supports Bayesian analysis is available.\nThe selected method is saved in the A/B test configuration.\nOlder A/B tests, created before methods were saved, may have no method in their configuration.\nThese tests use \u0060frequentist\u0060.\n",
         "x-ms-enum": {
           "name": "AnalysisMethod",
           "modelAsString": false,
@@ -1398,7 +1398,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "Primary metric for Bayesian analysis. Required when \u0060method\u0060 is \u0060bayesian\u0060.\nIf the request includes a non-empty \u0060metrics\u0060 list, this metric must be in that list.\nRevenue per search requires access to revenue analytics.\n",
+        "description": "Primary metric for Bayesian analysis. Required when \u0060method\u0060 is \u0060bayesian\u0060.\nWhen \u0060method\u0060 is omitted and the test defaults to \u0060bayesian\u0060, the default primary metric is \u0060conversion_rate\u0060,\nor the first metric in \u0060metrics\u0060 that supports Bayesian analysis if \u0060metrics\u0060 doesn\u0027t include conversion rate.\nIf the request includes a non-empty \u0060metrics\u0060 list, this metric must be in that list.\nRevenue per search requires access to revenue analytics.\n",
         "example": "conversion_rate",
         "x-ms-enum": {
           "name": "PrimaryMetric",

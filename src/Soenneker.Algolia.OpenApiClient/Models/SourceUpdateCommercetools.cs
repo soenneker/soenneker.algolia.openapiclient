@@ -15,6 +15,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>When set to true, the connector uses the complete category path (e.g. &quot;Root &gt; Level 1 &gt; Category name&quot;) in `categoriesCustomFields`.</summary>
+        public bool? CategoriesCustomFieldsFullPath { get; set; }
         /// <summary>Custom fields from commercetools to add to the records.For more information, see [Using Custom Types and Custom Fields](https://docs.commercetools.com/tutorials/custom-types).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,6 +67,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public SourceUpdateCommercetools()
         {
             AdditionalData = new Dictionary<string, object>();
+            CategoriesCustomFieldsFullPath = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -84,6 +87,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "categoriesCustomFieldsFullPath", n => { CategoriesCustomFieldsFullPath = n.GetBoolValue(); } },
                 { "customFields", n => { CustomFields = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields>(global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields.CreateFromDiscriminatorValue); } },
                 { "fallbackIsInStockValue", n => { FallbackIsInStockValue = n.GetBoolValue(); } },
                 { "locales", n => { Locales = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -100,6 +104,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("categoriesCustomFieldsFullPath", CategoriesCustomFieldsFullPath);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CommercetoolsCustomFields>("customFields", CustomFields);
             writer.WriteBoolValue("fallbackIsInStockValue", FallbackIsInStockValue);
             writer.WriteCollectionOfPrimitiveValues<string>("locales", Locales);
