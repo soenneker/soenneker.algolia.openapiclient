@@ -53,21 +53,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.Trigger CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.Trigger();
-            if("OnDemandTrigger".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("onDemand".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.OnDemandTrigger = new global::Soenneker.Algolia.OpenApiClient.Models.OnDemandTrigger();
             }
-            else if("ScheduleTrigger".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("schedule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ScheduleTrigger = new global::Soenneker.Algolia.OpenApiClient.Models.ScheduleTrigger();
             }
-            else if("StreamingTrigger".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("streaming".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.StreamingTrigger = new global::Soenneker.Algolia.OpenApiClient.Models.StreamingTrigger();
             }
-            else if("SubscriptionTrigger".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("subscription".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SubscriptionTrigger = new global::Soenneker.Algolia.OpenApiClient.Models.SubscriptionTrigger();
             }

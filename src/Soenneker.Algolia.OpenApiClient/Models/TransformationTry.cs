@@ -23,6 +23,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public List<global::Soenneker.Algolia.OpenApiClient.Models.AuthenticationCreate> Authentications { get; set; }
 #endif
         /// <summary>It is deprecated. Use the `input` field with proper `type` instead to specify the transformation code.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get; set; }

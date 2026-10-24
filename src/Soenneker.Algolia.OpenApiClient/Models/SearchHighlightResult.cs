@@ -8,26 +8,20 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultArrayWrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMember1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultOption"/>
+    /// Surround words that match the query with HTML tags for highlighting.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SearchHighlightResult : IComposedTypeWrapper, IParsable
+    public partial class SearchHighlightResult : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultArrayWrapper"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMap"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultArrayWrapper? SearchHighlightResultArrayWrapper { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMap? SearchHighlightResultMap { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultArrayWrapper SearchHighlightResultArrayWrapper { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMember1? SearchHighlightResultMember1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMember1 SearchHighlightResultMember1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMap SearchHighlightResultMap { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultOption"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -37,6 +31,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultOption SearchHighlightResultOption { get; set; }
 #endif
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult>? SearchHighlightResultProp { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult> SearchHighlightResultProp { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult"/> and sets the default values.
+        /// </summary>
+        public SearchHighlightResult()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,13 +56,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult();
-            if("SearchHighlightResultArrayWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("SearchHighlightResultMap".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SearchHighlightResultArrayWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultArrayWrapper();
+                result.SearchHighlightResultMap = new global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMap();
             }
             else if("SearchHighlightResultOption".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SearchHighlightResultOption = new global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultOption();
+            }
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult>(global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult> searchHighlightResultPropValue)
+            {
+                result.SearchHighlightResultProp = searchHighlightResultPropValue;
             }
             return result;
         }
@@ -63,13 +76,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(SearchHighlightResultArrayWrapper != null)
+            if(SearchHighlightResultMap != null)
             {
-                return SearchHighlightResultArrayWrapper.GetFieldDeserializers();
-            }
-            else if(SearchHighlightResultMember1 != null)
-            {
-                return SearchHighlightResultMember1.GetFieldDeserializers();
+                return SearchHighlightResultMap.GetFieldDeserializers();
             }
             else if(SearchHighlightResultOption != null)
             {
@@ -84,18 +93,19 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(SearchHighlightResultArrayWrapper != null)
+            if(SearchHighlightResultMap != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultArrayWrapper>(null, SearchHighlightResultArrayWrapper);
-            }
-            else if(SearchHighlightResultMember1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMember1>(null, SearchHighlightResultMember1);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMap>(null, SearchHighlightResultMap);
             }
             else if(SearchHighlightResultOption != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultOption>(null, SearchHighlightResultOption);
             }
+            else if(SearchHighlightResultProp != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult>(null, SearchHighlightResultProp);
+            }
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

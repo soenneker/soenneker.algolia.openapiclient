@@ -39,14 +39,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery2();
-            if("SearchForFacets".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SearchForFacets = new global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacets();
-            }
-            else if("SearchForHits".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SearchForHits = new global::Soenneker.Algolia.OpenApiClient.Models.SearchForHits();
-            }
             return result;
         }
         /// <summary>

@@ -21,7 +21,14 @@
         "operationId": "CustomGet",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -61,7 +68,14 @@
         "operationId": "CustomPost",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -111,7 +125,14 @@
         "operationId": "CustomPut",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -161,7 +182,14 @@
         "operationId": "CustomDelete",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -222,7 +250,14 @@
         "operationId": "GetClusterStatus",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Clusters"
+            "name": "clusters",
+            "in": "path",
+            "description": "Subset of clusters, separated by commas.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "c1-de,c2-de,c3-de"
+            }
           }
         ],
         "responses": {
@@ -270,7 +305,14 @@
         "operationId": "GetClusterIncidents",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Clusters"
+            "name": "clusters",
+            "in": "path",
+            "description": "Subset of clusters, separated by commas.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "c1-de,c2-de,c3-de"
+            }
           }
         ],
         "responses": {
@@ -323,7 +365,14 @@
         "operationId": "GetLatency",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Clusters"
+            "name": "clusters",
+            "in": "path",
+            "description": "Subset of clusters, separated by commas.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "c1-de,c2-de,c3-de"
+            }
           }
         ],
         "responses": {
@@ -347,7 +396,14 @@
         "operationId": "GetIndexingTime",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Clusters"
+            "name": "clusters",
+            "in": "path",
+            "description": "Subset of clusters, separated by commas.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "c1-de,c2-de,c3-de"
+            }
           }
         ],
         "responses": {
@@ -371,7 +427,14 @@
         "operationId": "GetReachability",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Clusters"
+            "name": "clusters",
+            "in": "path",
+            "description": "Subset of clusters, separated by commas.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "c1-de,c2-de,c3-de"
+            }
           }
         ],
         "responses": {
@@ -395,10 +458,22 @@
         "operationId": "GetMetrics",
         "parameters": [
           {
-            "$ref": "#/components/parameters/MetricInPath"
+            "name": "metric",
+            "in": "path",
+            "description": "Metric to report.\n\nFor more information about the individual metrics, see the description of the API response.\nTo include all metrics, use \u0060*\u0060.\n",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Metric"
+            }
           },
           {
-            "$ref": "#/components/parameters/PeriodInPath"
+            "name": "period",
+            "in": "path",
+            "description": "Period over which to aggregate the metrics:\n\n- \u0060minute\u0060. Aggregate the last minute. 1 data point per 10 seconds.\n- \u0060hour\u0060. Aggregate the last hour. 1 data point per minute.\n- \u0060day\u0060. Aggregate the last day. 1 data point per 10 minutes.\n- \u0060week\u0060. Aggregate the last week. 1 data point per hour.\n- \u0060month\u0060. Aggregate the last month. 1 data point per day.\n",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Period"
+            }
           }
         ],
         "responses": {
@@ -463,7 +538,6 @@
           "major_outage"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Status of the cluster.",
         "x-ms-enum": {
           "name": "Status",
@@ -535,7 +609,6 @@
           "za"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Region where the cluster is located.",
         "example": "de",
         "x-ms-enum": {
@@ -611,7 +684,6 @@
           "PRODUCTION"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ServerStatus",
           "modelAsString": false,
@@ -629,7 +701,6 @@
           "cluster"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "TypeValue",
           "modelAsString": false,
@@ -708,7 +779,6 @@
           "*"
         ],
         "type": "string",
-        "additionalProperties": false,
         "example": "*",
         "x-ms-enum": {
           "name": "Metric",
@@ -750,7 +820,6 @@
           "month"
         ],
         "type": "string",
-        "additionalProperties": false,
         "example": "week",
         "x-ms-enum": {
           "name": "Period",
@@ -942,6 +1011,7 @@
       "IncidentsResponseResponseIncidents": {
         "type": "object",
         "additionalProperties": {
+          "title": "incidents",
           "type": "array",
           "items": {
             "$ref": "#/components/schemas/IncidentsItem"
@@ -994,6 +1064,7 @@
       "LatencyResponseResponseMetricsLatency": {
         "type": "object",
         "additionalProperties": {
+          "title": "times",
           "type": "array",
           "items": {
             "$ref": "#/components/schemas/TimeItem"
@@ -1004,6 +1075,7 @@
       "IndexingResponseResponseMetricsIndexing": {
         "type": "object",
         "additionalProperties": {
+          "title": "times",
           "type": "array",
           "items": {
             "$ref": "#/components/schemas/TimeItem"
@@ -1014,6 +1086,7 @@
       "InfrastructureResponseResponseMetricsCpuUsage": {
         "type": "object",
         "additionalProperties": {
+          "title": "probes",
           "type": "array",
           "items": {
             "$ref": "#/components/schemas/ProbesMetric"
@@ -1024,6 +1097,7 @@
       "InfrastructureResponseResponseMetricsRamIndexingUsage": {
         "type": "object",
         "additionalProperties": {
+          "title": "probes",
           "type": "array",
           "items": {
             "$ref": "#/components/schemas/ProbesMetric"
@@ -1034,6 +1108,7 @@
       "InfrastructureResponseResponseMetricsRamSearchUsage": {
         "type": "object",
         "additionalProperties": {
+          "title": "probes",
           "type": "array",
           "items": {
             "$ref": "#/components/schemas/ProbesMetric"
@@ -1044,6 +1119,7 @@
       "InfrastructureResponseResponseMetricsSsdUsage": {
         "type": "object",
         "additionalProperties": {
+          "title": "probes",
           "type": "array",
           "items": {
             "$ref": "#/components/schemas/ProbesMetric"
@@ -1054,6 +1130,7 @@
       "InfrastructureResponseResponseMetricsAvgBuildTime": {
         "type": "object",
         "additionalProperties": {
+          "title": "probes",
           "type": "array",
           "items": {
             "$ref": "#/components/schemas/ProbesMetric"
@@ -1108,6 +1185,7 @@
         "type": "string"
       },
       "ReachabilityResponseResponseContent": {
+        "title": "reachabilityResponse",
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/ReachabilityResponseResponseContentAdditionalProperties"
@@ -1122,6 +1200,7 @@
       "IncidentsResponseResponseIncidentsProperty": {
         "type": "object",
         "additionalProperties": {
+          "title": "incidents",
           "type": "array",
           "items": {
             "$ref": "#/components/schemas/IncidentsItem"
@@ -1130,6 +1209,7 @@
         }
       },
       "ReachabilityResponseResponseAdditionalProperties": {
+        "title": "probes",
         "type": "object",
         "additionalProperties": {
           "type": "boolean",
@@ -1141,6 +1221,7 @@
       "LatencyResponseResponseMetricsLatencyProperty": {
         "type": "object",
         "additionalProperties": {
+          "title": "times",
           "type": "array",
           "items": {
             "$ref": "#/components/schemas/TimeItem"
@@ -1151,6 +1232,7 @@
       "IndexingResponseResponseMetricsIndexingProperty": {
         "type": "object",
         "additionalProperties": {
+          "title": "times",
           "type": "array",
           "items": {
             "$ref": "#/components/schemas/TimeItem"
@@ -1161,6 +1243,7 @@
       "InfrastructureResponseResponseMetricsCpuUsageProperty": {
         "type": "object",
         "additionalProperties": {
+          "title": "probes",
           "type": "array",
           "items": {
             "$ref": "#/components/schemas/ProbesMetric"
@@ -1171,6 +1254,7 @@
       "InfrastructureResponseResponseMetricsRamIndexingUsageProperty": {
         "type": "object",
         "additionalProperties": {
+          "title": "probes",
           "type": "array",
           "items": {
             "$ref": "#/components/schemas/ProbesMetric"
@@ -1181,6 +1265,7 @@
       "InfrastructureResponseResponseMetricsRamSearchUsageProperty": {
         "type": "object",
         "additionalProperties": {
+          "title": "probes",
           "type": "array",
           "items": {
             "$ref": "#/components/schemas/ProbesMetric"
@@ -1191,6 +1276,7 @@
       "InfrastructureResponseResponseMetricsSsdUsageProperty": {
         "type": "object",
         "additionalProperties": {
+          "title": "probes",
           "type": "array",
           "items": {
             "$ref": "#/components/schemas/ProbesMetric"
@@ -1201,6 +1287,7 @@
       "InfrastructureResponseResponseMetricsAvgBuildTimeProperty": {
         "type": "object",
         "additionalProperties": {
+          "title": "probes",
           "type": "array",
           "items": {
             "$ref": "#/components/schemas/ProbesMetric"
@@ -1209,6 +1296,7 @@
         "description": "Average build time of the indices in seconds."
       },
       "ReachabilityResponseResponseContentAdditionalProperties": {
+        "title": "probes",
         "type": "object",
         "additionalProperties": {
           "type": "boolean",

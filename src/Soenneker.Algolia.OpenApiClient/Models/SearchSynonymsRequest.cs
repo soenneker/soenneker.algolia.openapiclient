@@ -34,6 +34,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public SearchSynonymsRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            HitsPerPage = 20;
+            Page = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

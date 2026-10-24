@@ -32,7 +32,14 @@
         "operationId": "CustomGet",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -72,7 +79,14 @@
         "operationId": "CustomPost",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -122,7 +136,14 @@
         "operationId": "CustomPut",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -172,7 +193,14 @@
         "operationId": "CustomDelete",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -298,7 +326,16 @@
         "operationId": "GetConfig",
         "parameters": [
           {
-            "$ref": "#/components/parameters/IndexName"
+            "name": "indexName",
+            "in": "path",
+            "description": "Query Suggestions index name.",
+            "required": true,
+            "schema": {
+              "title": "indexName",
+              "type": "string",
+              "description": "Name of the Query Suggestions index (case-sensitive).",
+              "example": "ALGOLIA_INDEX_NAME"
+            }
           }
         ],
         "responses": {
@@ -336,7 +373,16 @@
         "operationId": "UpdateConfig",
         "parameters": [
           {
-            "$ref": "#/components/parameters/IndexName"
+            "name": "indexName",
+            "in": "path",
+            "description": "Query Suggestions index name.",
+            "required": true,
+            "schema": {
+              "title": "indexName",
+              "type": "string",
+              "description": "Name of the Query Suggestions index (case-sensitive).",
+              "example": "ALGOLIA_INDEX_NAME"
+            }
           }
         ],
         "requestBody": {
@@ -390,7 +436,16 @@
         "operationId": "DeleteConfig",
         "parameters": [
           {
-            "$ref": "#/components/parameters/IndexName"
+            "name": "indexName",
+            "in": "path",
+            "description": "Query Suggestions index name.",
+            "required": true,
+            "schema": {
+              "title": "indexName",
+              "type": "string",
+              "description": "Name of the Query Suggestions index (case-sensitive).",
+              "example": "ALGOLIA_INDEX_NAME"
+            }
           }
         ],
         "responses": {
@@ -435,7 +490,16 @@
         "operationId": "GetConfigStatus",
         "parameters": [
           {
-            "$ref": "#/components/parameters/IndexName"
+            "name": "indexName",
+            "in": "path",
+            "description": "Query Suggestions index name.",
+            "required": true,
+            "schema": {
+              "title": "indexName",
+              "type": "string",
+              "description": "Name of the Query Suggestions index (case-sensitive).",
+              "example": "ALGOLIA_INDEX_NAME"
+            }
           }
         ],
         "responses": {
@@ -472,7 +536,16 @@
         "operationId": "GetLogFile",
         "parameters": [
           {
-            "$ref": "#/components/parameters/IndexName"
+            "name": "indexName",
+            "in": "path",
+            "description": "Query Suggestions index name.",
+            "required": true,
+            "schema": {
+              "title": "indexName",
+              "type": "string",
+              "description": "Name of the Query Suggestions index (case-sensitive).",
+              "example": "ALGOLIA_INDEX_NAME"
+            }
           }
         ],
         "responses": {
@@ -663,7 +736,6 @@
       },
       "Languages": {
         "title": "languages",
-        "type": "object",
         "oneOf": [
           {
             "type": "array",
@@ -678,7 +750,8 @@
             "description": "If true, deduplication is enabled for all languages."
           }
         ],
-        "description": "Languages for deduplicating singular and plural suggestions.\nIf specified, only the more popular form is included.\n"
+        "description": "Languages for deduplicating singular and plural suggestions.\nIf specified, only the more popular form is included.\n",
+        "default": false
       },
       "Exclude": {
         "title": "exclude",
@@ -731,11 +804,12 @@
           "sourceIndices"
         ],
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ConfigurationWithIndexAllOf1"
+          }
+        ],
         "properties": {
-          "indexName": {
-            "type": "string",
-            "description": "Name of the Query Suggestions index (case-sensitive)."
-          },
           "sourceIndices": {
             "minItems": 1,
             "type": "array",
@@ -770,42 +844,18 @@
           "enablePersonalization",
           "exclude",
           "languages",
-          "sourceIndices",
-          "indexName"
+          "sourceIndices"
         ],
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ConfigurationWithIndex"
+          }
+        ],
         "properties": {
           "appID": {
             "type": "string",
             "description": "Algolia application ID to which this Query Suggestions configuration belongs."
-          },
-          "indexName": {
-            "type": "string",
-            "description": "Name of the Query Suggestions index (case-sensitive)."
-          },
-          "sourceIndices": {
-            "minItems": 1,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SourceIndex"
-            },
-            "description": "Algolia indices from which to get the popular searches for query suggestions."
-          },
-          "languages": {
-            "$ref": "#/components/schemas/Languages"
-          },
-          "exclude": {
-            "$ref": "#/components/schemas/Exclude"
-          },
-          "enablePersonalization": {
-            "type": "boolean",
-            "description": "Whether to turn on personalized query suggestions.",
-            "default": false
-          },
-          "allowSpecialCharacters": {
-            "type": "boolean",
-            "description": "Whether to include suggestions with special characters.",
-            "default": false
           }
         },
         "description": "API response for retrieving Query Suggestions configurations."
@@ -831,7 +881,6 @@
           "ERROR"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Type of log entry.\n\n- \u0060SKIP\u0060. A query is skipped because it doesn\u0027t match the conditions for successful inclusion. For example, when a query doesn\u0027t generate enough search results.\n- \u0060INFO\u0060. An informative log entry.\n- \u0060ERROR\u0060. The Query Suggestions process encountered an error.\n",
         "x-ms-enum": {
           "name": "LogLevel",
@@ -856,8 +905,10 @@
         "type": "object",
         "properties": {
           "indexName": {
+            "title": "indexName",
             "type": "string",
-            "description": "Name of the Query Suggestions index (case-sensitive)."
+            "description": "Name of the Query Suggestions index (case-sensitive).",
+            "example": "ALGOLIA_INDEX_NAME"
           }
         },
         "additionalProperties": false
@@ -891,8 +942,10 @@
         "type": "object",
         "properties": {
           "indexName": {
+            "title": "indexName",
             "type": "string",
-            "description": "Name of the Query Suggestions index (case-sensitive)."
+            "description": "Name of the Query Suggestions index (case-sensitive).",
+            "example": "ALGOLIA_INDEX_NAME"
           },
           "isRunning": {
             "type": "boolean",
@@ -1188,8 +1241,10 @@
         "description": "Query Suggestions index name.",
         "required": true,
         "schema": {
+          "title": "indexName",
           "type": "string",
-          "description": "Name of the Query Suggestions index (case-sensitive)."
+          "description": "Name of the Query Suggestions index (case-sensitive).",
+          "example": "ALGOLIA_INDEX_NAME"
         }
       }
     },

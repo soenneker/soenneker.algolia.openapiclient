@@ -25,7 +25,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Authentications
             get => new global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Authentications.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Algolia.OpenApiClient.ingestion.One.authentications.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Unique identifier of an authentication resource.</param>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Authentications.Item.WithAuthenticationItemRequestBuilder"/></returns>
         public global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Authentications.Item.WithAuthenticationItemRequestBuilder this[string position]
         {
@@ -169,11 +169,11 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Authentications
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("platform")]
-            public string[]? Platform { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.PlatformWithNone[]? Platform { get; set; }
 #nullable restore
 #else
             [QueryParameter("platform")]
-            public string[] Platform { get; set; }
+            public global::Soenneker.Algolia.OpenApiClient.Models.PlatformWithNone[] Platform { get; set; }
 #endif
             /// <summary>Property by which to sort the list of authentications.</summary>
             [QueryParameter("sort")]

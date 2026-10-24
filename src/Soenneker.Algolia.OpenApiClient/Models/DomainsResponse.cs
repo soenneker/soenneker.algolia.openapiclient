@@ -34,6 +34,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public DomainsResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            ItemsPerPage = 20;
+            Page = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

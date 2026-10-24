@@ -56,6 +56,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public TopHitsResponseWithRevenueAnalyticsHitsItem()
         {
             AdditionalData = new Dictionary<string, object>();
+            AddToCartCount = 0;
+            ClickCount = 0;
+            ConversionCount = 0;
+            PurchaseCount = 0;
+            TrackedHitCount = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

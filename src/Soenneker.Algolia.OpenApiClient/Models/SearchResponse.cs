@@ -9,11 +9,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SearchResponse : IAdditionalDataHolder, IParsable
+    public partial class SearchResponse : global::Soenneker.Algolia.OpenApiClient.Models.SearchResults, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The compositions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,35 +20,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.CompositionsSearchResponse Compositions { get; set; }
 #endif
-        /// <summary>Non-critical errors encountered while processing the request that may have affected the returned results (for example, an external provider failure that fell back to another result set).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ProcessingError>? Errors { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ProcessingError> Errors { get; set; }
-#endif
-        /// <summary>Search results.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItem>? Results { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItem> Results { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchResponse"/> and sets the default values.
-        /// </summary>
-        public SearchResponse()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Algolia.OpenApiClient.Models.SearchResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Algolia.OpenApiClient.Models.SearchResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Algolia.OpenApiClient.Models.SearchResponse();
@@ -59,26 +34,22 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "compositions", n => { Compositions = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionsSearchResponse>(global::Soenneker.Algolia.OpenApiClient.Models.CompositionsSearchResponse.CreateFromDiscriminatorValue); } },
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ProcessingError>(global::Soenneker.Algolia.OpenApiClient.Models.ProcessingError.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItem>(global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer)
+        public override void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionsSearchResponse>("compositions", Compositions);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ProcessingError>("errors", Errors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItem>("results", Results);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -409,6 +409,36 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public SearchParamsObject()
         {
             AdditionalData = new Dictionary<string, object>();
+            AdvancedSyntax = false;
+            AllowTyposOnNumericTokens = true;
+            Analytics = true;
+            AroundLatLngViaIP = false;
+            AttributeCriteriaComputedByMinProximity = false;
+            ClickAnalytics = false;
+            DecompoundQuery = true;
+            EnableABTest = true;
+            EnablePersonalization = false;
+            EnableReRanking = true;
+            EnableRules = true;
+            FacetingAfterDistinct = false;
+            GetRankingInfo = false;
+            HighlightPostTag = "</em>";
+            HighlightPreTag = "<em>";
+            HitsPerPage = 20;
+            MaxValuesPerFacet = 100;
+            MinProximity = 1;
+            MinWordSizefor1Typo = 4;
+            MinWordSizefor2Typos = 8;
+            Page = 0;
+            PercentileComputation = true;
+            PersonalizationImpact = 100;
+            RelevancyStrictness = 100;
+            ReplaceSynonymsInHighlight = false;
+            RestrictHighlightAndSnippetArrays = false;
+            SnippetEllipsisText = "…";
+            SortFacetValuesBy = "count";
+            SumOrFiltersScores = false;
+            Synonyms = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

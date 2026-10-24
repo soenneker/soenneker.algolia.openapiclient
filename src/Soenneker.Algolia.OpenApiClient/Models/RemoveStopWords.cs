@@ -18,10 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Composed type representation for type List&lt;global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage?>? SupportedLanguage { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage>? SupportedLanguage { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage?> SupportedLanguage { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage> SupportedLanguage { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +37,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 result.Boolean = booleanValue;
             }
-            else if(parseNode.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage>()?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage?> supportedLanguageValue)
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage>(global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage> supportedLanguageValue)
             {
                 result.SupportedLanguage = supportedLanguageValue;
             }
@@ -64,7 +64,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             }
             else if(SupportedLanguage != null)
             {
-                writer.WriteCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage>(null, SupportedLanguage);
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage>(null, SupportedLanguage);
             }
         }
     }

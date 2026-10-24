@@ -9,15 +9,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SearchResultsItem : IAdditionalDataHolder, IParsable
+    public partial class SearchResultsItem : global::Soenneker.Algolia.OpenApiClient.Models.SearchFields, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A/B test ID. This is only included in the response for indices that are part of an A/B test.</summary>
         public int? AbTestID { get; set; }
         /// <summary>Variant ID. This is only included in the response for indices that are part of an A/B test.</summary>
         public int? AbTestVariantID { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Rules applied to the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,16 +91,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string FeedID { get; set; }
 #endif
-        /// <summary>Search results (hits).Hits are records from your index that match the search criteria, augmented with additional attributes, such as, for highlighting.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit>? Hits { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit> Hits { get; set; }
-#endif
-        /// <summary>Number of hits returned per page.</summary>
-        public int? HitsPerPage { get; set; }
         /// <summary>Index name used for the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,22 +115,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>Number of results (hits).</summary>
-        public int? NbHits { get; set; }
-        /// <summary>Number of pages of results.</summary>
-        public int? NbPages { get; set; }
         /// <summary>Number of hits selected and sorted by the relevant sort algorithm.</summary>
         public int? NbSortedHits { get; set; }
-        /// <summary>The current page of the results.</summary>
-        public int? Page { get; set; }
-        /// <summary>URL-encoded string of all search parameters.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Params { get; set; }
-#nullable restore
-#else
-        public string Params { get; set; }
-#endif
         /// <summary>Post-[normalization](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/#what-does-normalization-mean) query string that will be searched.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -160,14 +134,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemProcessingTimingsMsProperty ProcessingTimingsMS { get; set; }
-#endif
-        /// <summary>The search query string.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Query { get; set; }
-#nullable restore
-#else
-        public string Query { get; set; }
 #endif
         /// <summary>Markup text indicating which parts of the original query have been removed to retrieve a non-empty result set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -214,24 +180,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>An object with custom data.You can store up to 32kB as custom data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemUserDataProperty? UserData { get; set; }
+        public UntypedNode? UserData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemUserDataProperty UserData { get; set; }
+        public UntypedNode UserData { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItem"/> and sets the default values.
-        /// </summary>
-        public SearchResultsItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItem();
@@ -240,9 +199,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "abTestID", n => { AbTestID = n.GetIntValue(); } },
                 { "abTestVariantID", n => { AbTestVariantID = n.GetIntValue(); } },
@@ -258,36 +217,30 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "facets", n => { Facets = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemFacetsProperty>(global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemFacetsProperty.CreateFromDiscriminatorValue); } },
                 { "facets_stats", n => { FacetsStats = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemFacetsStatsProperty>(global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemFacetsStatsProperty.CreateFromDiscriminatorValue); } },
                 { "feedID", n => { FeedID = n.GetStringValue(); } },
-                { "hits", n => { Hits = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit>(global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "hitsPerPage", n => { HitsPerPage = n.GetIntValue(); } },
                 { "index", n => { Index = n.GetStringValue(); } },
                 { "indexUsed", n => { IndexUsed = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "nbHits", n => { NbHits = n.GetIntValue(); } },
-                { "nbPages", n => { NbPages = n.GetIntValue(); } },
                 { "nbSortedHits", n => { NbSortedHits = n.GetIntValue(); } },
-                { "page", n => { Page = n.GetIntValue(); } },
-                { "params", n => { Params = n.GetStringValue(); } },
                 { "parsedQuery", n => { ParsedQuery = n.GetStringValue(); } },
                 { "processingTimeMS", n => { ProcessingTimeMS = n.GetIntValue(); } },
                 { "processingTimingsMS", n => { ProcessingTimingsMS = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemProcessingTimingsMsProperty>(global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemProcessingTimingsMsProperty.CreateFromDiscriminatorValue); } },
-                { "query", n => { Query = n.GetStringValue(); } },
                 { "queryAfterRemoval", n => { QueryAfterRemoval = n.GetStringValue(); } },
                 { "queryID", n => { QueryID = n.GetStringValue(); } },
                 { "redirect", n => { Redirect = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseSearchResponseRedirect>(global::Soenneker.Algolia.OpenApiClient.Models.BaseSearchResponseRedirect.CreateFromDiscriminatorValue); } },
                 { "renderingContent", n => { RenderingContent = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RenderingContent>(global::Soenneker.Algolia.OpenApiClient.Models.RenderingContent.CreateFromDiscriminatorValue); } },
                 { "serverTimeMS", n => { ServerTimeMS = n.GetIntValue(); } },
                 { "serverUsed", n => { ServerUsed = n.GetStringValue(); } },
-                { "userData", n => { UserData = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemUserDataProperty>(global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemUserDataProperty.CreateFromDiscriminatorValue); } },
+                { "userData", n => { UserData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer)
+        public override void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
             writer.WriteIntValue("abTestID", AbTestID);
             writer.WriteIntValue("abTestVariantID", AbTestVariantID);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemAppliedRulesItem>("appliedRules", AppliedRules);
@@ -302,28 +255,20 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemFacetsProperty>("facets", Facets);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemFacetsStatsProperty>("facets_stats", FacetsStats);
             writer.WriteStringValue("feedID", FeedID);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit>("hits", Hits);
-            writer.WriteIntValue("hitsPerPage", HitsPerPage);
             writer.WriteStringValue("index", Index);
             writer.WriteStringValue("indexUsed", IndexUsed);
             writer.WriteStringValue("message", Message);
-            writer.WriteIntValue("nbHits", NbHits);
-            writer.WriteIntValue("nbPages", NbPages);
             writer.WriteIntValue("nbSortedHits", NbSortedHits);
-            writer.WriteIntValue("page", Page);
-            writer.WriteStringValue("params", Params);
             writer.WriteStringValue("parsedQuery", ParsedQuery);
             writer.WriteIntValue("processingTimeMS", ProcessingTimeMS);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemProcessingTimingsMsProperty>("processingTimingsMS", ProcessingTimingsMS);
-            writer.WriteStringValue("query", Query);
             writer.WriteStringValue("queryAfterRemoval", QueryAfterRemoval);
             writer.WriteStringValue("queryID", QueryID);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseSearchResponseRedirect>("redirect", Redirect);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RenderingContent>("renderingContent", RenderingContent);
             writer.WriteIntValue("serverTimeMS", ServerTimeMS);
             writer.WriteStringValue("serverUsed", ServerUsed);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemUserDataProperty>("userData", UserData);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<UntypedNode>("userData", UserData);
         }
     }
 }

@@ -9,11 +9,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RelatedQuery : IAdditionalDataHolder, IParsable
+    public partial class RelatedQuery : global::Soenneker.Algolia.OpenApiClient.Models.BaseRecommendRequest, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Search parameters to use for a fallback request if there aren&apos;t enough recommendations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,16 +20,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams FallbackParameters { get; set; }
 #endif
-        /// <summary>Index name (case-sensitive).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IndexName { get; set; }
-#nullable restore
-#else
-        public string IndexName { get; set; }
-#endif
-        /// <summary>Maximum number of recommendations to retrieve.By default, all recommendations are returned and no fallback request is made.Depending on the available recommendations and the other request parameters,the actual number of recommendations may be lower than this value.</summary>
-        public int? MaxRecommendations { get; set; }
         /// <summary>Related products or similar content model.This model recommends items that are similar to the item with the ID `objectID`.Similarity is determined from the user interactions and attributes.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.RelatedModel? Model { get; set; }
         /// <summary>Unique record identifier.</summary>
@@ -42,30 +30,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string ObjectID { get; set; }
 #endif
-        /// <summary>Search parameters for filtering the recommendations.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams? QueryParameters { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams QueryParameters { get; set; }
-#endif
-        /// <summary>Minimum score a recommendation must have to be included in the response.</summary>
-        public double? Threshold { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RelatedQuery"/> and sets the default values.
-        /// </summary>
-        public RelatedQuery()
-        {
-            AdditionalData = new Dictionary<string, object>();
-            MaxRecommendations = 30;
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RelatedQuery"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Algolia.OpenApiClient.Models.RelatedQuery CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Algolia.OpenApiClient.Models.RelatedQuery CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Algolia.OpenApiClient.Models.RelatedQuery();
@@ -74,34 +44,26 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "fallbackParameters", n => { FallbackParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams>(global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams.CreateFromDiscriminatorValue); } },
-                { "indexName", n => { IndexName = n.GetStringValue(); } },
-                { "maxRecommendations", n => { MaxRecommendations = n.GetIntValue(); } },
                 { "model", n => { Model = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RelatedModel>(); } },
                 { "objectID", n => { ObjectID = n.GetStringValue(); } },
-                { "queryParameters", n => { QueryParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams.CreateFromDiscriminatorValue); } },
-                { "threshold", n => { Threshold = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer)
+        public override void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams>("fallbackParameters", FallbackParameters);
-            writer.WriteStringValue("indexName", IndexName);
-            writer.WriteIntValue("maxRecommendations", MaxRecommendations);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RelatedModel>("model", Model);
             writer.WriteStringValue("objectID", ObjectID);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams>("queryParameters", QueryParameters);
-            writer.WriteDoubleValue("threshold", Threshold);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

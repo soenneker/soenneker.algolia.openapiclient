@@ -34,6 +34,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public GetPurchaseRateResponseDatesItem()
         {
             AdditionalData = new Dictionary<string, object>();
+            PurchaseCount = 0;
+            TrackedSearchCount = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

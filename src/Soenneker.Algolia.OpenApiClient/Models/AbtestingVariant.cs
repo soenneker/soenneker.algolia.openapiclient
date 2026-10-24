@@ -84,6 +84,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public AbtestingVariant()
         {
             AdditionalData = new Dictionary<string, object>();
+            TrackedSearchCount = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

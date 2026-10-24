@@ -25,10 +25,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Default values for the configuration placeholders that are not reserved Composition placeholders.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainExternalProviderConfigurationParamsProperty? ConfigurationParams { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParamsProperty2? ConfigurationParams { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainExternalProviderConfigurationParamsProperty ConfigurationParams { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParamsProperty2 ConfigurationParams { get; set; }
 #endif
         /// <summary>Algolia index used to fetch the records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "configurationID", n => { ConfigurationID = n.GetStringValue(); } },
-                { "configurationParams", n => { ConfigurationParams = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainExternalProviderConfigurationParamsProperty>(global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainExternalProviderConfigurationParamsProperty.CreateFromDiscriminatorValue); } },
+                { "configurationParams", n => { ConfigurationParams = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParamsProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParamsProperty2.CreateFromDiscriminatorValue); } },
                 { "index", n => { Index = n.GetStringValue(); } },
                 { "ordering", n => { Ordering = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderOrdering>(); } },
                 { "params", n => { Params = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters>(global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters.CreateFromDiscriminatorValue); } },
@@ -88,7 +88,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("configurationID", ConfigurationID);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainExternalProviderConfigurationParamsProperty>("configurationParams", ConfigurationParams);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParamsProperty2>("configurationParams", ConfigurationParams);
             writer.WriteStringValue("index", Index);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderOrdering>("ordering", Ordering);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MainInjectionQueryParameters>("params", Params);

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaInsightsPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthApiKeyPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthBasicPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthGoogleServiceAccountPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartialMember1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthOAuthPartial"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaInsightsPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthApiKeyPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthBasicPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthGoogleServiceAccountPartial"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartialOneOf7Map"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthOAuthPartial"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthInputPartial : IComposedTypeWrapper, IParsable
@@ -53,13 +53,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.AuthGoogleServiceAccountPartial AuthGoogleServiceAccountPartial { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartialMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartialOneOf7Map"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartialMember1? AuthInputPartialMember1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartialOneOf7Map? AuthInputPartialOneOf7Map { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartialMember1 AuthInputPartialMember1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartialOneOf7Map AuthInputPartialOneOf7Map { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthOAuthPartial"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,6 +99,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 result.AuthGoogleServiceAccountPartial = new global::Soenneker.Algolia.OpenApiClient.Models.AuthGoogleServiceAccountPartial();
             }
+            else if("AuthInputPartialOneOf7Map".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AuthInputPartialOneOf7Map = new global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartialOneOf7Map();
+            }
             else if("AuthOAuthPartial".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AuthOAuthPartial = new global::Soenneker.Algolia.OpenApiClient.Models.AuthOAuthPartial();
@@ -131,9 +135,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 return AuthGoogleServiceAccountPartial.GetFieldDeserializers();
             }
-            else if(AuthInputPartialMember1 != null)
+            else if(AuthInputPartialOneOf7Map != null)
             {
-                return AuthInputPartialMember1.GetFieldDeserializers();
+                return AuthInputPartialOneOf7Map.GetFieldDeserializers();
             }
             else if(AuthOAuthPartial != null)
             {
@@ -168,9 +172,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthGoogleServiceAccountPartial>(null, AuthGoogleServiceAccountPartial);
             }
-            else if(AuthInputPartialMember1 != null)
+            else if(AuthInputPartialOneOf7Map != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartialMember1>(null, AuthInputPartialMember1);
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartialOneOf7Map>(null, AuthInputPartialOneOf7Map);
             }
             else if(AuthOAuthPartial != null)
             {

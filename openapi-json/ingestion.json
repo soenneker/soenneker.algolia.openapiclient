@@ -31,7 +31,14 @@
         "operationId": "CustomGet",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -71,7 +78,14 @@
         "operationId": "CustomPost",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -121,7 +135,14 @@
         "operationId": "CustomPut",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -171,7 +192,14 @@
         "operationId": "CustomDelete",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -213,7 +241,14 @@
         "operationId": "Push",
         "parameters": [
           {
-            "$ref": "#/components/parameters/IndexName"
+            "name": "indexName",
+            "in": "path",
+            "description": "Name of the index on which to perform the operation.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "ALGOLIA_INDEX_NAME"
+            }
           },
           {
             "$ref": "#/components/parameters/watch"
@@ -377,7 +412,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchAuthentications200Response"
+                  "$ref": "#/components/schemas/SearchAuthenticationsResponseSchema"
                 }
               }
             }
@@ -405,9 +440,12 @@
           {
             "name": "authenticationId",
             "in": "path",
+            "description": "Unique identifier of an authentication resource.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of an authentication resource.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -443,9 +481,12 @@
           {
             "name": "authenticationId",
             "in": "path",
+            "description": "Unique identifier of an authentication resource.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of an authentication resource.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -491,9 +532,12 @@
           {
             "name": "authenticationId",
             "in": "path",
+            "description": "Unique identifier of an authentication resource.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of an authentication resource.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -636,7 +680,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchDestinations200Response"
+                  "$ref": "#/components/schemas/SearchDestinationsResponseSchema"
                 }
               }
             }
@@ -664,9 +708,12 @@
           {
             "name": "destinationId",
             "in": "path",
+            "description": "Unique identifier of a destination.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a destination resource.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -702,9 +749,12 @@
           {
             "name": "destinationId",
             "in": "path",
+            "description": "Unique identifier of a destination.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a destination resource.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -750,9 +800,12 @@
           {
             "name": "destinationId",
             "in": "path",
+            "description": "Unique identifier of a destination.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a destination resource.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -937,7 +990,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchSources200Response"
+                  "$ref": "#/components/schemas/SearchSourcesResponseSchema"
                 }
               }
             }
@@ -965,9 +1018,12 @@
           {
             "name": "sourceId",
             "in": "path",
+            "description": "Unique identifier of a source.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally uniqud identifier (UUID) of a source.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -1003,9 +1059,12 @@
           {
             "name": "sourceId",
             "in": "path",
+            "description": "Unique identifier of a source.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally uniqud identifier (UUID) of a source.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -1051,9 +1110,12 @@
           {
             "name": "sourceId",
             "in": "path",
+            "description": "Unique identifier of a source.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally uniqud identifier (UUID) of a source.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -1091,9 +1153,12 @@
           {
             "name": "sourceId",
             "in": "path",
+            "description": "Unique identifier of a source.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally uniqud identifier (UUID) of a source.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -1146,9 +1211,12 @@
           {
             "name": "sourceId",
             "in": "path",
+            "description": "Unique identifier of a source.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally uniqud identifier (UUID) of a source.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -1191,9 +1259,12 @@
           {
             "name": "sourceId",
             "in": "path",
+            "description": "Unique identifier of a source.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally uniqud identifier (UUID) of a source.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -1358,7 +1429,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchTasks200Response"
+                  "$ref": "#/components/schemas/SearchTasksResponseSchema"
                 }
               }
             }
@@ -1386,9 +1457,12 @@
           {
             "name": "taskId",
             "in": "path",
+            "description": "Unique identifier of a task.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a task.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -1424,9 +1498,12 @@
           {
             "name": "taskId",
             "in": "path",
+            "description": "Unique identifier of a task.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a task.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -1472,9 +1549,12 @@
           {
             "name": "taskId",
             "in": "path",
+            "description": "Unique identifier of a task.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a task.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -1520,9 +1600,12 @@
           {
             "name": "taskId",
             "in": "path",
+            "description": "Unique identifier of a task.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a task.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -1560,9 +1643,12 @@
           {
             "name": "taskId",
             "in": "path",
+            "description": "Unique identifier of a task.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a task.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -1612,15 +1698,18 @@
         "operationId": "PushTask",
         "parameters": [
           {
-            "$ref": "#/components/parameters/watch"
-          },
-          {
             "name": "taskId",
             "in": "path",
+            "description": "Unique identifier of a task.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a task.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
+          },
+          {
+            "$ref": "#/components/parameters/watch"
           }
         ],
         "requestBody": {
@@ -1672,9 +1761,12 @@
           {
             "name": "taskId",
             "in": "path",
+            "description": "Unique identifier of a task.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a task.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -1712,9 +1804,12 @@
           {
             "name": "taskId",
             "in": "path",
+            "description": "Unique identifier of a task.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a task.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -1865,7 +1960,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchTasksV1200Response"
+                  "$ref": "#/components/schemas/SearchTasksResponseV1Schema"
                 }
               }
             }
@@ -1894,9 +1989,12 @@
           {
             "name": "taskId",
             "in": "path",
+            "description": "Unique identifier of a task.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a task.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -1933,9 +2031,12 @@
           {
             "name": "taskId",
             "in": "path",
+            "description": "Unique identifier of a task.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a task.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -1983,9 +2084,12 @@
           {
             "name": "taskId",
             "in": "path",
+            "description": "Unique identifier of a task.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a task.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -2024,9 +2128,12 @@
           {
             "name": "taskId",
             "in": "path",
+            "description": "Unique identifier of a task.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a task.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -2075,9 +2182,12 @@
           {
             "name": "taskId",
             "in": "path",
+            "description": "Unique identifier of a task.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a task.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -2116,9 +2226,12 @@
           {
             "name": "taskId",
             "in": "path",
+            "description": "Unique identifier of a task.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a task.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -2296,7 +2409,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SearchTransformations200Response"
+                  "$ref": "#/components/schemas/SearchTransformationsResponseSchema"
                 }
               }
             }
@@ -2324,9 +2437,12 @@
           {
             "name": "transformationId",
             "in": "path",
+            "description": "Unique identifier of a transformation.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a transformation.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -2362,9 +2478,12 @@
           {
             "name": "transformationId",
             "in": "path",
+            "description": "Unique identifier of a transformation.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a transformation.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -2410,9 +2529,12 @@
           {
             "name": "transformationId",
             "in": "path",
+            "description": "Unique identifier of a transformation.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a transformation.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -2450,9 +2572,12 @@
           {
             "name": "transformationId",
             "in": "path",
+            "description": "Unique identifier of a transformation.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a transformation.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -2569,9 +2694,12 @@
           {
             "name": "runId",
             "in": "path",
+            "description": "Unique identifier of a task run.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a task run.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -2607,6 +2735,17 @@
         "operationId": "ListEvents",
         "parameters": [
           {
+            "name": "runId",
+            "in": "path",
+            "description": "Unique identifier of a task run.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a task run.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
+            }
+          },
+          {
             "$ref": "#/components/parameters/itemsPerPage"
           },
           {
@@ -2636,14 +2775,6 @@
             "name": "endDate",
             "in": "query",
             "description": "Date and time in RFC 3339 format for the latest events to retrieve. By default, the current time is used.",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "runId",
-            "in": "path",
-            "required": true,
             "schema": {
               "type": "string"
             }
@@ -2683,17 +2814,23 @@
           {
             "name": "runId",
             "in": "path",
+            "description": "Unique identifier of a task run.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of a task run.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           },
           {
             "name": "eventId",
             "in": "path",
+            "description": "Unique identifier of an event.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "Universally unique identifier (UUID) of an event.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         ],
@@ -2862,7 +2999,6 @@
           "clear"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Which indexing operation to perform:\n\n- \u0060addObject\u0060: adds records to an index.\n   Equivalent to the \u0022Add a new record (with auto-generated object ID)\u0022 operation.\n- \u0060updateObject\u0060: adds or replaces records in an index.\n   Equivalent to the \u0022Add or replace a record\u0022 operation.\n- \u0060partialUpdateObject\u0060: adds or updates attributes within records.\n   Equivalent to the \u0022Add or update attributes\u0022 operation with the \u0060createIfNoExists\u0060 parameter set to true.\n   (If a record with the specified \u0060objectID\u0060 doesn\u0027t exist in the specified index, this action adds the record to the index).\n- \u0060partialUpdateObjectNoCreate\u0060: same as \u0060partialUpdateObject\u0060, but with \u0060createIfNoExists\u0060 set to false.\n   (A record isn\u0027t added to the index if its \u0060objectID\u0060 doesn\u0027t exist).\n- \u0060deleteObject\u0060: delete records from an index.\n  Equivalent to the \u0022Delete a record\u0022 operation.\n- \u0060delete\u0060. Delete an index. Equivalent to the \u0022Delete an index\u0022 operation.\n- \u0060clear\u0060: delete all records from an index. Equivalent to the \u0022Delete all records from an index operation\u0022.\n",
         "x-ms-enum": {
           "name": "Action",
@@ -2940,10 +3076,10 @@
           "retried",
           "failed",
           "succeeded",
-          "critical"
+          "critical",
+          null
         ],
         "type": "string",
-        "additionalProperties": false,
         "nullable": true,
         "x-ms-enum": {
           "name": "EventStatus",
@@ -2984,7 +3120,6 @@
           "transform"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "EventType",
           "modelAsString": false,
@@ -3025,11 +3160,13 @@
         "properties": {
           "eventID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of an event."
+            "description": "Universally unique identifier (UUID) of an event.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "runID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a task run."
+            "description": "Universally unique identifier (UUID) of a task run.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "status": {
             "$ref": "#/components/schemas/EventStatus"
@@ -3067,11 +3204,13 @@
         "properties": {
           "runID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a task run."
+            "description": "Universally unique identifier (UUID) of a task run.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "eventID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of an event."
+            "description": "Universally unique identifier (UUID) of an event.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "data": {
             "type": "array",
@@ -3121,7 +3260,6 @@
           "secrets"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Type of authentication. This determines the type of credentials required in the \u0060input\u0060 object.",
         "x-ms-enum": {
           "name": "AuthenticationType",
@@ -3162,10 +3300,10 @@
         "enum": [
           "bigcommerce",
           "commercetools",
-          "shopify"
+          "shopify",
+          null
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Name of an ecommerce platform with which to authenticate.\nThis determines which authentication type you can select.\n",
         "nullable": true,
         "x-ms-enum": {
@@ -3192,7 +3330,6 @@
           "none"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Authentication resource not tied to any ecommerce platform, used for filtering.",
         "x-ms-enum": {
           "name": "PlatformNone",
@@ -3206,15 +3343,37 @@
         }
       },
       "PlatformWithNone": {
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/PlatformWrapper"
-          },
-          {
-            "$ref": "#/components/schemas/PlatformNoneWrapper"
-          }
-        ]
+        "enum": [
+          "bigcommerce",
+          "commercetools",
+          "shopify",
+          null,
+          "none"
+        ],
+        "type": "string",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "PlatformWithNone",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "bigcommerce",
+              "name": "Bigcommerce"
+            },
+            {
+              "value": "commercetools",
+              "name": "Commercetools"
+            },
+            {
+              "value": "shopify",
+              "name": "Shopify"
+            },
+            {
+              "value": "none",
+              "name": "None"
+            }
+          ]
+        }
       },
       "AuthenticationSortKeys": {
         "enum": [
@@ -3225,7 +3384,6 @@
           "createdAt"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Property by which to sort the list of authentications.",
         "x-ms-enum": {
           "name": "AuthenticationSortKeys",
@@ -3260,7 +3418,6 @@
           "desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Ascending or descending sort order.",
         "x-ms-enum": {
           "name": "OrderKeys",
@@ -3363,7 +3520,8 @@
           },
           "scope": {
             "type": "string",
-            "description": "OAuth scope."
+            "description": "OAuth scope.",
+            "default": ""
           }
         },
         "additionalProperties": false,
@@ -3411,7 +3569,6 @@
         "description": "A key:value authentication for your transformations."
       },
       "AuthInputPartial": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/AuthGoogleServiceAccountPartial"
@@ -3432,64 +3589,9 @@
             "$ref": "#/components/schemas/AuthAlgoliaInsightsPartial"
           },
           {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            },
-            "description": "A key:value authentication for your transformations."
+            "$ref": "#/components/schemas/AuthInputPartialOneOf7"
           }
-        ],
-        "properties": {
-          "clientEmail": {
-            "type": "string",
-            "description": "Email address of the Google service account.",
-            "example": "service-account-name@project-id.iam.gserviceaccount.com"
-          },
-          "privateKey": {
-            "type": "string",
-            "description": "Private key of the Google service account. This field is \u0060null\u0060 in the API response."
-          },
-          "username": {
-            "type": "string",
-            "description": "Username."
-          },
-          "password": {
-            "type": "string",
-            "description": "Password. This field is \u0060null\u0060 in the API response."
-          },
-          "key": {
-            "type": "string",
-            "description": "API key. This field is \u0060null\u0060 in the API response."
-          },
-          "url": {
-            "type": "string",
-            "description": "URL for the OAuth endpoint."
-          },
-          "client_id": {
-            "type": "string",
-            "description": "Client ID."
-          },
-          "client_secret": {
-            "type": "string",
-            "description": "Client secret. This field is \u0060null\u0060 in the API response."
-          },
-          "code": {
-            "type": "string",
-            "description": "Authorization code.\nUsed during an \u0060authorization_code\u0060 grant type flow, to request an access_token when creating/updating the authentication.\nThis field is not returned in the API response.\n"
-          },
-          "scope": {
-            "type": "string",
-            "description": "OAuth scope."
-          },
-          "appID": {
-            "type": "string",
-            "description": "Algolia application ID."
-          },
-          "apiKey": {
-            "type": "string",
-            "description": "Algolia API key with the ACL: \u0060addObject\u0060, \u0060deleteObject\u0060, \u0060settings\u0060, \u0060editSettings\u0060, \u0060listIndexes\u0060, \u0060deleteIndex\u0060.\nThis field is \u0060null\u0060 in the API response.\n"
-          }
-        }
+        ]
       },
       "UpdatedAt": {
         "type": "string",
@@ -3508,7 +3610,8 @@
         "properties": {
           "authenticationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of an authentication resource."
+            "description": "Universally unique identifier (UUID) of an authentication resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "type": {
             "$ref": "#/components/schemas/AuthenticationType"
@@ -3566,7 +3669,8 @@
             "maximum": 100,
             "minimum": 1,
             "type": "integer",
-            "description": "Number of items per page."
+            "description": "Number of items per page.",
+            "default": 10
           }
         },
         "additionalProperties": false,
@@ -3664,7 +3768,8 @@
           },
           "scope": {
             "type": "string",
-            "description": "OAuth scope."
+            "description": "OAuth scope.",
+            "default": ""
           }
         },
         "additionalProperties": false,
@@ -3717,7 +3822,6 @@
         "description": "Credentials for authenticating with the Algolia Insights API."
       },
       "AuthInput": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/AuthGoogleServiceAccount"
@@ -3738,64 +3842,9 @@
             "$ref": "#/components/schemas/AuthAlgoliaInsights"
           },
           {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            },
-            "description": "A key:value authentication for your transformations."
+            "$ref": "#/components/schemas/AuthInputOneOf7"
           }
-        ],
-        "properties": {
-          "clientEmail": {
-            "type": "string",
-            "description": "Email address of the Google service account.",
-            "example": "service-account-name@project-id.iam.gserviceaccount.com"
-          },
-          "privateKey": {
-            "type": "string",
-            "description": "Private key of the Google service account. This field is \u0060null\u0060 in the API response."
-          },
-          "username": {
-            "type": "string",
-            "description": "Username."
-          },
-          "password": {
-            "type": "string",
-            "description": "Password. This field is \u0060null\u0060 in the API response."
-          },
-          "key": {
-            "type": "string",
-            "description": "API key. This field is \u0060null\u0060 in the API response."
-          },
-          "url": {
-            "type": "string",
-            "description": "URL for the OAuth endpoint."
-          },
-          "client_id": {
-            "type": "string",
-            "description": "Client ID."
-          },
-          "client_secret": {
-            "type": "string",
-            "description": "Client secret. This field is \u0060null\u0060 in the API response."
-          },
-          "code": {
-            "type": "string",
-            "description": "Authorization code.\nUsed during an \u0060authorization_code\u0060 grant type flow, to request an access_token when creating/updating the authentication.\nThis field is not returned in the API response.\n"
-          },
-          "scope": {
-            "type": "string",
-            "description": "OAuth scope."
-          },
-          "appID": {
-            "type": "string",
-            "description": "Algolia application ID."
-          },
-          "apiKey": {
-            "type": "string",
-            "description": "Algolia API key with the ACL: \u0060addObject\u0060, \u0060deleteObject\u0060, \u0060settings\u0060, \u0060editSettings\u0060, \u0060listIndexes\u0060, \u0060deleteIndex\u0060.\nThis field is \u0060null\u0060 in the API response.\n"
-          }
-        }
+        ]
       },
       "AuthenticationCreate": {
         "required": [
@@ -3832,7 +3881,8 @@
         "properties": {
           "authenticationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of an authentication resource."
+            "description": "Universally unique identifier (UUID) of an authentication resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "name": {
             "type": "string",
@@ -3856,7 +3906,8 @@
             "type": "array",
             "items": {
               "type": "string",
-              "description": "Universally unique identifier (UUID) of an authentication resource."
+              "description": "Universally unique identifier (UUID) of an authentication resource.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         },
@@ -3899,7 +3950,8 @@
         "properties": {
           "authenticationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of an authentication resource."
+            "description": "Universally unique identifier (UUID) of an authentication resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "name": {
             "type": "string",
@@ -3919,7 +3971,6 @@
           "insights"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Destination type.\n\n- \u0060search\u0060.\n  Data is stored in an Algolia index.\n\n- \u0060insights\u0060.\n  Data is recorded as user events in the Insights API.\n",
         "x-ms-enum": {
           "name": "DestinationType",
@@ -3949,7 +4000,6 @@
           "createdAt"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Property by which to sort the destinations.",
         "x-ms-enum": {
           "name": "DestinationSortKeys",
@@ -3986,7 +4036,6 @@
           "collection"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Record type for ecommerce sources.",
         "x-ms-enum": {
           "name": "RecordType",
@@ -4041,7 +4090,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "description": "Universally unique identifier (UUID) of a transformation."
+          "description": "Universally unique identifier (UUID) of a transformation.",
+          "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
         }
       },
       "Destination": {
@@ -4057,7 +4107,8 @@
         "properties": {
           "destinationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a destination resource."
+            "description": "Universally unique identifier (UUID) of a destination resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "type": {
             "$ref": "#/components/schemas/DestinationType"
@@ -4082,13 +4133,15 @@
           },
           "authenticationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of an authentication resource."
+            "description": "Universally unique identifier (UUID) of an authentication resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "transformationIDs": {
             "type": "array",
             "items": {
               "type": "string",
-              "description": "Universally unique identifier (UUID) of a transformation."
+              "description": "Universally unique identifier (UUID) of a transformation.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         },
@@ -4115,13 +4168,15 @@
           },
           "authenticationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of an authentication resource."
+            "description": "Universally unique identifier (UUID) of an authentication resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "transformationIDs": {
             "type": "array",
             "items": {
               "type": "string",
-              "description": "Universally unique identifier (UUID) of a transformation."
+              "description": "Universally unique identifier (UUID) of a transformation.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         },
@@ -4138,7 +4193,8 @@
         "properties": {
           "destinationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a destination resource."
+            "description": "Universally unique identifier (UUID) of a destination resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "name": {
             "type": "string",
@@ -4162,7 +4218,8 @@
             "type": "array",
             "items": {
               "type": "string",
-              "description": "Universally unique identifier (UUID) of a destination resource."
+              "description": "Universally unique identifier (UUID) of a destination resource.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         },
@@ -4201,13 +4258,15 @@
           },
           "authenticationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of an authentication resource."
+            "description": "Universally unique identifier (UUID) of an authentication resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "transformationIDs": {
             "type": "array",
             "items": {
               "type": "string",
-              "description": "Universally unique identifier (UUID) of a transformation."
+              "description": "Universally unique identifier (UUID) of a transformation.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         },
@@ -4224,7 +4283,8 @@
         "properties": {
           "destinationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a destination resource."
+            "description": "Universally unique identifier (UUID) of a destination resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "name": {
             "type": "string",
@@ -4252,7 +4312,6 @@
           "push"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SourceType",
           "modelAsString": false,
@@ -4308,7 +4367,6 @@
           "createdAt"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Property by which to sort the list of sources.",
         "x-ms-enum": {
           "name": "SourceSortKeys",
@@ -4439,7 +4497,11 @@
               "description": "Three-letter code for the currency.",
               "example": "usd"
             },
-            "description": "Currencies for the given channel."
+            "description": "Currencies for the given channel.",
+            "example": [
+              "usd",
+              "eur"
+            ]
           }
         },
         "additionalProperties": false
@@ -4510,7 +4572,6 @@
           "POST"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "HTTP method to be used for retrieving your data.",
         "x-ms-enum": {
           "name": "MethodType",
@@ -4557,7 +4618,6 @@
           "json"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "MappingTypeCsv",
           "modelAsString": false,
@@ -4622,7 +4682,6 @@
           "ga360"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "BigQueryDataType",
           "modelAsString": false,
@@ -4759,19 +4818,15 @@
         ]
       },
       "SourceShopify": {
-        "required": [
-          "shopURL"
-        ],
         "type": "object",
-        "properties": {
-          "featureFlags": {
-            "$ref": "#/components/schemas/SourceShopifyFeatureFlags"
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SourceUpdateShopify"
           },
-          "shopURL": {
-            "type": "string",
-            "description": "URL of the Shopify store."
+          {
+            "$ref": "#/components/schemas/SourceShopifyBase"
           }
-        }
+        ]
       },
       "SourceAlgoliaIndex": {
         "required": [
@@ -4795,7 +4850,6 @@
         ]
       },
       "SourceInput": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/SourceCommercetools"
@@ -4824,127 +4878,7 @@
           {
             "$ref": "#/components/schemas/SourceAlgoliaIndex"
           }
-        ],
-        "properties": {
-          "storeKeys": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "description": "Unique and immutable key of the referenced store."
-            }
-          },
-          "locales": {
-            "type": "array",
-            "items": {
-              "pattern": "^[a-z]{2}(-[A-Z]{2})?$",
-              "type": "string",
-              "description": "Locale specified as combination of a two-letter language code and an optional two-letter country code.",
-              "example": "fr-FR"
-            },
-            "description": "Locales for your commercetools stores."
-          },
-          "url": {
-            "type": "string"
-          },
-          "projectKey": {
-            "type": "string"
-          },
-          "fallbackIsInStockValue": {
-            "type": "boolean",
-            "description": "Whether a fallback value is stored in the Algolia record if there\u0027s no inventory information about the product.\n",
-            "default": true
-          },
-          "productQueryPredicate": {
-            "type": "string",
-            "description": "Predicate to filter out specific products when indexing. For more information, see [Query Predicate](https://docs.commercetools.com/api/predicates/query).\n"
-          },
-          "useImagesObjects": {
-            "type": "boolean",
-            "description": "When set to true, the connector indexes objects with all images attributes instead of only the URLs.\n"
-          },
-          "storeHash": {
-            "type": "string",
-            "description": "Store hash identifying your BigCommerce store."
-          },
-          "channel": {
-            "$ref": "#/components/schemas/BigCommerceChannel"
-          },
-          "productMetafields": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BigCommerceMetafield"
-            }
-          },
-          "variantMetafields": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BigCommerceMetafield"
-            }
-          },
-          "uniqueIDColumn": {
-            "type": "string",
-            "description": "Name of a column that contains a unique ID which will be used as \u0060objectID\u0060 in Algolia."
-          },
-          "method": {
-            "$ref": "#/components/schemas/MethodType"
-          },
-          "mapping": {
-            "$ref": "#/components/schemas/SourceCsvMappingProperty"
-          },
-          "delimiter": {
-            "maxLength": 1,
-            "minLength": 1,
-            "type": "string",
-            "description": "The character used to split the value on each line, default to a comma (\\r, \\n, 0xFFFD, and space are forbidden).",
-            "default": ","
-          },
-          "projectID": {
-            "type": "string",
-            "description": "Project ID of the BigQuery source."
-          },
-          "datasetID": {
-            "type": "string",
-            "description": "Dataset ID of the BigQuery source."
-          },
-          "dataType": {
-            "$ref": "#/components/schemas/BigQueryDataType"
-          },
-          "table": {
-            "type": "string",
-            "description": "Table name for the BigQuery export."
-          },
-          "tablePrefix": {
-            "type": "string",
-            "description": "Table prefix for a Google Analytics 4 data export to BigQuery."
-          },
-          "customSQLRequest": {
-            "type": "string",
-            "description": "Custom SQL request to extract data from the BigQuery table."
-          },
-          "image": {
-            "type": "string",
-            "description": "Name of the connector.",
-            "example": "zendesk"
-          },
-          "configuration": {
-            "$ref": "#/components/schemas/SourceDockerConfigurationProperty"
-          },
-          "featureFlags": {
-            "$ref": "#/components/schemas/SourceShopifyFeatureFlags"
-          },
-          "shopURL": {
-            "type": "string",
-            "description": "URL of the Shopify store."
-          },
-          "indexName": {
-            "type": "string",
-            "description": "Name of the Algolia index to read records from."
-          },
-          "filters": {
-            "type": "string",
-            "description": "SQL-like filter expression applied while browsing the source index.\nSee [filters](https://www.algolia.com/doc/api-reference/api-parameters/filters/).\n"
-          }
-        }
+        ]
       },
       "Source": {
         "required": [
@@ -4958,7 +4892,8 @@
         "properties": {
           "sourceID": {
             "type": "string",
-            "description": "Universally uniqud identifier (UUID) of a source."
+            "description": "Universally uniqud identifier (UUID) of a source.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "type": {
             "$ref": "#/components/schemas/SourceType"
@@ -4974,7 +4909,8 @@
           },
           "authenticationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of an authentication resource."
+            "description": "Universally unique identifier (UUID) of an authentication resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "createdAt": {
             "type": "string",
@@ -5006,7 +4942,8 @@
           },
           "authenticationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of an authentication resource."
+            "description": "Universally unique identifier (UUID) of an authentication resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           }
         },
         "additionalProperties": false
@@ -5021,7 +4958,8 @@
         "properties": {
           "sourceID": {
             "type": "string",
-            "description": "Universally uniqud identifier (UUID) of a source."
+            "description": "Universally uniqud identifier (UUID) of a source.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "name": {
             "type": "string",
@@ -5128,7 +5066,6 @@
         "description": "Specific configuration attributes of an \u0060algoliaIndex\u0060 source."
       },
       "SourceUpdateInput": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/SourceUpdateCommercetools"
@@ -5154,103 +5091,7 @@
           {
             "$ref": "#/components/schemas/SourceUpdateAlgoliaIndex"
           }
-        ],
-        "properties": {
-          "storeKeys": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "description": "Unique and immutable key of the referenced store."
-            }
-          },
-          "locales": {
-            "type": "array",
-            "items": {
-              "pattern": "^[a-z]{2}(-[A-Z]{2})?$",
-              "type": "string",
-              "description": "Locale specified as combination of a two-letter language code and an optional two-letter country code.",
-              "example": "fr-FR"
-            },
-            "description": "Locales for your commercetools stores."
-          },
-          "url": {
-            "type": "string"
-          },
-          "fallbackIsInStockValue": {
-            "type": "boolean",
-            "description": "Whether a fallback value is stored in the Algolia record if there\u0027s no inventory information about the product.\n"
-          },
-          "productQueryPredicate": {
-            "type": "string",
-            "description": "Predicate to filter out specific products when indexing. For more information, see [Query Predicate](https://docs.commercetools.com/api/predicates/query).\n"
-          },
-          "useImagesObjects": {
-            "type": "boolean",
-            "description": "When set to true, the connector indexes objects with all images attributes instead of only the URLs.\n"
-          },
-          "categoriesCustomFieldsFullPath": {
-            "type": "boolean",
-            "description": "When set to true, the connector uses the complete category path (e.g. \u0022Root \u003E Level 1 \u003E Category name\u0022) in \u0060categoriesCustomFields\u0060.\n",
-            "default": true
-          },
-          "customFields": {
-            "$ref": "#/components/schemas/CommercetoolsCustomFields"
-          },
-          "uniqueIDColumn": {
-            "type": "string",
-            "description": "Name of a column that contains a unique ID which will be used as \u0060objectID\u0060 in Algolia."
-          },
-          "method": {
-            "$ref": "#/components/schemas/MethodType"
-          },
-          "mapping": {
-            "$ref": "#/components/schemas/SourceCsvMappingProperty"
-          },
-          "delimiter": {
-            "maxLength": 1,
-            "minLength": 1,
-            "type": "string",
-            "description": "The character used to split the value on each line, default to a comma (\\r, \\n, 0xFFFD, and space are forbidden).",
-            "default": ","
-          },
-          "projectID": {
-            "type": "string",
-            "description": "Project ID of the BigQuery source."
-          },
-          "datasetID": {
-            "type": "string",
-            "description": "Dataset ID of the BigQuery source."
-          },
-          "dataType": {
-            "$ref": "#/components/schemas/BigQueryDataType"
-          },
-          "table": {
-            "type": "string",
-            "description": "Table name for the BigQuery export."
-          },
-          "tablePrefix": {
-            "type": "string",
-            "description": "Table prefix for a Google Analytics 4 data export to BigQuery."
-          },
-          "customSQLRequest": {
-            "type": "string",
-            "description": "Custom SQL request to extract data from the BigQuery table."
-          },
-          "configuration": {
-            "$ref": "#/components/schemas/SourceUpdateDockerConfigurationProperty"
-          },
-          "featureFlags": {
-            "$ref": "#/components/schemas/SourceUpdateShopifyFeatureFlagsProperty"
-          },
-          "indexName": {
-            "type": "string",
-            "description": "Name of the Algolia index to read records from."
-          },
-          "filters": {
-            "type": "string",
-            "description": "SQL-like filter expression applied while browsing the source index.\nSee [filters](https://www.algolia.com/doc/api-reference/api-parameters/filters/).\n"
-          }
-        }
+        ]
       },
       "SourceUpdate": {
         "type": "object",
@@ -5264,7 +5105,8 @@
           },
           "authenticationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of an authentication resource."
+            "description": "Universally unique identifier (UUID) of an authentication resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           }
         },
         "additionalProperties": false
@@ -5279,7 +5121,8 @@
         "properties": {
           "sourceID": {
             "type": "string",
-            "description": "Universally uniqud identifier (UUID) of a source."
+            "description": "Universally uniqud identifier (UUID) of a source.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "name": {
             "type": "string",
@@ -5298,7 +5141,6 @@
           "collection"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Type of entity to update.",
         "x-ms-enum": {
           "name": "EntityType",
@@ -5357,7 +5199,6 @@
           "append"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Action to perform on the Algolia index.",
         "x-ms-enum": {
           "name": "ActionType",
@@ -5394,7 +5235,6 @@
           "streaming"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Task trigger, describing when a task should run.\n\n- \u0060onDemand\u0060.\n  Manually trigger the task with the \u0060/run\u0060 endpoint.\n\n- \u0060schedule\u0060.\n  Regularly trigger the task on a \u0060cron\u0060 schedule.\n\n- \u0060subscription\u0060.\n  Trigger the task after an event is received, such as, a webhook.\n\n- \u0060streaming\u0060.\n  Run the task continuously.\n",
         "x-ms-enum": {
           "name": "TriggerType",
@@ -5428,7 +5268,6 @@
           "createdAt"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Property by which to sort the list of tasks.",
         "x-ms-enum": {
           "name": "TaskSortKeys",
@@ -5480,7 +5319,6 @@
           "mappingkit/v1"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Mapping format schema.",
         "x-ms-enum": {
           "name": "MappingFormatSchema",
@@ -5588,7 +5426,6 @@
           "fullTable"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The strategy to use to fetch the data.",
         "x-ms-enum": {
           "name": "DockerStreamsSyncMode",
@@ -5720,7 +5557,6 @@
         "description": "Represents the required elements of the task input when using a \u0060shopify\u0060 source."
       },
       "TaskInput": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/StreamingInput"
@@ -5732,26 +5568,6 @@
             "$ref": "#/components/schemas/ShopifyInput"
           }
         ],
-        "properties": {
-          "mapping": {
-            "$ref": "#/components/schemas/MappingInput"
-          },
-          "streams": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/DockerStreams"
-            }
-          },
-          "metafields": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ShopifyMetafield"
-            }
-          },
-          "market": {
-            "$ref": "#/components/schemas/ShopifyMarket"
-          }
-        },
         "description": "Configuration of the task, depending on its type."
       },
       "FailureThreshold": {
@@ -5803,19 +5619,23 @@
         "properties": {
           "taskID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a task."
+            "description": "Universally unique identifier (UUID) of a task.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "sourceID": {
             "type": "string",
-            "description": "Universally uniqud identifier (UUID) of a source."
+            "description": "Universally uniqud identifier (UUID) of a source.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "destinationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a destination resource."
+            "description": "Universally unique identifier (UUID) of a destination resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "cron": {
             "type": "string",
-            "description": "Cron expression for the task\u0027s schedule."
+            "description": "Cron expression for the task\u0027s schedule.",
+            "example": "* * 1 * *"
           },
           "lastRun": {
             "type": "string",
@@ -5879,11 +5699,13 @@
         "properties": {
           "sourceID": {
             "type": "string",
-            "description": "Universally uniqud identifier (UUID) of a source."
+            "description": "Universally uniqud identifier (UUID) of a source.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "destinationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a destination resource."
+            "description": "Universally unique identifier (UUID) of a destination resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "action": {
             "$ref": "#/components/schemas/ActionType"
@@ -5893,7 +5715,8 @@
           },
           "cron": {
             "type": "string",
-            "description": "Cron expression for the task\u0027s schedule."
+            "description": "Cron expression for the task\u0027s schedule.",
+            "example": "* * 1 * *"
           },
           "enabled": {
             "type": "boolean",
@@ -5931,7 +5754,8 @@
         "properties": {
           "taskID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a task."
+            "description": "Universally unique identifier (UUID) of a task.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "createdAt": {
             "type": "string",
@@ -5951,7 +5775,8 @@
             "type": "array",
             "items": {
               "type": "string",
-              "description": "Universally unique identifier (UUID) of a task."
+              "description": "Universally unique identifier (UUID) of a task.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         },
@@ -5966,7 +5791,8 @@
         "properties": {
           "destinationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a destination resource."
+            "description": "Universally unique identifier (UUID) of a destination resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "action": {
             "$ref": "#/components/schemas/ActionType"
@@ -5976,7 +5802,8 @@
           },
           "cron": {
             "type": "string",
-            "description": "Cron expression for the task\u0027s schedule."
+            "description": "Cron expression for the task\u0027s schedule.",
+            "example": "* * 1 * *"
           },
           "enabled": {
             "type": "boolean",
@@ -6014,7 +5841,8 @@
         "properties": {
           "taskID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a task."
+            "description": "Universally unique identifier (UUID) of a task.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "updatedAt": {
             "type": "string",
@@ -6029,11 +5857,13 @@
         "properties": {
           "destinationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a destination resource."
+            "description": "Universally unique identifier (UUID) of a destination resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "cron": {
             "type": "string",
-            "description": "Cron expression for the task\u0027s schedule."
+            "description": "Cron expression for the task\u0027s schedule.",
+            "example": "* * 1 * *"
           },
           "input": {
             "$ref": "#/components/schemas/TaskInput"
@@ -6079,7 +5909,8 @@
         "properties": {
           "runID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a task run."
+            "description": "Universally unique identifier (UUID) of a task run.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "createdAt": {
             "type": "string",
@@ -6094,7 +5925,6 @@
           "onDemand"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Task is run manually, with the \u0060/run\u0060 endpoint.",
         "x-ms-enum": {
           "name": "OnDemandTriggerType",
@@ -6129,7 +5959,6 @@
           "schedule"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Task runs on a schedule.",
         "x-ms-enum": {
           "name": "ScheduleTriggerType",
@@ -6155,7 +5984,8 @@
           },
           "cron": {
             "type": "string",
-            "description": "Cron expression for the task\u0027s schedule."
+            "description": "Cron expression for the task\u0027s schedule.",
+            "example": "* * 1 * *"
           },
           "lastRun": {
             "type": "string",
@@ -6174,7 +6004,6 @@
           "subscription"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Task runs after receiving subscribed event.",
         "x-ms-enum": {
           "name": "SubscriptionTriggerType",
@@ -6205,7 +6034,6 @@
           "streaming"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Task runs continuously.",
         "x-ms-enum": {
           "name": "StreamingTriggerType",
@@ -6232,7 +6060,6 @@
         "description": "Trigger input for continuously running tasks."
       },
       "Trigger": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/OnDemandTrigger"
@@ -6247,21 +6074,16 @@
             "$ref": "#/components/schemas/StreamingTrigger"
           }
         ],
-        "properties": {
-          "lastRun": {
-            "type": "string",
-            "description": "The last time the scheduled task ran in RFC 3339 format."
-          },
-          "cron": {
-            "type": "string",
-            "description": "Cron expression for the task\u0027s schedule."
-          },
-          "nextRun": {
-            "type": "string",
-            "description": "The next scheduled run of the task in RFC 3339 format."
+        "description": "Trigger that runs the task.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "onDemand": "#/components/schemas/OnDemandTrigger",
+            "schedule": "#/components/schemas/ScheduleTrigger",
+            "subscription": "#/components/schemas/SubscriptionTrigger",
+            "streaming": "#/components/schemas/StreamingTrigger"
           }
-        },
-        "description": "Trigger that runs the task."
+        }
       },
       "TaskV1": {
         "required": [
@@ -6277,15 +6099,18 @@
         "properties": {
           "taskID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a task."
+            "description": "Universally unique identifier (UUID) of a task.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "sourceID": {
             "type": "string",
-            "description": "Universally uniqud identifier (UUID) of a source."
+            "description": "Universally uniqud identifier (UUID) of a source.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "destinationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a destination resource."
+            "description": "Universally unique identifier (UUID) of a destination resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "trigger": {
             "$ref": "#/components/schemas/Trigger"
@@ -6355,7 +6180,8 @@
           },
           "cron": {
             "type": "string",
-            "description": "Cron expression for the task\u0027s schedule."
+            "description": "Cron expression for the task\u0027s schedule.",
+            "example": "* * 1 * *"
           }
         },
         "additionalProperties": false,
@@ -6365,7 +6191,6 @@
         ]
       },
       "TaskCreateTrigger": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/OnDemandTriggerInput"
@@ -6380,10 +6205,13 @@
             "$ref": "#/components/schemas/StreamingTrigger"
           }
         ],
-        "properties": {
-          "cron": {
-            "type": "string",
-            "description": "Cron expression for the task\u0027s schedule."
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "onDemand": "#/components/schemas/OnDemandTriggerInput",
+            "schedule": "#/components/schemas/ScheduleTriggerInput",
+            "subscription": "#/components/schemas/SubscriptionTrigger",
+            "streaming": "#/components/schemas/StreamingTrigger"
           }
         }
       },
@@ -6398,11 +6226,13 @@
         "properties": {
           "sourceID": {
             "type": "string",
-            "description": "Universally uniqud identifier (UUID) of a source."
+            "description": "Universally uniqud identifier (UUID) of a source.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "destinationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a destination resource."
+            "description": "Universally unique identifier (UUID) of a destination resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "trigger": {
             "$ref": "#/components/schemas/TaskCreateTrigger"
@@ -6440,7 +6270,8 @@
         "properties": {
           "cron": {
             "type": "string",
-            "description": "Cron expression for the task\u0027s schedule."
+            "description": "Cron expression for the task\u0027s schedule.",
+            "example": "* * 1 * *"
           }
         },
         "additionalProperties": false,
@@ -6455,7 +6286,8 @@
         "properties": {
           "destinationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a destination resource."
+            "description": "Universally unique identifier (UUID) of a destination resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "trigger": {
             "$ref": "#/components/schemas/TriggerUpdateInput"
@@ -6485,7 +6317,6 @@
           "createdAt"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Property by which to sort the list of transformations.",
         "x-ms-enum": {
           "name": "TransformationSortKeys",
@@ -6512,7 +6343,6 @@
           "noCode"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The type of transformation, which can be either \u0027code\u0027 or \u0027noCode\u0027.",
         "x-ms-enum": {
           "name": "TransformationType",
@@ -6533,7 +6363,8 @@
         "type": "array",
         "items": {
           "type": "string",
-          "description": "Universally unique identifier (UUID) of an authentication resource."
+          "description": "Universally unique identifier (UUID) of an authentication resource.",
+          "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
         },
         "description": "The authentications associated with the current transformation."
       },
@@ -6579,7 +6410,6 @@
         "description": "Input for a no-code transformation that contains a series of steps."
       },
       "TransformationInput": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/TransformationCode"
@@ -6588,18 +6418,6 @@
             "$ref": "#/components/schemas/TransformationNoCode"
           }
         ],
-        "properties": {
-          "code": {
-            "type": "string",
-            "description": "The source code of the transformation."
-          },
-          "steps": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TransformationNoCodeStepsItem"
-            }
-          }
-        },
         "description": "The input for the transformation, which can be either code or a no-code configuration."
       },
       "Name2": {
@@ -6622,19 +6440,22 @@
         "properties": {
           "transformationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a transformation."
+            "description": "Universally unique identifier (UUID) of a transformation.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "authenticationIDs": {
             "type": "array",
             "items": {
               "type": "string",
-              "description": "Universally unique identifier (UUID) of an authentication resource."
+              "description": "Universally unique identifier (UUID) of an authentication resource.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             },
             "description": "The authentications associated with the current transformation."
           },
           "code": {
             "type": "string",
-            "description": "It is deprecated. Use the \u0060input\u0060 field with proper \u0060type\u0060 instead to specify the transformation code."
+            "description": "It is deprecated. Use the \u0060input\u0060 field with proper \u0060type\u0060 instead to specify the transformation code.",
+            "deprecated": true
           },
           "type": {
             "$ref": "#/components/schemas/TransformationType"
@@ -6672,7 +6493,8 @@
         "properties": {
           "code": {
             "type": "string",
-            "description": "It is deprecated. Use the \u0060input\u0060 field with proper \u0060type\u0060 instead to specify the transformation code."
+            "description": "It is deprecated. Use the \u0060input\u0060 field with proper \u0060type\u0060 instead to specify the transformation code.",
+            "deprecated": true
           },
           "name": {
             "type": "string",
@@ -6692,7 +6514,8 @@
             "type": "array",
             "items": {
               "type": "string",
-              "description": "Universally unique identifier (UUID) of an authentication resource."
+              "description": "Universally unique identifier (UUID) of an authentication resource.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             },
             "description": "The authentications associated with the current transformation."
           }
@@ -6709,7 +6532,8 @@
         "properties": {
           "transformationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a transformation."
+            "description": "Universally unique identifier (UUID) of a transformation.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "createdAt": {
             "type": "string",
@@ -6727,7 +6551,8 @@
         "properties": {
           "code": {
             "type": "string",
-            "description": "It is deprecated. Use the \u0060input\u0060 field with proper \u0060type\u0060 instead to specify the transformation code."
+            "description": "It is deprecated. Use the \u0060input\u0060 field with proper \u0060type\u0060 instead to specify the transformation code.",
+            "deprecated": true
           },
           "type": {
             "$ref": "#/components/schemas/TransformationType"
@@ -6776,7 +6601,8 @@
             "type": "array",
             "items": {
               "type": "string",
-              "description": "Universally unique identifier (UUID) of a transformation."
+              "description": "Universally unique identifier (UUID) of a transformation.",
+              "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
             }
           }
         },
@@ -6791,7 +6617,8 @@
         "properties": {
           "transformationID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a transformation."
+            "description": "Universally unique identifier (UUID) of a transformation.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "updatedAt": {
             "type": "string",
@@ -6809,7 +6636,6 @@
           "skipped"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Task run status.",
         "x-ms-enum": {
           "name": "RunStatus",
@@ -6843,7 +6669,6 @@
           "push"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Task run type.",
         "x-ms-enum": {
           "name": "RunType",
@@ -6879,7 +6704,6 @@
           "createdAt"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Property by which to sort the list of task runs.",
         "x-ms-enum": {
           "name": "RunSortKeys",
@@ -6906,7 +6730,6 @@
           "failure"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Task run outcome.",
         "x-ms-enum": {
           "name": "RunOutcome",
@@ -6936,7 +6759,6 @@
           "idle"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "A code for the task run\u0027s outcome. A readable description of the code is included in the \u0060reason\u0060 response property.",
         "x-ms-enum": {
           "name": "RunReasonCode",
@@ -7002,14 +6824,16 @@
         "properties": {
           "runID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a task run."
+            "description": "Universally unique identifier (UUID) of a task run.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "appID": {
             "type": "string"
           },
           "taskID": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a task."
+            "description": "Universally unique identifier (UUID) of a task.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "status": {
             "$ref": "#/components/schemas/RunStatus"
@@ -7100,7 +6924,6 @@
           "publishedAt"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Property by which to sort the list of task run events.",
         "x-ms-enum": {
           "name": "EventSortKeys",
@@ -7130,7 +6953,8 @@
         "properties": {
           "objectID": {
             "type": "string",
-            "description": "Unique record identifier."
+            "description": "Unique record identifier.",
+            "example": "test-record-123"
           }
         }
       },
@@ -7450,28 +7274,6 @@
           "$ref": "#/components/schemas/WatchResponse"
         }
       },
-      "PlatformWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/Platform"
-          }
-        }
-      },
-      "PlatformNoneWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/PlatformNone"
-          }
-        }
-      },
       "ExamplePayload": {
         "type": "object",
         "description": "Placeholder schema for path example refs"
@@ -7494,37 +7296,43 @@
       "CustomDelete200ResponseSchema": {
         "type": "object"
       },
-      "SearchAuthentications200Response": {
+      "SearchAuthenticationsResponseSchema": {
+        "title": "searchAuthenticationsResponse",
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Authentication"
         }
       },
-      "SearchDestinations200Response": {
+      "SearchDestinationsResponseSchema": {
+        "title": "searchDestinationsResponse",
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Destination"
         }
       },
-      "SearchSources200Response": {
+      "SearchSourcesResponseSchema": {
+        "title": "searchSourcesResponse",
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Source"
         }
       },
-      "SearchTasks200Response": {
+      "SearchTasksResponseSchema": {
+        "title": "searchTasksResponse",
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Task"
         }
       },
-      "SearchTasksV1200Response": {
+      "SearchTasksResponseV1Schema": {
+        "title": "searchTasksResponseV1",
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/TaskV1"
         }
       },
-      "SearchTransformations200Response": {
+      "SearchTransformationsResponseSchema": {
+        "title": "searchTransformationsResponse",
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Transformation"
@@ -7537,7 +7345,8 @@
         }
       },
       "EventType2DataProperty": {
-        "type": "object"
+        "type": "object",
+        "nullable": true
       },
       "WatchResponseDataItemProperty": {
         "type": "object"
@@ -7547,17 +7356,14 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/MappingTypeCsv"
         },
-        "description": "Key-value pairs of column names and their expected types.\n"
+        "description": "Key-value pairs of column names and their expected types.\n",
+        "x-additionalPropertyName": "column name"
       },
       "SourceDockerConfigurationProperty": {
         "type": "object",
         "description": "Configuration of the spec."
       },
       "SourceUpdateShopifyFeatureFlagsProperty": {
-        "type": "object",
-        "description": "Feature flags for the Shopify source."
-      },
-      "SourceShopifyFeatureFlags": {
         "type": "object",
         "description": "Feature flags for the Shopify source."
       },
@@ -7591,6 +7397,22 @@
           "type": "string"
         },
         "description": "Map of taskID sent for reindex with the corresponding runID."
+      },
+      "AuthInputPartialOneOf7": {
+        "title": "Key:value",
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "A key:value authentication for your transformations."
+      },
+      "AuthInputOneOf7": {
+        "title": "Key:value",
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "A key:value authentication for your transformations."
       }
     },
     "responses": {
@@ -7680,7 +7502,8 @@
           "maximum": 100,
           "minimum": 1,
           "type": "integer",
-          "description": "Number of items per page."
+          "description": "Number of items per page.",
+          "default": 10
         }
       },
       "page": {
@@ -7742,7 +7565,8 @@
         "required": true,
         "schema": {
           "type": "string",
-          "description": "Universally unique identifier (UUID) of an authentication resource."
+          "description": "Universally unique identifier (UUID) of an authentication resource.",
+          "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
         }
       },
       "destinationParameters_type": {
@@ -7767,7 +7591,8 @@
           "type": "array",
           "items": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of an authentication resource."
+            "description": "Universally unique identifier (UUID) of an authentication resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           }
         }
       },
@@ -7778,7 +7603,8 @@
         "explode": false,
         "schema": {
           "type": "string",
-          "description": "Universally unique identifier (UUID) of a transformation."
+          "description": "Universally unique identifier (UUID) of a transformation.",
+          "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
         }
       },
       "destinationParameters_sort": {
@@ -7797,7 +7623,8 @@
         "required": true,
         "schema": {
           "type": "string",
-          "description": "Universally unique identifier (UUID) of a destination resource."
+          "description": "Universally unique identifier (UUID) of a destination resource.",
+          "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
         }
       },
       "sourceParameters_type": {
@@ -7822,7 +7649,8 @@
           "type": "array",
           "items": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of an authentication resource."
+            "description": "Universally unique identifier (UUID) of an authentication resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           },
           "example": [
             "10000000-0a75-4000-a000-000000000001",
@@ -7845,7 +7673,8 @@
         "required": true,
         "schema": {
           "type": "string",
-          "description": "Universally uniqud identifier (UUID) of a source."
+          "description": "Universally uniqud identifier (UUID) of a source.",
+          "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
         }
       },
       "action": {
@@ -7879,7 +7708,8 @@
           "type": "array",
           "items": {
             "type": "string",
-            "description": "Universally uniqud identifier (UUID) of a source."
+            "description": "Universally uniqud identifier (UUID) of a source.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           }
         }
       },
@@ -7905,7 +7735,8 @@
           "type": "array",
           "items": {
             "type": "string",
-            "description": "Universally unique identifier (UUID) of a destination resource."
+            "description": "Universally unique identifier (UUID) of a destination resource.",
+            "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
           }
         }
       },
@@ -7945,7 +7776,8 @@
         "required": true,
         "schema": {
           "type": "string",
-          "description": "Universally unique identifier (UUID) of a task."
+          "description": "Universally unique identifier (UUID) of a task.",
+          "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
         }
       },
       "transformationParameters_sort": {
@@ -7971,7 +7803,8 @@
         "required": true,
         "schema": {
           "type": "string",
-          "description": "Universally unique identifier (UUID) of a transformation."
+          "description": "Universally unique identifier (UUID) of a transformation.",
+          "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
         }
       },
       "runStatus": {
@@ -8002,7 +7835,8 @@
         "description": "Task ID for filtering the list of task runs.",
         "schema": {
           "type": "string",
-          "description": "Universally unique identifier (UUID) of a task."
+          "description": "Universally unique identifier (UUID) of a task.",
+          "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
         }
       },
       "runSort": {
@@ -8020,7 +7854,8 @@
         "required": true,
         "schema": {
           "type": "string",
-          "description": "Universally unique identifier (UUID) of a task run."
+          "description": "Universally unique identifier (UUID) of a task run.",
+          "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
         }
       },
       "eventStatus": {
@@ -8060,7 +7895,8 @@
         "required": true,
         "schema": {
           "type": "string",
-          "description": "Universally unique identifier (UUID) of an event."
+          "description": "Universally unique identifier (UUID) of an event.",
+          "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
         }
       }
     },

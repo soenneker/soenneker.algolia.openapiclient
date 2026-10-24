@@ -34,7 +34,14 @@
         "operationId": "CustomGet",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -74,7 +81,14 @@
         "operationId": "CustomPost",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -124,7 +138,14 @@
         "operationId": "CustomPut",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -174,7 +195,14 @@
         "operationId": "CustomDelete",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -835,7 +863,14 @@
         "operationId": "GetTopFilterForAttribute",
         "parameters": [
           {
-            "$ref": "#/components/parameters/Attribute"
+            "name": "attribute",
+            "in": "path",
+            "description": "Attribute name.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "brand"
+            }
           },
           {
             "$ref": "#/components/parameters/Index"
@@ -1649,7 +1684,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/QueryPatternsScalar200Response"
+                  "$ref": "#/components/schemas/ScalarResponseSchema"
                 }
               }
             }
@@ -1777,7 +1812,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/QueryPatternsDistribution200Response"
+                  "$ref": "#/components/schemas/DistributionResponseSchema"
                 }
               }
             }
@@ -1852,7 +1887,6 @@
           "averageClickPosition"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Attribute by which to order the response items.\n\nIf the \u0060clickAnalytics\u0060 parameter is false, only \u0060searchCount\u0060 is available.\n",
         "x-ms-enum": {
           "name": "OrderBy",
@@ -1883,7 +1917,6 @@
           "desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "Direction",
           "modelAsString": false,
@@ -2073,7 +2106,6 @@
         "additionalProperties": false
       },
       "GetTopSearchesResponse": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/TopSearchesResponse"
@@ -2084,16 +2116,7 @@
           {
             "$ref": "#/components/schemas/TopSearchesResponseWithRevenueAnalytics"
           }
-        ],
-        "properties": {
-          "searches": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TopSearchesResponseSearchesItem"
-            },
-            "description": "Most popular searches and their number of search results (hits)."
-          }
-        }
+        ]
       },
       "ParametersCount": {
         "type": "integer",
@@ -2196,7 +2219,6 @@
         "additionalProperties": false
       },
       "GetTopHitsResponse": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/TopHitsResponse"
@@ -2207,16 +2229,7 @@
           {
             "$ref": "#/components/schemas/TopHitsResponseWithRevenueAnalytics"
           }
-        ],
-        "properties": {
-          "hits": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/TopHitsResponseHitsItem"
-            },
-            "description": "Most frequent search results."
-          }
-        }
+        ]
       },
       "Attribute": {
         "type": "string",
@@ -2232,11 +2245,13 @@
         "properties": {
           "attribute": {
             "type": "string",
-            "description": "Attribute name."
+            "description": "Attribute name.",
+            "example": "url"
           },
           "count": {
             "type": "integer",
-            "description": "Number of occurrences."
+            "description": "Number of occurrences.",
+            "example": 2
           }
         },
         "additionalProperties": false
@@ -2268,7 +2283,6 @@
           "\u003E="
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Character that characterizes how the filter is applied.\n\nFor example, for a facet filter \u0060facet:value\u0060, \u0060:\u0060 is the operator.\nFor a numeric filter \u0060count\u003E50\u0060, \u0060\u003E\u0060 is the operator.\n",
         "example": ":",
         "x-ms-enum": {
@@ -2322,18 +2336,21 @@
         "properties": {
           "attribute": {
             "type": "string",
-            "description": "Attribute name."
+            "description": "Attribute name.",
+            "example": "url"
           },
           "operator": {
             "$ref": "#/components/schemas/OperatorType"
           },
           "value": {
             "type": "string",
-            "description": "Attribute value."
+            "description": "Attribute value.",
+            "example": "integration"
           },
           "count": {
             "type": "integer",
-            "description": "Number of occurrences."
+            "description": "Number of occurrences.",
+            "example": 2
           }
         },
         "additionalProperties": false
@@ -2364,14 +2381,16 @@
         "properties": {
           "attribute": {
             "type": "string",
-            "description": "Attribute name."
+            "description": "Attribute name.",
+            "example": "url"
           },
           "operator": {
             "$ref": "#/components/schemas/OperatorType"
           },
           "value": {
             "type": "string",
-            "description": "Attribute value."
+            "description": "Attribute value.",
+            "example": "integration"
           }
         },
         "additionalProperties": false
@@ -2385,7 +2404,8 @@
         "properties": {
           "count": {
             "type": "integer",
-            "description": "Number of occurrences."
+            "description": "Number of occurrences.",
+            "example": 2
           },
           "values": {
             "type": "array",
@@ -2573,7 +2593,8 @@
           },
           "operator": {
             "type": "string",
-            "description": "Comparison operator applied to a filter field, one of: \u0060=\u0060, \u0060!=\u0060, \u0060\u003E\u0060, \u0060\u003C\u0060, \u0060\u003E=\u0060, \u0060\u003C=\u0060, \u0060IN\u0060, \u0060TAG_TREE\u0060, \u0060CONTAINS\u0060, \u0060STARTS_WITH\u0060, \u0060CONTAINS_PREFIX\u0060. Requires a \u0060parameter\u0060 to carry the operand."
+            "description": "Comparison operator applied to a filter field, one of: \u0060=\u0060, \u0060!=\u0060, \u0060\u003E\u0060, \u0060\u003C\u0060, \u0060\u003E=\u0060, \u0060\u003C=\u0060, \u0060IN\u0060, \u0060TAG_TREE\u0060, \u0060CONTAINS\u0060, \u0060STARTS_WITH\u0060, \u0060CONTAINS_PREFIX\u0060. Requires a \u0060parameter\u0060 to carry the operand.",
+            "example": "="
           },
           "parameter": {
             "$ref": "#/components/schemas/ParameterReference"
@@ -2582,7 +2603,6 @@
         "additionalProperties": false
       },
       "ParameterValue": {
-        "type": "object",
         "oneOf": [
           {
             "type": "string"
@@ -2749,7 +2769,6 @@
           "desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Sort direction.",
         "x-ms-enum": {
           "name": "OrderDirection",
@@ -2872,7 +2891,6 @@
         "additionalProperties": false
       },
       "BinEdge": {
-        "type": "object",
         "oneOf": [
           {
             "type": "integer"
@@ -2911,7 +2929,22 @@
             "items": {
               "$ref": "#/components/schemas/BinEdge"
             },
-            "description": "Bin edges."
+            "description": "Bin edges.",
+            "example": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              21,
+              -1
+            ]
           }
         },
         "additionalProperties": false
@@ -2969,7 +3002,11 @@
             "items": {
               "type": "integer"
             },
-            "description": "Range of positions in the search results, using the pattern \u0060[start,end]\u0060.\n\nFor positions 11 and up, click events are summed over the specified range.\n\u0060-1\u0060 indicates the end of the list of search results.\n"
+            "description": "Range of positions in the search results, using the pattern \u0060[start,end]\u0060.\n\nFor positions 11 and up, click events are summed over the specified range.\n\u0060-1\u0060 indicates the end of the list of search results.\n",
+            "example": [
+              21,
+              -1
+            ]
           },
           "clickCount": {
             "minimum": 0,
@@ -2992,15 +3029,18 @@
         "properties": {
           "search": {
             "type": "string",
-            "description": "Search query."
+            "description": "Search query.",
+            "example": "separator"
           },
           "count": {
             "type": "integer",
-            "description": "Number of searches."
+            "description": "Number of searches.",
+            "example": 504
           },
           "nbHits": {
             "type": "integer",
-            "description": "Number of results (hits)."
+            "description": "Number of results (hits).",
+            "example": 20
           }
         },
         "additionalProperties": false
@@ -3023,11 +3063,13 @@
         "properties": {
           "search": {
             "type": "string",
-            "description": "Search query."
+            "description": "Search query.",
+            "example": "separator"
           },
           "count": {
             "type": "integer",
-            "description": "Number of searches."
+            "description": "Number of searches.",
+            "example": 504
           },
           "clickThroughRate": {
             "$ref": "#/components/schemas/ClickThroughRate"
@@ -3049,21 +3091,28 @@
           },
           "trackedSearchCount": {
             "type": "integer",
-            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true."
+            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
+            "default": 0,
+            "example": 2
           },
           "clickCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of clicks associated with this search."
+            "description": "Number of clicks associated with this search.",
+            "default": 0,
+            "example": 162
           },
           "conversionCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of conversions from this search."
+            "description": "Number of conversions from this search.",
+            "default": 0,
+            "example": 10
           },
           "nbHits": {
             "type": "integer",
-            "description": "Number of results (hits)."
+            "description": "Number of results (hits).",
+            "example": 20
           }
         },
         "additionalProperties": false
@@ -3110,11 +3159,13 @@
         "properties": {
           "search": {
             "type": "string",
-            "description": "Search query."
+            "description": "Search query.",
+            "example": "separator"
           },
           "count": {
             "type": "integer",
-            "description": "Number of searches."
+            "description": "Number of searches.",
+            "example": 504
           },
           "clickThroughRate": {
             "$ref": "#/components/schemas/ClickThroughRate"
@@ -3136,21 +3187,28 @@
           },
           "trackedSearchCount": {
             "type": "integer",
-            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true."
+            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
+            "default": 0,
+            "example": 2
           },
           "clickCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of clicks associated with this search."
+            "description": "Number of clicks associated with this search.",
+            "default": 0,
+            "example": 162
           },
           "conversionCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of conversions from this search."
+            "description": "Number of conversions from this search.",
+            "default": 0,
+            "example": 10
           },
           "nbHits": {
             "type": "integer",
-            "description": "Number of results (hits)."
+            "description": "Number of results (hits).",
+            "example": 20
           },
           "currencies": {
             "$ref": "#/components/schemas/TopSearchesResponseWithRevenueAnalyticsSearchesItemCurrencies"
@@ -3161,14 +3219,18 @@
           "addToCartCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of add-to-cart events from this search."
+            "description": "Number of add-to-cart events from this search.",
+            "default": 0,
+            "example": 10
           },
           "purchaseRate": {
             "$ref": "#/components/schemas/PurchaseRate"
           },
           "purchaseCount": {
             "type": "integer",
-            "description": "Number of purchase events from this search."
+            "description": "Number of purchase events from this search.",
+            "default": 0,
+            "example": 10
           }
         },
         "additionalProperties": false
@@ -3183,11 +3245,13 @@
         "properties": {
           "hit": {
             "type": "string",
-            "description": "Object ID of a record returned as a search result."
+            "description": "Object ID of a record returned as a search result.",
+            "example": "method-export-rules-php"
           },
           "count": {
             "type": "integer",
-            "description": "Number of occurrences."
+            "description": "Number of occurrences.",
+            "example": 2
           }
         },
         "additionalProperties": false
@@ -3207,11 +3271,13 @@
         "properties": {
           "hit": {
             "type": "string",
-            "description": "Object ID of a record returned as a search result."
+            "description": "Object ID of a record returned as a search result.",
+            "example": "method-export-rules-php"
           },
           "count": {
             "type": "integer",
-            "description": "Number of occurrences."
+            "description": "Number of occurrences.",
+            "example": 2
           },
           "clickThroughRate": {
             "$ref": "#/components/schemas/ClickThroughRate"
@@ -3221,17 +3287,23 @@
           },
           "trackedHitCount": {
             "type": "integer",
-            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true."
+            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
+            "default": 0,
+            "example": 2
           },
           "clickCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of clicks associated with this search."
+            "description": "Number of clicks associated with this search.",
+            "default": 0,
+            "example": 162
           },
           "conversionCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of conversions from this search."
+            "description": "Number of conversions from this search.",
+            "default": 0,
+            "example": 10
           }
         },
         "additionalProperties": false
@@ -3256,11 +3328,13 @@
         "properties": {
           "hit": {
             "type": "string",
-            "description": "Object ID of a record returned as a search result."
+            "description": "Object ID of a record returned as a search result.",
+            "example": "method-export-rules-php"
           },
           "count": {
             "type": "integer",
-            "description": "Number of occurrences."
+            "description": "Number of occurrences.",
+            "example": 2
           },
           "clickThroughRate": {
             "$ref": "#/components/schemas/ClickThroughRate"
@@ -3270,17 +3344,23 @@
           },
           "trackedHitCount": {
             "type": "integer",
-            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true."
+            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
+            "default": 0,
+            "example": 2
           },
           "clickCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of clicks associated with this search."
+            "description": "Number of clicks associated with this search.",
+            "default": 0,
+            "example": 162
           },
           "conversionCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of conversions from this search."
+            "description": "Number of conversions from this search.",
+            "default": 0,
+            "example": 10
           },
           "addToCartRate": {
             "$ref": "#/components/schemas/AddToCartRate"
@@ -3288,14 +3368,18 @@
           "addToCartCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of add-to-cart events from this search."
+            "description": "Number of add-to-cart events from this search.",
+            "default": 0,
+            "example": 10
           },
           "purchaseRate": {
             "$ref": "#/components/schemas/PurchaseRate"
           },
           "purchaseCount": {
             "type": "integer",
-            "description": "Number of purchase events from this search."
+            "description": "Number of purchase events from this search.",
+            "default": 0,
+            "example": 10
           },
           "currencies": {
             "$ref": "#/components/schemas/TopHitsResponseWithRevenueAnalyticsHitsItemCurrencies"
@@ -3395,7 +3479,8 @@
         "properties": {
           "count": {
             "type": "integer",
-            "description": "Number of occurrences."
+            "description": "Number of occurrences.",
+            "example": 2
           },
           "dates": {
             "type": "array",
@@ -3456,15 +3541,18 @@
             "minimum": 0,
             "type": "number",
             "description": "No results rate: calculated as the number of searches with zero results divided by the total number of searches.\n",
-            "format": "double"
+            "format": "double",
+            "example": 0.49
           },
           "count": {
             "type": "integer",
-            "description": "Number of searches."
+            "description": "Number of searches.",
+            "example": 504
           },
           "noResultCount": {
             "type": "integer",
-            "description": "Number of searches without any results."
+            "description": "Number of searches without any results.",
+            "example": 54
           },
           "dates": {
             "type": "array",
@@ -3491,16 +3579,20 @@
             "minimum": 0,
             "type": "number",
             "description": "No click rate: calculated as the number of tracked searches without clicks divided by the number of tracked searches.\n",
-            "format": "double"
+            "format": "double",
+            "example": 0.15
           },
           "count": {
             "type": "integer",
-            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true."
+            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
+            "default": 0,
+            "example": 2
           },
           "noClickCount": {
             "minimum": 1,
             "type": "integer",
-            "description": "Number of times this search was returned as a result without any click."
+            "description": "Number of times this search was returned as a result without any click.",
+            "example": 15
           },
           "dates": {
             "type": "array",
@@ -3588,7 +3680,9 @@
           "clickCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of clicks associated with this search."
+            "description": "Number of clicks associated with this search.",
+            "default": 0,
+            "example": 162
           },
           "dates": {
             "type": "array",
@@ -3635,11 +3729,15 @@
           "clickCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of clicks associated with this search."
+            "description": "Number of clicks associated with this search.",
+            "default": 0,
+            "example": 162
           },
           "trackedSearchCount": {
             "type": "integer",
-            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true."
+            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
+            "default": 0,
+            "example": 2
           },
           "dates": {
             "type": "array",
@@ -3666,12 +3764,16 @@
           },
           "trackedSearchCount": {
             "type": "integer",
-            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true."
+            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
+            "default": 0,
+            "example": 2
           },
           "conversionCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of conversions from this search."
+            "description": "Number of conversions from this search.",
+            "default": 0,
+            "example": 10
           },
           "dates": {
             "type": "array",
@@ -3698,12 +3800,16 @@
           },
           "trackedSearchCount": {
             "type": "integer",
-            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true."
+            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
+            "default": 0,
+            "example": 2
           },
           "addToCartCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of add-to-cart events from this search."
+            "description": "Number of add-to-cart events from this search.",
+            "default": 0,
+            "example": 10
           },
           "dates": {
             "type": "array",
@@ -3730,11 +3836,15 @@
           },
           "trackedSearchCount": {
             "type": "integer",
-            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true."
+            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
+            "default": 0,
+            "example": 2
           },
           "purchaseCount": {
             "type": "integer",
-            "description": "Number of purchase events from this search."
+            "description": "Number of purchase events from this search.",
+            "default": 0,
+            "example": 10
           },
           "dates": {
             "type": "array",
@@ -3780,11 +3890,13 @@
         },
         "additionalProperties": false
       },
-      "QueryPatternsScalar200Response": {
+      "ScalarResponseSchema": {
+        "title": "Scalar response",
         "type": "object",
         "description": "Object keyed by metric kind, each mapping to its aggregate value."
       },
-      "QueryPatternsDistribution200Response": {
+      "DistributionResponseSchema": {
+        "title": "Distribution response",
         "type": "object",
         "description": "Object keyed by \u0060histogram\u003CField\u003E\u0060, each mapping a bin label to a count."
       },
@@ -3834,11 +3946,13 @@
         "properties": {
           "date": {
             "type": "string",
-            "description": "Date in the format YYYY-MM-DD."
+            "description": "Date in the format YYYY-MM-DD.",
+            "example": "2023-06-14"
           },
           "count": {
             "type": "integer",
-            "description": "Number of occurrences."
+            "description": "Number of occurrences.",
+            "example": 2
           }
         },
         "additionalProperties": false
@@ -3854,16 +3968,20 @@
         "properties": {
           "search": {
             "type": "string",
-            "description": "Search query."
+            "description": "Search query.",
+            "example": "separator"
           },
           "count": {
             "type": "integer",
-            "description": "Number of occurrences."
+            "description": "Number of occurrences.",
+            "example": 2
           },
           "withFilterCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of searches for this term with applied filters."
+            "description": "Number of searches for this term with applied filters.",
+            "default": 0,
+            "example": 5
           }
         },
         "additionalProperties": false
@@ -3879,7 +3997,8 @@
         "properties": {
           "search": {
             "type": "string",
-            "description": "Search query."
+            "description": "Search query.",
+            "example": "separator"
           },
           "count": {
             "minimum": 1,
@@ -3889,7 +4008,8 @@
           },
           "nbHits": {
             "type": "integer",
-            "description": "Number of results (hits)."
+            "description": "Number of results (hits).",
+            "example": 20
           }
         },
         "additionalProperties": false
@@ -3906,22 +4026,26 @@
         "properties": {
           "date": {
             "type": "string",
-            "description": "Date in the format YYYY-MM-DD."
+            "description": "Date in the format YYYY-MM-DD.",
+            "example": "2023-06-14"
           },
           "noResultCount": {
             "type": "integer",
-            "description": "Number of searches without any results."
+            "description": "Number of searches without any results.",
+            "example": 54
           },
           "count": {
             "type": "integer",
-            "description": "Number of searches."
+            "description": "Number of searches.",
+            "example": 504
           },
           "rate": {
             "maximum": 1,
             "minimum": 0,
             "type": "number",
             "description": "No results rate: calculated as the number of searches with zero results divided by the total number of searches.\n",
-            "format": "double"
+            "format": "double",
+            "example": 0.49
           }
         },
         "additionalProperties": false
@@ -3941,20 +4065,25 @@
             "minimum": 0,
             "type": "number",
             "description": "No click rate: calculated as the number of tracked searches without clicks divided by the number of tracked searches.\n",
-            "format": "double"
+            "format": "double",
+            "example": 0.15
           },
           "count": {
             "type": "integer",
-            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true."
+            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
+            "default": 0,
+            "example": 2
           },
           "noClickCount": {
             "minimum": 1,
             "type": "integer",
-            "description": "Number of times this search was returned as a result without any click."
+            "description": "Number of times this search was returned as a result without any click.",
+            "example": 15
           },
           "date": {
             "type": "string",
-            "description": "Date in the format YYYY-MM-DD."
+            "description": "Date in the format YYYY-MM-DD.",
+            "example": "2023-06-14"
           }
         },
         "additionalProperties": false
@@ -3969,7 +4098,8 @@
         "properties": {
           "date": {
             "type": "string",
-            "description": "Date in the format YYYY-MM-DD."
+            "description": "Date in the format YYYY-MM-DD.",
+            "example": "2023-06-14"
           },
           "count": {
             "type": "integer",
@@ -3993,7 +4123,8 @@
           },
           "count": {
             "type": "integer",
-            "description": "Number of occurrences."
+            "description": "Number of occurrences.",
+            "example": 2
           }
         },
         "additionalProperties": false
@@ -4013,11 +4144,14 @@
           "clickCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of clicks associated with this search."
+            "description": "Number of clicks associated with this search.",
+            "default": 0,
+            "example": 162
           },
           "date": {
             "type": "string",
-            "description": "Date in the format YYYY-MM-DD."
+            "description": "Date in the format YYYY-MM-DD.",
+            "example": "2023-06-14"
           }
         },
         "additionalProperties": false
@@ -4038,15 +4172,20 @@
           "clickCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of clicks associated with this search."
+            "description": "Number of clicks associated with this search.",
+            "default": 0,
+            "example": 162
           },
           "trackedSearchCount": {
             "type": "integer",
-            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true."
+            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
+            "default": 0,
+            "example": 2
           },
           "date": {
             "type": "string",
-            "description": "Date in the format YYYY-MM-DD."
+            "description": "Date in the format YYYY-MM-DD.",
+            "example": "2023-06-14"
           }
         },
         "additionalProperties": false
@@ -4066,16 +4205,21 @@
           },
           "trackedSearchCount": {
             "type": "integer",
-            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true."
+            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
+            "default": 0,
+            "example": 2
           },
           "conversionCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of conversions from this search."
+            "description": "Number of conversions from this search.",
+            "default": 0,
+            "example": 10
           },
           "date": {
             "type": "string",
-            "description": "Date in the format YYYY-MM-DD."
+            "description": "Date in the format YYYY-MM-DD.",
+            "example": "2023-06-14"
           }
         },
         "additionalProperties": false
@@ -4095,16 +4239,21 @@
           },
           "trackedSearchCount": {
             "type": "integer",
-            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true."
+            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
+            "default": 0,
+            "example": 2
           },
           "addToCartCount": {
             "minimum": 0,
             "type": "integer",
-            "description": "Number of add-to-cart events from this search."
+            "description": "Number of add-to-cart events from this search.",
+            "default": 0,
+            "example": 10
           },
           "date": {
             "type": "string",
-            "description": "Date in the format YYYY-MM-DD."
+            "description": "Date in the format YYYY-MM-DD.",
+            "example": "2023-06-14"
           }
         },
         "additionalProperties": false
@@ -4124,15 +4273,20 @@
           },
           "trackedSearchCount": {
             "type": "integer",
-            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true."
+            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
+            "default": 0,
+            "example": 2
           },
           "purchaseCount": {
             "type": "integer",
-            "description": "Number of purchase events from this search."
+            "description": "Number of purchase events from this search.",
+            "default": 0,
+            "example": 10
           },
           "date": {
             "type": "string",
-            "description": "Date in the format YYYY-MM-DD."
+            "description": "Date in the format YYYY-MM-DD.",
+            "example": "2023-06-14"
           }
         },
         "additionalProperties": false
@@ -4157,7 +4311,8 @@
           },
           "date": {
             "type": "string",
-            "description": "Date in the format YYYY-MM-DD."
+            "description": "Date in the format YYYY-MM-DD.",
+            "example": "2023-06-14"
           }
         },
         "additionalProperties": false

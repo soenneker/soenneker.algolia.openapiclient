@@ -61,25 +61,25 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("model")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsRequest();
-            if("BoughtTogetherQuery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("bought-together".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BoughtTogetherQuery = new global::Soenneker.Algolia.OpenApiClient.Models.BoughtTogetherQuery();
             }
-            else if("LookingSimilarQuery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("looking-similar".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.LookingSimilarQuery = new global::Soenneker.Algolia.OpenApiClient.Models.LookingSimilarQuery();
             }
-            else if("RelatedQuery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("related-products".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RelatedQuery = new global::Soenneker.Algolia.OpenApiClient.Models.RelatedQuery();
             }
-            else if("TrendingFacetsQuery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("trending-facets".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TrendingFacetsQuery = new global::Soenneker.Algolia.OpenApiClient.Models.TrendingFacetsQuery();
             }
-            else if("TrendingItemsQuery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("trending-items".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TrendingItemsQuery = new global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsQuery();
             }

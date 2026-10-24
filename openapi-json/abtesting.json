@@ -34,7 +34,14 @@
         "operationId": "CustomGet",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -74,7 +81,14 @@
         "operationId": "CustomPost",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -124,7 +138,14 @@
         "operationId": "CustomPut",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -174,7 +195,14 @@
         "operationId": "CustomDelete",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -362,7 +390,15 @@
         "operationId": "GetAbTest",
         "parameters": [
           {
-            "$ref": "#/components/parameters/ID"
+            "name": "id",
+            "in": "path",
+            "description": "Unique A/B test identifier.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "Unique A/B test identifier.",
+              "example": 224
+            }
           }
         ],
         "responses": {
@@ -414,7 +450,15 @@
         "operationId": "DeleteAbTest",
         "parameters": [
           {
-            "$ref": "#/components/parameters/ID"
+            "name": "id",
+            "in": "path",
+            "description": "Unique A/B test identifier.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "Unique A/B test identifier.",
+              "example": 224
+            }
           }
         ],
         "responses": {
@@ -468,7 +512,15 @@
         "operationId": "StopAbTest",
         "parameters": [
           {
-            "$ref": "#/components/parameters/ID"
+            "name": "id",
+            "in": "path",
+            "description": "Unique A/B test identifier.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "Unique A/B test identifier.",
+              "example": 224
+            }
           }
         ],
         "responses": {
@@ -653,7 +705,6 @@
           "failed"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "A/B test status.\n\n- \u0060active\u0060. The A/B test is live and search traffic is split between the two variants.\n- \u0060stopped\u0060. You stopped the A/B test. The A/B test data is still available for analysis.\n- \u0060expired\u0060. The A/B test was automatically stopped after reaching its end date.\n- \u0060failed\u0060. Creating the A/B test failed.\n",
         "example": "active",
         "x-ms-enum": {
@@ -834,7 +885,8 @@
           },
           "description": {
             "type": "string",
-            "description": "Description for this variant."
+            "description": "Description for this variant.",
+            "example": "Current production index"
           },
           "estimatedSampleSize": {
             "type": "integer",
@@ -846,7 +898,8 @@
           },
           "index": {
             "type": "string",
-            "description": "Index name of the A/B test variant (case-sensitive)."
+            "description": "Index name of the A/B test variant (case-sensitive).",
+            "example": "delcourt_production"
           },
           "noResultCount": {
             "type": "integer",
@@ -874,13 +927,16 @@
           },
           "trackedSearchCount": {
             "type": "integer",
-            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true."
+            "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
+            "default": 0,
+            "example": 2
           },
           "trafficPercentage": {
             "maximum": 100,
             "minimum": 0,
             "type": "integer",
-            "description": "Percentage of search requests each variant receives."
+            "description": "Percentage of search requests each variant receives.",
+            "example": 60
           },
           "userCount": {
             "type": "integer",
@@ -951,7 +1007,6 @@
           "purchaseRate"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Metric for which you want to detect the smallest relative difference.",
         "x-ms-enum": {
           "name": "EffectMetric",
@@ -1029,7 +1084,8 @@
         "properties": {
           "abTestID": {
             "type": "integer",
-            "description": "Unique A/B test identifier."
+            "description": "Unique A/B test identifier.",
+            "example": 224
           },
           "clickSignificance": {
             "type": "number",
@@ -1064,22 +1120,26 @@
           },
           "updatedAt": {
             "type": "string",
-            "description": "Date and time when the A/B test was last updated, in RFC 3339 format."
+            "description": "Date and time when the A/B test was last updated, in RFC 3339 format.",
+            "example": "2023-06-15T15:06:44.400601Z"
           },
           "createdAt": {
             "type": "string",
-            "description": "Date and time when the A/B test was created, in RFC 3339 format."
+            "description": "Date and time when the A/B test was created, in RFC 3339 format.",
+            "example": "2023-06-15T15:06:04.249906Z"
           },
           "endAt": {
             "type": "string",
-            "description": "End date and time of the A/B test, in RFC 3339 format."
+            "description": "End date and time of the A/B test, in RFC 3339 format.",
+            "example": "2023-06-17T00:00:00Z"
           },
           "stoppedAt": {
             "$ref": "#/components/schemas/StoppedAt"
           },
           "name": {
             "type": "string",
-            "description": "A/B test name."
+            "description": "A/B test name.",
+            "example": "Custom ranking sales rank test"
           },
           "status": {
             "$ref": "#/components/schemas/Status"
@@ -1114,17 +1174,20 @@
         "properties": {
           "index": {
             "type": "string",
-            "description": "Index name of the A/B test variant (case-sensitive)."
+            "description": "Index name of the A/B test variant (case-sensitive).",
+            "example": "delcourt_production"
           },
           "trafficPercentage": {
             "maximum": 100,
             "minimum": 0,
             "type": "integer",
-            "description": "Percentage of search requests each variant receives."
+            "description": "Percentage of search requests each variant receives.",
+            "example": 60
           },
           "description": {
             "type": "string",
-            "description": "Description for this variant."
+            "description": "Description for this variant.",
+            "example": "Current production index"
           }
         },
         "additionalProperties": false
@@ -1150,34 +1213,17 @@
         ]
       },
       "AbTestsVariantSearchParams": {
-        "required": [
-          "index",
-          "trafficPercentage",
-          "customSearchParameters"
-        ],
         "type": "object",
-        "properties": {
-          "index": {
-            "type": "string",
-            "description": "Index name of the A/B test variant (case-sensitive)."
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AbTestsVariant"
           },
-          "trafficPercentage": {
-            "maximum": 100,
-            "minimum": 0,
-            "type": "integer",
-            "description": "Percentage of search requests each variant receives."
-          },
-          "description": {
-            "type": "string",
-            "description": "Description for this variant."
-          },
-          "customSearchParameters": {
-            "$ref": "#/components/schemas/AbTestsVariantSearchParamsCustomSearchParameters"
+          {
+            "$ref": "#/components/schemas/CustomSearchParams"
           }
-        }
+        ]
       },
       "AddAbTestsVariant": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/AbTestsVariant"
@@ -1185,26 +1231,7 @@
           {
             "$ref": "#/components/schemas/AbTestsVariantSearchParams"
           }
-        ],
-        "properties": {
-          "index": {
-            "type": "string",
-            "description": "Index name of the A/B test variant (case-sensitive)."
-          },
-          "trafficPercentage": {
-            "maximum": 100,
-            "minimum": 0,
-            "type": "integer",
-            "description": "Percentage of search requests each variant receives."
-          },
-          "description": {
-            "type": "string",
-            "description": "Description for this variant."
-          },
-          "customSearchParameters": {
-            "$ref": "#/components/schemas/AbTestsVariantSearchParamsCustomSearchParameters"
-          }
-        }
+        ]
       },
       "TaskId": {
         "type": "integer",
@@ -1222,16 +1249,19 @@
         "properties": {
           "index": {
             "type": "string",
-            "description": "Index name of the A/B test variant (case-sensitive)."
+            "description": "Index name of the A/B test variant (case-sensitive).",
+            "example": "delcourt_production"
           },
           "abTestID": {
             "type": "integer",
-            "description": "Unique A/B test identifier."
+            "description": "Unique A/B test identifier.",
+            "example": 224
           },
           "taskID": {
             "type": "integer",
             "description": "Unique identifier of a task.\n\nA successful API response means that a task was added to a queue.\nIt might not run immediately.\nYou can check the task\u0027s progress with the [\u0060task\u0060 operation](https://www.algolia.com/doc/rest-api/search/get-task) and this task ID.\n",
-            "format": "int64"
+            "format": "int64",
+            "example": 1514562690001
           }
         },
         "additionalProperties": false
@@ -1345,7 +1375,8 @@
         "properties": {
           "name": {
             "type": "string",
-            "description": "A/B test name."
+            "description": "A/B test name.",
+            "example": "Custom ranking sales rank test"
           },
           "variants": {
             "maxItems": 2,
@@ -1358,7 +1389,8 @@
           },
           "endAt": {
             "type": "string",
-            "description": "End date and time of the A/B test, in RFC 3339 format."
+            "description": "End date and time of the A/B test, in RFC 3339 format.",
+            "example": "2023-06-17T00:00:00Z"
           }
         },
         "additionalProperties": false
@@ -1438,7 +1470,23 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/Currency"
         },
-        "description": "A/B test currencies."
+        "description": "A/B test currencies.",
+        "example": {
+          "USD": {
+            "currency": "USD",
+            "revenue": 120,
+            "mean": 53.7,
+            "standardDeviation": 12.3,
+            "winsorizedAmount": 23
+          },
+          "EUR": {
+            "currency": "EUR",
+            "revenue": 100,
+            "mean": 43.7,
+            "standardDeviation": 10.3,
+            "winsorizedAmount": 10
+          }
+        }
       },
       "AbTestRevenueSignificanceProperty": {
         "type": "object",
@@ -1447,12 +1495,14 @@
           "format": "double",
           "x-additionalPropertiesName": "currency code"
         },
-        "description": "A/B test significance calculated from revenue data.\n\nValues of 0.95 or higher can be considered significant,\nthat is, the difference between A and B variants is _not_ due to random variations.\n"
+        "description": "A/B test significance calculated from revenue data.\n\nValues of 0.95 or higher can be considered significant,\nthat is, the difference between A and B variants is _not_ due to random variations.\n",
+        "nullable": true,
+        "example": {
+          "USD": 1,
+          "EUR": 0.87
+        }
       },
       "CustomSearchParamsCustomSearchParametersProperty": {
-        "type": "object"
-      },
-      "AbTestsVariantSearchParamsCustomSearchParameters": {
         "type": "object"
       },
       "EstimateAbTestRequestConfiguration": {
@@ -1546,7 +1596,8 @@
         "required": true,
         "schema": {
           "type": "integer",
-          "description": "Unique A/B test identifier."
+          "description": "Unique A/B test identifier.",
+          "example": 224
         }
       }
     },

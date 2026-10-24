@@ -8,34 +8,22 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchBooleanStringWrapper"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePluralsBranch1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePluralsBranch3"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchBooleanString"/>, List&lt;global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchIgnorePlurals : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchBooleanStringWrapper"/></summary>
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchBooleanString"/></summary>
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchBooleanString? SearchBooleanString { get; set; }
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchBooleanStringWrapper? SearchBooleanStringWrapper { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage?>? SearchSupportedLanguage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchBooleanStringWrapper SearchBooleanStringWrapper { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePluralsBranch1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePluralsBranch1? SearchIgnorePluralsBranch1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePluralsBranch1 SearchIgnorePluralsBranch1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePluralsBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePluralsBranch3? SearchIgnorePluralsBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePluralsBranch3 SearchIgnorePluralsBranch3 { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage?> SearchSupportedLanguage { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,17 +35,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePlurals();
-            if("SearchBooleanStringWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchBooleanString>() is global::Soenneker.Algolia.OpenApiClient.Models.SearchBooleanString searchBooleanStringValue)
             {
-                result.SearchBooleanStringWrapper = new global::Soenneker.Algolia.OpenApiClient.Models.SearchBooleanStringWrapper();
+                result.SearchBooleanString = searchBooleanStringValue;
             }
-            else if("SearchIgnorePluralsBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetBoolValue() is bool booleanValue)
             {
-                result.SearchIgnorePluralsBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePluralsBranch1();
+                result.Boolean = booleanValue;
             }
-            else if("SearchIgnorePluralsBranch3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage>()?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage?> searchSupportedLanguageValue)
             {
-                result.SearchIgnorePluralsBranch3 = new global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePluralsBranch3();
+                result.SearchSupportedLanguage = searchSupportedLanguageValue;
             }
             return result;
         }
@@ -67,18 +55,6 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(SearchBooleanStringWrapper != null)
-            {
-                return SearchBooleanStringWrapper.GetFieldDeserializers();
-            }
-            else if(SearchIgnorePluralsBranch1 != null)
-            {
-                return SearchIgnorePluralsBranch1.GetFieldDeserializers();
-            }
-            else if(SearchIgnorePluralsBranch3 != null)
-            {
-                return SearchIgnorePluralsBranch3.GetFieldDeserializers();
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -88,17 +64,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(SearchBooleanStringWrapper != null)
+            if(SearchBooleanString != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchBooleanStringWrapper>(null, SearchBooleanStringWrapper);
+                writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchBooleanString>(null, SearchBooleanString);
             }
-            else if(SearchIgnorePluralsBranch1 != null)
+            else if(Boolean != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePluralsBranch1>(null, SearchIgnorePluralsBranch1);
+                writer.WriteBoolValue(null, Boolean);
             }
-            else if(SearchIgnorePluralsBranch3 != null)
+            else if(SearchSupportedLanguage != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePluralsBranch3>(null, SearchIgnorePluralsBranch3);
+                writer.WriteCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage>(null, SearchSupportedLanguage);
             }
         }
     }

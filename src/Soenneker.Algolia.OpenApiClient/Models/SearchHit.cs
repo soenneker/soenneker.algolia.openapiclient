@@ -20,10 +20,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Surround words that match the query with HTML tags for highlighting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHitHighlightResultProperty? HighlightResult { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMap? HighlightResult { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHitHighlightResultProperty HighlightResult { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMap HighlightResult { get; set; }
 #endif
         /// <summary>Unique record identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,10 +44,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Snippets that show the context around a matching search query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHitSnippetResultProperty? SnippetResult { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSnippetResultMap? SnippetResult { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHitSnippetResultProperty SnippetResult { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSnippetResultMap SnippetResult { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchHit"/> and sets the default values.
@@ -75,10 +75,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "_distinctSeqID", n => { DistinctSeqID = n.GetIntValue(); } },
-                { "_highlightResult", n => { HighlightResult = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchHitHighlightResultProperty>(global::Soenneker.Algolia.OpenApiClient.Models.SearchHitHighlightResultProperty.CreateFromDiscriminatorValue); } },
+                { "_highlightResult", n => { HighlightResult = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMap>(global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMap.CreateFromDiscriminatorValue); } },
                 { "objectID", n => { ObjectID = n.GetStringValue(); } },
                 { "_rankingInfo", n => { RankingInfo = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchRankingInfo>(global::Soenneker.Algolia.OpenApiClient.Models.SearchRankingInfo.CreateFromDiscriminatorValue); } },
-                { "_snippetResult", n => { SnippetResult = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchHitSnippetResultProperty>(global::Soenneker.Algolia.OpenApiClient.Models.SearchHitSnippetResultProperty.CreateFromDiscriminatorValue); } },
+                { "_snippetResult", n => { SnippetResult = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchSnippetResultMap>(global::Soenneker.Algolia.OpenApiClient.Models.SearchSnippetResultMap.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,10 +89,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("_distinctSeqID", DistinctSeqID);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchHitHighlightResultProperty>("_highlightResult", HighlightResult);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMap>("_highlightResult", HighlightResult);
             writer.WriteStringValue("objectID", ObjectID);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchRankingInfo>("_rankingInfo", RankingInfo);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchHitSnippetResultProperty>("_snippetResult", SnippetResult);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchSnippetResultMap>("_snippetResult", SnippetResult);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -34,6 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public GetNoClickRateResponseDatesItem()
         {
             AdditionalData = new Dictionary<string, object>();
+            Count = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

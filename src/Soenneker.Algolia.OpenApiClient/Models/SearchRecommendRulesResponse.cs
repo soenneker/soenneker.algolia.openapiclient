@@ -34,6 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public SearchRecommendRulesResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            Page = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -182,10 +182,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>An object with custom data.You can store up to 32kB as custom data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsUserDataProperty? UserData { get; set; }
+        public UntypedNode? UserData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsUserDataProperty UserData { get; set; }
+        public UntypedNode UserData { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResults"/> and sets the default values.
@@ -193,6 +193,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public RecommendationsResults()
         {
             AdditionalData = new Dictionary<string, object>();
+            HitsPerPage = 20;
+            Page = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -242,7 +244,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "renderingContent", n => { RenderingContent = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRenderingContent>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendRenderingContent.CreateFromDiscriminatorValue); } },
                 { "serverTimeMS", n => { ServerTimeMS = n.GetIntValue(); } },
                 { "serverUsed", n => { ServerUsed = n.GetStringValue(); } },
-                { "userData", n => { UserData = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsUserDataProperty>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsUserDataProperty.CreateFromDiscriminatorValue); } },
+                { "userData", n => { UserData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -282,7 +284,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendRenderingContent>("renderingContent", RenderingContent);
             writer.WriteIntValue("serverTimeMS", ServerTimeMS);
             writer.WriteStringValue("serverUsed", ServerUsed);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsResultsUserDataProperty>("userData", UserData);
+            writer.WriteObjectValue<UntypedNode>("userData", UserData);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

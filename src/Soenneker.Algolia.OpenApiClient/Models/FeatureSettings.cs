@@ -26,10 +26,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Feature settings payload. The shape depends on the feature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettingsSettingsProperty? Settings { get; set; }
+        public UntypedNode? Settings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettingsSettingsProperty Settings { get; set; }
+        public UntypedNode Settings { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettings"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettingsSettingsProperty>(global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettingsSettingsProperty.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettingsSettingsProperty>("settings", Settings);
+            writer.WriteObjectValue<UntypedNode>("settings", Settings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

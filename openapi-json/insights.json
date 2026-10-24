@@ -34,7 +34,14 @@
         "operationId": "CustomGet",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -74,7 +81,14 @@
         "operationId": "CustomPost",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -124,7 +138,14 @@
         "operationId": "CustomPut",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -174,7 +195,14 @@
         "operationId": "CustomDelete",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -537,7 +565,7 @@
             "content": {
               "text/html": {
                 "schema": {
-                  "$ref": "#/components/schemas/PushEvents400HtmlResponse"
+                  "$ref": "#/components/schemas/HtmlSchema"
                 },
                 "examples": {
                   "BadRequest": {
@@ -813,7 +841,8 @@
               "minLength": 1,
               "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
               "type": "string",
-              "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+              "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+              "example": "test-user-1"
             }
           }
         ],
@@ -913,7 +942,6 @@
           "click"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ClickEvent",
           "modelAsString": false,
@@ -937,7 +965,12 @@
         "items": {
           "type": "string"
         },
-        "description": "Object IDs of the records that are part of the event."
+        "description": "Object IDs of the records that are part of the event.",
+        "example": [
+          "object-1",
+          "object-2",
+          "object-3"
+        ]
       },
       "Positions": {
         "maxItems": 20,
@@ -947,7 +980,12 @@
           "minimum": 1,
           "type": "integer"
         },
-        "description": "Position of the clicked item the search results.\n\nYou must provide 1 \u0060position\u0060 for each \u0060objectID\u0060.\n"
+        "description": "Position of the clicked item the search results.\n\nYou must provide 1 \u0060position\u0060 for each \u0060objectID\u0060.\n",
+        "example": [
+          1,
+          2,
+          5
+        ]
       },
       "QueryId": {
         "maxLength": 128,
@@ -992,6 +1030,7 @@
         "properties": {
           "eventName": {
             "maxLength": 64,
+            "minLength": 1,
             "pattern": "[\\x20-\\x7E]{1,64}",
             "type": "string",
             "description": "Event name, up to 64 ASCII characters.\n\nConsider naming events consistently\u2014for example, by adopting Segment\u0027s\n[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)\nframework.\n"
@@ -1001,7 +1040,8 @@
           },
           "index": {
             "type": "string",
-            "description": "Index name (case-sensitive) to which the event\u0027s items belong."
+            "description": "Index name (case-sensitive) to which the event\u0027s items belong.",
+            "example": "ALGOLIA_INDEX_NAME"
           },
           "objectIDs": {
             "maxItems": 20,
@@ -1010,7 +1050,12 @@
             "items": {
               "type": "string"
             },
-            "description": "Object IDs of the records that are part of the event."
+            "description": "Object IDs of the records that are part of the event.",
+            "example": [
+              "object-1",
+              "object-2",
+              "object-3"
+            ]
           },
           "positions": {
             "maxItems": 20,
@@ -1020,7 +1065,12 @@
               "minimum": 1,
               "type": "integer"
             },
-            "description": "Position of the clicked item the search results.\n\nYou must provide 1 \u0060position\u0060 for each \u0060objectID\u0060.\n"
+            "description": "Position of the clicked item the search results.\n\nYou must provide 1 \u0060position\u0060 for each \u0060objectID\u0060.\n",
+            "example": [
+              1,
+              2,
+              5
+            ]
           },
           "queryID": {
             "maxLength": 128,
@@ -1030,20 +1080,25 @@
           },
           "userToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "test-user-1"
           },
           "authenticatedUserToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "c6a52c02-d0c7-4b53-8ce3-2b8fd202f3f9"
           },
           "timestamp": {
             "type": "integer",
             "description": "Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.\nIf not provided, we use the time at which the request was received.\n",
-            "format": "int64"
+            "format": "int64",
+            "example": 1687193127
           }
         },
         "description": "Click event after an Algolia request.\nUse this event to track when users click items in the search results.\nIf you\u0027re building your category pages with Algolia,\nyou\u0027ll also use this event.\n",
@@ -1058,7 +1113,6 @@
           "conversion"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ConversionEvent",
           "modelAsString": false,
@@ -1075,7 +1129,6 @@
           "addToCart"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "AddToCartEvent",
           "modelAsString": false,
@@ -1096,7 +1149,6 @@
         "example": "EUR"
       },
       "Price": {
-        "type": "object",
         "oneOf": [
           {
             "type": "number",
@@ -1117,7 +1169,6 @@
         "example": 2
       },
       "Discount": {
-        "type": "object",
         "oneOf": [
           {
             "type": "number",
@@ -1148,7 +1199,8 @@
           "quantity": {
             "type": "integer",
             "description": "Quantity of a product that has been purchased or added to the cart.\nThe total purchase value is the sum of \u0060quantity\u0060 multiplied with the \u0060price\u0060 for each purchased item.\n",
-            "format": "int32"
+            "format": "int32",
+            "example": 2
           },
           "discount": {
             "$ref": "#/components/schemas/Discount"
@@ -1166,7 +1218,6 @@
         "description": "Extra information about the records involved in a purchase or add-to-cart events.\n\nIf provided, it must be the same length as \u0060objectIDs\u0060.\n"
       },
       "ValueValue": {
-        "type": "object",
         "oneOf": [
           {
             "type": "number",
@@ -1196,6 +1247,7 @@
         "properties": {
           "eventName": {
             "maxLength": 64,
+            "minLength": 1,
             "pattern": "[\\x20-\\x7E]{1,64}",
             "type": "string",
             "description": "Event name, up to 64 ASCII characters.\n\nConsider naming events consistently\u2014for example, by adopting Segment\u0027s\n[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)\nframework.\n"
@@ -1208,7 +1260,8 @@
           },
           "index": {
             "type": "string",
-            "description": "Index name (case-sensitive) to which the event\u0027s items belong."
+            "description": "Index name (case-sensitive) to which the event\u0027s items belong.",
+            "example": "ALGOLIA_INDEX_NAME"
           },
           "queryID": {
             "maxLength": 128,
@@ -1223,25 +1276,36 @@
             "items": {
               "type": "string"
             },
-            "description": "Object IDs of the records that are part of the event."
+            "description": "Object IDs of the records that are part of the event.",
+            "example": [
+              "object-1",
+              "object-2",
+              "object-3"
+            ]
           },
           "userToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "test-user-1"
           },
           "authenticatedUserToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "c6a52c02-d0c7-4b53-8ce3-2b8fd202f3f9"
           },
           "currency": {
             "maxLength": 3,
+            "minLength": 3,
             "pattern": "^[A-Za-z]{3}$",
             "type": "string",
-            "description": "Three-letter [currency code](https://www.iso.org/iso-4217-currency-codes.html)."
+            "description": "Three-letter [currency code](https://www.iso.org/iso-4217-currency-codes.html).",
+            "example": "EUR"
           },
           "objectData": {
             "maxItems": 20,
@@ -1255,7 +1319,8 @@
           "timestamp": {
             "type": "integer",
             "description": "Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.\nIf not provided, we use the time at which the request was received.\n",
-            "format": "int64"
+            "format": "int64",
+            "example": 1687193127
           },
           "value": {
             "$ref": "#/components/schemas/ValueValue"
@@ -1274,7 +1339,6 @@
           "purchase"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "PurchaseEvent",
           "modelAsString": false,
@@ -1301,6 +1365,7 @@
         "properties": {
           "eventName": {
             "maxLength": 64,
+            "minLength": 1,
             "pattern": "[\\x20-\\x7E]{1,64}",
             "type": "string",
             "description": "Event name, up to 64 ASCII characters.\n\nConsider naming events consistently\u2014for example, by adopting Segment\u0027s\n[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)\nframework.\n"
@@ -1313,7 +1378,8 @@
           },
           "index": {
             "type": "string",
-            "description": "Index name (case-sensitive) to which the event\u0027s items belong."
+            "description": "Index name (case-sensitive) to which the event\u0027s items belong.",
+            "example": "ALGOLIA_INDEX_NAME"
           },
           "objectIDs": {
             "maxItems": 20,
@@ -1322,25 +1388,36 @@
             "items": {
               "type": "string"
             },
-            "description": "Object IDs of the records that are part of the event."
+            "description": "Object IDs of the records that are part of the event.",
+            "example": [
+              "object-1",
+              "object-2",
+              "object-3"
+            ]
           },
           "userToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "test-user-1"
           },
           "authenticatedUserToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "c6a52c02-d0c7-4b53-8ce3-2b8fd202f3f9"
           },
           "currency": {
             "maxLength": 3,
+            "minLength": 3,
             "pattern": "^[A-Za-z]{3}$",
             "type": "string",
-            "description": "Three-letter [currency code](https://www.iso.org/iso-4217-currency-codes.html)."
+            "description": "Three-letter [currency code](https://www.iso.org/iso-4217-currency-codes.html).",
+            "example": "EUR"
           },
           "objectData": {
             "maxItems": 20,
@@ -1354,7 +1431,8 @@
           "timestamp": {
             "type": "integer",
             "description": "Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.\nIf not provided, we use the time at which the request was received.\n",
-            "format": "int64"
+            "format": "int64",
+            "example": 1687193127
           },
           "value": {
             "$ref": "#/components/schemas/ValueValue"
@@ -1382,6 +1460,7 @@
         "properties": {
           "eventName": {
             "maxLength": 64,
+            "minLength": 1,
             "pattern": "[\\x20-\\x7E]{1,64}",
             "type": "string",
             "description": "Event name, up to 64 ASCII characters.\n\nConsider naming events consistently\u2014for example, by adopting Segment\u0027s\n[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)\nframework.\n"
@@ -1391,7 +1470,8 @@
           },
           "index": {
             "type": "string",
-            "description": "Index name (case-sensitive) to which the event\u0027s items belong."
+            "description": "Index name (case-sensitive) to which the event\u0027s items belong.",
+            "example": "ALGOLIA_INDEX_NAME"
           },
           "objectIDs": {
             "maxItems": 20,
@@ -1400,7 +1480,12 @@
             "items": {
               "type": "string"
             },
-            "description": "Object IDs of the records that are part of the event."
+            "description": "Object IDs of the records that are part of the event.",
+            "example": [
+              "object-1",
+              "object-2",
+              "object-3"
+            ]
           },
           "queryID": {
             "maxLength": 128,
@@ -1410,20 +1495,25 @@
           },
           "userToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "test-user-1"
           },
           "authenticatedUserToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "c6a52c02-d0c7-4b53-8ce3-2b8fd202f3f9"
           },
           "timestamp": {
             "type": "integer",
             "description": "Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.\nIf not provided, we use the time at which the request was received.\n",
-            "format": "int64"
+            "format": "int64",
+            "example": 1687193127
           }
         },
         "description": "Use this event to track when users convert after a previous Algolia request.\nFor example, a user clicks on an item in the search results to view the product detail page.\nThen, the user adds the item to their shopping cart.\n\nIf you\u0027re building your category pages with Algolia,\nyou\u0027ll also use this event.\n",
@@ -1445,6 +1535,7 @@
         "properties": {
           "eventName": {
             "maxLength": 64,
+            "minLength": 1,
             "pattern": "[\\x20-\\x7E]{1,64}",
             "type": "string",
             "description": "Event name, up to 64 ASCII characters.\n\nConsider naming events consistently\u2014for example, by adopting Segment\u0027s\n[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)\nframework.\n"
@@ -1454,7 +1545,8 @@
           },
           "index": {
             "type": "string",
-            "description": "Index name (case-sensitive) to which the event\u0027s items belong."
+            "description": "Index name (case-sensitive) to which the event\u0027s items belong.",
+            "example": "ALGOLIA_INDEX_NAME"
           },
           "objectIDs": {
             "maxItems": 20,
@@ -1463,24 +1555,34 @@
             "items": {
               "type": "string"
             },
-            "description": "Object IDs of the records that are part of the event."
+            "description": "Object IDs of the records that are part of the event.",
+            "example": [
+              "object-1",
+              "object-2",
+              "object-3"
+            ]
           },
           "userToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "test-user-1"
           },
           "authenticatedUserToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "c6a52c02-d0c7-4b53-8ce3-2b8fd202f3f9"
           },
           "timestamp": {
             "type": "integer",
             "description": "Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.\nIf not provided, we use the time at which the request was received.\n",
-            "format": "int64"
+            "format": "int64",
+            "example": 1687193127
           }
         },
         "description": "Use this event to track when users click items unrelated to a previous Algolia request.\nFor example, if you don\u0027t use Algolia to build your category pages, use this event.\n\nTo track click events related to Algolia requests, use the \u0022Clicked object IDs after search\u0022 event.\n",
@@ -1498,7 +1600,8 @@
           "quantity": {
             "type": "integer",
             "description": "Quantity of a product that has been purchased or added to the cart.\nThe total purchase value is the sum of \u0060quantity\u0060 multiplied with the \u0060price\u0060 for each purchased item.\n",
-            "format": "int32"
+            "format": "int32",
+            "example": 2
           },
           "discount": {
             "$ref": "#/components/schemas/Discount"
@@ -1529,6 +1632,7 @@
         "properties": {
           "eventName": {
             "maxLength": 64,
+            "minLength": 1,
             "pattern": "[\\x20-\\x7E]{1,64}",
             "type": "string",
             "description": "Event name, up to 64 ASCII characters.\n\nConsider naming events consistently\u2014for example, by adopting Segment\u0027s\n[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)\nframework.\n"
@@ -1541,7 +1645,8 @@
           },
           "index": {
             "type": "string",
-            "description": "Index name (case-sensitive) to which the event\u0027s items belong."
+            "description": "Index name (case-sensitive) to which the event\u0027s items belong.",
+            "example": "ALGOLIA_INDEX_NAME"
           },
           "objectIDs": {
             "maxItems": 20,
@@ -1550,25 +1655,36 @@
             "items": {
               "type": "string"
             },
-            "description": "Object IDs of the records that are part of the event."
+            "description": "Object IDs of the records that are part of the event.",
+            "example": [
+              "object-1",
+              "object-2",
+              "object-3"
+            ]
           },
           "userToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "test-user-1"
           },
           "authenticatedUserToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "c6a52c02-d0c7-4b53-8ce3-2b8fd202f3f9"
           },
           "currency": {
             "maxLength": 3,
+            "minLength": 3,
             "pattern": "^[A-Za-z]{3}$",
             "type": "string",
-            "description": "Three-letter [currency code](https://www.iso.org/iso-4217-currency-codes.html)."
+            "description": "Three-letter [currency code](https://www.iso.org/iso-4217-currency-codes.html).",
+            "example": "EUR"
           },
           "objectData": {
             "maxItems": 20,
@@ -1582,7 +1698,8 @@
           "timestamp": {
             "type": "integer",
             "description": "Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.\nIf not provided, we use the time at which the request was received.\n",
-            "format": "int64"
+            "format": "int64",
+            "example": 1687193127
           },
           "value": {
             "$ref": "#/components/schemas/ValueValue"
@@ -1609,6 +1726,7 @@
         "properties": {
           "eventName": {
             "maxLength": 64,
+            "minLength": 1,
             "pattern": "[\\x20-\\x7E]{1,64}",
             "type": "string",
             "description": "Event name, up to 64 ASCII characters.\n\nConsider naming events consistently\u2014for example, by adopting Segment\u0027s\n[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)\nframework.\n"
@@ -1621,7 +1739,8 @@
           },
           "index": {
             "type": "string",
-            "description": "Index name (case-sensitive) to which the event\u0027s items belong."
+            "description": "Index name (case-sensitive) to which the event\u0027s items belong.",
+            "example": "ALGOLIA_INDEX_NAME"
           },
           "objectIDs": {
             "maxItems": 20,
@@ -1630,25 +1749,36 @@
             "items": {
               "type": "string"
             },
-            "description": "Object IDs of the records that are part of the event."
+            "description": "Object IDs of the records that are part of the event.",
+            "example": [
+              "object-1",
+              "object-2",
+              "object-3"
+            ]
           },
           "userToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "test-user-1"
           },
           "authenticatedUserToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "c6a52c02-d0c7-4b53-8ce3-2b8fd202f3f9"
           },
           "currency": {
             "maxLength": 3,
+            "minLength": 3,
             "pattern": "^[A-Za-z]{3}$",
             "type": "string",
-            "description": "Three-letter [currency code](https://www.iso.org/iso-4217-currency-codes.html)."
+            "description": "Three-letter [currency code](https://www.iso.org/iso-4217-currency-codes.html).",
+            "example": "EUR"
           },
           "objectData": {
             "maxItems": 20,
@@ -1662,7 +1792,8 @@
           "timestamp": {
             "type": "integer",
             "description": "Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.\nIf not provided, we use the time at which the request was received.\n",
-            "format": "int64"
+            "format": "int64",
+            "example": 1687193127
           },
           "value": {
             "$ref": "#/components/schemas/ValueValue"
@@ -1688,6 +1819,7 @@
         "properties": {
           "eventName": {
             "maxLength": 64,
+            "minLength": 1,
             "pattern": "[\\x20-\\x7E]{1,64}",
             "type": "string",
             "description": "Event name, up to 64 ASCII characters.\n\nConsider naming events consistently\u2014for example, by adopting Segment\u0027s\n[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)\nframework.\n"
@@ -1697,7 +1829,8 @@
           },
           "index": {
             "type": "string",
-            "description": "Index name (case-sensitive) to which the event\u0027s items belong."
+            "description": "Index name (case-sensitive) to which the event\u0027s items belong.",
+            "example": "ALGOLIA_INDEX_NAME"
           },
           "objectIDs": {
             "maxItems": 20,
@@ -1706,24 +1839,34 @@
             "items": {
               "type": "string"
             },
-            "description": "Object IDs of the records that are part of the event."
+            "description": "Object IDs of the records that are part of the event.",
+            "example": [
+              "object-1",
+              "object-2",
+              "object-3"
+            ]
           },
           "userToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "test-user-1"
           },
           "authenticatedUserToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "c6a52c02-d0c7-4b53-8ce3-2b8fd202f3f9"
           },
           "timestamp": {
             "type": "integer",
             "description": "Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.\nIf not provided, we use the time at which the request was received.\n",
-            "format": "int64"
+            "format": "int64",
+            "example": 1687193127
           }
         },
         "description": "Use this event to track when users convert on items unrelated to a previous Algolia request.\nFor example, if you don\u0027t use Algolia to build your category pages, use this event.\n\nTo track conversion events related to Algolia requests, use the \u0022Converted object IDs after search\u0022 event.\n",
@@ -1739,7 +1882,10 @@
         "items": {
           "type": "string"
         },
-        "description": "Applied facet filters.\n\nFacet filters are \u0060facet:value\u0060 pairs.\nFacet values must be URL-encoded, such as, \u0060discount:10%25\u0060.\n"
+        "description": "Applied facet filters.\n\nFacet filters are \u0060facet:value\u0060 pairs.\nFacet values must be URL-encoded, such as, \u0060discount:10%25\u0060.\n",
+        "example": [
+          "brand:apple"
+        ]
       },
       "ClickedFilters": {
         "title": "Clicked filters",
@@ -1754,6 +1900,7 @@
         "properties": {
           "eventName": {
             "maxLength": 64,
+            "minLength": 1,
             "pattern": "[\\x20-\\x7E]{1,64}",
             "type": "string",
             "description": "Event name, up to 64 ASCII characters.\n\nConsider naming events consistently\u2014for example, by adopting Segment\u0027s\n[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)\nframework.\n"
@@ -1763,7 +1910,8 @@
           },
           "index": {
             "type": "string",
-            "description": "Index name (case-sensitive) to which the event\u0027s items belong."
+            "description": "Index name (case-sensitive) to which the event\u0027s items belong.",
+            "example": "ALGOLIA_INDEX_NAME"
           },
           "filters": {
             "maxItems": 20,
@@ -1772,24 +1920,32 @@
             "items": {
               "type": "string"
             },
-            "description": "Applied facet filters.\n\nFacet filters are \u0060facet:value\u0060 pairs.\nFacet values must be URL-encoded, such as, \u0060discount:10%25\u0060.\n"
+            "description": "Applied facet filters.\n\nFacet filters are \u0060facet:value\u0060 pairs.\nFacet values must be URL-encoded, such as, \u0060discount:10%25\u0060.\n",
+            "example": [
+              "brand:apple"
+            ]
           },
           "userToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "test-user-1"
           },
           "authenticatedUserToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "c6a52c02-d0c7-4b53-8ce3-2b8fd202f3f9"
           },
           "timestamp": {
             "type": "integer",
             "description": "Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.\nIf not provided, we use the time at which the request was received.\n",
-            "format": "int64"
+            "format": "int64",
+            "example": 1687193127
           }
         },
         "description": "Use this event to track when users click facet filters in your user interface.",
@@ -1811,6 +1967,7 @@
         "properties": {
           "eventName": {
             "maxLength": 64,
+            "minLength": 1,
             "pattern": "[\\x20-\\x7E]{1,64}",
             "type": "string",
             "description": "Event name, up to 64 ASCII characters.\n\nConsider naming events consistently\u2014for example, by adopting Segment\u0027s\n[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)\nframework.\n"
@@ -1820,7 +1977,8 @@
           },
           "index": {
             "type": "string",
-            "description": "Index name (case-sensitive) to which the event\u0027s items belong."
+            "description": "Index name (case-sensitive) to which the event\u0027s items belong.",
+            "example": "ALGOLIA_INDEX_NAME"
           },
           "filters": {
             "maxItems": 20,
@@ -1829,24 +1987,32 @@
             "items": {
               "type": "string"
             },
-            "description": "Applied facet filters.\n\nFacet filters are \u0060facet:value\u0060 pairs.\nFacet values must be URL-encoded, such as, \u0060discount:10%25\u0060.\n"
+            "description": "Applied facet filters.\n\nFacet filters are \u0060facet:value\u0060 pairs.\nFacet values must be URL-encoded, such as, \u0060discount:10%25\u0060.\n",
+            "example": [
+              "brand:apple"
+            ]
           },
           "userToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "test-user-1"
           },
           "authenticatedUserToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "c6a52c02-d0c7-4b53-8ce3-2b8fd202f3f9"
           },
           "timestamp": {
             "type": "integer",
             "description": "Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.\nIf not provided, we use the time at which the request was received.\n",
-            "format": "int64"
+            "format": "int64",
+            "example": 1687193127
           }
         },
         "x-discriminator-fields": [
@@ -1859,7 +2025,6 @@
           "view"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ViewEvent",
           "modelAsString": false,
@@ -1884,6 +2049,7 @@
         "properties": {
           "eventName": {
             "maxLength": 64,
+            "minLength": 1,
             "pattern": "[\\x20-\\x7E]{1,64}",
             "type": "string",
             "description": "Event name, up to 64 ASCII characters.\n\nConsider naming events consistently\u2014for example, by adopting Segment\u0027s\n[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)\nframework.\n"
@@ -1893,7 +2059,8 @@
           },
           "index": {
             "type": "string",
-            "description": "Index name (case-sensitive) to which the event\u0027s items belong."
+            "description": "Index name (case-sensitive) to which the event\u0027s items belong.",
+            "example": "ALGOLIA_INDEX_NAME"
           },
           "objectIDs": {
             "maxItems": 20,
@@ -1902,24 +2069,34 @@
             "items": {
               "type": "string"
             },
-            "description": "Object IDs of the records that are part of the event."
+            "description": "Object IDs of the records that are part of the event.",
+            "example": [
+              "object-1",
+              "object-2",
+              "object-3"
+            ]
           },
           "userToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "test-user-1"
           },
           "authenticatedUserToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "c6a52c02-d0c7-4b53-8ce3-2b8fd202f3f9"
           },
           "timestamp": {
             "type": "integer",
             "description": "Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.\nIf not provided, we use the time at which the request was received.\n",
-            "format": "int64"
+            "format": "int64",
+            "example": 1687193127
           }
         },
         "description": "Use this event to track when users viewed items in the search results.",
@@ -1941,6 +2118,7 @@
         "properties": {
           "eventName": {
             "maxLength": 64,
+            "minLength": 1,
             "pattern": "[\\x20-\\x7E]{1,64}",
             "type": "string",
             "description": "Event name, up to 64 ASCII characters.\n\nConsider naming events consistently\u2014for example, by adopting Segment\u0027s\n[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)\nframework.\n"
@@ -1950,7 +2128,8 @@
           },
           "index": {
             "type": "string",
-            "description": "Index name (case-sensitive) to which the event\u0027s items belong."
+            "description": "Index name (case-sensitive) to which the event\u0027s items belong.",
+            "example": "ALGOLIA_INDEX_NAME"
           },
           "filters": {
             "maxItems": 20,
@@ -1959,24 +2138,32 @@
             "items": {
               "type": "string"
             },
-            "description": "Applied facet filters.\n\nFacet filters are \u0060facet:value\u0060 pairs.\nFacet values must be URL-encoded, such as, \u0060discount:10%25\u0060.\n"
+            "description": "Applied facet filters.\n\nFacet filters are \u0060facet:value\u0060 pairs.\nFacet values must be URL-encoded, such as, \u0060discount:10%25\u0060.\n",
+            "example": [
+              "brand:apple"
+            ]
           },
           "userToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "test-user-1"
           },
           "authenticatedUserToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "c6a52c02-d0c7-4b53-8ce3-2b8fd202f3f9"
           },
           "timestamp": {
             "type": "integer",
             "description": "Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.\nIf not provided, we use the time at which the request was received.\n",
-            "format": "int64"
+            "format": "int64",
+            "example": 1687193127
           }
         },
         "description": "Use this method to capture active filters.\nFor example, when browsing a category page,\nusers see content filtered on that specific category.\n",
@@ -1990,7 +2177,6 @@
           "instantsearch"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "InstantsearchEvent",
           "modelAsString": false,
@@ -2018,6 +2204,7 @@
         "properties": {
           "eventName": {
             "maxLength": 64,
+            "minLength": 1,
             "pattern": "[\\x20-\\x7E]{1,64}",
             "type": "string",
             "description": "Event name, up to 64 ASCII characters.\n\nConsider naming events consistently\u2014for example, by adopting Segment\u0027s\n[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)\nframework.\n"
@@ -2027,24 +2214,31 @@
           },
           "userToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "test-user-1"
           },
           "authenticatedUserToken": {
             "maxLength": 129,
+            "minLength": 1,
             "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
             "type": "string",
-            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "c6a52c02-d0c7-4b53-8ce3-2b8fd202f3f9"
           },
           "timestamp": {
             "type": "integer",
             "description": "Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.\nIf not provided, we use the time at which the request was received.\n",
-            "format": "int64"
+            "format": "int64",
+            "example": 1687193127
           },
           "agentID": {
+            "minLength": 1,
             "type": "string",
-            "description": "Unique identifier for an agent session. Used to correlate instantsearch events with a specific agent interaction.\n"
+            "description": "Unique identifier for an agent session. Used to correlate instantsearch events with a specific agent interaction.\n",
+            "example": "agent-session-123"
           }
         },
         "x-discriminator-fields": [
@@ -2052,7 +2246,6 @@
         ]
       },
       "EventsItems": {
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/ClickedObjectIDsAfterSearch"
@@ -2093,92 +2286,7 @@
           {
             "$ref": "#/components/schemas/Instantsearch"
           }
-        ],
-        "properties": {
-          "eventName": {
-            "maxLength": 64,
-            "pattern": "[\\x20-\\x7E]{1,64}",
-            "type": "string",
-            "description": "Event name, up to 64 ASCII characters.\n\nConsider naming events consistently\u2014for example, by adopting Segment\u0027s\n[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)\nframework.\n"
-          },
-          "index": {
-            "type": "string",
-            "description": "Index name (case-sensitive) to which the event\u0027s items belong."
-          },
-          "objectIDs": {
-            "maxItems": 20,
-            "minItems": 1,
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Object IDs of the records that are part of the event."
-          },
-          "positions": {
-            "maxItems": 20,
-            "minItems": 1,
-            "type": "array",
-            "items": {
-              "minimum": 1,
-              "type": "integer"
-            },
-            "description": "Position of the clicked item the search results.\n\nYou must provide 1 \u0060position\u0060 for each \u0060objectID\u0060.\n"
-          },
-          "queryID": {
-            "maxLength": 128,
-            "pattern": "^([0-9a-f]{32}|message_[!-~]\u002B)$",
-            "type": "string",
-            "description": "Unique identifier for a search query.\n\nThe query ID is required for events related to search or browse requests.\nIf you add \u0060clickAnalytics: true\u0060 as a search request parameter, the query ID is included in the API response.\nFor agentic analytics events, the query ID may be prefixed with \u0060message_\u0060 followed by any printable string.\n"
-          },
-          "userToken": {
-            "maxLength": 129,
-            "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
-            "type": "string",
-            "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
-          },
-          "authenticatedUserToken": {
-            "maxLength": 129,
-            "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
-            "type": "string",
-            "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
-          },
-          "timestamp": {
-            "type": "integer",
-            "description": "Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.\nIf not provided, we use the time at which the request was received.\n",
-            "format": "int64"
-          },
-          "currency": {
-            "maxLength": 3,
-            "pattern": "^[A-Za-z]{3}$",
-            "type": "string",
-            "description": "Three-letter [currency code](https://www.iso.org/iso-4217-currency-codes.html)."
-          },
-          "objectData": {
-            "maxItems": 20,
-            "minItems": 1,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ObjectDataAfterSearch"
-            },
-            "description": "Extra information about the records involved in a purchase or add-to-cart events.\n\nIf provided, it must be the same length as \u0060objectIDs\u0060.\n"
-          },
-          "value": {
-            "$ref": "#/components/schemas/ValueValue"
-          },
-          "filters": {
-            "maxItems": 20,
-            "minItems": 1,
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Applied facet filters.\n\nFacet filters are \u0060facet:value\u0060 pairs.\nFacet values must be URL-encoded, such as, \u0060discount:10%25\u0060.\n"
-          },
-          "agentID": {
-            "type": "string",
-            "description": "Unique identifier for an agent session. Used to correlate instantsearch events with a specific agent interaction.\n"
-          }
-        }
+        ]
       },
       "EventsResponse": {
         "type": "object",
@@ -2257,7 +2365,8 @@
       "CustomDelete200ResponseSchema": {
         "type": "object"
       },
-      "PushEvents400HtmlResponse": {
+      "HtmlSchema": {
+        "title": "HTML",
         "type": "string"
       }
     },

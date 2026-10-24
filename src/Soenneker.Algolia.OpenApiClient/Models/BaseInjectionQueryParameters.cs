@@ -147,10 +147,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>ISO language codes that adjust settings that are useful for processing natural language queries (as opposed to keyword searches).- Sets `removeStopWords` and `ignorePlurals` to the list of provided languages.- Sets `removeWordsIfNoResults` to `allOptional`.- Adds a `natural_language` attribute to `ruleContexts` and `analyticsTags`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage?>? NaturalLanguages { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage>? NaturalLanguages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage?> NaturalLanguages { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage> NaturalLanguages { get; set; }
 #endif
         /// <summary>Filter by numeric facets.**Prefer using the `filters` parameter, which supports all filter types and combinations with boolean operators.**You can use numeric comparison operators: `&lt;`, `&lt;=`, `=`, `!=`, `&gt;`, `&gt;=`.Comparisons are precise up to 3 decimals.You can also provide ranges: `facet:&lt;lower&gt; TO &lt;upper&gt;`. The range includes the lower and upper boundaries.The same combination rules apply as for `facetFilters`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -183,10 +183,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Languages for language-specific query processing steps such as plurals, stop-word removal, and word-detection dictionaries.This setting sets a default list of languages used by the `removeStopWords` and `ignorePlurals` settings.This setting also sets a dictionary for word detection in the logogram-based [CJK](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/normalization/#normalization-for-logogram-based-languages-cjk) languages.To support this, place the CJK language **first**.**Always specify a query language.**If you don&apos;t specify an indexing language, the search engine uses all [supported languages](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/supported-languages),or the languages you specified with the `ignorePlurals` or `removeStopWords` parameters.This can lead to unexpected search results.For more information, see [Language-specific configuration](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage?>? QueryLanguages { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage>? QueryLanguages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage?> QueryLanguages { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage> QueryLanguages { get; set; }
 #endif
         /// <summary>Determines if and how query words are interpreted as prefixes.By default, only the last query word is treated as a prefix (`prefixLast`).To turn off prefix search, use `prefixNone`.Avoid `prefixAll`, which treats all query words as prefixes.This might lead to counterintuitive results and makes your search slower.For more information, see [Prefix searching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/in-depth/prefix-searching).</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.QueryType? QueryType { get; set; }
@@ -252,6 +252,26 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public BaseInjectionQueryParameters()
         {
             AdditionalData = new Dictionary<string, object>();
+            AdvancedSyntax = false;
+            AllowTyposOnNumericTokens = true;
+            AttributeCriteriaComputedByMinProximity = false;
+            ClickAnalytics = false;
+            EnableABTest = true;
+            EnablePersonalization = false;
+            EnableReRanking = true;
+            EnableRules = true;
+            GetRankingInfo = false;
+            HighlightPostTag = "</em>";
+            HighlightPreTag = "<em>";
+            MinProximity = 1;
+            MinWordSizefor1Typo = 4;
+            MinWordSizefor2Typos = 8;
+            PercentileComputation = true;
+            PersonalizationImpact = 100;
+            ReplaceSynonymsInHighlight = false;
+            RestrictHighlightAndSnippetArrays = false;
+            SnippetEllipsisText = "…";
+            Synonyms = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -297,13 +317,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "minProximity", n => { MinProximity = n.GetIntValue(); } },
                 { "minWordSizefor1Typo", n => { MinWordSizefor1Typo = n.GetIntValue(); } },
                 { "minWordSizefor2Typos", n => { MinWordSizefor2Typos = n.GetIntValue(); } },
-                { "naturalLanguages", n => { NaturalLanguages = n.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage>()?.AsList(); } },
+                { "naturalLanguages", n => { NaturalLanguages = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage>(global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "numericFilters", n => { NumericFilters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters>(global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters.CreateFromDiscriminatorValue); } },
                 { "optionalFilters", n => { OptionalFilters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.OptionalFilters>(global::Soenneker.Algolia.OpenApiClient.Models.OptionalFilters.CreateFromDiscriminatorValue); } },
                 { "optionalWords", n => { OptionalWords = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.OptionalWords>(global::Soenneker.Algolia.OpenApiClient.Models.OptionalWords.CreateFromDiscriminatorValue); } },
                 { "percentileComputation", n => { PercentileComputation = n.GetBoolValue(); } },
                 { "personalizationImpact", n => { PersonalizationImpact = n.GetIntValue(); } },
-                { "queryLanguages", n => { QueryLanguages = n.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage>()?.AsList(); } },
+                { "queryLanguages", n => { QueryLanguages = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage>(global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "queryType", n => { QueryType = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.QueryType>(); } },
                 { "removeStopWords", n => { RemoveStopWords = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords>(global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords.CreateFromDiscriminatorValue); } },
                 { "removeWordsIfNoResults", n => { RemoveWordsIfNoResults = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RemoveWordsIfNoResults>(); } },
@@ -350,13 +370,13 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("minProximity", MinProximity);
             writer.WriteIntValue("minWordSizefor1Typo", MinWordSizefor1Typo);
             writer.WriteIntValue("minWordSizefor2Typos", MinWordSizefor2Typos);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage>("naturalLanguages", NaturalLanguages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage>("naturalLanguages", NaturalLanguages);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.NumericFilters>("numericFilters", NumericFilters);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.OptionalFilters>("optionalFilters", OptionalFilters);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.OptionalWords>("optionalWords", OptionalWords);
             writer.WriteBoolValue("percentileComputation", PercentileComputation);
             writer.WriteIntValue("personalizationImpact", PersonalizationImpact);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage>("queryLanguages", QueryLanguages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SupportedLanguage>("queryLanguages", QueryLanguages);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.QueryType>("queryType", QueryType);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RemoveStopWords>("removeStopWords", RemoveStopWords);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RemoveWordsIfNoResults>("removeWordsIfNoResults", RemoveWordsIfNoResults);

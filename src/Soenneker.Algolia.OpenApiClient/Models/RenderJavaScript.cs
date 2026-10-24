@@ -8,27 +8,13 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptBranch1"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptBranch2"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptHeadlessBrowserConfig"/>
+    /// Composed type wrapper for classes <see cref="bool"/>, <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptHeadlessBrowserConfig"/>, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RenderJavaScript : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptBranch1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptBranch1? RenderJavaScriptBranch1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptBranch1 RenderJavaScriptBranch1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptBranch2? RenderJavaScriptBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptBranch2 RenderJavaScriptBranch2 { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="bool"/></summary>
+        public bool? Boolean { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptHeadlessBrowserConfig"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,6 +22,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptHeadlessBrowserConfig RenderJavaScriptHeadlessBrowserConfig { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? String { get; set; }
+#nullable restore
+#else
+        public List<string> String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,17 +41,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScript();
-            if("RenderJavaScriptBranch1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.RenderJavaScriptBranch1 = new global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptBranch1();
-            }
-            else if("RenderJavaScriptBranch2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.RenderJavaScriptBranch2 = new global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptBranch2();
-            }
-            else if("RenderJavaScriptHeadlessBrowserConfig".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("RenderJavaScriptHeadlessBrowserConfig".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RenderJavaScriptHeadlessBrowserConfig = new global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptHeadlessBrowserConfig();
+            }
+            else if(parseNode.GetBoolValue() is bool booleanValue)
+            {
+                result.Boolean = booleanValue;
+            }
+            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+            {
+                result.String = stringValue;
             }
             return result;
         }
@@ -67,15 +61,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RenderJavaScriptBranch1 != null)
-            {
-                return RenderJavaScriptBranch1.GetFieldDeserializers();
-            }
-            else if(RenderJavaScriptBranch2 != null)
-            {
-                return RenderJavaScriptBranch2.GetFieldDeserializers();
-            }
-            else if(RenderJavaScriptHeadlessBrowserConfig != null)
+            if(RenderJavaScriptHeadlessBrowserConfig != null)
             {
                 return RenderJavaScriptHeadlessBrowserConfig.GetFieldDeserializers();
             }
@@ -88,17 +74,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(RenderJavaScriptBranch1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptBranch1>(null, RenderJavaScriptBranch1);
-            }
-            else if(RenderJavaScriptBranch2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptBranch2>(null, RenderJavaScriptBranch2);
-            }
-            else if(RenderJavaScriptHeadlessBrowserConfig != null)
+            if(RenderJavaScriptHeadlessBrowserConfig != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RenderJavaScriptHeadlessBrowserConfig>(null, RenderJavaScriptHeadlessBrowserConfig);
+            }
+            else if(Boolean != null)
+            {
+                writer.WriteBoolValue(null, Boolean);
+            }
+            else if(String != null)
+            {
+                writer.WriteCollectionOfPrimitiveValues<string>(null, String);
             }
         }
     }

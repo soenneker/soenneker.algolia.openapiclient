@@ -31,7 +31,14 @@
         "operationId": "CustomGet",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -71,7 +78,14 @@
         "operationId": "CustomPost",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -121,7 +135,14 @@
         "operationId": "CustomPut",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -171,7 +192,14 @@
         "operationId": "CustomDelete",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathInPath"
+            "name": "path",
+            "in": "path",
+            "description": "Path of the endpoint, for example \u00601/newFeature\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "/keys"
+            }
           },
           {
             "$ref": "#/components/parameters/Parameters"
@@ -213,7 +241,18 @@
         "operationId": "GetUserTokenProfile",
         "parameters": [
           {
-            "$ref": "#/components/parameters/UserToken"
+            "name": "userToken",
+            "in": "path",
+            "description": "Unique identifier representing a user for which to fetch the personalization profile.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Unique pseudonymous or anonymous user identifier.\n\nThis helps with analytics and click and conversion events.\nFor more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+              "example": "test-user-123",
+              "x-categories": [
+                "Personalization"
+              ]
+            }
           }
         ],
         "responses": {
@@ -266,7 +305,18 @@
         "operationId": "DeleteUserProfile",
         "parameters": [
           {
-            "$ref": "#/components/parameters/UserToken"
+            "name": "userToken",
+            "in": "path",
+            "description": "Unique identifier representing a user for which to fetch the personalization profile.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Unique pseudonymous or anonymous user identifier.\n\nThis helps with analytics and click and conversion events.\nFor more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+              "example": "test-user-123",
+              "x-categories": [
+                "Personalization"
+              ]
+            }
           }
         ],
         "responses": {
@@ -465,7 +515,6 @@
           "view"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "Event type.",
         "x-ms-enum": {
           "name": "EventType",
@@ -586,7 +635,11 @@
         "properties": {
           "userToken": {
             "type": "string",
-            "description": "Unique pseudonymous or anonymous user identifier.\n\nThis helps with analytics and click and conversion events.\nFor more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Unique pseudonymous or anonymous user identifier.\n\nThis helps with analytics and click and conversion events.\nFor more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "test-user-123",
+            "x-categories": [
+              "Personalization"
+            ]
           },
           "lastEventAt": {
             "type": "string",
@@ -608,7 +661,11 @@
         "properties": {
           "userToken": {
             "type": "string",
-            "description": "Unique pseudonymous or anonymous user identifier.\n\nThis helps with analytics and click and conversion events.\nFor more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+            "description": "Unique pseudonymous or anonymous user identifier.\n\nThis helps with analytics and click and conversion events.\nFor more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+            "example": "test-user-123",
+            "x-categories": [
+              "Personalization"
+            ]
           },
           "deletedUntil": {
             "type": "string",
@@ -727,7 +784,11 @@
         "required": true,
         "schema": {
           "type": "string",
-          "description": "Unique pseudonymous or anonymous user identifier.\n\nThis helps with analytics and click and conversion events.\nFor more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n"
+          "description": "Unique pseudonymous or anonymous user identifier.\n\nThis helps with analytics and click and conversion events.\nFor more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+          "example": "test-user-123",
+          "x-categories": [
+            "Personalization"
+          ]
         }
       }
     },

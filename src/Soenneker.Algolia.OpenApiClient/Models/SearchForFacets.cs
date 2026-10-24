@@ -9,9 +9,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SearchForFacets : global::Soenneker.Algolia.OpenApiClient.Models.SearchParams, IParsable
+    public partial class SearchForFacets : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Facet name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,11 +43,19 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>- `default`: perform a search query.- `facet` [searches for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeFacet? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacets"/> and sets the default values.
+        /// </summary>
+        public SearchForFacets()
+        {
+            AdditionalData = new Dictionary<string, object>();
+            MaxFacetHits = 10;
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacets"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacets CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacets CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacets();
@@ -54,9 +64,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
                 { "facet", n => { Facet = n.GetStringValue(); } },
                 { "facetQuery", n => { FacetQuery = n.GetStringValue(); } },
@@ -69,15 +79,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
             writer.WriteStringValue("facet", Facet);
             writer.WriteStringValue("facetQuery", FacetQuery);
             writer.WriteStringValue("indexName", IndexName);
             writer.WriteIntValue("maxFacetHits", MaxFacetHits);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeFacet>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

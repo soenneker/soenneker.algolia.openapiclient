@@ -9,11 +9,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TrendingItemsQuery : IAdditionalDataHolder, IParsable
+    public partial class TrendingItemsQuery : global::Soenneker.Algolia.OpenApiClient.Models.BaseRecommendRequest, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Facet attribute. To be used in combination with `facetValue`.If specified, only recommendations matching the facet filter will be returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,42 +36,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams FallbackParameters { get; set; }
 #endif
-        /// <summary>Index name (case-sensitive).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IndexName { get; set; }
-#nullable restore
-#else
-        public string IndexName { get; set; }
-#endif
-        /// <summary>Maximum number of recommendations to retrieve.By default, all recommendations are returned and no fallback request is made.Depending on the available recommendations and the other request parameters,the actual number of recommendations may be lower than this value.</summary>
-        public int? MaxRecommendations { get; set; }
         /// <summary>Trending items model.Trending items are determined from the number of conversion events collected on them.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsModel? Model { get; set; }
-        /// <summary>Search parameters for filtering the recommendations.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams? QueryParameters { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams QueryParameters { get; set; }
-#endif
-        /// <summary>Minimum score a recommendation must have to be included in the response.</summary>
-        public double? Threshold { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsQuery"/> and sets the default values.
-        /// </summary>
-        public TrendingItemsQuery()
-        {
-            AdditionalData = new Dictionary<string, object>();
-            MaxRecommendations = 30;
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsQuery"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsQuery CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsQuery CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsQuery();
@@ -82,36 +52,28 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "facetName", n => { FacetName = n.GetStringValue(); } },
                 { "facetValue", n => { FacetValue = n.GetStringValue(); } },
                 { "fallbackParameters", n => { FallbackParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams>(global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams.CreateFromDiscriminatorValue); } },
-                { "indexName", n => { IndexName = n.GetStringValue(); } },
-                { "maxRecommendations", n => { MaxRecommendations = n.GetIntValue(); } },
                 { "model", n => { Model = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsModel>(); } },
-                { "queryParameters", n => { QueryParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams>(global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams.CreateFromDiscriminatorValue); } },
-                { "threshold", n => { Threshold = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer)
+        public override void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
             writer.WriteStringValue("facetName", FacetName);
             writer.WriteStringValue("facetValue", FacetValue);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams>("fallbackParameters", FallbackParameters);
-            writer.WriteStringValue("indexName", IndexName);
-            writer.WriteIntValue("maxRecommendations", MaxRecommendations);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsModel>("model", Model);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams>("queryParameters", QueryParameters);
-            writer.WriteDoubleValue("threshold", Threshold);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

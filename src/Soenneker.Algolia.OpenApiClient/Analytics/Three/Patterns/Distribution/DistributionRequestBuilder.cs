@@ -36,7 +36,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Distribution
         /// <summary>
         /// Buckets one or more numeric fields into histograms and returns an object keyed by `histogram&lt;Field&gt;`,each mapping a bin label to a count. `distributions` and `parameters` are required; `filters` isoptional. Discover valid field kinds per domain with `/3/patterns/fields`.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsQueryPatternsDistribution200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.DistributionResponseSchema2"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -46,11 +46,11 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Distribution
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsQueryPatternsDistribution200Response?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.DistributionPayload body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Distribution.DistributionRequestBuilder.DistributionRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.DistributionResponseSchema2?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.DistributionPayload body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Distribution.DistributionRequestBuilder.DistributionRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsQueryPatternsDistribution200Response> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.DistributionPayload body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Distribution.DistributionRequestBuilder.DistributionRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.DistributionResponseSchema2> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.DistributionPayload body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Distribution.DistributionRequestBuilder.DistributionRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -62,7 +62,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Three.Patterns.Distribution
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsQueryPatternsDistribution200Response>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsQueryPatternsDistribution200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.DistributionResponseSchema2>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.DistributionResponseSchema2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Buckets one or more numeric fields into histograms and returns an object keyed by `histogram&lt;Field&gt;`,each mapping a bin label to a count. `distributions` and `parameters` are required; `filters` isoptional. Discover valid field kinds per domain with `/3/patterns/fields`.
