@@ -37,7 +37,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 result.Integer = integerValue;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundPrecisionFromValueItem>(global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundPrecisionFromValueItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundPrecisionFromValueItem> searchAroundPrecisionFromValueItemValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundPrecisionFromValueItem>(global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundPrecisionFromValueItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundPrecisionFromValueItem> searchAroundPrecisionFromValueItemValue)
             {
                 result.SearchAroundPrecisionFromValueItem = searchAroundPrecisionFromValueItemValue;
             }

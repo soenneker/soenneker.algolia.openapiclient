@@ -37,7 +37,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 result.Boolean = booleanValue;
             }
-            else if(parseNode.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSupportedLanguage>()?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSupportedLanguage?> recommendSupportedLanguageValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSupportedLanguage>()?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.RecommendSupportedLanguage?> recommendSupportedLanguageValue)
             {
                 result.RecommendSupportedLanguage = recommendSupportedLanguageValue;
             }

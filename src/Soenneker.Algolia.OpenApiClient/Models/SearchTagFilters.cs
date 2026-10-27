@@ -51,7 +51,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 result.String = stringValue;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters>(global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters> searchTagFiltersPropValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters>(global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters> searchTagFiltersPropValue)
             {
                 result.SearchTagFiltersProp = searchTagFiltersPropValue;
             }

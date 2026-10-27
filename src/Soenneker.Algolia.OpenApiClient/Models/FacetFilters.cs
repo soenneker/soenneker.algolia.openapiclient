@@ -51,7 +51,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 result.String = stringValue;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.FacetFilters>(global::Soenneker.Algolia.OpenApiClient.Models.FacetFilters.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.FacetFilters> facetFiltersPropValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.FacetFilters>(global::Soenneker.Algolia.OpenApiClient.Models.FacetFilters.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.FacetFilters> facetFiltersPropValue)
             {
                 result.FacetFiltersProp = facetFiltersPropValue;
             }
