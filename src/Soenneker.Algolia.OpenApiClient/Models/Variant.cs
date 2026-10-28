@@ -30,7 +30,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Estimated number of searches required to achieve the desired statistical significance.The A/B test configuration must include a `minimumDetectableEffect` setting for this number to be included in the response.</summary>
+        /// <summary>Estimated number of searches, or users for user-level rates (metrics ending in `UsersRate`), required to achieve the desired statistical significance.The A/B test configuration must include a `minimumDetectableEffect` setting for this number to be included in the response.</summary>
         public int? EstimatedSampleSize { get; set; }
         /// <summary>Index name of the A/B test variant (case-sensitive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

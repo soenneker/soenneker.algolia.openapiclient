@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
-    /// <summary>Metric for which you want to detect the smallest relative difference.</summary>
+    /// <summary>Metric for which you want to detect the smallest relative difference.Metrics ending in `UsersRate` are user-level rates: the share of tracked users with at least one search with a click, conversion, add-to-cart, or purchase.For these metrics, sample sizes count users instead of searches.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum EffectMetric
     {
@@ -26,6 +26,22 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         [EnumMember(Value = "noResultsRate")]
         #pragma warning disable CS1591
         NoResultsRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "addToCartUsersRate")]
+        #pragma warning disable CS1591
+        AddToCartUsersRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "clickedUsersRate")]
+        #pragma warning disable CS1591
+        ClickedUsersRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "convertedUsersRate")]
+        #pragma warning disable CS1591
+        ConvertedUsersRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "purchaseUsersRate")]
+        #pragma warning disable CS1591
+        PurchaseUsersRate,
         #pragma warning restore CS1591
     }
 }

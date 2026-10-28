@@ -16,7 +16,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Estimated number of days needed to reach the sample sizes required for detecting the configured effect. This value is based on historical traffic.</summary>
         public long? DurationDays { get; set; }
-        /// <summary>Sample size estimates for each variant. The first element is the control variant.Each element is the estimated number of searches required to achieve the desired statistical significance.</summary>
+        /// <summary>Sample size estimates for each variant. The first element is the control variant.Each element is the estimated number of searches, or users for user-level rates (metrics ending in `UsersRate`), required to achieve the desired statistical significance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<long?>? SampleSizes { get; set; }

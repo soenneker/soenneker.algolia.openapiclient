@@ -15,7 +15,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Metric for which you want to detect the smallest relative difference.</summary>
+        /// <summary>Metric for which you want to detect the smallest relative difference.Metrics ending in `UsersRate` are user-level rates: the share of tracked users with at least one search with a click, conversion, add-to-cart, or purchase.For these metrics, sample sizes count users instead of searches.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.EffectMetric? Metric { get; set; }
         /// <summary>Smallest difference in an observable metric between variants.For example, to detect a 10% difference between variants, set this value to 0.1.</summary>
         public double? Size { get; set; }
