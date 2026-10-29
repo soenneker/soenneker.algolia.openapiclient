@@ -35,7 +35,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.MinimumDetectableEffect MinimumDetectableEffect { get; set; }
 #endif
-        /// <summary>Primary metric for Bayesian analysis. Required when `method` is `bayesian`.When `method` is omitted and the test defaults to `bayesian`, the default primary metric is `conversion_rate`,or the first metric in `metrics` that supports Bayesian analysis if `metrics` doesn&apos;t include conversion rate.If the request includes a non-empty `metrics` list, this metric must be in that list.Revenue per search requires access to revenue analytics.</summary>
+        /// <summary>Primary metric for Bayesian analysis. Required when `method` is `bayesian`.When `method` is omitted and the test defaults to `bayesian`, the default primary metric is `conversion_rate`,or the first metric in `metrics` that supports Bayesian analysis if `metrics` doesn&apos;t include conversion rate.If the request includes a non-empty `metrics` list, this metric must be in that list.User-level rates (`*_users_rate`) are the share of tracked users with at least one such search.Add-to-cart rates, purchase rates, and revenue per search require access to revenue analytics.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.PrimaryMetric? PrimaryMetric { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbTestConfiguration"/> and sets the default values.

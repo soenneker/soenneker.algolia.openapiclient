@@ -80,5 +80,69 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         #pragma warning disable CS1591
         AverageOrderValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "clicked_users_count")]
+        #pragma warning disable CS1591
+        ClickedUsersCount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "converted_users_count")]
+        #pragma warning disable CS1591
+        ConvertedUsersCount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "add_to_cart_users_count")]
+        #pragma warning disable CS1591
+        AddToCartUsersCount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "purchase_users_count")]
+        #pragma warning disable CS1591
+        PurchaseUsersCount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "users_with_no_results_count")]
+        #pragma warning disable CS1591
+        UsersWithNoResultsCount,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "clicked_users_rate")]
+        #pragma warning disable CS1591
+        ClickedUsersRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "converted_users_rate")]
+        #pragma warning disable CS1591
+        ConvertedUsersRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "add_to_cart_users_rate")]
+        #pragma warning disable CS1591
+        AddToCartUsersRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "purchase_users_rate")]
+        #pragma warning disable CS1591
+        PurchaseUsersRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "avg_click_through_rate_per_user")]
+        #pragma warning disable CS1591
+        AvgClickThroughRatePerUser,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "avg_conversion_rate_per_user")]
+        #pragma warning disable CS1591
+        AvgConversionRatePerUser,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "avg_purchase_rate_per_user")]
+        #pragma warning disable CS1591
+        AvgPurchaseRatePerUser,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "avg_add_to_cart_rate_per_user")]
+        #pragma warning disable CS1591
+        AvgAddToCartRatePerUser,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "avg_click_position_per_user")]
+        #pragma warning disable CS1591
+        AvgClickPositionPerUser,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "winsorized_revenue_per_user")]
+        #pragma warning disable CS1591
+        WinsorizedRevenuePerUser,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "winsorized_revenue_per_purchaser")]
+        #pragma warning disable CS1591
+        WinsorizedRevenuePerPurchaser,
+        #pragma warning restore CS1591
     }
 }

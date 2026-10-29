@@ -880,7 +880,8 @@
           {
             "name": "metric",
             "in": "query",
-            "description": "List of metrics to retrieve. If not specified, all metrics are returned.",
+            "description": "Metrics to retrieve, as a comma-separated list. If not specified, all metrics are returned.",
+            "explode": false,
             "schema": {
               "type": "array",
               "items": {
@@ -26333,10 +26334,14 @@
           "click_through_rate",
           "conversion_rate",
           "purchase_rate",
-          "revenue_per_search"
+          "revenue_per_search",
+          "add_to_cart_users_rate",
+          "clicked_users_rate",
+          "converted_users_rate",
+          "purchase_users_rate"
         ],
         "type": "string",
-        "description": "Primary metric for Bayesian analysis. Required when `method` is `bayesian`.\nWhen `method` is omitted and the test defaults to `bayesian`, the default primary metric is `conversion_rate`,\nor the first metric in `metrics` that supports Bayesian analysis if `metrics` doesn't include conversion rate.\nIf the request includes a non-empty `metrics` list, this metric must be in that list.\nRevenue per search requires access to revenue analytics.\n",
+        "description": "Primary metric for Bayesian analysis. Required when `method` is `bayesian`.\nWhen `method` is omitted and the test defaults to `bayesian`, the default primary metric is `conversion_rate`,\nor the first metric in `metrics` that supports Bayesian analysis if `metrics` doesn't include conversion rate.\nIf the request includes a non-empty `metrics` list, this metric must be in that list.\nUser-level rates (`*_users_rate`) are the share of tracked users with at least one such search.\nAdd-to-cart rates, purchase rates, and revenue per search require access to revenue analytics.\n",
         "example": "conversion_rate",
         "x-ms-enum": {
           "name": "PrimaryMetric",
@@ -26361,6 +26366,22 @@
             {
               "value": "revenue_per_search",
               "name": "RevenuePerSearch"
+            },
+            {
+              "value": "add_to_cart_users_rate",
+              "name": "AddToCartUsersRate"
+            },
+            {
+              "value": "clicked_users_rate",
+              "name": "ClickedUsersRate"
+            },
+            {
+              "value": "converted_users_rate",
+              "name": "ConvertedUsersRate"
+            },
+            {
+              "value": "purchase_users_rate",
+              "name": "PurchaseUsersRate"
             }
           ]
         }
@@ -26653,7 +26674,23 @@
           "average_click_position",
           "revenue",
           "revenue_per_search",
-          "average_order_value"
+          "average_order_value",
+          "clicked_users_count",
+          "converted_users_count",
+          "add_to_cart_users_count",
+          "purchase_users_count",
+          "users_with_no_results_count",
+          "clicked_users_rate",
+          "converted_users_rate",
+          "add_to_cart_users_rate",
+          "purchase_users_rate",
+          "avg_click_through_rate_per_user",
+          "avg_conversion_rate_per_user",
+          "avg_purchase_rate_per_user",
+          "avg_add_to_cart_rate_per_user",
+          "avg_click_position_per_user",
+          "winsorized_revenue_per_user",
+          "winsorized_revenue_per_purchaser"
         ],
         "type": "string",
         "x-ms-enum": {
@@ -26731,6 +26768,70 @@
             {
               "value": "average_order_value",
               "name": "AverageOrderValue"
+            },
+            {
+              "value": "clicked_users_count",
+              "name": "ClickedUsersCount"
+            },
+            {
+              "value": "converted_users_count",
+              "name": "ConvertedUsersCount"
+            },
+            {
+              "value": "add_to_cart_users_count",
+              "name": "AddToCartUsersCount"
+            },
+            {
+              "value": "purchase_users_count",
+              "name": "PurchaseUsersCount"
+            },
+            {
+              "value": "users_with_no_results_count",
+              "name": "UsersWithNoResultsCount"
+            },
+            {
+              "value": "clicked_users_rate",
+              "name": "ClickedUsersRate"
+            },
+            {
+              "value": "converted_users_rate",
+              "name": "ConvertedUsersRate"
+            },
+            {
+              "value": "add_to_cart_users_rate",
+              "name": "AddToCartUsersRate"
+            },
+            {
+              "value": "purchase_users_rate",
+              "name": "PurchaseUsersRate"
+            },
+            {
+              "value": "avg_click_through_rate_per_user",
+              "name": "AvgClickThroughRatePerUser"
+            },
+            {
+              "value": "avg_conversion_rate_per_user",
+              "name": "AvgConversionRatePerUser"
+            },
+            {
+              "value": "avg_purchase_rate_per_user",
+              "name": "AvgPurchaseRatePerUser"
+            },
+            {
+              "value": "avg_add_to_cart_rate_per_user",
+              "name": "AvgAddToCartRatePerUser"
+            },
+            {
+              "value": "avg_click_position_per_user",
+              "name": "AvgClickPositionPerUser"
+            },
+            {
+              "value": "winsorized_revenue_per_user",
+              "name": "WinsorizedRevenuePerUser"
+            },
+            {
+              "value": "winsorized_revenue_per_purchaser",
+              "name": "WinsorizedRevenuePerPurchaser"
             }
           ]
         }
