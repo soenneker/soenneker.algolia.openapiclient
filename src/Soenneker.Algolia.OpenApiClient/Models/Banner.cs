@@ -18,8 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("image") is { } nullNodeImage && nullNodeImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Image = null;
-            if (parseNode.GetChildNode("link") is { } nullNodeLink && nullNodeLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Link = null;
+            if (parseNode.GetChildNode("image") is null) { _explicitNullValueImage = default!; _explicitNullProperties?.Remove("image"); }
+            else if (parseNode.GetChildNode("image") is { } nullNodeImage && nullNodeImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Image = null;
+            if (parseNode.GetChildNode("link") is null) { _explicitNullValueLink = default!; _explicitNullProperties?.Remove("link"); }
+            else if (parseNode.GetChildNode("link") is { } nullNodeLink && nullNodeLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Link = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Image to show inside a banner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BannerImage? Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BannerImage? Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; AdditionalData?.Remove("image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.BannerImage? _explicitNullValueImage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BannerImage Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BannerImage Image { get => _explicitNullValueImage; set { _explicitNullValueImage = value; AdditionalData?.Remove("image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image"); else _explicitNullProperties?.Remove("image"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.BannerImage _explicitNullValueImage = default!;
 #endif
         /// <summary>Link for a banner defined in the Merchandising Studio.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BannerLink? Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BannerLink? Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; AdditionalData?.Remove("link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.BannerLink? _explicitNullValueLink = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BannerLink Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BannerLink Link { get => _explicitNullValueLink; set { _explicitNullValueLink = value; AdditionalData?.Remove("link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("link"); else _explicitNullProperties?.Remove("link"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.BannerLink _explicitNullValueLink = default!;
 #endif
         /// <summary>

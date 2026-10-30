@@ -18,14 +18,22 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("analyticsTags") is { } nullNodeAnalyticsTags && nullNodeAnalyticsTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalyticsTags = null;
-            if (parseNode.GetChildNode("external") is { } nullNodeExternal && nullNodeExternal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) External = null;
-            if (parseNode.GetChildNode("facets") is { } nullNodeFacets && nullNodeFacets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Facets = null;
-            if (parseNode.GetChildNode("generate") is { } nullNodeGenerate && nullNodeGenerate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Generate = null;
-            if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
-            if (parseNode.GetChildNode("minHits") is { } nullNodeMinHits && nullNodeMinHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinHits = null;
-            if (parseNode.GetChildNode("minLetters") is { } nullNodeMinLetters && nullNodeMinLetters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinLetters = null;
-            if (parseNode.GetChildNode("replicas") is { } nullNodeReplicas && nullNodeReplicas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Replicas = null;
+            if (parseNode.GetChildNode("analyticsTags") is null) { _explicitNullValueAnalyticsTags = default!; _explicitNullProperties?.Remove("analyticsTags"); }
+            else if (parseNode.GetChildNode("analyticsTags") is { } nullNodeAnalyticsTags && nullNodeAnalyticsTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalyticsTags = null;
+            if (parseNode.GetChildNode("external") is null) { _explicitNullValueExternal = default!; _explicitNullProperties?.Remove("external"); }
+            else if (parseNode.GetChildNode("external") is { } nullNodeExternal && nullNodeExternal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) External = null;
+            if (parseNode.GetChildNode("facets") is null) { _explicitNullValueFacets = default!; _explicitNullProperties?.Remove("facets"); }
+            else if (parseNode.GetChildNode("facets") is { } nullNodeFacets && nullNodeFacets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Facets = null;
+            if (parseNode.GetChildNode("generate") is null) { _explicitNullValueGenerate = default!; _explicitNullProperties?.Remove("generate"); }
+            else if (parseNode.GetChildNode("generate") is { } nullNodeGenerate && nullNodeGenerate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Generate = null;
+            if (parseNode.GetChildNode("indexName") is null) { _explicitNullValueIndexName = default!; _explicitNullProperties?.Remove("indexName"); }
+            else if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
+            if (parseNode.GetChildNode("minHits") is null) { _explicitNullValueMinHits = default!; _explicitNullProperties?.Remove("minHits"); }
+            else if (parseNode.GetChildNode("minHits") is { } nullNodeMinHits && nullNodeMinHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinHits = null;
+            if (parseNode.GetChildNode("minLetters") is null) { _explicitNullValueMinLetters = default!; _explicitNullProperties?.Remove("minLetters"); }
+            else if (parseNode.GetChildNode("minLetters") is { } nullNodeMinLetters && nullNodeMinLetters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinLetters = null;
+            if (parseNode.GetChildNode("replicas") is null) { _explicitNullValueReplicas = default!; _explicitNullProperties?.Remove("replicas"); }
+            else if (parseNode.GetChildNode("replicas") is { } nullNodeReplicas && nullNodeReplicas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Replicas = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,61 +41,61 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Analytics tags for filtering the popular searches.For more information, see [Segment your analytics data](https://www.algolia.com/doc/guides/search-analytics/guides/segments).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AnalyticsTags { get => _explicitNullValueAnalyticsTags; set { _explicitNullValueAnalyticsTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analyticsTags"); else _explicitNullProperties?.Remove("analyticsTags"); } }
+        public List<string>? AnalyticsTags { get => _explicitNullValueAnalyticsTags; set { _explicitNullValueAnalyticsTags = value; AdditionalData?.Remove("analyticsTags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analyticsTags"); else _explicitNullProperties?.Remove("analyticsTags"); } }
         private List<string>? _explicitNullValueAnalyticsTags = default!;
 #nullable restore
 #else
-        public List<string> AnalyticsTags { get => _explicitNullValueAnalyticsTags; set { _explicitNullValueAnalyticsTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analyticsTags"); else _explicitNullProperties?.Remove("analyticsTags"); } }
+        public List<string> AnalyticsTags { get => _explicitNullValueAnalyticsTags; set { _explicitNullValueAnalyticsTags = value; AdditionalData?.Remove("analyticsTags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analyticsTags"); else _explicitNullProperties?.Remove("analyticsTags"); } }
         private List<string> _explicitNullValueAnalyticsTags = default!;
 #endif
         /// <summary>Algolia indices with popular searches to use as query suggestions.Records of these indices must have these attributes:- `query`: search query which will be added as a suggestion- `count`: measure of popularity of that search queryFor example, you can export popular searches from an external analytics provider, such as Google Analytics or Adobe Analytics,and feed this data into an Algolia index.You can use this index to generate query suggestions until your Algolia Analytics has collected enough data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? External { get => _explicitNullValueExternal; set { _explicitNullValueExternal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external"); else _explicitNullProperties?.Remove("external"); } }
+        public List<string>? External { get => _explicitNullValueExternal; set { _explicitNullValueExternal = value; AdditionalData?.Remove("external"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external"); else _explicitNullProperties?.Remove("external"); } }
         private List<string>? _explicitNullValueExternal = default!;
 #nullable restore
 #else
-        public List<string> External { get => _explicitNullValueExternal; set { _explicitNullValueExternal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external"); else _explicitNullProperties?.Remove("external"); } }
+        public List<string> External { get => _explicitNullValueExternal; set { _explicitNullValueExternal = value; AdditionalData?.Remove("external"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external"); else _explicitNullProperties?.Remove("external"); } }
         private List<string> _explicitNullValueExternal = default!;
 #endif
         /// <summary>Facets to use as top categories with your suggestions.If provided, Query Suggestions adds the top facet values to each suggestion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Facet>? Facets { get => _explicitNullValueFacets; set { _explicitNullValueFacets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facets"); else _explicitNullProperties?.Remove("facets"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Facet>? Facets { get => _explicitNullValueFacets; set { _explicitNullValueFacets = value; AdditionalData?.Remove("facets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facets"); else _explicitNullProperties?.Remove("facets"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.Facet>? _explicitNullValueFacets = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Facet> Facets { get => _explicitNullValueFacets; set { _explicitNullValueFacets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facets"); else _explicitNullProperties?.Remove("facets"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Facet> Facets { get => _explicitNullValueFacets; set { _explicitNullValueFacets = value; AdditionalData?.Remove("facets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facets"); else _explicitNullProperties?.Remove("facets"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.Facet> _explicitNullValueFacets = default!;
 #endif
         /// <summary>Facets used for generating query suggestions from facet values.For example, if you set `generate: [&quot;color&quot;, &quot;brand&quot;]`, combinations from the facet values are added as query suggestions,such as &quot;blue adidas&quot;, &quot;red adidas&quot;, &quot;blue nike&quot;, &quot;red nike&quot;, etc.You can include nested lists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Generate { get => _explicitNullValueGenerate; set { _explicitNullValueGenerate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generate"); else _explicitNullProperties?.Remove("generate"); } }
+        public UntypedNode? Generate { get => _explicitNullValueGenerate; set { _explicitNullValueGenerate = value; AdditionalData?.Remove("generate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generate"); else _explicitNullProperties?.Remove("generate"); } }
         private UntypedNode? _explicitNullValueGenerate = default!;
 #nullable restore
 #else
-        public UntypedNode Generate { get => _explicitNullValueGenerate; set { _explicitNullValueGenerate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generate"); else _explicitNullProperties?.Remove("generate"); } }
+        public UntypedNode Generate { get => _explicitNullValueGenerate; set { _explicitNullValueGenerate = value; AdditionalData?.Remove("generate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generate"); else _explicitNullProperties?.Remove("generate"); } }
         private UntypedNode _explicitNullValueGenerate = default!;
 #endif
         /// <summary>Name of the Algolia index (case-sensitive) to use as source for query suggestions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string? _explicitNullValueIndexName = default!;
 #nullable restore
 #else
-        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string _explicitNullValueIndexName = default!;
 #endif
         /// <summary>Minimum number of hits required to be included as a suggestion.A search query must at least generate `minHits` search results to be included in the Query Suggestions index.</summary>
-        public int? MinHits { get => _explicitNullValueMinHits; set { _explicitNullValueMinHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minHits"); else _explicitNullProperties?.Remove("minHits"); } }
+        public int? MinHits { get => _explicitNullValueMinHits; set { _explicitNullValueMinHits = value; AdditionalData?.Remove("minHits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minHits"); else _explicitNullProperties?.Remove("minHits"); } }
         private int? _explicitNullValueMinHits = default!;
         /// <summary>Minimum letters required to be included as a suggestion.A search query must be at least `minLetters` long to be included in the Query Suggestions index.</summary>
-        public int? MinLetters { get => _explicitNullValueMinLetters; set { _explicitNullValueMinLetters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minLetters"); else _explicitNullProperties?.Remove("minLetters"); } }
+        public int? MinLetters { get => _explicitNullValueMinLetters; set { _explicitNullValueMinLetters = value; AdditionalData?.Remove("minLetters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minLetters"); else _explicitNullProperties?.Remove("minLetters"); } }
         private int? _explicitNullValueMinLetters = default!;
         /// <summary>If true, Query Suggestions uses all replica indices to find popular searches.If false, only the primary index is used.</summary>
-        public bool? Replicas { get => _explicitNullValueReplicas; set { _explicitNullValueReplicas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replicas"); else _explicitNullProperties?.Remove("replicas"); } }
+        public bool? Replicas { get => _explicitNullValueReplicas; set { _explicitNullValueReplicas = value; AdditionalData?.Remove("replicas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replicas"); else _explicitNullProperties?.Remove("replicas"); } }
         private bool? _explicitNullValueReplicas = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceIndex"/> and sets the default values.

@@ -17,8 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("currencies") is { } nullNodeCurrencies && nullNodeCurrencies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currencies = null;
-            if (parseNode.GetChildNode("dates") is { } nullNodeDates && nullNodeDates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dates = null;
+            if (parseNode.GetChildNode("currencies") is null) { _explicitNullValueCurrencies = default!; _explicitNullProperties?.Remove("currencies"); }
+            else if (parseNode.GetChildNode("currencies") is { } nullNodeCurrencies && nullNodeCurrencies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currencies = null;
+            if (parseNode.GetChildNode("dates") is null) { _explicitNullValueDates = default!; _explicitNullProperties?.Remove("dates"); }
+            else if (parseNode.GetChildNode("dates") is { } nullNodeDates && nullNodeDates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dates = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Revenue associated with this search: broken down by currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueCurrenciesProperty? Currencies { get => _explicitNullValueCurrencies; set { _explicitNullValueCurrencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencies"); else _explicitNullProperties?.Remove("currencies"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueCurrenciesProperty? Currencies { get => _explicitNullValueCurrencies; set { _explicitNullValueCurrencies = value; AdditionalData?.Remove("currencies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencies"); else _explicitNullProperties?.Remove("currencies"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueCurrenciesProperty? _explicitNullValueCurrencies = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueCurrenciesProperty Currencies { get => _explicitNullValueCurrencies; set { _explicitNullValueCurrencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencies"); else _explicitNullProperties?.Remove("currencies"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueCurrenciesProperty Currencies { get => _explicitNullValueCurrencies; set { _explicitNullValueCurrencies = value; AdditionalData?.Remove("currencies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencies"); else _explicitNullProperties?.Remove("currencies"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueCurrenciesProperty _explicitNullValueCurrencies = default!;
 #endif
         /// <summary>Daily revenue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueDatesItem>? Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueDatesItem>? Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; AdditionalData?.Remove("dates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueDatesItem>? _explicitNullValueDates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueDatesItem> Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueDatesItem> Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; AdditionalData?.Remove("dates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.GetRevenueDatesItem> _explicitNullValueDates = default!;
 #endif
         /// <summary>

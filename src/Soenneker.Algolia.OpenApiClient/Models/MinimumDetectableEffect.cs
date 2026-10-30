@@ -18,17 +18,19 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("metric") is { } nullNodeMetric && nullNodeMetric.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metric = null;
-            if (parseNode.GetChildNode("size") is { } nullNodeSize && nullNodeSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Size = null;
+            if (parseNode.GetChildNode("metric") is null) { _explicitNullValueMetric = default!; _explicitNullProperties?.Remove("metric"); }
+            else if (parseNode.GetChildNode("metric") is { } nullNodeMetric && nullNodeMetric.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metric = null;
+            if (parseNode.GetChildNode("size") is null) { _explicitNullValueSize = default!; _explicitNullProperties?.Remove("size"); }
+            else if (parseNode.GetChildNode("size") is { } nullNodeSize && nullNodeSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Size = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Metric for which you want to detect the smallest relative difference.Metrics ending in `UsersRate` are user-level rates: the share of tracked users with at least one search with a click, conversion, add-to-cart, or purchase.For these metrics, sample sizes count users instead of searches.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.EffectMetric? Metric { get => _explicitNullValueMetric; set { _explicitNullValueMetric = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metric"); else _explicitNullProperties?.Remove("metric"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.EffectMetric? Metric { get => _explicitNullValueMetric; set { _explicitNullValueMetric = value; AdditionalData?.Remove("metric"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metric"); else _explicitNullProperties?.Remove("metric"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.EffectMetric? _explicitNullValueMetric = default!;
         /// <summary>Smallest difference in an observable metric between variants.For example, to detect a 10% difference between variants, set this value to 0.1.</summary>
-        public double? Size { get => _explicitNullValueSize; set { _explicitNullValueSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size"); else _explicitNullProperties?.Remove("size"); } }
+        public double? Size { get => _explicitNullValueSize; set { _explicitNullValueSize = value; AdditionalData?.Remove("size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size"); else _explicitNullProperties?.Remove("size"); } }
         private double? _explicitNullValueSize = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.MinimumDetectableEffect"/> and sets the default values.
@@ -55,7 +57,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "metric", n => { Metric = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.EffectMetric>(); } },
+                { "metric", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.EffectMetric>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMetric = default; _explicitNullProperties?.Remove("metric"); AdditionalData["metric"] = unknown; } else { Metric = parsed; AdditionalData.Remove("metric"); } } },
                 { "size", n => { Size = n.GetDoubleValue(); } },
             };
         }

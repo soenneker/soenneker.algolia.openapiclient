@@ -18,12 +18,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("authenticationIDs") is { } nullNodeAuthenticationIDs && nullNodeAuthenticationIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationIDs = null;
-            if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("input") is { } nullNodeInput && nullNodeInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Input = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("authenticationIDs") is null) { _explicitNullValueAuthenticationIDs = default!; _explicitNullProperties?.Remove("authenticationIDs"); }
+            else if (parseNode.GetChildNode("authenticationIDs") is { } nullNodeAuthenticationIDs && nullNodeAuthenticationIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationIDs = null;
+            if (parseNode.GetChildNode("code") is null) { _explicitNullValueCode = default!; _explicitNullProperties?.Remove("code"); }
+            else if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("input") is null) { _explicitNullValueInput = default!; _explicitNullProperties?.Remove("input"); }
+            else if (parseNode.GetChildNode("input") is { } nullNodeInput && nullNodeInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Input = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,56 +37,56 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The authentications associated with the current transformation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AuthenticationIDs { get => _explicitNullValueAuthenticationIDs; set { _explicitNullValueAuthenticationIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationIDs"); else _explicitNullProperties?.Remove("authenticationIDs"); } }
+        public List<string>? AuthenticationIDs { get => _explicitNullValueAuthenticationIDs; set { _explicitNullValueAuthenticationIDs = value; AdditionalData?.Remove("authenticationIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationIDs"); else _explicitNullProperties?.Remove("authenticationIDs"); } }
         private List<string>? _explicitNullValueAuthenticationIDs = default!;
 #nullable restore
 #else
-        public List<string> AuthenticationIDs { get => _explicitNullValueAuthenticationIDs; set { _explicitNullValueAuthenticationIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationIDs"); else _explicitNullProperties?.Remove("authenticationIDs"); } }
+        public List<string> AuthenticationIDs { get => _explicitNullValueAuthenticationIDs; set { _explicitNullValueAuthenticationIDs = value; AdditionalData?.Remove("authenticationIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationIDs"); else _explicitNullProperties?.Remove("authenticationIDs"); } }
         private List<string> _explicitNullValueAuthenticationIDs = default!;
 #endif
         /// <summary>It is deprecated. Use the `input` field with proper `type` instead to specify the transformation code.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        public string? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private string? _explicitNullValueCode = default!;
 #nullable restore
 #else
-        public string Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        public string Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private string _explicitNullValueCode = default!;
 #endif
         /// <summary>A descriptive name for your transformation of what it does.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The input for the transformation, which can be either code or a no-code configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput? Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput? Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; AdditionalData?.Remove("input"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput? _explicitNullValueInput = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; AdditionalData?.Remove("input"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput _explicitNullValueInput = default!;
 #endif
         /// <summary>The uniquely identified name of your transformation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The type of transformation, which can be either &apos;code&apos; or &apos;noCode&apos;.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.TransformationType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TransformationCreate"/> and sets the default values.
@@ -112,7 +118,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput>(global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

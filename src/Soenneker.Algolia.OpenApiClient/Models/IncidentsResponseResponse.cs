@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("incidents") is { } nullNodeIncidents && nullNodeIncidents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Incidents = null;
+            if (parseNode.GetChildNode("incidents") is null) { _explicitNullValueIncidents = default!; _explicitNullProperties?.Remove("incidents"); }
+            else if (parseNode.GetChildNode("incidents") is { } nullNodeIncidents && nullNodeIncidents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Incidents = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The incidents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidentsProperty2? Incidents { get => _explicitNullValueIncidents; set { _explicitNullValueIncidents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incidents"); else _explicitNullProperties?.Remove("incidents"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidentsProperty2? Incidents { get => _explicitNullValueIncidents; set { _explicitNullValueIncidents = value; AdditionalData?.Remove("incidents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incidents"); else _explicitNullProperties?.Remove("incidents"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidentsProperty2? _explicitNullValueIncidents = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidentsProperty2 Incidents { get => _explicitNullValueIncidents; set { _explicitNullValueIncidents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incidents"); else _explicitNullProperties?.Remove("incidents"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidentsProperty2 Incidents { get => _explicitNullValueIncidents; set { _explicitNullValueIncidents = value; AdditionalData?.Remove("incidents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incidents"); else _explicitNullProperties?.Remove("incidents"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidentsProperty2 _explicitNullValueIncidents = default!;
 #endif
         /// <summary>

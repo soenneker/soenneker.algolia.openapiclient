@@ -17,9 +17,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
-            if (parseNode.GetChildNode("syncMode") is { } nullNodeSyncMode && nullNodeSyncMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyncMode = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("properties") is null) { _explicitNullValueProperties = default!; _explicitNullProperties?.Remove("properties"); }
+            else if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
+            if (parseNode.GetChildNode("syncMode") is null) { _explicitNullValueSyncMode = default!; _explicitNullProperties?.Remove("syncMode"); }
+            else if (parseNode.GetChildNode("syncMode") is { } nullNodeSyncMode && nullNodeSyncMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyncMode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The name of the stream to fetch the data from (e.g. table name).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The properties of the stream to select (e.g. column).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        public List<string>? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
         private List<string>? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public List<string> Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        public List<string> Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
         private List<string> _explicitNullValueProperties = default!;
 #endif
         /// <summary>The strategy to use to fetch the data.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.DockerStreamsSyncMode? SyncMode { get => _explicitNullValueSyncMode; set { _explicitNullValueSyncMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("syncMode"); else _explicitNullProperties?.Remove("syncMode"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.DockerStreamsSyncMode? SyncMode { get => _explicitNullValueSyncMode; set { _explicitNullValueSyncMode = value; AdditionalData?.Remove("syncMode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("syncMode"); else _explicitNullProperties?.Remove("syncMode"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.DockerStreamsSyncMode? _explicitNullValueSyncMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.DockerStreams"/> and sets the default values.
@@ -74,7 +77,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "properties", n => { Properties = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "syncMode", n => { SyncMode = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.DockerStreamsSyncMode>(); } },
+                { "syncMode", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.DockerStreamsSyncMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSyncMode = default; _explicitNullProperties?.Remove("syncMode"); AdditionalData["syncMode"] = unknown; } else { SyncMode = parsed; AdditionalData.Remove("syncMode"); } } },
             };
         }
         /// <summary>

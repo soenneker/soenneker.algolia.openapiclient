@@ -17,11 +17,16 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("features") is { } nullNodeFeatures && nullNodeFeatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Features = null;
-            if (parseNode.GetChildNode("indices") is { } nullNodeIndices && nullNodeIndices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indices = null;
-            if (parseNode.GetChildNode("personalizationReRanking") is { } nullNodePersonalizationReRanking && nullNodePersonalizationReRanking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalizationReRanking = null;
-            if (parseNode.GetChildNode("profileType") is { } nullNodeProfileType && nullNodeProfileType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileType = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("features") is null) { _explicitNullValueFeatures = default!; _explicitNullProperties?.Remove("features"); }
+            else if (parseNode.GetChildNode("features") is { } nullNodeFeatures && nullNodeFeatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Features = null;
+            if (parseNode.GetChildNode("indices") is null) { _explicitNullValueIndices = default!; _explicitNullProperties?.Remove("indices"); }
+            else if (parseNode.GetChildNode("indices") is { } nullNodeIndices && nullNodeIndices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indices = null;
+            if (parseNode.GetChildNode("personalizationReRanking") is null) { _explicitNullValuePersonalizationReRanking = default!; _explicitNullProperties?.Remove("personalizationReRanking"); }
+            else if (parseNode.GetChildNode("personalizationReRanking") is { } nullNodePersonalizationReRanking && nullNodePersonalizationReRanking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalizationReRanking = null;
+            if (parseNode.GetChildNode("profileType") is null) { _explicitNullValueProfileType = default!; _explicitNullProperties?.Remove("profileType"); }
+            else if (parseNode.GetChildNode("profileType") is { } nullNodeProfileType && nullNodeProfileType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileType = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,37 +34,37 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The features property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Features? Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Features? Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Features? _explicitNullValueFeatures = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Features Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Features Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Features _explicitNullValueFeatures = default!;
 #endif
         /// <summary>The indices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObjectIndicesItem>? Indices { get => _explicitNullValueIndices; set { _explicitNullValueIndices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indices"); else _explicitNullProperties?.Remove("indices"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObjectIndicesItem>? Indices { get => _explicitNullValueIndices; set { _explicitNullValueIndices = value; AdditionalData?.Remove("indices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indices"); else _explicitNullProperties?.Remove("indices"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObjectIndicesItem>? _explicitNullValueIndices = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObjectIndicesItem> Indices { get => _explicitNullValueIndices; set { _explicitNullValueIndices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indices"); else _explicitNullProperties?.Remove("indices"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObjectIndicesItem> Indices { get => _explicitNullValueIndices; set { _explicitNullValueIndices = value; AdditionalData?.Remove("indices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indices"); else _explicitNullProperties?.Remove("indices"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObjectIndicesItem> _explicitNullValueIndices = default!;
 #endif
         /// <summary>The impact that personalization has on the re-ranking of search results.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationReRanking? PersonalizationReRanking { get => _explicitNullValuePersonalizationReRanking; set { _explicitNullValuePersonalizationReRanking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personalizationReRanking"); else _explicitNullProperties?.Remove("personalizationReRanking"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationReRanking? PersonalizationReRanking { get => _explicitNullValuePersonalizationReRanking; set { _explicitNullValuePersonalizationReRanking = value; AdditionalData?.Remove("personalizationReRanking"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personalizationReRanking"); else _explicitNullProperties?.Remove("personalizationReRanking"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationReRanking? _explicitNullValuePersonalizationReRanking = default!;
         /// <summary>The type of user profiles to generate.Basic profiles are based on past behaviors, ensuring search results align with previous interests.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.ProfileType? ProfileType { get => _explicitNullValueProfileType; set { _explicitNullValueProfileType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profileType"); else _explicitNullProperties?.Remove("profileType"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ProfileType? ProfileType { get => _explicitNullValueProfileType; set { _explicitNullValueProfileType = value; AdditionalData?.Remove("profileType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profileType"); else _explicitNullProperties?.Remove("profileType"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ProfileType? _explicitNullValueProfileType = default!;
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationStatus? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationStatus _explicitNullValueStatus = default!;
 #endif
         /// <summary>
@@ -89,8 +94,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "features", n => { Features = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Features>(global::Soenneker.Algolia.OpenApiClient.Models.Features.CreateFromDiscriminatorValue); } },
                 { "indices", n => { Indices = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObjectIndicesItem>(global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObjectIndicesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "personalizationReRanking", n => { PersonalizationReRanking = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationReRanking>(); } },
-                { "profileType", n => { ProfileType = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ProfileType>(); } },
+                { "personalizationReRanking", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationReRanking>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePersonalizationReRanking = default; _explicitNullProperties?.Remove("personalizationReRanking"); AdditionalData["personalizationReRanking"] = unknown; } else { PersonalizationReRanking = parsed; AdditionalData.Remove("personalizationReRanking"); } } },
+                { "profileType", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ProfileType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProfileType = default; _explicitNullProperties?.Remove("profileType"); AdditionalData["profileType"] = unknown; } else { ProfileType = parsed; AdditionalData.Remove("profileType"); } } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationStatus>(global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationStatus.CreateFromDiscriminatorValue); } },
             };
         }

@@ -18,8 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("clientEmail") is { } nullNodeClientEmail && nullNodeClientEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientEmail = null;
-            if (parseNode.GetChildNode("privateKey") is { } nullNodePrivateKey && nullNodePrivateKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateKey = null;
+            if (parseNode.GetChildNode("clientEmail") is null) { _explicitNullValueClientEmail = default!; _explicitNullProperties?.Remove("clientEmail"); }
+            else if (parseNode.GetChildNode("clientEmail") is { } nullNodeClientEmail && nullNodeClientEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientEmail = null;
+            if (parseNode.GetChildNode("privateKey") is null) { _explicitNullValuePrivateKey = default!; _explicitNullProperties?.Remove("privateKey"); }
+            else if (parseNode.GetChildNode("privateKey") is { } nullNodePrivateKey && nullNodePrivateKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrivateKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Email address of the Google service account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientEmail { get => _explicitNullValueClientEmail; set { _explicitNullValueClientEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientEmail"); else _explicitNullProperties?.Remove("clientEmail"); } }
+        public string? ClientEmail { get => _explicitNullValueClientEmail; set { _explicitNullValueClientEmail = value; AdditionalData?.Remove("clientEmail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientEmail"); else _explicitNullProperties?.Remove("clientEmail"); } }
         private string? _explicitNullValueClientEmail = default!;
 #nullable restore
 #else
-        public string ClientEmail { get => _explicitNullValueClientEmail; set { _explicitNullValueClientEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientEmail"); else _explicitNullProperties?.Remove("clientEmail"); } }
+        public string ClientEmail { get => _explicitNullValueClientEmail; set { _explicitNullValueClientEmail = value; AdditionalData?.Remove("clientEmail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientEmail"); else _explicitNullProperties?.Remove("clientEmail"); } }
         private string _explicitNullValueClientEmail = default!;
 #endif
         /// <summary>Private key of the Google service account. This field is `null` in the API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrivateKey { get => _explicitNullValuePrivateKey; set { _explicitNullValuePrivateKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateKey"); else _explicitNullProperties?.Remove("privateKey"); } }
+        public string? PrivateKey { get => _explicitNullValuePrivateKey; set { _explicitNullValuePrivateKey = value; AdditionalData?.Remove("privateKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateKey"); else _explicitNullProperties?.Remove("privateKey"); } }
         private string? _explicitNullValuePrivateKey = default!;
 #nullable restore
 #else
-        public string PrivateKey { get => _explicitNullValuePrivateKey; set { _explicitNullValuePrivateKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateKey"); else _explicitNullProperties?.Remove("privateKey"); } }
+        public string PrivateKey { get => _explicitNullValuePrivateKey; set { _explicitNullValuePrivateKey = value; AdditionalData?.Remove("privateKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("privateKey"); else _explicitNullProperties?.Remove("privateKey"); } }
         private string _explicitNullValuePrivateKey = default!;
 #endif
         /// <summary>

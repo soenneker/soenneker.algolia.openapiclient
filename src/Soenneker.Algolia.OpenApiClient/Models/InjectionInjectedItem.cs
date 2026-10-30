@@ -17,11 +17,16 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
-            if (parseNode.GetChildNode("length") is { } nullNodeLength && nullNodeLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Length = null;
-            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
-            if (parseNode.GetChildNode("position") is { } nullNodePosition && nullNodePosition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Position = null;
-            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("key") is null) { _explicitNullValueKey = default!; _explicitNullProperties?.Remove("key"); }
+            else if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
+            if (parseNode.GetChildNode("length") is null) { _explicitNullValueLength = default!; _explicitNullProperties?.Remove("length"); }
+            else if (parseNode.GetChildNode("length") is { } nullNodeLength && nullNodeLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Length = null;
+            if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
+            else if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("position") is null) { _explicitNullValuePosition = default!; _explicitNullProperties?.Remove("position"); }
+            else if (parseNode.GetChildNode("position") is { } nullNodePosition && nullNodePosition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Position = null;
+            if (parseNode.GetChildNode("source") is null) { _explicitNullValueSource = default!; _explicitNullProperties?.Remove("source"); }
+            else if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,37 +34,37 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>injected Item unique identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private string? _explicitNullValueKey = default!;
 #nullable restore
 #else
-        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private string _explicitNullValueKey = default!;
 #endif
         /// <summary>The length property</summary>
-        public int? Length { get => _explicitNullValueLength; set { _explicitNullValueLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("length"); else _explicitNullProperties?.Remove("length"); } }
+        public int? Length { get => _explicitNullValueLength; set { _explicitNullValueLength = value; AdditionalData?.Remove("length"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("length"); else _explicitNullProperties?.Remove("length"); } }
         private int? _explicitNullValueLength = default!;
         /// <summary>Used to add metadata to the results of the injectedItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The position property</summary>
-        public int? Position { get => _explicitNullValuePosition; set { _explicitNullValuePosition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position"); else _explicitNullProperties?.Remove("position"); } }
+        public int? Position { get => _explicitNullValuePosition; set { _explicitNullValuePosition = value; AdditionalData?.Remove("position"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position"); else _explicitNullProperties?.Remove("position"); } }
         private int? _explicitNullValuePosition = default!;
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSource? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSource Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSource Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemSource _explicitNullValueSource = default!;
 #endif
         /// <summary>

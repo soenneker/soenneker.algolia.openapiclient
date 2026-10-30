@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("streams") is { } nullNodeStreams && nullNodeStreams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Streams = null;
+            if (parseNode.GetChildNode("streams") is null) { _explicitNullValueStreams = default!; _explicitNullProperties?.Remove("streams"); }
+            else if (parseNode.GetChildNode("streams") is { } nullNodeStreams && nullNodeStreams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Streams = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The streams property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.DockerStreams>? Streams { get => _explicitNullValueStreams; set { _explicitNullValueStreams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("streams"); else _explicitNullProperties?.Remove("streams"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.DockerStreams>? Streams { get => _explicitNullValueStreams; set { _explicitNullValueStreams = value; AdditionalData?.Remove("streams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("streams"); else _explicitNullProperties?.Remove("streams"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.DockerStreams>? _explicitNullValueStreams = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.DockerStreams> Streams { get => _explicitNullValueStreams; set { _explicitNullValueStreams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("streams"); else _explicitNullProperties?.Remove("streams"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.DockerStreams> Streams { get => _explicitNullValueStreams; set { _explicitNullValueStreams = value; AdditionalData?.Remove("streams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("streams"); else _explicitNullProperties?.Remove("streams"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.DockerStreams> _explicitNullValueStreams = default!;
 #endif
         /// <summary>

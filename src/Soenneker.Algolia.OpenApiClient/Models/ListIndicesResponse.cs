@@ -17,8 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("items") is { } nullNodeItems && nullNodeItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Items = null;
-            if (parseNode.GetChildNode("nbPages") is { } nullNodeNbPages && nullNodeNbPages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbPages = null;
+            if (parseNode.GetChildNode("items") is null) { _explicitNullValueItems = default!; _explicitNullProperties?.Remove("items"); }
+            else if (parseNode.GetChildNode("items") is { } nullNodeItems && nullNodeItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Items = null;
+            if (parseNode.GetChildNode("nbPages") is null) { _explicitNullValueNbPages = default!; _explicitNullProperties?.Remove("nbPages"); }
+            else if (parseNode.GetChildNode("nbPages") is { } nullNodeNbPages && nullNodeNbPages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbPages = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>All indices in your Algolia application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndex>? Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndex>? Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; AdditionalData?.Remove("items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndex>? _explicitNullValueItems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndex> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndex> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; AdditionalData?.Remove("items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndex> _explicitNullValueItems = default!;
 #endif
         /// <summary>Number of pages.</summary>
-        public int? NbPages { get => _explicitNullValueNbPages; set { _explicitNullValueNbPages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbPages"); else _explicitNullProperties?.Remove("nbPages"); } }
+        public int? NbPages { get => _explicitNullValueNbPages; set { _explicitNullValueNbPages = value; AdditionalData?.Remove("nbPages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbPages"); else _explicitNullProperties?.Remove("nbPages"); } }
         private int? _explicitNullValueNbPages = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ListIndicesResponse"/> and sets the default values.

@@ -18,21 +18,24 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("aiPerso") is { } nullNodeAiPerso && nullNodeAiPerso.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiPerso = null;
-            if (parseNode.GetChildNode("dynamicReRanking") is { } nullNodeDynamicReRanking && nullNodeDynamicReRanking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicReRanking = null;
-            if (parseNode.GetChildNode("multiSignalRanking") is { } nullNodeMultiSignalRanking && nullNodeMultiSignalRanking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MultiSignalRanking = null;
+            if (parseNode.GetChildNode("aiPerso") is null) { _explicitNullValueAiPerso = default!; _explicitNullProperties?.Remove("aiPerso"); }
+            else if (parseNode.GetChildNode("aiPerso") is { } nullNodeAiPerso && nullNodeAiPerso.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiPerso = null;
+            if (parseNode.GetChildNode("dynamicReRanking") is null) { _explicitNullValueDynamicReRanking = default!; _explicitNullProperties?.Remove("dynamicReRanking"); }
+            else if (parseNode.GetChildNode("dynamicReRanking") is { } nullNodeDynamicReRanking && nullNodeDynamicReRanking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicReRanking = null;
+            if (parseNode.GetChildNode("multiSignalRanking") is null) { _explicitNullValueMultiSignalRanking = default!; _explicitNullProperties?.Remove("multiSignalRanking"); }
+            else if (parseNode.GetChildNode("multiSignalRanking") is { } nullNodeMultiSignalRanking && nullNodeMultiSignalRanking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MultiSignalRanking = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to apply AI Personalization feature filters.</summary>
-        public bool? AiPerso { get => _explicitNullValueAiPerso; set { _explicitNullValueAiPerso = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiPerso"); else _explicitNullProperties?.Remove("aiPerso"); } }
+        public bool? AiPerso { get => _explicitNullValueAiPerso; set { _explicitNullValueAiPerso = value; AdditionalData?.Remove("aiPerso"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiPerso"); else _explicitNullProperties?.Remove("aiPerso"); } }
         private bool? _explicitNullValueAiPerso = default!;
         /// <summary>Whether to apply Dynamic Re-Ranking feature filters.</summary>
-        public bool? DynamicReRanking { get => _explicitNullValueDynamicReRanking; set { _explicitNullValueDynamicReRanking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamicReRanking"); else _explicitNullProperties?.Remove("dynamicReRanking"); } }
+        public bool? DynamicReRanking { get => _explicitNullValueDynamicReRanking; set { _explicitNullValueDynamicReRanking = value; AdditionalData?.Remove("dynamicReRanking"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamicReRanking"); else _explicitNullProperties?.Remove("dynamicReRanking"); } }
         private bool? _explicitNullValueDynamicReRanking = default!;
         /// <summary>Whether to apply Multi-Signal Re-Ranking feature filters.</summary>
-        public bool? MultiSignalRanking { get => _explicitNullValueMultiSignalRanking; set { _explicitNullValueMultiSignalRanking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multiSignalRanking"); else _explicitNullProperties?.Remove("multiSignalRanking"); } }
+        public bool? MultiSignalRanking { get => _explicitNullValueMultiSignalRanking; set { _explicitNullValueMultiSignalRanking = value; AdditionalData?.Remove("multiSignalRanking"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multiSignalRanking"); else _explicitNullProperties?.Remove("multiSignalRanking"); } }
         private bool? _explicitNullValueMultiSignalRanking = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.FeatureFilters"/> and sets the default values.

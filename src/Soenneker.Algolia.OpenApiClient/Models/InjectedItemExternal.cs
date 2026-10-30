@@ -17,9 +17,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("index") is { } nullNodeIndex && nullNodeIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Index = null;
-            if (parseNode.GetChildNode("ordering") is { } nullNodeOrdering && nullNodeOrdering.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ordering = null;
-            if (parseNode.GetChildNode("params") is { } nullNodeParams && nullNodeParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Params = null;
+            if (parseNode.GetChildNode("index") is null) { _explicitNullValueIndex = default!; _explicitNullProperties?.Remove("index"); }
+            else if (parseNode.GetChildNode("index") is { } nullNodeIndex && nullNodeIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Index = null;
+            if (parseNode.GetChildNode("ordering") is null) { _explicitNullValueOrdering = default!; _explicitNullProperties?.Remove("ordering"); }
+            else if (parseNode.GetChildNode("ordering") is { } nullNodeOrdering && nullNodeOrdering.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ordering = null;
+            if (parseNode.GetChildNode("params") is null) { _explicitNullValueParams = default!; _explicitNullProperties?.Remove("params"); }
+            else if (parseNode.GetChildNode("params") is { } nullNodeParams && nullNodeParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Params = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,24 +30,24 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Algolia index used to retrieve records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
+        public string? Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; AdditionalData?.Remove("index"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
         private string? _explicitNullValueIndex = default!;
 #nullable restore
 #else
-        public string Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
+        public string Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; AdditionalData?.Remove("index"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
         private string _explicitNullValueIndex = default!;
 #endif
         /// <summary>Ordering to apply on the injected items coming from the external source. &apos;default&apos; means the items will be ordered as they are in the index (natural relevance) in the smart group. &apos;userDefined&apos; means the order in which the objectIDs are provided in the run request payload will be preserved in the smart group.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.ExternalOrdering? Ordering { get => _explicitNullValueOrdering; set { _explicitNullValueOrdering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ordering"); else _explicitNullProperties?.Remove("ordering"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ExternalOrdering? Ordering { get => _explicitNullValueOrdering; set { _explicitNullValueOrdering = value; AdditionalData?.Remove("ordering"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ordering"); else _explicitNullProperties?.Remove("ordering"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ExternalOrdering? _explicitNullValueOrdering = default!;
         /// <summary>The params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters? Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters? Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; AdditionalData?.Remove("params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters? _explicitNullValueParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; AdditionalData?.Remove("params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters _explicitNullValueParams = default!;
 #endif
         /// <summary>
@@ -73,7 +76,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "index", n => { Index = n.GetStringValue(); } },
-                { "ordering", n => { Ordering = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ExternalOrdering>(); } },
+                { "ordering", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ExternalOrdering>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOrdering = default; _explicitNullProperties?.Remove("ordering"); AdditionalData["ordering"] = unknown; } else { Ordering = parsed; AdditionalData.Remove("ordering"); } } },
                 { "params", n => { Params = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters>(global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters.CreateFromDiscriminatorValue); } },
             };
         }

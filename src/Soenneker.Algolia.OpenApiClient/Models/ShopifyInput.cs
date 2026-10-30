@@ -18,8 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("market") is { } nullNodeMarket && nullNodeMarket.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Market = null;
-            if (parseNode.GetChildNode("metafields") is { } nullNodeMetafields && nullNodeMetafields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metafields = null;
+            if (parseNode.GetChildNode("market") is null) { _explicitNullValueMarket = default!; _explicitNullProperties?.Remove("market"); }
+            else if (parseNode.GetChildNode("market") is { } nullNodeMarket && nullNodeMarket.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Market = null;
+            if (parseNode.GetChildNode("metafields") is null) { _explicitNullValueMetafields = default!; _explicitNullProperties?.Remove("metafields"); }
+            else if (parseNode.GetChildNode("metafields") is { } nullNodeMetafields && nullNodeMetafields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metafields = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Represents a market in Shopify.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ShopifyMarket? Market { get => _explicitNullValueMarket; set { _explicitNullValueMarket = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("market"); else _explicitNullProperties?.Remove("market"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ShopifyMarket? Market { get => _explicitNullValueMarket; set { _explicitNullValueMarket = value; AdditionalData?.Remove("market"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("market"); else _explicitNullProperties?.Remove("market"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ShopifyMarket? _explicitNullValueMarket = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ShopifyMarket Market { get => _explicitNullValueMarket; set { _explicitNullValueMarket = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("market"); else _explicitNullProperties?.Remove("market"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ShopifyMarket Market { get => _explicitNullValueMarket; set { _explicitNullValueMarket = value; AdditionalData?.Remove("market"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("market"); else _explicitNullProperties?.Remove("market"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ShopifyMarket _explicitNullValueMarket = default!;
 #endif
         /// <summary>The metafields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ShopifyMetafield>? Metafields { get => _explicitNullValueMetafields; set { _explicitNullValueMetafields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metafields"); else _explicitNullProperties?.Remove("metafields"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ShopifyMetafield>? Metafields { get => _explicitNullValueMetafields; set { _explicitNullValueMetafields = value; AdditionalData?.Remove("metafields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metafields"); else _explicitNullProperties?.Remove("metafields"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.ShopifyMetafield>? _explicitNullValueMetafields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ShopifyMetafield> Metafields { get => _explicitNullValueMetafields; set { _explicitNullValueMetafields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metafields"); else _explicitNullProperties?.Remove("metafields"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ShopifyMetafield> Metafields { get => _explicitNullValueMetafields; set { _explicitNullValueMetafields = value; AdditionalData?.Remove("metafields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metafields"); else _explicitNullProperties?.Remove("metafields"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.ShopifyMetafield> _explicitNullValueMetafields = default!;
 #endif
         /// <summary>

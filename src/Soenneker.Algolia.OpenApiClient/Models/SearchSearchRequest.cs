@@ -17,8 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("requests") is { } nullNodeRequests && nullNodeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requests = null;
-            if (parseNode.GetChildNode("strategy") is { } nullNodeStrategy && nullNodeStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Strategy = null;
+            if (parseNode.GetChildNode("requests") is null) { _explicitNullValueRequests = default!; _explicitNullProperties?.Remove("requests"); }
+            else if (parseNode.GetChildNode("requests") is { } nullNodeRequests && nullNodeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requests = null;
+            if (parseNode.GetChildNode("strategy") is null) { _explicitNullValueStrategy = default!; _explicitNullProperties?.Remove("strategy"); }
+            else if (parseNode.GetChildNode("strategy") is { } nullNodeStrategy && nullNodeStrategy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Strategy = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The requests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery2>? Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery2>? Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; AdditionalData?.Remove("requests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery2>? _explicitNullValueRequests = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery2> Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery2> Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; AdditionalData?.Remove("requests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery2> _explicitNullValueRequests = default!;
 #endif
         /// <summary>Strategy for multiple search queries:- `none`. Run all queries.- `stopIfEnoughMatches`. Run the queries one by one, stopping as soon as a query matches at least the `hitsPerPage` number of results.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchStrategy? Strategy { get => _explicitNullValueStrategy; set { _explicitNullValueStrategy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strategy"); else _explicitNullProperties?.Remove("strategy"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchStrategy? Strategy { get => _explicitNullValueStrategy; set { _explicitNullValueStrategy = value; AdditionalData?.Remove("strategy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strategy"); else _explicitNullProperties?.Remove("strategy"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SearchStrategy? _explicitNullValueStrategy = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSearchRequest"/> and sets the default values.
@@ -62,7 +64,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "requests", n => { Requests = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery2>(global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery2.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "strategy", n => { Strategy = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchStrategy>(); } },
+                { "strategy", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchStrategy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStrategy = default; _explicitNullProperties?.Remove("strategy"); AdditionalData["strategy"] = unknown; } else { Strategy = parsed; AdditionalData.Remove("strategy"); } } },
             };
         }
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("beforeIndexPublishing") is { } nullNodeBeforeIndexPublishing && nullNodeBeforeIndexPublishing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BeforeIndexPublishing = null;
+            if (parseNode.GetChildNode("beforeIndexPublishing") is null) { _explicitNullValueBeforeIndexPublishing = default!; _explicitNullProperties?.Remove("beforeIndexPublishing"); }
+            else if (parseNode.GetChildNode("beforeIndexPublishing") is { } nullNodeBeforeIndexPublishing && nullNodeBeforeIndexPublishing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BeforeIndexPublishing = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Checks triggered after the crawl finishes but before the records are added to the Algolia index.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BeforeIndexPublishing? BeforeIndexPublishing { get => _explicitNullValueBeforeIndexPublishing; set { _explicitNullValueBeforeIndexPublishing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beforeIndexPublishing"); else _explicitNullProperties?.Remove("beforeIndexPublishing"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BeforeIndexPublishing? BeforeIndexPublishing { get => _explicitNullValueBeforeIndexPublishing; set { _explicitNullValueBeforeIndexPublishing = value; AdditionalData?.Remove("beforeIndexPublishing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beforeIndexPublishing"); else _explicitNullProperties?.Remove("beforeIndexPublishing"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.BeforeIndexPublishing? _explicitNullValueBeforeIndexPublishing = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BeforeIndexPublishing BeforeIndexPublishing { get => _explicitNullValueBeforeIndexPublishing; set { _explicitNullValueBeforeIndexPublishing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beforeIndexPublishing"); else _explicitNullProperties?.Remove("beforeIndexPublishing"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BeforeIndexPublishing BeforeIndexPublishing { get => _explicitNullValueBeforeIndexPublishing; set { _explicitNullValueBeforeIndexPublishing = value; AdditionalData?.Remove("beforeIndexPublishing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beforeIndexPublishing"); else _explicitNullProperties?.Remove("beforeIndexPublishing"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.BeforeIndexPublishing _explicitNullValueBeforeIndexPublishing = default!;
 #endif
         /// <summary>

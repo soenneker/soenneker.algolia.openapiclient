@@ -18,38 +18,42 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("adBlock") is { } nullNodeAdBlock && nullNodeAdBlock.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdBlock = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("patterns") is { } nullNodePatterns && nullNodePatterns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Patterns = null;
-            if (parseNode.GetChildNode("waitTime") is { } nullNodeWaitTime && nullNodeWaitTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitTime = null;
+            if (parseNode.GetChildNode("adBlock") is null) { _explicitNullValueAdBlock = default!; _explicitNullProperties?.Remove("adBlock"); }
+            else if (parseNode.GetChildNode("adBlock") is { } nullNodeAdBlock && nullNodeAdBlock.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdBlock = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("patterns") is null) { _explicitNullValuePatterns = default!; _explicitNullProperties?.Remove("patterns"); }
+            else if (parseNode.GetChildNode("patterns") is { } nullNodePatterns && nullNodePatterns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Patterns = null;
+            if (parseNode.GetChildNode("waitTime") is null) { _explicitNullValueWaitTime = default!; _explicitNullProperties?.Remove("waitTime"); }
+            else if (parseNode.GetChildNode("waitTime") is { } nullNodeWaitTime && nullNodeWaitTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitTime = null;
         }
 
         /// <summary>Whether to use the Crawler&apos;s ad blocker.It blocks most ads and tracking scripts but can break some sites.</summary>
-        public bool? AdBlock { get => _explicitNullValueAdBlock; set { _explicitNullValueAdBlock = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adBlock"); else _explicitNullProperties?.Remove("adBlock"); } }
+        public bool? AdBlock { get => _explicitNullValueAdBlock; set { _explicitNullValueAdBlock = value; AdditionalData?.Remove("adBlock"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adBlock"); else _explicitNullProperties?.Remove("adBlock"); } }
         private bool? _explicitNullValueAdBlock = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to enable JavaScript rendering.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>URLs or URL patterns to render.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Patterns { get => _explicitNullValuePatterns; set { _explicitNullValuePatterns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patterns"); else _explicitNullProperties?.Remove("patterns"); } }
+        public List<string>? Patterns { get => _explicitNullValuePatterns; set { _explicitNullValuePatterns = value; AdditionalData?.Remove("patterns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patterns"); else _explicitNullProperties?.Remove("patterns"); } }
         private List<string>? _explicitNullValuePatterns = default!;
 #nullable restore
 #else
-        public List<string> Patterns { get => _explicitNullValuePatterns; set { _explicitNullValuePatterns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patterns"); else _explicitNullProperties?.Remove("patterns"); } }
+        public List<string> Patterns { get => _explicitNullValuePatterns; set { _explicitNullValuePatterns = value; AdditionalData?.Remove("patterns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patterns"); else _explicitNullProperties?.Remove("patterns"); } }
         private List<string> _explicitNullValuePatterns = default!;
 #endif
         /// <summary>Timeout for the HTTP request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.WaitTime? WaitTime { get => _explicitNullValueWaitTime; set { _explicitNullValueWaitTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitTime"); else _explicitNullProperties?.Remove("waitTime"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.WaitTime? WaitTime { get => _explicitNullValueWaitTime; set { _explicitNullValueWaitTime = value; AdditionalData?.Remove("waitTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitTime"); else _explicitNullProperties?.Remove("waitTime"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.WaitTime? _explicitNullValueWaitTime = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.WaitTime WaitTime { get => _explicitNullValueWaitTime; set { _explicitNullValueWaitTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitTime"); else _explicitNullProperties?.Remove("waitTime"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.WaitTime WaitTime { get => _explicitNullValueWaitTime; set { _explicitNullValueWaitTime = value; AdditionalData?.Remove("waitTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitTime"); else _explicitNullProperties?.Remove("waitTime"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.WaitTime _explicitNullValueWaitTime = default!;
 #endif
         /// <summary>

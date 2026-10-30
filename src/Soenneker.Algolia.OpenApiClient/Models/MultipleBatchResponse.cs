@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("taskID") is { } nullNodeTaskID && nullNodeTaskID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaskID = null;
+            if (parseNode.GetChildNode("taskID") is null) { _explicitNullValueTaskID = default!; _explicitNullProperties?.Remove("taskID"); }
+            else if (parseNode.GetChildNode("taskID") is { } nullNodeTaskID && nullNodeTaskID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaskID = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Task IDs. One for each index.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.MultipleBatchResponseTaskIdProperty? TaskID { get => _explicitNullValueTaskID; set { _explicitNullValueTaskID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskID"); else _explicitNullProperties?.Remove("taskID"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MultipleBatchResponseTaskIdProperty? TaskID { get => _explicitNullValueTaskID; set { _explicitNullValueTaskID = value; AdditionalData?.Remove("taskID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskID"); else _explicitNullProperties?.Remove("taskID"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.MultipleBatchResponseTaskIdProperty? _explicitNullValueTaskID = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.MultipleBatchResponseTaskIdProperty TaskID { get => _explicitNullValueTaskID; set { _explicitNullValueTaskID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskID"); else _explicitNullProperties?.Remove("taskID"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MultipleBatchResponseTaskIdProperty TaskID { get => _explicitNullValueTaskID; set { _explicitNullValueTaskID = value; AdditionalData?.Remove("taskID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskID"); else _explicitNullProperties?.Remove("taskID"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.MultipleBatchResponseTaskIdProperty _explicitNullValueTaskID = default!;
 #endif
         /// <summary>

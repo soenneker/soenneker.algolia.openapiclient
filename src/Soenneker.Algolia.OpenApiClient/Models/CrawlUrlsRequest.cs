@@ -17,23 +17,25 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("save") is { } nullNodeSave && nullNodeSave.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Save = null;
-            if (parseNode.GetChildNode("urls") is { } nullNodeUrls && nullNodeUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Urls = null;
+            if (parseNode.GetChildNode("save") is null) { _explicitNullValueSave = default!; _explicitNullProperties?.Remove("save"); }
+            else if (parseNode.GetChildNode("save") is { } nullNodeSave && nullNodeSave.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Save = null;
+            if (parseNode.GetChildNode("urls") is null) { _explicitNullValueUrls = default!; _explicitNullProperties?.Remove("urls"); }
+            else if (parseNode.GetChildNode("urls") is { } nullNodeUrls && nullNodeUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Urls = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the specified URLs should be added to the `extraURLs` property of the crawler configuration.If unspecified, the URLs are added to the `extraUrls` field only if they haven&apos;t been indexed during the last reindex.</summary>
-        public bool? Save { get => _explicitNullValueSave; set { _explicitNullValueSave = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("save"); else _explicitNullProperties?.Remove("save"); } }
+        public bool? Save { get => _explicitNullValueSave; set { _explicitNullValueSave = value; AdditionalData?.Remove("save"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("save"); else _explicitNullProperties?.Remove("save"); } }
         private bool? _explicitNullValueSave = default!;
         /// <summary>URLs to crawl.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        public List<string>? Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; AdditionalData?.Remove("urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
         private List<string>? _explicitNullValueUrls = default!;
 #nullable restore
 #else
-        public List<string> Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        public List<string> Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; AdditionalData?.Remove("urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
         private List<string> _explicitNullValueUrls = default!;
 #endif
         /// <summary>

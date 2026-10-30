@@ -17,23 +17,25 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("abTestID") is { } nullNodeAbTestID && nullNodeAbTestID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbTestID = null;
-            if (parseNode.GetChildNode("variants") is { } nullNodeVariants && nullNodeVariants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Variants = null;
+            if (parseNode.GetChildNode("abTestID") is null) { _explicitNullValueAbTestID = default!; _explicitNullProperties?.Remove("abTestID"); }
+            else if (parseNode.GetChildNode("abTestID") is { } nullNodeAbTestID && nullNodeAbTestID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbTestID = null;
+            if (parseNode.GetChildNode("variants") is null) { _explicitNullValueVariants = default!; _explicitNullProperties?.Remove("variants"); }
+            else if (parseNode.GetChildNode("variants") is { } nullNodeVariants && nullNodeVariants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Variants = null;
         }
 
         /// <summary>Unique A/B test identifier.</summary>
-        public int? AbTestID { get => _explicitNullValueAbTestID; set { _explicitNullValueAbTestID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abTestID"); else _explicitNullProperties?.Remove("abTestID"); } }
+        public int? AbTestID { get => _explicitNullValueAbTestID; set { _explicitNullValueAbTestID = value; AdditionalData?.Remove("abTestID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abTestID"); else _explicitNullProperties?.Remove("abTestID"); } }
         private int? _explicitNullValueAbTestID = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A/B test timeseries variants.The first variant is your _control_ index, typically your production index.All of the additional variants are indexes with changed settings that you want to test against the control.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesVariant>? Variants { get => _explicitNullValueVariants; set { _explicitNullValueVariants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variants"); else _explicitNullProperties?.Remove("variants"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesVariant>? Variants { get => _explicitNullValueVariants; set { _explicitNullValueVariants = value; AdditionalData?.Remove("variants"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variants"); else _explicitNullProperties?.Remove("variants"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesVariant>? _explicitNullValueVariants = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesVariant> Variants { get => _explicitNullValueVariants; set { _explicitNullValueVariants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variants"); else _explicitNullProperties?.Remove("variants"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesVariant> Variants { get => _explicitNullValueVariants; set { _explicitNullValueVariants = value; AdditionalData?.Remove("variants"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variants"); else _explicitNullProperties?.Remove("variants"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesVariant> _explicitNullValueVariants = default!;
 #endif
         /// <summary>

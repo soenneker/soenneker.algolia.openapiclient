@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("realtime") is { } nullNodeRealtime && nullNodeRealtime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Realtime = null;
+            if (parseNode.GetChildNode("realtime") is null) { _explicitNullValueRealtime = default!; _explicitNullProperties?.Remove("realtime"); }
+            else if (parseNode.GetChildNode("realtime") is { } nullNodeRealtime && nullNodeRealtime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Realtime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The realtime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Realtime? Realtime { get => _explicitNullValueRealtime; set { _explicitNullValueRealtime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("realtime"); else _explicitNullProperties?.Remove("realtime"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Realtime? Realtime { get => _explicitNullValueRealtime; set { _explicitNullValueRealtime = value; AdditionalData?.Remove("realtime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("realtime"); else _explicitNullProperties?.Remove("realtime"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Realtime? _explicitNullValueRealtime = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Realtime Realtime { get => _explicitNullValueRealtime; set { _explicitNullValueRealtime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("realtime"); else _explicitNullProperties?.Remove("realtime"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Realtime Realtime { get => _explicitNullValueRealtime; set { _explicitNullValueRealtime = value; AdditionalData?.Remove("realtime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("realtime"); else _explicitNullProperties?.Remove("realtime"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Realtime _explicitNullValueRealtime = default!;
 #endif
         /// <summary>

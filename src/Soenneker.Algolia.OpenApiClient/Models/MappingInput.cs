@@ -18,24 +18,26 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
-            if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
+            if (parseNode.GetChildNode("actions") is null) { _explicitNullValueActions = default!; _explicitNullProperties?.Remove("actions"); }
+            else if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
+            if (parseNode.GetChildNode("format") is null) { _explicitNullValueFormat = default!; _explicitNullProperties?.Remove("format"); }
+            else if (parseNode.GetChildNode("format") is { } nullNodeFormat && nullNodeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Format = null;
         }
 
         /// <summary>The actions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.MappingKitAction>? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.MappingKitAction>? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; AdditionalData?.Remove("actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.MappingKitAction>? _explicitNullValueActions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.MappingKitAction> Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.MappingKitAction> Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; AdditionalData?.Remove("actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.MappingKitAction> _explicitNullValueActions = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Mapping format schema.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.MappingFormatSchema? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MappingFormatSchema? Format { get => _explicitNullValueFormat; set { _explicitNullValueFormat = value; AdditionalData?.Remove("format"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("format"); else _explicitNullProperties?.Remove("format"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.MappingFormatSchema? _explicitNullValueFormat = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.MappingInput"/> and sets the default values.
@@ -63,7 +65,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.MappingKitAction>(global::Soenneker.Algolia.OpenApiClient.Models.MappingKitAction.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.MappingFormatSchema>(); } },
+                { "format", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.MappingFormatSchema>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFormat = default; _explicitNullProperties?.Remove("format"); AdditionalData["format"] = unknown; } else { Format = parsed; AdditionalData.Remove("format"); } } },
             };
         }
         /// <summary>

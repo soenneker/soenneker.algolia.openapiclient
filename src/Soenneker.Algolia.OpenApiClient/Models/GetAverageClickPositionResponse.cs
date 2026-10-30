@@ -17,27 +17,30 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("average") is { } nullNodeAverage && nullNodeAverage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Average = null;
-            if (parseNode.GetChildNode("clickCount") is { } nullNodeClickCount && nullNodeClickCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickCount = null;
-            if (parseNode.GetChildNode("dates") is { } nullNodeDates && nullNodeDates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dates = null;
+            if (parseNode.GetChildNode("average") is null) { _explicitNullValueAverage = default!; _explicitNullProperties?.Remove("average"); }
+            else if (parseNode.GetChildNode("average") is { } nullNodeAverage && nullNodeAverage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Average = null;
+            if (parseNode.GetChildNode("clickCount") is null) { _explicitNullValueClickCount = default!; _explicitNullProperties?.Remove("clickCount"); }
+            else if (parseNode.GetChildNode("clickCount") is { } nullNodeClickCount && nullNodeClickCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickCount = null;
+            if (parseNode.GetChildNode("dates") is null) { _explicitNullValueDates = default!; _explicitNullProperties?.Remove("dates"); }
+            else if (parseNode.GetChildNode("dates") is { } nullNodeDates && nullNodeDates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dates = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Average position of a clicked search result in the list of search results.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.</summary>
-        public double? Average { get => _explicitNullValueAverage; set { _explicitNullValueAverage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average"); else _explicitNullProperties?.Remove("average"); } }
+        public double? Average { get => _explicitNullValueAverage; set { _explicitNullValueAverage = value; AdditionalData?.Remove("average"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average"); else _explicitNullProperties?.Remove("average"); } }
         private double? _explicitNullValueAverage = default!;
         /// <summary>Number of clicks associated with this search.</summary>
-        public int? ClickCount { get => _explicitNullValueClickCount; set { _explicitNullValueClickCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clickCount"); else _explicitNullProperties?.Remove("clickCount"); } }
+        public int? ClickCount { get => _explicitNullValueClickCount; set { _explicitNullValueClickCount = value; AdditionalData?.Remove("clickCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clickCount"); else _explicitNullProperties?.Remove("clickCount"); } }
         private int? _explicitNullValueClickCount = default!;
         /// <summary>Daily average click positions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetAverageClickPositionResponseDatesItem>? Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetAverageClickPositionResponseDatesItem>? Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; AdditionalData?.Remove("dates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.GetAverageClickPositionResponseDatesItem>? _explicitNullValueDates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetAverageClickPositionResponseDatesItem> Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetAverageClickPositionResponseDatesItem> Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; AdditionalData?.Remove("dates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.GetAverageClickPositionResponseDatesItem> _explicitNullValueDates = default!;
 #endif
         /// <summary>

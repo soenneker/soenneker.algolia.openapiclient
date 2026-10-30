@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("resource") is { } nullNodeResource && nullNodeResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resource = null;
+            if (parseNode.GetChildNode("resource") is null) { _explicitNullValueResource = default!; _explicitNullProperties?.Remove("resource"); }
+            else if (parseNode.GetChildNode("resource") is { } nullNodeResource && nullNodeResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resource = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>App ID URI of the receiving web service.For more information, see [Azure Active Directory](https://learn.microsoft.com/en-us/previous-versions/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow#first-case-access-token-request-with-a-shared-secret).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
+        public string? Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; AdditionalData?.Remove("resource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
         private string? _explicitNullValueResource = default!;
 #nullable restore
 #else
-        public string Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
+        public string Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; AdditionalData?.Remove("resource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
         private string _explicitNullValueResource = default!;
 #endif
         /// <summary>

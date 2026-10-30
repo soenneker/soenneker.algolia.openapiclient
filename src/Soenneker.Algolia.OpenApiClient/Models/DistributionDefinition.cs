@@ -17,10 +17,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bins") is { } nullNodeBins && nullNodeBins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bins = null;
-            if (parseNode.GetChildNode("continuous") is { } nullNodeContinuous && nullNodeContinuous.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Continuous = null;
-            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
-            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("bins") is null) { _explicitNullValueBins = default!; _explicitNullProperties?.Remove("bins"); }
+            else if (parseNode.GetChildNode("bins") is { } nullNodeBins && nullNodeBins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bins = null;
+            if (parseNode.GetChildNode("continuous") is null) { _explicitNullValueContinuous = default!; _explicitNullProperties?.Remove("continuous"); }
+            else if (parseNode.GetChildNode("continuous") is { } nullNodeContinuous && nullNodeContinuous.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Continuous = null;
+            if (parseNode.GetChildNode("domain") is null) { _explicitNullValueDomain = default!; _explicitNullProperties?.Remove("domain"); }
+            else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("kind") is null) { _explicitNullValueKind = default!; _explicitNullProperties?.Remove("kind"); }
+            else if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Bin edges.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? Bins { get => _explicitNullValueBins; set { _explicitNullValueBins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bins"); else _explicitNullProperties?.Remove("bins"); } }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? Bins { get => _explicitNullValueBins; set { _explicitNullValueBins = value; AdditionalData?.Remove("bins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bins"); else _explicitNullProperties?.Remove("bins"); } }
         private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? _explicitNullValueBins = default!;
 #nullable restore
 #else
-        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> Bins { get => _explicitNullValueBins; set { _explicitNullValueBins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bins"); else _explicitNullProperties?.Remove("bins"); } }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> Bins { get => _explicitNullValueBins; set { _explicitNullValueBins = value; AdditionalData?.Remove("bins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bins"); else _explicitNullProperties?.Remove("bins"); } }
         private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> _explicitNullValueBins = default!;
 #endif
         /// <summary>Set to true for continuous kinds; use float bins.</summary>
-        public bool? Continuous { get => _explicitNullValueContinuous; set { _explicitNullValueContinuous = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("continuous"); else _explicitNullProperties?.Remove("continuous"); } }
+        public bool? Continuous { get => _explicitNullValueContinuous; set { _explicitNullValueContinuous = value; AdditionalData?.Remove("continuous"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("continuous"); else _explicitNullProperties?.Remove("continuous"); } }
         private bool? _explicitNullValueContinuous = default!;
         /// <summary>Domain the field belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>Numeric field to bucket into a histogram.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        public string? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
         private string? _explicitNullValueKind = default!;
 #nullable restore
 #else
-        public string Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        public string Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
         private string _explicitNullValueKind = default!;
 #endif
         /// <summary>

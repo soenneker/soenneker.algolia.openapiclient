@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("disableStandardEntries") is { } nullNodeDisableStandardEntries && nullNodeDisableStandardEntries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableStandardEntries = null;
+            if (parseNode.GetChildNode("disableStandardEntries") is null) { _explicitNullValueDisableStandardEntries = default!; _explicitNullProperties?.Remove("disableStandardEntries"); }
+            else if (parseNode.GetChildNode("disableStandardEntries") is { } nullNodeDisableStandardEntries && nullNodeDisableStandardEntries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableStandardEntries = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Turn off the built-in Algolia stop words for specific languages.Only `stopwords` is supported.The keys of the `stopwords` object are [language ISO codes](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/supported-languages) of languages with a built-in stop-word dictionary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntries? DisableStandardEntries { get => _explicitNullValueDisableStandardEntries; set { _explicitNullValueDisableStandardEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableStandardEntries"); else _explicitNullProperties?.Remove("disableStandardEntries"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntries? DisableStandardEntries { get => _explicitNullValueDisableStandardEntries; set { _explicitNullValueDisableStandardEntries = value; AdditionalData?.Remove("disableStandardEntries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableStandardEntries"); else _explicitNullProperties?.Remove("disableStandardEntries"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.StandardEntries? _explicitNullValueDisableStandardEntries = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntries DisableStandardEntries { get => _explicitNullValueDisableStandardEntries; set { _explicitNullValueDisableStandardEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableStandardEntries"); else _explicitNullProperties?.Remove("disableStandardEntries"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntries DisableStandardEntries { get => _explicitNullValueDisableStandardEntries; set { _explicitNullValueDisableStandardEntries = value; AdditionalData?.Remove("disableStandardEntries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableStandardEntries"); else _explicitNullProperties?.Remove("disableStandardEntries"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.StandardEntries _explicitNullValueDisableStandardEntries = default!;
 #endif
         /// <summary>

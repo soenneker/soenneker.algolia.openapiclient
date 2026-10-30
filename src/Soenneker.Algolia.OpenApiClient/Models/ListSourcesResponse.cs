@@ -17,8 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("pagination") is { } nullNodePagination && nullNodePagination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pagination = null;
-            if (parseNode.GetChildNode("sources") is { } nullNodeSources && nullNodeSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sources = null;
+            if (parseNode.GetChildNode("pagination") is null) { _explicitNullValuePagination = default!; _explicitNullProperties?.Remove("pagination"); }
+            else if (parseNode.GetChildNode("pagination") is { } nullNodePagination && nullNodePagination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pagination = null;
+            if (parseNode.GetChildNode("sources") is null) { _explicitNullValueSources = default!; _explicitNullProperties?.Remove("sources"); }
+            else if (parseNode.GetChildNode("sources") is { } nullNodeSources && nullNodeSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sources = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Paginated API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination? _explicitNullValuePagination = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination _explicitNullValuePagination = default!;
 #endif
         /// <summary>The sources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Source>? Sources { get => _explicitNullValueSources; set { _explicitNullValueSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources"); else _explicitNullProperties?.Remove("sources"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Source>? Sources { get => _explicitNullValueSources; set { _explicitNullValueSources = value; AdditionalData?.Remove("sources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources"); else _explicitNullProperties?.Remove("sources"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.Source>? _explicitNullValueSources = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Source> Sources { get => _explicitNullValueSources; set { _explicitNullValueSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources"); else _explicitNullProperties?.Remove("sources"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Source> Sources { get => _explicitNullValueSources; set { _explicitNullValueSources = value; AdditionalData?.Remove("sources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sources"); else _explicitNullProperties?.Remove("sources"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.Source> _explicitNullValueSources = default!;
 #endif
         /// <summary>

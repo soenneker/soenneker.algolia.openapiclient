@@ -17,11 +17,16 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("facet") is { } nullNodeFacet && nullNodeFacet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Facet = null;
-            if (parseNode.GetChildNode("facetQuery") is { } nullNodeFacetQuery && nullNodeFacetQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetQuery = null;
-            if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
-            if (parseNode.GetChildNode("maxFacetHits") is { } nullNodeMaxFacetHits && nullNodeMaxFacetHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxFacetHits = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("facet") is null) { _explicitNullValueFacet = default!; _explicitNullProperties?.Remove("facet"); }
+            else if (parseNode.GetChildNode("facet") is { } nullNodeFacet && nullNodeFacet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Facet = null;
+            if (parseNode.GetChildNode("facetQuery") is null) { _explicitNullValueFacetQuery = default!; _explicitNullProperties?.Remove("facetQuery"); }
+            else if (parseNode.GetChildNode("facetQuery") is { } nullNodeFacetQuery && nullNodeFacetQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetQuery = null;
+            if (parseNode.GetChildNode("indexName") is null) { _explicitNullValueIndexName = default!; _explicitNullProperties?.Remove("indexName"); }
+            else if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
+            if (parseNode.GetChildNode("maxFacetHits") is null) { _explicitNullValueMaxFacetHits = default!; _explicitNullProperties?.Remove("maxFacetHits"); }
+            else if (parseNode.GetChildNode("maxFacetHits") is { } nullNodeMaxFacetHits && nullNodeMaxFacetHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxFacetHits = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,38 +34,38 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Facet name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Facet { get => _explicitNullValueFacet; set { _explicitNullValueFacet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facet"); else _explicitNullProperties?.Remove("facet"); } }
+        public string? Facet { get => _explicitNullValueFacet; set { _explicitNullValueFacet = value; AdditionalData?.Remove("facet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facet"); else _explicitNullProperties?.Remove("facet"); } }
         private string? _explicitNullValueFacet = default!;
 #nullable restore
 #else
-        public string Facet { get => _explicitNullValueFacet; set { _explicitNullValueFacet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facet"); else _explicitNullProperties?.Remove("facet"); } }
+        public string Facet { get => _explicitNullValueFacet; set { _explicitNullValueFacet = value; AdditionalData?.Remove("facet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facet"); else _explicitNullProperties?.Remove("facet"); } }
         private string _explicitNullValueFacet = default!;
 #endif
         /// <summary>Text to search inside the facet&apos;s values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FacetQuery { get => _explicitNullValueFacetQuery; set { _explicitNullValueFacetQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetQuery"); else _explicitNullProperties?.Remove("facetQuery"); } }
+        public string? FacetQuery { get => _explicitNullValueFacetQuery; set { _explicitNullValueFacetQuery = value; AdditionalData?.Remove("facetQuery"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetQuery"); else _explicitNullProperties?.Remove("facetQuery"); } }
         private string? _explicitNullValueFacetQuery = default!;
 #nullable restore
 #else
-        public string FacetQuery { get => _explicitNullValueFacetQuery; set { _explicitNullValueFacetQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetQuery"); else _explicitNullProperties?.Remove("facetQuery"); } }
+        public string FacetQuery { get => _explicitNullValueFacetQuery; set { _explicitNullValueFacetQuery = value; AdditionalData?.Remove("facetQuery"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetQuery"); else _explicitNullProperties?.Remove("facetQuery"); } }
         private string _explicitNullValueFacetQuery = default!;
 #endif
         /// <summary>Index name (case-sensitive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string? _explicitNullValueIndexName = default!;
 #nullable restore
 #else
-        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string _explicitNullValueIndexName = default!;
 #endif
         /// <summary>Maximum number of facet values to return when [searching for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).</summary>
-        public int? MaxFacetHits { get => _explicitNullValueMaxFacetHits; set { _explicitNullValueMaxFacetHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxFacetHits"); else _explicitNullProperties?.Remove("maxFacetHits"); } }
+        public int? MaxFacetHits { get => _explicitNullValueMaxFacetHits; set { _explicitNullValueMaxFacetHits = value; AdditionalData?.Remove("maxFacetHits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxFacetHits"); else _explicitNullProperties?.Remove("maxFacetHits"); } }
         private int? _explicitNullValueMaxFacetHits = default!;
         /// <summary>- `default`: perform a search query.- `facet` [searches for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeFacet? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeFacet? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeFacet? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacets"/> and sets the default values.
@@ -92,7 +97,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "facetQuery", n => { FacetQuery = n.GetStringValue(); } },
                 { "indexName", n => { IndexName = n.GetStringValue(); } },
                 { "maxFacetHits", n => { MaxFacetHits = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeFacet>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeFacet>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

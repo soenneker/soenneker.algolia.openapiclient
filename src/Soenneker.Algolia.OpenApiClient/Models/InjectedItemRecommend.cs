@@ -17,11 +17,16 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fallbackParameters") is { } nullNodeFallbackParameters && nullNodeFallbackParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackParameters = null;
-            if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
-            if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
-            if (parseNode.GetChildNode("queryParameters") is { } nullNodeQueryParameters && nullNodeQueryParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryParameters = null;
-            if (parseNode.GetChildNode("threshold") is { } nullNodeThreshold && nullNodeThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Threshold = null;
+            if (parseNode.GetChildNode("fallbackParameters") is null) { _explicitNullValueFallbackParameters = default!; _explicitNullProperties?.Remove("fallbackParameters"); }
+            else if (parseNode.GetChildNode("fallbackParameters") is { } nullNodeFallbackParameters && nullNodeFallbackParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackParameters = null;
+            if (parseNode.GetChildNode("indexName") is null) { _explicitNullValueIndexName = default!; _explicitNullProperties?.Remove("indexName"); }
+            else if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
+            if (parseNode.GetChildNode("model") is null) { _explicitNullValueModel = default!; _explicitNullProperties?.Remove("model"); }
+            else if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("queryParameters") is null) { _explicitNullValueQueryParameters = default!; _explicitNullProperties?.Remove("queryParameters"); }
+            else if (parseNode.GetChildNode("queryParameters") is { } nullNodeQueryParameters && nullNodeQueryParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryParameters = null;
+            if (parseNode.GetChildNode("threshold") is null) { _explicitNullValueThreshold = default!; _explicitNullProperties?.Remove("threshold"); }
+            else if (parseNode.GetChildNode("threshold") is { } nullNodeThreshold && nullNodeThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Threshold = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,38 +34,38 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The fallbackParameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters? FallbackParameters { get => _explicitNullValueFallbackParameters; set { _explicitNullValueFallbackParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackParameters"); else _explicitNullProperties?.Remove("fallbackParameters"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters? FallbackParameters { get => _explicitNullValueFallbackParameters; set { _explicitNullValueFallbackParameters = value; AdditionalData?.Remove("fallbackParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackParameters"); else _explicitNullProperties?.Remove("fallbackParameters"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters? _explicitNullValueFallbackParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters FallbackParameters { get => _explicitNullValueFallbackParameters; set { _explicitNullValueFallbackParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackParameters"); else _explicitNullProperties?.Remove("fallbackParameters"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters FallbackParameters { get => _explicitNullValueFallbackParameters; set { _explicitNullValueFallbackParameters = value; AdditionalData?.Remove("fallbackParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackParameters"); else _explicitNullProperties?.Remove("fallbackParameters"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters _explicitNullValueFallbackParameters = default!;
 #endif
         /// <summary>Index to retrieve recommendations from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string? _explicitNullValueIndexName = default!;
 #nullable restore
 #else
-        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string _explicitNullValueIndexName = default!;
 #endif
         /// <summary>Recommendation model to use for retrieving recommendations.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.ModelValue? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ModelValue? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; AdditionalData?.Remove("model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ModelValue? _explicitNullValueModel = default!;
         /// <summary>The queryParameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters? QueryParameters { get => _explicitNullValueQueryParameters; set { _explicitNullValueQueryParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryParameters"); else _explicitNullProperties?.Remove("queryParameters"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters? QueryParameters { get => _explicitNullValueQueryParameters; set { _explicitNullValueQueryParameters = value; AdditionalData?.Remove("queryParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryParameters"); else _explicitNullProperties?.Remove("queryParameters"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters? _explicitNullValueQueryParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters QueryParameters { get => _explicitNullValueQueryParameters; set { _explicitNullValueQueryParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryParameters"); else _explicitNullProperties?.Remove("queryParameters"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters QueryParameters { get => _explicitNullValueQueryParameters; set { _explicitNullValueQueryParameters = value; AdditionalData?.Remove("queryParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryParameters"); else _explicitNullProperties?.Remove("queryParameters"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters _explicitNullValueQueryParameters = default!;
 #endif
         /// <summary>Minimum score a recommendation must have to be included.</summary>
-        public int? Threshold { get => _explicitNullValueThreshold; set { _explicitNullValueThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threshold"); else _explicitNullProperties?.Remove("threshold"); } }
+        public int? Threshold { get => _explicitNullValueThreshold; set { _explicitNullValueThreshold = value; AdditionalData?.Remove("threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threshold"); else _explicitNullProperties?.Remove("threshold"); } }
         private int? _explicitNullValueThreshold = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectedItemRecommend"/> and sets the default values.
@@ -89,7 +94,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "fallbackParameters", n => { FallbackParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters>(global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters.CreateFromDiscriminatorValue); } },
                 { "indexName", n => { IndexName = n.GetStringValue(); } },
-                { "model", n => { Model = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ModelValue>(); } },
+                { "model", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ModelValue>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueModel = default; _explicitNullProperties?.Remove("model"); AdditionalData["model"] = unknown; } else { Model = parsed; AdditionalData.Remove("model"); } } },
                 { "queryParameters", n => { QueryParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters>(global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters.CreateFromDiscriminatorValue); } },
                 { "threshold", n => { Threshold = n.GetIntValue(); } },
             };

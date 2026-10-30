@@ -17,38 +17,42 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("contextLevel") is { } nullNodeContextLevel && nullNodeContextLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContextLevel = null;
-            if (parseNode.GetChildNode("level") is { } nullNodeLevel && nullNodeLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Level = null;
-            if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
-            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("contextLevel") is null) { _explicitNullValueContextLevel = default!; _explicitNullProperties?.Remove("contextLevel"); }
+            else if (parseNode.GetChildNode("contextLevel") is { } nullNodeContextLevel && nullNodeContextLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContextLevel = null;
+            if (parseNode.GetChildNode("level") is null) { _explicitNullValueLevel = default!; _explicitNullProperties?.Remove("level"); }
+            else if (parseNode.GetChildNode("level") is { } nullNodeLevel && nullNodeLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Level = null;
+            if (parseNode.GetChildNode("message") is null) { _explicitNullValueMessage = default!; _explicitNullProperties?.Remove("message"); }
+            else if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
+            else if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Level indicating the position of a suggestion in a hierarchy of records.For example, a `contextLevel` of 1 indicates that this suggestion belongs to a previous suggestion with `contextLevel` 0.</summary>
-        public int? ContextLevel { get => _explicitNullValueContextLevel; set { _explicitNullValueContextLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contextLevel"); else _explicitNullProperties?.Remove("contextLevel"); } }
+        public int? ContextLevel { get => _explicitNullValueContextLevel; set { _explicitNullValueContextLevel = value; AdditionalData?.Remove("contextLevel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contextLevel"); else _explicitNullProperties?.Remove("contextLevel"); } }
         private int? _explicitNullValueContextLevel = default!;
         /// <summary>Type of log entry.- `SKIP`. A query is skipped because it doesn&apos;t match the conditions for successful inclusion. For example, when a query doesn&apos;t generate enough search results.- `INFO`. An informative log entry.- `ERROR`. The Query Suggestions process encountered an error.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.LogLevel? Level { get => _explicitNullValueLevel; set { _explicitNullValueLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("level"); else _explicitNullProperties?.Remove("level"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.LogLevel? Level { get => _explicitNullValueLevel; set { _explicitNullValueLevel = value; AdditionalData?.Remove("level"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("level"); else _explicitNullProperties?.Remove("level"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.LogLevel? _explicitNullValueLevel = default!;
         /// <summary>Details about this log entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private string? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private string _explicitNullValueMessage = default!;
 #endif
         /// <summary>Date and time of the log entry, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private string? _explicitNullValueTimestamp = default!;
 #nullable restore
 #else
-        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private string _explicitNullValueTimestamp = default!;
 #endif
         /// <summary>
@@ -77,7 +81,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "contextLevel", n => { ContextLevel = n.GetIntValue(); } },
-                { "level", n => { Level = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.LogLevel>(); } },
+                { "level", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.LogLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLevel = default; _explicitNullProperties?.Remove("level"); AdditionalData["level"] = unknown; } else { Level = parsed; AdditionalData.Remove("level"); } } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetStringValue(); } },
             };

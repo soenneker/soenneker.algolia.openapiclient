@@ -17,13 +17,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("pending") is { } nullNodePending && nullNodePending.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pending = null;
+            if (parseNode.GetChildNode("pending") is null) { _explicitNullValuePending = default!; _explicitNullProperties?.Remove("pending"); }
+            else if (parseNode.GetChildNode("pending") is { } nullNodePending && nullNodePending.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pending = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the task is pending.</summary>
-        public bool? Pending { get => _explicitNullValuePending; set { _explicitNullValuePending = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending"); else _explicitNullProperties?.Remove("pending"); } }
+        public bool? Pending { get => _explicitNullValuePending; set { _explicitNullValuePending = value; AdditionalData?.Remove("pending"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending"); else _explicitNullProperties?.Remove("pending"); } }
         private bool? _explicitNullValuePending = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.CrawlerTaskStatus"/> and sets the default values.

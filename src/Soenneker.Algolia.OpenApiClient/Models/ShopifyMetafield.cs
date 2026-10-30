@@ -18,9 +18,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
-            if (parseNode.GetChildNode("namespace") is { } nullNodeNamespace && nullNodeNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Namespace = null;
-            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+            if (parseNode.GetChildNode("key") is null) { _explicitNullValueKey = default!; _explicitNullProperties?.Remove("key"); }
+            else if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
+            if (parseNode.GetChildNode("namespace") is null) { _explicitNullValueNamespace = default!; _explicitNullProperties?.Remove("namespace"); }
+            else if (parseNode.GetChildNode("namespace") is { } nullNodeNamespace && nullNodeNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Namespace = null;
+            if (parseNode.GetChildNode("value") is null) { _explicitNullValueValue = default!; _explicitNullProperties?.Remove("value"); }
+            else if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private string? _explicitNullValueKey = default!;
 #nullable restore
 #else
-        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private string _explicitNullValueKey = default!;
 #endif
         /// <summary>The namespace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Namespace { get => _explicitNullValueNamespace; set { _explicitNullValueNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace"); else _explicitNullProperties?.Remove("namespace"); } }
+        public string? Namespace { get => _explicitNullValueNamespace; set { _explicitNullValueNamespace = value; AdditionalData?.Remove("namespace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace"); else _explicitNullProperties?.Remove("namespace"); } }
         private string? _explicitNullValueNamespace = default!;
 #nullable restore
 #else
-        public string Namespace { get => _explicitNullValueNamespace; set { _explicitNullValueNamespace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace"); else _explicitNullProperties?.Remove("namespace"); } }
+        public string Namespace { get => _explicitNullValueNamespace; set { _explicitNullValueNamespace = value; AdditionalData?.Remove("namespace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("namespace"); else _explicitNullProperties?.Remove("namespace"); } }
         private string _explicitNullValueNamespace = default!;
 #endif
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private string? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private string _explicitNullValueValue = default!;
 #endif
         /// <summary>

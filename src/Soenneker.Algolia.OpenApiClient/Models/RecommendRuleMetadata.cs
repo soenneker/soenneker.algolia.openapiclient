@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("lastUpdate") is { } nullNodeLastUpdate && nullNodeLastUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdate = null;
+            if (parseNode.GetChildNode("lastUpdate") is null) { _explicitNullValueLastUpdate = default!; _explicitNullProperties?.Remove("lastUpdate"); }
+            else if (parseNode.GetChildNode("lastUpdate") is { } nullNodeLastUpdate && nullNodeLastUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Date and time when the object was updated, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastUpdate { get => _explicitNullValueLastUpdate; set { _explicitNullValueLastUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastUpdate"); else _explicitNullProperties?.Remove("lastUpdate"); } }
+        public string? LastUpdate { get => _explicitNullValueLastUpdate; set { _explicitNullValueLastUpdate = value; AdditionalData?.Remove("lastUpdate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastUpdate"); else _explicitNullProperties?.Remove("lastUpdate"); } }
         private string? _explicitNullValueLastUpdate = default!;
 #nullable restore
 #else
-        public string LastUpdate { get => _explicitNullValueLastUpdate; set { _explicitNullValueLastUpdate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastUpdate"); else _explicitNullProperties?.Remove("lastUpdate"); } }
+        public string LastUpdate { get => _explicitNullValueLastUpdate; set { _explicitNullValueLastUpdate = value; AdditionalData?.Remove("lastUpdate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastUpdate"); else _explicitNullProperties?.Remove("lastUpdate"); } }
         private string _explicitNullValueLastUpdate = default!;
 #endif
         /// <summary>

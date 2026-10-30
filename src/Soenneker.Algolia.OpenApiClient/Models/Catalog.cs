@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("domains") is { } nullNodeDomains && nullNodeDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domains = null;
+            if (parseNode.GetChildNode("domains") is null) { _explicitNullValueDomains = default!; _explicitNullProperties?.Remove("domains"); }
+            else if (parseNode.GetChildNode("domains") is { } nullNodeDomains && nullNodeDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domains = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Catalog entries grouped by domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.CatalogDomainsProperty2? Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CatalogDomainsProperty2? Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; AdditionalData?.Remove("domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.CatalogDomainsProperty2? _explicitNullValueDomains = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.CatalogDomainsProperty2 Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CatalogDomainsProperty2 Domains { get => _explicitNullValueDomains; set { _explicitNullValueDomains = value; AdditionalData?.Remove("domains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domains"); else _explicitNullProperties?.Remove("domains"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.CatalogDomainsProperty2 _explicitNullValueDomains = default!;
 #endif
         /// <summary>

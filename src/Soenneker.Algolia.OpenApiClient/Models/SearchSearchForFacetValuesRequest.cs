@@ -17,9 +17,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("facetQuery") is { } nullNodeFacetQuery && nullNodeFacetQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetQuery = null;
-            if (parseNode.GetChildNode("maxFacetHits") is { } nullNodeMaxFacetHits && nullNodeMaxFacetHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxFacetHits = null;
-            if (parseNode.GetChildNode("params") is { } nullNodeParams && nullNodeParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Params = null;
+            if (parseNode.GetChildNode("facetQuery") is null) { _explicitNullValueFacetQuery = default!; _explicitNullProperties?.Remove("facetQuery"); }
+            else if (parseNode.GetChildNode("facetQuery") is { } nullNodeFacetQuery && nullNodeFacetQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetQuery = null;
+            if (parseNode.GetChildNode("maxFacetHits") is null) { _explicitNullValueMaxFacetHits = default!; _explicitNullProperties?.Remove("maxFacetHits"); }
+            else if (parseNode.GetChildNode("maxFacetHits") is { } nullNodeMaxFacetHits && nullNodeMaxFacetHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxFacetHits = null;
+            if (parseNode.GetChildNode("params") is null) { _explicitNullValueParams = default!; _explicitNullProperties?.Remove("params"); }
+            else if (parseNode.GetChildNode("params") is { } nullNodeParams && nullNodeParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Params = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,24 +30,24 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Text to search inside the facet&apos;s values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FacetQuery { get => _explicitNullValueFacetQuery; set { _explicitNullValueFacetQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetQuery"); else _explicitNullProperties?.Remove("facetQuery"); } }
+        public string? FacetQuery { get => _explicitNullValueFacetQuery; set { _explicitNullValueFacetQuery = value; AdditionalData?.Remove("facetQuery"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetQuery"); else _explicitNullProperties?.Remove("facetQuery"); } }
         private string? _explicitNullValueFacetQuery = default!;
 #nullable restore
 #else
-        public string FacetQuery { get => _explicitNullValueFacetQuery; set { _explicitNullValueFacetQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetQuery"); else _explicitNullProperties?.Remove("facetQuery"); } }
+        public string FacetQuery { get => _explicitNullValueFacetQuery; set { _explicitNullValueFacetQuery = value; AdditionalData?.Remove("facetQuery"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetQuery"); else _explicitNullProperties?.Remove("facetQuery"); } }
         private string _explicitNullValueFacetQuery = default!;
 #endif
         /// <summary>Maximum number of facet values to return when [searching for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).</summary>
-        public int? MaxFacetHits { get => _explicitNullValueMaxFacetHits; set { _explicitNullValueMaxFacetHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxFacetHits"); else _explicitNullProperties?.Remove("maxFacetHits"); } }
+        public int? MaxFacetHits { get => _explicitNullValueMaxFacetHits; set { _explicitNullValueMaxFacetHits = value; AdditionalData?.Remove("maxFacetHits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxFacetHits"); else _explicitNullProperties?.Remove("maxFacetHits"); } }
         private int? _explicitNullValueMaxFacetHits = default!;
         /// <summary>Search parameters as a URL-encoded query string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        public string? Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; AdditionalData?.Remove("params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
         private string? _explicitNullValueParams = default!;
 #nullable restore
 #else
-        public string Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        public string Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; AdditionalData?.Remove("params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
         private string _explicitNullValueParams = default!;
 #endif
         /// <summary>

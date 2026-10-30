@@ -74,7 +74,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Tasks.Item.Disable
         public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://data.us.algolia.com", "/ingestion/1/tasks/{taskId}/disable", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

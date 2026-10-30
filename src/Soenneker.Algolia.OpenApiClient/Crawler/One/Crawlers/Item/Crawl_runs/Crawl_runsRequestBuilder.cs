@@ -72,7 +72,7 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Crawl_runs
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Crawl_runs.Crawl_runsRequestBuilder.Crawl_runsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://crawler.algolia.com/api", "/crawler/1/crawlers/{id}/crawl_runs", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

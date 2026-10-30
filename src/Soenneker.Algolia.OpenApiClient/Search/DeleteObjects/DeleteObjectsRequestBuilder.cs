@@ -73,7 +73,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.DeleteObjects
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.DeleteObjects.DeleteObjectsRequestBuilder.DeleteObjectsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://ALGOLIA_APPLICATION_ID.algolia.net", "/search/deleteObjects", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

@@ -17,9 +17,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("destination") is { } nullNodeDestination && nullNodeDestination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Destination = null;
-            if (parseNode.GetChildNode("operation") is { } nullNodeOperation && nullNodeOperation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operation = null;
-            if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+            if (parseNode.GetChildNode("destination") is null) { _explicitNullValueDestination = default!; _explicitNullProperties?.Remove("destination"); }
+            else if (parseNode.GetChildNode("destination") is { } nullNodeDestination && nullNodeDestination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Destination = null;
+            if (parseNode.GetChildNode("operation") is null) { _explicitNullValueOperation = default!; _explicitNullProperties?.Remove("operation"); }
+            else if (parseNode.GetChildNode("operation") is { } nullNodeOperation && nullNodeOperation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operation = null;
+            if (parseNode.GetChildNode("scope") is null) { _explicitNullValueScope = default!; _explicitNullProperties?.Remove("scope"); }
+            else if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,24 +30,24 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Index name (case-sensitive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Destination { get => _explicitNullValueDestination; set { _explicitNullValueDestination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination"); else _explicitNullProperties?.Remove("destination"); } }
+        public string? Destination { get => _explicitNullValueDestination; set { _explicitNullValueDestination = value; AdditionalData?.Remove("destination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination"); else _explicitNullProperties?.Remove("destination"); } }
         private string? _explicitNullValueDestination = default!;
 #nullable restore
 #else
-        public string Destination { get => _explicitNullValueDestination; set { _explicitNullValueDestination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination"); else _explicitNullProperties?.Remove("destination"); } }
+        public string Destination { get => _explicitNullValueDestination; set { _explicitNullValueDestination = value; AdditionalData?.Remove("destination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination"); else _explicitNullProperties?.Remove("destination"); } }
         private string _explicitNullValueDestination = default!;
 #endif
         /// <summary>Operation to perform on the index.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.OperationType? Operation { get => _explicitNullValueOperation; set { _explicitNullValueOperation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation"); else _explicitNullProperties?.Remove("operation"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.OperationType? Operation { get => _explicitNullValueOperation; set { _explicitNullValueOperation = value; AdditionalData?.Remove("operation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation"); else _explicitNullProperties?.Remove("operation"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.OperationType? _explicitNullValueOperation = default!;
         /// <summary>**Only for copying.**If you specify a scope, only the selected scopes are copied. Records and the other scopes are left unchanged.If you omit the `scope` parameter, everything is copied: records, settings, synonyms, and rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ScopeType?>? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ScopeType?>? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.ScopeType?>? _explicitNullValueScope = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ScopeType?> Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ScopeType?> Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.ScopeType?> _explicitNullValueScope = default!;
 #endif
         /// <summary>
@@ -73,7 +76,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "destination", n => { Destination = n.GetStringValue(); } },
-                { "operation", n => { Operation = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.OperationType>(); } },
+                { "operation", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.OperationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOperation = default; _explicitNullProperties?.Remove("operation"); AdditionalData["operation"] = unknown; } else { Operation = parsed; AdditionalData.Remove("operation"); } } },
                 { "scope", n => { Scope = n.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.ScopeType>()?.AsList(); } },
             };
         }

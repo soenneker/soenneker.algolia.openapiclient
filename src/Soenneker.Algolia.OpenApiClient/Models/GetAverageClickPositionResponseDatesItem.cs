@@ -17,27 +17,30 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("average") is { } nullNodeAverage && nullNodeAverage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Average = null;
-            if (parseNode.GetChildNode("clickCount") is { } nullNodeClickCount && nullNodeClickCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickCount = null;
-            if (parseNode.GetChildNode("date") is { } nullNodeDate && nullNodeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Date = null;
+            if (parseNode.GetChildNode("average") is null) { _explicitNullValueAverage = default!; _explicitNullProperties?.Remove("average"); }
+            else if (parseNode.GetChildNode("average") is { } nullNodeAverage && nullNodeAverage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Average = null;
+            if (parseNode.GetChildNode("clickCount") is null) { _explicitNullValueClickCount = default!; _explicitNullProperties?.Remove("clickCount"); }
+            else if (parseNode.GetChildNode("clickCount") is { } nullNodeClickCount && nullNodeClickCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickCount = null;
+            if (parseNode.GetChildNode("date") is null) { _explicitNullValueDate = default!; _explicitNullProperties?.Remove("date"); }
+            else if (parseNode.GetChildNode("date") is { } nullNodeDate && nullNodeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Date = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Average position of a clicked search result in the list of search results.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.</summary>
-        public double? Average { get => _explicitNullValueAverage; set { _explicitNullValueAverage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average"); else _explicitNullProperties?.Remove("average"); } }
+        public double? Average { get => _explicitNullValueAverage; set { _explicitNullValueAverage = value; AdditionalData?.Remove("average"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average"); else _explicitNullProperties?.Remove("average"); } }
         private double? _explicitNullValueAverage = default!;
         /// <summary>Number of clicks associated with this search.</summary>
-        public int? ClickCount { get => _explicitNullValueClickCount; set { _explicitNullValueClickCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clickCount"); else _explicitNullProperties?.Remove("clickCount"); } }
+        public int? ClickCount { get => _explicitNullValueClickCount; set { _explicitNullValueClickCount = value; AdditionalData?.Remove("clickCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clickCount"); else _explicitNullProperties?.Remove("clickCount"); } }
         private int? _explicitNullValueClickCount = default!;
         /// <summary>Date in the format YYYY-MM-DD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
+        public string? Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; AdditionalData?.Remove("date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
         private string? _explicitNullValueDate = default!;
 #nullable restore
 #else
-        public string Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
+        public string Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; AdditionalData?.Remove("date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
         private string _explicitNullValueDate = default!;
 #endif
         /// <summary>

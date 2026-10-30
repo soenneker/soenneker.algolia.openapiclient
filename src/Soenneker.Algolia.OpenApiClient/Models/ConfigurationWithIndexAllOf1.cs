@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
+            if (parseNode.GetChildNode("indexName") is null) { _explicitNullValueIndexName = default!; _explicitNullProperties?.Remove("indexName"); }
+            else if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Name of the Query Suggestions index (case-sensitive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string? _explicitNullValueIndexName = default!;
 #nullable restore
 #else
-        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string _explicitNullValueIndexName = default!;
 #endif
         /// <summary>

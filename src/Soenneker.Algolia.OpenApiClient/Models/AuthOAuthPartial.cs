@@ -18,11 +18,16 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
-            if (parseNode.GetChildNode("client_secret") is { } nullNodeClientSecret && nullNodeClientSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientSecret = null;
-            if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
-            if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("client_id") is null) { _explicitNullValueClientId = default!; _explicitNullProperties?.Remove("client_id"); }
+            else if (parseNode.GetChildNode("client_id") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("client_secret") is null) { _explicitNullValueClientSecret = default!; _explicitNullProperties?.Remove("client_secret"); }
+            else if (parseNode.GetChildNode("client_secret") is { } nullNodeClientSecret && nullNodeClientSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientSecret = null;
+            if (parseNode.GetChildNode("code") is null) { _explicitNullValueCode = default!; _explicitNullProperties?.Remove("code"); }
+            else if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
+            if (parseNode.GetChildNode("scope") is null) { _explicitNullValueScope = default!; _explicitNullProperties?.Remove("scope"); }
+            else if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,51 +35,51 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Client ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
         private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("client_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id"); else _explicitNullProperties?.Remove("client_id"); } }
         private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>Client secret. This field is `null` in the API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
+        public string? ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; AdditionalData?.Remove("client_secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
         private string? _explicitNullValueClientSecret = default!;
 #nullable restore
 #else
-        public string ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
+        public string ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; AdditionalData?.Remove("client_secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
         private string _explicitNullValueClientSecret = default!;
 #endif
         /// <summary>Authorization code.Used during an `authorization_code` grant type flow, to request an access_token when creating/updating the authentication.This field is not returned in the API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        public string? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private string? _explicitNullValueCode = default!;
 #nullable restore
 #else
-        public string Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        public string Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private string _explicitNullValueCode = default!;
 #endif
         /// <summary>OAuth scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        public string? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private string? _explicitNullValueScope = default!;
 #nullable restore
 #else
-        public string Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        public string Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private string _explicitNullValueScope = default!;
 #endif
         /// <summary>URL for the OAuth endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>

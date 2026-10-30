@@ -17,9 +17,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("extensions") is { } nullNodeExtensions && nullNodeExtensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Extensions = null;
-            if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("extensions") is null) { _explicitNullValueExtensions = default!; _explicitNullProperties?.Remove("extensions"); }
+            else if (parseNode.GetChildNode("extensions") is { } nullNodeExtensions && nullNodeExtensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Extensions = null;
+            if (parseNode.GetChildNode("indexName") is null) { _explicitNullValueIndexName = default!; _explicitNullProperties?.Remove("indexName"); }
+            else if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Additional parameters for Algolia AI features.Used to enable [Query Categorization](https://www.algolia.com/doc/guides/algolia-ai/query-categorization/) and other AI-powered capabilities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchExtensions? Extensions { get => _explicitNullValueExtensions; set { _explicitNullValueExtensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extensions"); else _explicitNullProperties?.Remove("extensions"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchExtensions? Extensions { get => _explicitNullValueExtensions; set { _explicitNullValueExtensions = value; AdditionalData?.Remove("extensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extensions"); else _explicitNullProperties?.Remove("extensions"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SearchExtensions? _explicitNullValueExtensions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchExtensions Extensions { get => _explicitNullValueExtensions; set { _explicitNullValueExtensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extensions"); else _explicitNullProperties?.Remove("extensions"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchExtensions Extensions { get => _explicitNullValueExtensions; set { _explicitNullValueExtensions = value; AdditionalData?.Remove("extensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extensions"); else _explicitNullProperties?.Remove("extensions"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SearchExtensions _explicitNullValueExtensions = default!;
 #endif
         /// <summary>Index name (case-sensitive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string? _explicitNullValueIndexName = default!;
 #nullable restore
 #else
-        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string _explicitNullValueIndexName = default!;
 #endif
         /// <summary>- `default`: perform a search query.- `facet` [searches for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeDefault? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeDefault? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeDefault? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchForHits"/> and sets the default values.
@@ -74,7 +77,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "extensions", n => { Extensions = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchExtensions>(global::Soenneker.Algolia.OpenApiClient.Models.SearchExtensions.CreateFromDiscriminatorValue); } },
                 { "indexName", n => { IndexName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeDefault>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchTypeDefault>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

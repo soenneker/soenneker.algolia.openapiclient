@@ -18,12 +18,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("clientId") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
-            if (parseNode.GetChildNode("clientSecret") is { } nullNodeClientSecret && nullNodeClientSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientSecret = null;
-            if (parseNode.GetChildNode("extraParameters") is { } nullNodeExtraParameters && nullNodeExtraParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraParameters = null;
-            if (parseNode.GetChildNode("grantType") is { } nullNodeGrantType && nullNodeGrantType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantType = null;
-            if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("clientId") is null) { _explicitNullValueClientId = default!; _explicitNullProperties?.Remove("clientId"); }
+            else if (parseNode.GetChildNode("clientId") is { } nullNodeClientId && nullNodeClientId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientId = null;
+            if (parseNode.GetChildNode("clientSecret") is null) { _explicitNullValueClientSecret = default!; _explicitNullProperties?.Remove("clientSecret"); }
+            else if (parseNode.GetChildNode("clientSecret") is { } nullNodeClientSecret && nullNodeClientSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientSecret = null;
+            if (parseNode.GetChildNode("extraParameters") is null) { _explicitNullValueExtraParameters = default!; _explicitNullProperties?.Remove("extraParameters"); }
+            else if (parseNode.GetChildNode("extraParameters") is { } nullNodeExtraParameters && nullNodeExtraParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtraParameters = null;
+            if (parseNode.GetChildNode("grantType") is null) { _explicitNullValueGrantType = default!; _explicitNullProperties?.Remove("grantType"); }
+            else if (parseNode.GetChildNode("grantType") is { } nullNodeGrantType && nullNodeGrantType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantType = null;
+            if (parseNode.GetChildNode("scope") is null) { _explicitNullValueScope = default!; _explicitNullProperties?.Remove("scope"); }
+            else if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,54 +37,54 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>[Client identifier](https://datatracker.ietf.org/doc/html/rfc6749#section-2.2).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientId"); else _explicitNullProperties?.Remove("clientId"); } }
+        public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("clientId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientId"); else _explicitNullProperties?.Remove("clientId"); } }
         private string? _explicitNullValueClientId = default!;
 #nullable restore
 #else
-        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientId"); else _explicitNullProperties?.Remove("clientId"); } }
+        public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("clientId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientId"); else _explicitNullProperties?.Remove("clientId"); } }
         private string _explicitNullValueClientId = default!;
 #endif
         /// <summary>Client secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientSecret"); else _explicitNullProperties?.Remove("clientSecret"); } }
+        public string? ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; AdditionalData?.Remove("clientSecret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientSecret"); else _explicitNullProperties?.Remove("clientSecret"); } }
         private string? _explicitNullValueClientSecret = default!;
 #nullable restore
 #else
-        public string ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientSecret"); else _explicitNullProperties?.Remove("clientSecret"); } }
+        public string ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; AdditionalData?.Remove("clientSecret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientSecret"); else _explicitNullProperties?.Remove("clientSecret"); } }
         private string _explicitNullValueClientSecret = default!;
 #endif
         /// <summary>Extra parameters for the authorization request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ExtraParameters? ExtraParameters { get => _explicitNullValueExtraParameters; set { _explicitNullValueExtraParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extraParameters"); else _explicitNullProperties?.Remove("extraParameters"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ExtraParameters? ExtraParameters { get => _explicitNullValueExtraParameters; set { _explicitNullValueExtraParameters = value; AdditionalData?.Remove("extraParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extraParameters"); else _explicitNullProperties?.Remove("extraParameters"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ExtraParameters? _explicitNullValueExtraParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ExtraParameters ExtraParameters { get => _explicitNullValueExtraParameters; set { _explicitNullValueExtraParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extraParameters"); else _explicitNullProperties?.Remove("extraParameters"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ExtraParameters ExtraParameters { get => _explicitNullValueExtraParameters; set { _explicitNullValueExtraParameters = value; AdditionalData?.Remove("extraParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extraParameters"); else _explicitNullProperties?.Remove("extraParameters"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ExtraParameters _explicitNullValueExtraParameters = default!;
 #endif
         /// <summary>OAuth 2.0 grant type.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.GrantType? GrantType { get => _explicitNullValueGrantType; set { _explicitNullValueGrantType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantType"); else _explicitNullProperties?.Remove("grantType"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.GrantType? GrantType { get => _explicitNullValueGrantType; set { _explicitNullValueGrantType = value; AdditionalData?.Remove("grantType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grantType"); else _explicitNullProperties?.Remove("grantType"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.GrantType? _explicitNullValueGrantType = default!;
         /// <summary>[Access token scope](https://datatracker.ietf.org/doc/html/rfc6749#section-3.3).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        public string? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private string? _explicitNullValueScope = default!;
 #nullable restore
 #else
-        public string Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        public string Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private string _explicitNullValueScope = default!;
 #endif
         /// <summary>URL for the access token endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
@@ -109,7 +115,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "clientId", n => { ClientId = n.GetStringValue(); } },
                 { "clientSecret", n => { ClientSecret = n.GetStringValue(); } },
                 { "extraParameters", n => { ExtraParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ExtraParameters>(global::Soenneker.Algolia.OpenApiClient.Models.ExtraParameters.CreateFromDiscriminatorValue); } },
-                { "grantType", n => { GrantType = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.GrantType>(); } },
+                { "grantType", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.GrantType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGrantType = default; _explicitNullProperties?.Remove("grantType"); AdditionalData["grantType"] = unknown; } else { GrantType = parsed; AdditionalData.Remove("grantType"); } } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };

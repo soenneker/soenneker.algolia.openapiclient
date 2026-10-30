@@ -17,8 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
-            if (parseNode.GetChildNode("payloads") is { } nullNodePayloads && nullNodePayloads.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Payloads = null;
+            if (parseNode.GetChildNode("error") is null) { _explicitNullValueError = default!; _explicitNullProperties?.Remove("error"); }
+            else if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
+            if (parseNode.GetChildNode("payloads") is null) { _explicitNullValuePayloads = default!; _explicitNullProperties?.Remove("payloads"); }
+            else if (parseNode.GetChildNode("payloads") is { } nullNodePayloads && nullNodePayloads.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Payloads = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The error if the transformation failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTryResponseError? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTryResponseError? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.TransformationTryResponseError? _explicitNullValueError = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTryResponseError Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTryResponseError Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.TransformationTryResponseError _explicitNullValueError = default!;
 #endif
         /// <summary>The array of stringified records returned by the transformation service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Payloads { get => _explicitNullValuePayloads; set { _explicitNullValuePayloads = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payloads"); else _explicitNullProperties?.Remove("payloads"); } }
+        public List<string>? Payloads { get => _explicitNullValuePayloads; set { _explicitNullValuePayloads = value; AdditionalData?.Remove("payloads"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payloads"); else _explicitNullProperties?.Remove("payloads"); } }
         private List<string>? _explicitNullValuePayloads = default!;
 #nullable restore
 #else
-        public List<string> Payloads { get => _explicitNullValuePayloads; set { _explicitNullValuePayloads = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payloads"); else _explicitNullProperties?.Remove("payloads"); } }
+        public List<string> Payloads { get => _explicitNullValuePayloads; set { _explicitNullValuePayloads = value; AdditionalData?.Remove("payloads"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payloads"); else _explicitNullProperties?.Remove("payloads"); } }
         private List<string> _explicitNullValuePayloads = default!;
 #endif
         /// <summary>

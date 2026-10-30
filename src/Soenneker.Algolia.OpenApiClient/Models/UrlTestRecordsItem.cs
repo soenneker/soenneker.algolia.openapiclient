@@ -17,9 +17,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
-            if (parseNode.GetChildNode("records") is { } nullNodeRecords && nullNodeRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Records = null;
-            if (parseNode.GetChildNode("recordsPerExtractor") is { } nullNodeRecordsPerExtractor && nullNodeRecordsPerExtractor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordsPerExtractor = null;
+            if (parseNode.GetChildNode("indexName") is null) { _explicitNullValueIndexName = default!; _explicitNullProperties?.Remove("indexName"); }
+            else if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
+            if (parseNode.GetChildNode("records") is null) { _explicitNullValueRecords = default!; _explicitNullProperties?.Remove("records"); }
+            else if (parseNode.GetChildNode("records") is { } nullNodeRecords && nullNodeRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Records = null;
+            if (parseNode.GetChildNode("recordsPerExtractor") is null) { _explicitNullValueRecordsPerExtractor = default!; _explicitNullProperties?.Remove("recordsPerExtractor"); }
+            else if (parseNode.GetChildNode("recordsPerExtractor") is { } nullNodeRecordsPerExtractor && nullNodeRecordsPerExtractor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordsPerExtractor = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Name of the index where this record will be stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string? _explicitNullValueIndexName = default!;
 #nullable restore
 #else
-        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string _explicitNullValueIndexName = default!;
 #endif
         /// <summary>Extracted records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsItemProperty>? Records { get => _explicitNullValueRecords; set { _explicitNullValueRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("records"); else _explicitNullProperties?.Remove("records"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsItemProperty>? Records { get => _explicitNullValueRecords; set { _explicitNullValueRecords = value; AdditionalData?.Remove("records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("records"); else _explicitNullProperties?.Remove("records"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsItemProperty>? _explicitNullValueRecords = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsItemProperty> Records { get => _explicitNullValueRecords; set { _explicitNullValueRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("records"); else _explicitNullProperties?.Remove("records"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsItemProperty> Records { get => _explicitNullValueRecords; set { _explicitNullValueRecords = value; AdditionalData?.Remove("records"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("records"); else _explicitNullProperties?.Remove("records"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsItemProperty> _explicitNullValueRecords = default!;
 #endif
         /// <summary>Partial records generated by each record extractor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsPerExtractorItem>? RecordsPerExtractor { get => _explicitNullValueRecordsPerExtractor; set { _explicitNullValueRecordsPerExtractor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recordsPerExtractor"); else _explicitNullProperties?.Remove("recordsPerExtractor"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsPerExtractorItem>? RecordsPerExtractor { get => _explicitNullValueRecordsPerExtractor; set { _explicitNullValueRecordsPerExtractor = value; AdditionalData?.Remove("recordsPerExtractor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recordsPerExtractor"); else _explicitNullProperties?.Remove("recordsPerExtractor"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsPerExtractorItem>? _explicitNullValueRecordsPerExtractor = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsPerExtractorItem> RecordsPerExtractor { get => _explicitNullValueRecordsPerExtractor; set { _explicitNullValueRecordsPerExtractor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recordsPerExtractor"); else _explicitNullProperties?.Remove("recordsPerExtractor"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsPerExtractorItem> RecordsPerExtractor { get => _explicitNullValueRecordsPerExtractor; set { _explicitNullValueRecordsPerExtractor = value; AdditionalData?.Remove("recordsPerExtractor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recordsPerExtractor"); else _explicitNullProperties?.Remove("recordsPerExtractor"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.UrlTestRecordsItemRecordsPerExtractorItem> _explicitNullValueRecordsPerExtractor = default!;
 #endif
         /// <summary>

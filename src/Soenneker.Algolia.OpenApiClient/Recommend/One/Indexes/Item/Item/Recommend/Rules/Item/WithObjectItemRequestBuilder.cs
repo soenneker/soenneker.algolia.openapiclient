@@ -109,7 +109,7 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.Recomm
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://ALGOLIA_APPLICATION_ID.algolia.net", "/recommend/1/indexes/{indexName}/{model}/recommend/rules/{objectId}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -128,7 +128,7 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.Recomm
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://ALGOLIA_APPLICATION_ID.algolia.net", "/recommend/1/indexes/{indexName}/{model}/recommend/rules/{objectId}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

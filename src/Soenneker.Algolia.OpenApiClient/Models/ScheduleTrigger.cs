@@ -18,10 +18,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cron") is { } nullNodeCron && nullNodeCron.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cron = null;
-            if (parseNode.GetChildNode("lastRun") is { } nullNodeLastRun && nullNodeLastRun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastRun = null;
-            if (parseNode.GetChildNode("nextRun") is { } nullNodeNextRun && nullNodeNextRun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextRun = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("cron") is null) { _explicitNullValueCron = default!; _explicitNullProperties?.Remove("cron"); }
+            else if (parseNode.GetChildNode("cron") is { } nullNodeCron && nullNodeCron.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cron = null;
+            if (parseNode.GetChildNode("lastRun") is null) { _explicitNullValueLastRun = default!; _explicitNullProperties?.Remove("lastRun"); }
+            else if (parseNode.GetChildNode("lastRun") is { } nullNodeLastRun && nullNodeLastRun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastRun = null;
+            if (parseNode.GetChildNode("nextRun") is null) { _explicitNullValueNextRun = default!; _explicitNullProperties?.Remove("nextRun"); }
+            else if (parseNode.GetChildNode("nextRun") is { } nullNodeNextRun && nullNodeNextRun.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextRun = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,35 +33,35 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Cron expression for the task&apos;s schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cron { get => _explicitNullValueCron; set { _explicitNullValueCron = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cron"); else _explicitNullProperties?.Remove("cron"); } }
+        public string? Cron { get => _explicitNullValueCron; set { _explicitNullValueCron = value; AdditionalData?.Remove("cron"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cron"); else _explicitNullProperties?.Remove("cron"); } }
         private string? _explicitNullValueCron = default!;
 #nullable restore
 #else
-        public string Cron { get => _explicitNullValueCron; set { _explicitNullValueCron = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cron"); else _explicitNullProperties?.Remove("cron"); } }
+        public string Cron { get => _explicitNullValueCron; set { _explicitNullValueCron = value; AdditionalData?.Remove("cron"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cron"); else _explicitNullProperties?.Remove("cron"); } }
         private string _explicitNullValueCron = default!;
 #endif
         /// <summary>The last time the scheduled task ran in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastRun { get => _explicitNullValueLastRun; set { _explicitNullValueLastRun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastRun"); else _explicitNullProperties?.Remove("lastRun"); } }
+        public string? LastRun { get => _explicitNullValueLastRun; set { _explicitNullValueLastRun = value; AdditionalData?.Remove("lastRun"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastRun"); else _explicitNullProperties?.Remove("lastRun"); } }
         private string? _explicitNullValueLastRun = default!;
 #nullable restore
 #else
-        public string LastRun { get => _explicitNullValueLastRun; set { _explicitNullValueLastRun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastRun"); else _explicitNullProperties?.Remove("lastRun"); } }
+        public string LastRun { get => _explicitNullValueLastRun; set { _explicitNullValueLastRun = value; AdditionalData?.Remove("lastRun"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastRun"); else _explicitNullProperties?.Remove("lastRun"); } }
         private string _explicitNullValueLastRun = default!;
 #endif
         /// <summary>The next scheduled run of the task in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextRun { get => _explicitNullValueNextRun; set { _explicitNullValueNextRun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextRun"); else _explicitNullProperties?.Remove("nextRun"); } }
+        public string? NextRun { get => _explicitNullValueNextRun; set { _explicitNullValueNextRun = value; AdditionalData?.Remove("nextRun"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextRun"); else _explicitNullProperties?.Remove("nextRun"); } }
         private string? _explicitNullValueNextRun = default!;
 #nullable restore
 #else
-        public string NextRun { get => _explicitNullValueNextRun; set { _explicitNullValueNextRun = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextRun"); else _explicitNullProperties?.Remove("nextRun"); } }
+        public string NextRun { get => _explicitNullValueNextRun; set { _explicitNullValueNextRun = value; AdditionalData?.Remove("nextRun"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextRun"); else _explicitNullProperties?.Remove("nextRun"); } }
         private string _explicitNullValueNextRun = default!;
 #endif
         /// <summary>Task runs on a schedule.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.ScheduleTriggerType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ScheduleTriggerType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ScheduleTriggerType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ScheduleTrigger"/> and sets the default values.
@@ -87,7 +91,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "cron", n => { Cron = n.GetStringValue(); } },
                 { "lastRun", n => { LastRun = n.GetStringValue(); } },
                 { "nextRun", n => { NextRun = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ScheduleTriggerType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ScheduleTriggerType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

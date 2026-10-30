@@ -18,11 +18,16 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hits") is { } nullNodeHits && nullNodeHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hits = null;
-            if (parseNode.GetChildNode("hitsPerPage") is { } nullNodeHitsPerPage && nullNodeHitsPerPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HitsPerPage = null;
-            if (parseNode.GetChildNode("nbHits") is { } nullNodeNbHits && nullNodeNbHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbHits = null;
-            if (parseNode.GetChildNode("page") is { } nullNodePage && nullNodePage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Page = null;
-            if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("hits") is null) { _explicitNullValueHits = default!; _explicitNullProperties?.Remove("hits"); }
+            else if (parseNode.GetChildNode("hits") is { } nullNodeHits && nullNodeHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hits = null;
+            if (parseNode.GetChildNode("hitsPerPage") is null) { _explicitNullValueHitsPerPage = default!; _explicitNullProperties?.Remove("hitsPerPage"); }
+            else if (parseNode.GetChildNode("hitsPerPage") is { } nullNodeHitsPerPage && nullNodeHitsPerPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HitsPerPage = null;
+            if (parseNode.GetChildNode("nbHits") is null) { _explicitNullValueNbHits = default!; _explicitNullProperties?.Remove("nbHits"); }
+            else if (parseNode.GetChildNode("nbHits") is { } nullNodeNbHits && nullNodeNbHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbHits = null;
+            if (parseNode.GetChildNode("page") is null) { _explicitNullValuePage = default!; _explicitNullProperties?.Remove("page"); }
+            else if (parseNode.GetChildNode("page") is { } nullNodePage && nullNodePage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Page = null;
+            if (parseNode.GetChildNode("updatedAt") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updatedAt"); }
+            else if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,30 +35,30 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>User objects that match the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchUserIdsResponseHitsItem>? Hits { get => _explicitNullValueHits; set { _explicitNullValueHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hits"); else _explicitNullProperties?.Remove("hits"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchUserIdsResponseHitsItem>? Hits { get => _explicitNullValueHits; set { _explicitNullValueHits = value; AdditionalData?.Remove("hits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hits"); else _explicitNullProperties?.Remove("hits"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchUserIdsResponseHitsItem>? _explicitNullValueHits = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchUserIdsResponseHitsItem> Hits { get => _explicitNullValueHits; set { _explicitNullValueHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hits"); else _explicitNullProperties?.Remove("hits"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchUserIdsResponseHitsItem> Hits { get => _explicitNullValueHits; set { _explicitNullValueHits = value; AdditionalData?.Remove("hits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hits"); else _explicitNullProperties?.Remove("hits"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchUserIdsResponseHitsItem> _explicitNullValueHits = default!;
 #endif
         /// <summary>Maximum number of hits per page.Algolia uses `page` and `hitsPerPage` to control how search results are displayed ([paginated](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/pagination/js)).- `hitsPerPage`: sets the number of search results (_hits_) displayed per page.- `page`: specifies the page number of the search results you want to retrieve. Page numbering starts at 0, so the first page is `page=0`, the second is `page=1`, and so on.For example, to display 10 results per page starting from the third page, set `hitsPerPage` to 10 and `page` to 2.</summary>
-        public int? HitsPerPage { get => _explicitNullValueHitsPerPage; set { _explicitNullValueHitsPerPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hitsPerPage"); else _explicitNullProperties?.Remove("hitsPerPage"); } }
+        public int? HitsPerPage { get => _explicitNullValueHitsPerPage; set { _explicitNullValueHitsPerPage = value; AdditionalData?.Remove("hitsPerPage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hitsPerPage"); else _explicitNullProperties?.Remove("hitsPerPage"); } }
         private int? _explicitNullValueHitsPerPage = default!;
         /// <summary>Number of results (hits).</summary>
-        public int? NbHits { get => _explicitNullValueNbHits; set { _explicitNullValueNbHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbHits"); else _explicitNullProperties?.Remove("nbHits"); } }
+        public int? NbHits { get => _explicitNullValueNbHits; set { _explicitNullValueNbHits = value; AdditionalData?.Remove("nbHits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbHits"); else _explicitNullProperties?.Remove("nbHits"); } }
         private int? _explicitNullValueNbHits = default!;
         /// <summary>Page of search results to retrieve.</summary>
-        public int? Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
+        public int? Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; AdditionalData?.Remove("page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
         private int? _explicitNullValuePage = default!;
         /// <summary>Date and time when the object was updated, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
         private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
         private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>

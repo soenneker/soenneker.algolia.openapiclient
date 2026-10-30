@@ -18,8 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("declaredAt") is { } nullNodeDeclaredAt && nullNodeDeclaredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeclaredAt = null;
-            if (parseNode.GetChildNode("winnerVariantId") is { } nullNodeWinnerVariantId && nullNodeWinnerVariantId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WinnerVariantId = null;
+            if (parseNode.GetChildNode("declaredAt") is null) { _explicitNullValueDeclaredAt = default!; _explicitNullProperties?.Remove("declaredAt"); }
+            else if (parseNode.GetChildNode("declaredAt") is { } nullNodeDeclaredAt && nullNodeDeclaredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeclaredAt = null;
+            if (parseNode.GetChildNode("winnerVariantId") is null) { _explicitNullValueWinnerVariantId = default!; _explicitNullProperties?.Remove("winnerVariantId"); }
+            else if (parseNode.GetChildNode("winnerVariantId") is { } nullNodeWinnerVariantId && nullNodeWinnerVariantId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WinnerVariantId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Date and time when the winning variant was declared, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeclaredAt { get => _explicitNullValueDeclaredAt; set { _explicitNullValueDeclaredAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("declaredAt"); else _explicitNullProperties?.Remove("declaredAt"); } }
+        public string? DeclaredAt { get => _explicitNullValueDeclaredAt; set { _explicitNullValueDeclaredAt = value; AdditionalData?.Remove("declaredAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("declaredAt"); else _explicitNullProperties?.Remove("declaredAt"); } }
         private string? _explicitNullValueDeclaredAt = default!;
 #nullable restore
 #else
-        public string DeclaredAt { get => _explicitNullValueDeclaredAt; set { _explicitNullValueDeclaredAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("declaredAt"); else _explicitNullProperties?.Remove("declaredAt"); } }
+        public string DeclaredAt { get => _explicitNullValueDeclaredAt; set { _explicitNullValueDeclaredAt = value; AdditionalData?.Remove("declaredAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("declaredAt"); else _explicitNullProperties?.Remove("declaredAt"); } }
         private string _explicitNullValueDeclaredAt = default!;
 #endif
         /// <summary>Identifier of the declared winning variant. The control variant is 1.</summary>
-        public int? WinnerVariantId { get => _explicitNullValueWinnerVariantId; set { _explicitNullValueWinnerVariantId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winnerVariantId"); else _explicitNullProperties?.Remove("winnerVariantId"); } }
+        public int? WinnerVariantId { get => _explicitNullValueWinnerVariantId; set { _explicitNullValueWinnerVariantId = value; AdditionalData?.Remove("winnerVariantId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winnerVariantId"); else _explicitNullProperties?.Remove("winnerVariantId"); } }
         private int? _explicitNullValueWinnerVariantId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Decision"/> and sets the default values.

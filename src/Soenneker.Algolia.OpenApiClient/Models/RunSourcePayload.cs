@@ -17,11 +17,16 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("entityIDs") is { } nullNodeEntityIDs && nullNodeEntityIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityIDs = null;
-            if (parseNode.GetChildNode("entityType") is { } nullNodeEntityType && nullNodeEntityType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityType = null;
-            if (parseNode.GetChildNode("indexToExclude") is { } nullNodeIndexToExclude && nullNodeIndexToExclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexToExclude = null;
-            if (parseNode.GetChildNode("indexToInclude") is { } nullNodeIndexToInclude && nullNodeIndexToInclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexToInclude = null;
-            if (parseNode.GetChildNode("runMetadata") is { } nullNodeRunMetadata && nullNodeRunMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunMetadata = null;
+            if (parseNode.GetChildNode("entityIDs") is null) { _explicitNullValueEntityIDs = default!; _explicitNullProperties?.Remove("entityIDs"); }
+            else if (parseNode.GetChildNode("entityIDs") is { } nullNodeEntityIDs && nullNodeEntityIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityIDs = null;
+            if (parseNode.GetChildNode("entityType") is null) { _explicitNullValueEntityType = default!; _explicitNullProperties?.Remove("entityType"); }
+            else if (parseNode.GetChildNode("entityType") is { } nullNodeEntityType && nullNodeEntityType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityType = null;
+            if (parseNode.GetChildNode("indexToExclude") is null) { _explicitNullValueIndexToExclude = default!; _explicitNullProperties?.Remove("indexToExclude"); }
+            else if (parseNode.GetChildNode("indexToExclude") is { } nullNodeIndexToExclude && nullNodeIndexToExclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexToExclude = null;
+            if (parseNode.GetChildNode("indexToInclude") is null) { _explicitNullValueIndexToInclude = default!; _explicitNullProperties?.Remove("indexToInclude"); }
+            else if (parseNode.GetChildNode("indexToInclude") is { } nullNodeIndexToInclude && nullNodeIndexToInclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexToInclude = null;
+            if (parseNode.GetChildNode("runMetadata") is null) { _explicitNullValueRunMetadata = default!; _explicitNullProperties?.Remove("runMetadata"); }
+            else if (parseNode.GetChildNode("runMetadata") is { } nullNodeRunMetadata && nullNodeRunMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunMetadata = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,44 +34,44 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>List of entityIDs to update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EntityIDs { get => _explicitNullValueEntityIDs; set { _explicitNullValueEntityIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityIDs"); else _explicitNullProperties?.Remove("entityIDs"); } }
+        public List<string>? EntityIDs { get => _explicitNullValueEntityIDs; set { _explicitNullValueEntityIDs = value; AdditionalData?.Remove("entityIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityIDs"); else _explicitNullProperties?.Remove("entityIDs"); } }
         private List<string>? _explicitNullValueEntityIDs = default!;
 #nullable restore
 #else
-        public List<string> EntityIDs { get => _explicitNullValueEntityIDs; set { _explicitNullValueEntityIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityIDs"); else _explicitNullProperties?.Remove("entityIDs"); } }
+        public List<string> EntityIDs { get => _explicitNullValueEntityIDs; set { _explicitNullValueEntityIDs = value; AdditionalData?.Remove("entityIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityIDs"); else _explicitNullProperties?.Remove("entityIDs"); } }
         private List<string> _explicitNullValueEntityIDs = default!;
 #endif
         /// <summary>Type of entity to update.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.EntityType? EntityType { get => _explicitNullValueEntityType; set { _explicitNullValueEntityType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityType"); else _explicitNullProperties?.Remove("entityType"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.EntityType? EntityType { get => _explicitNullValueEntityType; set { _explicitNullValueEntityType = value; AdditionalData?.Remove("entityType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityType"); else _explicitNullProperties?.Remove("entityType"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.EntityType? _explicitNullValueEntityType = default!;
         /// <summary>List of index names to exclude in reindex/update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IndexToExclude { get => _explicitNullValueIndexToExclude; set { _explicitNullValueIndexToExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexToExclude"); else _explicitNullProperties?.Remove("indexToExclude"); } }
+        public List<string>? IndexToExclude { get => _explicitNullValueIndexToExclude; set { _explicitNullValueIndexToExclude = value; AdditionalData?.Remove("indexToExclude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexToExclude"); else _explicitNullProperties?.Remove("indexToExclude"); } }
         private List<string>? _explicitNullValueIndexToExclude = default!;
 #nullable restore
 #else
-        public List<string> IndexToExclude { get => _explicitNullValueIndexToExclude; set { _explicitNullValueIndexToExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexToExclude"); else _explicitNullProperties?.Remove("indexToExclude"); } }
+        public List<string> IndexToExclude { get => _explicitNullValueIndexToExclude; set { _explicitNullValueIndexToExclude = value; AdditionalData?.Remove("indexToExclude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexToExclude"); else _explicitNullProperties?.Remove("indexToExclude"); } }
         private List<string> _explicitNullValueIndexToExclude = default!;
 #endif
         /// <summary>List of index names to include in reindex/update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IndexToInclude { get => _explicitNullValueIndexToInclude; set { _explicitNullValueIndexToInclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexToInclude"); else _explicitNullProperties?.Remove("indexToInclude"); } }
+        public List<string>? IndexToInclude { get => _explicitNullValueIndexToInclude; set { _explicitNullValueIndexToInclude = value; AdditionalData?.Remove("indexToInclude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexToInclude"); else _explicitNullProperties?.Remove("indexToInclude"); } }
         private List<string>? _explicitNullValueIndexToInclude = default!;
 #nullable restore
 #else
-        public List<string> IndexToInclude { get => _explicitNullValueIndexToInclude; set { _explicitNullValueIndexToInclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexToInclude"); else _explicitNullProperties?.Remove("indexToInclude"); } }
+        public List<string> IndexToInclude { get => _explicitNullValueIndexToInclude; set { _explicitNullValueIndexToInclude = value; AdditionalData?.Remove("indexToInclude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexToInclude"); else _explicitNullProperties?.Remove("indexToInclude"); } }
         private List<string> _explicitNullValueIndexToInclude = default!;
 #endif
         /// <summary>Additional information that will be passed to the created runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2? RunMetadata { get => _explicitNullValueRunMetadata; set { _explicitNullValueRunMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runMetadata"); else _explicitNullProperties?.Remove("runMetadata"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2? RunMetadata { get => _explicitNullValueRunMetadata; set { _explicitNullValueRunMetadata = value; AdditionalData?.Remove("runMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runMetadata"); else _explicitNullProperties?.Remove("runMetadata"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2? _explicitNullValueRunMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2 RunMetadata { get => _explicitNullValueRunMetadata; set { _explicitNullValueRunMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runMetadata"); else _explicitNullProperties?.Remove("runMetadata"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2 RunMetadata { get => _explicitNullValueRunMetadata; set { _explicitNullValueRunMetadata = value; AdditionalData?.Remove("runMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runMetadata"); else _explicitNullProperties?.Remove("runMetadata"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2 _explicitNullValueRunMetadata = default!;
 #endif
         /// <summary>
@@ -95,7 +100,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "entityIDs", n => { EntityIDs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "entityType", n => { EntityType = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.EntityType>(); } },
+                { "entityType", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.EntityType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEntityType = default; _explicitNullProperties?.Remove("entityType"); AdditionalData["entityType"] = unknown; } else { EntityType = parsed; AdditionalData.Remove("entityType"); } } },
                 { "indexToExclude", n => { IndexToExclude = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "indexToInclude", n => { IndexToInclude = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "runMetadata", n => { RunMetadata = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2.CreateFromDiscriminatorValue); } },

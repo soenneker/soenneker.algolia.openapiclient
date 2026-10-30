@@ -17,9 +17,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("copyOperationResponse") is { } nullNodeCopyOperationResponse && nullNodeCopyOperationResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CopyOperationResponse = null;
-            if (parseNode.GetChildNode("moveOperationResponse") is { } nullNodeMoveOperationResponse && nullNodeMoveOperationResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MoveOperationResponse = null;
-            if (parseNode.GetChildNode("watchResponses") is { } nullNodeWatchResponses && nullNodeWatchResponses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WatchResponses = null;
+            if (parseNode.GetChildNode("copyOperationResponse") is null) { _explicitNullValueCopyOperationResponse = default!; _explicitNullProperties?.Remove("copyOperationResponse"); }
+            else if (parseNode.GetChildNode("copyOperationResponse") is { } nullNodeCopyOperationResponse && nullNodeCopyOperationResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CopyOperationResponse = null;
+            if (parseNode.GetChildNode("moveOperationResponse") is null) { _explicitNullValueMoveOperationResponse = default!; _explicitNullProperties?.Remove("moveOperationResponse"); }
+            else if (parseNode.GetChildNode("moveOperationResponse") is { } nullNodeMoveOperationResponse && nullNodeMoveOperationResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MoveOperationResponse = null;
+            if (parseNode.GetChildNode("watchResponses") is null) { _explicitNullValueWatchResponses = default!; _explicitNullProperties?.Remove("watchResponses"); }
+            else if (parseNode.GetChildNode("watchResponses") is { } nullNodeWatchResponses && nullNodeWatchResponses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WatchResponses = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Response, taskID, and update timestamp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse? CopyOperationResponse { get => _explicitNullValueCopyOperationResponse; set { _explicitNullValueCopyOperationResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("copyOperationResponse"); else _explicitNullProperties?.Remove("copyOperationResponse"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse? CopyOperationResponse { get => _explicitNullValueCopyOperationResponse; set { _explicitNullValueCopyOperationResponse = value; AdditionalData?.Remove("copyOperationResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("copyOperationResponse"); else _explicitNullProperties?.Remove("copyOperationResponse"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse? _explicitNullValueCopyOperationResponse = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse CopyOperationResponse { get => _explicitNullValueCopyOperationResponse; set { _explicitNullValueCopyOperationResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("copyOperationResponse"); else _explicitNullProperties?.Remove("copyOperationResponse"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse CopyOperationResponse { get => _explicitNullValueCopyOperationResponse; set { _explicitNullValueCopyOperationResponse = value; AdditionalData?.Remove("copyOperationResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("copyOperationResponse"); else _explicitNullProperties?.Remove("copyOperationResponse"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse _explicitNullValueCopyOperationResponse = default!;
 #endif
         /// <summary>Response, taskID, and update timestamp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse? MoveOperationResponse { get => _explicitNullValueMoveOperationResponse; set { _explicitNullValueMoveOperationResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moveOperationResponse"); else _explicitNullProperties?.Remove("moveOperationResponse"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse? MoveOperationResponse { get => _explicitNullValueMoveOperationResponse; set { _explicitNullValueMoveOperationResponse = value; AdditionalData?.Remove("moveOperationResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moveOperationResponse"); else _explicitNullProperties?.Remove("moveOperationResponse"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse? _explicitNullValueMoveOperationResponse = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse MoveOperationResponse { get => _explicitNullValueMoveOperationResponse; set { _explicitNullValueMoveOperationResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moveOperationResponse"); else _explicitNullProperties?.Remove("moveOperationResponse"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse MoveOperationResponse { get => _explicitNullValueMoveOperationResponse; set { _explicitNullValueMoveOperationResponse = value; AdditionalData?.Remove("moveOperationResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moveOperationResponse"); else _explicitNullProperties?.Remove("moveOperationResponse"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.UpdatedAtResponse _explicitNullValueMoveOperationResponse = default!;
 #endif
         /// <summary>The response of the `push` request(s).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponse>? WatchResponses { get => _explicitNullValueWatchResponses; set { _explicitNullValueWatchResponses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watchResponses"); else _explicitNullProperties?.Remove("watchResponses"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponse>? WatchResponses { get => _explicitNullValueWatchResponses; set { _explicitNullValueWatchResponses = value; AdditionalData?.Remove("watchResponses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watchResponses"); else _explicitNullProperties?.Remove("watchResponses"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponse>? _explicitNullValueWatchResponses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponse> WatchResponses { get => _explicitNullValueWatchResponses; set { _explicitNullValueWatchResponses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watchResponses"); else _explicitNullProperties?.Remove("watchResponses"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponse> WatchResponses { get => _explicitNullValueWatchResponses; set { _explicitNullValueWatchResponses = value; AdditionalData?.Remove("watchResponses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watchResponses"); else _explicitNullProperties?.Remove("watchResponses"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponse> _explicitNullValueWatchResponses = default!;
 #endif
         /// <summary>

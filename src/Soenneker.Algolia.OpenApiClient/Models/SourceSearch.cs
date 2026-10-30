@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("sourceIDs") is { } nullNodeSourceIDs && nullNodeSourceIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceIDs = null;
+            if (parseNode.GetChildNode("sourceIDs") is null) { _explicitNullValueSourceIDs = default!; _explicitNullProperties?.Remove("sourceIDs"); }
+            else if (parseNode.GetChildNode("sourceIDs") is { } nullNodeSourceIDs && nullNodeSourceIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceIDs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The sourceIDs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SourceIDs { get => _explicitNullValueSourceIDs; set { _explicitNullValueSourceIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceIDs"); else _explicitNullProperties?.Remove("sourceIDs"); } }
+        public List<string>? SourceIDs { get => _explicitNullValueSourceIDs; set { _explicitNullValueSourceIDs = value; AdditionalData?.Remove("sourceIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceIDs"); else _explicitNullProperties?.Remove("sourceIDs"); } }
         private List<string>? _explicitNullValueSourceIDs = default!;
 #nullable restore
 #else
-        public List<string> SourceIDs { get => _explicitNullValueSourceIDs; set { _explicitNullValueSourceIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceIDs"); else _explicitNullProperties?.Remove("sourceIDs"); } }
+        public List<string> SourceIDs { get => _explicitNullValueSourceIDs; set { _explicitNullValueSourceIDs = value; AdditionalData?.Remove("sourceIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceIDs"); else _explicitNullProperties?.Remove("sourceIDs"); } }
         private List<string> _explicitNullValueSourceIDs = default!;
 #endif
         /// <summary>

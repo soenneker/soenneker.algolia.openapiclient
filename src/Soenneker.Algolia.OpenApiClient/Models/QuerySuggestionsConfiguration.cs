@@ -18,49 +18,54 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowSpecialCharacters") is { } nullNodeAllowSpecialCharacters && nullNodeAllowSpecialCharacters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowSpecialCharacters = null;
-            if (parseNode.GetChildNode("enablePersonalization") is { } nullNodeEnablePersonalization && nullNodeEnablePersonalization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnablePersonalization = null;
-            if (parseNode.GetChildNode("exclude") is { } nullNodeExclude && nullNodeExclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exclude = null;
-            if (parseNode.GetChildNode("languages") is { } nullNodeLanguages && nullNodeLanguages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Languages = null;
-            if (parseNode.GetChildNode("sourceIndices") is { } nullNodeSourceIndices && nullNodeSourceIndices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceIndices = null;
+            if (parseNode.GetChildNode("allowSpecialCharacters") is null) { _explicitNullValueAllowSpecialCharacters = default!; _explicitNullProperties?.Remove("allowSpecialCharacters"); }
+            else if (parseNode.GetChildNode("allowSpecialCharacters") is { } nullNodeAllowSpecialCharacters && nullNodeAllowSpecialCharacters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowSpecialCharacters = null;
+            if (parseNode.GetChildNode("enablePersonalization") is null) { _explicitNullValueEnablePersonalization = default!; _explicitNullProperties?.Remove("enablePersonalization"); }
+            else if (parseNode.GetChildNode("enablePersonalization") is { } nullNodeEnablePersonalization && nullNodeEnablePersonalization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnablePersonalization = null;
+            if (parseNode.GetChildNode("exclude") is null) { _explicitNullValueExclude = default!; _explicitNullProperties?.Remove("exclude"); }
+            else if (parseNode.GetChildNode("exclude") is { } nullNodeExclude && nullNodeExclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exclude = null;
+            if (parseNode.GetChildNode("languages") is null) { _explicitNullValueLanguages = default!; _explicitNullProperties?.Remove("languages"); }
+            else if (parseNode.GetChildNode("languages") is { } nullNodeLanguages && nullNodeLanguages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Languages = null;
+            if (parseNode.GetChildNode("sourceIndices") is null) { _explicitNullValueSourceIndices = default!; _explicitNullProperties?.Remove("sourceIndices"); }
+            else if (parseNode.GetChildNode("sourceIndices") is { } nullNodeSourceIndices && nullNodeSourceIndices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceIndices = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to include suggestions with special characters.</summary>
-        public bool? AllowSpecialCharacters { get => _explicitNullValueAllowSpecialCharacters; set { _explicitNullValueAllowSpecialCharacters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowSpecialCharacters"); else _explicitNullProperties?.Remove("allowSpecialCharacters"); } }
+        public bool? AllowSpecialCharacters { get => _explicitNullValueAllowSpecialCharacters; set { _explicitNullValueAllowSpecialCharacters = value; AdditionalData?.Remove("allowSpecialCharacters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowSpecialCharacters"); else _explicitNullProperties?.Remove("allowSpecialCharacters"); } }
         private bool? _explicitNullValueAllowSpecialCharacters = default!;
         /// <summary>Whether to turn on personalized query suggestions.</summary>
-        public bool? EnablePersonalization { get => _explicitNullValueEnablePersonalization; set { _explicitNullValueEnablePersonalization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enablePersonalization"); else _explicitNullProperties?.Remove("enablePersonalization"); } }
+        public bool? EnablePersonalization { get => _explicitNullValueEnablePersonalization; set { _explicitNullValueEnablePersonalization = value; AdditionalData?.Remove("enablePersonalization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enablePersonalization"); else _explicitNullProperties?.Remove("enablePersonalization"); } }
         private bool? _explicitNullValueEnablePersonalization = default!;
         /// <summary>Words or regular expressions to exclude from the suggestions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
+        public List<string>? Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; AdditionalData?.Remove("exclude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
         private List<string>? _explicitNullValueExclude = default!;
 #nullable restore
 #else
-        public List<string> Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
+        public List<string> Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; AdditionalData?.Remove("exclude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
         private List<string> _explicitNullValueExclude = default!;
 #endif
         /// <summary>Languages for deduplicating singular and plural suggestions.If specified, only the more popular form is included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Languages? Languages { get => _explicitNullValueLanguages; set { _explicitNullValueLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("languages"); else _explicitNullProperties?.Remove("languages"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Languages? Languages { get => _explicitNullValueLanguages; set { _explicitNullValueLanguages = value; AdditionalData?.Remove("languages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("languages"); else _explicitNullProperties?.Remove("languages"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Languages? _explicitNullValueLanguages = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Languages Languages { get => _explicitNullValueLanguages; set { _explicitNullValueLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("languages"); else _explicitNullProperties?.Remove("languages"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Languages Languages { get => _explicitNullValueLanguages; set { _explicitNullValueLanguages = value; AdditionalData?.Remove("languages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("languages"); else _explicitNullProperties?.Remove("languages"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Languages _explicitNullValueLanguages = default!;
 #endif
         /// <summary>Algolia indices from which to get the popular searches for query suggestions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SourceIndex>? SourceIndices { get => _explicitNullValueSourceIndices; set { _explicitNullValueSourceIndices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceIndices"); else _explicitNullProperties?.Remove("sourceIndices"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SourceIndex>? SourceIndices { get => _explicitNullValueSourceIndices; set { _explicitNullValueSourceIndices = value; AdditionalData?.Remove("sourceIndices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceIndices"); else _explicitNullProperties?.Remove("sourceIndices"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.SourceIndex>? _explicitNullValueSourceIndices = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SourceIndex> SourceIndices { get => _explicitNullValueSourceIndices; set { _explicitNullValueSourceIndices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceIndices"); else _explicitNullProperties?.Remove("sourceIndices"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SourceIndex> SourceIndices { get => _explicitNullValueSourceIndices; set { _explicitNullValueSourceIndices = value; AdditionalData?.Remove("sourceIndices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceIndices"); else _explicitNullProperties?.Remove("sourceIndices"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.SourceIndex> _explicitNullValueSourceIndices = default!;
 #endif
         /// <summary>

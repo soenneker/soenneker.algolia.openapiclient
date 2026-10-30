@@ -17,7 +17,19 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("from") is null) { _explicitNullValueFrom = default!; _explicitNullProperties?.Remove("from"); }
+            else if (parseNode.GetChildNode("from") is { } nullNodeFrom && nullNodeFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) From = null;
+            if (parseNode.GetChildNode("value") is null) { _explicitNullValueValue = default!; _explicitNullProperties?.Remove("value"); }
+            else if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
         }
+
+        // Restore fields omitted by the generator's model-depth limit.
+#nullable enable
+        public long? From { get => _explicitNullValueFrom; set { _explicitNullValueFrom = value; AdditionalData?.Remove("from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from"); else _explicitNullProperties?.Remove("from"); } }
+        private long? _explicitNullValueFrom = default!;
+        public long? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private long? _explicitNullValueValue = default!;
+#nullable restore
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -46,6 +58,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "from", n => { From = n.GetLongValue(); } },
+                { "value", n => { Value = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -55,6 +69,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteLongValue("from", From);
+            writer.WriteLongValue("value", Value);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

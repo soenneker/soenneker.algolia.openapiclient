@@ -89,7 +89,7 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://ai-personalization.eu.algolia.com", "/advanced-personalization/2/users", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

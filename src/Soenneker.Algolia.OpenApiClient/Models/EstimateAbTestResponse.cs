@@ -17,23 +17,25 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("durationDays") is { } nullNodeDurationDays && nullNodeDurationDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationDays = null;
-            if (parseNode.GetChildNode("sampleSizes") is { } nullNodeSampleSizes && nullNodeSampleSizes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleSizes = null;
+            if (parseNode.GetChildNode("durationDays") is null) { _explicitNullValueDurationDays = default!; _explicitNullProperties?.Remove("durationDays"); }
+            else if (parseNode.GetChildNode("durationDays") is { } nullNodeDurationDays && nullNodeDurationDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationDays = null;
+            if (parseNode.GetChildNode("sampleSizes") is null) { _explicitNullValueSampleSizes = default!; _explicitNullProperties?.Remove("sampleSizes"); }
+            else if (parseNode.GetChildNode("sampleSizes") is { } nullNodeSampleSizes && nullNodeSampleSizes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleSizes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Estimated number of days needed to reach the sample sizes required for detecting the configured effect. This value is based on historical traffic.</summary>
-        public long? DurationDays { get => _explicitNullValueDurationDays; set { _explicitNullValueDurationDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durationDays"); else _explicitNullProperties?.Remove("durationDays"); } }
+        public long? DurationDays { get => _explicitNullValueDurationDays; set { _explicitNullValueDurationDays = value; AdditionalData?.Remove("durationDays"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durationDays"); else _explicitNullProperties?.Remove("durationDays"); } }
         private long? _explicitNullValueDurationDays = default!;
         /// <summary>Sample size estimates for each variant. The first element is the control variant.Each element is the estimated number of searches, or users for user-level rates (metrics ending in `UsersRate`), required to achieve the desired statistical significance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<long?>? SampleSizes { get => _explicitNullValueSampleSizes; set { _explicitNullValueSampleSizes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampleSizes"); else _explicitNullProperties?.Remove("sampleSizes"); } }
+        public List<long?>? SampleSizes { get => _explicitNullValueSampleSizes; set { _explicitNullValueSampleSizes = value; AdditionalData?.Remove("sampleSizes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampleSizes"); else _explicitNullProperties?.Remove("sampleSizes"); } }
         private List<long?>? _explicitNullValueSampleSizes = default!;
 #nullable restore
 #else
-        public List<long?> SampleSizes { get => _explicitNullValueSampleSizes; set { _explicitNullValueSampleSizes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampleSizes"); else _explicitNullProperties?.Remove("sampleSizes"); } }
+        public List<long?> SampleSizes { get => _explicitNullValueSampleSizes; set { _explicitNullValueSampleSizes = value; AdditionalData?.Remove("sampleSizes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampleSizes"); else _explicitNullProperties?.Remove("sampleSizes"); } }
         private List<long?> _explicitNullValueSampleSizes = default!;
 #endif
         /// <summary>

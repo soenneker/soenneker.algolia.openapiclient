@@ -18,17 +18,28 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("authenticatedUserToken") is { } nullNodeAuthenticatedUserToken && nullNodeAuthenticatedUserToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticatedUserToken = null;
-            if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
-            if (parseNode.GetChildNode("eventName") is { } nullNodeEventName && nullNodeEventName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventName = null;
-            if (parseNode.GetChildNode("eventSubtype") is { } nullNodeEventSubtype && nullNodeEventSubtype.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventSubtype = null;
-            if (parseNode.GetChildNode("eventType") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
-            if (parseNode.GetChildNode("index") is { } nullNodeIndex && nullNodeIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Index = null;
-            if (parseNode.GetChildNode("objectData") is { } nullNodeObjectData && nullNodeObjectData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectData = null;
-            if (parseNode.GetChildNode("objectIDs") is { } nullNodeObjectIDs && nullNodeObjectIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectIDs = null;
-            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
-            if (parseNode.GetChildNode("userToken") is { } nullNodeUserToken && nullNodeUserToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserToken = null;
-            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+            if (parseNode.GetChildNode("authenticatedUserToken") is null) { _explicitNullValueAuthenticatedUserToken = default!; _explicitNullProperties?.Remove("authenticatedUserToken"); }
+            else if (parseNode.GetChildNode("authenticatedUserToken") is { } nullNodeAuthenticatedUserToken && nullNodeAuthenticatedUserToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticatedUserToken = null;
+            if (parseNode.GetChildNode("currency") is null) { _explicitNullValueCurrency = default!; _explicitNullProperties?.Remove("currency"); }
+            else if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("eventName") is null) { _explicitNullValueEventName = default!; _explicitNullProperties?.Remove("eventName"); }
+            else if (parseNode.GetChildNode("eventName") is { } nullNodeEventName && nullNodeEventName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventName = null;
+            if (parseNode.GetChildNode("eventSubtype") is null) { _explicitNullValueEventSubtype = default!; _explicitNullProperties?.Remove("eventSubtype"); }
+            else if (parseNode.GetChildNode("eventSubtype") is { } nullNodeEventSubtype && nullNodeEventSubtype.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventSubtype = null;
+            if (parseNode.GetChildNode("eventType") is null) { _explicitNullValueEventType = default!; _explicitNullProperties?.Remove("eventType"); }
+            else if (parseNode.GetChildNode("eventType") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
+            if (parseNode.GetChildNode("index") is null) { _explicitNullValueIndex = default!; _explicitNullProperties?.Remove("index"); }
+            else if (parseNode.GetChildNode("index") is { } nullNodeIndex && nullNodeIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Index = null;
+            if (parseNode.GetChildNode("objectData") is null) { _explicitNullValueObjectData = default!; _explicitNullProperties?.Remove("objectData"); }
+            else if (parseNode.GetChildNode("objectData") is { } nullNodeObjectData && nullNodeObjectData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectData = null;
+            if (parseNode.GetChildNode("objectIDs") is null) { _explicitNullValueObjectIDs = default!; _explicitNullProperties?.Remove("objectIDs"); }
+            else if (parseNode.GetChildNode("objectIDs") is { } nullNodeObjectIDs && nullNodeObjectIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectIDs = null;
+            if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
+            else if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("userToken") is null) { _explicitNullValueUserToken = default!; _explicitNullProperties?.Remove("userToken"); }
+            else if (parseNode.GetChildNode("userToken") is { } nullNodeUserToken && nullNodeUserToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserToken = null;
+            if (parseNode.GetChildNode("value") is null) { _explicitNullValueValue = default!; _explicitNullProperties?.Remove("value"); }
+            else if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -36,90 +47,90 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Identifier for authenticated users.When the user signs in, you can get an identifier from your system and send it as `authenticatedUserToken`.This lets you keep using the `userToken` from before the user signed in, while providing a reliable way to identify users across sessions.Don&apos;t use personally identifiable information in user tokens.For more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthenticatedUserToken { get => _explicitNullValueAuthenticatedUserToken; set { _explicitNullValueAuthenticatedUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticatedUserToken"); else _explicitNullProperties?.Remove("authenticatedUserToken"); } }
+        public string? AuthenticatedUserToken { get => _explicitNullValueAuthenticatedUserToken; set { _explicitNullValueAuthenticatedUserToken = value; AdditionalData?.Remove("authenticatedUserToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticatedUserToken"); else _explicitNullProperties?.Remove("authenticatedUserToken"); } }
         private string? _explicitNullValueAuthenticatedUserToken = default!;
 #nullable restore
 #else
-        public string AuthenticatedUserToken { get => _explicitNullValueAuthenticatedUserToken; set { _explicitNullValueAuthenticatedUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticatedUserToken"); else _explicitNullProperties?.Remove("authenticatedUserToken"); } }
+        public string AuthenticatedUserToken { get => _explicitNullValueAuthenticatedUserToken; set { _explicitNullValueAuthenticatedUserToken = value; AdditionalData?.Remove("authenticatedUserToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticatedUserToken"); else _explicitNullProperties?.Remove("authenticatedUserToken"); } }
         private string _explicitNullValueAuthenticatedUserToken = default!;
 #endif
         /// <summary>Three-letter [currency code](https://www.iso.org/iso-4217-currency-codes.html).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
         private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>Event name, up to 64 ASCII characters.Consider naming events consistently—for example, by adopting Segment&apos;s[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)framework.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventName { get => _explicitNullValueEventName; set { _explicitNullValueEventName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventName"); else _explicitNullProperties?.Remove("eventName"); } }
+        public string? EventName { get => _explicitNullValueEventName; set { _explicitNullValueEventName = value; AdditionalData?.Remove("eventName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventName"); else _explicitNullProperties?.Remove("eventName"); } }
         private string? _explicitNullValueEventName = default!;
 #nullable restore
 #else
-        public string EventName { get => _explicitNullValueEventName; set { _explicitNullValueEventName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventName"); else _explicitNullProperties?.Remove("eventName"); } }
+        public string EventName { get => _explicitNullValueEventName; set { _explicitNullValueEventName = value; AdditionalData?.Remove("eventName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventName"); else _explicitNullProperties?.Remove("eventName"); } }
         private string _explicitNullValueEventName = default!;
 #endif
         /// <summary>The eventSubtype property</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.PurchaseEvent? EventSubtype { get => _explicitNullValueEventSubtype; set { _explicitNullValueEventSubtype = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventSubtype"); else _explicitNullProperties?.Remove("eventSubtype"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.PurchaseEvent? EventSubtype { get => _explicitNullValueEventSubtype; set { _explicitNullValueEventSubtype = value; AdditionalData?.Remove("eventSubtype"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventSubtype"); else _explicitNullProperties?.Remove("eventSubtype"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.PurchaseEvent? _explicitNullValueEventSubtype = default!;
         /// <summary>The eventType property</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConversionEvent? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventType"); else _explicitNullProperties?.Remove("eventType"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ConversionEvent? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; AdditionalData?.Remove("eventType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventType"); else _explicitNullProperties?.Remove("eventType"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ConversionEvent? _explicitNullValueEventType = default!;
         /// <summary>Index name (case-sensitive) to which the event&apos;s items belong.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
+        public string? Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; AdditionalData?.Remove("index"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
         private string? _explicitNullValueIndex = default!;
 #nullable restore
 #else
-        public string Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
+        public string Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; AdditionalData?.Remove("index"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
         private string _explicitNullValueIndex = default!;
 #endif
         /// <summary>Extra information about the records involved in a purchase or add-to-cart events.If provided, it must be the same length as `objectIDs`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ObjectDataAfterSearch>? ObjectData { get => _explicitNullValueObjectData; set { _explicitNullValueObjectData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectData"); else _explicitNullProperties?.Remove("objectData"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ObjectDataAfterSearch>? ObjectData { get => _explicitNullValueObjectData; set { _explicitNullValueObjectData = value; AdditionalData?.Remove("objectData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectData"); else _explicitNullProperties?.Remove("objectData"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.ObjectDataAfterSearch>? _explicitNullValueObjectData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ObjectDataAfterSearch> ObjectData { get => _explicitNullValueObjectData; set { _explicitNullValueObjectData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectData"); else _explicitNullProperties?.Remove("objectData"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ObjectDataAfterSearch> ObjectData { get => _explicitNullValueObjectData; set { _explicitNullValueObjectData = value; AdditionalData?.Remove("objectData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectData"); else _explicitNullProperties?.Remove("objectData"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.ObjectDataAfterSearch> _explicitNullValueObjectData = default!;
 #endif
         /// <summary>Object IDs of the records that are part of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ObjectIDs { get => _explicitNullValueObjectIDs; set { _explicitNullValueObjectIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectIDs"); else _explicitNullProperties?.Remove("objectIDs"); } }
+        public List<string>? ObjectIDs { get => _explicitNullValueObjectIDs; set { _explicitNullValueObjectIDs = value; AdditionalData?.Remove("objectIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectIDs"); else _explicitNullProperties?.Remove("objectIDs"); } }
         private List<string>? _explicitNullValueObjectIDs = default!;
 #nullable restore
 #else
-        public List<string> ObjectIDs { get => _explicitNullValueObjectIDs; set { _explicitNullValueObjectIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectIDs"); else _explicitNullProperties?.Remove("objectIDs"); } }
+        public List<string> ObjectIDs { get => _explicitNullValueObjectIDs; set { _explicitNullValueObjectIDs = value; AdditionalData?.Remove("objectIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectIDs"); else _explicitNullProperties?.Remove("objectIDs"); } }
         private List<string> _explicitNullValueObjectIDs = default!;
 #endif
         /// <summary>Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.If not provided, we use the time at which the request was received.</summary>
-        public long? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public long? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private long? _explicitNullValueTimestamp = default!;
         /// <summary>Anonymous or pseudonymous user identifier.Don&apos;t use personally identifiable information in user tokens.For more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userToken"); else _explicitNullProperties?.Remove("userToken"); } }
+        public string? UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; AdditionalData?.Remove("userToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userToken"); else _explicitNullProperties?.Remove("userToken"); } }
         private string? _explicitNullValueUserToken = default!;
 #nullable restore
 #else
-        public string UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userToken"); else _explicitNullProperties?.Remove("userToken"); } }
+        public string UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; AdditionalData?.Remove("userToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userToken"); else _explicitNullProperties?.Remove("userToken"); } }
         private string _explicitNullValueUserToken = default!;
 #endif
         /// <summary>Total monetary value of this event in units of `currency`.This should be equal to the sum of `price` times `quantity`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InsightsValueValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InsightsValueValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.InsightsValueValue? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InsightsValueValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InsightsValueValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.InsightsValueValue _explicitNullValueValue = default!;
 #endif
         /// <summary>
@@ -150,8 +161,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "authenticatedUserToken", n => { AuthenticatedUserToken = n.GetStringValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "eventName", n => { EventName = n.GetStringValue(); } },
-                { "eventSubtype", n => { EventSubtype = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.PurchaseEvent>(); } },
-                { "eventType", n => { EventType = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ConversionEvent>(); } },
+                { "eventSubtype", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.PurchaseEvent>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEventSubtype = default; _explicitNullProperties?.Remove("eventSubtype"); AdditionalData["eventSubtype"] = unknown; } else { EventSubtype = parsed; AdditionalData.Remove("eventSubtype"); } } },
+                { "eventType", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ConversionEvent>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEventType = default; _explicitNullProperties?.Remove("eventType"); AdditionalData["eventType"] = unknown; } else { EventType = parsed; AdditionalData.Remove("eventType"); } } },
                 { "index", n => { Index = n.GetStringValue(); } },
                 { "objectData", n => { ObjectData = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ObjectDataAfterSearch>(global::Soenneker.Algolia.OpenApiClient.Models.ObjectDataAfterSearch.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "objectIDs", n => { ObjectIDs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

@@ -18,13 +18,20 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("decomposition") is { } nullNodeDecomposition && nullNodeDecomposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Decomposition = null;
-            if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
-            if (parseNode.GetChildNode("objectID") is { } nullNodeObjectID && nullNodeObjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectID = null;
-            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("word") is { } nullNodeWord && nullNodeWord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Word = null;
-            if (parseNode.GetChildNode("words") is { } nullNodeWords && nullNodeWords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Words = null;
+            if (parseNode.GetChildNode("decomposition") is null) { _explicitNullValueDecomposition = default!; _explicitNullProperties?.Remove("decomposition"); }
+            else if (parseNode.GetChildNode("decomposition") is { } nullNodeDecomposition && nullNodeDecomposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Decomposition = null;
+            if (parseNode.GetChildNode("language") is null) { _explicitNullValueLanguage = default!; _explicitNullProperties?.Remove("language"); }
+            else if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("objectID") is null) { _explicitNullValueObjectID = default!; _explicitNullProperties?.Remove("objectID"); }
+            else if (parseNode.GetChildNode("objectID") is { } nullNodeObjectID && nullNodeObjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectID = null;
+            if (parseNode.GetChildNode("state") is null) { _explicitNullValueState = default!; _explicitNullProperties?.Remove("state"); }
+            else if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("word") is null) { _explicitNullValueWord = default!; _explicitNullProperties?.Remove("word"); }
+            else if (parseNode.GetChildNode("word") is { } nullNodeWord && nullNodeWord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Word = null;
+            if (parseNode.GetChildNode("words") is null) { _explicitNullValueWords = default!; _explicitNullProperties?.Remove("words"); }
+            else if (parseNode.GetChildNode("words") is { } nullNodeWords && nullNodeWords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Words = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,50 +39,50 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Invividual components of a compound word in the `compounds` dictionary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Decomposition { get => _explicitNullValueDecomposition; set { _explicitNullValueDecomposition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decomposition"); else _explicitNullProperties?.Remove("decomposition"); } }
+        public List<string>? Decomposition { get => _explicitNullValueDecomposition; set { _explicitNullValueDecomposition = value; AdditionalData?.Remove("decomposition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decomposition"); else _explicitNullProperties?.Remove("decomposition"); } }
         private List<string>? _explicitNullValueDecomposition = default!;
 #nullable restore
 #else
-        public List<string> Decomposition { get => _explicitNullValueDecomposition; set { _explicitNullValueDecomposition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decomposition"); else _explicitNullProperties?.Remove("decomposition"); } }
+        public List<string> Decomposition { get => _explicitNullValueDecomposition; set { _explicitNullValueDecomposition = value; AdditionalData?.Remove("decomposition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decomposition"); else _explicitNullProperties?.Remove("decomposition"); } }
         private List<string> _explicitNullValueDecomposition = default!;
 #endif
         /// <summary>ISO code for a supported language.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage? Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage? _explicitNullValueLanguage = default!;
         /// <summary>Unique identifier for the dictionary entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
+        public string? ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; AdditionalData?.Remove("objectID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
         private string? _explicitNullValueObjectID = default!;
 #nullable restore
 #else
-        public string ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
+        public string ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; AdditionalData?.Remove("objectID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
         private string _explicitNullValueObjectID = default!;
 #endif
         /// <summary>Whether a dictionary entry is active.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.DictionaryEntryState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.DictionaryEntryState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.DictionaryEntryState? _explicitNullValueState = default!;
         /// <summary>Whether a dictionary entry is provided by Algolia (standard), or has been added by you (custom).</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.DictionaryEntryType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.DictionaryEntryType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.DictionaryEntryType? _explicitNullValueType = default!;
         /// <summary>Matching dictionary word for `stopwords` and `compounds` dictionaries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Word { get => _explicitNullValueWord; set { _explicitNullValueWord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word"); else _explicitNullProperties?.Remove("word"); } }
+        public string? Word { get => _explicitNullValueWord; set { _explicitNullValueWord = value; AdditionalData?.Remove("word"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word"); else _explicitNullProperties?.Remove("word"); } }
         private string? _explicitNullValueWord = default!;
 #nullable restore
 #else
-        public string Word { get => _explicitNullValueWord; set { _explicitNullValueWord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word"); else _explicitNullProperties?.Remove("word"); } }
+        public string Word { get => _explicitNullValueWord; set { _explicitNullValueWord = value; AdditionalData?.Remove("word"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word"); else _explicitNullProperties?.Remove("word"); } }
         private string _explicitNullValueWord = default!;
 #endif
         /// <summary>Matching words in the `plurals` dictionary including declensions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Words { get => _explicitNullValueWords; set { _explicitNullValueWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words"); else _explicitNullProperties?.Remove("words"); } }
+        public List<string>? Words { get => _explicitNullValueWords; set { _explicitNullValueWords = value; AdditionalData?.Remove("words"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words"); else _explicitNullProperties?.Remove("words"); } }
         private List<string>? _explicitNullValueWords = default!;
 #nullable restore
 #else
-        public List<string> Words { get => _explicitNullValueWords; set { _explicitNullValueWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words"); else _explicitNullProperties?.Remove("words"); } }
+        public List<string> Words { get => _explicitNullValueWords; set { _explicitNullValueWords = value; AdditionalData?.Remove("words"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words"); else _explicitNullProperties?.Remove("words"); } }
         private List<string> _explicitNullValueWords = default!;
 #endif
         /// <summary>
@@ -104,10 +111,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "decomposition", n => { Decomposition = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "language", n => { Language = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage>(); } },
+                { "language", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLanguage = default; _explicitNullProperties?.Remove("language"); AdditionalData["language"] = unknown; } else { Language = parsed; AdditionalData.Remove("language"); } } },
                 { "objectID", n => { ObjectID = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.DictionaryEntryState>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.DictionaryEntryType>(); } },
+                { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.DictionaryEntryState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.DictionaryEntryType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "word", n => { Word = n.GetStringValue(); } },
                 { "words", n => { Words = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };

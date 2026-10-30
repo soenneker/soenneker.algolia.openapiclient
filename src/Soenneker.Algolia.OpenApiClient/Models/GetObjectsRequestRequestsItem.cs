@@ -18,9 +18,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attributesToRetrieve") is { } nullNodeAttributesToRetrieve && nullNodeAttributesToRetrieve.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributesToRetrieve = null;
-            if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
-            if (parseNode.GetChildNode("objectID") is { } nullNodeObjectID && nullNodeObjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectID = null;
+            if (parseNode.GetChildNode("attributesToRetrieve") is null) { _explicitNullValueAttributesToRetrieve = default!; _explicitNullProperties?.Remove("attributesToRetrieve"); }
+            else if (parseNode.GetChildNode("attributesToRetrieve") is { } nullNodeAttributesToRetrieve && nullNodeAttributesToRetrieve.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributesToRetrieve = null;
+            if (parseNode.GetChildNode("indexName") is null) { _explicitNullValueIndexName = default!; _explicitNullProperties?.Remove("indexName"); }
+            else if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
+            if (parseNode.GetChildNode("objectID") is null) { _explicitNullValueObjectID = default!; _explicitNullProperties?.Remove("objectID"); }
+            else if (parseNode.GetChildNode("objectID") is { } nullNodeObjectID && nullNodeObjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectID = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Attributes to retrieve.If not specified, all retrievable attributes are returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AttributesToRetrieve { get => _explicitNullValueAttributesToRetrieve; set { _explicitNullValueAttributesToRetrieve = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributesToRetrieve"); else _explicitNullProperties?.Remove("attributesToRetrieve"); } }
+        public List<string>? AttributesToRetrieve { get => _explicitNullValueAttributesToRetrieve; set { _explicitNullValueAttributesToRetrieve = value; AdditionalData?.Remove("attributesToRetrieve"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributesToRetrieve"); else _explicitNullProperties?.Remove("attributesToRetrieve"); } }
         private List<string>? _explicitNullValueAttributesToRetrieve = default!;
 #nullable restore
 #else
-        public List<string> AttributesToRetrieve { get => _explicitNullValueAttributesToRetrieve; set { _explicitNullValueAttributesToRetrieve = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributesToRetrieve"); else _explicitNullProperties?.Remove("attributesToRetrieve"); } }
+        public List<string> AttributesToRetrieve { get => _explicitNullValueAttributesToRetrieve; set { _explicitNullValueAttributesToRetrieve = value; AdditionalData?.Remove("attributesToRetrieve"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributesToRetrieve"); else _explicitNullProperties?.Remove("attributesToRetrieve"); } }
         private List<string> _explicitNullValueAttributesToRetrieve = default!;
 #endif
         /// <summary>Index from which to retrieve the records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string? _explicitNullValueIndexName = default!;
 #nullable restore
 #else
-        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string _explicitNullValueIndexName = default!;
 #endif
         /// <summary>Object ID for the record to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
+        public string? ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; AdditionalData?.Remove("objectID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
         private string? _explicitNullValueObjectID = default!;
 #nullable restore
 #else
-        public string ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
+        public string ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; AdditionalData?.Remove("objectID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
         private string _explicitNullValueObjectID = default!;
 #endif
         /// <summary>

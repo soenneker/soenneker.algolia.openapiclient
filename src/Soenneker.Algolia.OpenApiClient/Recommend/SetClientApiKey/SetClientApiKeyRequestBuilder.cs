@@ -63,7 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.SetClientApiKey
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Recommend.SetClientApiKey.SetClientApiKeyRequestBuilder.SetClientApiKeyRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://ALGOLIA_APPLICATION_ID.algolia.net", "/recommend/setClientApiKey", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }

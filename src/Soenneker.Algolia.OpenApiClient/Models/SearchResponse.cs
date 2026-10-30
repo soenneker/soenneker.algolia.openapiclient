@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
             base.CaptureExplicitNulls(parseNode);
-            if (parseNode.GetChildNode("compositions") is { } nullNodeCompositions && nullNodeCompositions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compositions = null;
+            if (parseNode.GetChildNode("compositions") is null) { _explicitNullValueCompositions = default!; _explicitNullProperties?.Remove("compositions"); }
+            else if (parseNode.GetChildNode("compositions") is { } nullNodeCompositions && nullNodeCompositions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compositions = null;
         }
 
         /// <summary>The compositions property</summary>

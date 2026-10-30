@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("multifeed") is { } nullNodeMultifeed && nullNodeMultifeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Multifeed = null;
+            if (parseNode.GetChildNode("multifeed") is null) { _explicitNullValueMultifeed = default!; _explicitNullProperties?.Remove("multifeed"); }
+            else if (parseNode.GetChildNode("multifeed") is { } nullNodeMultifeed && nullNodeMultifeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Multifeed = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The multifeed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Multifeed? Multifeed { get => _explicitNullValueMultifeed; set { _explicitNullValueMultifeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multifeed"); else _explicitNullProperties?.Remove("multifeed"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Multifeed? Multifeed { get => _explicitNullValueMultifeed; set { _explicitNullValueMultifeed = value; AdditionalData?.Remove("multifeed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multifeed"); else _explicitNullProperties?.Remove("multifeed"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Multifeed? _explicitNullValueMultifeed = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Multifeed Multifeed { get => _explicitNullValueMultifeed; set { _explicitNullValueMultifeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multifeed"); else _explicitNullProperties?.Remove("multifeed"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Multifeed Multifeed { get => _explicitNullValueMultifeed; set { _explicitNullValueMultifeed = value; AdditionalData?.Remove("multifeed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multifeed"); else _explicitNullProperties?.Remove("multifeed"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Multifeed _explicitNullValueMultifeed = default!;
 #endif
         /// <summary>

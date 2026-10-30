@@ -18,17 +18,19 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("mean") is { } nullNodeMean && nullNodeMean.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mean = null;
-            if (parseNode.GetChildNode("winsorizedValue") is { } nullNodeWinsorizedValue && nullNodeWinsorizedValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WinsorizedValue = null;
+            if (parseNode.GetChildNode("mean") is null) { _explicitNullValueMean = default!; _explicitNullProperties?.Remove("mean"); }
+            else if (parseNode.GetChildNode("mean") is { } nullNodeMean && nullNodeMean.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mean = null;
+            if (parseNode.GetChildNode("winsorizedValue") is null) { _explicitNullValueWinsorizedValue = default!; _explicitNullProperties?.Remove("winsorizedValue"); }
+            else if (parseNode.GetChildNode("winsorizedValue") is { } nullNodeWinsorizedValue && nullNodeWinsorizedValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WinsorizedValue = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Mean value for this metric.</summary>
-        public double? Mean { get => _explicitNullValueMean; set { _explicitNullValueMean = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mean"); else _explicitNullProperties?.Remove("mean"); } }
+        public double? Mean { get => _explicitNullValueMean; set { _explicitNullValueMean = value; AdditionalData?.Remove("mean"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mean"); else _explicitNullProperties?.Remove("mean"); } }
         private double? _explicitNullValueMean = default!;
         /// <summary>Only present for `revenue` metrics.It is the amount exceeding the 95th percentile of global revenue transactions involved in the AB Test. This amount is not considered when calculating statistical significance.It is tied to a per revenue-currency pair contrary to otherglobal filter effects (such as outliers and empty search count).</summary>
-        public double? WinsorizedValue { get => _explicitNullValueWinsorizedValue; set { _explicitNullValueWinsorizedValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winsorizedValue"); else _explicitNullProperties?.Remove("winsorizedValue"); } }
+        public double? WinsorizedValue { get => _explicitNullValueWinsorizedValue; set { _explicitNullValueWinsorizedValue = value; AdditionalData?.Remove("winsorizedValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winsorizedValue"); else _explicitNullProperties?.Remove("winsorizedValue"); } }
         private double? _explicitNullValueWinsorizedValue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.MetricMetadata"/> and sets the default values.

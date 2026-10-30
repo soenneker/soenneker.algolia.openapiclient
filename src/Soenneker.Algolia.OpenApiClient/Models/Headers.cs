@@ -18,19 +18,22 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Accept-Language") is { } nullNodeAcceptLanguage && nullNodeAcceptLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptLanguage = null;
-            if (parseNode.GetChildNode("Authorization") is { } nullNodeAuthorization && nullNodeAuthorization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authorization = null;
-            if (parseNode.GetChildNode("Cookie") is { } nullNodeCookie && nullNodeCookie.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cookie = null;
+            if (parseNode.GetChildNode("Accept-Language") is null) { _explicitNullValueAcceptLanguage = default!; _explicitNullProperties?.Remove("Accept-Language"); }
+            else if (parseNode.GetChildNode("Accept-Language") is { } nullNodeAcceptLanguage && nullNodeAcceptLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptLanguage = null;
+            if (parseNode.GetChildNode("Authorization") is null) { _explicitNullValueAuthorization = default!; _explicitNullProperties?.Remove("Authorization"); }
+            else if (parseNode.GetChildNode("Authorization") is { } nullNodeAuthorization && nullNodeAuthorization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authorization = null;
+            if (parseNode.GetChildNode("Cookie") is null) { _explicitNullValueCookie = default!; _explicitNullProperties?.Remove("Cookie"); }
+            else if (parseNode.GetChildNode("Cookie") is { } nullNodeCookie && nullNodeCookie.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cookie = null;
         }
 
         /// <summary>Preferred natural language and locale.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AcceptLanguage { get => _explicitNullValueAcceptLanguage; set { _explicitNullValueAcceptLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Accept-Language"); else _explicitNullProperties?.Remove("Accept-Language"); } }
+        public string? AcceptLanguage { get => _explicitNullValueAcceptLanguage; set { _explicitNullValueAcceptLanguage = value; AdditionalData?.Remove("Accept-Language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Accept-Language"); else _explicitNullProperties?.Remove("Accept-Language"); } }
         private string? _explicitNullValueAcceptLanguage = default!;
 #nullable restore
 #else
-        public string AcceptLanguage { get => _explicitNullValueAcceptLanguage; set { _explicitNullValueAcceptLanguage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Accept-Language"); else _explicitNullProperties?.Remove("Accept-Language"); } }
+        public string AcceptLanguage { get => _explicitNullValueAcceptLanguage; set { _explicitNullValueAcceptLanguage = value; AdditionalData?.Remove("Accept-Language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Accept-Language"); else _explicitNullProperties?.Remove("Accept-Language"); } }
         private string _explicitNullValueAcceptLanguage = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,21 +41,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Basic authentication header.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Authorization { get => _explicitNullValueAuthorization; set { _explicitNullValueAuthorization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Authorization"); else _explicitNullProperties?.Remove("Authorization"); } }
+        public string? Authorization { get => _explicitNullValueAuthorization; set { _explicitNullValueAuthorization = value; AdditionalData?.Remove("Authorization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Authorization"); else _explicitNullProperties?.Remove("Authorization"); } }
         private string? _explicitNullValueAuthorization = default!;
 #nullable restore
 #else
-        public string Authorization { get => _explicitNullValueAuthorization; set { _explicitNullValueAuthorization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Authorization"); else _explicitNullProperties?.Remove("Authorization"); } }
+        public string Authorization { get => _explicitNullValueAuthorization; set { _explicitNullValueAuthorization = value; AdditionalData?.Remove("Authorization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Authorization"); else _explicitNullProperties?.Remove("Authorization"); } }
         private string _explicitNullValueAuthorization = default!;
 #endif
         /// <summary>Cookie. The header will be replaced by the cookie retrieved when logging in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cookie { get => _explicitNullValueCookie; set { _explicitNullValueCookie = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Cookie"); else _explicitNullProperties?.Remove("Cookie"); } }
+        public string? Cookie { get => _explicitNullValueCookie; set { _explicitNullValueCookie = value; AdditionalData?.Remove("Cookie"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Cookie"); else _explicitNullProperties?.Remove("Cookie"); } }
         private string? _explicitNullValueCookie = default!;
 #nullable restore
 #else
-        public string Cookie { get => _explicitNullValueCookie; set { _explicitNullValueCookie = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Cookie"); else _explicitNullProperties?.Remove("Cookie"); } }
+        public string Cookie { get => _explicitNullValueCookie; set { _explicitNullValueCookie = value; AdditionalData?.Remove("Cookie"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Cookie"); else _explicitNullProperties?.Remove("Cookie"); } }
         private string _explicitNullValueCookie = default!;
 #endif
         /// <summary>

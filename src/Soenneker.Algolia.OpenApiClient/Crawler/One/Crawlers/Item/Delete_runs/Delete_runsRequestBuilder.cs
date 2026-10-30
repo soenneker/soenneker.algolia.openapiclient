@@ -77,7 +77,7 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Delete_runs
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://crawler.algolia.com/api", "/crawler/1/crawlers/{id}/delete_runs", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromScalarCollection(RequestAdapter, "application/json", body);

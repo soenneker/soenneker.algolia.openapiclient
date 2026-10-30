@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("taskIDs") is { } nullNodeTaskIDs && nullNodeTaskIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaskIDs = null;
+            if (parseNode.GetChildNode("taskIDs") is null) { _explicitNullValueTaskIDs = default!; _explicitNullProperties?.Remove("taskIDs"); }
+            else if (parseNode.GetChildNode("taskIDs") is { } nullNodeTaskIDs && nullNodeTaskIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaskIDs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The taskIDs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TaskIDs { get => _explicitNullValueTaskIDs; set { _explicitNullValueTaskIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskIDs"); else _explicitNullProperties?.Remove("taskIDs"); } }
+        public List<string>? TaskIDs { get => _explicitNullValueTaskIDs; set { _explicitNullValueTaskIDs = value; AdditionalData?.Remove("taskIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskIDs"); else _explicitNullProperties?.Remove("taskIDs"); } }
         private List<string>? _explicitNullValueTaskIDs = default!;
 #nullable restore
 #else
-        public List<string> TaskIDs { get => _explicitNullValueTaskIDs; set { _explicitNullValueTaskIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskIDs"); else _explicitNullProperties?.Remove("taskIDs"); } }
+        public List<string> TaskIDs { get => _explicitNullValueTaskIDs; set { _explicitNullValueTaskIDs = value; AdditionalData?.Remove("taskIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskIDs"); else _explicitNullProperties?.Remove("taskIDs"); } }
         private List<string> _explicitNullValueTaskIDs = default!;
 #endif
         /// <summary>

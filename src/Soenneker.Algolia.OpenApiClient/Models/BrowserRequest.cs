@@ -18,10 +18,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("password") is { } nullNodePassword && nullNodePassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Password = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
-            if (parseNode.GetChildNode("username") is { } nullNodeUsername && nullNodeUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Username = null;
-            if (parseNode.GetChildNode("waitTime") is { } nullNodeWaitTime && nullNodeWaitTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitTime = null;
+            if (parseNode.GetChildNode("password") is null) { _explicitNullValuePassword = default!; _explicitNullProperties?.Remove("password"); }
+            else if (parseNode.GetChildNode("password") is { } nullNodePassword && nullNodePassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Password = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("username") is null) { _explicitNullValueUsername = default!; _explicitNullProperties?.Remove("username"); }
+            else if (parseNode.GetChildNode("username") is { } nullNodeUsername && nullNodeUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Username = null;
+            if (parseNode.GetChildNode("waitTime") is null) { _explicitNullValueWaitTime = default!; _explicitNullProperties?.Remove("waitTime"); }
+            else if (parseNode.GetChildNode("waitTime") is { } nullNodeWaitTime && nullNodeWaitTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitTime = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Password for signing in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Password { get => _explicitNullValuePassword; set { _explicitNullValuePassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("password"); else _explicitNullProperties?.Remove("password"); } }
+        public string? Password { get => _explicitNullValuePassword; set { _explicitNullValuePassword = value; AdditionalData?.Remove("password"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("password"); else _explicitNullProperties?.Remove("password"); } }
         private string? _explicitNullValuePassword = default!;
 #nullable restore
 #else
-        public string Password { get => _explicitNullValuePassword; set { _explicitNullValuePassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("password"); else _explicitNullProperties?.Remove("password"); } }
+        public string Password { get => _explicitNullValuePassword; set { _explicitNullValuePassword = value; AdditionalData?.Remove("password"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("password"); else _explicitNullProperties?.Remove("password"); } }
         private string _explicitNullValuePassword = default!;
 #endif
         /// <summary>URL of your login page.The crawler looks for an input matching the selector `input[type=text]` or `input[type=email]` for the username and `input[type=password]` for the password.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>Username for signing in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
+        public string? Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; AdditionalData?.Remove("username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
         private string? _explicitNullValueUsername = default!;
 #nullable restore
 #else
-        public string Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
+        public string Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; AdditionalData?.Remove("username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
         private string _explicitNullValueUsername = default!;
 #endif
         /// <summary>Timeout for the HTTP request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.WaitTime? WaitTime { get => _explicitNullValueWaitTime; set { _explicitNullValueWaitTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitTime"); else _explicitNullProperties?.Remove("waitTime"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.WaitTime? WaitTime { get => _explicitNullValueWaitTime; set { _explicitNullValueWaitTime = value; AdditionalData?.Remove("waitTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitTime"); else _explicitNullProperties?.Remove("waitTime"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.WaitTime? _explicitNullValueWaitTime = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.WaitTime WaitTime { get => _explicitNullValueWaitTime; set { _explicitNullValueWaitTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitTime"); else _explicitNullProperties?.Remove("waitTime"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.WaitTime WaitTime { get => _explicitNullValueWaitTime; set { _explicitNullValueWaitTime = value; AdditionalData?.Remove("waitTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitTime"); else _explicitNullProperties?.Remove("waitTime"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.WaitTime _explicitNullValueWaitTime = default!;
 #endif
         /// <summary>

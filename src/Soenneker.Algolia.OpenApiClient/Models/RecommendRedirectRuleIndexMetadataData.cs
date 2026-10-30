@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ruleObjectID") is { } nullNodeRuleObjectID && nullNodeRuleObjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleObjectID = null;
+            if (parseNode.GetChildNode("ruleObjectID") is null) { _explicitNullValueRuleObjectID = default!; _explicitNullProperties?.Remove("ruleObjectID"); }
+            else if (parseNode.GetChildNode("ruleObjectID") is { } nullNodeRuleObjectID && nullNodeRuleObjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleObjectID = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The ruleObjectID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RuleObjectID { get => _explicitNullValueRuleObjectID; set { _explicitNullValueRuleObjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleObjectID"); else _explicitNullProperties?.Remove("ruleObjectID"); } }
+        public string? RuleObjectID { get => _explicitNullValueRuleObjectID; set { _explicitNullValueRuleObjectID = value; AdditionalData?.Remove("ruleObjectID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleObjectID"); else _explicitNullProperties?.Remove("ruleObjectID"); } }
         private string? _explicitNullValueRuleObjectID = default!;
 #nullable restore
 #else
-        public string RuleObjectID { get => _explicitNullValueRuleObjectID; set { _explicitNullValueRuleObjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleObjectID"); else _explicitNullProperties?.Remove("ruleObjectID"); } }
+        public string RuleObjectID { get => _explicitNullValueRuleObjectID; set { _explicitNullValueRuleObjectID = value; AdditionalData?.Remove("ruleObjectID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleObjectID"); else _explicitNullProperties?.Remove("ruleObjectID"); } }
         private string _explicitNullValueRuleObjectID = default!;
 #endif
         /// <summary>

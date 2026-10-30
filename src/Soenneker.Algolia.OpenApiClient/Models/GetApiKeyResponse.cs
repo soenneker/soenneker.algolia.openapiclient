@@ -17,90 +17,100 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("acl") is { } nullNodeAcl && nullNodeAcl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Acl = null;
-            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("indexes") is { } nullNodeIndexes && nullNodeIndexes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indexes = null;
-            if (parseNode.GetChildNode("maxHitsPerQuery") is { } nullNodeMaxHitsPerQuery && nullNodeMaxHitsPerQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxHitsPerQuery = null;
-            if (parseNode.GetChildNode("maxQueriesPerIPPerHour") is { } nullNodeMaxQueriesPerIPPerHour && nullNodeMaxQueriesPerIPPerHour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxQueriesPerIPPerHour = null;
-            if (parseNode.GetChildNode("queryParameters") is { } nullNodeQueryParameters && nullNodeQueryParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryParameters = null;
-            if (parseNode.GetChildNode("referers") is { } nullNodeReferers && nullNodeReferers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Referers = null;
-            if (parseNode.GetChildNode("validity") is { } nullNodeValidity && nullNodeValidity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Validity = null;
-            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+            if (parseNode.GetChildNode("acl") is null) { _explicitNullValueAcl = default!; _explicitNullProperties?.Remove("acl"); }
+            else if (parseNode.GetChildNode("acl") is { } nullNodeAcl && nullNodeAcl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Acl = null;
+            if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
+            else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("indexes") is null) { _explicitNullValueIndexes = default!; _explicitNullProperties?.Remove("indexes"); }
+            else if (parseNode.GetChildNode("indexes") is { } nullNodeIndexes && nullNodeIndexes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indexes = null;
+            if (parseNode.GetChildNode("maxHitsPerQuery") is null) { _explicitNullValueMaxHitsPerQuery = default!; _explicitNullProperties?.Remove("maxHitsPerQuery"); }
+            else if (parseNode.GetChildNode("maxHitsPerQuery") is { } nullNodeMaxHitsPerQuery && nullNodeMaxHitsPerQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxHitsPerQuery = null;
+            if (parseNode.GetChildNode("maxQueriesPerIPPerHour") is null) { _explicitNullValueMaxQueriesPerIPPerHour = default!; _explicitNullProperties?.Remove("maxQueriesPerIPPerHour"); }
+            else if (parseNode.GetChildNode("maxQueriesPerIPPerHour") is { } nullNodeMaxQueriesPerIPPerHour && nullNodeMaxQueriesPerIPPerHour.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxQueriesPerIPPerHour = null;
+            if (parseNode.GetChildNode("queryParameters") is null) { _explicitNullValueQueryParameters = default!; _explicitNullProperties?.Remove("queryParameters"); }
+            else if (parseNode.GetChildNode("queryParameters") is { } nullNodeQueryParameters && nullNodeQueryParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryParameters = null;
+            if (parseNode.GetChildNode("referers") is null) { _explicitNullValueReferers = default!; _explicitNullProperties?.Remove("referers"); }
+            else if (parseNode.GetChildNode("referers") is { } nullNodeReferers && nullNodeReferers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Referers = null;
+            if (parseNode.GetChildNode("validity") is null) { _explicitNullValueValidity = default!; _explicitNullProperties?.Remove("validity"); }
+            else if (parseNode.GetChildNode("validity") is { } nullNodeValidity && nullNodeValidity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Validity = null;
+            if (parseNode.GetChildNode("value") is null) { _explicitNullValueValue = default!; _explicitNullProperties?.Remove("value"); }
+            else if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
         }
 
         /// <summary>Permissions that determine the type of API requests this key can make.The required ACL is listed in each endpoint&apos;s reference.For more information, see [access control list](https://www.algolia.com/doc/guides/security/api-keys/#access-control-list-acl).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Acl?>? Acl { get => _explicitNullValueAcl; set { _explicitNullValueAcl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acl"); else _explicitNullProperties?.Remove("acl"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Acl?>? Acl { get => _explicitNullValueAcl; set { _explicitNullValueAcl = value; AdditionalData?.Remove("acl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acl"); else _explicitNullProperties?.Remove("acl"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.Acl?>? _explicitNullValueAcl = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Acl?> Acl { get => _explicitNullValueAcl; set { _explicitNullValueAcl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acl"); else _explicitNullProperties?.Remove("acl"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Acl?> Acl { get => _explicitNullValueAcl; set { _explicitNullValueAcl = value; AdditionalData?.Remove("acl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acl"); else _explicitNullProperties?.Remove("acl"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.Acl?> _explicitNullValueAcl = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Timestamp when the object was created, in milliseconds since the Unix epoch.</summary>
-        public long? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        public long? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private long? _explicitNullValueCreatedAt = default!;
         /// <summary>Description of an API key to help you identify this API key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Index names or patterns that this API key can access.By default, an API key can access all indices in the same application.You can use leading and trailing wildcard characters (`*`):- `dev_*` matches all indices starting with &quot;dev_&quot;.- `*_dev` matches all indices ending with &quot;_dev&quot;.- `*_products_*` matches all indices containing &quot;_products_&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Indexes { get => _explicitNullValueIndexes; set { _explicitNullValueIndexes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexes"); else _explicitNullProperties?.Remove("indexes"); } }
+        public List<string>? Indexes { get => _explicitNullValueIndexes; set { _explicitNullValueIndexes = value; AdditionalData?.Remove("indexes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexes"); else _explicitNullProperties?.Remove("indexes"); } }
         private List<string>? _explicitNullValueIndexes = default!;
 #nullable restore
 #else
-        public List<string> Indexes { get => _explicitNullValueIndexes; set { _explicitNullValueIndexes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexes"); else _explicitNullProperties?.Remove("indexes"); } }
+        public List<string> Indexes { get => _explicitNullValueIndexes; set { _explicitNullValueIndexes = value; AdditionalData?.Remove("indexes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexes"); else _explicitNullProperties?.Remove("indexes"); } }
         private List<string> _explicitNullValueIndexes = default!;
 #endif
         /// <summary>Maximum number of hits this API key can retrieve per page.If you set this to 0, the maximum allowed value (1,000) applies.If you also set `hitsPerPage` on the index, the engine uses the lower of the two values.</summary>
-        public int? MaxHitsPerQuery { get => _explicitNullValueMaxHitsPerQuery; set { _explicitNullValueMaxHitsPerQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxHitsPerQuery"); else _explicitNullProperties?.Remove("maxHitsPerQuery"); } }
+        public int? MaxHitsPerQuery { get => _explicitNullValueMaxHitsPerQuery; set { _explicitNullValueMaxHitsPerQuery = value; AdditionalData?.Remove("maxHitsPerQuery"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxHitsPerQuery"); else _explicitNullProperties?.Remove("maxHitsPerQuery"); } }
         private int? _explicitNullValueMaxHitsPerQuery = default!;
         /// <summary>Maximum number of API requests allowed per IP address or [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken) per hour.If this limit is reached, the API returns an error with status code `429`.By default, there&apos;s no limit.</summary>
-        public int? MaxQueriesPerIPPerHour { get => _explicitNullValueMaxQueriesPerIPPerHour; set { _explicitNullValueMaxQueriesPerIPPerHour = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxQueriesPerIPPerHour"); else _explicitNullProperties?.Remove("maxQueriesPerIPPerHour"); } }
+        public int? MaxQueriesPerIPPerHour { get => _explicitNullValueMaxQueriesPerIPPerHour; set { _explicitNullValueMaxQueriesPerIPPerHour = value; AdditionalData?.Remove("maxQueriesPerIPPerHour"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxQueriesPerIPPerHour"); else _explicitNullProperties?.Remove("maxQueriesPerIPPerHour"); } }
         private int? _explicitNullValueMaxQueriesPerIPPerHour = default!;
         /// <summary>Query parameters to add when making API requests with this API key.To restrict this API key to specific IP addresses, add the `restrictSources` parameter.You can only add a single source, but you can provide a range of IP addresses.Creating an API key fails if the request is made from an IP address outside the restricted range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryParameters { get => _explicitNullValueQueryParameters; set { _explicitNullValueQueryParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryParameters"); else _explicitNullProperties?.Remove("queryParameters"); } }
+        public string? QueryParameters { get => _explicitNullValueQueryParameters; set { _explicitNullValueQueryParameters = value; AdditionalData?.Remove("queryParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryParameters"); else _explicitNullProperties?.Remove("queryParameters"); } }
         private string? _explicitNullValueQueryParameters = default!;
 #nullable restore
 #else
-        public string QueryParameters { get => _explicitNullValueQueryParameters; set { _explicitNullValueQueryParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryParameters"); else _explicitNullProperties?.Remove("queryParameters"); } }
+        public string QueryParameters { get => _explicitNullValueQueryParameters; set { _explicitNullValueQueryParameters = value; AdditionalData?.Remove("queryParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryParameters"); else _explicitNullProperties?.Remove("queryParameters"); } }
         private string _explicitNullValueQueryParameters = default!;
 #endif
         /// <summary>Allowed HTTP referrers for this API key.By default, all referrers are allowed.You can use leading and trailing wildcard characters (`*`):- `https://algolia.com/*` allows all referrers starting with &quot;https://algolia.com/&quot;.- `*.algolia.com` allows all referrers ending with &quot;.algolia.com&quot;.- `*algolia.com*` allows all referrers in the domain &quot;algolia.com&quot;.Like all HTTP headers, referrers can be spoofed. Don&apos;t rely on them to secure your data.For more information, see [HTTP referrer restrictions](https://www.algolia.com/doc/guides/security/security-best-practices/#http-referrer-restrictions).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Referers { get => _explicitNullValueReferers; set { _explicitNullValueReferers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referers"); else _explicitNullProperties?.Remove("referers"); } }
+        public List<string>? Referers { get => _explicitNullValueReferers; set { _explicitNullValueReferers = value; AdditionalData?.Remove("referers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referers"); else _explicitNullProperties?.Remove("referers"); } }
         private List<string>? _explicitNullValueReferers = default!;
 #nullable restore
 #else
-        public List<string> Referers { get => _explicitNullValueReferers; set { _explicitNullValueReferers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referers"); else _explicitNullProperties?.Remove("referers"); } }
+        public List<string> Referers { get => _explicitNullValueReferers; set { _explicitNullValueReferers = value; AdditionalData?.Remove("referers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referers"); else _explicitNullProperties?.Remove("referers"); } }
         private List<string> _explicitNullValueReferers = default!;
 #endif
         /// <summary>Duration (in seconds) after which the API key expires.By default, API keys don&apos;t expire.</summary>
-        public int? Validity { get => _explicitNullValueValidity; set { _explicitNullValueValidity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validity"); else _explicitNullProperties?.Remove("validity"); } }
+        public int? Validity { get => _explicitNullValueValidity; set { _explicitNullValueValidity = value; AdditionalData?.Remove("validity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validity"); else _explicitNullProperties?.Remove("validity"); } }
         private int? _explicitNullValueValidity = default!;
         /// <summary>API key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private string? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private string _explicitNullValueValue = default!;
 #endif
         /// <summary>

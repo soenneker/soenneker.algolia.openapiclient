@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("queryCategorization") is { } nullNodeQueryCategorization && nullNodeQueryCategorization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryCategorization = null;
+            if (parseNode.GetChildNode("queryCategorization") is null) { _explicitNullValueQueryCategorization = default!; _explicitNullProperties?.Remove("queryCategorization"); }
+            else if (parseNode.GetChildNode("queryCategorization") is { } nullNodeQueryCategorization && nullNodeQueryCategorization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryCategorization = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Query Categorization prediction returned by the AI model.This field is empty when the model cannot categorize the query.See [Query Categorization](https://www.algolia.com/doc/guides/algolia-ai/query-categorization/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.QueryCategorization? QueryCategorization { get => _explicitNullValueQueryCategorization; set { _explicitNullValueQueryCategorization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryCategorization"); else _explicitNullProperties?.Remove("queryCategorization"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.QueryCategorization? QueryCategorization { get => _explicitNullValueQueryCategorization; set { _explicitNullValueQueryCategorization = value; AdditionalData?.Remove("queryCategorization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryCategorization"); else _explicitNullProperties?.Remove("queryCategorization"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.QueryCategorization? _explicitNullValueQueryCategorization = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.QueryCategorization QueryCategorization { get => _explicitNullValueQueryCategorization; set { _explicitNullValueQueryCategorization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryCategorization"); else _explicitNullProperties?.Remove("queryCategorization"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.QueryCategorization QueryCategorization { get => _explicitNullValueQueryCategorization; set { _explicitNullValueQueryCategorization = value; AdditionalData?.Remove("queryCategorization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryCategorization"); else _explicitNullProperties?.Remove("queryCategorization"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.QueryCategorization _explicitNullValueQueryCategorization = default!;
 #endif
         /// <summary>

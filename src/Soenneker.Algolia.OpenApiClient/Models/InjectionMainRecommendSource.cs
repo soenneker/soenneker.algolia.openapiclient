@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("recommend") is { } nullNodeRecommend && nullNodeRecommend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recommend = null;
+            if (parseNode.GetChildNode("recommend") is null) { _explicitNullValueRecommend = default!; _explicitNullProperties?.Remove("recommend"); }
+            else if (parseNode.GetChildNode("recommend") is { } nullNodeRecommend && nullNodeRecommend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recommend = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The recommend property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommend? Recommend { get => _explicitNullValueRecommend; set { _explicitNullValueRecommend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommend"); else _explicitNullProperties?.Remove("recommend"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommend? Recommend { get => _explicitNullValueRecommend; set { _explicitNullValueRecommend = value; AdditionalData?.Remove("recommend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommend"); else _explicitNullProperties?.Remove("recommend"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommend? _explicitNullValueRecommend = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommend Recommend { get => _explicitNullValueRecommend; set { _explicitNullValueRecommend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommend"); else _explicitNullProperties?.Remove("recommend"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommend Recommend { get => _explicitNullValueRecommend; set { _explicitNullValueRecommend = value; AdditionalData?.Remove("recommend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recommend"); else _explicitNullProperties?.Remove("recommend"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommend _explicitNullValueRecommend = default!;
 #endif
         /// <summary>

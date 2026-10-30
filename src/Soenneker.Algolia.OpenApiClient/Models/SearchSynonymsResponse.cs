@@ -17,8 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hits") is { } nullNodeHits && nullNodeHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hits = null;
-            if (parseNode.GetChildNode("nbHits") is { } nullNodeNbHits && nullNodeNbHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbHits = null;
+            if (parseNode.GetChildNode("hits") is null) { _explicitNullValueHits = default!; _explicitNullProperties?.Remove("hits"); }
+            else if (parseNode.GetChildNode("hits") is { } nullNodeHits && nullNodeHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hits = null;
+            if (parseNode.GetChildNode("nbHits") is null) { _explicitNullValueNbHits = default!; _explicitNullProperties?.Remove("nbHits"); }
+            else if (parseNode.GetChildNode("nbHits") is { } nullNodeNbHits && nullNodeNbHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbHits = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Matching synonyms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SynonymHit>? Hits { get => _explicitNullValueHits; set { _explicitNullValueHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hits"); else _explicitNullProperties?.Remove("hits"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SynonymHit>? Hits { get => _explicitNullValueHits; set { _explicitNullValueHits = value; AdditionalData?.Remove("hits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hits"); else _explicitNullProperties?.Remove("hits"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.SynonymHit>? _explicitNullValueHits = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SynonymHit> Hits { get => _explicitNullValueHits; set { _explicitNullValueHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hits"); else _explicitNullProperties?.Remove("hits"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SynonymHit> Hits { get => _explicitNullValueHits; set { _explicitNullValueHits = value; AdditionalData?.Remove("hits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hits"); else _explicitNullProperties?.Remove("hits"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.SynonymHit> _explicitNullValueHits = default!;
 #endif
         /// <summary>Number of results (hits).</summary>
-        public int? NbHits { get => _explicitNullValueNbHits; set { _explicitNullValueNbHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbHits"); else _explicitNullProperties?.Remove("nbHits"); } }
+        public int? NbHits { get => _explicitNullValueNbHits; set { _explicitNullValueNbHits = value; AdditionalData?.Remove("nbHits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbHits"); else _explicitNullProperties?.Remove("nbHits"); } }
         private int? _explicitNullValueNbHits = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchSynonymsResponse"/> and sets the default values.

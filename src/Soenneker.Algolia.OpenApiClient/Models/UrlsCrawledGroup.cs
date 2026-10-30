@@ -18,43 +18,48 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
-            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
-            if (parseNode.GetChildNode("readable") is { } nullNodeReadable && nullNodeReadable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Readable = null;
-            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("category") is null) { _explicitNullValueCategory = default!; _explicitNullProperties?.Remove("category"); }
+            else if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("count") is null) { _explicitNullValueCount = default!; _explicitNullProperties?.Remove("count"); }
+            else if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("readable") is null) { _explicitNullValueReadable = default!; _explicitNullProperties?.Remove("readable"); }
+            else if (parseNode.GetChildNode("readable") is { } nullNodeReadable && nullNodeReadable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Readable = null;
+            if (parseNode.GetChildNode("reason") is null) { _explicitNullValueReason = default!; _explicitNullProperties?.Remove("reason"); }
+            else if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Step where the status information was generated.For more information, see [Troubleshooting by crawl status](https://www.algolia.com/doc/tools/crawler/troubleshooting/crawl-status).</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.UrlsCrawledGroupCategory? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.UrlsCrawledGroupCategory? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; AdditionalData?.Remove("category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.UrlsCrawledGroupCategory? _explicitNullValueCategory = default!;
         /// <summary>Number of URLs with this status.</summary>
-        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private int? _explicitNullValueCount = default!;
         /// <summary>Reason for this status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Readable { get => _explicitNullValueReadable; set { _explicitNullValueReadable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readable"); else _explicitNullProperties?.Remove("readable"); } }
+        public string? Readable { get => _explicitNullValueReadable; set { _explicitNullValueReadable = value; AdditionalData?.Remove("readable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readable"); else _explicitNullProperties?.Remove("readable"); } }
         private string? _explicitNullValueReadable = default!;
 #nullable restore
 #else
-        public string Readable { get => _explicitNullValueReadable; set { _explicitNullValueReadable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readable"); else _explicitNullProperties?.Remove("readable"); } }
+        public string Readable { get => _explicitNullValueReadable; set { _explicitNullValueReadable = value; AdditionalData?.Remove("readable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readable"); else _explicitNullProperties?.Remove("readable"); } }
         private string _explicitNullValueReadable = default!;
 #endif
         /// <summary>Reason for this status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private string? _explicitNullValueReason = default!;
 #nullable restore
 #else
-        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private string _explicitNullValueReason = default!;
 #endif
         /// <summary>Crawled URL status.For more information, see [Troubleshooting by crawl status](https://www.algolia.com/doc/tools/crawler/troubleshooting/crawl-status).</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.UrlsCrawledGroupStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.UrlsCrawledGroupStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.UrlsCrawledGroupStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.UrlsCrawledGroup"/> and sets the default values.
@@ -81,11 +86,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "category", n => { Category = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.UrlsCrawledGroupCategory>(); } },
+                { "category", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.UrlsCrawledGroupCategory>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCategory = default; _explicitNullProperties?.Remove("category"); AdditionalData["category"] = unknown; } else { Category = parsed; AdditionalData.Remove("category"); } } },
                 { "count", n => { Count = n.GetIntValue(); } },
                 { "readable", n => { Readable = n.GetStringValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.UrlsCrawledGroupStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.UrlsCrawledGroupStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>

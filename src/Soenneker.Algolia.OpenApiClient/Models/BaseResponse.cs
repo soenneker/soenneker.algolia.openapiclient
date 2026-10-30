@@ -17,97 +17,107 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("blocked") is { } nullNodeBlocked && nullNodeBlocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Blocked = null;
-            if (parseNode.GetChildNode("blockingError") is { } nullNodeBlockingError && nullNodeBlockingError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockingError = null;
-            if (parseNode.GetChildNode("blockingTaskId") is { } nullNodeBlockingTaskId && nullNodeBlockingTaskId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockingTaskId = null;
-            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("lastReindexEndedAt") is { } nullNodeLastReindexEndedAt && nullNodeLastReindexEndedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastReindexEndedAt = null;
-            if (parseNode.GetChildNode("lastReindexStartAt") is { } nullNodeLastReindexStartAt && nullNodeLastReindexStartAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastReindexStartAt = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("reindexing") is { } nullNodeReindexing && nullNodeReindexing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reindexing = null;
-            if (parseNode.GetChildNode("running") is { } nullNodeRunning && nullNodeRunning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Running = null;
-            if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("blocked") is null) { _explicitNullValueBlocked = default!; _explicitNullProperties?.Remove("blocked"); }
+            else if (parseNode.GetChildNode("blocked") is { } nullNodeBlocked && nullNodeBlocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Blocked = null;
+            if (parseNode.GetChildNode("blockingError") is null) { _explicitNullValueBlockingError = default!; _explicitNullProperties?.Remove("blockingError"); }
+            else if (parseNode.GetChildNode("blockingError") is { } nullNodeBlockingError && nullNodeBlockingError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockingError = null;
+            if (parseNode.GetChildNode("blockingTaskId") is null) { _explicitNullValueBlockingTaskId = default!; _explicitNullProperties?.Remove("blockingTaskId"); }
+            else if (parseNode.GetChildNode("blockingTaskId") is { } nullNodeBlockingTaskId && nullNodeBlockingTaskId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockingTaskId = null;
+            if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
+            else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("lastReindexEndedAt") is null) { _explicitNullValueLastReindexEndedAt = default!; _explicitNullProperties?.Remove("lastReindexEndedAt"); }
+            else if (parseNode.GetChildNode("lastReindexEndedAt") is { } nullNodeLastReindexEndedAt && nullNodeLastReindexEndedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastReindexEndedAt = null;
+            if (parseNode.GetChildNode("lastReindexStartAt") is null) { _explicitNullValueLastReindexStartAt = default!; _explicitNullProperties?.Remove("lastReindexStartAt"); }
+            else if (parseNode.GetChildNode("lastReindexStartAt") is { } nullNodeLastReindexStartAt && nullNodeLastReindexStartAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastReindexStartAt = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("reindexing") is null) { _explicitNullValueReindexing = default!; _explicitNullProperties?.Remove("reindexing"); }
+            else if (parseNode.GetChildNode("reindexing") is { } nullNodeReindexing && nullNodeReindexing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reindexing = null;
+            if (parseNode.GetChildNode("running") is null) { _explicitNullValueRunning = default!; _explicitNullProperties?.Remove("running"); }
+            else if (parseNode.GetChildNode("running") is { } nullNodeRunning && nullNodeRunning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Running = null;
+            if (parseNode.GetChildNode("updatedAt") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updatedAt"); }
+            else if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether this crawler is blocked.If `true`, you can unblock it from the [Crawler page](https://dashboard.algolia.com/crawler) in the Algolia dashboardor by [cancelling the blocking task](https://www.algolia.com/doc/rest-api/crawler/cancel-blocking-action).</summary>
-        public bool? Blocked { get => _explicitNullValueBlocked; set { _explicitNullValueBlocked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocked"); else _explicitNullProperties?.Remove("blocked"); } }
+        public bool? Blocked { get => _explicitNullValueBlocked; set { _explicitNullValueBlocked = value; AdditionalData?.Remove("blocked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocked"); else _explicitNullProperties?.Remove("blocked"); } }
         private bool? _explicitNullValueBlocked = default!;
         /// <summary>Reason why the crawler is blocked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BlockingError { get => _explicitNullValueBlockingError; set { _explicitNullValueBlockingError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockingError"); else _explicitNullProperties?.Remove("blockingError"); } }
+        public string? BlockingError { get => _explicitNullValueBlockingError; set { _explicitNullValueBlockingError = value; AdditionalData?.Remove("blockingError"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockingError"); else _explicitNullProperties?.Remove("blockingError"); } }
         private string? _explicitNullValueBlockingError = default!;
 #nullable restore
 #else
-        public string BlockingError { get => _explicitNullValueBlockingError; set { _explicitNullValueBlockingError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockingError"); else _explicitNullProperties?.Remove("blockingError"); } }
+        public string BlockingError { get => _explicitNullValueBlockingError; set { _explicitNullValueBlockingError = value; AdditionalData?.Remove("blockingError"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockingError"); else _explicitNullProperties?.Remove("blockingError"); } }
         private string _explicitNullValueBlockingError = default!;
 #endif
         /// <summary>ID of the task that&apos;s blocking the crawler.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BlockingTaskId { get => _explicitNullValueBlockingTaskId; set { _explicitNullValueBlockingTaskId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockingTaskId"); else _explicitNullProperties?.Remove("blockingTaskId"); } }
+        public string? BlockingTaskId { get => _explicitNullValueBlockingTaskId; set { _explicitNullValueBlockingTaskId = value; AdditionalData?.Remove("blockingTaskId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockingTaskId"); else _explicitNullProperties?.Remove("blockingTaskId"); } }
         private string? _explicitNullValueBlockingTaskId = default!;
 #nullable restore
 #else
-        public string BlockingTaskId { get => _explicitNullValueBlockingTaskId; set { _explicitNullValueBlockingTaskId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockingTaskId"); else _explicitNullProperties?.Remove("blockingTaskId"); } }
+        public string BlockingTaskId { get => _explicitNullValueBlockingTaskId; set { _explicitNullValueBlockingTaskId = value; AdditionalData?.Remove("blockingTaskId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blockingTaskId"); else _explicitNullProperties?.Remove("blockingTaskId"); } }
         private string _explicitNullValueBlockingTaskId = default!;
 #endif
         /// <summary>Date and time when the object was created, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>Date and time when the last crawl finished, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastReindexEndedAt { get => _explicitNullValueLastReindexEndedAt; set { _explicitNullValueLastReindexEndedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastReindexEndedAt"); else _explicitNullProperties?.Remove("lastReindexEndedAt"); } }
+        public string? LastReindexEndedAt { get => _explicitNullValueLastReindexEndedAt; set { _explicitNullValueLastReindexEndedAt = value; AdditionalData?.Remove("lastReindexEndedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastReindexEndedAt"); else _explicitNullProperties?.Remove("lastReindexEndedAt"); } }
         private string? _explicitNullValueLastReindexEndedAt = default!;
 #nullable restore
 #else
-        public string LastReindexEndedAt { get => _explicitNullValueLastReindexEndedAt; set { _explicitNullValueLastReindexEndedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastReindexEndedAt"); else _explicitNullProperties?.Remove("lastReindexEndedAt"); } }
+        public string LastReindexEndedAt { get => _explicitNullValueLastReindexEndedAt; set { _explicitNullValueLastReindexEndedAt = value; AdditionalData?.Remove("lastReindexEndedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastReindexEndedAt"); else _explicitNullProperties?.Remove("lastReindexEndedAt"); } }
         private string _explicitNullValueLastReindexEndedAt = default!;
 #endif
         /// <summary>Date and time when the last crawl started, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastReindexStartAt { get => _explicitNullValueLastReindexStartAt; set { _explicitNullValueLastReindexStartAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastReindexStartAt"); else _explicitNullProperties?.Remove("lastReindexStartAt"); } }
+        public string? LastReindexStartAt { get => _explicitNullValueLastReindexStartAt; set { _explicitNullValueLastReindexStartAt = value; AdditionalData?.Remove("lastReindexStartAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastReindexStartAt"); else _explicitNullProperties?.Remove("lastReindexStartAt"); } }
         private string? _explicitNullValueLastReindexStartAt = default!;
 #nullable restore
 #else
-        public string LastReindexStartAt { get => _explicitNullValueLastReindexStartAt; set { _explicitNullValueLastReindexStartAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastReindexStartAt"); else _explicitNullProperties?.Remove("lastReindexStartAt"); } }
+        public string LastReindexStartAt { get => _explicitNullValueLastReindexStartAt; set { _explicitNullValueLastReindexStartAt = value; AdditionalData?.Remove("lastReindexStartAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastReindexStartAt"); else _explicitNullProperties?.Remove("lastReindexStartAt"); } }
         private string _explicitNullValueLastReindexStartAt = default!;
 #endif
         /// <summary>Name of the crawler.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Whether this crawler is completely reindexing your content.</summary>
-        public bool? Reindexing { get => _explicitNullValueReindexing; set { _explicitNullValueReindexing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reindexing"); else _explicitNullProperties?.Remove("reindexing"); } }
+        public bool? Reindexing { get => _explicitNullValueReindexing; set { _explicitNullValueReindexing = value; AdditionalData?.Remove("reindexing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reindexing"); else _explicitNullProperties?.Remove("reindexing"); } }
         private bool? _explicitNullValueReindexing = default!;
         /// <summary>Whether this crawler is active.</summary>
-        public bool? Running { get => _explicitNullValueRunning; set { _explicitNullValueRunning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("running"); else _explicitNullProperties?.Remove("running"); } }
+        public bool? Running { get => _explicitNullValueRunning; set { _explicitNullValueRunning = value; AdditionalData?.Remove("running"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("running"); else _explicitNullProperties?.Remove("running"); } }
         private bool? _explicitNullValueRunning = default!;
         /// <summary>Date and time when the object was updated, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
         private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
         private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>

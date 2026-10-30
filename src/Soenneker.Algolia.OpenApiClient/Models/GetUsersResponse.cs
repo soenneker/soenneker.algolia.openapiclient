@@ -17,9 +17,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("nextPageToken") is { } nullNodeNextPageToken && nullNodeNextPageToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPageToken = null;
-            if (parseNode.GetChildNode("previousPageToken") is { } nullNodePreviousPageToken && nullNodePreviousPageToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousPageToken = null;
-            if (parseNode.GetChildNode("users") is { } nullNodeUsers && nullNodeUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Users = null;
+            if (parseNode.GetChildNode("nextPageToken") is null) { _explicitNullValueNextPageToken = default!; _explicitNullProperties?.Remove("nextPageToken"); }
+            else if (parseNode.GetChildNode("nextPageToken") is { } nullNodeNextPageToken && nullNodeNextPageToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextPageToken = null;
+            if (parseNode.GetChildNode("previousPageToken") is null) { _explicitNullValuePreviousPageToken = default!; _explicitNullProperties?.Remove("previousPageToken"); }
+            else if (parseNode.GetChildNode("previousPageToken") is { } nullNodePreviousPageToken && nullNodePreviousPageToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousPageToken = null;
+            if (parseNode.GetChildNode("users") is null) { _explicitNullValueUsers = default!; _explicitNullProperties?.Remove("users"); }
+            else if (parseNode.GetChildNode("users") is { } nullNodeUsers && nullNodeUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Users = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The nextPageToken property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextPageToken { get => _explicitNullValueNextPageToken; set { _explicitNullValueNextPageToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextPageToken"); else _explicitNullProperties?.Remove("nextPageToken"); } }
+        public string? NextPageToken { get => _explicitNullValueNextPageToken; set { _explicitNullValueNextPageToken = value; AdditionalData?.Remove("nextPageToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextPageToken"); else _explicitNullProperties?.Remove("nextPageToken"); } }
         private string? _explicitNullValueNextPageToken = default!;
 #nullable restore
 #else
-        public string NextPageToken { get => _explicitNullValueNextPageToken; set { _explicitNullValueNextPageToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextPageToken"); else _explicitNullProperties?.Remove("nextPageToken"); } }
+        public string NextPageToken { get => _explicitNullValueNextPageToken; set { _explicitNullValueNextPageToken = value; AdditionalData?.Remove("nextPageToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextPageToken"); else _explicitNullProperties?.Remove("nextPageToken"); } }
         private string _explicitNullValueNextPageToken = default!;
 #endif
         /// <summary>The previousPageToken property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousPageToken { get => _explicitNullValuePreviousPageToken; set { _explicitNullValuePreviousPageToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousPageToken"); else _explicitNullProperties?.Remove("previousPageToken"); } }
+        public string? PreviousPageToken { get => _explicitNullValuePreviousPageToken; set { _explicitNullValuePreviousPageToken = value; AdditionalData?.Remove("previousPageToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousPageToken"); else _explicitNullProperties?.Remove("previousPageToken"); } }
         private string? _explicitNullValuePreviousPageToken = default!;
 #nullable restore
 #else
-        public string PreviousPageToken { get => _explicitNullValuePreviousPageToken; set { _explicitNullValuePreviousPageToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousPageToken"); else _explicitNullProperties?.Remove("previousPageToken"); } }
+        public string PreviousPageToken { get => _explicitNullValuePreviousPageToken; set { _explicitNullValuePreviousPageToken = value; AdditionalData?.Remove("previousPageToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousPageToken"); else _explicitNullProperties?.Remove("previousPageToken"); } }
         private string _explicitNullValuePreviousPageToken = default!;
 #endif
         /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.User>? Users { get => _explicitNullValueUsers; set { _explicitNullValueUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users"); else _explicitNullProperties?.Remove("users"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.User>? Users { get => _explicitNullValueUsers; set { _explicitNullValueUsers = value; AdditionalData?.Remove("users"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users"); else _explicitNullProperties?.Remove("users"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.User>? _explicitNullValueUsers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.User> Users { get => _explicitNullValueUsers; set { _explicitNullValueUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users"); else _explicitNullProperties?.Remove("users"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.User> Users { get => _explicitNullValueUsers; set { _explicitNullValueUsers = value; AdditionalData?.Remove("users"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users"); else _explicitNullProperties?.Remove("users"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.User> _explicitNullValueUsers = default!;
 #endif
         /// <summary>

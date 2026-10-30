@@ -17,8 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deletedUntil") is { } nullNodeDeletedUntil && nullNodeDeletedUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedUntil = null;
-            if (parseNode.GetChildNode("userToken") is { } nullNodeUserToken && nullNodeUserToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserToken = null;
+            if (parseNode.GetChildNode("deletedUntil") is null) { _explicitNullValueDeletedUntil = default!; _explicitNullProperties?.Remove("deletedUntil"); }
+            else if (parseNode.GetChildNode("deletedUntil") is { } nullNodeDeletedUntil && nullNodeDeletedUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedUntil = null;
+            if (parseNode.GetChildNode("userToken") is null) { _explicitNullValueUserToken = default!; _explicitNullProperties?.Remove("userToken"); }
+            else if (parseNode.GetChildNode("userToken") is { } nullNodeUserToken && nullNodeUserToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserToken = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Date and time when the user profile can be safely considered to be deleted.Any events received after the `deletedUntil` date start a new user profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedUntil { get => _explicitNullValueDeletedUntil; set { _explicitNullValueDeletedUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedUntil"); else _explicitNullProperties?.Remove("deletedUntil"); } }
+        public string? DeletedUntil { get => _explicitNullValueDeletedUntil; set { _explicitNullValueDeletedUntil = value; AdditionalData?.Remove("deletedUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedUntil"); else _explicitNullProperties?.Remove("deletedUntil"); } }
         private string? _explicitNullValueDeletedUntil = default!;
 #nullable restore
 #else
-        public string DeletedUntil { get => _explicitNullValueDeletedUntil; set { _explicitNullValueDeletedUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedUntil"); else _explicitNullProperties?.Remove("deletedUntil"); } }
+        public string DeletedUntil { get => _explicitNullValueDeletedUntil; set { _explicitNullValueDeletedUntil = value; AdditionalData?.Remove("deletedUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedUntil"); else _explicitNullProperties?.Remove("deletedUntil"); } }
         private string _explicitNullValueDeletedUntil = default!;
 #endif
         /// <summary>Unique pseudonymous or anonymous user identifier.This helps with analytics and click and conversion events.For more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userToken"); else _explicitNullProperties?.Remove("userToken"); } }
+        public string? UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; AdditionalData?.Remove("userToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userToken"); else _explicitNullProperties?.Remove("userToken"); } }
         private string? _explicitNullValueUserToken = default!;
 #nullable restore
 #else
-        public string UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userToken"); else _explicitNullProperties?.Remove("userToken"); } }
+        public string UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; AdditionalData?.Remove("userToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userToken"); else _explicitNullProperties?.Remove("userToken"); } }
         private string _explicitNullValueUserToken = default!;
 #endif
         /// <summary>

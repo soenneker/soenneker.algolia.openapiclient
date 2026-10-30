@@ -97,7 +97,7 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.CompositionsRequestBuilder.CompositionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://ALGOLIA_APPLICATION_ID.algolia.net", "/composition/1/compositions", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

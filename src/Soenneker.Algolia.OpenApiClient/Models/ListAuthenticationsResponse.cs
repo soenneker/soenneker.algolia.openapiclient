@@ -17,8 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("authentications") is { } nullNodeAuthentications && nullNodeAuthentications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authentications = null;
-            if (parseNode.GetChildNode("pagination") is { } nullNodePagination && nullNodePagination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pagination = null;
+            if (parseNode.GetChildNode("authentications") is null) { _explicitNullValueAuthentications = default!; _explicitNullProperties?.Remove("authentications"); }
+            else if (parseNode.GetChildNode("authentications") is { } nullNodeAuthentications && nullNodeAuthentications.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Authentications = null;
+            if (parseNode.GetChildNode("pagination") is null) { _explicitNullValuePagination = default!; _explicitNullProperties?.Remove("pagination"); }
+            else if (parseNode.GetChildNode("pagination") is { } nullNodePagination && nullNodePagination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pagination = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The authentications property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Authentication>? Authentications { get => _explicitNullValueAuthentications; set { _explicitNullValueAuthentications = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentications"); else _explicitNullProperties?.Remove("authentications"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Authentication>? Authentications { get => _explicitNullValueAuthentications; set { _explicitNullValueAuthentications = value; AdditionalData?.Remove("authentications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentications"); else _explicitNullProperties?.Remove("authentications"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.Authentication>? _explicitNullValueAuthentications = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Authentication> Authentications { get => _explicitNullValueAuthentications; set { _explicitNullValueAuthentications = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentications"); else _explicitNullProperties?.Remove("authentications"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Authentication> Authentications { get => _explicitNullValueAuthentications; set { _explicitNullValueAuthentications = value; AdditionalData?.Remove("authentications"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentications"); else _explicitNullProperties?.Remove("authentications"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.Authentication> _explicitNullValueAuthentications = default!;
 #endif
         /// <summary>Paginated API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination? _explicitNullValuePagination = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination _explicitNullValuePagination = default!;
 #endif
         /// <summary>

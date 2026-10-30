@@ -18,23 +18,25 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("clearExistingDictionaryEntries") is { } nullNodeClearExistingDictionaryEntries && nullNodeClearExistingDictionaryEntries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClearExistingDictionaryEntries = null;
-            if (parseNode.GetChildNode("requests") is { } nullNodeRequests && nullNodeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requests = null;
+            if (parseNode.GetChildNode("clearExistingDictionaryEntries") is null) { _explicitNullValueClearExistingDictionaryEntries = default!; _explicitNullProperties?.Remove("clearExistingDictionaryEntries"); }
+            else if (parseNode.GetChildNode("clearExistingDictionaryEntries") is { } nullNodeClearExistingDictionaryEntries && nullNodeClearExistingDictionaryEntries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClearExistingDictionaryEntries = null;
+            if (parseNode.GetChildNode("requests") is null) { _explicitNullValueRequests = default!; _explicitNullProperties?.Remove("requests"); }
+            else if (parseNode.GetChildNode("requests") is { } nullNodeRequests && nullNodeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requests = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to replace all custom entries in the dictionary with the ones sent with this request.</summary>
-        public bool? ClearExistingDictionaryEntries { get => _explicitNullValueClearExistingDictionaryEntries; set { _explicitNullValueClearExistingDictionaryEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clearExistingDictionaryEntries"); else _explicitNullProperties?.Remove("clearExistingDictionaryEntries"); } }
+        public bool? ClearExistingDictionaryEntries { get => _explicitNullValueClearExistingDictionaryEntries; set { _explicitNullValueClearExistingDictionaryEntries = value; AdditionalData?.Remove("clearExistingDictionaryEntries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clearExistingDictionaryEntries"); else _explicitNullProperties?.Remove("clearExistingDictionaryEntries"); } }
         private bool? _explicitNullValueClearExistingDictionaryEntries = default!;
         /// <summary>List of additions and deletions to your dictionaries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.BatchDictionaryEntriesRequestRequestsItem>? Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.BatchDictionaryEntriesRequestRequestsItem>? Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; AdditionalData?.Remove("requests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.BatchDictionaryEntriesRequestRequestsItem>? _explicitNullValueRequests = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.BatchDictionaryEntriesRequestRequestsItem> Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.BatchDictionaryEntriesRequestRequestsItem> Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; AdditionalData?.Remove("requests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.BatchDictionaryEntriesRequestRequestsItem> _explicitNullValueRequests = default!;
 #endif
         /// <summary>

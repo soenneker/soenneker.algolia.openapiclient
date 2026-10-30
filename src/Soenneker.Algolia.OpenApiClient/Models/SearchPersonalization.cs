@@ -17,21 +17,24 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("filtersScore") is { } nullNodeFiltersScore && nullNodeFiltersScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FiltersScore = null;
-            if (parseNode.GetChildNode("rankingScore") is { } nullNodeRankingScore && nullNodeRankingScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RankingScore = null;
-            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+            if (parseNode.GetChildNode("filtersScore") is null) { _explicitNullValueFiltersScore = default!; _explicitNullProperties?.Remove("filtersScore"); }
+            else if (parseNode.GetChildNode("filtersScore") is { } nullNodeFiltersScore && nullNodeFiltersScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FiltersScore = null;
+            if (parseNode.GetChildNode("rankingScore") is null) { _explicitNullValueRankingScore = default!; _explicitNullProperties?.Remove("rankingScore"); }
+            else if (parseNode.GetChildNode("rankingScore") is { } nullNodeRankingScore && nullNodeRankingScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RankingScore = null;
+            if (parseNode.GetChildNode("score") is null) { _explicitNullValueScore = default!; _explicitNullProperties?.Remove("score"); }
+            else if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The score of the filters.</summary>
-        public int? FiltersScore { get => _explicitNullValueFiltersScore; set { _explicitNullValueFiltersScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filtersScore"); else _explicitNullProperties?.Remove("filtersScore"); } }
+        public int? FiltersScore { get => _explicitNullValueFiltersScore; set { _explicitNullValueFiltersScore = value; AdditionalData?.Remove("filtersScore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filtersScore"); else _explicitNullProperties?.Remove("filtersScore"); } }
         private int? _explicitNullValueFiltersScore = default!;
         /// <summary>The score of the ranking.</summary>
-        public int? RankingScore { get => _explicitNullValueRankingScore; set { _explicitNullValueRankingScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rankingScore"); else _explicitNullProperties?.Remove("rankingScore"); } }
+        public int? RankingScore { get => _explicitNullValueRankingScore; set { _explicitNullValueRankingScore = value; AdditionalData?.Remove("rankingScore"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rankingScore"); else _explicitNullProperties?.Remove("rankingScore"); } }
         private int? _explicitNullValueRankingScore = default!;
         /// <summary>The score of the event.</summary>
-        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; AdditionalData?.Remove("score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
         private int? _explicitNullValueScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchPersonalization"/> and sets the default values.

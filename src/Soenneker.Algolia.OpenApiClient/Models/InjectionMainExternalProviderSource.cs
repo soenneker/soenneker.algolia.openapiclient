@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("externalProvider") is { } nullNodeExternalProvider && nullNodeExternalProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalProvider = null;
+            if (parseNode.GetChildNode("externalProvider") is null) { _explicitNullValueExternalProvider = default!; _explicitNullProperties?.Remove("externalProvider"); }
+            else if (parseNode.GetChildNode("externalProvider") is { } nullNodeExternalProvider && nullNodeExternalProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalProvider = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The externalProvider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainExternalProvider? ExternalProvider { get => _explicitNullValueExternalProvider; set { _explicitNullValueExternalProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalProvider"); else _explicitNullProperties?.Remove("externalProvider"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainExternalProvider? ExternalProvider { get => _explicitNullValueExternalProvider; set { _explicitNullValueExternalProvider = value; AdditionalData?.Remove("externalProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalProvider"); else _explicitNullProperties?.Remove("externalProvider"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainExternalProvider? _explicitNullValueExternalProvider = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainExternalProvider ExternalProvider { get => _explicitNullValueExternalProvider; set { _explicitNullValueExternalProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalProvider"); else _explicitNullProperties?.Remove("externalProvider"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainExternalProvider ExternalProvider { get => _explicitNullValueExternalProvider; set { _explicitNullValueExternalProvider = value; AdditionalData?.Remove("externalProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalProvider"); else _explicitNullProperties?.Remove("externalProvider"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainExternalProvider _explicitNullValueExternalProvider = default!;
 #endif
         /// <summary>

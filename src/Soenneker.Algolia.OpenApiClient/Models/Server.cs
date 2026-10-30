@@ -17,13 +17,20 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cluster") is { } nullNodeCluster && nullNodeCluster.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cluster = null;
-            if (parseNode.GetChildNode("is_replica") is { } nullNodeIsReplica && nullNodeIsReplica.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsReplica = null;
-            if (parseNode.GetChildNode("is_slave") is { } nullNodeIsSlave && nullNodeIsSlave.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSlave = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("cluster") is null) { _explicitNullValueCluster = default!; _explicitNullProperties?.Remove("cluster"); }
+            else if (parseNode.GetChildNode("cluster") is { } nullNodeCluster && nullNodeCluster.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cluster = null;
+            if (parseNode.GetChildNode("is_replica") is null) { _explicitNullValueIsReplica = default!; _explicitNullProperties?.Remove("is_replica"); }
+            else if (parseNode.GetChildNode("is_replica") is { } nullNodeIsReplica && nullNodeIsReplica.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsReplica = null;
+            if (parseNode.GetChildNode("is_slave") is null) { _explicitNullValueIsSlave = default!; _explicitNullProperties?.Remove("is_slave"); }
+            else if (parseNode.GetChildNode("is_slave") is { } nullNodeIsSlave && nullNodeIsSlave.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSlave = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,38 +38,38 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Name of the cluster to which this server belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cluster { get => _explicitNullValueCluster; set { _explicitNullValueCluster = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster"); else _explicitNullProperties?.Remove("cluster"); } }
+        public string? Cluster { get => _explicitNullValueCluster; set { _explicitNullValueCluster = value; AdditionalData?.Remove("cluster"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster"); else _explicitNullProperties?.Remove("cluster"); } }
         private string? _explicitNullValueCluster = default!;
 #nullable restore
 #else
-        public string Cluster { get => _explicitNullValueCluster; set { _explicitNullValueCluster = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster"); else _explicitNullProperties?.Remove("cluster"); } }
+        public string Cluster { get => _explicitNullValueCluster; set { _explicitNullValueCluster = value; AdditionalData?.Remove("cluster"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster"); else _explicitNullProperties?.Remove("cluster"); } }
         private string _explicitNullValueCluster = default!;
 #endif
         /// <summary>Whether this server is a replica of another server.</summary>
-        public bool? IsReplica { get => _explicitNullValueIsReplica; set { _explicitNullValueIsReplica = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_replica"); else _explicitNullProperties?.Remove("is_replica"); } }
+        public bool? IsReplica { get => _explicitNullValueIsReplica; set { _explicitNullValueIsReplica = value; AdditionalData?.Remove("is_replica"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_replica"); else _explicitNullProperties?.Remove("is_replica"); } }
         private bool? _explicitNullValueIsReplica = default!;
         /// <summary>Included to support legacy applications.Use `is_replica` instead.</summary>
         [Obsolete("")]
-        public bool? IsSlave { get => _explicitNullValueIsSlave; set { _explicitNullValueIsSlave = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_slave"); else _explicitNullProperties?.Remove("is_slave"); } }
+        public bool? IsSlave { get => _explicitNullValueIsSlave; set { _explicitNullValueIsSlave = value; AdditionalData?.Remove("is_slave"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_slave"); else _explicitNullProperties?.Remove("is_slave"); } }
         private bool? _explicitNullValueIsSlave = default!;
         /// <summary>Server name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Region where the cluster is located.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.Region? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Region? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Region? _explicitNullValueRegion = default!;
         /// <summary>The status property</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.ServerStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ServerStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ServerStatus? _explicitNullValueStatus = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.TypeValue? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TypeValue? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.TypeValue? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Server"/> and sets the default values.
@@ -95,9 +102,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "is_replica", n => { IsReplica = n.GetBoolValue(); } },
                 { "is_slave", n => { IsSlave = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Region>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ServerStatus>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TypeValue>(); } },
+                { "region", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Region>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRegion = default; _explicitNullProperties?.Remove("region"); AdditionalData["region"] = unknown; } else { Region = parsed; AdditionalData.Remove("region"); } } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ServerStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TypeValue>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

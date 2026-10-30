@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("userIDs") is { } nullNodeUserIDs && nullNodeUserIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserIDs = null;
+            if (parseNode.GetChildNode("userIDs") is null) { _explicitNullValueUserIDs = default!; _explicitNullProperties?.Remove("userIDs"); }
+            else if (parseNode.GetChildNode("userIDs") is { } nullNodeUserIDs && nullNodeUserIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserIDs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>User IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.UserId2>? UserIDs { get => _explicitNullValueUserIDs; set { _explicitNullValueUserIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userIDs"); else _explicitNullProperties?.Remove("userIDs"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.UserId2>? UserIDs { get => _explicitNullValueUserIDs; set { _explicitNullValueUserIDs = value; AdditionalData?.Remove("userIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userIDs"); else _explicitNullProperties?.Remove("userIDs"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.UserId2>? _explicitNullValueUserIDs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.UserId2> UserIDs { get => _explicitNullValueUserIDs; set { _explicitNullValueUserIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userIDs"); else _explicitNullProperties?.Remove("userIDs"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.UserId2> UserIDs { get => _explicitNullValueUserIDs; set { _explicitNullValueUserIDs = value; AdditionalData?.Remove("userIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userIDs"); else _explicitNullProperties?.Remove("userIDs"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.UserId2> _explicitNullValueUserIDs = default!;
 #endif
         /// <summary>

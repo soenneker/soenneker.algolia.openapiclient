@@ -8,31 +8,31 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsMember1"/>, <see cref="string"/>, List&lt;string&gt;
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Algolia.OpenApiClient.Models.CrawlerOptionalWordsMember1"/>, <see cref="string"/>, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SearchOptionalWords : IComposedTypeWrapper, IParsable
+    public partial class CrawlerOptionalWords : IComposedTypeWrapper, IParsable
     , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
         // Preserve ambiguous union payloads without inventing a discriminator.
         /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.CrawlerOptionalWordsMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsMember1? SearchOptionalWordsMember1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CrawlerOptionalWordsMember1? CrawlerOptionalWordsMember1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsMember1 SearchOptionalWordsMember1 { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CrawlerOptionalWordsMember1 CrawlerOptionalWordsMember1 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SearchOptionalWordsString { get; set; }
+        public string? CrawlerOptionalWordsString { get; set; }
 #nullable restore
 #else
-        public string SearchOptionalWordsString { get; set; }
+        public string CrawlerOptionalWordsString { get; set; }
 #endif
         /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,16 +45,16 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.CrawlerOptionalWords"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Algolia.OpenApiClient.Models.CrawlerOptionalWords CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords();
-            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string searchOptionalWordsStringValue)
+            var result = new global::Soenneker.Algolia.OpenApiClient.Models.CrawlerOptionalWords();
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string crawlerOptionalWordsStringValue)
             {
-                result.SearchOptionalWordsString = searchOptionalWordsStringValue;
+                result.CrawlerOptionalWordsString = crawlerOptionalWordsStringValue;
             }
             else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString) && parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
             {
@@ -62,7 +62,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            if (result.SearchOptionalWordsMember1 == null && result.SearchOptionalWordsString == null && result.String == null) result.UnrecognizedValue = unionPayload;
+            if (result.CrawlerOptionalWordsMember1 == null && result.CrawlerOptionalWordsString == null && result.String == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -71,9 +71,11 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(SearchOptionalWordsMember1 != null)
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
+            if(CrawlerOptionalWordsMember1 != null)
             {
-                return SearchOptionalWordsMember1.GetFieldDeserializers();
+                return CrawlerOptionalWordsMember1.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -84,17 +86,17 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (SearchOptionalWordsMember1 == null && SearchOptionalWordsString == null && String == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CrawlerOptionalWordsMember1 == null && CrawlerOptionalWordsString == null && String == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(SearchOptionalWordsMember1 != null)
+            if(CrawlerOptionalWordsMember1 != null)
             {
-                if (SearchOptionalWordsMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWordsMember1>(null, SearchOptionalWordsMember1);
+                if (CrawlerOptionalWordsMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CrawlerOptionalWordsMember1>(null, CrawlerOptionalWordsMember1);
             }
-            else if(SearchOptionalWordsString != null)
+            else if(CrawlerOptionalWordsString != null)
             {
-                writer.WriteStringValue(null, SearchOptionalWordsString);
+                writer.WriteStringValue(null, CrawlerOptionalWordsString);
             }
             else if(String != null)
             {

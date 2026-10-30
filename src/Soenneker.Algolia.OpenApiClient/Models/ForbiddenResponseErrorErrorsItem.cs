@@ -17,10 +17,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
-            if (parseNode.GetChildNode("line") is { } nullNodeLine && nullNodeLine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Line = null;
-            if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
-            if (parseNode.GetChildNode("position") is { } nullNodePosition && nullNodePosition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Position = null;
+            if (parseNode.GetChildNode("code") is null) { _explicitNullValueCode = default!; _explicitNullProperties?.Remove("code"); }
+            else if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
+            if (parseNode.GetChildNode("line") is null) { _explicitNullValueLine = default!; _explicitNullProperties?.Remove("line"); }
+            else if (parseNode.GetChildNode("line") is { } nullNodeLine && nullNodeLine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Line = null;
+            if (parseNode.GetChildNode("message") is null) { _explicitNullValueMessage = default!; _explicitNullProperties?.Remove("message"); }
+            else if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("position") is null) { _explicitNullValuePosition = default!; _explicitNullProperties?.Remove("position"); }
+            else if (parseNode.GetChildNode("position") is { } nullNodePosition && nullNodePosition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Position = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,28 +32,28 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        public string? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private string? _explicitNullValueCode = default!;
 #nullable restore
 #else
-        public string Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
+        public string Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private string _explicitNullValueCode = default!;
 #endif
         /// <summary>The line property</summary>
-        public int? Line { get => _explicitNullValueLine; set { _explicitNullValueLine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("line"); else _explicitNullProperties?.Remove("line"); } }
+        public int? Line { get => _explicitNullValueLine; set { _explicitNullValueLine = value; AdditionalData?.Remove("line"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("line"); else _explicitNullProperties?.Remove("line"); } }
         private int? _explicitNullValueLine = default!;
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private string? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private string _explicitNullValueMessage = default!;
 #endif
         /// <summary>The position property</summary>
-        public int? Position { get => _explicitNullValuePosition; set { _explicitNullValuePosition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position"); else _explicitNullProperties?.Remove("position"); } }
+        public int? Position { get => _explicitNullValuePosition; set { _explicitNullValuePosition = value; AdditionalData?.Remove("position"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position"); else _explicitNullProperties?.Remove("position"); } }
         private int? _explicitNullValuePosition = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ForbiddenResponseErrorErrorsItem"/> and sets the default values.

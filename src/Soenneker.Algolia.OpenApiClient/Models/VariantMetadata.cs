@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("filterEffects") is { } nullNodeFilterEffects && nullNodeFilterEffects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterEffects = null;
+            if (parseNode.GetChildNode("filterEffects") is null) { _explicitNullValueFilterEffects = default!; _explicitNullProperties?.Remove("filterEffects"); }
+            else if (parseNode.GetChildNode("filterEffects") is { } nullNodeFilterEffects && nullNodeFilterEffects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterEffects = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>A/B test filter effects resulting from configuration settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.FilterEffects? FilterEffects { get => _explicitNullValueFilterEffects; set { _explicitNullValueFilterEffects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filterEffects"); else _explicitNullProperties?.Remove("filterEffects"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FilterEffects? FilterEffects { get => _explicitNullValueFilterEffects; set { _explicitNullValueFilterEffects = value; AdditionalData?.Remove("filterEffects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filterEffects"); else _explicitNullProperties?.Remove("filterEffects"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.FilterEffects? _explicitNullValueFilterEffects = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.FilterEffects FilterEffects { get => _explicitNullValueFilterEffects; set { _explicitNullValueFilterEffects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filterEffects"); else _explicitNullProperties?.Remove("filterEffects"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FilterEffects FilterEffects { get => _explicitNullValueFilterEffects; set { _explicitNullValueFilterEffects = value; AdditionalData?.Remove("filterEffects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filterEffects"); else _explicitNullProperties?.Remove("filterEffects"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.FilterEffects _explicitNullValueFilterEffects = default!;
 #endif
         /// <summary>

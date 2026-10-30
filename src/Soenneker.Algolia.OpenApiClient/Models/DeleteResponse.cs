@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deletedAt") is { } nullNodeDeletedAt && nullNodeDeletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedAt = null;
+            if (parseNode.GetChildNode("deletedAt") is null) { _explicitNullValueDeletedAt = default!; _explicitNullProperties?.Remove("deletedAt"); }
+            else if (parseNode.GetChildNode("deletedAt") is { } nullNodeDeletedAt && nullNodeDeletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Date and time when the resource was deleted, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedAt { get => _explicitNullValueDeletedAt; set { _explicitNullValueDeletedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedAt"); else _explicitNullProperties?.Remove("deletedAt"); } }
+        public string? DeletedAt { get => _explicitNullValueDeletedAt; set { _explicitNullValueDeletedAt = value; AdditionalData?.Remove("deletedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedAt"); else _explicitNullProperties?.Remove("deletedAt"); } }
         private string? _explicitNullValueDeletedAt = default!;
 #nullable restore
 #else
-        public string DeletedAt { get => _explicitNullValueDeletedAt; set { _explicitNullValueDeletedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedAt"); else _explicitNullProperties?.Remove("deletedAt"); } }
+        public string DeletedAt { get => _explicitNullValueDeletedAt; set { _explicitNullValueDeletedAt = value; AdditionalData?.Remove("deletedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedAt"); else _explicitNullProperties?.Remove("deletedAt"); } }
         private string _explicitNullValueDeletedAt = default!;
 #endif
         /// <summary>

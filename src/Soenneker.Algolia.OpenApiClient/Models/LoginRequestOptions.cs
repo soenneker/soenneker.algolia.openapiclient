@@ -18,10 +18,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("body") is { } nullNodeBody && nullNodeBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Body = null;
-            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
-            if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
-            if (parseNode.GetChildNode("timeout") is { } nullNodeTimeout && nullNodeTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeout = null;
+            if (parseNode.GetChildNode("body") is null) { _explicitNullValueBody = default!; _explicitNullProperties?.Remove("body"); }
+            else if (parseNode.GetChildNode("body") is { } nullNodeBody && nullNodeBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Body = null;
+            if (parseNode.GetChildNode("headers") is null) { _explicitNullValueHeaders = default!; _explicitNullProperties?.Remove("headers"); }
+            else if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("method") is null) { _explicitNullValueMethod = default!; _explicitNullProperties?.Remove("method"); }
+            else if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
+            if (parseNode.GetChildNode("timeout") is null) { _explicitNullValueTimeout = default!; _explicitNullProperties?.Remove("timeout"); }
+            else if (parseNode.GetChildNode("timeout") is { } nullNodeTimeout && nullNodeTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeout = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,35 +33,35 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Form content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        public string? Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; AdditionalData?.Remove("body"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
         private string? _explicitNullValueBody = default!;
 #nullable restore
 #else
-        public string Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        public string Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; AdditionalData?.Remove("body"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
         private string _explicitNullValueBody = default!;
 #endif
         /// <summary>Headers to add to all requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Headers? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Headers? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Headers? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Headers Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Headers Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Headers _explicitNullValueHeaders = default!;
 #endif
         /// <summary>HTTP method for sending the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        public string? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; AdditionalData?.Remove("method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
         private string? _explicitNullValueMethod = default!;
 #nullable restore
 #else
-        public string Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        public string Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; AdditionalData?.Remove("method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
         private string _explicitNullValueMethod = default!;
 #endif
         /// <summary>Timeout for the request.</summary>
-        public int? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
+        public int? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; AdditionalData?.Remove("timeout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
         private int? _explicitNullValueTimeout = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.LoginRequestOptions"/> and sets the default values.

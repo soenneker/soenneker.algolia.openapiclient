@@ -17,8 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("destinations") is { } nullNodeDestinations && nullNodeDestinations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Destinations = null;
-            if (parseNode.GetChildNode("pagination") is { } nullNodePagination && nullNodePagination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pagination = null;
+            if (parseNode.GetChildNode("destinations") is null) { _explicitNullValueDestinations = default!; _explicitNullProperties?.Remove("destinations"); }
+            else if (parseNode.GetChildNode("destinations") is { } nullNodeDestinations && nullNodeDestinations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Destinations = null;
+            if (parseNode.GetChildNode("pagination") is null) { _explicitNullValuePagination = default!; _explicitNullProperties?.Remove("pagination"); }
+            else if (parseNode.GetChildNode("pagination") is { } nullNodePagination && nullNodePagination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pagination = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The destinations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Destination>? Destinations { get => _explicitNullValueDestinations; set { _explicitNullValueDestinations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinations"); else _explicitNullProperties?.Remove("destinations"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Destination>? Destinations { get => _explicitNullValueDestinations; set { _explicitNullValueDestinations = value; AdditionalData?.Remove("destinations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinations"); else _explicitNullProperties?.Remove("destinations"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.Destination>? _explicitNullValueDestinations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Destination> Destinations { get => _explicitNullValueDestinations; set { _explicitNullValueDestinations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinations"); else _explicitNullProperties?.Remove("destinations"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Destination> Destinations { get => _explicitNullValueDestinations; set { _explicitNullValueDestinations = value; AdditionalData?.Remove("destinations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destinations"); else _explicitNullProperties?.Remove("destinations"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.Destination> _explicitNullValueDestinations = default!;
 #endif
         /// <summary>Paginated API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination? _explicitNullValuePagination = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination _explicitNullValuePagination = default!;
 #endif
         /// <summary>

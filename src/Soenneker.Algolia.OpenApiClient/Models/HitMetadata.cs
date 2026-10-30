@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("_injectedItemKey") is { } nullNodeInjectedItemKey && nullNodeInjectedItemKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InjectedItemKey = null;
+            if (parseNode.GetChildNode("_injectedItemKey") is null) { _explicitNullValueInjectedItemKey = default!; _explicitNullProperties?.Remove("_injectedItemKey"); }
+            else if (parseNode.GetChildNode("_injectedItemKey") is { } nullNodeInjectedItemKey && nullNodeInjectedItemKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InjectedItemKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The key of the injectedItem that inserted this metadata. Only present when the injectedItem&apos;s `metadata.hits.addItemKey` is `true`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InjectedItemKey { get => _explicitNullValueInjectedItemKey; set { _explicitNullValueInjectedItemKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_injectedItemKey"); else _explicitNullProperties?.Remove("_injectedItemKey"); } }
+        public string? InjectedItemKey { get => _explicitNullValueInjectedItemKey; set { _explicitNullValueInjectedItemKey = value; AdditionalData?.Remove("_injectedItemKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_injectedItemKey"); else _explicitNullProperties?.Remove("_injectedItemKey"); } }
         private string? _explicitNullValueInjectedItemKey = default!;
 #nullable restore
 #else
-        public string InjectedItemKey { get => _explicitNullValueInjectedItemKey; set { _explicitNullValueInjectedItemKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_injectedItemKey"); else _explicitNullProperties?.Remove("_injectedItemKey"); } }
+        public string InjectedItemKey { get => _explicitNullValueInjectedItemKey; set { _explicitNullValueInjectedItemKey = value; AdditionalData?.Remove("_injectedItemKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_injectedItemKey"); else _explicitNullProperties?.Remove("_injectedItemKey"); } }
         private string _explicitNullValueInjectedItemKey = default!;
 #endif
         /// <summary>

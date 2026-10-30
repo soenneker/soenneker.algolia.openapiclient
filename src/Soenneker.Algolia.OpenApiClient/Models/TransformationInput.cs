@@ -54,10 +54,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("code") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("steps") != null))();
-            if (result.TransformationCode == null && result.TransformationNoCode == null && matchesUnionBranch0 && !matchesUnionBranch1) result.TransformationCode = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.TransformationCode(), parseNode);
-            if (result.TransformationCode == null && result.TransformationNoCode == null && matchesUnionBranch1 && !matchesUnionBranch0) result.TransformationNoCode = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCode(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("code") && (!shapeMembers1.ContainsKey("code") || (((shapeMembers1["code"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("steps") && (!shapeMembers1.ContainsKey("steps") || (((shapeMembers1["steps"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.TransformationCode == null && result.TransformationNoCode == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.TransformationCode = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.TransformationCode(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.TransformationNoCode = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.TransformationNoCode(), parseNode);
             if (result.TransformationCode == null && result.TransformationNoCode == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -67,6 +71,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(TransformationCode != null)
             {
                 return TransformationCode.GetFieldDeserializers();
@@ -85,8 +91,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (TransformationCode == null && TransformationNoCode == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (TransformationCode != null && TransformationNoCode == null) { if (TransformationCode is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TransformationCode); return; }
-            if (TransformationNoCode != null && TransformationCode == null) { if (TransformationNoCode is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TransformationNoCode); return; }
+            int selectedUnionBranches = 0;
+            if (TransformationCode != null) selectedUnionBranches++;
+            if (TransformationNoCode != null) selectedUnionBranches++;
+            if (TransformationCode != null && selectedUnionBranches == 1) { if (TransformationCode is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TransformationCode); return; }
+            if (TransformationNoCode != null && selectedUnionBranches == 1) { if (TransformationNoCode is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TransformationNoCode); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(TransformationCode != null)

@@ -17,9 +17,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dates") is { } nullNodeDates && nullNodeDates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dates = null;
-            if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
-            if (parseNode.GetChildNode("totals") is { } nullNodeTotals && nullNodeTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Totals = null;
+            if (parseNode.GetChildNode("dates") is null) { _explicitNullValueDates = default!; _explicitNullProperties?.Remove("dates"); }
+            else if (parseNode.GetChildNode("dates") is { } nullNodeDates && nullNodeDates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dates = null;
+            if (parseNode.GetChildNode("key") is null) { _explicitNullValueKey = default!; _explicitNullProperties?.Remove("key"); }
+            else if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
+            if (parseNode.GetChildNode("totals") is null) { _explicitNullValueTotals = default!; _explicitNullProperties?.Remove("totals"); }
+            else if (parseNode.GetChildNode("totals") is { } nullNodeTotals && nullNodeTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Totals = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Per-day metric breakdown.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemDatesItem>? Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemDatesItem>? Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; AdditionalData?.Remove("dates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemDatesItem>? _explicitNullValueDates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemDatesItem> Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemDatesItem> Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; AdditionalData?.Remove("dates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemDatesItem> _explicitNullValueDates = default!;
 #endif
         /// <summary>The `groupBy` values identifying this series. Absent when the query has no `groupBy`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemKeyProperty2? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemKeyProperty2? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemKeyProperty2? _explicitNullValueKey = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemKeyProperty2 Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemKeyProperty2 Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemKeyProperty2 _explicitNullValueKey = default!;
 #endif
         /// <summary>Metric totals over the whole period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemTotalsProperty2? Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemTotalsProperty2? Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; AdditionalData?.Remove("totals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemTotalsProperty2? _explicitNullValueTotals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemTotalsProperty2 Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemTotalsProperty2 Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; AdditionalData?.Remove("totals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.TimeseriesResponseSeriesItemTotalsProperty2 _explicitNullValueTotals = default!;
 #endif
         /// <summary>

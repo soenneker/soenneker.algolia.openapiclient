@@ -17,8 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("currencies") is { } nullNodeCurrencies && nullNodeCurrencies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currencies = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("currencies") is null) { _explicitNullValueCurrencies = default!; _explicitNullProperties?.Remove("currencies"); }
+            else if (parseNode.GetChildNode("currencies") is { } nullNodeCurrencies && nullNodeCurrencies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currencies = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Currencies for the given channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Currencies { get => _explicitNullValueCurrencies; set { _explicitNullValueCurrencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencies"); else _explicitNullProperties?.Remove("currencies"); } }
+        public List<string>? Currencies { get => _explicitNullValueCurrencies; set { _explicitNullValueCurrencies = value; AdditionalData?.Remove("currencies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencies"); else _explicitNullProperties?.Remove("currencies"); } }
         private List<string>? _explicitNullValueCurrencies = default!;
 #nullable restore
 #else
-        public List<string> Currencies { get => _explicitNullValueCurrencies; set { _explicitNullValueCurrencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencies"); else _explicitNullProperties?.Remove("currencies"); } }
+        public List<string> Currencies { get => _explicitNullValueCurrencies; set { _explicitNullValueCurrencies = value; AdditionalData?.Remove("currencies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencies"); else _explicitNullProperties?.Remove("currencies"); } }
         private List<string> _explicitNullValueCurrencies = default!;
 #endif
         /// <summary>ID of the BigCommerce channel.</summary>
-        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private int? _explicitNullValueId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceChannel"/> and sets the default values.

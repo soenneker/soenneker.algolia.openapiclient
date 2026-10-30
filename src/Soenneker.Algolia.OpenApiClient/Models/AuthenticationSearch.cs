@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("authenticationIDs") is { } nullNodeAuthenticationIDs && nullNodeAuthenticationIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationIDs = null;
+            if (parseNode.GetChildNode("authenticationIDs") is null) { _explicitNullValueAuthenticationIDs = default!; _explicitNullProperties?.Remove("authenticationIDs"); }
+            else if (parseNode.GetChildNode("authenticationIDs") is { } nullNodeAuthenticationIDs && nullNodeAuthenticationIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationIDs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The authenticationIDs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AuthenticationIDs { get => _explicitNullValueAuthenticationIDs; set { _explicitNullValueAuthenticationIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationIDs"); else _explicitNullProperties?.Remove("authenticationIDs"); } }
+        public List<string>? AuthenticationIDs { get => _explicitNullValueAuthenticationIDs; set { _explicitNullValueAuthenticationIDs = value; AdditionalData?.Remove("authenticationIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationIDs"); else _explicitNullProperties?.Remove("authenticationIDs"); } }
         private List<string>? _explicitNullValueAuthenticationIDs = default!;
 #nullable restore
 #else
-        public List<string> AuthenticationIDs { get => _explicitNullValueAuthenticationIDs; set { _explicitNullValueAuthenticationIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationIDs"); else _explicitNullProperties?.Remove("authenticationIDs"); } }
+        public List<string> AuthenticationIDs { get => _explicitNullValueAuthenticationIDs; set { _explicitNullValueAuthenticationIDs = value; AdditionalData?.Remove("authenticationIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationIDs"); else _explicitNullProperties?.Remove("authenticationIDs"); } }
         private List<string> _explicitNullValueAuthenticationIDs = default!;
 #endif
         /// <summary>

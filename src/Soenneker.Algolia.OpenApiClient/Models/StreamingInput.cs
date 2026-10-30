@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("mapping") is { } nullNodeMapping && nullNodeMapping.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mapping = null;
+            if (parseNode.GetChildNode("mapping") is null) { _explicitNullValueMapping = default!; _explicitNullProperties?.Remove("mapping"); }
+            else if (parseNode.GetChildNode("mapping") is { } nullNodeMapping && nullNodeMapping.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mapping = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Transformations to apply to the source, serialized as a JSON string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.MappingInput? Mapping { get => _explicitNullValueMapping; set { _explicitNullValueMapping = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapping"); else _explicitNullProperties?.Remove("mapping"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MappingInput? Mapping { get => _explicitNullValueMapping; set { _explicitNullValueMapping = value; AdditionalData?.Remove("mapping"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapping"); else _explicitNullProperties?.Remove("mapping"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.MappingInput? _explicitNullValueMapping = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.MappingInput Mapping { get => _explicitNullValueMapping; set { _explicitNullValueMapping = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapping"); else _explicitNullProperties?.Remove("mapping"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MappingInput Mapping { get => _explicitNullValueMapping; set { _explicitNullValueMapping = value; AdditionalData?.Remove("mapping"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapping"); else _explicitNullProperties?.Remove("mapping"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.MappingInput _explicitNullValueMapping = default!;
 #endif
         /// <summary>

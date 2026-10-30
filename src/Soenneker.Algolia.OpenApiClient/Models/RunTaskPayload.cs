@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("runMetadata") is { } nullNodeRunMetadata && nullNodeRunMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunMetadata = null;
+            if (parseNode.GetChildNode("runMetadata") is null) { _explicitNullValueRunMetadata = default!; _explicitNullProperties?.Remove("runMetadata"); }
+            else if (parseNode.GetChildNode("runMetadata") is { } nullNodeRunMetadata && nullNodeRunMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunMetadata = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Additional information that will be passed to the created run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadataProperty2? RunMetadata { get => _explicitNullValueRunMetadata; set { _explicitNullValueRunMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runMetadata"); else _explicitNullProperties?.Remove("runMetadata"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadataProperty2? RunMetadata { get => _explicitNullValueRunMetadata; set { _explicitNullValueRunMetadata = value; AdditionalData?.Remove("runMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runMetadata"); else _explicitNullProperties?.Remove("runMetadata"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadataProperty2? _explicitNullValueRunMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadataProperty2 RunMetadata { get => _explicitNullValueRunMetadata; set { _explicitNullValueRunMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runMetadata"); else _explicitNullProperties?.Remove("runMetadata"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadataProperty2 RunMetadata { get => _explicitNullValueRunMetadata; set { _explicitNullValueRunMetadata = value; AdditionalData?.Remove("runMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runMetadata"); else _explicitNullProperties?.Remove("runMetadata"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadataProperty2 _explicitNullValueRunMetadata = default!;
 #endif
         /// <summary>

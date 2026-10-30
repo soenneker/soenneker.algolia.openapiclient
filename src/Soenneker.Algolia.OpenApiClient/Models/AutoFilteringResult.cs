@@ -18,38 +18,42 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("facetFilters") is { } nullNodeFacetFilters && nullNodeFacetFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetFilters = null;
-            if (parseNode.GetChildNode("maxDepth") is { } nullNodeMaxDepth && nullNodeMaxDepth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDepth = null;
-            if (parseNode.GetChildNode("optionalFilters") is { } nullNodeOptionalFilters && nullNodeOptionalFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionalFilters = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("facetFilters") is null) { _explicitNullValueFacetFilters = default!; _explicitNullProperties?.Remove("facetFilters"); }
+            else if (parseNode.GetChildNode("facetFilters") is { } nullNodeFacetFilters && nullNodeFacetFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetFilters = null;
+            if (parseNode.GetChildNode("maxDepth") is null) { _explicitNullValueMaxDepth = default!; _explicitNullProperties?.Remove("maxDepth"); }
+            else if (parseNode.GetChildNode("maxDepth") is { } nullNodeMaxDepth && nullNodeMaxDepth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDepth = null;
+            if (parseNode.GetChildNode("optionalFilters") is null) { _explicitNullValueOptionalFilters = default!; _explicitNullProperties?.Remove("optionalFilters"); }
+            else if (parseNode.GetChildNode("optionalFilters") is { } nullNodeOptionalFilters && nullNodeOptionalFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionalFilters = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether automatic filtering was applied to this query.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>Facet filters automatically applied to the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? FacetFilters { get => _explicitNullValueFacetFilters; set { _explicitNullValueFacetFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetFilters"); else _explicitNullProperties?.Remove("facetFilters"); } }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? FacetFilters { get => _explicitNullValueFacetFilters; set { _explicitNullValueFacetFilters = value; AdditionalData?.Remove("facetFilters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetFilters"); else _explicitNullProperties?.Remove("facetFilters"); } }
         private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? _explicitNullValueFacetFilters = default!;
 #nullable restore
 #else
-        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> FacetFilters { get => _explicitNullValueFacetFilters; set { _explicitNullValueFacetFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetFilters"); else _explicitNullProperties?.Remove("facetFilters"); } }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> FacetFilters { get => _explicitNullValueFacetFilters; set { _explicitNullValueFacetFilters = value; AdditionalData?.Remove("facetFilters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetFilters"); else _explicitNullProperties?.Remove("facetFilters"); } }
         private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> _explicitNullValueFacetFilters = default!;
 #endif
         /// <summary>Maximum category hierarchy depth used for filtering.</summary>
-        public int? MaxDepth { get => _explicitNullValueMaxDepth; set { _explicitNullValueMaxDepth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxDepth"); else _explicitNullProperties?.Remove("maxDepth"); } }
+        public int? MaxDepth { get => _explicitNullValueMaxDepth; set { _explicitNullValueMaxDepth = value; AdditionalData?.Remove("maxDepth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxDepth"); else _explicitNullProperties?.Remove("maxDepth"); } }
         private int? _explicitNullValueMaxDepth = default!;
         /// <summary>Optional filters automatically applied to boost relevant categories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? OptionalFilters { get => _explicitNullValueOptionalFilters; set { _explicitNullValueOptionalFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionalFilters"); else _explicitNullProperties?.Remove("optionalFilters"); } }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? OptionalFilters { get => _explicitNullValueOptionalFilters; set { _explicitNullValueOptionalFilters = value; AdditionalData?.Remove("optionalFilters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionalFilters"); else _explicitNullProperties?.Remove("optionalFilters"); } }
         private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? _explicitNullValueOptionalFilters = default!;
 #nullable restore
 #else
-        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> OptionalFilters { get => _explicitNullValueOptionalFilters; set { _explicitNullValueOptionalFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionalFilters"); else _explicitNullProperties?.Remove("optionalFilters"); } }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> OptionalFilters { get => _explicitNullValueOptionalFilters; set { _explicitNullValueOptionalFilters = value; AdditionalData?.Remove("optionalFilters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionalFilters"); else _explicitNullProperties?.Remove("optionalFilters"); } }
         private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> _explicitNullValueOptionalFilters = default!;
 #endif
         /// <summary>

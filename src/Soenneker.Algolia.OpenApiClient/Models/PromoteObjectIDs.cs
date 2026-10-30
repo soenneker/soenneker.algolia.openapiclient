@@ -18,8 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("objectIDs") is { } nullNodeObjectIDs && nullNodeObjectIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectIDs = null;
-            if (parseNode.GetChildNode("position") is { } nullNodePosition && nullNodePosition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Position = null;
+            if (parseNode.GetChildNode("objectIDs") is null) { _explicitNullValueObjectIDs = default!; _explicitNullProperties?.Remove("objectIDs"); }
+            else if (parseNode.GetChildNode("objectIDs") is { } nullNodeObjectIDs && nullNodeObjectIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectIDs = null;
+            if (parseNode.GetChildNode("position") is null) { _explicitNullValuePosition = default!; _explicitNullProperties?.Remove("position"); }
+            else if (parseNode.GetChildNode("position") is { } nullNodePosition && nullNodePosition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Position = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Object IDs of the records you want to promote.The records are placed as a group at the `position`.For example, if you want to promote four records to position `0`,they will be the first four search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ObjectIDs { get => _explicitNullValueObjectIDs; set { _explicitNullValueObjectIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectIDs"); else _explicitNullProperties?.Remove("objectIDs"); } }
+        public List<string>? ObjectIDs { get => _explicitNullValueObjectIDs; set { _explicitNullValueObjectIDs = value; AdditionalData?.Remove("objectIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectIDs"); else _explicitNullProperties?.Remove("objectIDs"); } }
         private List<string>? _explicitNullValueObjectIDs = default!;
 #nullable restore
 #else
-        public List<string> ObjectIDs { get => _explicitNullValueObjectIDs; set { _explicitNullValueObjectIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectIDs"); else _explicitNullProperties?.Remove("objectIDs"); } }
+        public List<string> ObjectIDs { get => _explicitNullValueObjectIDs; set { _explicitNullValueObjectIDs = value; AdditionalData?.Remove("objectIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectIDs"); else _explicitNullProperties?.Remove("objectIDs"); } }
         private List<string> _explicitNullValueObjectIDs = default!;
 #endif
         /// <summary>Position in the search results where you want to show the promoted records.</summary>
-        public int? Position { get => _explicitNullValuePosition; set { _explicitNullValuePosition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position"); else _explicitNullProperties?.Remove("position"); } }
+        public int? Position { get => _explicitNullValuePosition; set { _explicitNullValuePosition = value; AdditionalData?.Remove("position"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position"); else _explicitNullProperties?.Remove("position"); } }
         private int? _explicitNullValuePosition = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.PromoteObjectIDs"/> and sets the default values.

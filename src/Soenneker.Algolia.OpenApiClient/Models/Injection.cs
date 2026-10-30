@@ -17,9 +17,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deduplication") is { } nullNodeDeduplication && nullNodeDeduplication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deduplication = null;
-            if (parseNode.GetChildNode("injectedItems") is { } nullNodeInjectedItems && nullNodeInjectedItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InjectedItems = null;
-            if (parseNode.GetChildNode("main") is { } nullNodeMain && nullNodeMain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Main = null;
+            if (parseNode.GetChildNode("deduplication") is null) { _explicitNullValueDeduplication = default!; _explicitNullProperties?.Remove("deduplication"); }
+            else if (parseNode.GetChildNode("deduplication") is { } nullNodeDeduplication && nullNodeDeduplication.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deduplication = null;
+            if (parseNode.GetChildNode("injectedItems") is null) { _explicitNullValueInjectedItems = default!; _explicitNullProperties?.Remove("injectedItems"); }
+            else if (parseNode.GetChildNode("injectedItems") is { } nullNodeInjectedItems && nullNodeInjectedItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InjectedItems = null;
+            if (parseNode.GetChildNode("main") is null) { _explicitNullValueMain = default!; _explicitNullProperties?.Remove("main"); }
+            else if (parseNode.GetChildNode("main") is { } nullNodeMain && nullNodeMain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Main = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Deduplication configures the methods used to resolve duplicate items between main search results and injected group results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionDeduplication? Deduplication { get => _explicitNullValueDeduplication; set { _explicitNullValueDeduplication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deduplication"); else _explicitNullProperties?.Remove("deduplication"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionDeduplication? Deduplication { get => _explicitNullValueDeduplication; set { _explicitNullValueDeduplication = value; AdditionalData?.Remove("deduplication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deduplication"); else _explicitNullProperties?.Remove("deduplication"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.InjectionDeduplication? _explicitNullValueDeduplication = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionDeduplication Deduplication { get => _explicitNullValueDeduplication; set { _explicitNullValueDeduplication = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deduplication"); else _explicitNullProperties?.Remove("deduplication"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionDeduplication Deduplication { get => _explicitNullValueDeduplication; set { _explicitNullValueDeduplication = value; AdditionalData?.Remove("deduplication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deduplication"); else _explicitNullProperties?.Remove("deduplication"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.InjectionDeduplication _explicitNullValueDeduplication = default!;
 #endif
         /// <summary>list of injected items of the current Composition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItem>? InjectedItems { get => _explicitNullValueInjectedItems; set { _explicitNullValueInjectedItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("injectedItems"); else _explicitNullProperties?.Remove("injectedItems"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItem>? InjectedItems { get => _explicitNullValueInjectedItems; set { _explicitNullValueInjectedItems = value; AdditionalData?.Remove("injectedItems"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("injectedItems"); else _explicitNullProperties?.Remove("injectedItems"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItem>? _explicitNullValueInjectedItems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItem> InjectedItems { get => _explicitNullValueInjectedItems; set { _explicitNullValueInjectedItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("injectedItems"); else _explicitNullProperties?.Remove("injectedItems"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItem> InjectedItems { get => _explicitNullValueInjectedItems; set { _explicitNullValueInjectedItems = value; AdditionalData?.Remove("injectedItems"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("injectedItems"); else _explicitNullProperties?.Remove("injectedItems"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItem> _explicitNullValueInjectedItems = default!;
 #endif
         /// <summary>Main defines the organic result set of the injection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMain? Main { get => _explicitNullValueMain; set { _explicitNullValueMain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main"); else _explicitNullProperties?.Remove("main"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMain? Main { get => _explicitNullValueMain; set { _explicitNullValueMain = value; AdditionalData?.Remove("main"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main"); else _explicitNullProperties?.Remove("main"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.InjectionMain? _explicitNullValueMain = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMain Main { get => _explicitNullValueMain; set { _explicitNullValueMain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main"); else _explicitNullProperties?.Remove("main"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionMain Main { get => _explicitNullValueMain; set { _explicitNullValueMain = value; AdditionalData?.Remove("main"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("main"); else _explicitNullProperties?.Remove("main"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.InjectionMain _explicitNullValueMain = default!;
 #endif
         /// <summary>

@@ -18,13 +18,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("saveFeaturesSettings") is { } nullNodeSaveFeaturesSettings && nullNodeSaveFeaturesSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SaveFeaturesSettings = null;
+            if (parseNode.GetChildNode("saveFeaturesSettings") is null) { _explicitNullValueSaveFeaturesSettings = default!; _explicitNullProperties?.Remove("saveFeaturesSettings"); }
+            else if (parseNode.GetChildNode("saveFeaturesSettings") is { } nullNodeSaveFeaturesSettings && nullNodeSaveFeaturesSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SaveFeaturesSettings = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to also capture the variant&apos;s index settings and feature-specific settings. This must be true for A/B tests whose variants use different indices so that the captured variant settings can later be applied.</summary>
-        public bool? SaveFeaturesSettings { get => _explicitNullValueSaveFeaturesSettings; set { _explicitNullValueSaveFeaturesSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saveFeaturesSettings"); else _explicitNullProperties?.Remove("saveFeaturesSettings"); } }
+        public bool? SaveFeaturesSettings { get => _explicitNullValueSaveFeaturesSettings; set { _explicitNullValueSaveFeaturesSettings = value; AdditionalData?.Remove("saveFeaturesSettings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saveFeaturesSettings"); else _explicitNullProperties?.Remove("saveFeaturesSettings"); } }
         private bool? _explicitNullValueSaveFeaturesSettings = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SaveSettingsRequest"/> and sets the default values.

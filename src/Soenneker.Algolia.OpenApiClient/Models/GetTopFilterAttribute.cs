@@ -17,8 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attribute") is { } nullNodeAttribute && nullNodeAttribute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attribute = null;
-            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("attribute") is null) { _explicitNullValueAttribute = default!; _explicitNullProperties?.Remove("attribute"); }
+            else if (parseNode.GetChildNode("attribute") is { } nullNodeAttribute && nullNodeAttribute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attribute = null;
+            if (parseNode.GetChildNode("count") is null) { _explicitNullValueCount = default!; _explicitNullProperties?.Remove("count"); }
+            else if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Attribute name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Attribute { get => _explicitNullValueAttribute; set { _explicitNullValueAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribute"); else _explicitNullProperties?.Remove("attribute"); } }
+        public string? Attribute { get => _explicitNullValueAttribute; set { _explicitNullValueAttribute = value; AdditionalData?.Remove("attribute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribute"); else _explicitNullProperties?.Remove("attribute"); } }
         private string? _explicitNullValueAttribute = default!;
 #nullable restore
 #else
-        public string Attribute { get => _explicitNullValueAttribute; set { _explicitNullValueAttribute = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribute"); else _explicitNullProperties?.Remove("attribute"); } }
+        public string Attribute { get => _explicitNullValueAttribute; set { _explicitNullValueAttribute = value; AdditionalData?.Remove("attribute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribute"); else _explicitNullProperties?.Remove("attribute"); } }
         private string _explicitNullValueAttribute = default!;
 #endif
         /// <summary>Number of occurrences.</summary>
-        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private int? _explicitNullValueCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetTopFilterAttribute"/> and sets the default values.

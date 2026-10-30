@@ -18,10 +18,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
-            if (parseNode.GetChildNode("includes") is { } nullNodeIncludes && nullNodeIncludes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Includes = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("trackEffects") is { } nullNodeTrackEffects && nullNodeTrackEffects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackEffects = null;
+            if (parseNode.GetChildNode("domain") is null) { _explicitNullValueDomain = default!; _explicitNullProperties?.Remove("domain"); }
+            else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("includes") is null) { _explicitNullValueIncludes = default!; _explicitNullProperties?.Remove("includes"); }
+            else if (parseNode.GetChildNode("includes") is { } nullNodeIncludes && nullNodeIncludes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Includes = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("trackEffects") is null) { _explicitNullValueTrackEffects = default!; _explicitNullProperties?.Remove("trackEffects"); }
+            else if (parseNode.GetChildNode("trackEffects") is { } nullNodeTrackEffects && nullNodeTrackEffects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackEffects = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,28 +33,28 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Metric domain (for example `abtesting`, `personalization`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>If true, keep items that match the filter; if false, exclude them.</summary>
-        public bool? Includes { get => _explicitNullValueIncludes; set { _explicitNullValueIncludes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includes"); else _explicitNullProperties?.Remove("includes"); } }
+        public bool? Includes { get => _explicitNullValueIncludes; set { _explicitNullValueIncludes = value; AdditionalData?.Remove("includes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includes"); else _explicitNullProperties?.Remove("includes"); } }
         private bool? _explicitNullValueIncludes = default!;
         /// <summary>Public metric name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Whether the experiment should record the effects of this filter.</summary>
-        public bool? TrackEffects { get => _explicitNullValueTrackEffects; set { _explicitNullValueTrackEffects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackEffects"); else _explicitNullProperties?.Remove("trackEffects"); } }
+        public bool? TrackEffects { get => _explicitNullValueTrackEffects; set { _explicitNullValueTrackEffects = value; AdditionalData?.Remove("trackEffects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackEffects"); else _explicitNullProperties?.Remove("trackEffects"); } }
         private bool? _explicitNullValueTrackEffects = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.MetricsFilter"/> and sets the default values.

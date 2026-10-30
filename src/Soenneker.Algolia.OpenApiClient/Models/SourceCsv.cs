@@ -18,11 +18,16 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("delimiter") is { } nullNodeDelimiter && nullNodeDelimiter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delimiter = null;
-            if (parseNode.GetChildNode("mapping") is { } nullNodeMapping && nullNodeMapping.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mapping = null;
-            if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
-            if (parseNode.GetChildNode("uniqueIDColumn") is { } nullNodeUniqueIDColumn && nullNodeUniqueIDColumn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueIDColumn = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("delimiter") is null) { _explicitNullValueDelimiter = default!; _explicitNullProperties?.Remove("delimiter"); }
+            else if (parseNode.GetChildNode("delimiter") is { } nullNodeDelimiter && nullNodeDelimiter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delimiter = null;
+            if (parseNode.GetChildNode("mapping") is null) { _explicitNullValueMapping = default!; _explicitNullProperties?.Remove("mapping"); }
+            else if (parseNode.GetChildNode("mapping") is { } nullNodeMapping && nullNodeMapping.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mapping = null;
+            if (parseNode.GetChildNode("method") is null) { _explicitNullValueMethod = default!; _explicitNullProperties?.Remove("method"); }
+            else if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
+            if (parseNode.GetChildNode("uniqueIDColumn") is null) { _explicitNullValueUniqueIDColumn = default!; _explicitNullProperties?.Remove("uniqueIDColumn"); }
+            else if (parseNode.GetChildNode("uniqueIDColumn") is { } nullNodeUniqueIDColumn && nullNodeUniqueIDColumn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueIDColumn = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,44 +35,44 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The character used to split the value on each line, default to a comma (\r, \n, 0xFFFD, and space are forbidden).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Delimiter { get => _explicitNullValueDelimiter; set { _explicitNullValueDelimiter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delimiter"); else _explicitNullProperties?.Remove("delimiter"); } }
+        public string? Delimiter { get => _explicitNullValueDelimiter; set { _explicitNullValueDelimiter = value; AdditionalData?.Remove("delimiter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delimiter"); else _explicitNullProperties?.Remove("delimiter"); } }
         private string? _explicitNullValueDelimiter = default!;
 #nullable restore
 #else
-        public string Delimiter { get => _explicitNullValueDelimiter; set { _explicitNullValueDelimiter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delimiter"); else _explicitNullProperties?.Remove("delimiter"); } }
+        public string Delimiter { get => _explicitNullValueDelimiter; set { _explicitNullValueDelimiter = value; AdditionalData?.Remove("delimiter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delimiter"); else _explicitNullProperties?.Remove("delimiter"); } }
         private string _explicitNullValueDelimiter = default!;
 #endif
         /// <summary>Key-value pairs of column names and their expected types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2? Mapping { get => _explicitNullValueMapping; set { _explicitNullValueMapping = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapping"); else _explicitNullProperties?.Remove("mapping"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2? Mapping { get => _explicitNullValueMapping; set { _explicitNullValueMapping = value; AdditionalData?.Remove("mapping"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapping"); else _explicitNullProperties?.Remove("mapping"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2? _explicitNullValueMapping = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2 Mapping { get => _explicitNullValueMapping; set { _explicitNullValueMapping = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapping"); else _explicitNullProperties?.Remove("mapping"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2 Mapping { get => _explicitNullValueMapping; set { _explicitNullValueMapping = value; AdditionalData?.Remove("mapping"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapping"); else _explicitNullProperties?.Remove("mapping"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2 _explicitNullValueMapping = default!;
 #endif
         /// <summary>HTTP method to be used for retrieving your data.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.MethodType? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MethodType? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; AdditionalData?.Remove("method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.MethodType? _explicitNullValueMethod = default!;
         /// <summary>Name of a column that contains a unique ID which will be used as `objectID` in Algolia.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UniqueIDColumn { get => _explicitNullValueUniqueIDColumn; set { _explicitNullValueUniqueIDColumn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueIDColumn"); else _explicitNullProperties?.Remove("uniqueIDColumn"); } }
+        public string? UniqueIDColumn { get => _explicitNullValueUniqueIDColumn; set { _explicitNullValueUniqueIDColumn = value; AdditionalData?.Remove("uniqueIDColumn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueIDColumn"); else _explicitNullProperties?.Remove("uniqueIDColumn"); } }
         private string? _explicitNullValueUniqueIDColumn = default!;
 #nullable restore
 #else
-        public string UniqueIDColumn { get => _explicitNullValueUniqueIDColumn; set { _explicitNullValueUniqueIDColumn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueIDColumn"); else _explicitNullProperties?.Remove("uniqueIDColumn"); } }
+        public string UniqueIDColumn { get => _explicitNullValueUniqueIDColumn; set { _explicitNullValueUniqueIDColumn = value; AdditionalData?.Remove("uniqueIDColumn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueIDColumn"); else _explicitNullProperties?.Remove("uniqueIDColumn"); } }
         private string _explicitNullValueUniqueIDColumn = default!;
 #endif
         /// <summary>URL of the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
@@ -98,7 +103,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "delimiter", n => { Delimiter = n.GetStringValue(); } },
                 { "mapping", n => { Mapping = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2.CreateFromDiscriminatorValue); } },
-                { "method", n => { Method = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.MethodType>(); } },
+                { "method", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.MethodType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMethod = default; _explicitNullProperties?.Remove("method"); AdditionalData["method"] = unknown; } else { Method = parsed; AdditionalData.Remove("method"); } } },
                 { "uniqueIDColumn", n => { UniqueIDColumn = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };

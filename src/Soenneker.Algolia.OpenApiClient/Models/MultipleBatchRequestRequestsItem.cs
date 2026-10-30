@@ -17,23 +17,25 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("body") is { } nullNodeBody && nullNodeBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Body = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("body") is null) { _explicitNullValueBody = default!; _explicitNullProperties?.Remove("body"); }
+            else if (parseNode.GetChildNode("body") is { } nullNodeBody && nullNodeBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Body = null;
         }
 
         /// <summary>Type of Composition Batch operation.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.ActionObject? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ActionObject? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ActionObject? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The body property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BatchCompositionAction? Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BatchCompositionAction? Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; AdditionalData?.Remove("body"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.BatchCompositionAction? _explicitNullValueBody = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BatchCompositionAction Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BatchCompositionAction Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; AdditionalData?.Remove("body"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.BatchCompositionAction _explicitNullValueBody = default!;
 #endif
         /// <summary>
@@ -61,7 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ActionObject>(); } },
+                { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ActionObject>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
                 { "body", n => { Body = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BatchCompositionAction>(global::Soenneker.Algolia.OpenApiClient.Models.BatchCompositionAction.CreateFromDiscriminatorValue); } },
             };
         }

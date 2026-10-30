@@ -17,13 +17,20 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hits") is { } nullNodeHits && nullNodeHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hits = null;
-            if (parseNode.GetChildNode("hitsPerPage") is { } nullNodeHitsPerPage && nullNodeHitsPerPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HitsPerPage = null;
-            if (parseNode.GetChildNode("nbHits") is { } nullNodeNbHits && nullNodeNbHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbHits = null;
-            if (parseNode.GetChildNode("nbPages") is { } nullNodeNbPages && nullNodeNbPages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbPages = null;
-            if (parseNode.GetChildNode("page") is { } nullNodePage && nullNodePage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Page = null;
-            if (parseNode.GetChildNode("params") is { } nullNodeParams && nullNodeParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Params = null;
-            if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+            if (parseNode.GetChildNode("hits") is null) { _explicitNullValueHits = default!; _explicitNullProperties?.Remove("hits"); }
+            else if (parseNode.GetChildNode("hits") is { } nullNodeHits && nullNodeHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hits = null;
+            if (parseNode.GetChildNode("hitsPerPage") is null) { _explicitNullValueHitsPerPage = default!; _explicitNullProperties?.Remove("hitsPerPage"); }
+            else if (parseNode.GetChildNode("hitsPerPage") is { } nullNodeHitsPerPage && nullNodeHitsPerPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HitsPerPage = null;
+            if (parseNode.GetChildNode("nbHits") is null) { _explicitNullValueNbHits = default!; _explicitNullProperties?.Remove("nbHits"); }
+            else if (parseNode.GetChildNode("nbHits") is { } nullNodeNbHits && nullNodeNbHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbHits = null;
+            if (parseNode.GetChildNode("nbPages") is null) { _explicitNullValueNbPages = default!; _explicitNullProperties?.Remove("nbPages"); }
+            else if (parseNode.GetChildNode("nbPages") is { } nullNodeNbPages && nullNodeNbPages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbPages = null;
+            if (parseNode.GetChildNode("page") is null) { _explicitNullValuePage = default!; _explicitNullProperties?.Remove("page"); }
+            else if (parseNode.GetChildNode("page") is { } nullNodePage && nullNodePage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Page = null;
+            if (parseNode.GetChildNode("params") is null) { _explicitNullValueParams = default!; _explicitNullProperties?.Remove("params"); }
+            else if (parseNode.GetChildNode("params") is { } nullNodeParams && nullNodeParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Params = null;
+            if (parseNode.GetChildNode("query") is null) { _explicitNullValueQuery = default!; _explicitNullProperties?.Remove("query"); }
+            else if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,43 +38,43 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Search results (hits).Hits are records from your index that match the search criteria, augmented with additional attributes, such as, for highlighting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit>? Hits { get => _explicitNullValueHits; set { _explicitNullValueHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hits"); else _explicitNullProperties?.Remove("hits"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit>? Hits { get => _explicitNullValueHits; set { _explicitNullValueHits = value; AdditionalData?.Remove("hits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hits"); else _explicitNullProperties?.Remove("hits"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit>? _explicitNullValueHits = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit> Hits { get => _explicitNullValueHits; set { _explicitNullValueHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hits"); else _explicitNullProperties?.Remove("hits"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit> Hits { get => _explicitNullValueHits; set { _explicitNullValueHits = value; AdditionalData?.Remove("hits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hits"); else _explicitNullProperties?.Remove("hits"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit> _explicitNullValueHits = default!;
 #endif
         /// <summary>Number of hits returned per page.</summary>
-        public int? HitsPerPage { get => _explicitNullValueHitsPerPage; set { _explicitNullValueHitsPerPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hitsPerPage"); else _explicitNullProperties?.Remove("hitsPerPage"); } }
+        public int? HitsPerPage { get => _explicitNullValueHitsPerPage; set { _explicitNullValueHitsPerPage = value; AdditionalData?.Remove("hitsPerPage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hitsPerPage"); else _explicitNullProperties?.Remove("hitsPerPage"); } }
         private int? _explicitNullValueHitsPerPage = default!;
         /// <summary>Number of results (hits).</summary>
-        public int? NbHits { get => _explicitNullValueNbHits; set { _explicitNullValueNbHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbHits"); else _explicitNullProperties?.Remove("nbHits"); } }
+        public int? NbHits { get => _explicitNullValueNbHits; set { _explicitNullValueNbHits = value; AdditionalData?.Remove("nbHits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbHits"); else _explicitNullProperties?.Remove("nbHits"); } }
         private int? _explicitNullValueNbHits = default!;
         /// <summary>Number of pages of results.</summary>
-        public int? NbPages { get => _explicitNullValueNbPages; set { _explicitNullValueNbPages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbPages"); else _explicitNullProperties?.Remove("nbPages"); } }
+        public int? NbPages { get => _explicitNullValueNbPages; set { _explicitNullValueNbPages = value; AdditionalData?.Remove("nbPages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbPages"); else _explicitNullProperties?.Remove("nbPages"); } }
         private int? _explicitNullValueNbPages = default!;
         /// <summary>The current page of the results.</summary>
-        public int? Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
+        public int? Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; AdditionalData?.Remove("page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
         private int? _explicitNullValuePage = default!;
         /// <summary>URL-encoded string of all search parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        public string? Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; AdditionalData?.Remove("params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
         private string? _explicitNullValueParams = default!;
 #nullable restore
 #else
-        public string Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        public string Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; AdditionalData?.Remove("params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
         private string _explicitNullValueParams = default!;
 #endif
         /// <summary>The search query string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; AdditionalData?.Remove("query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
         private string? _explicitNullValueQuery = default!;
 #nullable restore
 #else
-        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; AdditionalData?.Remove("query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
         private string _explicitNullValueQuery = default!;
 #endif
         /// <summary>

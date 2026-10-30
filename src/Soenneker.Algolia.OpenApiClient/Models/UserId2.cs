@@ -18,10 +18,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("clusterName") is { } nullNodeClusterName && nullNodeClusterName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClusterName = null;
-            if (parseNode.GetChildNode("dataSize") is { } nullNodeDataSize && nullNodeDataSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataSize = null;
-            if (parseNode.GetChildNode("nbRecords") is { } nullNodeNbRecords && nullNodeNbRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbRecords = null;
-            if (parseNode.GetChildNode("userID") is { } nullNodeUserID && nullNodeUserID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserID = null;
+            if (parseNode.GetChildNode("clusterName") is null) { _explicitNullValueClusterName = default!; _explicitNullProperties?.Remove("clusterName"); }
+            else if (parseNode.GetChildNode("clusterName") is { } nullNodeClusterName && nullNodeClusterName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClusterName = null;
+            if (parseNode.GetChildNode("dataSize") is null) { _explicitNullValueDataSize = default!; _explicitNullProperties?.Remove("dataSize"); }
+            else if (parseNode.GetChildNode("dataSize") is { } nullNodeDataSize && nullNodeDataSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataSize = null;
+            if (parseNode.GetChildNode("nbRecords") is null) { _explicitNullValueNbRecords = default!; _explicitNullProperties?.Remove("nbRecords"); }
+            else if (parseNode.GetChildNode("nbRecords") is { } nullNodeNbRecords && nullNodeNbRecords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbRecords = null;
+            if (parseNode.GetChildNode("userID") is null) { _explicitNullValueUserID = default!; _explicitNullProperties?.Remove("userID"); }
+            else if (parseNode.GetChildNode("userID") is { } nullNodeUserID && nullNodeUserID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserID = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,27 +33,27 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Cluster to which the user is assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClusterName { get => _explicitNullValueClusterName; set { _explicitNullValueClusterName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clusterName"); else _explicitNullProperties?.Remove("clusterName"); } }
+        public string? ClusterName { get => _explicitNullValueClusterName; set { _explicitNullValueClusterName = value; AdditionalData?.Remove("clusterName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clusterName"); else _explicitNullProperties?.Remove("clusterName"); } }
         private string? _explicitNullValueClusterName = default!;
 #nullable restore
 #else
-        public string ClusterName { get => _explicitNullValueClusterName; set { _explicitNullValueClusterName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clusterName"); else _explicitNullProperties?.Remove("clusterName"); } }
+        public string ClusterName { get => _explicitNullValueClusterName; set { _explicitNullValueClusterName = value; AdditionalData?.Remove("clusterName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clusterName"); else _explicitNullProperties?.Remove("clusterName"); } }
         private string _explicitNullValueClusterName = default!;
 #endif
         /// <summary>Data size used by the user.</summary>
-        public int? DataSize { get => _explicitNullValueDataSize; set { _explicitNullValueDataSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataSize"); else _explicitNullProperties?.Remove("dataSize"); } }
+        public int? DataSize { get => _explicitNullValueDataSize; set { _explicitNullValueDataSize = value; AdditionalData?.Remove("dataSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataSize"); else _explicitNullProperties?.Remove("dataSize"); } }
         private int? _explicitNullValueDataSize = default!;
         /// <summary>Number of records belonging to the user.</summary>
-        public int? NbRecords { get => _explicitNullValueNbRecords; set { _explicitNullValueNbRecords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbRecords"); else _explicitNullProperties?.Remove("nbRecords"); } }
+        public int? NbRecords { get => _explicitNullValueNbRecords; set { _explicitNullValueNbRecords = value; AdditionalData?.Remove("nbRecords"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbRecords"); else _explicitNullProperties?.Remove("nbRecords"); } }
         private int? _explicitNullValueNbRecords = default!;
         /// <summary>Unique identifier of the user who makes the search request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserID { get => _explicitNullValueUserID; set { _explicitNullValueUserID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userID"); else _explicitNullProperties?.Remove("userID"); } }
+        public string? UserID { get => _explicitNullValueUserID; set { _explicitNullValueUserID = value; AdditionalData?.Remove("userID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userID"); else _explicitNullProperties?.Remove("userID"); } }
         private string? _explicitNullValueUserID = default!;
 #nullable restore
 #else
-        public string UserID { get => _explicitNullValueUserID; set { _explicitNullValueUserID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userID"); else _explicitNullProperties?.Remove("userID"); } }
+        public string UserID { get => _explicitNullValueUserID; set { _explicitNullValueUserID = value; AdditionalData?.Remove("userID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userID"); else _explicitNullProperties?.Remove("userID"); } }
         private string _explicitNullValueUserID = default!;
 #endif
         /// <summary>

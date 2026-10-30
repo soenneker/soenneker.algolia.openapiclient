@@ -17,11 +17,16 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
-            if (parseNode.GetChildNode("dest") is { } nullNodeDest && nullNodeDest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dest = null;
-            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
-            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
-            if (parseNode.GetChildNode("succeed") is { } nullNodeSucceed && nullNodeSucceed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Succeed = null;
+            if (parseNode.GetChildNode("data") is null) { _explicitNullValueData = default!; _explicitNullProperties?.Remove("data"); }
+            else if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("dest") is null) { _explicitNullValueDest = default!; _explicitNullProperties?.Remove("dest"); }
+            else if (parseNode.GetChildNode("dest") is { } nullNodeDest && nullNodeDest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dest = null;
+            if (parseNode.GetChildNode("reason") is null) { _explicitNullValueReason = default!; _explicitNullProperties?.Remove("reason"); }
+            else if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("source") is null) { _explicitNullValueSource = default!; _explicitNullProperties?.Remove("source"); }
+            else if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("succeed") is null) { _explicitNullValueSucceed = default!; _explicitNullProperties?.Remove("succeed"); }
+            else if (parseNode.GetChildNode("succeed") is { } nullNodeSucceed && nullNodeSucceed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Succeed = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,45 +34,45 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Redirect rule data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendRedirectRuleIndexMetadataData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendRedirectRuleIndexMetadataData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.RecommendRedirectRuleIndexMetadataData? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendRedirectRuleIndexMetadataData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendRedirectRuleIndexMetadataData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.RecommendRedirectRuleIndexMetadataData _explicitNullValueData = default!;
 #endif
         /// <summary>Destination index for the redirect rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Dest { get => _explicitNullValueDest; set { _explicitNullValueDest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dest"); else _explicitNullProperties?.Remove("dest"); } }
+        public string? Dest { get => _explicitNullValueDest; set { _explicitNullValueDest = value; AdditionalData?.Remove("dest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dest"); else _explicitNullProperties?.Remove("dest"); } }
         private string? _explicitNullValueDest = default!;
 #nullable restore
 #else
-        public string Dest { get => _explicitNullValueDest; set { _explicitNullValueDest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dest"); else _explicitNullProperties?.Remove("dest"); } }
+        public string Dest { get => _explicitNullValueDest; set { _explicitNullValueDest = value; AdditionalData?.Remove("dest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dest"); else _explicitNullProperties?.Remove("dest"); } }
         private string _explicitNullValueDest = default!;
 #endif
         /// <summary>Reason for the redirect rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private string? _explicitNullValueReason = default!;
 #nullable restore
 #else
-        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private string _explicitNullValueReason = default!;
 #endif
         /// <summary>Source index for the redirect rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private string? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public string Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        public string Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private string _explicitNullValueSource = default!;
 #endif
         /// <summary>Redirect rule status.</summary>
-        public bool? Succeed { get => _explicitNullValueSucceed; set { _explicitNullValueSucceed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("succeed"); else _explicitNullProperties?.Remove("succeed"); } }
+        public bool? Succeed { get => _explicitNullValueSucceed; set { _explicitNullValueSucceed = value; AdditionalData?.Remove("succeed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("succeed"); else _explicitNullProperties?.Remove("succeed"); } }
         private bool? _explicitNullValueSucceed = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendRedirectRuleIndexMetadata"/> and sets the default values.

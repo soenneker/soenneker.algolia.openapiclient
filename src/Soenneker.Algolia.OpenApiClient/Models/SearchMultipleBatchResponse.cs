@@ -17,8 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("objectIDs") is { } nullNodeObjectIDs && nullNodeObjectIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectIDs = null;
-            if (parseNode.GetChildNode("taskID") is { } nullNodeTaskID && nullNodeTaskID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaskID = null;
+            if (parseNode.GetChildNode("objectIDs") is null) { _explicitNullValueObjectIDs = default!; _explicitNullProperties?.Remove("objectIDs"); }
+            else if (parseNode.GetChildNode("objectIDs") is { } nullNodeObjectIDs && nullNodeObjectIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectIDs = null;
+            if (parseNode.GetChildNode("taskID") is null) { _explicitNullValueTaskID = default!; _explicitNullProperties?.Remove("taskID"); }
+            else if (parseNode.GetChildNode("taskID") is { } nullNodeTaskID && nullNodeTaskID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaskID = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Unique record identifiers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ObjectIDs { get => _explicitNullValueObjectIDs; set { _explicitNullValueObjectIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectIDs"); else _explicitNullProperties?.Remove("objectIDs"); } }
+        public List<string>? ObjectIDs { get => _explicitNullValueObjectIDs; set { _explicitNullValueObjectIDs = value; AdditionalData?.Remove("objectIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectIDs"); else _explicitNullProperties?.Remove("objectIDs"); } }
         private List<string>? _explicitNullValueObjectIDs = default!;
 #nullable restore
 #else
-        public List<string> ObjectIDs { get => _explicitNullValueObjectIDs; set { _explicitNullValueObjectIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectIDs"); else _explicitNullProperties?.Remove("objectIDs"); } }
+        public List<string> ObjectIDs { get => _explicitNullValueObjectIDs; set { _explicitNullValueObjectIDs = value; AdditionalData?.Remove("objectIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectIDs"); else _explicitNullProperties?.Remove("objectIDs"); } }
         private List<string> _explicitNullValueObjectIDs = default!;
 #endif
         /// <summary>Task IDs. One for each index.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchMultipleBatchResponseTaskIdProperty? TaskID { get => _explicitNullValueTaskID; set { _explicitNullValueTaskID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskID"); else _explicitNullProperties?.Remove("taskID"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchMultipleBatchResponseTaskIdProperty? TaskID { get => _explicitNullValueTaskID; set { _explicitNullValueTaskID = value; AdditionalData?.Remove("taskID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskID"); else _explicitNullProperties?.Remove("taskID"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SearchMultipleBatchResponseTaskIdProperty? _explicitNullValueTaskID = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchMultipleBatchResponseTaskIdProperty TaskID { get => _explicitNullValueTaskID; set { _explicitNullValueTaskID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskID"); else _explicitNullProperties?.Remove("taskID"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchMultipleBatchResponseTaskIdProperty TaskID { get => _explicitNullValueTaskID; set { _explicitNullValueTaskID = value; AdditionalData?.Remove("taskID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskID"); else _explicitNullProperties?.Remove("taskID"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SearchMultipleBatchResponseTaskIdProperty _explicitNullValueTaskID = default!;
 #endif
         /// <summary>

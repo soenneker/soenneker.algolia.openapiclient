@@ -35021,7 +35021,7 @@
             ]
           },
           "distinct": {
-            "$ref": "#/components/schemas/Distinct"
+            "$ref": "#/components/schemas/CrawlerDistinct"
           },
           "enableABTest": {
             "type": "boolean",
@@ -35140,7 +35140,7 @@
             "$ref": "#/components/schemas/OptionalFilters"
           },
           "optionalWords": {
-            "$ref": "#/components/schemas/OptionalWords"
+            "$ref": "#/components/schemas/CrawlerOptionalWords"
           },
           "percentileComputation": {
             "type": "boolean",
@@ -49974,7 +49974,7 @@
             ]
           },
           "insideBoundingBox": {
-            "$ref": "#/components/schemas/RecommendInsideBoundingBox"
+            "$ref": "#/components/schemas/InsideBoundingBox"
           },
           "insidePolygon": {
             "type": "array",
@@ -51424,7 +51424,7 @@
             ]
           },
           "optionalWords": {
-            "$ref": "#/components/schemas/RecommendOptionalWords"
+            "$ref": "#/components/schemas/CrawlerOptionalWords"
           },
           "disableExactOnAttributes": {
             "type": "array",
@@ -51472,7 +51472,7 @@
             ]
           },
           "distinct": {
-            "$ref": "#/components/schemas/RecommendDistinct"
+            "$ref": "#/components/schemas/CrawlerDistinct"
           },
           "replaceSynonymsInHighlight": {
             "type": "boolean",
@@ -54684,7 +54684,7 @@
             ]
           },
           "insideBoundingBox": {
-            "$ref": "#/components/schemas/SearchInsideBoundingBox"
+            "$ref": "#/components/schemas/InsideBoundingBox"
           },
           "insidePolygon": {
             "type": "array",
@@ -56005,7 +56005,7 @@
             ]
           },
           "optionalWords": {
-            "$ref": "#/components/schemas/SearchOptionalWords"
+            "$ref": "#/components/schemas/CrawlerOptionalWords"
           },
           "disableExactOnAttributes": {
             "type": "array",
@@ -56053,7 +56053,7 @@
             ]
           },
           "distinct": {
-            "$ref": "#/components/schemas/SearchDistinct"
+            "$ref": "#/components/schemas/CrawlerDistinct"
           },
           "replaceSynonymsInHighlight": {
             "type": "boolean",
@@ -57735,7 +57735,7 @@
             "$ref": "#/components/schemas/SearchAroundRadius"
           },
           "insideBoundingBox": {
-            "$ref": "#/components/schemas/SearchInsideBoundingBox"
+            "$ref": "#/components/schemas/InsideBoundingBox"
           },
           "insidePolygon": {
             "type": "array",

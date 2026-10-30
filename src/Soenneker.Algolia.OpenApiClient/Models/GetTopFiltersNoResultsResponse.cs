@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("values") is { } nullNodeValues && nullNodeValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Values = null;
+            if (parseNode.GetChildNode("values") is null) { _explicitNullValueValues = default!; _explicitNullProperties?.Remove("values"); }
+            else if (parseNode.GetChildNode("values") is { } nullNodeValues && nullNodeValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Values = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Filters for searches without any results.If null, the search term specified with the `search` parameter isn&apos;t a search without results,or the `search` parameter is absent from the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues>? Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues>? Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; AdditionalData?.Remove("values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues>? _explicitNullValueValues = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues> Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues> Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; AdditionalData?.Remove("values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopFiltersNoResultsValues> _explicitNullValueValues = default!;
 #endif
         /// <summary>

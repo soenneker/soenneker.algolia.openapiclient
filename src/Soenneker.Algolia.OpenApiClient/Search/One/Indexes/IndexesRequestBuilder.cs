@@ -97,7 +97,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Indexes
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.One.Indexes.IndexesRequestBuilder.IndexesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://ALGOLIA_APPLICATION_ID.algolia.net", "/search/1/indexes", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

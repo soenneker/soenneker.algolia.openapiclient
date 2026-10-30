@@ -7,11 +7,10 @@ using System.IO;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
-    /// <summary>
-    /// Coordinates for a rectangular area in which to search.Each bounding box is defined by the two opposite points of its diagonal, and expressed as latitude and longitude pair:`[p1 lat, p1 long, p2 lat, p2 long]`.Provide multiple bounding boxes as nested arrays.For more information, see [rectangular area](https://www.algolia.com/doc/guides/managing-results/refine-results/geolocation/#filtering-inside-rectangular-or-polygonal-areas).
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RecommendInsideBoundingBoxMember2 : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class CrawlerOptionalWordsMember1 : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -23,21 +22,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxMember2"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.CrawlerOptionalWordsMember1"/> and sets the default values.
         /// </summary>
-        public RecommendInsideBoundingBoxMember2()
+        public CrawlerOptionalWordsMember1()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxMember2"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.CrawlerOptionalWordsMember1"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxMember2 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Algolia.OpenApiClient.Models.CrawlerOptionalWordsMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.RecommendInsideBoundingBoxMember2(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.CrawlerOptionalWordsMember1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model

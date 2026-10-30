@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dates") is { } nullNodeDates && nullNodeDates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dates = null;
+            if (parseNode.GetChildNode("dates") is null) { _explicitNullValueDates = default!; _explicitNullProperties?.Remove("dates"); }
+            else if (parseNode.GetChildNode("dates") is { } nullNodeDates && nullNodeDates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dates = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The dates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.MetricDate>? Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.MetricDate>? Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; AdditionalData?.Remove("dates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.MetricDate>? _explicitNullValueDates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.MetricDate> Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.MetricDate> Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; AdditionalData?.Remove("dates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.MetricDate> _explicitNullValueDates = default!;
 #endif
         /// <summary>

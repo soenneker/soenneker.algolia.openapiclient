@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("indexing") is { } nullNodeIndexing && nullNodeIndexing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indexing = null;
+            if (parseNode.GetChildNode("indexing") is null) { _explicitNullValueIndexing = default!; _explicitNullProperties?.Remove("indexing"); }
+            else if (parseNode.GetChildNode("indexing") is { } nullNodeIndexing && nullNodeIndexing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indexing = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The indexing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexingProperty2? Indexing { get => _explicitNullValueIndexing; set { _explicitNullValueIndexing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexing"); else _explicitNullProperties?.Remove("indexing"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexingProperty2? Indexing { get => _explicitNullValueIndexing; set { _explicitNullValueIndexing = value; AdditionalData?.Remove("indexing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexing"); else _explicitNullProperties?.Remove("indexing"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexingProperty2? _explicitNullValueIndexing = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexingProperty2 Indexing { get => _explicitNullValueIndexing; set { _explicitNullValueIndexing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexing"); else _explicitNullProperties?.Remove("indexing"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexingProperty2 Indexing { get => _explicitNullValueIndexing; set { _explicitNullValueIndexing = value; AdditionalData?.Remove("indexing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexing"); else _explicitNullProperties?.Remove("indexing"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexingProperty2 _explicitNullValueIndexing = default!;
 #endif
         /// <summary>

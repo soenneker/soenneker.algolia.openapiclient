@@ -17,10 +17,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
-            if (parseNode.GetChildNode("maxRecommendations") is { } nullNodeMaxRecommendations && nullNodeMaxRecommendations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxRecommendations = null;
-            if (parseNode.GetChildNode("queryParameters") is { } nullNodeQueryParameters && nullNodeQueryParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryParameters = null;
-            if (parseNode.GetChildNode("threshold") is { } nullNodeThreshold && nullNodeThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Threshold = null;
+            if (parseNode.GetChildNode("indexName") is null) { _explicitNullValueIndexName = default!; _explicitNullProperties?.Remove("indexName"); }
+            else if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
+            if (parseNode.GetChildNode("maxRecommendations") is null) { _explicitNullValueMaxRecommendations = default!; _explicitNullProperties?.Remove("maxRecommendations"); }
+            else if (parseNode.GetChildNode("maxRecommendations") is { } nullNodeMaxRecommendations && nullNodeMaxRecommendations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxRecommendations = null;
+            if (parseNode.GetChildNode("queryParameters") is null) { _explicitNullValueQueryParameters = default!; _explicitNullProperties?.Remove("queryParameters"); }
+            else if (parseNode.GetChildNode("queryParameters") is { } nullNodeQueryParameters && nullNodeQueryParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryParameters = null;
+            if (parseNode.GetChildNode("threshold") is null) { _explicitNullValueThreshold = default!; _explicitNullProperties?.Remove("threshold"); }
+            else if (parseNode.GetChildNode("threshold") is { } nullNodeThreshold && nullNodeThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Threshold = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,28 +32,28 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Index name (case-sensitive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string? _explicitNullValueIndexName = default!;
 #nullable restore
 #else
-        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string _explicitNullValueIndexName = default!;
 #endif
         /// <summary>Maximum number of recommendations to retrieve.By default, all recommendations are returned and no fallback request is made.Depending on the available recommendations and the other request parameters,the actual number of recommendations may be lower than this value.</summary>
-        public int? MaxRecommendations { get => _explicitNullValueMaxRecommendations; set { _explicitNullValueMaxRecommendations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxRecommendations"); else _explicitNullProperties?.Remove("maxRecommendations"); } }
+        public int? MaxRecommendations { get => _explicitNullValueMaxRecommendations; set { _explicitNullValueMaxRecommendations = value; AdditionalData?.Remove("maxRecommendations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxRecommendations"); else _explicitNullProperties?.Remove("maxRecommendations"); } }
         private int? _explicitNullValueMaxRecommendations = default!;
         /// <summary>Search parameters for filtering the recommendations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams? QueryParameters { get => _explicitNullValueQueryParameters; set { _explicitNullValueQueryParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryParameters"); else _explicitNullProperties?.Remove("queryParameters"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams? QueryParameters { get => _explicitNullValueQueryParameters; set { _explicitNullValueQueryParameters = value; AdditionalData?.Remove("queryParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryParameters"); else _explicitNullProperties?.Remove("queryParameters"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams? _explicitNullValueQueryParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams QueryParameters { get => _explicitNullValueQueryParameters; set { _explicitNullValueQueryParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryParameters"); else _explicitNullProperties?.Remove("queryParameters"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams QueryParameters { get => _explicitNullValueQueryParameters; set { _explicitNullValueQueryParameters = value; AdditionalData?.Remove("queryParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryParameters"); else _explicitNullProperties?.Remove("queryParameters"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.RecommendSearchParams _explicitNullValueQueryParameters = default!;
 #endif
         /// <summary>Minimum score a recommendation must have to be included in the response.</summary>
-        public double? Threshold { get => _explicitNullValueThreshold; set { _explicitNullValueThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threshold"); else _explicitNullProperties?.Remove("threshold"); } }
+        public double? Threshold { get => _explicitNullValueThreshold; set { _explicitNullValueThreshold = value; AdditionalData?.Remove("threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("threshold"); else _explicitNullProperties?.Remove("threshold"); } }
         private double? _explicitNullValueThreshold = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.BaseRecommendRequest"/> and sets the default values.

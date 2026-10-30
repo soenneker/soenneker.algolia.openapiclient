@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("eventSources") is { } nullNodeEventSources && nullNodeEventSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventSources = null;
+            if (parseNode.GetChildNode("eventSources") is null) { _explicitNullValueEventSources = default!; _explicitNullProperties?.Remove("eventSources"); }
+            else if (parseNode.GetChildNode("eventSources") is { } nullNodeEventSources && nullNodeEventSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventSources = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Indices from which to collect click and conversion events.If null, the current index and all its replicas are used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EventSources { get => _explicitNullValueEventSources; set { _explicitNullValueEventSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventSources"); else _explicitNullProperties?.Remove("eventSources"); } }
+        public List<string>? EventSources { get => _explicitNullValueEventSources; set { _explicitNullValueEventSources = value; AdditionalData?.Remove("eventSources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventSources"); else _explicitNullProperties?.Remove("eventSources"); } }
         private List<string>? _explicitNullValueEventSources = default!;
 #nullable restore
 #else
-        public List<string> EventSources { get => _explicitNullValueEventSources; set { _explicitNullValueEventSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventSources"); else _explicitNullProperties?.Remove("eventSources"); } }
+        public List<string> EventSources { get => _explicitNullValueEventSources; set { _explicitNullValueEventSources = value; AdditionalData?.Remove("eventSources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventSources"); else _explicitNullProperties?.Remove("eventSources"); } }
         private List<string> _explicitNullValueEventSources = default!;
 #endif
         /// <summary>

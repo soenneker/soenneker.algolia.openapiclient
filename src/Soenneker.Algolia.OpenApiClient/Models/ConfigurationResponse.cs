@@ -19,7 +19,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
             base.CaptureExplicitNulls(parseNode);
-            if (parseNode.GetChildNode("appID") is { } nullNodeAppID && nullNodeAppID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppID = null;
+            if (parseNode.GetChildNode("appID") is null) { _explicitNullValueAppID = default!; _explicitNullProperties?.Remove("appID"); }
+            else if (parseNode.GetChildNode("appID") is { } nullNodeAppID && nullNodeAppID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppID = null;
         }
 
         /// <summary>Algolia application ID to which this Query Suggestions configuration belongs.</summary>

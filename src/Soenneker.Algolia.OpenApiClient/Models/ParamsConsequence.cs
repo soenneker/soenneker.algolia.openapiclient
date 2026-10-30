@@ -18,9 +18,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("automaticFacetFilters") is { } nullNodeAutomaticFacetFilters && nullNodeAutomaticFacetFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticFacetFilters = null;
-            if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
-            if (parseNode.GetChildNode("optionalFilters") is { } nullNodeOptionalFilters && nullNodeOptionalFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionalFilters = null;
+            if (parseNode.GetChildNode("automaticFacetFilters") is null) { _explicitNullValueAutomaticFacetFilters = default!; _explicitNullProperties?.Remove("automaticFacetFilters"); }
+            else if (parseNode.GetChildNode("automaticFacetFilters") is { } nullNodeAutomaticFacetFilters && nullNodeAutomaticFacetFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticFacetFilters = null;
+            if (parseNode.GetChildNode("filters") is null) { _explicitNullValueFilters = default!; _explicitNullProperties?.Remove("filters"); }
+            else if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("optionalFilters") is null) { _explicitNullValueOptionalFilters = default!; _explicitNullProperties?.Remove("optionalFilters"); }
+            else if (parseNode.GetChildNode("optionalFilters") is { } nullNodeOptionalFilters && nullNodeOptionalFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionalFilters = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Filter recommendations that match or don&apos;t match the same `facet:facet_value` combination as the viewed item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.AutoFacetFilter>? AutomaticFacetFilters { get => _explicitNullValueAutomaticFacetFilters; set { _explicitNullValueAutomaticFacetFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automaticFacetFilters"); else _explicitNullProperties?.Remove("automaticFacetFilters"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.AutoFacetFilter>? AutomaticFacetFilters { get => _explicitNullValueAutomaticFacetFilters; set { _explicitNullValueAutomaticFacetFilters = value; AdditionalData?.Remove("automaticFacetFilters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automaticFacetFilters"); else _explicitNullProperties?.Remove("automaticFacetFilters"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.AutoFacetFilter>? _explicitNullValueAutomaticFacetFilters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.AutoFacetFilter> AutomaticFacetFilters { get => _explicitNullValueAutomaticFacetFilters; set { _explicitNullValueAutomaticFacetFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automaticFacetFilters"); else _explicitNullProperties?.Remove("automaticFacetFilters"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.AutoFacetFilter> AutomaticFacetFilters { get => _explicitNullValueAutomaticFacetFilters; set { _explicitNullValueAutomaticFacetFilters = value; AdditionalData?.Remove("automaticFacetFilters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automaticFacetFilters"); else _explicitNullProperties?.Remove("automaticFacetFilters"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.AutoFacetFilter> _explicitNullValueAutomaticFacetFilters = default!;
 #endif
         /// <summary>Filter expression to only include items that match the filter criteria in the response.You can use these filter expressions:- **Numeric filters.** `&lt;facet&gt; &lt;op&gt; &lt;number&gt;`, where `&lt;op&gt;` is one of `&lt;`, `&lt;=`, `=`, `!=`, `&gt;`, `&gt;=`.- **Ranges.** `&lt;facet&gt;:&lt;lower&gt; TO &lt;upper&gt;`, where `&lt;lower&gt;` and `&lt;upper&gt;` are the lower and upper limits of the range (inclusive).- **Facet filters.** `&lt;facet&gt;:&lt;value&gt;`, where `&lt;facet&gt;` is a facet attribute (case-sensitive) and `&lt;value&gt;` a facet value.- **Tag filters.** `_tags:&lt;value&gt;` or just `&lt;value&gt;` (case-sensitive).- **Boolean filters.** `&lt;facet&gt;: true | false`.You can combine filters with `AND`, `OR`, and `NOT` operators with the following restrictions:- You can only combine filters of the same type with `OR`.  **Not supported:** `facet:value OR num &gt; 3`.- You can&apos;t use `NOT` with combinations of filters.  **Not supported:** `NOT(facet:value OR facet:value)`- You can&apos;t combine conjunctions (`AND`) with `OR`.  **Not supported:** `facet:value OR (facet:value AND facet:value)`Use quotes if the facet attribute name or facet value contains spaces, keywords (`OR`, `AND`, `NOT`), or quotes.If a facet attribute is an array, the filter matches if it matches at least one element of the array.For more information, see [Filters](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        public string? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
         private string? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public string Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        public string Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
         private string _explicitNullValueFilters = default!;
 #endif
         /// <summary>Filters to promote or demote records in the search results.Optional filters work like facet filters, but they don&apos;t exclude records from the search results.Records that match the optional filter rank before records that don&apos;t match.Matches with higher weights (`&lt;score=N&gt;`) rank before matches with lower weights.If you&apos;re using a negative filter `facet:-value`, matching records rank after records that don&apos;t match.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OptionalFilters { get => _explicitNullValueOptionalFilters; set { _explicitNullValueOptionalFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionalFilters"); else _explicitNullProperties?.Remove("optionalFilters"); } }
+        public List<string>? OptionalFilters { get => _explicitNullValueOptionalFilters; set { _explicitNullValueOptionalFilters = value; AdditionalData?.Remove("optionalFilters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionalFilters"); else _explicitNullProperties?.Remove("optionalFilters"); } }
         private List<string>? _explicitNullValueOptionalFilters = default!;
 #nullable restore
 #else
-        public List<string> OptionalFilters { get => _explicitNullValueOptionalFilters; set { _explicitNullValueOptionalFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionalFilters"); else _explicitNullProperties?.Remove("optionalFilters"); } }
+        public List<string> OptionalFilters { get => _explicitNullValueOptionalFilters; set { _explicitNullValueOptionalFilters = value; AdditionalData?.Remove("optionalFilters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionalFilters"); else _explicitNullProperties?.Remove("optionalFilters"); } }
         private List<string> _explicitNullValueOptionalFilters = default!;
 #endif
         /// <summary>

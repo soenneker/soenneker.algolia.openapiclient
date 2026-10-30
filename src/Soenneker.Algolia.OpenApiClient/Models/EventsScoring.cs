@@ -17,9 +17,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("eventName") is { } nullNodeEventName && nullNodeEventName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventName = null;
-            if (parseNode.GetChildNode("eventType") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
-            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+            if (parseNode.GetChildNode("eventName") is null) { _explicitNullValueEventName = default!; _explicitNullProperties?.Remove("eventName"); }
+            else if (parseNode.GetChildNode("eventName") is { } nullNodeEventName && nullNodeEventName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventName = null;
+            if (parseNode.GetChildNode("eventType") is null) { _explicitNullValueEventType = default!; _explicitNullProperties?.Remove("eventType"); }
+            else if (parseNode.GetChildNode("eventType") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
+            if (parseNode.GetChildNode("score") is null) { _explicitNullValueScore = default!; _explicitNullProperties?.Remove("score"); }
+            else if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,18 +30,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Event name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventName { get => _explicitNullValueEventName; set { _explicitNullValueEventName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventName"); else _explicitNullProperties?.Remove("eventName"); } }
+        public string? EventName { get => _explicitNullValueEventName; set { _explicitNullValueEventName = value; AdditionalData?.Remove("eventName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventName"); else _explicitNullProperties?.Remove("eventName"); } }
         private string? _explicitNullValueEventName = default!;
 #nullable restore
 #else
-        public string EventName { get => _explicitNullValueEventName; set { _explicitNullValueEventName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventName"); else _explicitNullProperties?.Remove("eventName"); } }
+        public string EventName { get => _explicitNullValueEventName; set { _explicitNullValueEventName = value; AdditionalData?.Remove("eventName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventName"); else _explicitNullProperties?.Remove("eventName"); } }
         private string _explicitNullValueEventName = default!;
 #endif
         /// <summary>Event type.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationEventType? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventType"); else _explicitNullProperties?.Remove("eventType"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationEventType? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; AdditionalData?.Remove("eventType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventType"); else _explicitNullProperties?.Remove("eventType"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationEventType? _explicitNullValueEventType = default!;
         /// <summary>Event score.</summary>
-        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; AdditionalData?.Remove("score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
         private int? _explicitNullValueScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.EventsScoring"/> and sets the default values.
@@ -66,7 +69,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "eventName", n => { EventName = n.GetStringValue(); } },
-                { "eventType", n => { EventType = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationEventType>(); } },
+                { "eventType", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationEventType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEventType = default; _explicitNullProperties?.Remove("eventType"); AdditionalData["eventType"] = unknown; } else { EventType = parsed; AdditionalData.Remove("eventType"); } } },
                 { "score", n => { Score = n.GetIntValue(); } },
             };
         }

@@ -18,13 +18,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("positioning") is { } nullNodePositioning && nullNodePositioning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Positioning = null;
+            if (parseNode.GetChildNode("positioning") is null) { _explicitNullValuePositioning = default!; _explicitNullProperties?.Remove("positioning"); }
+            else if (parseNode.GetChildNode("positioning") is { } nullNodePositioning && nullNodePositioning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Positioning = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Deduplication positioning configures how a duplicate result should be resolved between an injected item and main search results.Current configuration supports:- &apos;highest&apos;: always select the item in the highest position, and remove duplicates that appear lower in the results.- &apos;highestInjected&apos;: duplicate result will be moved to its highest possible injected position, but not higher.   If a duplicate appears higher in main search results, it will be removed to stay it&apos;s intended group position (which could be lower than main).</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.DedupPositioning? Positioning { get => _explicitNullValuePositioning; set { _explicitNullValuePositioning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positioning"); else _explicitNullProperties?.Remove("positioning"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.DedupPositioning? Positioning { get => _explicitNullValuePositioning; set { _explicitNullValuePositioning = value; AdditionalData?.Remove("positioning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positioning"); else _explicitNullProperties?.Remove("positioning"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.DedupPositioning? _explicitNullValuePositioning = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectionDeduplication"/> and sets the default values.
@@ -51,7 +52,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "positioning", n => { Positioning = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.DedupPositioning>(); } },
+                { "positioning", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.DedupPositioning>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePositioning = default; _explicitNullProperties?.Remove("positioning"); AdditionalData["positioning"] = unknown; } else { Positioning = parsed; AdditionalData.Remove("positioning"); } } },
             };
         }
         /// <summary>

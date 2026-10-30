@@ -17,34 +17,37 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("depth") is { } nullNodeDepth && nullNodeDepth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Depth = null;
-            if (parseNode.GetChildNode("facetName") is { } nullNodeFacetName && nullNodeFacetName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetName = null;
-            if (parseNode.GetChildNode("facetValue") is { } nullNodeFacetValue && nullNodeFacetValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetValue = null;
+            if (parseNode.GetChildNode("depth") is null) { _explicitNullValueDepth = default!; _explicitNullProperties?.Remove("depth"); }
+            else if (parseNode.GetChildNode("depth") is { } nullNodeDepth && nullNodeDepth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Depth = null;
+            if (parseNode.GetChildNode("facetName") is null) { _explicitNullValueFacetName = default!; _explicitNullProperties?.Remove("facetName"); }
+            else if (parseNode.GetChildNode("facetName") is { } nullNodeFacetName && nullNodeFacetName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetName = null;
+            if (parseNode.GetChildNode("facetValue") is null) { _explicitNullValueFacetValue = default!; _explicitNullProperties?.Remove("facetValue"); }
+            else if (parseNode.GetChildNode("facetValue") is { } nullNodeFacetValue && nullNodeFacetValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetValue = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Depth level in the category hierarchy, starting at 0.</summary>
-        public int? Depth { get => _explicitNullValueDepth; set { _explicitNullValueDepth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("depth"); else _explicitNullProperties?.Remove("depth"); } }
+        public int? Depth { get => _explicitNullValueDepth; set { _explicitNullValueDepth = value; AdditionalData?.Remove("depth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("depth"); else _explicitNullProperties?.Remove("depth"); } }
         private int? _explicitNullValueDepth = default!;
         /// <summary>Facet attribute name at this hierarchy level, for example, `categories.lvl0`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FacetName { get => _explicitNullValueFacetName; set { _explicitNullValueFacetName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetName"); else _explicitNullProperties?.Remove("facetName"); } }
+        public string? FacetName { get => _explicitNullValueFacetName; set { _explicitNullValueFacetName = value; AdditionalData?.Remove("facetName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetName"); else _explicitNullProperties?.Remove("facetName"); } }
         private string? _explicitNullValueFacetName = default!;
 #nullable restore
 #else
-        public string FacetName { get => _explicitNullValueFacetName; set { _explicitNullValueFacetName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetName"); else _explicitNullProperties?.Remove("facetName"); } }
+        public string FacetName { get => _explicitNullValueFacetName; set { _explicitNullValueFacetName = value; AdditionalData?.Remove("facetName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetName"); else _explicitNullProperties?.Remove("facetName"); } }
         private string _explicitNullValueFacetName = default!;
 #endif
         /// <summary>Facet value at this level of the category hierarchy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FacetValue { get => _explicitNullValueFacetValue; set { _explicitNullValueFacetValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetValue"); else _explicitNullProperties?.Remove("facetValue"); } }
+        public string? FacetValue { get => _explicitNullValueFacetValue; set { _explicitNullValueFacetValue = value; AdditionalData?.Remove("facetValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetValue"); else _explicitNullProperties?.Remove("facetValue"); } }
         private string? _explicitNullValueFacetValue = default!;
 #nullable restore
 #else
-        public string FacetValue { get => _explicitNullValueFacetValue; set { _explicitNullValueFacetValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetValue"); else _explicitNullProperties?.Remove("facetValue"); } }
+        public string FacetValue { get => _explicitNullValueFacetValue; set { _explicitNullValueFacetValue = value; AdditionalData?.Remove("facetValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetValue"); else _explicitNullProperties?.Remove("facetValue"); } }
         private string _explicitNullValueFacetValue = default!;
 #endif
         /// <summary>

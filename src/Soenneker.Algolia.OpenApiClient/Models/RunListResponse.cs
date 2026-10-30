@@ -17,9 +17,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("pagination") is { } nullNodePagination && nullNodePagination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pagination = null;
-            if (parseNode.GetChildNode("runs") is { } nullNodeRuns && nullNodeRuns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Runs = null;
-            if (parseNode.GetChildNode("window") is { } nullNodeWindow && nullNodeWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Window = null;
+            if (parseNode.GetChildNode("pagination") is null) { _explicitNullValuePagination = default!; _explicitNullProperties?.Remove("pagination"); }
+            else if (parseNode.GetChildNode("pagination") is { } nullNodePagination && nullNodePagination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pagination = null;
+            if (parseNode.GetChildNode("runs") is null) { _explicitNullValueRuns = default!; _explicitNullProperties?.Remove("runs"); }
+            else if (parseNode.GetChildNode("runs") is { } nullNodeRuns && nullNodeRuns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Runs = null;
+            if (parseNode.GetChildNode("window") is null) { _explicitNullValueWindow = default!; _explicitNullProperties?.Remove("window"); }
+            else if (parseNode.GetChildNode("window") is { } nullNodeWindow && nullNodeWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Window = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Paginated API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination? _explicitNullValuePagination = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination _explicitNullValuePagination = default!;
 #endif
         /// <summary>The runs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Run>? Runs { get => _explicitNullValueRuns; set { _explicitNullValueRuns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runs"); else _explicitNullProperties?.Remove("runs"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Run>? Runs { get => _explicitNullValueRuns; set { _explicitNullValueRuns = value; AdditionalData?.Remove("runs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runs"); else _explicitNullProperties?.Remove("runs"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.Run>? _explicitNullValueRuns = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Run> Runs { get => _explicitNullValueRuns; set { _explicitNullValueRuns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runs"); else _explicitNullProperties?.Remove("runs"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Run> Runs { get => _explicitNullValueRuns; set { _explicitNullValueRuns = value; AdditionalData?.Remove("runs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runs"); else _explicitNullProperties?.Remove("runs"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.Run> _explicitNullValueRuns = default!;
 #endif
         /// <summary>Time window by which to filter the observability data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Window? Window { get => _explicitNullValueWindow; set { _explicitNullValueWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("window"); else _explicitNullProperties?.Remove("window"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Window? Window { get => _explicitNullValueWindow; set { _explicitNullValueWindow = value; AdditionalData?.Remove("window"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("window"); else _explicitNullProperties?.Remove("window"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Window? _explicitNullValueWindow = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Window Window { get => _explicitNullValueWindow; set { _explicitNullValueWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("window"); else _explicitNullProperties?.Remove("window"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Window Window { get => _explicitNullValueWindow; set { _explicitNullValueWindow = value; AdditionalData?.Remove("window"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("window"); else _explicitNullProperties?.Remove("window"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Window _explicitNullValueWindow = default!;
 #endif
         /// <summary>

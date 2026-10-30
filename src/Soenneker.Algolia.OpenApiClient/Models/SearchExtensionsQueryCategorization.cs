@@ -18,17 +18,19 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enableAutoFiltering") is { } nullNodeEnableAutoFiltering && nullNodeEnableAutoFiltering.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableAutoFiltering = null;
-            if (parseNode.GetChildNode("enableCategoriesRetrieval") is { } nullNodeEnableCategoriesRetrieval && nullNodeEnableCategoriesRetrieval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableCategoriesRetrieval = null;
+            if (parseNode.GetChildNode("enableAutoFiltering") is null) { _explicitNullValueEnableAutoFiltering = default!; _explicitNullProperties?.Remove("enableAutoFiltering"); }
+            else if (parseNode.GetChildNode("enableAutoFiltering") is { } nullNodeEnableAutoFiltering && nullNodeEnableAutoFiltering.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableAutoFiltering = null;
+            if (parseNode.GetChildNode("enableCategoriesRetrieval") is null) { _explicitNullValueEnableCategoriesRetrieval = default!; _explicitNullProperties?.Remove("enableCategoriesRetrieval"); }
+            else if (parseNode.GetChildNode("enableCategoriesRetrieval") is { } nullNodeEnableCategoriesRetrieval && nullNodeEnableCategoriesRetrieval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableCategoriesRetrieval = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to automatically apply category-based filters and boosts to search results.</summary>
-        public bool? EnableAutoFiltering { get => _explicitNullValueEnableAutoFiltering; set { _explicitNullValueEnableAutoFiltering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableAutoFiltering"); else _explicitNullProperties?.Remove("enableAutoFiltering"); } }
+        public bool? EnableAutoFiltering { get => _explicitNullValueEnableAutoFiltering; set { _explicitNullValueEnableAutoFiltering = value; AdditionalData?.Remove("enableAutoFiltering"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableAutoFiltering"); else _explicitNullProperties?.Remove("enableAutoFiltering"); } }
         private bool? _explicitNullValueEnableAutoFiltering = default!;
         /// <summary>Whether to retrieve category predictions in the response `extensions.queryCategorization` field.</summary>
-        public bool? EnableCategoriesRetrieval { get => _explicitNullValueEnableCategoriesRetrieval; set { _explicitNullValueEnableCategoriesRetrieval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableCategoriesRetrieval"); else _explicitNullProperties?.Remove("enableCategoriesRetrieval"); } }
+        public bool? EnableCategoriesRetrieval { get => _explicitNullValueEnableCategoriesRetrieval; set { _explicitNullValueEnableCategoriesRetrieval = value; AdditionalData?.Remove("enableCategoriesRetrieval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableCategoriesRetrieval"); else _explicitNullProperties?.Remove("enableCategoriesRetrieval"); } }
         private bool? _explicitNullValueEnableCategoriesRetrieval = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchExtensionsQueryCategorization"/> and sets the default values.

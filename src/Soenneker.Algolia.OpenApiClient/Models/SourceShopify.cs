@@ -17,8 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("featureFlags") is { } nullNodeFeatureFlags && nullNodeFeatureFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureFlags = null;
-            if (parseNode.GetChildNode("shopURL") is { } nullNodeShopURL && nullNodeShopURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopURL = null;
+            if (parseNode.GetChildNode("featureFlags") is null) { _explicitNullValueFeatureFlags = default!; _explicitNullProperties?.Remove("featureFlags"); }
+            else if (parseNode.GetChildNode("featureFlags") is { } nullNodeFeatureFlags && nullNodeFeatureFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureFlags = null;
+            if (parseNode.GetChildNode("shopURL") is null) { _explicitNullValueShopURL = default!; _explicitNullProperties?.Remove("shopURL"); }
+            else if (parseNode.GetChildNode("shopURL") is { } nullNodeShopURL && nullNodeShopURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShopURL = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Feature flags for the Shopify source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty2? FeatureFlags { get => _explicitNullValueFeatureFlags; set { _explicitNullValueFeatureFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featureFlags"); else _explicitNullProperties?.Remove("featureFlags"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty2? FeatureFlags { get => _explicitNullValueFeatureFlags; set { _explicitNullValueFeatureFlags = value; AdditionalData?.Remove("featureFlags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featureFlags"); else _explicitNullProperties?.Remove("featureFlags"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty2? _explicitNullValueFeatureFlags = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty2 FeatureFlags { get => _explicitNullValueFeatureFlags; set { _explicitNullValueFeatureFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featureFlags"); else _explicitNullProperties?.Remove("featureFlags"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty2 FeatureFlags { get => _explicitNullValueFeatureFlags; set { _explicitNullValueFeatureFlags = value; AdditionalData?.Remove("featureFlags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featureFlags"); else _explicitNullProperties?.Remove("featureFlags"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty2 _explicitNullValueFeatureFlags = default!;
 #endif
         /// <summary>URL of the Shopify store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShopURL { get => _explicitNullValueShopURL; set { _explicitNullValueShopURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopURL"); else _explicitNullProperties?.Remove("shopURL"); } }
+        public string? ShopURL { get => _explicitNullValueShopURL; set { _explicitNullValueShopURL = value; AdditionalData?.Remove("shopURL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopURL"); else _explicitNullProperties?.Remove("shopURL"); } }
         private string? _explicitNullValueShopURL = default!;
 #nullable restore
 #else
-        public string ShopURL { get => _explicitNullValueShopURL; set { _explicitNullValueShopURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopURL"); else _explicitNullProperties?.Remove("shopURL"); } }
+        public string ShopURL { get => _explicitNullValueShopURL; set { _explicitNullValueShopURL = value; AdditionalData?.Remove("shopURL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shopURL"); else _explicitNullProperties?.Remove("shopURL"); } }
         private string _explicitNullValueShopURL = default!;
 #endif
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cluster") is { } nullNodeCluster && nullNodeCluster.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cluster = null;
+            if (parseNode.GetChildNode("cluster") is null) { _explicitNullValueCluster = default!; _explicitNullProperties?.Remove("cluster"); }
+            else if (parseNode.GetChildNode("cluster") is { } nullNodeCluster && nullNodeCluster.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cluster = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Cluster name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cluster { get => _explicitNullValueCluster; set { _explicitNullValueCluster = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster"); else _explicitNullProperties?.Remove("cluster"); } }
+        public string? Cluster { get => _explicitNullValueCluster; set { _explicitNullValueCluster = value; AdditionalData?.Remove("cluster"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster"); else _explicitNullProperties?.Remove("cluster"); } }
         private string? _explicitNullValueCluster = default!;
 #nullable restore
 #else
-        public string Cluster { get => _explicitNullValueCluster; set { _explicitNullValueCluster = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster"); else _explicitNullProperties?.Remove("cluster"); } }
+        public string Cluster { get => _explicitNullValueCluster; set { _explicitNullValueCluster = value; AdditionalData?.Remove("cluster"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cluster"); else _explicitNullProperties?.Remove("cluster"); } }
         private string _explicitNullValueCluster = default!;
 #endif
         /// <summary>

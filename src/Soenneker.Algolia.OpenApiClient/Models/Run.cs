@@ -17,19 +17,32 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("appID") is { } nullNodeAppID && nullNodeAppID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppID = null;
-            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("failureThreshold") is { } nullNodeFailureThreshold && nullNodeFailureThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureThreshold = null;
-            if (parseNode.GetChildNode("finishedAt") is { } nullNodeFinishedAt && nullNodeFinishedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinishedAt = null;
-            if (parseNode.GetChildNode("outcome") is { } nullNodeOutcome && nullNodeOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outcome = null;
-            if (parseNode.GetChildNode("progress") is { } nullNodeProgress && nullNodeProgress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Progress = null;
-            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
-            if (parseNode.GetChildNode("reasonCode") is { } nullNodeReasonCode && nullNodeReasonCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasonCode = null;
-            if (parseNode.GetChildNode("runID") is { } nullNodeRunID && nullNodeRunID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunID = null;
-            if (parseNode.GetChildNode("startedAt") is { } nullNodeStartedAt && nullNodeStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAt = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("taskID") is { } nullNodeTaskID && nullNodeTaskID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaskID = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("appID") is null) { _explicitNullValueAppID = default!; _explicitNullProperties?.Remove("appID"); }
+            else if (parseNode.GetChildNode("appID") is { } nullNodeAppID && nullNodeAppID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppID = null;
+            if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
+            else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("failureThreshold") is null) { _explicitNullValueFailureThreshold = default!; _explicitNullProperties?.Remove("failureThreshold"); }
+            else if (parseNode.GetChildNode("failureThreshold") is { } nullNodeFailureThreshold && nullNodeFailureThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureThreshold = null;
+            if (parseNode.GetChildNode("finishedAt") is null) { _explicitNullValueFinishedAt = default!; _explicitNullProperties?.Remove("finishedAt"); }
+            else if (parseNode.GetChildNode("finishedAt") is { } nullNodeFinishedAt && nullNodeFinishedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FinishedAt = null;
+            if (parseNode.GetChildNode("outcome") is null) { _explicitNullValueOutcome = default!; _explicitNullProperties?.Remove("outcome"); }
+            else if (parseNode.GetChildNode("outcome") is { } nullNodeOutcome && nullNodeOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outcome = null;
+            if (parseNode.GetChildNode("progress") is null) { _explicitNullValueProgress = default!; _explicitNullProperties?.Remove("progress"); }
+            else if (parseNode.GetChildNode("progress") is { } nullNodeProgress && nullNodeProgress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Progress = null;
+            if (parseNode.GetChildNode("reason") is null) { _explicitNullValueReason = default!; _explicitNullProperties?.Remove("reason"); }
+            else if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("reasonCode") is null) { _explicitNullValueReasonCode = default!; _explicitNullProperties?.Remove("reasonCode"); }
+            else if (parseNode.GetChildNode("reasonCode") is { } nullNodeReasonCode && nullNodeReasonCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasonCode = null;
+            if (parseNode.GetChildNode("runID") is null) { _explicitNullValueRunID = default!; _explicitNullProperties?.Remove("runID"); }
+            else if (parseNode.GetChildNode("runID") is { } nullNodeRunID && nullNodeRunID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunID = null;
+            if (parseNode.GetChildNode("startedAt") is null) { _explicitNullValueStartedAt = default!; _explicitNullProperties?.Remove("startedAt"); }
+            else if (parseNode.GetChildNode("startedAt") is { } nullNodeStartedAt && nullNodeStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartedAt = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("taskID") is null) { _explicitNullValueTaskID = default!; _explicitNullProperties?.Remove("taskID"); }
+            else if (parseNode.GetChildNode("taskID") is { } nullNodeTaskID && nullNodeTaskID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaskID = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -37,97 +50,97 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The appID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppID { get => _explicitNullValueAppID; set { _explicitNullValueAppID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appID"); else _explicitNullProperties?.Remove("appID"); } }
+        public string? AppID { get => _explicitNullValueAppID; set { _explicitNullValueAppID = value; AdditionalData?.Remove("appID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appID"); else _explicitNullProperties?.Remove("appID"); } }
         private string? _explicitNullValueAppID = default!;
 #nullable restore
 #else
-        public string AppID { get => _explicitNullValueAppID; set { _explicitNullValueAppID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appID"); else _explicitNullProperties?.Remove("appID"); } }
+        public string AppID { get => _explicitNullValueAppID; set { _explicitNullValueAppID = value; AdditionalData?.Remove("appID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appID"); else _explicitNullProperties?.Remove("appID"); } }
         private string _explicitNullValueAppID = default!;
 #endif
         /// <summary>Date and time when the resource was created, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        public string? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private string? _explicitNullValueCreatedAt = default!;
 #nullable restore
 #else
-        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        public string CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private string _explicitNullValueCreatedAt = default!;
 #endif
         /// <summary>Maximum accepted percentage of failures for a task run to finish successfully.</summary>
-        public int? FailureThreshold { get => _explicitNullValueFailureThreshold; set { _explicitNullValueFailureThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureThreshold"); else _explicitNullProperties?.Remove("failureThreshold"); } }
+        public int? FailureThreshold { get => _explicitNullValueFailureThreshold; set { _explicitNullValueFailureThreshold = value; AdditionalData?.Remove("failureThreshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureThreshold"); else _explicitNullProperties?.Remove("failureThreshold"); } }
         private int? _explicitNullValueFailureThreshold = default!;
         /// <summary>Date and time when the task finished, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FinishedAt { get => _explicitNullValueFinishedAt; set { _explicitNullValueFinishedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finishedAt"); else _explicitNullProperties?.Remove("finishedAt"); } }
+        public string? FinishedAt { get => _explicitNullValueFinishedAt; set { _explicitNullValueFinishedAt = value; AdditionalData?.Remove("finishedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finishedAt"); else _explicitNullProperties?.Remove("finishedAt"); } }
         private string? _explicitNullValueFinishedAt = default!;
 #nullable restore
 #else
-        public string FinishedAt { get => _explicitNullValueFinishedAt; set { _explicitNullValueFinishedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finishedAt"); else _explicitNullProperties?.Remove("finishedAt"); } }
+        public string FinishedAt { get => _explicitNullValueFinishedAt; set { _explicitNullValueFinishedAt = value; AdditionalData?.Remove("finishedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finishedAt"); else _explicitNullProperties?.Remove("finishedAt"); } }
         private string _explicitNullValueFinishedAt = default!;
 #endif
         /// <summary>Task run outcome.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunOutcome? Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunOutcome? Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; AdditionalData?.Remove("outcome"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.RunOutcome? _explicitNullValueOutcome = default!;
         /// <summary>The progress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunProgress? Progress { get => _explicitNullValueProgress; set { _explicitNullValueProgress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progress"); else _explicitNullProperties?.Remove("progress"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunProgress? Progress { get => _explicitNullValueProgress; set { _explicitNullValueProgress = value; AdditionalData?.Remove("progress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progress"); else _explicitNullProperties?.Remove("progress"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.RunProgress? _explicitNullValueProgress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunProgress Progress { get => _explicitNullValueProgress; set { _explicitNullValueProgress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progress"); else _explicitNullProperties?.Remove("progress"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunProgress Progress { get => _explicitNullValueProgress; set { _explicitNullValueProgress = value; AdditionalData?.Remove("progress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progress"); else _explicitNullProperties?.Remove("progress"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.RunProgress _explicitNullValueProgress = default!;
 #endif
         /// <summary>More information about the task run&apos;s outcome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private string? _explicitNullValueReason = default!;
 #nullable restore
 #else
-        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private string _explicitNullValueReason = default!;
 #endif
         /// <summary>A code for the task run&apos;s outcome. A readable description of the code is included in the `reason` response property.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunReasonCode? ReasonCode { get => _explicitNullValueReasonCode; set { _explicitNullValueReasonCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasonCode"); else _explicitNullProperties?.Remove("reasonCode"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunReasonCode? ReasonCode { get => _explicitNullValueReasonCode; set { _explicitNullValueReasonCode = value; AdditionalData?.Remove("reasonCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasonCode"); else _explicitNullProperties?.Remove("reasonCode"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.RunReasonCode? _explicitNullValueReasonCode = default!;
         /// <summary>Universally unique identifier (UUID) of a task run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RunID { get => _explicitNullValueRunID; set { _explicitNullValueRunID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runID"); else _explicitNullProperties?.Remove("runID"); } }
+        public string? RunID { get => _explicitNullValueRunID; set { _explicitNullValueRunID = value; AdditionalData?.Remove("runID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runID"); else _explicitNullProperties?.Remove("runID"); } }
         private string? _explicitNullValueRunID = default!;
 #nullable restore
 #else
-        public string RunID { get => _explicitNullValueRunID; set { _explicitNullValueRunID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runID"); else _explicitNullProperties?.Remove("runID"); } }
+        public string RunID { get => _explicitNullValueRunID; set { _explicitNullValueRunID = value; AdditionalData?.Remove("runID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runID"); else _explicitNullProperties?.Remove("runID"); } }
         private string _explicitNullValueRunID = default!;
 #endif
         /// <summary>Date and time when the task started, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startedAt"); else _explicitNullProperties?.Remove("startedAt"); } }
+        public string? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("startedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startedAt"); else _explicitNullProperties?.Remove("startedAt"); } }
         private string? _explicitNullValueStartedAt = default!;
 #nullable restore
 #else
-        public string StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startedAt"); else _explicitNullProperties?.Remove("startedAt"); } }
+        public string StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("startedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startedAt"); else _explicitNullProperties?.Remove("startedAt"); } }
         private string _explicitNullValueStartedAt = default!;
 #endif
         /// <summary>Task run status.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.RunStatus? _explicitNullValueStatus = default!;
         /// <summary>Universally unique identifier (UUID) of a task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaskID { get => _explicitNullValueTaskID; set { _explicitNullValueTaskID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskID"); else _explicitNullProperties?.Remove("taskID"); } }
+        public string? TaskID { get => _explicitNullValueTaskID; set { _explicitNullValueTaskID = value; AdditionalData?.Remove("taskID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskID"); else _explicitNullProperties?.Remove("taskID"); } }
         private string? _explicitNullValueTaskID = default!;
 #nullable restore
 #else
-        public string TaskID { get => _explicitNullValueTaskID; set { _explicitNullValueTaskID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskID"); else _explicitNullProperties?.Remove("taskID"); } }
+        public string TaskID { get => _explicitNullValueTaskID; set { _explicitNullValueTaskID = value; AdditionalData?.Remove("taskID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskID"); else _explicitNullProperties?.Remove("taskID"); } }
         private string _explicitNullValueTaskID = default!;
 #endif
         /// <summary>Task run type.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.RunType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Run"/> and sets the default values.
@@ -158,15 +171,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
                 { "failureThreshold", n => { FailureThreshold = n.GetIntValue(); } },
                 { "finishedAt", n => { FinishedAt = n.GetStringValue(); } },
-                { "outcome", n => { Outcome = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RunOutcome>(); } },
+                { "outcome", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RunOutcome>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOutcome = default; _explicitNullProperties?.Remove("outcome"); AdditionalData["outcome"] = unknown; } else { Outcome = parsed; AdditionalData.Remove("outcome"); } } },
                 { "progress", n => { Progress = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunProgress>(global::Soenneker.Algolia.OpenApiClient.Models.RunProgress.CreateFromDiscriminatorValue); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
-                { "reasonCode", n => { ReasonCode = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RunReasonCode>(); } },
+                { "reasonCode", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RunReasonCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReasonCode = default; _explicitNullProperties?.Remove("reasonCode"); AdditionalData["reasonCode"] = unknown; } else { ReasonCode = parsed; AdditionalData.Remove("reasonCode"); } } },
                 { "runID", n => { RunID = n.GetStringValue(); } },
                 { "startedAt", n => { StartedAt = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RunStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RunStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "taskID", n => { TaskID = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RunType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RunType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

@@ -18,17 +18,19 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("maxFailedUrls") is { } nullNodeMaxFailedUrls && nullNodeMaxFailedUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxFailedUrls = null;
-            if (parseNode.GetChildNode("maxLostRecordsPercentage") is { } nullNodeMaxLostRecordsPercentage && nullNodeMaxLostRecordsPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxLostRecordsPercentage = null;
+            if (parseNode.GetChildNode("maxFailedUrls") is null) { _explicitNullValueMaxFailedUrls = default!; _explicitNullProperties?.Remove("maxFailedUrls"); }
+            else if (parseNode.GetChildNode("maxFailedUrls") is { } nullNodeMaxFailedUrls && nullNodeMaxFailedUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxFailedUrls = null;
+            if (parseNode.GetChildNode("maxLostRecordsPercentage") is null) { _explicitNullValueMaxLostRecordsPercentage = default!; _explicitNullProperties?.Remove("maxLostRecordsPercentage"); }
+            else if (parseNode.GetChildNode("maxLostRecordsPercentage") is { } nullNodeMaxLostRecordsPercentage && nullNodeMaxLostRecordsPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxLostRecordsPercentage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Stops the crawler if a specified number of pages fail to crawl.</summary>
-        public int? MaxFailedUrls { get => _explicitNullValueMaxFailedUrls; set { _explicitNullValueMaxFailedUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxFailedUrls"); else _explicitNullProperties?.Remove("maxFailedUrls"); } }
+        public int? MaxFailedUrls { get => _explicitNullValueMaxFailedUrls; set { _explicitNullValueMaxFailedUrls = value; AdditionalData?.Remove("maxFailedUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxFailedUrls"); else _explicitNullProperties?.Remove("maxFailedUrls"); } }
         private int? _explicitNullValueMaxFailedUrls = default!;
         /// <summary>Maximum difference in percent between the numbers of records between crawls.</summary>
-        public int? MaxLostRecordsPercentage { get => _explicitNullValueMaxLostRecordsPercentage; set { _explicitNullValueMaxLostRecordsPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxLostRecordsPercentage"); else _explicitNullProperties?.Remove("maxLostRecordsPercentage"); } }
+        public int? MaxLostRecordsPercentage { get => _explicitNullValueMaxLostRecordsPercentage; set { _explicitNullValueMaxLostRecordsPercentage = value; AdditionalData?.Remove("maxLostRecordsPercentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxLostRecordsPercentage"); else _explicitNullProperties?.Remove("maxLostRecordsPercentage"); } }
         private int? _explicitNullValueMaxLostRecordsPercentage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.BeforeIndexPublishing"/> and sets the default values.

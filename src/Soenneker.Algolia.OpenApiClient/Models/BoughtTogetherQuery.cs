@@ -18,9 +18,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
             base.CaptureExplicitNulls(parseNode);
-            if (parseNode.GetChildNode("fallbackParameters") is { } nullNodeFallbackParameters && nullNodeFallbackParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackParameters = null;
-            if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
-            if (parseNode.GetChildNode("objectID") is { } nullNodeObjectID && nullNodeObjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectID = null;
+            if (parseNode.GetChildNode("fallbackParameters") is null) { _explicitNullValueFallbackParameters = default!; _explicitNullProperties?.Remove("fallbackParameters"); }
+            else if (parseNode.GetChildNode("fallbackParameters") is { } nullNodeFallbackParameters && nullNodeFallbackParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackParameters = null;
+            if (parseNode.GetChildNode("model") is null) { _explicitNullValueModel = default!; _explicitNullProperties?.Remove("model"); }
+            else if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("objectID") is null) { _explicitNullValueObjectID = default!; _explicitNullProperties?.Remove("objectID"); }
+            else if (parseNode.GetChildNode("objectID") is { } nullNodeObjectID && nullNodeObjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectID = null;
         }
 
         /// <summary>Search parameters to use for a fallback request if there aren&apos;t enough recommendations.</summary>

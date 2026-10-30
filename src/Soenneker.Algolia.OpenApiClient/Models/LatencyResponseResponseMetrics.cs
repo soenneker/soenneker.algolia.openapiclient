@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("latency") is { } nullNodeLatency && nullNodeLatency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Latency = null;
+            if (parseNode.GetChildNode("latency") is null) { _explicitNullValueLatency = default!; _explicitNullProperties?.Remove("latency"); }
+            else if (parseNode.GetChildNode("latency") is { } nullNodeLatency && nullNodeLatency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Latency = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The latency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.LatencyResponseResponseMetricsLatencyProperty2? Latency { get => _explicitNullValueLatency; set { _explicitNullValueLatency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latency"); else _explicitNullProperties?.Remove("latency"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.LatencyResponseResponseMetricsLatencyProperty2? Latency { get => _explicitNullValueLatency; set { _explicitNullValueLatency = value; AdditionalData?.Remove("latency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latency"); else _explicitNullProperties?.Remove("latency"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.LatencyResponseResponseMetricsLatencyProperty2? _explicitNullValueLatency = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.LatencyResponseResponseMetricsLatencyProperty2 Latency { get => _explicitNullValueLatency; set { _explicitNullValueLatency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latency"); else _explicitNullProperties?.Remove("latency"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.LatencyResponseResponseMetricsLatencyProperty2 Latency { get => _explicitNullValueLatency; set { _explicitNullValueLatency = value; AdditionalData?.Remove("latency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latency"); else _explicitNullProperties?.Remove("latency"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.LatencyResponseResponseMetricsLatencyProperty2 _explicitNullValueLatency = default!;
 #endif
         /// <summary>

@@ -18,9 +18,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("facetName") is { } nullNodeFacetName && nullNodeFacetName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetName = null;
-            if (parseNode.GetChildNode("facetValue") is { } nullNodeFacetValue && nullNodeFacetValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetValue = null;
-            if (parseNode.GetChildNode("_score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+            if (parseNode.GetChildNode("facetName") is null) { _explicitNullValueFacetName = default!; _explicitNullProperties?.Remove("facetName"); }
+            else if (parseNode.GetChildNode("facetName") is { } nullNodeFacetName && nullNodeFacetName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetName = null;
+            if (parseNode.GetChildNode("facetValue") is null) { _explicitNullValueFacetValue = default!; _explicitNullProperties?.Remove("facetValue"); }
+            else if (parseNode.GetChildNode("facetValue") is { } nullNodeFacetValue && nullNodeFacetValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetValue = null;
+            if (parseNode.GetChildNode("_score") is null) { _explicitNullValueScore = default!; _explicitNullProperties?.Remove("_score"); }
+            else if (parseNode.GetChildNode("_score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,25 +31,25 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Facet attribute. To be used in combination with `facetValue`.If specified, only recommendations matching the facet filter will be returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FacetName { get => _explicitNullValueFacetName; set { _explicitNullValueFacetName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetName"); else _explicitNullProperties?.Remove("facetName"); } }
+        public string? FacetName { get => _explicitNullValueFacetName; set { _explicitNullValueFacetName = value; AdditionalData?.Remove("facetName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetName"); else _explicitNullProperties?.Remove("facetName"); } }
         private string? _explicitNullValueFacetName = default!;
 #nullable restore
 #else
-        public string FacetName { get => _explicitNullValueFacetName; set { _explicitNullValueFacetName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetName"); else _explicitNullProperties?.Remove("facetName"); } }
+        public string FacetName { get => _explicitNullValueFacetName; set { _explicitNullValueFacetName = value; AdditionalData?.Remove("facetName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetName"); else _explicitNullProperties?.Remove("facetName"); } }
         private string _explicitNullValueFacetName = default!;
 #endif
         /// <summary>Facet value. To be used in combination with `facetName`.If specified, only recommendations matching the facet filter will be returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FacetValue { get => _explicitNullValueFacetValue; set { _explicitNullValueFacetValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetValue"); else _explicitNullProperties?.Remove("facetValue"); } }
+        public string? FacetValue { get => _explicitNullValueFacetValue; set { _explicitNullValueFacetValue = value; AdditionalData?.Remove("facetValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetValue"); else _explicitNullProperties?.Remove("facetValue"); } }
         private string? _explicitNullValueFacetValue = default!;
 #nullable restore
 #else
-        public string FacetValue { get => _explicitNullValueFacetValue; set { _explicitNullValueFacetValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetValue"); else _explicitNullProperties?.Remove("facetValue"); } }
+        public string FacetValue { get => _explicitNullValueFacetValue; set { _explicitNullValueFacetValue = value; AdditionalData?.Remove("facetValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetValue"); else _explicitNullProperties?.Remove("facetValue"); } }
         private string _explicitNullValueFacetValue = default!;
 #endif
         /// <summary>Recommendation score.</summary>
-        public double? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_score"); else _explicitNullProperties?.Remove("_score"); } }
+        public double? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; AdditionalData?.Remove("_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_score"); else _explicitNullProperties?.Remove("_score"); } }
         private double? _explicitNullValueScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TrendingFacetHit"/> and sets the default values.

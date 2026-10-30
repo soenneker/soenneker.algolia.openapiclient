@@ -54,10 +54,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("objectID") != null && parseNode.GetChildNode("behavior") != null && parseNode.GetChildNode("name") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("objectID") != null))();
-            if (result.Composition == null && result.DeleteCompositionAction == null && matchesUnionBranch0 && !matchesUnionBranch1) result.Composition = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.Composition(), parseNode);
-            if (result.Composition == null && result.DeleteCompositionAction == null && matchesUnionBranch1 && !matchesUnionBranch0) result.DeleteCompositionAction = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.DeleteCompositionAction(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("objectID") && shapeMembers1.ContainsKey("behavior") && shapeMembers1.ContainsKey("name") && (!shapeMembers1.ContainsKey("objectID") || (((shapeMembers1["objectID"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("name") || (((shapeMembers1["name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("description") || (((shapeMembers1["description"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("sortingStrategy") || (((shapeMembers1["sortingStrategy"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("objectID") && (!shapeMembers1.ContainsKey("objectID") || (((shapeMembers1["objectID"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.Composition == null && result.DeleteCompositionAction == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.Composition = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.Composition(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.DeleteCompositionAction = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.DeleteCompositionAction(), parseNode);
             if (result.Composition == null && result.DeleteCompositionAction == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -67,6 +71,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(Composition != null)
             {
                 return Composition.GetFieldDeserializers();
@@ -85,8 +91,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (Composition == null && DeleteCompositionAction == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (Composition != null && DeleteCompositionAction == null) { if (Composition is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, Composition); return; }
-            if (DeleteCompositionAction != null && Composition == null) { if (DeleteCompositionAction is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DeleteCompositionAction); return; }
+            int selectedUnionBranches = 0;
+            if (Composition != null) selectedUnionBranches++;
+            if (DeleteCompositionAction != null) selectedUnionBranches++;
+            if (Composition != null && selectedUnionBranches == 1) { if (Composition is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, Composition); return; }
+            if (DeleteCompositionAction != null && selectedUnionBranches == 1) { if (DeleteCompositionAction is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DeleteCompositionAction); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(Composition != null)

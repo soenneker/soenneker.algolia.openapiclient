@@ -18,8 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("banners") is { } nullNodeBanners && nullNodeBanners.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Banners = null;
-            if (parseNode.GetChildNode("resultCard") is { } nullNodeResultCard && nullNodeResultCard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultCard = null;
+            if (parseNode.GetChildNode("banners") is null) { _explicitNullValueBanners = default!; _explicitNullProperties?.Remove("banners"); }
+            else if (parseNode.GetChildNode("banners") is { } nullNodeBanners && nullNodeBanners.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Banners = null;
+            if (parseNode.GetChildNode("resultCard") is null) { _explicitNullValueResultCard = default!; _explicitNullProperties?.Remove("resultCard"); }
+            else if (parseNode.GetChildNode("resultCard") is { } nullNodeResultCard && nullNodeResultCard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultCard = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Banners defined in the Merchandising Studio for a given search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Banner>? Banners { get => _explicitNullValueBanners; set { _explicitNullValueBanners = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("banners"); else _explicitNullProperties?.Remove("banners"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Banner>? Banners { get => _explicitNullValueBanners; set { _explicitNullValueBanners = value; AdditionalData?.Remove("banners"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("banners"); else _explicitNullProperties?.Remove("banners"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.Banner>? _explicitNullValueBanners = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Banner> Banners { get => _explicitNullValueBanners; set { _explicitNullValueBanners = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("banners"); else _explicitNullProperties?.Remove("banners"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Banner> Banners { get => _explicitNullValueBanners; set { _explicitNullValueBanners = value; AdditionalData?.Remove("banners"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("banners"); else _explicitNullProperties?.Remove("banners"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.Banner> _explicitNullValueBanners = default!;
 #endif
         /// <summary>Agent Studio Result Card to display for a given search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ResultCard? ResultCard { get => _explicitNullValueResultCard; set { _explicitNullValueResultCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultCard"); else _explicitNullProperties?.Remove("resultCard"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ResultCard? ResultCard { get => _explicitNullValueResultCard; set { _explicitNullValueResultCard = value; AdditionalData?.Remove("resultCard"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultCard"); else _explicitNullProperties?.Remove("resultCard"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ResultCard? _explicitNullValueResultCard = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ResultCard ResultCard { get => _explicitNullValueResultCard; set { _explicitNullValueResultCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultCard"); else _explicitNullProperties?.Remove("resultCard"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ResultCard ResultCard { get => _explicitNullValueResultCard; set { _explicitNullValueResultCard = value; AdditionalData?.Remove("resultCard"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resultCard"); else _explicitNullProperties?.Remove("resultCard"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ResultCard _explicitNullValueResultCard = default!;
 #endif
         /// <summary>

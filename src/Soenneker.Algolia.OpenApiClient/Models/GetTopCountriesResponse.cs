@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("countries") is { } nullNodeCountries && nullNodeCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Countries = null;
+            if (parseNode.GetChildNode("countries") is null) { _explicitNullValueCountries = default!; _explicitNullProperties?.Remove("countries"); }
+            else if (parseNode.GetChildNode("countries") is { } nullNodeCountries && nullNodeCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Countries = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Countries and number of searches.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopCountriesResponseCountriesItem>? Countries { get => _explicitNullValueCountries; set { _explicitNullValueCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countries"); else _explicitNullProperties?.Remove("countries"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopCountriesResponseCountriesItem>? Countries { get => _explicitNullValueCountries; set { _explicitNullValueCountries = value; AdditionalData?.Remove("countries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countries"); else _explicitNullProperties?.Remove("countries"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopCountriesResponseCountriesItem>? _explicitNullValueCountries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopCountriesResponseCountriesItem> Countries { get => _explicitNullValueCountries; set { _explicitNullValueCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countries"); else _explicitNullProperties?.Remove("countries"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopCountriesResponseCountriesItem> Countries { get => _explicitNullValueCountries; set { _explicitNullValueCountries = value; AdditionalData?.Remove("countries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countries"); else _explicitNullProperties?.Remove("countries"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopCountriesResponseCountriesItem> _explicitNullValueCountries = default!;
 #endif
         /// <summary>

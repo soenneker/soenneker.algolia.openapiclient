@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("positions") is { } nullNodePositions && nullNodePositions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Positions = null;
+            if (parseNode.GetChildNode("positions") is null) { _explicitNullValuePositions = default!; _explicitNullProperties?.Remove("positions"); }
+            else if (parseNode.GetChildNode("positions") is { } nullNodePositions && nullNodePositions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Positions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>List of positions in the search results and clicks associated with this search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ClickPositionsItem>? Positions { get => _explicitNullValuePositions; set { _explicitNullValuePositions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positions"); else _explicitNullProperties?.Remove("positions"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ClickPositionsItem>? Positions { get => _explicitNullValuePositions; set { _explicitNullValuePositions = value; AdditionalData?.Remove("positions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positions"); else _explicitNullProperties?.Remove("positions"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.ClickPositionsItem>? _explicitNullValuePositions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ClickPositionsItem> Positions { get => _explicitNullValuePositions; set { _explicitNullValuePositions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positions"); else _explicitNullProperties?.Remove("positions"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ClickPositionsItem> Positions { get => _explicitNullValuePositions; set { _explicitNullValuePositions = value; AdditionalData?.Remove("positions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positions"); else _explicitNullProperties?.Remove("positions"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.ClickPositionsItem> _explicitNullValuePositions = default!;
 #endif
         /// <summary>

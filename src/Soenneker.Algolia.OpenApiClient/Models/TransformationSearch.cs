@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("transformationIDs") is { } nullNodeTransformationIDs && nullNodeTransformationIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransformationIDs = null;
+            if (parseNode.GetChildNode("transformationIDs") is null) { _explicitNullValueTransformationIDs = default!; _explicitNullProperties?.Remove("transformationIDs"); }
+            else if (parseNode.GetChildNode("transformationIDs") is { } nullNodeTransformationIDs && nullNodeTransformationIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransformationIDs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The transformationIDs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TransformationIDs { get => _explicitNullValueTransformationIDs; set { _explicitNullValueTransformationIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transformationIDs"); else _explicitNullProperties?.Remove("transformationIDs"); } }
+        public List<string>? TransformationIDs { get => _explicitNullValueTransformationIDs; set { _explicitNullValueTransformationIDs = value; AdditionalData?.Remove("transformationIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transformationIDs"); else _explicitNullProperties?.Remove("transformationIDs"); } }
         private List<string>? _explicitNullValueTransformationIDs = default!;
 #nullable restore
 #else
-        public List<string> TransformationIDs { get => _explicitNullValueTransformationIDs; set { _explicitNullValueTransformationIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transformationIDs"); else _explicitNullProperties?.Remove("transformationIDs"); } }
+        public List<string> TransformationIDs { get => _explicitNullValueTransformationIDs; set { _explicitNullValueTransformationIDs = value; AdditionalData?.Remove("transformationIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transformationIDs"); else _explicitNullProperties?.Remove("transformationIDs"); } }
         private List<string> _explicitNullValueTransformationIDs = default!;
 #endif
         /// <summary>

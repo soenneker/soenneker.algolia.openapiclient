@@ -17,39 +17,43 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("exhaustiveFacetsCount") is { } nullNodeExhaustiveFacetsCount && nullNodeExhaustiveFacetsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExhaustiveFacetsCount = null;
-            if (parseNode.GetChildNode("facetHits") is { } nullNodeFacetHits && nullNodeFacetHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetHits = null;
-            if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
-            if (parseNode.GetChildNode("processingTimeMS") is { } nullNodeProcessingTimeMS && nullNodeProcessingTimeMS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessingTimeMS = null;
+            if (parseNode.GetChildNode("exhaustiveFacetsCount") is null) { _explicitNullValueExhaustiveFacetsCount = default!; _explicitNullProperties?.Remove("exhaustiveFacetsCount"); }
+            else if (parseNode.GetChildNode("exhaustiveFacetsCount") is { } nullNodeExhaustiveFacetsCount && nullNodeExhaustiveFacetsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExhaustiveFacetsCount = null;
+            if (parseNode.GetChildNode("facetHits") is null) { _explicitNullValueFacetHits = default!; _explicitNullProperties?.Remove("facetHits"); }
+            else if (parseNode.GetChildNode("facetHits") is { } nullNodeFacetHits && nullNodeFacetHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetHits = null;
+            if (parseNode.GetChildNode("indexName") is null) { _explicitNullValueIndexName = default!; _explicitNullProperties?.Remove("indexName"); }
+            else if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
+            if (parseNode.GetChildNode("processingTimeMS") is null) { _explicitNullValueProcessingTimeMS = default!; _explicitNullProperties?.Remove("processingTimeMS"); }
+            else if (parseNode.GetChildNode("processingTimeMS") is { } nullNodeProcessingTimeMS && nullNodeProcessingTimeMS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessingTimeMS = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the facet count is exhaustive (true) or approximate (false).For more information, see [Why are my facet and hit counts not accurate](https://support.algolia.com/hc/articles/4406975248145-Why-are-my-facet-and-hit-counts-not-accurate).</summary>
-        public bool? ExhaustiveFacetsCount { get => _explicitNullValueExhaustiveFacetsCount; set { _explicitNullValueExhaustiveFacetsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exhaustiveFacetsCount"); else _explicitNullProperties?.Remove("exhaustiveFacetsCount"); } }
+        public bool? ExhaustiveFacetsCount { get => _explicitNullValueExhaustiveFacetsCount; set { _explicitNullValueExhaustiveFacetsCount = value; AdditionalData?.Remove("exhaustiveFacetsCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exhaustiveFacetsCount"); else _explicitNullProperties?.Remove("exhaustiveFacetsCount"); } }
         private bool? _explicitNullValueExhaustiveFacetsCount = default!;
         /// <summary>Matching facet values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResultsFacetHitsItem>? FacetHits { get => _explicitNullValueFacetHits; set { _explicitNullValueFacetHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetHits"); else _explicitNullProperties?.Remove("facetHits"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResultsFacetHitsItem>? FacetHits { get => _explicitNullValueFacetHits; set { _explicitNullValueFacetHits = value; AdditionalData?.Remove("facetHits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetHits"); else _explicitNullProperties?.Remove("facetHits"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResultsFacetHitsItem>? _explicitNullValueFacetHits = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResultsFacetHitsItem> FacetHits { get => _explicitNullValueFacetHits; set { _explicitNullValueFacetHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetHits"); else _explicitNullProperties?.Remove("facetHits"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResultsFacetHitsItem> FacetHits { get => _explicitNullValueFacetHits; set { _explicitNullValueFacetHits = value; AdditionalData?.Remove("facetHits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetHits"); else _explicitNullProperties?.Remove("facetHits"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResultsFacetHitsItem> _explicitNullValueFacetHits = default!;
 #endif
         /// <summary>The indexName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string? _explicitNullValueIndexName = default!;
 #nullable restore
 #else
-        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string _explicitNullValueIndexName = default!;
 #endif
         /// <summary>Time the server took to process the request, in milliseconds.</summary>
-        public int? ProcessingTimeMS { get => _explicitNullValueProcessingTimeMS; set { _explicitNullValueProcessingTimeMS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingTimeMS"); else _explicitNullProperties?.Remove("processingTimeMS"); } }
+        public int? ProcessingTimeMS { get => _explicitNullValueProcessingTimeMS; set { _explicitNullValueProcessingTimeMS = value; AdditionalData?.Remove("processingTimeMS"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingTimeMS"); else _explicitNullProperties?.Remove("processingTimeMS"); } }
         private int? _explicitNullValueProcessingTimeMS = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchForFacetValuesResults"/> and sets the default values.

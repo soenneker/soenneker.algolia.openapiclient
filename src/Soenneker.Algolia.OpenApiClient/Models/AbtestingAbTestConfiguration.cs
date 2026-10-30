@@ -18,10 +18,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("emptySearch") is { } nullNodeEmptySearch && nullNodeEmptySearch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmptySearch = null;
-            if (parseNode.GetChildNode("featureFilters") is { } nullNodeFeatureFilters && nullNodeFeatureFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureFilters = null;
-            if (parseNode.GetChildNode("minimumDetectableEffect") is { } nullNodeMinimumDetectableEffect && nullNodeMinimumDetectableEffect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumDetectableEffect = null;
-            if (parseNode.GetChildNode("outliers") is { } nullNodeOutliers && nullNodeOutliers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outliers = null;
+            if (parseNode.GetChildNode("emptySearch") is null) { _explicitNullValueEmptySearch = default!; _explicitNullProperties?.Remove("emptySearch"); }
+            else if (parseNode.GetChildNode("emptySearch") is { } nullNodeEmptySearch && nullNodeEmptySearch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmptySearch = null;
+            if (parseNode.GetChildNode("featureFilters") is null) { _explicitNullValueFeatureFilters = default!; _explicitNullProperties?.Remove("featureFilters"); }
+            else if (parseNode.GetChildNode("featureFilters") is { } nullNodeFeatureFilters && nullNodeFeatureFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureFilters = null;
+            if (parseNode.GetChildNode("minimumDetectableEffect") is null) { _explicitNullValueMinimumDetectableEffect = default!; _explicitNullProperties?.Remove("minimumDetectableEffect"); }
+            else if (parseNode.GetChildNode("minimumDetectableEffect") is { } nullNodeMinimumDetectableEffect && nullNodeMinimumDetectableEffect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumDetectableEffect = null;
+            if (parseNode.GetChildNode("outliers") is null) { _explicitNullValueOutliers = default!; _explicitNullProperties?.Remove("outliers"); }
+            else if (parseNode.GetChildNode("outliers") is { } nullNodeOutliers && nullNodeOutliers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outliers = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Configuration for handling empty searches.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.EmptySearch? EmptySearch { get => _explicitNullValueEmptySearch; set { _explicitNullValueEmptySearch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emptySearch"); else _explicitNullProperties?.Remove("emptySearch"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.EmptySearch? EmptySearch { get => _explicitNullValueEmptySearch; set { _explicitNullValueEmptySearch = value; AdditionalData?.Remove("emptySearch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emptySearch"); else _explicitNullProperties?.Remove("emptySearch"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.EmptySearch? _explicitNullValueEmptySearch = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.EmptySearch EmptySearch { get => _explicitNullValueEmptySearch; set { _explicitNullValueEmptySearch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emptySearch"); else _explicitNullProperties?.Remove("emptySearch"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.EmptySearch EmptySearch { get => _explicitNullValueEmptySearch; set { _explicitNullValueEmptySearch = value; AdditionalData?.Remove("emptySearch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emptySearch"); else _explicitNullProperties?.Remove("emptySearch"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.EmptySearch _explicitNullValueEmptySearch = default!;
 #endif
         /// <summary>Configuration of feature-based filters applied to the A/B test population.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.FeatureFilters? FeatureFilters { get => _explicitNullValueFeatureFilters; set { _explicitNullValueFeatureFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featureFilters"); else _explicitNullProperties?.Remove("featureFilters"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FeatureFilters? FeatureFilters { get => _explicitNullValueFeatureFilters; set { _explicitNullValueFeatureFilters = value; AdditionalData?.Remove("featureFilters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featureFilters"); else _explicitNullProperties?.Remove("featureFilters"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.FeatureFilters? _explicitNullValueFeatureFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.FeatureFilters FeatureFilters { get => _explicitNullValueFeatureFilters; set { _explicitNullValueFeatureFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featureFilters"); else _explicitNullProperties?.Remove("featureFilters"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FeatureFilters FeatureFilters { get => _explicitNullValueFeatureFilters; set { _explicitNullValueFeatureFilters = value; AdditionalData?.Remove("featureFilters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featureFilters"); else _explicitNullProperties?.Remove("featureFilters"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.FeatureFilters _explicitNullValueFeatureFilters = default!;
 #endif
         /// <summary>Configuration for the smallest difference between test variants you want to detect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingMinimumDetectableEffect? MinimumDetectableEffect { get => _explicitNullValueMinimumDetectableEffect; set { _explicitNullValueMinimumDetectableEffect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimumDetectableEffect"); else _explicitNullProperties?.Remove("minimumDetectableEffect"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingMinimumDetectableEffect? MinimumDetectableEffect { get => _explicitNullValueMinimumDetectableEffect; set { _explicitNullValueMinimumDetectableEffect = value; AdditionalData?.Remove("minimumDetectableEffect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimumDetectableEffect"); else _explicitNullProperties?.Remove("minimumDetectableEffect"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.AbtestingMinimumDetectableEffect? _explicitNullValueMinimumDetectableEffect = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingMinimumDetectableEffect MinimumDetectableEffect { get => _explicitNullValueMinimumDetectableEffect; set { _explicitNullValueMinimumDetectableEffect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimumDetectableEffect"); else _explicitNullProperties?.Remove("minimumDetectableEffect"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingMinimumDetectableEffect MinimumDetectableEffect { get => _explicitNullValueMinimumDetectableEffect; set { _explicitNullValueMinimumDetectableEffect = value; AdditionalData?.Remove("minimumDetectableEffect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimumDetectableEffect"); else _explicitNullProperties?.Remove("minimumDetectableEffect"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.AbtestingMinimumDetectableEffect _explicitNullValueMinimumDetectableEffect = default!;
 #endif
         /// <summary>Configuration for handling outliers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Outliers? Outliers { get => _explicitNullValueOutliers; set { _explicitNullValueOutliers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outliers"); else _explicitNullProperties?.Remove("outliers"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Outliers? Outliers { get => _explicitNullValueOutliers; set { _explicitNullValueOutliers = value; AdditionalData?.Remove("outliers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outliers"); else _explicitNullProperties?.Remove("outliers"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Outliers? _explicitNullValueOutliers = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Outliers Outliers { get => _explicitNullValueOutliers; set { _explicitNullValueOutliers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outliers"); else _explicitNullProperties?.Remove("outliers"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Outliers Outliers { get => _explicitNullValueOutliers; set { _explicitNullValueOutliers = value; AdditionalData?.Remove("outliers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outliers"); else _explicitNullProperties?.Remove("outliers"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Outliers _explicitNullValueOutliers = default!;
 #endif
         /// <summary>

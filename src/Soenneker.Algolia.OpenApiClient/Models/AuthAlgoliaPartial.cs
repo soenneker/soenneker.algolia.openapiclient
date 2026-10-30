@@ -18,8 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("apiKey") is { } nullNodeApiKey && nullNodeApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKey = null;
-            if (parseNode.GetChildNode("appID") is { } nullNodeAppID && nullNodeAppID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppID = null;
+            if (parseNode.GetChildNode("apiKey") is null) { _explicitNullValueApiKey = default!; _explicitNullProperties?.Remove("apiKey"); }
+            else if (parseNode.GetChildNode("apiKey") is { } nullNodeApiKey && nullNodeApiKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKey = null;
+            if (parseNode.GetChildNode("appID") is null) { _explicitNullValueAppID = default!; _explicitNullProperties?.Remove("appID"); }
+            else if (parseNode.GetChildNode("appID") is { } nullNodeAppID && nullNodeAppID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppID = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Algolia API key with the ACL: `addObject`, `deleteObject`, `settings`, `editSettings`, `listIndexes`, `deleteIndex`.This field is `null` in the API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiKey"); else _explicitNullProperties?.Remove("apiKey"); } }
+        public string? ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; AdditionalData?.Remove("apiKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiKey"); else _explicitNullProperties?.Remove("apiKey"); } }
         private string? _explicitNullValueApiKey = default!;
 #nullable restore
 #else
-        public string ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiKey"); else _explicitNullProperties?.Remove("apiKey"); } }
+        public string ApiKey { get => _explicitNullValueApiKey; set { _explicitNullValueApiKey = value; AdditionalData?.Remove("apiKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiKey"); else _explicitNullProperties?.Remove("apiKey"); } }
         private string _explicitNullValueApiKey = default!;
 #endif
         /// <summary>Algolia application ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppID { get => _explicitNullValueAppID; set { _explicitNullValueAppID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appID"); else _explicitNullProperties?.Remove("appID"); } }
+        public string? AppID { get => _explicitNullValueAppID; set { _explicitNullValueAppID = value; AdditionalData?.Remove("appID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appID"); else _explicitNullProperties?.Remove("appID"); } }
         private string? _explicitNullValueAppID = default!;
 #nullable restore
 #else
-        public string AppID { get => _explicitNullValueAppID; set { _explicitNullValueAppID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appID"); else _explicitNullProperties?.Remove("appID"); } }
+        public string AppID { get => _explicitNullValueAppID; set { _explicitNullValueAppID = value; AdditionalData?.Remove("appID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appID"); else _explicitNullProperties?.Remove("appID"); } }
         private string _explicitNullValueAppID = default!;
 #endif
         /// <summary>

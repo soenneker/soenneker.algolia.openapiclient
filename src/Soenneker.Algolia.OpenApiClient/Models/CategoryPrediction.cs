@@ -17,23 +17,25 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bin") is { } nullNodeBin && nullNodeBin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bin = null;
-            if (parseNode.GetChildNode("hierarchyPath") is { } nullNodeHierarchyPath && nullNodeHierarchyPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HierarchyPath = null;
+            if (parseNode.GetChildNode("bin") is null) { _explicitNullValueBin = default!; _explicitNullProperties?.Remove("bin"); }
+            else if (parseNode.GetChildNode("bin") is { } nullNodeBin && nullNodeBin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bin = null;
+            if (parseNode.GetChildNode("hierarchyPath") is null) { _explicitNullValueHierarchyPath = default!; _explicitNullProperties?.Remove("hierarchyPath"); }
+            else if (parseNode.GetChildNode("hierarchyPath") is { } nullNodeHierarchyPath && nullNodeHierarchyPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HierarchyPath = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Confidence level of the category prediction.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.CategoryPredictionBin? Bin { get => _explicitNullValueBin; set { _explicitNullValueBin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bin"); else _explicitNullProperties?.Remove("bin"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CategoryPredictionBin? Bin { get => _explicitNullValueBin; set { _explicitNullValueBin = value; AdditionalData?.Remove("bin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bin"); else _explicitNullProperties?.Remove("bin"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.CategoryPredictionBin? _explicitNullValueBin = default!;
         /// <summary>Ordered list of category levels from root to the predicted category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.HierarchyPathEntry>? HierarchyPath { get => _explicitNullValueHierarchyPath; set { _explicitNullValueHierarchyPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hierarchyPath"); else _explicitNullProperties?.Remove("hierarchyPath"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.HierarchyPathEntry>? HierarchyPath { get => _explicitNullValueHierarchyPath; set { _explicitNullValueHierarchyPath = value; AdditionalData?.Remove("hierarchyPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hierarchyPath"); else _explicitNullProperties?.Remove("hierarchyPath"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.HierarchyPathEntry>? _explicitNullValueHierarchyPath = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.HierarchyPathEntry> HierarchyPath { get => _explicitNullValueHierarchyPath; set { _explicitNullValueHierarchyPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hierarchyPath"); else _explicitNullProperties?.Remove("hierarchyPath"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.HierarchyPathEntry> HierarchyPath { get => _explicitNullValueHierarchyPath; set { _explicitNullValueHierarchyPath = value; AdditionalData?.Remove("hierarchyPath"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hierarchyPath"); else _explicitNullProperties?.Remove("hierarchyPath"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.HierarchyPathEntry> _explicitNullValueHierarchyPath = default!;
 #endif
         /// <summary>
@@ -61,7 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bin", n => { Bin = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.CategoryPredictionBin>(); } },
+                { "bin", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.CategoryPredictionBin>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBin = default; _explicitNullProperties?.Remove("bin"); AdditionalData["bin"] = unknown; } else { Bin = parsed; AdditionalData.Remove("bin"); } } },
                 { "hierarchyPath", n => { HierarchyPath = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.HierarchyPathEntry>(global::Soenneker.Algolia.OpenApiClient.Models.HierarchyPathEntry.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }

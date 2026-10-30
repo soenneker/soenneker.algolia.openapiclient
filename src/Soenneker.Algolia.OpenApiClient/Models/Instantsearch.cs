@@ -17,12 +17,18 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("agentID") is { } nullNodeAgentID && nullNodeAgentID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentID = null;
-            if (parseNode.GetChildNode("authenticatedUserToken") is { } nullNodeAuthenticatedUserToken && nullNodeAuthenticatedUserToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticatedUserToken = null;
-            if (parseNode.GetChildNode("eventName") is { } nullNodeEventName && nullNodeEventName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventName = null;
-            if (parseNode.GetChildNode("eventType") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
-            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
-            if (parseNode.GetChildNode("userToken") is { } nullNodeUserToken && nullNodeUserToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserToken = null;
+            if (parseNode.GetChildNode("agentID") is null) { _explicitNullValueAgentID = default!; _explicitNullProperties?.Remove("agentID"); }
+            else if (parseNode.GetChildNode("agentID") is { } nullNodeAgentID && nullNodeAgentID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentID = null;
+            if (parseNode.GetChildNode("authenticatedUserToken") is null) { _explicitNullValueAuthenticatedUserToken = default!; _explicitNullProperties?.Remove("authenticatedUserToken"); }
+            else if (parseNode.GetChildNode("authenticatedUserToken") is { } nullNodeAuthenticatedUserToken && nullNodeAuthenticatedUserToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticatedUserToken = null;
+            if (parseNode.GetChildNode("eventName") is null) { _explicitNullValueEventName = default!; _explicitNullProperties?.Remove("eventName"); }
+            else if (parseNode.GetChildNode("eventName") is { } nullNodeEventName && nullNodeEventName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventName = null;
+            if (parseNode.GetChildNode("eventType") is null) { _explicitNullValueEventType = default!; _explicitNullProperties?.Remove("eventType"); }
+            else if (parseNode.GetChildNode("eventType") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
+            if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
+            else if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("userToken") is null) { _explicitNullValueUserToken = default!; _explicitNullProperties?.Remove("userToken"); }
+            else if (parseNode.GetChildNode("userToken") is { } nullNodeUserToken && nullNodeUserToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserToken = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,47 +36,47 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Unique identifier for an agent session. Used to correlate instantsearch events with a specific agent interaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentID { get => _explicitNullValueAgentID; set { _explicitNullValueAgentID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentID"); else _explicitNullProperties?.Remove("agentID"); } }
+        public string? AgentID { get => _explicitNullValueAgentID; set { _explicitNullValueAgentID = value; AdditionalData?.Remove("agentID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentID"); else _explicitNullProperties?.Remove("agentID"); } }
         private string? _explicitNullValueAgentID = default!;
 #nullable restore
 #else
-        public string AgentID { get => _explicitNullValueAgentID; set { _explicitNullValueAgentID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentID"); else _explicitNullProperties?.Remove("agentID"); } }
+        public string AgentID { get => _explicitNullValueAgentID; set { _explicitNullValueAgentID = value; AdditionalData?.Remove("agentID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentID"); else _explicitNullProperties?.Remove("agentID"); } }
         private string _explicitNullValueAgentID = default!;
 #endif
         /// <summary>Identifier for authenticated users.When the user signs in, you can get an identifier from your system and send it as `authenticatedUserToken`.This lets you keep using the `userToken` from before the user signed in, while providing a reliable way to identify users across sessions.Don&apos;t use personally identifiable information in user tokens.For more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthenticatedUserToken { get => _explicitNullValueAuthenticatedUserToken; set { _explicitNullValueAuthenticatedUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticatedUserToken"); else _explicitNullProperties?.Remove("authenticatedUserToken"); } }
+        public string? AuthenticatedUserToken { get => _explicitNullValueAuthenticatedUserToken; set { _explicitNullValueAuthenticatedUserToken = value; AdditionalData?.Remove("authenticatedUserToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticatedUserToken"); else _explicitNullProperties?.Remove("authenticatedUserToken"); } }
         private string? _explicitNullValueAuthenticatedUserToken = default!;
 #nullable restore
 #else
-        public string AuthenticatedUserToken { get => _explicitNullValueAuthenticatedUserToken; set { _explicitNullValueAuthenticatedUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticatedUserToken"); else _explicitNullProperties?.Remove("authenticatedUserToken"); } }
+        public string AuthenticatedUserToken { get => _explicitNullValueAuthenticatedUserToken; set { _explicitNullValueAuthenticatedUserToken = value; AdditionalData?.Remove("authenticatedUserToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticatedUserToken"); else _explicitNullProperties?.Remove("authenticatedUserToken"); } }
         private string _explicitNullValueAuthenticatedUserToken = default!;
 #endif
         /// <summary>Event name, up to 64 ASCII characters.Consider naming events consistently—for example, by adopting Segment&apos;s[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)framework.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventName { get => _explicitNullValueEventName; set { _explicitNullValueEventName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventName"); else _explicitNullProperties?.Remove("eventName"); } }
+        public string? EventName { get => _explicitNullValueEventName; set { _explicitNullValueEventName = value; AdditionalData?.Remove("eventName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventName"); else _explicitNullProperties?.Remove("eventName"); } }
         private string? _explicitNullValueEventName = default!;
 #nullable restore
 #else
-        public string EventName { get => _explicitNullValueEventName; set { _explicitNullValueEventName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventName"); else _explicitNullProperties?.Remove("eventName"); } }
+        public string EventName { get => _explicitNullValueEventName; set { _explicitNullValueEventName = value; AdditionalData?.Remove("eventName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventName"); else _explicitNullProperties?.Remove("eventName"); } }
         private string _explicitNullValueEventName = default!;
 #endif
         /// <summary>The eventType property</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.InstantsearchEvent? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventType"); else _explicitNullProperties?.Remove("eventType"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InstantsearchEvent? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; AdditionalData?.Remove("eventType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventType"); else _explicitNullProperties?.Remove("eventType"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.InstantsearchEvent? _explicitNullValueEventType = default!;
         /// <summary>Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.If not provided, we use the time at which the request was received.</summary>
-        public long? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public long? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private long? _explicitNullValueTimestamp = default!;
         /// <summary>Anonymous or pseudonymous user identifier.Don&apos;t use personally identifiable information in user tokens.For more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userToken"); else _explicitNullProperties?.Remove("userToken"); } }
+        public string? UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; AdditionalData?.Remove("userToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userToken"); else _explicitNullProperties?.Remove("userToken"); } }
         private string? _explicitNullValueUserToken = default!;
 #nullable restore
 #else
-        public string UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userToken"); else _explicitNullProperties?.Remove("userToken"); } }
+        public string UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; AdditionalData?.Remove("userToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userToken"); else _explicitNullProperties?.Remove("userToken"); } }
         private string _explicitNullValueUserToken = default!;
 #endif
         /// <summary>
@@ -101,7 +107,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "agentID", n => { AgentID = n.GetStringValue(); } },
                 { "authenticatedUserToken", n => { AuthenticatedUserToken = n.GetStringValue(); } },
                 { "eventName", n => { EventName = n.GetStringValue(); } },
-                { "eventType", n => { EventType = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.InstantsearchEvent>(); } },
+                { "eventType", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.InstantsearchEvent>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEventType = default; _explicitNullProperties?.Remove("eventType"); AdditionalData["eventType"] = unknown; } else { EventType = parsed; AdditionalData.Remove("eventType"); } } },
                 { "timestamp", n => { Timestamp = n.GetLongValue(); } },
                 { "userToken", n => { UserToken = n.GetStringValue(); } },
             };

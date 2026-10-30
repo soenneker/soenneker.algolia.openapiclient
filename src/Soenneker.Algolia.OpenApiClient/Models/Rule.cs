@@ -18,15 +18,24 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("condition") is { } nullNodeCondition && nullNodeCondition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Condition = null;
-            if (parseNode.GetChildNode("conditions") is { } nullNodeConditions && nullNodeConditions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conditions = null;
-            if (parseNode.GetChildNode("consequence") is { } nullNodeConsequence && nullNodeConsequence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Consequence = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("objectID") is { } nullNodeObjectID && nullNodeObjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectID = null;
-            if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
-            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
-            if (parseNode.GetChildNode("validity") is { } nullNodeValidity && nullNodeValidity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Validity = null;
+            if (parseNode.GetChildNode("condition") is null) { _explicitNullValueCondition = default!; _explicitNullProperties?.Remove("condition"); }
+            else if (parseNode.GetChildNode("condition") is { } nullNodeCondition && nullNodeCondition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Condition = null;
+            if (parseNode.GetChildNode("conditions") is null) { _explicitNullValueConditions = default!; _explicitNullProperties?.Remove("conditions"); }
+            else if (parseNode.GetChildNode("conditions") is { } nullNodeConditions && nullNodeConditions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conditions = null;
+            if (parseNode.GetChildNode("consequence") is null) { _explicitNullValueConsequence = default!; _explicitNullProperties?.Remove("consequence"); }
+            else if (parseNode.GetChildNode("consequence") is { } nullNodeConsequence && nullNodeConsequence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Consequence = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("objectID") is null) { _explicitNullValueObjectID = default!; _explicitNullProperties?.Remove("objectID"); }
+            else if (parseNode.GetChildNode("objectID") is { } nullNodeObjectID && nullNodeObjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectID = null;
+            if (parseNode.GetChildNode("scope") is null) { _explicitNullValueScope = default!; _explicitNullProperties?.Remove("scope"); }
+            else if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+            if (parseNode.GetChildNode("tags") is null) { _explicitNullValueTags = default!; _explicitNullProperties?.Remove("tags"); }
+            else if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("validity") is null) { _explicitNullValueValidity = default!; _explicitNullProperties?.Remove("validity"); }
+            else if (parseNode.GetChildNode("validity") is { } nullNodeValidity && nullNodeValidity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Validity = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,84 +43,84 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition? Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition"); else _explicitNullProperties?.Remove("condition"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition? Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; AdditionalData?.Remove("condition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition"); else _explicitNullProperties?.Remove("condition"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition? _explicitNullValueCondition = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition"); else _explicitNullProperties?.Remove("condition"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; AdditionalData?.Remove("condition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("condition"); else _explicitNullProperties?.Remove("condition"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition _explicitNullValueCondition = default!;
 #endif
         /// <summary>Conditions that trigger a rule.Some consequences require specific conditions or don&apos;t require any condition.For more information, see [Conditions](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/#conditions).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition>? Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition>? Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; AdditionalData?.Remove("conditions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition>? _explicitNullValueConditions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition> Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition> Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; AdditionalData?.Remove("conditions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchCondition> _explicitNullValueConditions = default!;
 #endif
         /// <summary>Effect of the rule.For more information, see [Consequences](https://www.algolia.com/doc/guides/managing-results/rules/rules-overview/#consequences).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchConsequence? Consequence { get => _explicitNullValueConsequence; set { _explicitNullValueConsequence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consequence"); else _explicitNullProperties?.Remove("consequence"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchConsequence? Consequence { get => _explicitNullValueConsequence; set { _explicitNullValueConsequence = value; AdditionalData?.Remove("consequence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consequence"); else _explicitNullProperties?.Remove("consequence"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SearchConsequence? _explicitNullValueConsequence = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchConsequence Consequence { get => _explicitNullValueConsequence; set { _explicitNullValueConsequence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consequence"); else _explicitNullProperties?.Remove("consequence"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchConsequence Consequence { get => _explicitNullValueConsequence; set { _explicitNullValueConsequence = value; AdditionalData?.Remove("consequence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consequence"); else _explicitNullProperties?.Remove("consequence"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SearchConsequence _explicitNullValueConsequence = default!;
 #endif
         /// <summary>Description of the rule&apos;s purpose to help you distinguish between different rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Whether the rule is active.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>Unique identifier of a rule object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
+        public string? ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; AdditionalData?.Remove("objectID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
         private string? _explicitNullValueObjectID = default!;
 #nullable restore
 #else
-        public string ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
+        public string ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; AdditionalData?.Remove("objectID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
         private string _explicitNullValueObjectID = default!;
 #endif
         /// <summary>The scope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        public string? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private string? _explicitNullValueScope = default!;
 #nullable restore
 #else
-        public string Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        public string Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private string _explicitNullValueScope = default!;
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        public List<string>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private List<string>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private List<string> _explicitNullValueTags = default!;
 #endif
         /// <summary>Time periods when the rule is active.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchTimeRange>? Validity { get => _explicitNullValueValidity; set { _explicitNullValueValidity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validity"); else _explicitNullProperties?.Remove("validity"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchTimeRange>? Validity { get => _explicitNullValueValidity; set { _explicitNullValueValidity = value; AdditionalData?.Remove("validity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validity"); else _explicitNullProperties?.Remove("validity"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchTimeRange>? _explicitNullValueValidity = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchTimeRange> Validity { get => _explicitNullValueValidity; set { _explicitNullValueValidity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validity"); else _explicitNullProperties?.Remove("validity"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchTimeRange> Validity { get => _explicitNullValueValidity; set { _explicitNullValueValidity = value; AdditionalData?.Remove("validity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validity"); else _explicitNullProperties?.Remove("validity"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchTimeRange> _explicitNullValueValidity = default!;
 #endif
         /// <summary>

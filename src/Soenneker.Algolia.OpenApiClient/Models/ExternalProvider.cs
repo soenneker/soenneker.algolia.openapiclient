@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("configurationParams") is { } nullNodeConfigurationParams && nullNodeConfigurationParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigurationParams = null;
+            if (parseNode.GetChildNode("configurationParams") is null) { _explicitNullValueConfigurationParams = default!; _explicitNullProperties?.Remove("configurationParams"); }
+            else if (parseNode.GetChildNode("configurationParams") is { } nullNodeConfigurationParams && nullNodeConfigurationParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigurationParams = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Values for non-prefixed configuration placeholders, overriding the composition source&apos;s `configurationParams` and the configuration&apos;s `defaults`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParamsProperty2? ConfigurationParams { get => _explicitNullValueConfigurationParams; set { _explicitNullValueConfigurationParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationParams"); else _explicitNullProperties?.Remove("configurationParams"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParamsProperty2? ConfigurationParams { get => _explicitNullValueConfigurationParams; set { _explicitNullValueConfigurationParams = value; AdditionalData?.Remove("configurationParams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationParams"); else _explicitNullProperties?.Remove("configurationParams"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParamsProperty2? _explicitNullValueConfigurationParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParamsProperty2 ConfigurationParams { get => _explicitNullValueConfigurationParams; set { _explicitNullValueConfigurationParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationParams"); else _explicitNullProperties?.Remove("configurationParams"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParamsProperty2 ConfigurationParams { get => _explicitNullValueConfigurationParams; set { _explicitNullValueConfigurationParams = value; AdditionalData?.Remove("configurationParams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationParams"); else _explicitNullProperties?.Remove("configurationParams"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParamsProperty2 _explicitNullValueConfigurationParams = default!;
 #endif
         /// <summary>

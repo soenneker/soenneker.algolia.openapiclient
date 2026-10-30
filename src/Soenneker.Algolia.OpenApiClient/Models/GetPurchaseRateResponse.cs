@@ -17,10 +17,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dates") is { } nullNodeDates && nullNodeDates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dates = null;
-            if (parseNode.GetChildNode("purchaseCount") is { } nullNodePurchaseCount && nullNodePurchaseCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurchaseCount = null;
-            if (parseNode.GetChildNode("rate") is { } nullNodeRate && nullNodeRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rate = null;
-            if (parseNode.GetChildNode("trackedSearchCount") is { } nullNodeTrackedSearchCount && nullNodeTrackedSearchCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackedSearchCount = null;
+            if (parseNode.GetChildNode("dates") is null) { _explicitNullValueDates = default!; _explicitNullProperties?.Remove("dates"); }
+            else if (parseNode.GetChildNode("dates") is { } nullNodeDates && nullNodeDates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dates = null;
+            if (parseNode.GetChildNode("purchaseCount") is null) { _explicitNullValuePurchaseCount = default!; _explicitNullProperties?.Remove("purchaseCount"); }
+            else if (parseNode.GetChildNode("purchaseCount") is { } nullNodePurchaseCount && nullNodePurchaseCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurchaseCount = null;
+            if (parseNode.GetChildNode("rate") is null) { _explicitNullValueRate = default!; _explicitNullProperties?.Remove("rate"); }
+            else if (parseNode.GetChildNode("rate") is { } nullNodeRate && nullNodeRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rate = null;
+            if (parseNode.GetChildNode("trackedSearchCount") is null) { _explicitNullValueTrackedSearchCount = default!; _explicitNullProperties?.Remove("trackedSearchCount"); }
+            else if (parseNode.GetChildNode("trackedSearchCount") is { } nullNodeTrackedSearchCount && nullNodeTrackedSearchCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackedSearchCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,21 +32,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Daily purchase rates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetPurchaseRateResponseDatesItem>? Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetPurchaseRateResponseDatesItem>? Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; AdditionalData?.Remove("dates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.GetPurchaseRateResponseDatesItem>? _explicitNullValueDates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetPurchaseRateResponseDatesItem> Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetPurchaseRateResponseDatesItem> Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; AdditionalData?.Remove("dates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.GetPurchaseRateResponseDatesItem> _explicitNullValueDates = default!;
 #endif
         /// <summary>Number of purchase events from this search.</summary>
-        public int? PurchaseCount { get => _explicitNullValuePurchaseCount; set { _explicitNullValuePurchaseCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchaseCount"); else _explicitNullProperties?.Remove("purchaseCount"); } }
+        public int? PurchaseCount { get => _explicitNullValuePurchaseCount; set { _explicitNullValuePurchaseCount = value; AdditionalData?.Remove("purchaseCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchaseCount"); else _explicitNullProperties?.Remove("purchaseCount"); } }
         private int? _explicitNullValuePurchaseCount = default!;
         /// <summary>Purchase rate: calculated as the number of tracked searches with at least one purchase event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.</summary>
-        public double? Rate { get => _explicitNullValueRate; set { _explicitNullValueRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate"); else _explicitNullProperties?.Remove("rate"); } }
+        public double? Rate { get => _explicitNullValueRate; set { _explicitNullValueRate = value; AdditionalData?.Remove("rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate"); else _explicitNullProperties?.Remove("rate"); } }
         private double? _explicitNullValueRate = default!;
         /// <summary>Number of tracked searches. Tracked searches are search requests where the `clickAnalytics` parameter is true.</summary>
-        public int? TrackedSearchCount { get => _explicitNullValueTrackedSearchCount; set { _explicitNullValueTrackedSearchCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackedSearchCount"); else _explicitNullProperties?.Remove("trackedSearchCount"); } }
+        public int? TrackedSearchCount { get => _explicitNullValueTrackedSearchCount; set { _explicitNullValueTrackedSearchCount = value; AdditionalData?.Remove("trackedSearchCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackedSearchCount"); else _explicitNullProperties?.Remove("trackedSearchCount"); } }
         private int? _explicitNullValueTrackedSearchCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetPurchaseRateResponse"/> and sets the default values.

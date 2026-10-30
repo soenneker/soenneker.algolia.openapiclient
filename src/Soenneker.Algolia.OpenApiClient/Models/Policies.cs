@@ -18,13 +18,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("criticalThreshold") is { } nullNodeCriticalThreshold && nullNodeCriticalThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CriticalThreshold = null;
+            if (parseNode.GetChildNode("criticalThreshold") is null) { _explicitNullValueCriticalThreshold = default!; _explicitNullProperties?.Remove("criticalThreshold"); }
+            else if (parseNode.GetChildNode("criticalThreshold") is { } nullNodeCriticalThreshold && nullNodeCriticalThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CriticalThreshold = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of critical failures in a row before blocking the task and sending a notification.</summary>
-        public int? CriticalThreshold { get => _explicitNullValueCriticalThreshold; set { _explicitNullValueCriticalThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criticalThreshold"); else _explicitNullProperties?.Remove("criticalThreshold"); } }
+        public int? CriticalThreshold { get => _explicitNullValueCriticalThreshold; set { _explicitNullValueCriticalThreshold = value; AdditionalData?.Remove("criticalThreshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criticalThreshold"); else _explicitNullProperties?.Remove("criticalThreshold"); } }
         private int? _explicitNullValueCriticalThreshold = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Policies"/> and sets the default values.

@@ -17,9 +17,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("lastEventAt") is { } nullNodeLastEventAt && nullNodeLastEventAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastEventAt = null;
-            if (parseNode.GetChildNode("scores") is { } nullNodeScores && nullNodeScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scores = null;
-            if (parseNode.GetChildNode("userToken") is { } nullNodeUserToken && nullNodeUserToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserToken = null;
+            if (parseNode.GetChildNode("lastEventAt") is null) { _explicitNullValueLastEventAt = default!; _explicitNullProperties?.Remove("lastEventAt"); }
+            else if (parseNode.GetChildNode("lastEventAt") is { } nullNodeLastEventAt && nullNodeLastEventAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastEventAt = null;
+            if (parseNode.GetChildNode("scores") is null) { _explicitNullValueScores = default!; _explicitNullProperties?.Remove("scores"); }
+            else if (parseNode.GetChildNode("scores") is { } nullNodeScores && nullNodeScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scores = null;
+            if (parseNode.GetChildNode("userToken") is null) { _explicitNullValueUserToken = default!; _explicitNullProperties?.Remove("userToken"); }
+            else if (parseNode.GetChildNode("userToken") is { } nullNodeUserToken && nullNodeUserToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserToken = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Date and time of the last event from this user, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastEventAt { get => _explicitNullValueLastEventAt; set { _explicitNullValueLastEventAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastEventAt"); else _explicitNullProperties?.Remove("lastEventAt"); } }
+        public string? LastEventAt { get => _explicitNullValueLastEventAt; set { _explicitNullValueLastEventAt = value; AdditionalData?.Remove("lastEventAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastEventAt"); else _explicitNullProperties?.Remove("lastEventAt"); } }
         private string? _explicitNullValueLastEventAt = default!;
 #nullable restore
 #else
-        public string LastEventAt { get => _explicitNullValueLastEventAt; set { _explicitNullValueLastEventAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastEventAt"); else _explicitNullProperties?.Remove("lastEventAt"); } }
+        public string LastEventAt { get => _explicitNullValueLastEventAt; set { _explicitNullValueLastEventAt = value; AdditionalData?.Remove("lastEventAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastEventAt"); else _explicitNullProperties?.Remove("lastEventAt"); } }
         private string _explicitNullValueLastEventAt = default!;
 #endif
         /// <summary>Scores for different facet values.Scores represent the user affinity for a user profile towards specific facet values,given the personalization strategy and past events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.GetUserTokenResponseScoresProperty? Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.GetUserTokenResponseScoresProperty? Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; AdditionalData?.Remove("scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.GetUserTokenResponseScoresProperty? _explicitNullValueScores = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.GetUserTokenResponseScoresProperty Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.GetUserTokenResponseScoresProperty Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; AdditionalData?.Remove("scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.GetUserTokenResponseScoresProperty _explicitNullValueScores = default!;
 #endif
         /// <summary>Unique pseudonymous or anonymous user identifier.This helps with analytics and click and conversion events.For more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userToken"); else _explicitNullProperties?.Remove("userToken"); } }
+        public string? UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; AdditionalData?.Remove("userToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userToken"); else _explicitNullProperties?.Remove("userToken"); } }
         private string? _explicitNullValueUserToken = default!;
 #nullable restore
 #else
-        public string UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userToken"); else _explicitNullProperties?.Remove("userToken"); } }
+        public string UserToken { get => _explicitNullValueUserToken; set { _explicitNullValueUserToken = value; AdditionalData?.Remove("userToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userToken"); else _explicitNullProperties?.Remove("userToken"); } }
         private string _explicitNullValueUserToken = default!;
 #endif
         /// <summary>

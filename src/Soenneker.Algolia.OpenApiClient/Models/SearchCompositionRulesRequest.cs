@@ -18,46 +18,52 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("anchoring") is { } nullNodeAnchoring && nullNodeAnchoring.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Anchoring = null;
-            if (parseNode.GetChildNode("context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("hitsPerPage") is { } nullNodeHitsPerPage && nullNodeHitsPerPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HitsPerPage = null;
-            if (parseNode.GetChildNode("page") is { } nullNodePage && nullNodePage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Page = null;
-            if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+            if (parseNode.GetChildNode("anchoring") is null) { _explicitNullValueAnchoring = default!; _explicitNullProperties?.Remove("anchoring"); }
+            else if (parseNode.GetChildNode("anchoring") is { } nullNodeAnchoring && nullNodeAnchoring.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Anchoring = null;
+            if (parseNode.GetChildNode("context") is null) { _explicitNullValueContext = default!; _explicitNullProperties?.Remove("context"); }
+            else if (parseNode.GetChildNode("context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("hitsPerPage") is null) { _explicitNullValueHitsPerPage = default!; _explicitNullProperties?.Remove("hitsPerPage"); }
+            else if (parseNode.GetChildNode("hitsPerPage") is { } nullNodeHitsPerPage && nullNodeHitsPerPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HitsPerPage = null;
+            if (parseNode.GetChildNode("page") is null) { _explicitNullValuePage = default!; _explicitNullProperties?.Remove("page"); }
+            else if (parseNode.GetChildNode("page") is { } nullNodePage && nullNodePage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Page = null;
+            if (parseNode.GetChildNode("query") is null) { _explicitNullValueQuery = default!; _explicitNullProperties?.Remove("query"); }
+            else if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Which part of the search query the pattern should match:- `startsWith`. The pattern must match the beginning of the query.- `endsWith`. The pattern must match the end of the query.- `is`. The pattern must match the query exactly.- `contains`. The pattern must match anywhere in the query.Empty queries are only allowed as patterns with `anchoring: is`.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.Anchoring? Anchoring { get => _explicitNullValueAnchoring; set { _explicitNullValueAnchoring = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anchoring"); else _explicitNullProperties?.Remove("anchoring"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Anchoring? Anchoring { get => _explicitNullValueAnchoring; set { _explicitNullValueAnchoring = value; AdditionalData?.Remove("anchoring"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anchoring"); else _explicitNullProperties?.Remove("anchoring"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Anchoring? _explicitNullValueAnchoring = default!;
         /// <summary>Only return composition rules that match the context (exact match).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
+        public string? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; AdditionalData?.Remove("context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
         private string? _explicitNullValueContext = default!;
 #nullable restore
 #else
-        public string Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
+        public string Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; AdditionalData?.Remove("context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
         private string _explicitNullValueContext = default!;
 #endif
         /// <summary>If `true`, return only enabled composition rules.If `false`, return only inactive composition rules.By default, _all_ composition rules are returned.</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>Maximum number of hits per page.Algolia uses `page` and `hitsPerPage` to control how search results are displayed ([paginated](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/pagination/js)).- `hitsPerPage`: sets the number of search results (_hits_) displayed per page.- `page`: specifies the page number of the search results you want to retrieve. Page numbering starts at 0, so the first page is `page=0`, the second is `page=1`, and so on.For example, to display 10 results per page starting from the third page, set `hitsPerPage` to 10 and `page` to 2.</summary>
-        public int? HitsPerPage { get => _explicitNullValueHitsPerPage; set { _explicitNullValueHitsPerPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hitsPerPage"); else _explicitNullProperties?.Remove("hitsPerPage"); } }
+        public int? HitsPerPage { get => _explicitNullValueHitsPerPage; set { _explicitNullValueHitsPerPage = value; AdditionalData?.Remove("hitsPerPage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hitsPerPage"); else _explicitNullProperties?.Remove("hitsPerPage"); } }
         private int? _explicitNullValueHitsPerPage = default!;
         /// <summary>Requested page of the API response.Algolia uses `page` and `hitsPerPage` to control how search results are displayed ([paginated](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/pagination/js)).- `hitsPerPage`: sets the number of search results (_hits_) displayed per page.- `page`: specifies the page number of the search results you want to retrieve. Page numbering starts at 0, so the first page is `page=0`, the second is `page=1`, and so on.For example, to display 10 results per page starting from the third page, set `hitsPerPage` to 10 and `page` to 2.</summary>
-        public int? Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
+        public int? Page { get => _explicitNullValuePage; set { _explicitNullValuePage = value; AdditionalData?.Remove("page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page"); else _explicitNullProperties?.Remove("page"); } }
         private int? _explicitNullValuePage = default!;
         /// <summary>Search query for rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; AdditionalData?.Remove("query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
         private string? _explicitNullValueQuery = default!;
 #nullable restore
 #else
-        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; AdditionalData?.Remove("query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
         private string _explicitNullValueQuery = default!;
 #endif
         /// <summary>
@@ -86,7 +92,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "anchoring", n => { Anchoring = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Anchoring>(); } },
+                { "anchoring", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Anchoring>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAnchoring = default; _explicitNullProperties?.Remove("anchoring"); AdditionalData["anchoring"] = unknown; } else { Anchoring = parsed; AdditionalData.Remove("anchoring"); } } },
                 { "context", n => { Context = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "hitsPerPage", n => { HitsPerPage = n.GetIntValue(); } },

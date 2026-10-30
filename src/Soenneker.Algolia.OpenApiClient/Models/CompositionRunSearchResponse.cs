@@ -17,8 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("appliedRules") is { } nullNodeAppliedRules && nullNodeAppliedRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppliedRules = null;
-            if (parseNode.GetChildNode("objectID") is { } nullNodeObjectID && nullNodeObjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectID = null;
+            if (parseNode.GetChildNode("appliedRules") is null) { _explicitNullValueAppliedRules = default!; _explicitNullProperties?.Remove("appliedRules"); }
+            else if (parseNode.GetChildNode("appliedRules") is { } nullNodeAppliedRules && nullNodeAppliedRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppliedRules = null;
+            if (parseNode.GetChildNode("objectID") is null) { _explicitNullValueObjectID = default!; _explicitNullProperties?.Remove("objectID"); }
+            else if (parseNode.GetChildNode("objectID") is { } nullNodeObjectID && nullNodeObjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectID = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The appliedRules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRunAppliedRules>? AppliedRules { get => _explicitNullValueAppliedRules; set { _explicitNullValueAppliedRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appliedRules"); else _explicitNullProperties?.Remove("appliedRules"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRunAppliedRules>? AppliedRules { get => _explicitNullValueAppliedRules; set { _explicitNullValueAppliedRules = value; AdditionalData?.Remove("appliedRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appliedRules"); else _explicitNullProperties?.Remove("appliedRules"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRunAppliedRules>? _explicitNullValueAppliedRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRunAppliedRules> AppliedRules { get => _explicitNullValueAppliedRules; set { _explicitNullValueAppliedRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appliedRules"); else _explicitNullProperties?.Remove("appliedRules"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRunAppliedRules> AppliedRules { get => _explicitNullValueAppliedRules; set { _explicitNullValueAppliedRules = value; AdditionalData?.Remove("appliedRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appliedRules"); else _explicitNullProperties?.Remove("appliedRules"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRunAppliedRules> _explicitNullValueAppliedRules = default!;
 #endif
         /// <summary>The objectID of the composition which generated this result set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
+        public string? ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; AdditionalData?.Remove("objectID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
         private string? _explicitNullValueObjectID = default!;
 #nullable restore
 #else
-        public string ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
+        public string ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; AdditionalData?.Remove("objectID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
         private string _explicitNullValueObjectID = default!;
 #endif
         /// <summary>

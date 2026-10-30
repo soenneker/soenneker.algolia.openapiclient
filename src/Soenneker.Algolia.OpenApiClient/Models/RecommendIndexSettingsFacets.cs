@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("order") is { } nullNodeOrder && nullNodeOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Order = null;
+            if (parseNode.GetChildNode("order") is null) { _explicitNullValueOrder = default!; _explicitNullProperties?.Remove("order"); }
+            else if (parseNode.GetChildNode("order") is { } nullNodeOrder && nullNodeOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Order = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Explicit order of facets or facet values.This setting lets you always show specific facets or facet values at the top of the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Order { get => _explicitNullValueOrder; set { _explicitNullValueOrder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("order"); else _explicitNullProperties?.Remove("order"); } }
+        public List<string>? Order { get => _explicitNullValueOrder; set { _explicitNullValueOrder = value; AdditionalData?.Remove("order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("order"); else _explicitNullProperties?.Remove("order"); } }
         private List<string>? _explicitNullValueOrder = default!;
 #nullable restore
 #else
-        public List<string> Order { get => _explicitNullValueOrder; set { _explicitNullValueOrder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("order"); else _explicitNullProperties?.Remove("order"); } }
+        public List<string> Order { get => _explicitNullValueOrder; set { _explicitNullValueOrder = value; AdditionalData?.Remove("order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("order"); else _explicitNullProperties?.Remove("order"); } }
         private List<string> _explicitNullValueOrder = default!;
 #endif
         /// <summary>

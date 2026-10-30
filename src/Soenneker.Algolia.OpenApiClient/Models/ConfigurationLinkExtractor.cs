@@ -18,8 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
-            if (parseNode.GetChildNode("__type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("source") is null) { _explicitNullValueSource = default!; _explicitNullProperties?.Remove("source"); }
+            else if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("__type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("__type"); }
+            else if (parseNode.GetChildNode("__type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private string? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public string Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        public string Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
         private string _explicitNullValueSource = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationRecordExtractorType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__type"); else _explicitNullProperties?.Remove("__type"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationRecordExtractorType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("__type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("__type"); else _explicitNullProperties?.Remove("__type"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationRecordExtractorType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationLinkExtractor"/> and sets the default values.
@@ -63,7 +65,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "source", n => { Source = n.GetStringValue(); } },
-                { "__type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationRecordExtractorType>(); } },
+                { "__type", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationRecordExtractorType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("__type"); AdditionalData["__type"] = unknown; } else { Type = parsed; AdditionalData.Remove("__type"); } } },
             };
         }
         /// <summary>

@@ -17,17 +17,28 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bayesian") is { } nullNodeBayesian && nullNodeBayesian.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bayesian = null;
-            if (parseNode.GetChildNode("criticalValue") is { } nullNodeCriticalValue && nullNodeCriticalValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CriticalValue = null;
-            if (parseNode.GetChildNode("dimension") is { } nullNodeDimension && nullNodeDimension.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimension = null;
-            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("pValue") is { } nullNodePValue && nullNodePValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PValue = null;
-            if (parseNode.GetChildNode("significant") is { } nullNodeSignificant && nullNodeSignificant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Significant = null;
-            if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
-            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
-            if (parseNode.GetChildNode("valueCIHigh") is { } nullNodeValueCIHigh && nullNodeValueCIHigh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValueCIHigh = null;
-            if (parseNode.GetChildNode("valueCILow") is { } nullNodeValueCILow && nullNodeValueCILow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValueCILow = null;
+            if (parseNode.GetChildNode("bayesian") is null) { _explicitNullValueBayesian = default!; _explicitNullProperties?.Remove("bayesian"); }
+            else if (parseNode.GetChildNode("bayesian") is { } nullNodeBayesian && nullNodeBayesian.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bayesian = null;
+            if (parseNode.GetChildNode("criticalValue") is null) { _explicitNullValueCriticalValue = default!; _explicitNullProperties?.Remove("criticalValue"); }
+            else if (parseNode.GetChildNode("criticalValue") is { } nullNodeCriticalValue && nullNodeCriticalValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CriticalValue = null;
+            if (parseNode.GetChildNode("dimension") is null) { _explicitNullValueDimension = default!; _explicitNullProperties?.Remove("dimension"); }
+            else if (parseNode.GetChildNode("dimension") is { } nullNodeDimension && nullNodeDimension.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimension = null;
+            if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
+            else if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("pValue") is null) { _explicitNullValuePValue = default!; _explicitNullProperties?.Remove("pValue"); }
+            else if (parseNode.GetChildNode("pValue") is { } nullNodePValue && nullNodePValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PValue = null;
+            if (parseNode.GetChildNode("significant") is null) { _explicitNullValueSignificant = default!; _explicitNullProperties?.Remove("significant"); }
+            else if (parseNode.GetChildNode("significant") is { } nullNodeSignificant && nullNodeSignificant.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Significant = null;
+            if (parseNode.GetChildNode("updatedAt") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updatedAt"); }
+            else if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("value") is null) { _explicitNullValueValue = default!; _explicitNullProperties?.Remove("value"); }
+            else if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+            if (parseNode.GetChildNode("valueCIHigh") is null) { _explicitNullValueValueCIHigh = default!; _explicitNullProperties?.Remove("valueCIHigh"); }
+            else if (parseNode.GetChildNode("valueCIHigh") is { } nullNodeValueCIHigh && nullNodeValueCIHigh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValueCIHigh = null;
+            if (parseNode.GetChildNode("valueCILow") is null) { _explicitNullValueValueCILow = default!; _explicitNullProperties?.Remove("valueCILow"); }
+            else if (parseNode.GetChildNode("valueCILow") is { } nullNodeValueCILow && nullNodeValueCILow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValueCILow = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -35,70 +46,70 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Bayesian inference results for this variant metric.Omitted when Bayesian results aren&apos;t requested or no Bayesian result is available for this metric.Individual inference fields can be omitted when their values aren&apos;t available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BayesianMetricResult? Bayesian { get => _explicitNullValueBayesian; set { _explicitNullValueBayesian = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bayesian"); else _explicitNullProperties?.Remove("bayesian"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BayesianMetricResult? Bayesian { get => _explicitNullValueBayesian; set { _explicitNullValueBayesian = value; AdditionalData?.Remove("bayesian"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bayesian"); else _explicitNullProperties?.Remove("bayesian"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.BayesianMetricResult? _explicitNullValueBayesian = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BayesianMetricResult Bayesian { get => _explicitNullValueBayesian; set { _explicitNullValueBayesian = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bayesian"); else _explicitNullProperties?.Remove("bayesian"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BayesianMetricResult Bayesian { get => _explicitNullValueBayesian; set { _explicitNullValueBayesian = value; AdditionalData?.Remove("bayesian"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bayesian"); else _explicitNullProperties?.Remove("bayesian"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.BayesianMetricResult _explicitNullValueBayesian = default!;
 #endif
         /// <summary>The value that was computed during error correction. It is used to determine significance of the metric pValue.The critical value is calculated using Bonferroni or Benjamini-Hochberg corrections, based on the givenconfiguration during the A/B test creation.</summary>
-        public double? CriticalValue { get => _explicitNullValueCriticalValue; set { _explicitNullValueCriticalValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criticalValue"); else _explicitNullProperties?.Remove("criticalValue"); } }
+        public double? CriticalValue { get => _explicitNullValueCriticalValue; set { _explicitNullValueCriticalValue = value; AdditionalData?.Remove("criticalValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criticalValue"); else _explicitNullProperties?.Remove("criticalValue"); } }
         private double? _explicitNullValueCriticalValue = default!;
         /// <summary>Dimension defined during test creation. For revenue metrics, including `revenue_per_search`, this is the currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Dimension { get => _explicitNullValueDimension; set { _explicitNullValueDimension = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimension"); else _explicitNullProperties?.Remove("dimension"); } }
+        public string? Dimension { get => _explicitNullValueDimension; set { _explicitNullValueDimension = value; AdditionalData?.Remove("dimension"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimension"); else _explicitNullProperties?.Remove("dimension"); } }
         private string? _explicitNullValueDimension = default!;
 #nullable restore
 #else
-        public string Dimension { get => _explicitNullValueDimension; set { _explicitNullValueDimension = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimension"); else _explicitNullProperties?.Remove("dimension"); } }
+        public string Dimension { get => _explicitNullValueDimension; set { _explicitNullValueDimension = value; AdditionalData?.Remove("dimension"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimension"); else _explicitNullProperties?.Remove("dimension"); } }
         private string _explicitNullValueDimension = default!;
 #endif
         /// <summary>Metric specific metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.MetricMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MetricMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.MetricMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.MetricMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MetricMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.MetricMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>Metric name. Revenue per search results use `revenue_per_search`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>P-value for this variant compared to the control.Omitted when no p-value is available for this metric.</summary>
-        public double? PValue { get => _explicitNullValuePValue; set { _explicitNullValuePValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pValue"); else _explicitNullProperties?.Remove("pValue"); } }
+        public double? PValue { get => _explicitNullValuePValue; set { _explicitNullValuePValue = value; AdditionalData?.Remove("pValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pValue"); else _explicitNullProperties?.Remove("pValue"); } }
         private double? _explicitNullValuePValue = default!;
         /// <summary>Whether the pValue is significant or not based on the critical value and the error correction algorithm used.</summary>
-        public bool? Significant { get => _explicitNullValueSignificant; set { _explicitNullValueSignificant = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("significant"); else _explicitNullProperties?.Remove("significant"); } }
+        public bool? Significant { get => _explicitNullValueSignificant; set { _explicitNullValueSignificant = value; AdditionalData?.Remove("significant"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("significant"); else _explicitNullProperties?.Remove("significant"); } }
         private bool? _explicitNullValueSignificant = default!;
         /// <summary>Date and time when the metric was last updated, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
+        public string? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
         private string? _explicitNullValueUpdatedAt = default!;
 #nullable restore
 #else
-        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
+        public string UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
         private string _explicitNullValueUpdatedAt = default!;
 #endif
         /// <summary>Metric value. For `revenue_per_search`, this is the winsorized mean revenue per search in the specified currency.</summary>
-        public double? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public double? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private double? _explicitNullValueValue = default!;
         /// <summary>The upper bound of the 95% confidence interval for the metric value. The confidence interval is calculated usingeither the relative ratio or relative difference between the metric values for the control and the variant.Relative ratio is used for metrics that are ratios (e.g., click-through rate, conversion rate),while relative difference is used for continuous metrics (e.g., revenue).</summary>
-        public double? ValueCIHigh { get => _explicitNullValueValueCIHigh; set { _explicitNullValueValueCIHigh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valueCIHigh"); else _explicitNullProperties?.Remove("valueCIHigh"); } }
+        public double? ValueCIHigh { get => _explicitNullValueValueCIHigh; set { _explicitNullValueValueCIHigh = value; AdditionalData?.Remove("valueCIHigh"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valueCIHigh"); else _explicitNullProperties?.Remove("valueCIHigh"); } }
         private double? _explicitNullValueValueCIHigh = default!;
         /// <summary>The lower bound of the 95% confidence interval for the metric value. The confidence interval is calculated usingeither the relative ratio or relative difference between the metric values for the control and the variant.Relative ratio is used for metrics that are ratios (e.g., click-through rate, conversion rate),while relative difference is used for continuous metrics (e.g., revenue).</summary>
-        public double? ValueCILow { get => _explicitNullValueValueCILow; set { _explicitNullValueValueCILow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valueCILow"); else _explicitNullProperties?.Remove("valueCILow"); } }
+        public double? ValueCILow { get => _explicitNullValueValueCILow; set { _explicitNullValueValueCILow = value; AdditionalData?.Remove("valueCILow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valueCILow"); else _explicitNullProperties?.Remove("valueCILow"); } }
         private double? _explicitNullValueValueCILow = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.MetricResult"/> and sets the default values.

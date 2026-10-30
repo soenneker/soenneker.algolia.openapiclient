@@ -17,9 +17,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("delete") is { } nullNodeDelete && nullNodeDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delete = null;
-            if (parseNode.GetChildNode("insert") is { } nullNodeInsert && nullNodeInsert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Insert = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("delete") is null) { _explicitNullValueDelete = default!; _explicitNullProperties?.Remove("delete"); }
+            else if (parseNode.GetChildNode("delete") is { } nullNodeDelete && nullNodeDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delete = null;
+            if (parseNode.GetChildNode("insert") is null) { _explicitNullValueInsert = default!; _explicitNullProperties?.Remove("insert"); }
+            else if (parseNode.GetChildNode("insert") is { } nullNodeInsert && nullNodeInsert.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Insert = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Text or patterns to remove from the query string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete"); else _explicitNullProperties?.Remove("delete"); } }
+        public string? Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; AdditionalData?.Remove("delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete"); else _explicitNullProperties?.Remove("delete"); } }
         private string? _explicitNullValueDelete = default!;
 #nullable restore
 #else
-        public string Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete"); else _explicitNullProperties?.Remove("delete"); } }
+        public string Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; AdditionalData?.Remove("delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete"); else _explicitNullProperties?.Remove("delete"); } }
         private string _explicitNullValueDelete = default!;
 #endif
         /// <summary>Text to be added in place of the deleted text inside the query string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Insert { get => _explicitNullValueInsert; set { _explicitNullValueInsert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insert"); else _explicitNullProperties?.Remove("insert"); } }
+        public string? Insert { get => _explicitNullValueInsert; set { _explicitNullValueInsert = value; AdditionalData?.Remove("insert"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insert"); else _explicitNullProperties?.Remove("insert"); } }
         private string? _explicitNullValueInsert = default!;
 #nullable restore
 #else
-        public string Insert { get => _explicitNullValueInsert; set { _explicitNullValueInsert = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insert"); else _explicitNullProperties?.Remove("insert"); } }
+        public string Insert { get => _explicitNullValueInsert; set { _explicitNullValueInsert = value; AdditionalData?.Remove("insert"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insert"); else _explicitNullProperties?.Remove("insert"); } }
         private string _explicitNullValueInsert = default!;
 #endif
         /// <summary>Type of edit.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.EditType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.EditType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.EditType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Edit"/> and sets the default values.
@@ -74,7 +77,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "delete", n => { Delete = n.GetStringValue(); } },
                 { "insert", n => { Insert = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.EditType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.EditType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

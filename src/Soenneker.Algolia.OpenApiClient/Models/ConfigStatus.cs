@@ -17,11 +17,16 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
-            if (parseNode.GetChildNode("isRunning") is { } nullNodeIsRunning && nullNodeIsRunning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsRunning = null;
-            if (parseNode.GetChildNode("lastBuiltAt") is { } nullNodeLastBuiltAt && nullNodeLastBuiltAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastBuiltAt = null;
-            if (parseNode.GetChildNode("lastSuccessfulBuildDuration") is { } nullNodeLastSuccessfulBuildDuration && nullNodeLastSuccessfulBuildDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSuccessfulBuildDuration = null;
-            if (parseNode.GetChildNode("lastSuccessfulBuiltAt") is { } nullNodeLastSuccessfulBuiltAt && nullNodeLastSuccessfulBuiltAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSuccessfulBuiltAt = null;
+            if (parseNode.GetChildNode("indexName") is null) { _explicitNullValueIndexName = default!; _explicitNullProperties?.Remove("indexName"); }
+            else if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
+            if (parseNode.GetChildNode("isRunning") is null) { _explicitNullValueIsRunning = default!; _explicitNullProperties?.Remove("isRunning"); }
+            else if (parseNode.GetChildNode("isRunning") is { } nullNodeIsRunning && nullNodeIsRunning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsRunning = null;
+            if (parseNode.GetChildNode("lastBuiltAt") is null) { _explicitNullValueLastBuiltAt = default!; _explicitNullProperties?.Remove("lastBuiltAt"); }
+            else if (parseNode.GetChildNode("lastBuiltAt") is { } nullNodeLastBuiltAt && nullNodeLastBuiltAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastBuiltAt = null;
+            if (parseNode.GetChildNode("lastSuccessfulBuildDuration") is null) { _explicitNullValueLastSuccessfulBuildDuration = default!; _explicitNullProperties?.Remove("lastSuccessfulBuildDuration"); }
+            else if (parseNode.GetChildNode("lastSuccessfulBuildDuration") is { } nullNodeLastSuccessfulBuildDuration && nullNodeLastSuccessfulBuildDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSuccessfulBuildDuration = null;
+            if (parseNode.GetChildNode("lastSuccessfulBuiltAt") is null) { _explicitNullValueLastSuccessfulBuiltAt = default!; _explicitNullProperties?.Remove("lastSuccessfulBuiltAt"); }
+            else if (parseNode.GetChildNode("lastSuccessfulBuiltAt") is { } nullNodeLastSuccessfulBuiltAt && nullNodeLastSuccessfulBuiltAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSuccessfulBuiltAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,44 +34,44 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Name of the Query Suggestions index (case-sensitive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string? _explicitNullValueIndexName = default!;
 #nullable restore
 #else
-        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; AdditionalData?.Remove("indexName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
         private string _explicitNullValueIndexName = default!;
 #endif
         /// <summary>Whether the creation or update of the Query Suggestions index is in progress.</summary>
-        public bool? IsRunning { get => _explicitNullValueIsRunning; set { _explicitNullValueIsRunning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isRunning"); else _explicitNullProperties?.Remove("isRunning"); } }
+        public bool? IsRunning { get => _explicitNullValueIsRunning; set { _explicitNullValueIsRunning = value; AdditionalData?.Remove("isRunning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isRunning"); else _explicitNullProperties?.Remove("isRunning"); } }
         private bool? _explicitNullValueIsRunning = default!;
         /// <summary>Date and time when the Query Suggestions index was last built, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastBuiltAt { get => _explicitNullValueLastBuiltAt; set { _explicitNullValueLastBuiltAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastBuiltAt"); else _explicitNullProperties?.Remove("lastBuiltAt"); } }
+        public string? LastBuiltAt { get => _explicitNullValueLastBuiltAt; set { _explicitNullValueLastBuiltAt = value; AdditionalData?.Remove("lastBuiltAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastBuiltAt"); else _explicitNullProperties?.Remove("lastBuiltAt"); } }
         private string? _explicitNullValueLastBuiltAt = default!;
 #nullable restore
 #else
-        public string LastBuiltAt { get => _explicitNullValueLastBuiltAt; set { _explicitNullValueLastBuiltAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastBuiltAt"); else _explicitNullProperties?.Remove("lastBuiltAt"); } }
+        public string LastBuiltAt { get => _explicitNullValueLastBuiltAt; set { _explicitNullValueLastBuiltAt = value; AdditionalData?.Remove("lastBuiltAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastBuiltAt"); else _explicitNullProperties?.Remove("lastBuiltAt"); } }
         private string _explicitNullValueLastBuiltAt = default!;
 #endif
         /// <summary>Duration of the last successful build in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastSuccessfulBuildDuration { get => _explicitNullValueLastSuccessfulBuildDuration; set { _explicitNullValueLastSuccessfulBuildDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSuccessfulBuildDuration"); else _explicitNullProperties?.Remove("lastSuccessfulBuildDuration"); } }
+        public string? LastSuccessfulBuildDuration { get => _explicitNullValueLastSuccessfulBuildDuration; set { _explicitNullValueLastSuccessfulBuildDuration = value; AdditionalData?.Remove("lastSuccessfulBuildDuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSuccessfulBuildDuration"); else _explicitNullProperties?.Remove("lastSuccessfulBuildDuration"); } }
         private string? _explicitNullValueLastSuccessfulBuildDuration = default!;
 #nullable restore
 #else
-        public string LastSuccessfulBuildDuration { get => _explicitNullValueLastSuccessfulBuildDuration; set { _explicitNullValueLastSuccessfulBuildDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSuccessfulBuildDuration"); else _explicitNullProperties?.Remove("lastSuccessfulBuildDuration"); } }
+        public string LastSuccessfulBuildDuration { get => _explicitNullValueLastSuccessfulBuildDuration; set { _explicitNullValueLastSuccessfulBuildDuration = value; AdditionalData?.Remove("lastSuccessfulBuildDuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSuccessfulBuildDuration"); else _explicitNullProperties?.Remove("lastSuccessfulBuildDuration"); } }
         private string _explicitNullValueLastSuccessfulBuildDuration = default!;
 #endif
         /// <summary>Date and time when the Query Suggestions index was last updated successfully.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastSuccessfulBuiltAt { get => _explicitNullValueLastSuccessfulBuiltAt; set { _explicitNullValueLastSuccessfulBuiltAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSuccessfulBuiltAt"); else _explicitNullProperties?.Remove("lastSuccessfulBuiltAt"); } }
+        public string? LastSuccessfulBuiltAt { get => _explicitNullValueLastSuccessfulBuiltAt; set { _explicitNullValueLastSuccessfulBuiltAt = value; AdditionalData?.Remove("lastSuccessfulBuiltAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSuccessfulBuiltAt"); else _explicitNullProperties?.Remove("lastSuccessfulBuiltAt"); } }
         private string? _explicitNullValueLastSuccessfulBuiltAt = default!;
 #nullable restore
 #else
-        public string LastSuccessfulBuiltAt { get => _explicitNullValueLastSuccessfulBuiltAt; set { _explicitNullValueLastSuccessfulBuiltAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSuccessfulBuiltAt"); else _explicitNullProperties?.Remove("lastSuccessfulBuiltAt"); } }
+        public string LastSuccessfulBuiltAt { get => _explicitNullValueLastSuccessfulBuiltAt; set { _explicitNullValueLastSuccessfulBuiltAt = value; AdditionalData?.Remove("lastSuccessfulBuiltAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSuccessfulBuiltAt"); else _explicitNullProperties?.Remove("lastSuccessfulBuiltAt"); } }
         private string _explicitNullValueLastSuccessfulBuiltAt = default!;
 #endif
         /// <summary>

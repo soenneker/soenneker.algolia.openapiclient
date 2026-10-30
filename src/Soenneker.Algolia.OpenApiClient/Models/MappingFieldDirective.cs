@@ -18,8 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fieldKey") is { } nullNodeFieldKey && nullNodeFieldKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldKey = null;
-            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+            if (parseNode.GetChildNode("fieldKey") is null) { _explicitNullValueFieldKey = default!; _explicitNullProperties?.Remove("fieldKey"); }
+            else if (parseNode.GetChildNode("fieldKey") is { } nullNodeFieldKey && nullNodeFieldKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FieldKey = null;
+            if (parseNode.GetChildNode("value") is null) { _explicitNullValueValue = default!; _explicitNullProperties?.Remove("value"); }
+            else if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Destination field key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FieldKey { get => _explicitNullValueFieldKey; set { _explicitNullValueFieldKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fieldKey"); else _explicitNullProperties?.Remove("fieldKey"); } }
+        public string? FieldKey { get => _explicitNullValueFieldKey; set { _explicitNullValueFieldKey = value; AdditionalData?.Remove("fieldKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fieldKey"); else _explicitNullProperties?.Remove("fieldKey"); } }
         private string? _explicitNullValueFieldKey = default!;
 #nullable restore
 #else
-        public string FieldKey { get => _explicitNullValueFieldKey; set { _explicitNullValueFieldKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fieldKey"); else _explicitNullProperties?.Remove("fieldKey"); } }
+        public string FieldKey { get => _explicitNullValueFieldKey; set { _explicitNullValueFieldKey = value; AdditionalData?.Remove("fieldKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fieldKey"); else _explicitNullProperties?.Remove("fieldKey"); } }
         private string _explicitNullValueFieldKey = default!;
 #endif
         /// <summary>How the destination field should be resolved from the source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValueProperty2? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValueProperty2? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValueProperty2? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValueProperty2 Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValueProperty2 Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValueProperty2 _explicitNullValueValue = default!;
 #endif
         /// <summary>

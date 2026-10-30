@@ -17,8 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("clusterName") is { } nullNodeClusterName && nullNodeClusterName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClusterName = null;
-            if (parseNode.GetChildNode("userID") is { } nullNodeUserID && nullNodeUserID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserID = null;
+            if (parseNode.GetChildNode("clusterName") is null) { _explicitNullValueClusterName = default!; _explicitNullProperties?.Remove("clusterName"); }
+            else if (parseNode.GetChildNode("clusterName") is { } nullNodeClusterName && nullNodeClusterName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClusterName = null;
+            if (parseNode.GetChildNode("userID") is null) { _explicitNullValueUserID = default!; _explicitNullProperties?.Remove("userID"); }
+            else if (parseNode.GetChildNode("userID") is { } nullNodeUserID && nullNodeUserID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserID = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The clusterName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult? ClusterName { get => _explicitNullValueClusterName; set { _explicitNullValueClusterName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clusterName"); else _explicitNullProperties?.Remove("clusterName"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult? ClusterName { get => _explicitNullValueClusterName; set { _explicitNullValueClusterName = value; AdditionalData?.Remove("clusterName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clusterName"); else _explicitNullProperties?.Remove("clusterName"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult? _explicitNullValueClusterName = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult ClusterName { get => _explicitNullValueClusterName; set { _explicitNullValueClusterName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clusterName"); else _explicitNullProperties?.Remove("clusterName"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult ClusterName { get => _explicitNullValueClusterName; set { _explicitNullValueClusterName = value; AdditionalData?.Remove("clusterName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clusterName"); else _explicitNullProperties?.Remove("clusterName"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult _explicitNullValueClusterName = default!;
 #endif
         /// <summary>The userID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult? UserID { get => _explicitNullValueUserID; set { _explicitNullValueUserID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userID"); else _explicitNullProperties?.Remove("userID"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult? UserID { get => _explicitNullValueUserID; set { _explicitNullValueUserID = value; AdditionalData?.Remove("userID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userID"); else _explicitNullProperties?.Remove("userID"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult? _explicitNullValueUserID = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult UserID { get => _explicitNullValueUserID; set { _explicitNullValueUserID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userID"); else _explicitNullProperties?.Remove("userID"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult UserID { get => _explicitNullValueUserID; set { _explicitNullValueUserID = value; AdditionalData?.Remove("userID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userID"); else _explicitNullProperties?.Remove("userID"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult _explicitNullValueUserID = default!;
 #endif
         /// <summary>

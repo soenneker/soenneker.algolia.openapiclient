@@ -18,10 +18,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
-            if (parseNode.GetChildNode("proxy") is { } nullNodeProxy && nullNodeProxy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proxy = null;
-            if (parseNode.GetChildNode("retries") is { } nullNodeRetries && nullNodeRetries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Retries = null;
-            if (parseNode.GetChildNode("timeout") is { } nullNodeTimeout && nullNodeTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeout = null;
+            if (parseNode.GetChildNode("headers") is null) { _explicitNullValueHeaders = default!; _explicitNullProperties?.Remove("headers"); }
+            else if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("proxy") is null) { _explicitNullValueProxy = default!; _explicitNullProperties?.Remove("proxy"); }
+            else if (parseNode.GetChildNode("proxy") is { } nullNodeProxy && nullNodeProxy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proxy = null;
+            if (parseNode.GetChildNode("retries") is null) { _explicitNullValueRetries = default!; _explicitNullProperties?.Remove("retries"); }
+            else if (parseNode.GetChildNode("retries") is { } nullNodeRetries && nullNodeRetries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Retries = null;
+            if (parseNode.GetChildNode("timeout") is null) { _explicitNullValueTimeout = default!; _explicitNullProperties?.Remove("timeout"); }
+            else if (parseNode.GetChildNode("timeout") is { } nullNodeTimeout && nullNodeTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeout = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,28 +33,28 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Headers to add to all requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Headers? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Headers? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Headers? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Headers Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Headers Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Headers _explicitNullValueHeaders = default!;
 #endif
         /// <summary>Proxy for all crawler requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Proxy { get => _explicitNullValueProxy; set { _explicitNullValueProxy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxy"); else _explicitNullProperties?.Remove("proxy"); } }
+        public string? Proxy { get => _explicitNullValueProxy; set { _explicitNullValueProxy = value; AdditionalData?.Remove("proxy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxy"); else _explicitNullProperties?.Remove("proxy"); } }
         private string? _explicitNullValueProxy = default!;
 #nullable restore
 #else
-        public string Proxy { get => _explicitNullValueProxy; set { _explicitNullValueProxy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxy"); else _explicitNullProperties?.Remove("proxy"); } }
+        public string Proxy { get => _explicitNullValueProxy; set { _explicitNullValueProxy = value; AdditionalData?.Remove("proxy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proxy"); else _explicitNullProperties?.Remove("proxy"); } }
         private string _explicitNullValueProxy = default!;
 #endif
         /// <summary>Maximum number of retries to crawl one URL.</summary>
-        public int? Retries { get => _explicitNullValueRetries; set { _explicitNullValueRetries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retries"); else _explicitNullProperties?.Remove("retries"); } }
+        public int? Retries { get => _explicitNullValueRetries; set { _explicitNullValueRetries = value; AdditionalData?.Remove("retries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retries"); else _explicitNullProperties?.Remove("retries"); } }
         private int? _explicitNullValueRetries = default!;
         /// <summary>Timeout in milliseconds for the crawl.</summary>
-        public int? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
+        public int? Timeout { get => _explicitNullValueTimeout; set { _explicitNullValueTimeout = value; AdditionalData?.Remove("timeout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout"); else _explicitNullProperties?.Remove("timeout"); } }
         private int? _explicitNullValueTimeout = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RequestOptions"/> and sets the default values.

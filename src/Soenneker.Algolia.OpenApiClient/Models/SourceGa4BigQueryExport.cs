@@ -18,9 +18,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("datasetID") is { } nullNodeDatasetID && nullNodeDatasetID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatasetID = null;
-            if (parseNode.GetChildNode("projectID") is { } nullNodeProjectID && nullNodeProjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectID = null;
-            if (parseNode.GetChildNode("tablePrefix") is { } nullNodeTablePrefix && nullNodeTablePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TablePrefix = null;
+            if (parseNode.GetChildNode("datasetID") is null) { _explicitNullValueDatasetID = default!; _explicitNullProperties?.Remove("datasetID"); }
+            else if (parseNode.GetChildNode("datasetID") is { } nullNodeDatasetID && nullNodeDatasetID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatasetID = null;
+            if (parseNode.GetChildNode("projectID") is null) { _explicitNullValueProjectID = default!; _explicitNullProperties?.Remove("projectID"); }
+            else if (parseNode.GetChildNode("projectID") is { } nullNodeProjectID && nullNodeProjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectID = null;
+            if (parseNode.GetChildNode("tablePrefix") is null) { _explicitNullValueTablePrefix = default!; _explicitNullProperties?.Remove("tablePrefix"); }
+            else if (parseNode.GetChildNode("tablePrefix") is { } nullNodeTablePrefix && nullNodeTablePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TablePrefix = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>BigQuery dataset ID that the BigQuery export writes to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DatasetID { get => _explicitNullValueDatasetID; set { _explicitNullValueDatasetID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetID"); else _explicitNullProperties?.Remove("datasetID"); } }
+        public string? DatasetID { get => _explicitNullValueDatasetID; set { _explicitNullValueDatasetID = value; AdditionalData?.Remove("datasetID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetID"); else _explicitNullProperties?.Remove("datasetID"); } }
         private string? _explicitNullValueDatasetID = default!;
 #nullable restore
 #else
-        public string DatasetID { get => _explicitNullValueDatasetID; set { _explicitNullValueDatasetID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetID"); else _explicitNullProperties?.Remove("datasetID"); } }
+        public string DatasetID { get => _explicitNullValueDatasetID; set { _explicitNullValueDatasetID = value; AdditionalData?.Remove("datasetID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetID"); else _explicitNullProperties?.Remove("datasetID"); } }
         private string _explicitNullValueDatasetID = default!;
 #endif
         /// <summary>GCP project ID that the BigQuery export writes to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectID { get => _explicitNullValueProjectID; set { _explicitNullValueProjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectID"); else _explicitNullProperties?.Remove("projectID"); } }
+        public string? ProjectID { get => _explicitNullValueProjectID; set { _explicitNullValueProjectID = value; AdditionalData?.Remove("projectID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectID"); else _explicitNullProperties?.Remove("projectID"); } }
         private string? _explicitNullValueProjectID = default!;
 #nullable restore
 #else
-        public string ProjectID { get => _explicitNullValueProjectID; set { _explicitNullValueProjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectID"); else _explicitNullProperties?.Remove("projectID"); } }
+        public string ProjectID { get => _explicitNullValueProjectID; set { _explicitNullValueProjectID = value; AdditionalData?.Remove("projectID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectID"); else _explicitNullProperties?.Remove("projectID"); } }
         private string _explicitNullValueProjectID = default!;
 #endif
         /// <summary>Prefix of the tables that the BigQuery Export writes to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TablePrefix { get => _explicitNullValueTablePrefix; set { _explicitNullValueTablePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tablePrefix"); else _explicitNullProperties?.Remove("tablePrefix"); } }
+        public string? TablePrefix { get => _explicitNullValueTablePrefix; set { _explicitNullValueTablePrefix = value; AdditionalData?.Remove("tablePrefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tablePrefix"); else _explicitNullProperties?.Remove("tablePrefix"); } }
         private string? _explicitNullValueTablePrefix = default!;
 #nullable restore
 #else
-        public string TablePrefix { get => _explicitNullValueTablePrefix; set { _explicitNullValueTablePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tablePrefix"); else _explicitNullProperties?.Remove("tablePrefix"); } }
+        public string TablePrefix { get => _explicitNullValueTablePrefix; set { _explicitNullValueTablePrefix = value; AdditionalData?.Remove("tablePrefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tablePrefix"); else _explicitNullProperties?.Remove("tablePrefix"); } }
         private string _explicitNullValueTablePrefix = default!;
 #endif
         /// <summary>

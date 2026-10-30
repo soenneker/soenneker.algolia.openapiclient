@@ -17,9 +17,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("appId") is { } nullNodeAppId && nullNodeAppId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppId = null;
-            if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
-            if (parseNode.GetChildNode("validated") is { } nullNodeValidated && nullNodeValidated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Validated = null;
+            if (parseNode.GetChildNode("appId") is null) { _explicitNullValueAppId = default!; _explicitNullProperties?.Remove("appId"); }
+            else if (parseNode.GetChildNode("appId") is { } nullNodeAppId && nullNodeAppId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppId = null;
+            if (parseNode.GetChildNode("domain") is null) { _explicitNullValueDomain = default!; _explicitNullProperties?.Remove("domain"); }
+            else if (parseNode.GetChildNode("domain") is { } nullNodeDomain && nullNodeDomain.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Domain = null;
+            if (parseNode.GetChildNode("validated") is null) { _explicitNullValueValidated = default!; _explicitNullProperties?.Remove("validated"); }
+            else if (parseNode.GetChildNode("validated") is { } nullNodeValidated && nullNodeValidated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Validated = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Algolia application ID where the crawler creates and updates indices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appId"); else _explicitNullProperties?.Remove("appId"); } }
+        public string? AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; AdditionalData?.Remove("appId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appId"); else _explicitNullProperties?.Remove("appId"); } }
         private string? _explicitNullValueAppId = default!;
 #nullable restore
 #else
-        public string AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appId"); else _explicitNullProperties?.Remove("appId"); } }
+        public string AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; AdditionalData?.Remove("appId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appId"); else _explicitNullProperties?.Remove("appId"); } }
         private string _explicitNullValueAppId = default!;
 #endif
         /// <summary>Domain name which crawlers can access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string? _explicitNullValueDomain = default!;
 #nullable restore
 #else
-        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
+        public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string _explicitNullValueDomain = default!;
 #endif
         /// <summary>Whether the domain is validated.</summary>
-        public bool? Validated { get => _explicitNullValueValidated; set { _explicitNullValueValidated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validated"); else _explicitNullProperties?.Remove("validated"); } }
+        public bool? Validated { get => _explicitNullValueValidated; set { _explicitNullValueValidated = value; AdditionalData?.Remove("validated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validated"); else _explicitNullProperties?.Remove("validated"); } }
         private bool? _explicitNullValueValidated = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.DomainsResponseAllOf2ItemsItem"/> and sets the default values.

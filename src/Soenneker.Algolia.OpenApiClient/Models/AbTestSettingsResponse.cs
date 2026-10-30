@@ -18,24 +18,26 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("abtestSettings") is { } nullNodeAbtestSettings && nullNodeAbtestSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbtestSettings = null;
-            if (parseNode.GetChildNode("controlIndexInUse") is { } nullNodeControlIndexInUse && nullNodeControlIndexInUse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ControlIndexInUse = null;
+            if (parseNode.GetChildNode("abtestSettings") is null) { _explicitNullValueAbtestSettings = default!; _explicitNullProperties?.Remove("abtestSettings"); }
+            else if (parseNode.GetChildNode("abtestSettings") is { } nullNodeAbtestSettings && nullNodeAbtestSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbtestSettings = null;
+            if (parseNode.GetChildNode("controlIndexInUse") is null) { _explicitNullValueControlIndexInUse = default!; _explicitNullProperties?.Remove("controlIndexInUse"); }
+            else if (parseNode.GetChildNode("controlIndexInUse") is { } nullNodeControlIndexInUse && nullNodeControlIndexInUse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ControlIndexInUse = null;
         }
 
         /// <summary>Captured settings for each variant of the A/B test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.VariantSettings>? AbtestSettings { get => _explicitNullValueAbtestSettings; set { _explicitNullValueAbtestSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abtestSettings"); else _explicitNullProperties?.Remove("abtestSettings"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.VariantSettings>? AbtestSettings { get => _explicitNullValueAbtestSettings; set { _explicitNullValueAbtestSettings = value; AdditionalData?.Remove("abtestSettings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abtestSettings"); else _explicitNullProperties?.Remove("abtestSettings"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.VariantSettings>? _explicitNullValueAbtestSettings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.VariantSettings> AbtestSettings { get => _explicitNullValueAbtestSettings; set { _explicitNullValueAbtestSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abtestSettings"); else _explicitNullProperties?.Remove("abtestSettings"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.VariantSettings> AbtestSettings { get => _explicitNullValueAbtestSettings; set { _explicitNullValueAbtestSettings = value; AdditionalData?.Remove("abtestSettings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abtestSettings"); else _explicitNullProperties?.Remove("abtestSettings"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.VariantSettings> _explicitNullValueAbtestSettings = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether another active A/B test is using the control index.</summary>
-        public bool? ControlIndexInUse { get => _explicitNullValueControlIndexInUse; set { _explicitNullValueControlIndexInUse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("controlIndexInUse"); else _explicitNullProperties?.Remove("controlIndexInUse"); } }
+        public bool? ControlIndexInUse { get => _explicitNullValueControlIndexInUse; set { _explicitNullValueControlIndexInUse = value; AdditionalData?.Remove("controlIndexInUse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("controlIndexInUse"); else _explicitNullProperties?.Remove("controlIndexInUse"); } }
         private bool? _explicitNullValueControlIndexInUse = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbTestSettingsResponse"/> and sets the default values.

@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("searches") is { } nullNodeSearches && nullNodeSearches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Searches = null;
+            if (parseNode.GetChildNode("searches") is null) { _explicitNullValueSearches = default!; _explicitNullProperties?.Remove("searches"); }
+            else if (parseNode.GetChildNode("searches") is { } nullNodeSearches && nullNodeSearches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Searches = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Most popular searches and their number of search results (hits).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseSearchesItem>? Searches { get => _explicitNullValueSearches; set { _explicitNullValueSearches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("searches"); else _explicitNullProperties?.Remove("searches"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseSearchesItem>? Searches { get => _explicitNullValueSearches; set { _explicitNullValueSearches = value; AdditionalData?.Remove("searches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("searches"); else _explicitNullProperties?.Remove("searches"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseSearchesItem>? _explicitNullValueSearches = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseSearchesItem> Searches { get => _explicitNullValueSearches; set { _explicitNullValueSearches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("searches"); else _explicitNullProperties?.Remove("searches"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseSearchesItem> Searches { get => _explicitNullValueSearches; set { _explicitNullValueSearches = value; AdditionalData?.Remove("searches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("searches"); else _explicitNullProperties?.Remove("searches"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseSearchesItem> _explicitNullValueSearches = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("taskId") is { } nullNodeTaskId && nullNodeTaskId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaskId = null;
+            if (parseNode.GetChildNode("taskId") is null) { _explicitNullValueTaskId = default!; _explicitNullProperties?.Remove("taskId"); }
+            else if (parseNode.GetChildNode("taskId") is { } nullNodeTaskId && nullNodeTaskId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaskId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Universally unique identifier (UUID) of the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaskId { get => _explicitNullValueTaskId; set { _explicitNullValueTaskId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskId"); else _explicitNullProperties?.Remove("taskId"); } }
+        public string? TaskId { get => _explicitNullValueTaskId; set { _explicitNullValueTaskId = value; AdditionalData?.Remove("taskId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskId"); else _explicitNullProperties?.Remove("taskId"); } }
         private string? _explicitNullValueTaskId = default!;
 #nullable restore
 #else
-        public string TaskId { get => _explicitNullValueTaskId; set { _explicitNullValueTaskId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskId"); else _explicitNullProperties?.Remove("taskId"); } }
+        public string TaskId { get => _explicitNullValueTaskId; set { _explicitNullValueTaskId = value; AdditionalData?.Remove("taskId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("taskId"); else _explicitNullProperties?.Remove("taskId"); } }
         private string _explicitNullValueTaskId = default!;
 #endif
         /// <summary>

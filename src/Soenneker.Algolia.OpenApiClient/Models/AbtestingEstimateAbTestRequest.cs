@@ -17,8 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("configuration") is { } nullNodeConfiguration && nullNodeConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Configuration = null;
-            if (parseNode.GetChildNode("variants") is { } nullNodeVariants && nullNodeVariants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Variants = null;
+            if (parseNode.GetChildNode("configuration") is null) { _explicitNullValueConfiguration = default!; _explicitNullProperties?.Remove("configuration"); }
+            else if (parseNode.GetChildNode("configuration") is { } nullNodeConfiguration && nullNodeConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Configuration = null;
+            if (parseNode.GetChildNode("variants") is null) { _explicitNullValueVariants = default!; _explicitNullProperties?.Remove("variants"); }
+            else if (parseNode.GetChildNode("variants") is { } nullNodeVariants && nullNodeVariants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Variants = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>A/B test configuration for estimating the sample size and duration using minimum detectable effect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingEstimateAbTestRequestConfiguration? Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingEstimateAbTestRequestConfiguration? Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; AdditionalData?.Remove("configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.AbtestingEstimateAbTestRequestConfiguration? _explicitNullValueConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingEstimateAbTestRequestConfiguration Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingEstimateAbTestRequestConfiguration Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; AdditionalData?.Remove("configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.AbtestingEstimateAbTestRequestConfiguration _explicitNullValueConfiguration = default!;
 #endif
         /// <summary>A/B test variants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAddAbTestsVariant>? Variants { get => _explicitNullValueVariants; set { _explicitNullValueVariants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variants"); else _explicitNullProperties?.Remove("variants"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAddAbTestsVariant>? Variants { get => _explicitNullValueVariants; set { _explicitNullValueVariants = value; AdditionalData?.Remove("variants"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variants"); else _explicitNullProperties?.Remove("variants"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAddAbTestsVariant>? _explicitNullValueVariants = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAddAbTestsVariant> Variants { get => _explicitNullValueVariants; set { _explicitNullValueVariants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variants"); else _explicitNullProperties?.Remove("variants"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAddAbTestsVariant> Variants { get => _explicitNullValueVariants; set { _explicitNullValueVariants = value; AdditionalData?.Remove("variants"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variants"); else _explicitNullProperties?.Remove("variants"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingAddAbTestsVariant> _explicitNullValueVariants = default!;
 #endif
         /// <summary>

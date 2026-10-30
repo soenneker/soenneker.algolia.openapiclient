@@ -18,67 +18,73 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("filterPromotes") is { } nullNodeFilterPromotes && nullNodeFilterPromotes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterPromotes = null;
-            if (parseNode.GetChildNode("hide") is { } nullNodeHide && nullNodeHide.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hide = null;
-            if (parseNode.GetChildNode("params") is { } nullNodeParams && nullNodeParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Params = null;
-            if (parseNode.GetChildNode("promote") is { } nullNodePromote && nullNodePromote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Promote = null;
-            if (parseNode.GetChildNode("redirect") is { } nullNodeRedirect && nullNodeRedirect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Redirect = null;
-            if (parseNode.GetChildNode("userData") is { } nullNodeUserData && nullNodeUserData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserData = null;
+            if (parseNode.GetChildNode("filterPromotes") is null) { _explicitNullValueFilterPromotes = default!; _explicitNullProperties?.Remove("filterPromotes"); }
+            else if (parseNode.GetChildNode("filterPromotes") is { } nullNodeFilterPromotes && nullNodeFilterPromotes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterPromotes = null;
+            if (parseNode.GetChildNode("hide") is null) { _explicitNullValueHide = default!; _explicitNullProperties?.Remove("hide"); }
+            else if (parseNode.GetChildNode("hide") is { } nullNodeHide && nullNodeHide.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hide = null;
+            if (parseNode.GetChildNode("params") is null) { _explicitNullValueParams = default!; _explicitNullProperties?.Remove("params"); }
+            else if (parseNode.GetChildNode("params") is { } nullNodeParams && nullNodeParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Params = null;
+            if (parseNode.GetChildNode("promote") is null) { _explicitNullValuePromote = default!; _explicitNullProperties?.Remove("promote"); }
+            else if (parseNode.GetChildNode("promote") is { } nullNodePromote && nullNodePromote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Promote = null;
+            if (parseNode.GetChildNode("redirect") is null) { _explicitNullValueRedirect = default!; _explicitNullProperties?.Remove("redirect"); }
+            else if (parseNode.GetChildNode("redirect") is { } nullNodeRedirect && nullNodeRedirect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Redirect = null;
+            if (parseNode.GetChildNode("userData") is null) { _explicitNullValueUserData = default!; _explicitNullProperties?.Remove("userData"); }
+            else if (parseNode.GetChildNode("userData") is { } nullNodeUserData && nullNodeUserData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserData = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Determines whether promoted records must also match active filters for the consequence to apply.This ensures user-applied filters take priority and irrelevant matches aren&apos;t shown.For example, if you promote a record with `color: red` but the user filters for `color: blue`,the &quot;red&quot; record won&apos;t be shown.&gt; In the Algolia dashboard, when you use the **Pin an item** consequence, `filterPromotes` appears as the checkbox: **Pinned items must match active filters to be displayed.** For examples, see [Promote results with rules](https://www.algolia.com/doc/guides/managing-results/rules/merchandising-and-promoting/how-to/promote-hits/#promote-results-matching-active-filters).</summary>
-        public bool? FilterPromotes { get => _explicitNullValueFilterPromotes; set { _explicitNullValueFilterPromotes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filterPromotes"); else _explicitNullProperties?.Remove("filterPromotes"); } }
+        public bool? FilterPromotes { get => _explicitNullValueFilterPromotes; set { _explicitNullValueFilterPromotes = value; AdditionalData?.Remove("filterPromotes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filterPromotes"); else _explicitNullProperties?.Remove("filterPromotes"); } }
         private bool? _explicitNullValueFilterPromotes = default!;
         /// <summary>Records you want to hide from the search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceHideItem>? Hide { get => _explicitNullValueHide; set { _explicitNullValueHide = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hide"); else _explicitNullProperties?.Remove("hide"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceHideItem>? Hide { get => _explicitNullValueHide; set { _explicitNullValueHide = value; AdditionalData?.Remove("hide"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hide"); else _explicitNullProperties?.Remove("hide"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceHideItem>? _explicitNullValueHide = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceHideItem> Hide { get => _explicitNullValueHide; set { _explicitNullValueHide = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hide"); else _explicitNullProperties?.Remove("hide"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceHideItem> Hide { get => _explicitNullValueHide; set { _explicitNullValueHide = value; AdditionalData?.Remove("hide"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hide"); else _explicitNullProperties?.Remove("hide"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceHideItem> _explicitNullValueHide = default!;
 #endif
         /// <summary>The params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceParams? Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceParams? Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; AdditionalData?.Remove("params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceParams? _explicitNullValueParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceParams Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceParams Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; AdditionalData?.Remove("params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceParams _explicitNullValueParams = default!;
 #endif
         /// <summary>Records you want to pin to a specific position in the search results.You can promote up to 300 records, either individually, or as groups of up to 100 records each.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Promote>? Promote { get => _explicitNullValuePromote; set { _explicitNullValuePromote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("promote"); else _explicitNullProperties?.Remove("promote"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Promote>? Promote { get => _explicitNullValuePromote; set { _explicitNullValuePromote = value; AdditionalData?.Remove("promote"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("promote"); else _explicitNullProperties?.Remove("promote"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.Promote>? _explicitNullValuePromote = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.Promote> Promote { get => _explicitNullValuePromote; set { _explicitNullValuePromote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("promote"); else _explicitNullProperties?.Remove("promote"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Promote> Promote { get => _explicitNullValuePromote; set { _explicitNullValuePromote = value; AdditionalData?.Remove("promote"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("promote"); else _explicitNullProperties?.Remove("promote"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.Promote> _explicitNullValuePromote = default!;
 #endif
         /// <summary>Redirect to a virtual replica index.This consequence is only valid for rules with `scope: redirect`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceRedirect? Redirect { get => _explicitNullValueRedirect; set { _explicitNullValueRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect"); else _explicitNullProperties?.Remove("redirect"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceRedirect? Redirect { get => _explicitNullValueRedirect; set { _explicitNullValueRedirect = value; AdditionalData?.Remove("redirect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect"); else _explicitNullProperties?.Remove("redirect"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceRedirect? _explicitNullValueRedirect = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceRedirect Redirect { get => _explicitNullValueRedirect; set { _explicitNullValueRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect"); else _explicitNullProperties?.Remove("redirect"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceRedirect Redirect { get => _explicitNullValueRedirect; set { _explicitNullValueRedirect = value; AdditionalData?.Remove("redirect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect"); else _explicitNullProperties?.Remove("redirect"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ConsequenceRedirect _explicitNullValueRedirect = default!;
 #endif
         /// <summary>A JSON object with custom data that will be appended to the `userData` array in the response.This object isn&apos;t interpreted by the API and is limited to 1&amp;nbsp;kB of minified JSON.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchConsequenceUserData? UserData { get => _explicitNullValueUserData; set { _explicitNullValueUserData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userData"); else _explicitNullProperties?.Remove("userData"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchConsequenceUserData? UserData { get => _explicitNullValueUserData; set { _explicitNullValueUserData = value; AdditionalData?.Remove("userData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userData"); else _explicitNullProperties?.Remove("userData"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SearchConsequenceUserData? _explicitNullValueUserData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchConsequenceUserData UserData { get => _explicitNullValueUserData; set { _explicitNullValueUserData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userData"); else _explicitNullProperties?.Remove("userData"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchConsequenceUserData UserData { get => _explicitNullValueUserData; set { _explicitNullValueUserData = value; AdditionalData?.Remove("userData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userData"); else _explicitNullProperties?.Remove("userData"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.SearchConsequenceUserData _explicitNullValueUserData = default!;
 #endif
         /// <summary>

@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("injection") is { } nullNodeInjection && nullNodeInjection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Injection = null;
+            if (parseNode.GetChildNode("injection") is null) { _explicitNullValueInjection = default!; _explicitNullProperties?.Remove("injection"); }
+            else if (parseNode.GetChildNode("injection") is { } nullNodeInjection && nullNodeInjection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Injection = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The injection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Injection? Injection { get => _explicitNullValueInjection; set { _explicitNullValueInjection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("injection"); else _explicitNullProperties?.Remove("injection"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Injection? Injection { get => _explicitNullValueInjection; set { _explicitNullValueInjection = value; AdditionalData?.Remove("injection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("injection"); else _explicitNullProperties?.Remove("injection"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Injection? _explicitNullValueInjection = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Injection Injection { get => _explicitNullValueInjection; set { _explicitNullValueInjection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("injection"); else _explicitNullProperties?.Remove("injection"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Injection Injection { get => _explicitNullValueInjection; set { _explicitNullValueInjection = value; AdditionalData?.Remove("injection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("injection"); else _explicitNullProperties?.Remove("injection"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.Injection _explicitNullValueInjection = default!;
 #endif
         /// <summary>

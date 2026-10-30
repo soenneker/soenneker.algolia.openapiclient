@@ -18,17 +18,19 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("trackedSearchesCount") is { } nullNodeTrackedSearchesCount && nullNodeTrackedSearchesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackedSearchesCount = null;
-            if (parseNode.GetChildNode("usersCount") is { } nullNodeUsersCount && nullNodeUsersCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsersCount = null;
+            if (parseNode.GetChildNode("trackedSearchesCount") is null) { _explicitNullValueTrackedSearchesCount = default!; _explicitNullProperties?.Remove("trackedSearchesCount"); }
+            else if (parseNode.GetChildNode("trackedSearchesCount") is { } nullNodeTrackedSearchesCount && nullNodeTrackedSearchesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackedSearchesCount = null;
+            if (parseNode.GetChildNode("usersCount") is null) { _explicitNullValueUsersCount = default!; _explicitNullProperties?.Remove("usersCount"); }
+            else if (parseNode.GetChildNode("usersCount") is { } nullNodeUsersCount && nullNodeUsersCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsersCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of tracked searches removed from the A/B test.</summary>
-        public int? TrackedSearchesCount { get => _explicitNullValueTrackedSearchesCount; set { _explicitNullValueTrackedSearchesCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackedSearchesCount"); else _explicitNullProperties?.Remove("trackedSearchesCount"); } }
+        public int? TrackedSearchesCount { get => _explicitNullValueTrackedSearchesCount; set { _explicitNullValueTrackedSearchesCount = value; AdditionalData?.Remove("trackedSearchesCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackedSearchesCount"); else _explicitNullProperties?.Remove("trackedSearchesCount"); } }
         private int? _explicitNullValueTrackedSearchesCount = default!;
         /// <summary>Number of users removed from the A/B test.</summary>
-        public int? UsersCount { get => _explicitNullValueUsersCount; set { _explicitNullValueUsersCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usersCount"); else _explicitNullProperties?.Remove("usersCount"); } }
+        public int? UsersCount { get => _explicitNullValueUsersCount; set { _explicitNullValueUsersCount = value; AdditionalData?.Remove("usersCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usersCount"); else _explicitNullProperties?.Remove("usersCount"); } }
         private int? _explicitNullValueUsersCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.FilterEffectsOutliers"/> and sets the default values.

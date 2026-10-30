@@ -18,9 +18,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("countries") is { } nullNodeCountries && nullNodeCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Countries = null;
-            if (parseNode.GetChildNode("currencies") is { } nullNodeCurrencies && nullNodeCurrencies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currencies = null;
-            if (parseNode.GetChildNode("locales") is { } nullNodeLocales && nullNodeLocales.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locales = null;
+            if (parseNode.GetChildNode("countries") is null) { _explicitNullValueCountries = default!; _explicitNullProperties?.Remove("countries"); }
+            else if (parseNode.GetChildNode("countries") is { } nullNodeCountries && nullNodeCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Countries = null;
+            if (parseNode.GetChildNode("currencies") is null) { _explicitNullValueCurrencies = default!; _explicitNullProperties?.Remove("currencies"); }
+            else if (parseNode.GetChildNode("currencies") is { } nullNodeCurrencies && nullNodeCurrencies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currencies = null;
+            if (parseNode.GetChildNode("locales") is null) { _explicitNullValueLocales = default!; _explicitNullProperties?.Remove("locales"); }
+            else if (parseNode.GetChildNode("locales") is { } nullNodeLocales && nullNodeLocales.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locales = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The countries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Countries { get => _explicitNullValueCountries; set { _explicitNullValueCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countries"); else _explicitNullProperties?.Remove("countries"); } }
+        public List<string>? Countries { get => _explicitNullValueCountries; set { _explicitNullValueCountries = value; AdditionalData?.Remove("countries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countries"); else _explicitNullProperties?.Remove("countries"); } }
         private List<string>? _explicitNullValueCountries = default!;
 #nullable restore
 #else
-        public List<string> Countries { get => _explicitNullValueCountries; set { _explicitNullValueCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countries"); else _explicitNullProperties?.Remove("countries"); } }
+        public List<string> Countries { get => _explicitNullValueCountries; set { _explicitNullValueCountries = value; AdditionalData?.Remove("countries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countries"); else _explicitNullProperties?.Remove("countries"); } }
         private List<string> _explicitNullValueCountries = default!;
 #endif
         /// <summary>The currencies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Currencies { get => _explicitNullValueCurrencies; set { _explicitNullValueCurrencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencies"); else _explicitNullProperties?.Remove("currencies"); } }
+        public List<string>? Currencies { get => _explicitNullValueCurrencies; set { _explicitNullValueCurrencies = value; AdditionalData?.Remove("currencies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencies"); else _explicitNullProperties?.Remove("currencies"); } }
         private List<string>? _explicitNullValueCurrencies = default!;
 #nullable restore
 #else
-        public List<string> Currencies { get => _explicitNullValueCurrencies; set { _explicitNullValueCurrencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencies"); else _explicitNullProperties?.Remove("currencies"); } }
+        public List<string> Currencies { get => _explicitNullValueCurrencies; set { _explicitNullValueCurrencies = value; AdditionalData?.Remove("currencies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencies"); else _explicitNullProperties?.Remove("currencies"); } }
         private List<string> _explicitNullValueCurrencies = default!;
 #endif
         /// <summary>The locales property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Locales { get => _explicitNullValueLocales; set { _explicitNullValueLocales = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locales"); else _explicitNullProperties?.Remove("locales"); } }
+        public List<string>? Locales { get => _explicitNullValueLocales; set { _explicitNullValueLocales = value; AdditionalData?.Remove("locales"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locales"); else _explicitNullProperties?.Remove("locales"); } }
         private List<string>? _explicitNullValueLocales = default!;
 #nullable restore
 #else
-        public List<string> Locales { get => _explicitNullValueLocales; set { _explicitNullValueLocales = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locales"); else _explicitNullProperties?.Remove("locales"); } }
+        public List<string> Locales { get => _explicitNullValueLocales; set { _explicitNullValueLocales = value; AdditionalData?.Remove("locales"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locales"); else _explicitNullProperties?.Remove("locales"); } }
         private List<string> _explicitNullValueLocales = default!;
 #endif
         /// <summary>

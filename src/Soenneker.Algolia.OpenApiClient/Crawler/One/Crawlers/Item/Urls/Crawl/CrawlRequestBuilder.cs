@@ -76,7 +76,7 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Urls.Crawl
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://crawler.algolia.com/api", "/crawler/1/crawlers/{id}/urls/crawl", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

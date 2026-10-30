@@ -18,7 +18,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("behavior") is { } nullNodeBehavior && nullNodeBehavior.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Behavior = null;
+            if (parseNode.GetChildNode("behavior") is null) { _explicitNullValueBehavior = default!; _explicitNullProperties?.Remove("behavior"); }
+            else if (parseNode.GetChildNode("behavior") is { } nullNodeBehavior && nullNodeBehavior.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Behavior = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>An object containing either an `injection` or `multifeed` behavior schema, but not both.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionBehavior? Behavior { get => _explicitNullValueBehavior; set { _explicitNullValueBehavior = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behavior"); else _explicitNullProperties?.Remove("behavior"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionBehavior? Behavior { get => _explicitNullValueBehavior; set { _explicitNullValueBehavior = value; AdditionalData?.Remove("behavior"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behavior"); else _explicitNullProperties?.Remove("behavior"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.CompositionBehavior? _explicitNullValueBehavior = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionBehavior Behavior { get => _explicitNullValueBehavior; set { _explicitNullValueBehavior = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behavior"); else _explicitNullProperties?.Remove("behavior"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionBehavior Behavior { get => _explicitNullValueBehavior; set { _explicitNullValueBehavior = value; AdditionalData?.Remove("behavior"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("behavior"); else _explicitNullProperties?.Remove("behavior"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.CompositionBehavior _explicitNullValueBehavior = default!;
 #endif
         /// <summary>

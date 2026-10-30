@@ -17,10 +17,14 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("affinities") is { } nullNodeAffinities && nullNodeAffinities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Affinities = null;
-            if (parseNode.GetChildNode("lastUpdatedAt") is { } nullNodeLastUpdatedAt && nullNodeLastUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdatedAt = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("userID") is { } nullNodeUserID && nullNodeUserID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserID = null;
+            if (parseNode.GetChildNode("affinities") is null) { _explicitNullValueAffinities = default!; _explicitNullProperties?.Remove("affinities"); }
+            else if (parseNode.GetChildNode("affinities") is { } nullNodeAffinities && nullNodeAffinities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Affinities = null;
+            if (parseNode.GetChildNode("lastUpdatedAt") is null) { _explicitNullValueLastUpdatedAt = default!; _explicitNullProperties?.Remove("lastUpdatedAt"); }
+            else if (parseNode.GetChildNode("lastUpdatedAt") is { } nullNodeLastUpdatedAt && nullNodeLastUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdatedAt = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("userID") is null) { _explicitNullValueUserID = default!; _explicitNullProperties?.Remove("userID"); }
+            else if (parseNode.GetChildNode("userID") is { } nullNodeUserID && nullNodeUserID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserID = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The affinities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.UserAffinitiesItem>? Affinities { get => _explicitNullValueAffinities; set { _explicitNullValueAffinities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("affinities"); else _explicitNullProperties?.Remove("affinities"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.UserAffinitiesItem>? Affinities { get => _explicitNullValueAffinities; set { _explicitNullValueAffinities = value; AdditionalData?.Remove("affinities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("affinities"); else _explicitNullProperties?.Remove("affinities"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.UserAffinitiesItem>? _explicitNullValueAffinities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.UserAffinitiesItem> Affinities { get => _explicitNullValueAffinities; set { _explicitNullValueAffinities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("affinities"); else _explicitNullProperties?.Remove("affinities"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.UserAffinitiesItem> Affinities { get => _explicitNullValueAffinities; set { _explicitNullValueAffinities = value; AdditionalData?.Remove("affinities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("affinities"); else _explicitNullProperties?.Remove("affinities"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.UserAffinitiesItem> _explicitNullValueAffinities = default!;
 #endif
         /// <summary>The lastUpdatedAt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastUpdatedAt"); else _explicitNullProperties?.Remove("lastUpdatedAt"); } }
+        public string? LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; AdditionalData?.Remove("lastUpdatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastUpdatedAt"); else _explicitNullProperties?.Remove("lastUpdatedAt"); } }
         private string? _explicitNullValueLastUpdatedAt = default!;
 #nullable restore
 #else
-        public string LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastUpdatedAt"); else _explicitNullProperties?.Remove("lastUpdatedAt"); } }
+        public string LastUpdatedAt { get => _explicitNullValueLastUpdatedAt; set { _explicitNullValueLastUpdatedAt = value; AdditionalData?.Remove("lastUpdatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastUpdatedAt"); else _explicitNullProperties?.Remove("lastUpdatedAt"); } }
         private string _explicitNullValueLastUpdatedAt = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.UserType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.UserType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.UserType? _explicitNullValueType = default!;
         /// <summary>The userID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserID { get => _explicitNullValueUserID; set { _explicitNullValueUserID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userID"); else _explicitNullProperties?.Remove("userID"); } }
+        public string? UserID { get => _explicitNullValueUserID; set { _explicitNullValueUserID = value; AdditionalData?.Remove("userID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userID"); else _explicitNullProperties?.Remove("userID"); } }
         private string? _explicitNullValueUserID = default!;
 #nullable restore
 #else
-        public string UserID { get => _explicitNullValueUserID; set { _explicitNullValueUserID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userID"); else _explicitNullProperties?.Remove("userID"); } }
+        public string UserID { get => _explicitNullValueUserID; set { _explicitNullValueUserID = value; AdditionalData?.Remove("userID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userID"); else _explicitNullProperties?.Remove("userID"); } }
         private string _explicitNullValueUserID = default!;
 #endif
         /// <summary>
@@ -85,7 +89,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "affinities", n => { Affinities = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.UserAffinitiesItem>(global::Soenneker.Algolia.OpenApiClient.Models.UserAffinitiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "lastUpdatedAt", n => { LastUpdatedAt = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.UserType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.UserType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "userID", n => { UserID = n.GetStringValue(); } },
             };
         }

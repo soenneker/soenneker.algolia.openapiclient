@@ -18,9 +18,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hide") is { } nullNodeHide && nullNodeHide.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hide = null;
-            if (parseNode.GetChildNode("params") is { } nullNodeParams && nullNodeParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Params = null;
-            if (parseNode.GetChildNode("promote") is { } nullNodePromote && nullNodePromote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Promote = null;
+            if (parseNode.GetChildNode("hide") is null) { _explicitNullValueHide = default!; _explicitNullProperties?.Remove("hide"); }
+            else if (parseNode.GetChildNode("hide") is { } nullNodeHide && nullNodeHide.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hide = null;
+            if (parseNode.GetChildNode("params") is null) { _explicitNullValueParams = default!; _explicitNullProperties?.Remove("params"); }
+            else if (parseNode.GetChildNode("params") is { } nullNodeParams && nullNodeParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Params = null;
+            if (parseNode.GetChildNode("promote") is null) { _explicitNullValuePromote = default!; _explicitNullProperties?.Remove("promote"); }
+            else if (parseNode.GetChildNode("promote") is { } nullNodePromote && nullNodePromote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Promote = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Exclude items from recommendations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.HideConsequenceObject>? Hide { get => _explicitNullValueHide; set { _explicitNullValueHide = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hide"); else _explicitNullProperties?.Remove("hide"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.HideConsequenceObject>? Hide { get => _explicitNullValueHide; set { _explicitNullValueHide = value; AdditionalData?.Remove("hide"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hide"); else _explicitNullProperties?.Remove("hide"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.HideConsequenceObject>? _explicitNullValueHide = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.HideConsequenceObject> Hide { get => _explicitNullValueHide; set { _explicitNullValueHide = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hide"); else _explicitNullProperties?.Remove("hide"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.HideConsequenceObject> Hide { get => _explicitNullValueHide; set { _explicitNullValueHide = value; AdditionalData?.Remove("hide"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hide"); else _explicitNullProperties?.Remove("hide"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.HideConsequenceObject> _explicitNullValueHide = default!;
 #endif
         /// <summary>Filter or boost recommendations matching a facet filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ParamsConsequence? Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ParamsConsequence? Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; AdditionalData?.Remove("params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ParamsConsequence? _explicitNullValueParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ParamsConsequence Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ParamsConsequence Params { get => _explicitNullValueParams; set { _explicitNullValueParams = value; AdditionalData?.Remove("params"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("params"); else _explicitNullProperties?.Remove("params"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ParamsConsequence _explicitNullValueParams = default!;
 #endif
         /// <summary>Place items at specific positions in the list of recommendations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.PromoteConsequenceObject>? Promote { get => _explicitNullValuePromote; set { _explicitNullValuePromote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("promote"); else _explicitNullProperties?.Remove("promote"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.PromoteConsequenceObject>? Promote { get => _explicitNullValuePromote; set { _explicitNullValuePromote = value; AdditionalData?.Remove("promote"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("promote"); else _explicitNullProperties?.Remove("promote"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.PromoteConsequenceObject>? _explicitNullValuePromote = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.PromoteConsequenceObject> Promote { get => _explicitNullValuePromote; set { _explicitNullValuePromote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("promote"); else _explicitNullProperties?.Remove("promote"); } }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.PromoteConsequenceObject> Promote { get => _explicitNullValuePromote; set { _explicitNullValuePromote = value; AdditionalData?.Remove("promote"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("promote"); else _explicitNullProperties?.Remove("promote"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.PromoteConsequenceObject> _explicitNullValuePromote = default!;
 #endif
         /// <summary>

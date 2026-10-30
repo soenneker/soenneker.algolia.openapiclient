@@ -18,9 +18,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
-            if (parseNode.GetChildNode("inventory") is { } nullNodeInventory && nullNodeInventory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Inventory = null;
-            if (parseNode.GetChildNode("price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
+            if (parseNode.GetChildNode("category") is null) { _explicitNullValueCategory = default!; _explicitNullProperties?.Remove("category"); }
+            else if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("inventory") is null) { _explicitNullValueInventory = default!; _explicitNullProperties?.Remove("inventory"); }
+            else if (parseNode.GetChildNode("inventory") is { } nullNodeInventory && nullNodeInventory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Inventory = null;
+            if (parseNode.GetChildNode("price") is null) { _explicitNullValuePrice = default!; _explicitNullProperties?.Remove("price"); }
+            else if (parseNode.GetChildNode("price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Category custom fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        public List<string>? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; AdditionalData?.Remove("category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
         private List<string>? _explicitNullValueCategory = default!;
 #nullable restore
 #else
-        public List<string> Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        public List<string> Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; AdditionalData?.Remove("category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
         private List<string> _explicitNullValueCategory = default!;
 #endif
         /// <summary>Inventory custom fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Inventory { get => _explicitNullValueInventory; set { _explicitNullValueInventory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory"); else _explicitNullProperties?.Remove("inventory"); } }
+        public List<string>? Inventory { get => _explicitNullValueInventory; set { _explicitNullValueInventory = value; AdditionalData?.Remove("inventory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory"); else _explicitNullProperties?.Remove("inventory"); } }
         private List<string>? _explicitNullValueInventory = default!;
 #nullable restore
 #else
-        public List<string> Inventory { get => _explicitNullValueInventory; set { _explicitNullValueInventory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory"); else _explicitNullProperties?.Remove("inventory"); } }
+        public List<string> Inventory { get => _explicitNullValueInventory; set { _explicitNullValueInventory = value; AdditionalData?.Remove("inventory"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inventory"); else _explicitNullProperties?.Remove("inventory"); } }
         private List<string> _explicitNullValueInventory = default!;
 #endif
         /// <summary>Price custom fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
+        public List<string>? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; AdditionalData?.Remove("price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
         private List<string>? _explicitNullValuePrice = default!;
 #nullable restore
 #else
-        public List<string> Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
+        public List<string> Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; AdditionalData?.Remove("price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
         private List<string> _explicitNullValuePrice = default!;
 #endif
         /// <summary>

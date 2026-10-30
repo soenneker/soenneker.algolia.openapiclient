@@ -17,8 +17,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("facetName") is { } nullNodeFacetName && nullNodeFacetName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetName = null;
-            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+            if (parseNode.GetChildNode("facetName") is null) { _explicitNullValueFacetName = default!; _explicitNullProperties?.Remove("facetName"); }
+            else if (parseNode.GetChildNode("facetName") is { } nullNodeFacetName && nullNodeFacetName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetName = null;
+            if (parseNode.GetChildNode("score") is null) { _explicitNullValueScore = default!; _explicitNullProperties?.Remove("score"); }
+            else if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Facet attribute name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FacetName { get => _explicitNullValueFacetName; set { _explicitNullValueFacetName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetName"); else _explicitNullProperties?.Remove("facetName"); } }
+        public string? FacetName { get => _explicitNullValueFacetName; set { _explicitNullValueFacetName = value; AdditionalData?.Remove("facetName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetName"); else _explicitNullProperties?.Remove("facetName"); } }
         private string? _explicitNullValueFacetName = default!;
 #nullable restore
 #else
-        public string FacetName { get => _explicitNullValueFacetName; set { _explicitNullValueFacetName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetName"); else _explicitNullProperties?.Remove("facetName"); } }
+        public string FacetName { get => _explicitNullValueFacetName; set { _explicitNullValueFacetName = value; AdditionalData?.Remove("facetName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetName"); else _explicitNullProperties?.Remove("facetName"); } }
         private string _explicitNullValueFacetName = default!;
 #endif
         /// <summary>Event score.</summary>
-        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; AdditionalData?.Remove("score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
         private int? _explicitNullValueScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.FacetsScoring"/> and sets the default values.

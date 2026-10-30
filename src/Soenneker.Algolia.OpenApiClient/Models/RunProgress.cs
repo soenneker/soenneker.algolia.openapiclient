@@ -17,17 +17,19 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("expectedNbOfEvents") is { } nullNodeExpectedNbOfEvents && nullNodeExpectedNbOfEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedNbOfEvents = null;
-            if (parseNode.GetChildNode("receivedNbOfEvents") is { } nullNodeReceivedNbOfEvents && nullNodeReceivedNbOfEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReceivedNbOfEvents = null;
+            if (parseNode.GetChildNode("expectedNbOfEvents") is null) { _explicitNullValueExpectedNbOfEvents = default!; _explicitNullProperties?.Remove("expectedNbOfEvents"); }
+            else if (parseNode.GetChildNode("expectedNbOfEvents") is { } nullNodeExpectedNbOfEvents && nullNodeExpectedNbOfEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedNbOfEvents = null;
+            if (parseNode.GetChildNode("receivedNbOfEvents") is null) { _explicitNullValueReceivedNbOfEvents = default!; _explicitNullProperties?.Remove("receivedNbOfEvents"); }
+            else if (parseNode.GetChildNode("receivedNbOfEvents") is { } nullNodeReceivedNbOfEvents && nullNodeReceivedNbOfEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReceivedNbOfEvents = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The expectedNbOfEvents property</summary>
-        public int? ExpectedNbOfEvents { get => _explicitNullValueExpectedNbOfEvents; set { _explicitNullValueExpectedNbOfEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expectedNbOfEvents"); else _explicitNullProperties?.Remove("expectedNbOfEvents"); } }
+        public int? ExpectedNbOfEvents { get => _explicitNullValueExpectedNbOfEvents; set { _explicitNullValueExpectedNbOfEvents = value; AdditionalData?.Remove("expectedNbOfEvents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expectedNbOfEvents"); else _explicitNullProperties?.Remove("expectedNbOfEvents"); } }
         private int? _explicitNullValueExpectedNbOfEvents = default!;
         /// <summary>The receivedNbOfEvents property</summary>
-        public int? ReceivedNbOfEvents { get => _explicitNullValueReceivedNbOfEvents; set { _explicitNullValueReceivedNbOfEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receivedNbOfEvents"); else _explicitNullProperties?.Remove("receivedNbOfEvents"); } }
+        public int? ReceivedNbOfEvents { get => _explicitNullValueReceivedNbOfEvents; set { _explicitNullValueReceivedNbOfEvents = value; AdditionalData?.Remove("receivedNbOfEvents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receivedNbOfEvents"); else _explicitNullProperties?.Remove("receivedNbOfEvents"); } }
         private int? _explicitNullValueReceivedNbOfEvents = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RunProgress"/> and sets the default values.

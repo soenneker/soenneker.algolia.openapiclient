@@ -18,8 +18,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("facet") is { } nullNodeFacet && nullNodeFacet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Facet = null;
-            if (parseNode.GetChildNode("negative") is { } nullNodeNegative && nullNodeNegative.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Negative = null;
+            if (parseNode.GetChildNode("facet") is null) { _explicitNullValueFacet = default!; _explicitNullProperties?.Remove("facet"); }
+            else if (parseNode.GetChildNode("facet") is { } nullNodeFacet && nullNodeFacet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Facet = null;
+            if (parseNode.GetChildNode("negative") is null) { _explicitNullValueNegative = default!; _explicitNullProperties?.Remove("negative"); }
+            else if (parseNode.GetChildNode("negative") is { } nullNodeNegative && nullNodeNegative.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Negative = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Facet attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Facet { get => _explicitNullValueFacet; set { _explicitNullValueFacet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facet"); else _explicitNullProperties?.Remove("facet"); } }
+        public string? Facet { get => _explicitNullValueFacet; set { _explicitNullValueFacet = value; AdditionalData?.Remove("facet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facet"); else _explicitNullProperties?.Remove("facet"); } }
         private string? _explicitNullValueFacet = default!;
 #nullable restore
 #else
-        public string Facet { get => _explicitNullValueFacet; set { _explicitNullValueFacet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facet"); else _explicitNullProperties?.Remove("facet"); } }
+        public string Facet { get => _explicitNullValueFacet; set { _explicitNullValueFacet = value; AdditionalData?.Remove("facet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facet"); else _explicitNullProperties?.Remove("facet"); } }
         private string _explicitNullValueFacet = default!;
 #endif
         /// <summary>Whether the filter is negative.If true, recommendations must not have the same value for the `facet` attribute.If false, recommendations must have the same value for the `facet` attribute.</summary>
-        public bool? Negative { get => _explicitNullValueNegative; set { _explicitNullValueNegative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative"); else _explicitNullProperties?.Remove("negative"); } }
+        public bool? Negative { get => _explicitNullValueNegative; set { _explicitNullValueNegative = value; AdditionalData?.Remove("negative"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative"); else _explicitNullProperties?.Remove("negative"); } }
         private bool? _explicitNullValueNegative = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AutoFacetFilter"/> and sets the default values.

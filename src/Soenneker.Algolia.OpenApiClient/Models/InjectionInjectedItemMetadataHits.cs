@@ -18,23 +18,25 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("addItemKey") is { } nullNodeAddItemKey && nullNodeAddItemKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddItemKey = null;
-            if (parseNode.GetChildNode("extra") is { } nullNodeExtra && nullNodeExtra.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Extra = null;
+            if (parseNode.GetChildNode("addItemKey") is null) { _explicitNullValueAddItemKey = default!; _explicitNullProperties?.Remove("addItemKey"); }
+            else if (parseNode.GetChildNode("addItemKey") is { } nullNodeAddItemKey && nullNodeAddItemKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddItemKey = null;
+            if (parseNode.GetChildNode("extra") is null) { _explicitNullValueExtra = default!; _explicitNullProperties?.Remove("extra"); }
+            else if (parseNode.GetChildNode("extra") is { } nullNodeExtra && nullNodeExtra.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Extra = null;
         }
 
         /// <summary>When true, each affected hit&apos;s `_extra` object includes an `_injectedItemKey` field identifying the injectedItem that inserted it. Defaults to false, meaning hits don&apos;t include `_injectedItemKey`. To identify injected hits without this flag, define your own key-value pairs in `extra`.</summary>
-        public bool? AddItemKey { get => _explicitNullValueAddItemKey; set { _explicitNullValueAddItemKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addItemKey"); else _explicitNullProperties?.Remove("addItemKey"); } }
+        public bool? AddItemKey { get => _explicitNullValueAddItemKey; set { _explicitNullValueAddItemKey = value; AdditionalData?.Remove("addItemKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addItemKey"); else _explicitNullProperties?.Remove("addItemKey"); } }
         private bool? _explicitNullValueAddItemKey = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The user-defined key-value pairs that will be placed in the `_extra` field of each affected hit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHitsExtraProperty2? Extra { get => _explicitNullValueExtra; set { _explicitNullValueExtra = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra"); else _explicitNullProperties?.Remove("extra"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHitsExtraProperty2? Extra { get => _explicitNullValueExtra; set { _explicitNullValueExtra = value; AdditionalData?.Remove("extra"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra"); else _explicitNullProperties?.Remove("extra"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHitsExtraProperty2? _explicitNullValueExtra = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHitsExtraProperty2 Extra { get => _explicitNullValueExtra; set { _explicitNullValueExtra = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra"); else _explicitNullProperties?.Remove("extra"); } }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHitsExtraProperty2 Extra { get => _explicitNullValueExtra; set { _explicitNullValueExtra = value; AdditionalData?.Remove("extra"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra"); else _explicitNullProperties?.Remove("extra"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHitsExtraProperty2 _explicitNullValueExtra = default!;
 #endif
         /// <summary>

@@ -175,7 +175,7 @@ namespace Soenneker.Algolia.OpenApiClient.AbtestingV3.Item
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.AbtestingV3.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://analytics.us.algolia.com", "/abtesting-v3/{path}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -194,7 +194,7 @@ namespace Soenneker.Algolia.OpenApiClient.AbtestingV3.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.AbtestingV3.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://analytics.us.algolia.com", "/abtesting-v3/{path}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -215,7 +215,7 @@ namespace Soenneker.Algolia.OpenApiClient.AbtestingV3.Item
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://analytics.us.algolia.com", "/abtesting-v3/{path}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -237,7 +237,7 @@ namespace Soenneker.Algolia.OpenApiClient.AbtestingV3.Item
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://analytics.us.algolia.com", "/abtesting-v3/{path}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

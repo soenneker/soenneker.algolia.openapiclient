@@ -18,14 +18,22 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("corrections") is { } nullNodeCorrections && nullNodeCorrections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Corrections = null;
-            if (parseNode.GetChildNode("input") is { } nullNodeInput && nullNodeInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Input = null;
-            if (parseNode.GetChildNode("objectID") is { } nullNodeObjectID && nullNodeObjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectID = null;
-            if (parseNode.GetChildNode("placeholder") is { } nullNodePlaceholder && nullNodePlaceholder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Placeholder = null;
-            if (parseNode.GetChildNode("replacements") is { } nullNodeReplacements && nullNodeReplacements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Replacements = null;
-            if (parseNode.GetChildNode("synonyms") is { } nullNodeSynonyms && nullNodeSynonyms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Synonyms = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("word") is { } nullNodeWord && nullNodeWord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Word = null;
+            if (parseNode.GetChildNode("corrections") is null) { _explicitNullValueCorrections = default!; _explicitNullProperties?.Remove("corrections"); }
+            else if (parseNode.GetChildNode("corrections") is { } nullNodeCorrections && nullNodeCorrections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Corrections = null;
+            if (parseNode.GetChildNode("input") is null) { _explicitNullValueInput = default!; _explicitNullProperties?.Remove("input"); }
+            else if (parseNode.GetChildNode("input") is { } nullNodeInput && nullNodeInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Input = null;
+            if (parseNode.GetChildNode("objectID") is null) { _explicitNullValueObjectID = default!; _explicitNullProperties?.Remove("objectID"); }
+            else if (parseNode.GetChildNode("objectID") is { } nullNodeObjectID && nullNodeObjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectID = null;
+            if (parseNode.GetChildNode("placeholder") is null) { _explicitNullValuePlaceholder = default!; _explicitNullProperties?.Remove("placeholder"); }
+            else if (parseNode.GetChildNode("placeholder") is { } nullNodePlaceholder && nullNodePlaceholder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Placeholder = null;
+            if (parseNode.GetChildNode("replacements") is null) { _explicitNullValueReplacements = default!; _explicitNullProperties?.Remove("replacements"); }
+            else if (parseNode.GetChildNode("replacements") is { } nullNodeReplacements && nullNodeReplacements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Replacements = null;
+            if (parseNode.GetChildNode("synonyms") is null) { _explicitNullValueSynonyms = default!; _explicitNullProperties?.Remove("synonyms"); }
+            else if (parseNode.GetChildNode("synonyms") is { } nullNodeSynonyms && nullNodeSynonyms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Synonyms = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("word") is null) { _explicitNullValueWord = default!; _explicitNullProperties?.Remove("word"); }
+            else if (parseNode.GetChildNode("word") is { } nullNodeWord && nullNodeWord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Word = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,76 +41,76 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Words to be matched in records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Corrections { get => _explicitNullValueCorrections; set { _explicitNullValueCorrections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("corrections"); else _explicitNullProperties?.Remove("corrections"); } }
+        public List<string>? Corrections { get => _explicitNullValueCorrections; set { _explicitNullValueCorrections = value; AdditionalData?.Remove("corrections"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("corrections"); else _explicitNullProperties?.Remove("corrections"); } }
         private List<string>? _explicitNullValueCorrections = default!;
 #nullable restore
 #else
-        public List<string> Corrections { get => _explicitNullValueCorrections; set { _explicitNullValueCorrections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("corrections"); else _explicitNullProperties?.Remove("corrections"); } }
+        public List<string> Corrections { get => _explicitNullValueCorrections; set { _explicitNullValueCorrections = value; AdditionalData?.Remove("corrections"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("corrections"); else _explicitNullProperties?.Remove("corrections"); } }
         private List<string> _explicitNullValueCorrections = default!;
 #endif
         /// <summary>Word or phrase to appear in query strings (for [`onewaysynonym`s](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/adding-synonyms/in-depth/one-way-synonyms)).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
+        public string? Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; AdditionalData?.Remove("input"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
         private string? _explicitNullValueInput = default!;
 #nullable restore
 #else
-        public string Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
+        public string Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; AdditionalData?.Remove("input"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
         private string _explicitNullValueInput = default!;
 #endif
         /// <summary>Unique identifier of a synonym object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
+        public string? ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; AdditionalData?.Remove("objectID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
         private string? _explicitNullValueObjectID = default!;
 #nullable restore
 #else
-        public string ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
+        public string ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; AdditionalData?.Remove("objectID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
         private string _explicitNullValueObjectID = default!;
 #endif
         /// <summary>[Placeholder token](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/adding-synonyms/in-depth/synonyms-placeholders) to be put inside records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Placeholder { get => _explicitNullValuePlaceholder; set { _explicitNullValuePlaceholder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("placeholder"); else _explicitNullProperties?.Remove("placeholder"); } }
+        public string? Placeholder { get => _explicitNullValuePlaceholder; set { _explicitNullValuePlaceholder = value; AdditionalData?.Remove("placeholder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("placeholder"); else _explicitNullProperties?.Remove("placeholder"); } }
         private string? _explicitNullValuePlaceholder = default!;
 #nullable restore
 #else
-        public string Placeholder { get => _explicitNullValuePlaceholder; set { _explicitNullValuePlaceholder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("placeholder"); else _explicitNullProperties?.Remove("placeholder"); } }
+        public string Placeholder { get => _explicitNullValuePlaceholder; set { _explicitNullValuePlaceholder = value; AdditionalData?.Remove("placeholder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("placeholder"); else _explicitNullProperties?.Remove("placeholder"); } }
         private string _explicitNullValuePlaceholder = default!;
 #endif
         /// <summary>Query words that will match the [placeholder token](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/adding-synonyms/in-depth/synonyms-placeholders).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Replacements { get => _explicitNullValueReplacements; set { _explicitNullValueReplacements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replacements"); else _explicitNullProperties?.Remove("replacements"); } }
+        public List<string>? Replacements { get => _explicitNullValueReplacements; set { _explicitNullValueReplacements = value; AdditionalData?.Remove("replacements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replacements"); else _explicitNullProperties?.Remove("replacements"); } }
         private List<string>? _explicitNullValueReplacements = default!;
 #nullable restore
 #else
-        public List<string> Replacements { get => _explicitNullValueReplacements; set { _explicitNullValueReplacements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replacements"); else _explicitNullProperties?.Remove("replacements"); } }
+        public List<string> Replacements { get => _explicitNullValueReplacements; set { _explicitNullValueReplacements = value; AdditionalData?.Remove("replacements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replacements"); else _explicitNullProperties?.Remove("replacements"); } }
         private List<string> _explicitNullValueReplacements = default!;
 #endif
         /// <summary>Words or phrases considered equivalent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Synonyms { get => _explicitNullValueSynonyms; set { _explicitNullValueSynonyms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("synonyms"); else _explicitNullProperties?.Remove("synonyms"); } }
+        public List<string>? Synonyms { get => _explicitNullValueSynonyms; set { _explicitNullValueSynonyms = value; AdditionalData?.Remove("synonyms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("synonyms"); else _explicitNullProperties?.Remove("synonyms"); } }
         private List<string>? _explicitNullValueSynonyms = default!;
 #nullable restore
 #else
-        public List<string> Synonyms { get => _explicitNullValueSynonyms; set { _explicitNullValueSynonyms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("synonyms"); else _explicitNullProperties?.Remove("synonyms"); } }
+        public List<string> Synonyms { get => _explicitNullValueSynonyms; set { _explicitNullValueSynonyms = value; AdditionalData?.Remove("synonyms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("synonyms"); else _explicitNullProperties?.Remove("synonyms"); } }
         private List<string> _explicitNullValueSynonyms = default!;
 #endif
         /// <summary>Synonym type.</summary>
 #nullable enable
-        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private string? _explicitNullValueType = default!;
 #nullable restore
         /// <summary>Word or phrase to appear in query strings (for [`altcorrection1` and `altcorrection2`](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/adding-synonyms/in-depth/synonyms-alternative-corrections)).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Word { get => _explicitNullValueWord; set { _explicitNullValueWord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word"); else _explicitNullProperties?.Remove("word"); } }
+        public string? Word { get => _explicitNullValueWord; set { _explicitNullValueWord = value; AdditionalData?.Remove("word"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word"); else _explicitNullProperties?.Remove("word"); } }
         private string? _explicitNullValueWord = default!;
 #nullable restore
 #else
-        public string Word { get => _explicitNullValueWord; set { _explicitNullValueWord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word"); else _explicitNullProperties?.Remove("word"); } }
+        public string Word { get => _explicitNullValueWord; set { _explicitNullValueWord = value; AdditionalData?.Remove("word"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word"); else _explicitNullProperties?.Remove("word"); } }
         private string _explicitNullValueWord = default!;
 #endif
         /// <summary>
