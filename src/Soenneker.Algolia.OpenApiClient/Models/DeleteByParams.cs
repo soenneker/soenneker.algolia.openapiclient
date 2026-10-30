@@ -11,72 +11,103 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DeleteByParams : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("aroundLatLng") is { } nullNodeAroundLatLng && nullNodeAroundLatLng.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AroundLatLng = null;
+            if (parseNode.GetChildNode("aroundRadius") is { } nullNodeAroundRadius && nullNodeAroundRadius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AroundRadius = null;
+            if (parseNode.GetChildNode("facetFilters") is { } nullNodeFacetFilters && nullNodeFacetFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetFilters = null;
+            if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("insideBoundingBox") is { } nullNodeInsideBoundingBox && nullNodeInsideBoundingBox.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InsideBoundingBox = null;
+            if (parseNode.GetChildNode("insidePolygon") is { } nullNodeInsidePolygon && nullNodeInsidePolygon.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InsidePolygon = null;
+            if (parseNode.GetChildNode("numericFilters") is { } nullNodeNumericFilters && nullNodeNumericFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumericFilters = null;
+            if (parseNode.GetChildNode("tagFilters") is { } nullNodeTagFilters && nullNodeTagFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TagFilters = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Coordinates for the center of a circle, expressed as a comma-separated string of latitude and longitude.Only records included within a circle around this central location are included in the results.The radius of the circle is determined by the `aroundRadius` and `minimumAroundRadius` settings.This parameter is ignored if you also specify `insidePolygon` or `insideBoundingBox`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AroundLatLng { get; set; }
+        public string? AroundLatLng { get => _explicitNullValueAroundLatLng; set { _explicitNullValueAroundLatLng = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aroundLatLng"); else _explicitNullProperties?.Remove("aroundLatLng"); } }
+        private string? _explicitNullValueAroundLatLng = default!;
 #nullable restore
 #else
-        public string AroundLatLng { get; set; }
+        public string AroundLatLng { get => _explicitNullValueAroundLatLng; set { _explicitNullValueAroundLatLng = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aroundLatLng"); else _explicitNullProperties?.Remove("aroundLatLng"); } }
+        private string _explicitNullValueAroundLatLng = default!;
 #endif
         /// <summary>Maximum radius for a search around a central location.This parameter works in combination with the `aroundLatLng` and `aroundLatLngViaIP` parameters.By default, the search radius is determined automatically from the density of hits around the central location.The search radius is small if there are many hits close to the central coordinates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius? AroundRadius { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius? AroundRadius { get => _explicitNullValueAroundRadius; set { _explicitNullValueAroundRadius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aroundRadius"); else _explicitNullProperties?.Remove("aroundRadius"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius? _explicitNullValueAroundRadius = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius AroundRadius { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius AroundRadius { get => _explicitNullValueAroundRadius; set { _explicitNullValueAroundRadius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aroundRadius"); else _explicitNullProperties?.Remove("aroundRadius"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchAroundRadius _explicitNullValueAroundRadius = default!;
 #endif
         /// <summary>Filter the search by facet values, so that only records with the same facet values are retrieved.**Prefer using the `filters` parameter, which supports all filter types and combinations with boolean operators.**- `[filter1, filter2]` is interpreted as `filter1 AND filter2`.- `[[filter1, filter2], filter3]` is interpreted as `filter1 OR filter2 AND filter3`.- `facet:-value` is interpreted as `NOT facet:value`.While it&apos;s best to avoid attributes that start with a `-`, you can still filter them by escaping with a backslash:`facet:\-value`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters? FacetFilters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters? FacetFilters { get => _explicitNullValueFacetFilters; set { _explicitNullValueFacetFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetFilters"); else _explicitNullProperties?.Remove("facetFilters"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters? _explicitNullValueFacetFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters FacetFilters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters FacetFilters { get => _explicitNullValueFacetFilters; set { _explicitNullValueFacetFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetFilters"); else _explicitNullProperties?.Remove("facetFilters"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchFacetFilters _explicitNullValueFacetFilters = default!;
 #endif
         /// <summary>Filter expression to only include items that match the filter criteria in the response.You can use these filter expressions:- **Numeric filters.** `&lt;facet&gt; &lt;op&gt; &lt;number&gt;`, where `&lt;op&gt;` is one of `&lt;`, `&lt;=`, `=`, `!=`, `&gt;`, `&gt;=`.- **Ranges.** `&lt;facet&gt;:&lt;lower&gt; TO &lt;upper&gt;`, where `&lt;lower&gt;` and `&lt;upper&gt;` are the lower and upper limits of the range (inclusive).- **Facet filters.** `&lt;facet&gt;:&lt;value&gt;`, where `&lt;facet&gt;` is a facet attribute (case-sensitive) and `&lt;value&gt;` a facet value.- **Tag filters.** `_tags:&lt;value&gt;` or just `&lt;value&gt;` (case-sensitive).- **Boolean filters.** `&lt;facet&gt;: true | false`.You can combine filters with `AND`, `OR`, and `NOT` operators with the following restrictions:- You can only combine filters of the same type with `OR`.  **Not supported:** `facet:value OR num &gt; 3`.- You can&apos;t use `NOT` with combinations of filters.  **Not supported:** `NOT(facet:value OR facet:value)`- You can&apos;t combine conjunctions (`AND`) with `OR`.  **Not supported:** `facet:value OR (facet:value AND facet:value)`Use quotes if the facet attribute name or facet value contains spaces, keywords (`OR`, `AND`, `NOT`), or quotes.If a facet attribute is an array, the filter matches if it matches at least one element of the array.For more information, see [Filters](https://www.algolia.com/doc/guides/managing-results/refine-results/filtering).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Filters { get; set; }
+        public string? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private string? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public string Filters { get; set; }
+        public string Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private string _explicitNullValueFilters = default!;
 #endif
         /// <summary>The insideBoundingBox property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox? InsideBoundingBox { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox? InsideBoundingBox { get => _explicitNullValueInsideBoundingBox; set { _explicitNullValueInsideBoundingBox = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insideBoundingBox"); else _explicitNullProperties?.Remove("insideBoundingBox"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox? _explicitNullValueInsideBoundingBox = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox InsideBoundingBox { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox InsideBoundingBox { get => _explicitNullValueInsideBoundingBox; set { _explicitNullValueInsideBoundingBox = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insideBoundingBox"); else _explicitNullProperties?.Remove("insideBoundingBox"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchInsideBoundingBox _explicitNullValueInsideBoundingBox = default!;
 #endif
         /// <summary>Coordinates of a polygon in which to search.Polygons are defined by 3 to 10,000 points. Each point is represented by its latitude and longitude.Provide multiple polygons as nested arrays.For more information, see [filtering inside polygons](https://www.algolia.com/doc/guides/managing-results/refine-results/geolocation/#filtering-inside-rectangular-or-polygonal-areas).This parameter is ignored if you also specify `insideBoundingBox`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? InsidePolygon { get; set; }
+        public UntypedNode? InsidePolygon { get => _explicitNullValueInsidePolygon; set { _explicitNullValueInsidePolygon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insidePolygon"); else _explicitNullProperties?.Remove("insidePolygon"); } }
+        private UntypedNode? _explicitNullValueInsidePolygon = default!;
 #nullable restore
 #else
-        public UntypedNode InsidePolygon { get; set; }
+        public UntypedNode InsidePolygon { get => _explicitNullValueInsidePolygon; set { _explicitNullValueInsidePolygon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insidePolygon"); else _explicitNullProperties?.Remove("insidePolygon"); } }
+        private UntypedNode _explicitNullValueInsidePolygon = default!;
 #endif
         /// <summary>Filter by numeric facets.**Prefer using the `filters` parameter, which supports all filter types and combinations with boolean operators.**You can use numeric comparison operators: `&lt;`, `&lt;=`, `=`, `!=`, `&gt;`, `&gt;=`.Comparisons are precise up to 3 decimals.You can also provide ranges: `facet:&lt;lower&gt; TO &lt;upper&gt;`. The range includes the lower and upper boundaries.The same combination rules apply as for `facetFilters`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchNumericFilters? NumericFilters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchNumericFilters? NumericFilters { get => _explicitNullValueNumericFilters; set { _explicitNullValueNumericFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numericFilters"); else _explicitNullProperties?.Remove("numericFilters"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchNumericFilters? _explicitNullValueNumericFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchNumericFilters NumericFilters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchNumericFilters NumericFilters { get => _explicitNullValueNumericFilters; set { _explicitNullValueNumericFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numericFilters"); else _explicitNullProperties?.Remove("numericFilters"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchNumericFilters _explicitNullValueNumericFilters = default!;
 #endif
         /// <summary>Filter the search by values of the special `_tags` attribute.**Prefer using the `filters` parameter, which supports all filter types and combinations with boolean operators.**Different from regular facets, `_tags` can only be used for filtering (including or excluding records).You won&apos;t get a facet count.The same combination and escaping rules apply as for `facetFilters`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters? TagFilters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters? TagFilters { get => _explicitNullValueTagFilters; set { _explicitNullValueTagFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tagFilters"); else _explicitNullProperties?.Remove("tagFilters"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters? _explicitNullValueTagFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters TagFilters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters TagFilters { get => _explicitNullValueTagFilters; set { _explicitNullValueTagFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tagFilters"); else _explicitNullProperties?.Remove("tagFilters"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters _explicitNullValueTagFilters = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.DeleteByParams"/> and sets the default values.
@@ -93,7 +124,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.DeleteByParams CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.DeleteByParams();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.DeleteByParams(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -128,6 +159,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("insidePolygon", InsidePolygon);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchNumericFilters>("numericFilters", NumericFilters);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchTagFilters>("tagFilters", TagFilters);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

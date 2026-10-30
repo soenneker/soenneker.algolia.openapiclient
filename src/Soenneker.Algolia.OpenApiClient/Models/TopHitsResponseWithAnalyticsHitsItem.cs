@@ -11,29 +11,51 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TopHitsResponseWithAnalyticsHitsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("clickCount") is { } nullNodeClickCount && nullNodeClickCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickCount = null;
+            if (parseNode.GetChildNode("clickThroughRate") is { } nullNodeClickThroughRate && nullNodeClickThroughRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickThroughRate = null;
+            if (parseNode.GetChildNode("conversionCount") is { } nullNodeConversionCount && nullNodeConversionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversionCount = null;
+            if (parseNode.GetChildNode("conversionRate") is { } nullNodeConversionRate && nullNodeConversionRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversionRate = null;
+            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("hit") is { } nullNodeHit && nullNodeHit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hit = null;
+            if (parseNode.GetChildNode("trackedHitCount") is { } nullNodeTrackedHitCount && nullNodeTrackedHitCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackedHitCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of clicks associated with this search.</summary>
-        public int? ClickCount { get; set; }
+        public int? ClickCount { get => _explicitNullValueClickCount; set { _explicitNullValueClickCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clickCount"); else _explicitNullProperties?.Remove("clickCount"); } }
+        private int? _explicitNullValueClickCount = default!;
         /// <summary>Click-through rate: calculated as the number of tracked searches with at least one click event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.</summary>
-        public double? ClickThroughRate { get; set; }
+        public double? ClickThroughRate { get => _explicitNullValueClickThroughRate; set { _explicitNullValueClickThroughRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clickThroughRate"); else _explicitNullProperties?.Remove("clickThroughRate"); } }
+        private double? _explicitNullValueClickThroughRate = default!;
         /// <summary>Number of conversions from this search.</summary>
-        public int? ConversionCount { get; set; }
+        public int? ConversionCount { get => _explicitNullValueConversionCount; set { _explicitNullValueConversionCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversionCount"); else _explicitNullProperties?.Remove("conversionCount"); } }
+        private int? _explicitNullValueConversionCount = default!;
         /// <summary>Conversion rate: calculated as the number of tracked searches with at least one conversion event divided by the number of tracked searches.If null, Algolia didn&apos;t receive any search requests with `clickAnalytics` set to true.</summary>
-        public double? ConversionRate { get; set; }
+        public double? ConversionRate { get => _explicitNullValueConversionRate; set { _explicitNullValueConversionRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversionRate"); else _explicitNullProperties?.Remove("conversionRate"); } }
+        private double? _explicitNullValueConversionRate = default!;
         /// <summary>Number of occurrences.</summary>
-        public int? Count { get; set; }
+        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        private int? _explicitNullValueCount = default!;
         /// <summary>Object ID of a record returned as a search result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hit { get; set; }
+        public string? Hit { get => _explicitNullValueHit; set { _explicitNullValueHit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hit"); else _explicitNullProperties?.Remove("hit"); } }
+        private string? _explicitNullValueHit = default!;
 #nullable restore
 #else
-        public string Hit { get; set; }
+        public string Hit { get => _explicitNullValueHit; set { _explicitNullValueHit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hit"); else _explicitNullProperties?.Remove("hit"); } }
+        private string _explicitNullValueHit = default!;
 #endif
         /// <summary>Number of tracked searches. Tracked searches are search requests where the `clickAnalytics` parameter is true.</summary>
-        public int? TrackedHitCount { get; set; }
+        public int? TrackedHitCount { get => _explicitNullValueTrackedHitCount; set { _explicitNullValueTrackedHitCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackedHitCount"); else _explicitNullProperties?.Remove("trackedHitCount"); } }
+        private int? _explicitNullValueTrackedHitCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TopHitsResponseWithAnalyticsHitsItem"/> and sets the default values.
         /// </summary>
@@ -52,7 +74,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.TopHitsResponseWithAnalyticsHitsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.TopHitsResponseWithAnalyticsHitsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.TopHitsResponseWithAnalyticsHitsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,6 +107,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("count", Count);
             writer.WriteStringValue("hit", Hit);
             writer.WriteIntValue("trackedHitCount", TrackedHitCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

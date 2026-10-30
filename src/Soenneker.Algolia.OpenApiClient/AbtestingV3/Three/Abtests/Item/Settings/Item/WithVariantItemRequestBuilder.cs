@@ -71,6 +71,8 @@ namespace Soenneker.Algolia.OpenApiClient.AbtestingV3.Three.Abtests.Item.Setting
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.ErrorBase.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Algolia.OpenApiClient.Models.ConflictResponse.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Algolia.OpenApiClient.Models.ErrorBase.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

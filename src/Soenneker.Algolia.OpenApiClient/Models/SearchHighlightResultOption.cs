@@ -12,28 +12,45 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchHighlightResultOption : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("fullyHighlighted") is { } nullNodeFullyHighlighted && nullNodeFullyHighlighted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FullyHighlighted = null;
+            if (parseNode.GetChildNode("matchedWords") is { } nullNodeMatchedWords && nullNodeMatchedWords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchedWords = null;
+            if (parseNode.GetChildNode("matchLevel") is { } nullNodeMatchLevel && nullNodeMatchLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchLevel = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the entire attribute value is highlighted.</summary>
-        public bool? FullyHighlighted { get; set; }
+        public bool? FullyHighlighted { get => _explicitNullValueFullyHighlighted; set { _explicitNullValueFullyHighlighted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fullyHighlighted"); else _explicitNullProperties?.Remove("fullyHighlighted"); } }
+        private bool? _explicitNullValueFullyHighlighted = default!;
         /// <summary>List of matched words from the search query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MatchedWords { get; set; }
+        public List<string>? MatchedWords { get => _explicitNullValueMatchedWords; set { _explicitNullValueMatchedWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matchedWords"); else _explicitNullProperties?.Remove("matchedWords"); } }
+        private List<string>? _explicitNullValueMatchedWords = default!;
 #nullable restore
 #else
-        public List<string> MatchedWords { get; set; }
+        public List<string> MatchedWords { get => _explicitNullValueMatchedWords; set { _explicitNullValueMatchedWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matchedWords"); else _explicitNullProperties?.Remove("matchedWords"); } }
+        private List<string> _explicitNullValueMatchedWords = default!;
 #endif
         /// <summary>Whether the whole query string matches or only a part.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchMatchLevel? MatchLevel { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchMatchLevel? MatchLevel { get => _explicitNullValueMatchLevel; set { _explicitNullValueMatchLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matchLevel"); else _explicitNullProperties?.Remove("matchLevel"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchMatchLevel? _explicitNullValueMatchLevel = default!;
         /// <summary>Highlighted attribute value, including HTML tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private string? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public string Value { get; set; }
+        public string Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private string _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultOption"/> and sets the default values.
@@ -50,7 +67,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultOption CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultOption();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultOption(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("matchedWords", MatchedWords);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchMatchLevel>("matchLevel", MatchLevel);
             writer.WriteStringValue("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

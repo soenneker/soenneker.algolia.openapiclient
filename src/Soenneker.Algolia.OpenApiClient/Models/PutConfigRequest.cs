@@ -11,29 +11,46 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PutConfigRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("features") is { } nullNodeFeatures && nullNodeFeatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Features = null;
+            if (parseNode.GetChildNode("indices") is { } nullNodeIndices && nullNodeIndices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indices = null;
+            if (parseNode.GetChildNode("personalizationReRanking") is { } nullNodePersonalizationReRanking && nullNodePersonalizationReRanking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PersonalizationReRanking = null;
+            if (parseNode.GetChildNode("profileType") is { } nullNodeProfileType && nullNodeProfileType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProfileType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The features property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Features? Features { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Features? Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.Features? _explicitNullValueFeatures = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Features Features { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Features Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.Features _explicitNullValueFeatures = default!;
 #endif
         /// <summary>The indices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.PutConfigRequestIndicesItem>? Indices { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.PutConfigRequestIndicesItem>? Indices { get => _explicitNullValueIndices; set { _explicitNullValueIndices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indices"); else _explicitNullProperties?.Remove("indices"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.PutConfigRequestIndicesItem>? _explicitNullValueIndices = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.PutConfigRequestIndicesItem> Indices { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.PutConfigRequestIndicesItem> Indices { get => _explicitNullValueIndices; set { _explicitNullValueIndices = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indices"); else _explicitNullProperties?.Remove("indices"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.PutConfigRequestIndicesItem> _explicitNullValueIndices = default!;
 #endif
         /// <summary>The impact that personalization has on the re-ranking of search results.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationReRanking? PersonalizationReRanking { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationReRanking? PersonalizationReRanking { get => _explicitNullValuePersonalizationReRanking; set { _explicitNullValuePersonalizationReRanking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personalizationReRanking"); else _explicitNullProperties?.Remove("personalizationReRanking"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationReRanking? _explicitNullValuePersonalizationReRanking = default!;
         /// <summary>The type of user profiles to generate.Basic profiles are based on past behaviors, ensuring search results align with previous interests.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.ProfileType? ProfileType { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ProfileType? ProfileType { get => _explicitNullValueProfileType; set { _explicitNullValueProfileType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profileType"); else _explicitNullProperties?.Remove("profileType"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.ProfileType? _explicitNullValueProfileType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.PutConfigRequest"/> and sets the default values.
         /// </summary>
@@ -49,7 +66,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.PutConfigRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.PutConfigRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.PutConfigRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.PutConfigRequestIndicesItem>("indices", Indices);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationReRanking>("personalizationReRanking", PersonalizationReRanking);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ProfileType>("profileType", ProfileType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

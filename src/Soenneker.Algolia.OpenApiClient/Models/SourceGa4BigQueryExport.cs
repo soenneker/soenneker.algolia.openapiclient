@@ -12,32 +12,48 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SourceGa4BigQueryExport : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("datasetID") is { } nullNodeDatasetID && nullNodeDatasetID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatasetID = null;
+            if (parseNode.GetChildNode("projectID") is { } nullNodeProjectID && nullNodeProjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectID = null;
+            if (parseNode.GetChildNode("tablePrefix") is { } nullNodeTablePrefix && nullNodeTablePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TablePrefix = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>BigQuery dataset ID that the BigQuery export writes to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DatasetID { get; set; }
+        public string? DatasetID { get => _explicitNullValueDatasetID; set { _explicitNullValueDatasetID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetID"); else _explicitNullProperties?.Remove("datasetID"); } }
+        private string? _explicitNullValueDatasetID = default!;
 #nullable restore
 #else
-        public string DatasetID { get; set; }
+        public string DatasetID { get => _explicitNullValueDatasetID; set { _explicitNullValueDatasetID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetID"); else _explicitNullProperties?.Remove("datasetID"); } }
+        private string _explicitNullValueDatasetID = default!;
 #endif
         /// <summary>GCP project ID that the BigQuery export writes to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectID { get; set; }
+        public string? ProjectID { get => _explicitNullValueProjectID; set { _explicitNullValueProjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectID"); else _explicitNullProperties?.Remove("projectID"); } }
+        private string? _explicitNullValueProjectID = default!;
 #nullable restore
 #else
-        public string ProjectID { get; set; }
+        public string ProjectID { get => _explicitNullValueProjectID; set { _explicitNullValueProjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectID"); else _explicitNullProperties?.Remove("projectID"); } }
+        private string _explicitNullValueProjectID = default!;
 #endif
         /// <summary>Prefix of the tables that the BigQuery Export writes to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TablePrefix { get; set; }
+        public string? TablePrefix { get => _explicitNullValueTablePrefix; set { _explicitNullValueTablePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tablePrefix"); else _explicitNullProperties?.Remove("tablePrefix"); } }
+        private string? _explicitNullValueTablePrefix = default!;
 #nullable restore
 #else
-        public string TablePrefix { get; set; }
+        public string TablePrefix { get => _explicitNullValueTablePrefix; set { _explicitNullValueTablePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tablePrefix"); else _explicitNullProperties?.Remove("tablePrefix"); } }
+        private string _explicitNullValueTablePrefix = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceGa4BigQueryExport"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.SourceGa4BigQueryExport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.SourceGa4BigQueryExport();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.SourceGa4BigQueryExport(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("datasetID", DatasetID);
             writer.WriteStringValue("projectID", ProjectID);
             writer.WriteStringValue("tablePrefix", TablePrefix);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

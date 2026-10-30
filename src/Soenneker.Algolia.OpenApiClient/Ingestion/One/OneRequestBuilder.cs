@@ -47,6 +47,7 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One
             get => new global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Sources.SourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tasks property</summary>
+        [Obsolete("")]
         public global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Tasks.TasksRequestBuilder Tasks
         {
             get => new global::Soenneker.Algolia.OpenApiClient.Ingestion.One.Tasks.TasksRequestBuilder(PathParameters, RequestAdapter);

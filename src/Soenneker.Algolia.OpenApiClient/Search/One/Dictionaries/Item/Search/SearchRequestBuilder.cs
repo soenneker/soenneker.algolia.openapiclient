@@ -61,6 +61,8 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One.Dictionaries.Item.Search
                 { "402", global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.SearchDictionaryEntriesResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.SearchDictionaryEntriesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

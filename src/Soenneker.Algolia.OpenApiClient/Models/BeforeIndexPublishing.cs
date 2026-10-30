@@ -12,13 +12,24 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BeforeIndexPublishing : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("maxFailedUrls") is { } nullNodeMaxFailedUrls && nullNodeMaxFailedUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxFailedUrls = null;
+            if (parseNode.GetChildNode("maxLostRecordsPercentage") is { } nullNodeMaxLostRecordsPercentage && nullNodeMaxLostRecordsPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxLostRecordsPercentage = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Stops the crawler if a specified number of pages fail to crawl.</summary>
-        public int? MaxFailedUrls { get; set; }
+        public int? MaxFailedUrls { get => _explicitNullValueMaxFailedUrls; set { _explicitNullValueMaxFailedUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxFailedUrls"); else _explicitNullProperties?.Remove("maxFailedUrls"); } }
+        private int? _explicitNullValueMaxFailedUrls = default!;
         /// <summary>Maximum difference in percent between the numbers of records between crawls.</summary>
-        public int? MaxLostRecordsPercentage { get; set; }
+        public int? MaxLostRecordsPercentage { get => _explicitNullValueMaxLostRecordsPercentage; set { _explicitNullValueMaxLostRecordsPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxLostRecordsPercentage"); else _explicitNullProperties?.Remove("maxLostRecordsPercentage"); } }
+        private int? _explicitNullValueMaxLostRecordsPercentage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.BeforeIndexPublishing"/> and sets the default values.
         /// </summary>
@@ -35,7 +46,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.BeforeIndexPublishing CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.BeforeIndexPublishing();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.BeforeIndexPublishing(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +69,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("maxFailedUrls", MaxFailedUrls);
             writer.WriteIntValue("maxLostRecordsPercentage", MaxLostRecordsPercentage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

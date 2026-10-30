@@ -55,6 +55,8 @@ namespace Soenneker.Algolia.OpenApiClient.Recommend.One.Indexes.Item.Item.Recomm
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Algolia.OpenApiClient.Models.RecommendErrorBase.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.RecommendUpdatedAtResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.RecommendUpdatedAtResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

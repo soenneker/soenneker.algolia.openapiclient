@@ -12,32 +12,48 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RenderingContent : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("facetOrdering") is { } nullNodeFacetOrdering && nullNodeFacetOrdering.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetOrdering = null;
+            if (parseNode.GetChildNode("redirect") is { } nullNodeRedirect && nullNodeRedirect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Redirect = null;
+            if (parseNode.GetChildNode("widgets") is { } nullNodeWidgets && nullNodeWidgets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Widgets = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Order of facet names and facet values in your UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.FacetOrdering? FacetOrdering { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FacetOrdering? FacetOrdering { get => _explicitNullValueFacetOrdering; set { _explicitNullValueFacetOrdering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetOrdering"); else _explicitNullProperties?.Remove("facetOrdering"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.FacetOrdering? _explicitNullValueFacetOrdering = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.FacetOrdering FacetOrdering { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FacetOrdering FacetOrdering { get => _explicitNullValueFacetOrdering; set { _explicitNullValueFacetOrdering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetOrdering"); else _explicitNullProperties?.Remove("facetOrdering"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.FacetOrdering _explicitNullValueFacetOrdering = default!;
 #endif
         /// <summary>The redirect rule container.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RedirectUrl? Redirect { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RedirectUrl? Redirect { get => _explicitNullValueRedirect; set { _explicitNullValueRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect"); else _explicitNullProperties?.Remove("redirect"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.RedirectUrl? _explicitNullValueRedirect = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RedirectUrl Redirect { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RedirectUrl Redirect { get => _explicitNullValueRedirect; set { _explicitNullValueRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect"); else _explicitNullProperties?.Remove("redirect"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.RedirectUrl _explicitNullValueRedirect = default!;
 #endif
         /// <summary>Widgets returned from any rules that are applied to the current search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Widgets? Widgets { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Widgets? Widgets { get => _explicitNullValueWidgets; set { _explicitNullValueWidgets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widgets"); else _explicitNullProperties?.Remove("widgets"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.Widgets? _explicitNullValueWidgets = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Widgets Widgets { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Widgets Widgets { get => _explicitNullValueWidgets; set { _explicitNullValueWidgets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widgets"); else _explicitNullProperties?.Remove("widgets"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.Widgets _explicitNullValueWidgets = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RenderingContent"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.RenderingContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.RenderingContent();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.RenderingContent(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FacetOrdering>("facetOrdering", FacetOrdering);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RedirectUrl>("redirect", Redirect);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Widgets>("widgets", Widgets);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

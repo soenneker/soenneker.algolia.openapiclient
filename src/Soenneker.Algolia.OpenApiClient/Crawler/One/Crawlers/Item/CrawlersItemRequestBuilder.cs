@@ -126,6 +126,8 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Algolia.OpenApiClient.Models.InvalidRequestResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.ActionAcknowledgedResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.ActionAcknowledgedResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -149,6 +151,8 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Algolia.OpenApiClient.Models.InvalidRequestResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.GetCrawlerResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.GetCrawlerResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -175,6 +179,8 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Algolia.OpenApiClient.Models.InvalidRequestResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.ActionAcknowledgedResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.ActionAcknowledgedResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

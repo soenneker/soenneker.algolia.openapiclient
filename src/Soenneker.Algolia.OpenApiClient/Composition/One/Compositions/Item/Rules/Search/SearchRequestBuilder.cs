@@ -61,6 +61,8 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rule
                 { "402", global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.SearchCompositionRulesResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.SearchCompositionRulesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

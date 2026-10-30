@@ -12,18 +12,30 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InjectionInjectedItemMetadataHits : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("addItemKey") is { } nullNodeAddItemKey && nullNodeAddItemKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddItemKey = null;
+            if (parseNode.GetChildNode("extra") is { } nullNodeExtra && nullNodeExtra.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Extra = null;
+        }
+
         /// <summary>When true, each affected hit&apos;s `_extra` object includes an `_injectedItemKey` field identifying the injectedItem that inserted it. Defaults to false, meaning hits don&apos;t include `_injectedItemKey`. To identify injected hits without this flag, define your own key-value pairs in `extra`.</summary>
-        public bool? AddItemKey { get; set; }
+        public bool? AddItemKey { get => _explicitNullValueAddItemKey; set { _explicitNullValueAddItemKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addItemKey"); else _explicitNullProperties?.Remove("addItemKey"); } }
+        private bool? _explicitNullValueAddItemKey = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The user-defined key-value pairs that will be placed in the `_extra` field of each affected hit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHitsExtraProperty2? Extra { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHitsExtraProperty2? Extra { get => _explicitNullValueExtra; set { _explicitNullValueExtra = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra"); else _explicitNullProperties?.Remove("extra"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHitsExtraProperty2? _explicitNullValueExtra = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHitsExtraProperty2 Extra { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHitsExtraProperty2 Extra { get => _explicitNullValueExtra; set { _explicitNullValueExtra = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extra"); else _explicitNullProperties?.Remove("extra"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHitsExtraProperty2 _explicitNullValueExtra = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHits"/> and sets the default values.
@@ -40,7 +52,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHits CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHits();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHits(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("addItemKey", AddItemKey);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionInjectedItemMetadataHitsExtraProperty2>("extra", Extra);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

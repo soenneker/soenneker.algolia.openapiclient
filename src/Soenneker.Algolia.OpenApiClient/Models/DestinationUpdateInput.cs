@@ -11,27 +11,42 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DestinationUpdateInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attributesToExclude") is { } nullNodeAttributesToExclude && nullNodeAttributesToExclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributesToExclude = null;
+            if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
+            if (parseNode.GetChildNode("recordType") is { } nullNodeRecordType && nullNodeRecordType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Attributes from your source to exclude from Algolia records.Not all your data attributes will be useful for searching.Keeping your Algolia records small increases indexing and search performance.- Exclude nested attributes with `.` notation. For example, `foo.bar` indexes the `foo` attribute and all its children **except** the `bar` attribute.- Exclude attributes from arrays with `[i]`, where `i` is the index of the array element.  For example, `foo.[0].bar` only excludes the `bar` attribute from the first element of the `foo` array, but indexes the complete `foo` attribute for all other elements.  Use `*` as wildcard: `foo.[*].bar` excludes `bar` from all elements of the `foo` array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AttributesToExclude { get; set; }
+        public List<string>? AttributesToExclude { get => _explicitNullValueAttributesToExclude; set { _explicitNullValueAttributesToExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributesToExclude"); else _explicitNullProperties?.Remove("attributesToExclude"); } }
+        private List<string>? _explicitNullValueAttributesToExclude = default!;
 #nullable restore
 #else
-        public List<string> AttributesToExclude { get; set; }
+        public List<string> AttributesToExclude { get => _explicitNullValueAttributesToExclude; set { _explicitNullValueAttributesToExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributesToExclude"); else _explicitNullProperties?.Remove("attributesToExclude"); } }
+        private List<string> _explicitNullValueAttributesToExclude = default!;
 #endif
         /// <summary>Algolia index name (case-sensitive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndexName { get; set; }
+        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        private string? _explicitNullValueIndexName = default!;
 #nullable restore
 #else
-        public string IndexName { get; set; }
+        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        private string _explicitNullValueIndexName = default!;
 #endif
         /// <summary>Record type for ecommerce sources.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecordType? RecordType { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecordType? RecordType { get => _explicitNullValueRecordType; set { _explicitNullValueRecordType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recordType"); else _explicitNullProperties?.Remove("recordType"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.RecordType? _explicitNullValueRecordType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.DestinationUpdateInput"/> and sets the default values.
         /// </summary>
@@ -47,7 +62,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.DestinationUpdateInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.DestinationUpdateInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.DestinationUpdateInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("attributesToExclude", AttributesToExclude);
             writer.WriteStringValue("indexName", IndexName);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.RecordType>("recordType", RecordType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

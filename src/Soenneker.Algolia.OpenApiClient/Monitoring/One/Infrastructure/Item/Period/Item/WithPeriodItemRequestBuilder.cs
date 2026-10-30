@@ -53,6 +53,8 @@ namespace Soenneker.Algolia.OpenApiClient.Monitoring.One.Infrastructure.Item.Per
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "401", global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureApiUnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

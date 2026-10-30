@@ -11,42 +11,63 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConfigStatus : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
+            if (parseNode.GetChildNode("isRunning") is { } nullNodeIsRunning && nullNodeIsRunning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsRunning = null;
+            if (parseNode.GetChildNode("lastBuiltAt") is { } nullNodeLastBuiltAt && nullNodeLastBuiltAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastBuiltAt = null;
+            if (parseNode.GetChildNode("lastSuccessfulBuildDuration") is { } nullNodeLastSuccessfulBuildDuration && nullNodeLastSuccessfulBuildDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSuccessfulBuildDuration = null;
+            if (parseNode.GetChildNode("lastSuccessfulBuiltAt") is { } nullNodeLastSuccessfulBuiltAt && nullNodeLastSuccessfulBuiltAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSuccessfulBuiltAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of the Query Suggestions index (case-sensitive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndexName { get; set; }
+        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        private string? _explicitNullValueIndexName = default!;
 #nullable restore
 #else
-        public string IndexName { get; set; }
+        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        private string _explicitNullValueIndexName = default!;
 #endif
         /// <summary>Whether the creation or update of the Query Suggestions index is in progress.</summary>
-        public bool? IsRunning { get; set; }
+        public bool? IsRunning { get => _explicitNullValueIsRunning; set { _explicitNullValueIsRunning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isRunning"); else _explicitNullProperties?.Remove("isRunning"); } }
+        private bool? _explicitNullValueIsRunning = default!;
         /// <summary>Date and time when the Query Suggestions index was last built, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastBuiltAt { get; set; }
+        public string? LastBuiltAt { get => _explicitNullValueLastBuiltAt; set { _explicitNullValueLastBuiltAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastBuiltAt"); else _explicitNullProperties?.Remove("lastBuiltAt"); } }
+        private string? _explicitNullValueLastBuiltAt = default!;
 #nullable restore
 #else
-        public string LastBuiltAt { get; set; }
+        public string LastBuiltAt { get => _explicitNullValueLastBuiltAt; set { _explicitNullValueLastBuiltAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastBuiltAt"); else _explicitNullProperties?.Remove("lastBuiltAt"); } }
+        private string _explicitNullValueLastBuiltAt = default!;
 #endif
         /// <summary>Duration of the last successful build in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastSuccessfulBuildDuration { get; set; }
+        public string? LastSuccessfulBuildDuration { get => _explicitNullValueLastSuccessfulBuildDuration; set { _explicitNullValueLastSuccessfulBuildDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSuccessfulBuildDuration"); else _explicitNullProperties?.Remove("lastSuccessfulBuildDuration"); } }
+        private string? _explicitNullValueLastSuccessfulBuildDuration = default!;
 #nullable restore
 #else
-        public string LastSuccessfulBuildDuration { get; set; }
+        public string LastSuccessfulBuildDuration { get => _explicitNullValueLastSuccessfulBuildDuration; set { _explicitNullValueLastSuccessfulBuildDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSuccessfulBuildDuration"); else _explicitNullProperties?.Remove("lastSuccessfulBuildDuration"); } }
+        private string _explicitNullValueLastSuccessfulBuildDuration = default!;
 #endif
         /// <summary>Date and time when the Query Suggestions index was last updated successfully.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastSuccessfulBuiltAt { get; set; }
+        public string? LastSuccessfulBuiltAt { get => _explicitNullValueLastSuccessfulBuiltAt; set { _explicitNullValueLastSuccessfulBuiltAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSuccessfulBuiltAt"); else _explicitNullProperties?.Remove("lastSuccessfulBuiltAt"); } }
+        private string? _explicitNullValueLastSuccessfulBuiltAt = default!;
 #nullable restore
 #else
-        public string LastSuccessfulBuiltAt { get; set; }
+        public string LastSuccessfulBuiltAt { get => _explicitNullValueLastSuccessfulBuiltAt; set { _explicitNullValueLastSuccessfulBuiltAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSuccessfulBuiltAt"); else _explicitNullProperties?.Remove("lastSuccessfulBuiltAt"); } }
+        private string _explicitNullValueLastSuccessfulBuiltAt = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ConfigStatus"/> and sets the default values.
@@ -63,7 +84,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.ConfigStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.ConfigStatus();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.ConfigStatus(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +113,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("lastBuiltAt", LastBuiltAt);
             writer.WriteStringValue("lastSuccessfulBuildDuration", LastSuccessfulBuildDuration);
             writer.WriteStringValue("lastSuccessfulBuiltAt", LastSuccessfulBuiltAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

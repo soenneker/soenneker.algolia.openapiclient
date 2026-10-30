@@ -11,73 +11,124 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AbtestingVariant : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("addToCartCount") is { } nullNodeAddToCartCount && nullNodeAddToCartCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddToCartCount = null;
+            if (parseNode.GetChildNode("addToCartRate") is { } nullNodeAddToCartRate && nullNodeAddToCartRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddToCartRate = null;
+            if (parseNode.GetChildNode("averageClickPosition") is { } nullNodeAverageClickPosition && nullNodeAverageClickPosition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageClickPosition = null;
+            if (parseNode.GetChildNode("clickCount") is { } nullNodeClickCount && nullNodeClickCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickCount = null;
+            if (parseNode.GetChildNode("clickThroughRate") is { } nullNodeClickThroughRate && nullNodeClickThroughRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickThroughRate = null;
+            if (parseNode.GetChildNode("conversionCount") is { } nullNodeConversionCount && nullNodeConversionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversionCount = null;
+            if (parseNode.GetChildNode("conversionRate") is { } nullNodeConversionRate && nullNodeConversionRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversionRate = null;
+            if (parseNode.GetChildNode("currencies") is { } nullNodeCurrencies && nullNodeCurrencies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currencies = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("estimatedSampleSize") is { } nullNodeEstimatedSampleSize && nullNodeEstimatedSampleSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EstimatedSampleSize = null;
+            if (parseNode.GetChildNode("filterEffects") is { } nullNodeFilterEffects && nullNodeFilterEffects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterEffects = null;
+            if (parseNode.GetChildNode("index") is { } nullNodeIndex && nullNodeIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Index = null;
+            if (parseNode.GetChildNode("noResultCount") is { } nullNodeNoResultCount && nullNodeNoResultCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoResultCount = null;
+            if (parseNode.GetChildNode("purchaseCount") is { } nullNodePurchaseCount && nullNodePurchaseCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurchaseCount = null;
+            if (parseNode.GetChildNode("purchaseRate") is { } nullNodePurchaseRate && nullNodePurchaseRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurchaseRate = null;
+            if (parseNode.GetChildNode("searchCount") is { } nullNodeSearchCount && nullNodeSearchCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SearchCount = null;
+            if (parseNode.GetChildNode("trackedSearchCount") is { } nullNodeTrackedSearchCount && nullNodeTrackedSearchCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackedSearchCount = null;
+            if (parseNode.GetChildNode("trackedUserCount") is { } nullNodeTrackedUserCount && nullNodeTrackedUserCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackedUserCount = null;
+            if (parseNode.GetChildNode("trafficPercentage") is { } nullNodeTrafficPercentage && nullNodeTrafficPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficPercentage = null;
+            if (parseNode.GetChildNode("userCount") is { } nullNodeUserCount && nullNodeUserCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of add-to-cart events for this variant.</summary>
-        public int? AddToCartCount { get; set; }
+        public int? AddToCartCount { get => _explicitNullValueAddToCartCount; set { _explicitNullValueAddToCartCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addToCartCount"); else _explicitNullProperties?.Remove("addToCartCount"); } }
+        private int? _explicitNullValueAddToCartCount = default!;
         /// <summary>[Add-to-cart rate](https://www.algolia.com/doc/guides/search-analytics/concepts/metrics/#add-to-cart-rate) for this variant.</summary>
-        public double? AddToCartRate { get; set; }
+        public double? AddToCartRate { get => _explicitNullValueAddToCartRate; set { _explicitNullValueAddToCartRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addToCartRate"); else _explicitNullProperties?.Remove("addToCartRate"); } }
+        private double? _explicitNullValueAddToCartRate = default!;
         /// <summary>[Average click position](https://www.algolia.com/doc/guides/search-analytics/concepts/metrics/#click-position) for this variant.</summary>
-        public double? AverageClickPosition { get; set; }
+        public double? AverageClickPosition { get => _explicitNullValueAverageClickPosition; set { _explicitNullValueAverageClickPosition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("averageClickPosition"); else _explicitNullProperties?.Remove("averageClickPosition"); } }
+        private double? _explicitNullValueAverageClickPosition = default!;
         /// <summary>Number of click events for this variant.</summary>
-        public int? ClickCount { get; set; }
+        public int? ClickCount { get => _explicitNullValueClickCount; set { _explicitNullValueClickCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clickCount"); else _explicitNullProperties?.Remove("clickCount"); } }
+        private int? _explicitNullValueClickCount = default!;
         /// <summary>[Click-through rate](https://www.algolia.com/doc/guides/search-analytics/concepts/metrics/#click-through-rate) for this variant.</summary>
-        public double? ClickThroughRate { get; set; }
+        public double? ClickThroughRate { get => _explicitNullValueClickThroughRate; set { _explicitNullValueClickThroughRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clickThroughRate"); else _explicitNullProperties?.Remove("clickThroughRate"); } }
+        private double? _explicitNullValueClickThroughRate = default!;
         /// <summary>Number of click events for this variant.</summary>
-        public int? ConversionCount { get; set; }
+        public int? ConversionCount { get => _explicitNullValueConversionCount; set { _explicitNullValueConversionCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversionCount"); else _explicitNullProperties?.Remove("conversionCount"); } }
+        private int? _explicitNullValueConversionCount = default!;
         /// <summary>[Conversion rate](https://www.algolia.com/doc/guides/search-analytics/concepts/metrics/#conversion-rate) for this variant.</summary>
-        public double? ConversionRate { get; set; }
+        public double? ConversionRate { get => _explicitNullValueConversionRate; set { _explicitNullValueConversionRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversionRate"); else _explicitNullProperties?.Remove("conversionRate"); } }
+        private double? _explicitNullValueConversionRate = default!;
         /// <summary>A/B test currencies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantCurrencies? Currencies { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantCurrencies? Currencies { get => _explicitNullValueCurrencies; set { _explicitNullValueCurrencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencies"); else _explicitNullProperties?.Remove("currencies"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantCurrencies? _explicitNullValueCurrencies = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantCurrencies Currencies { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantCurrencies Currencies { get => _explicitNullValueCurrencies; set { _explicitNullValueCurrencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currencies"); else _explicitNullProperties?.Remove("currencies"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariantCurrencies _explicitNullValueCurrencies = default!;
 #endif
         /// <summary>Description for this variant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Estimated number of searches required to achieve the desired statistical significance.The A/B test configuration must include a `mininmumDetectableEffect` setting for this number to be included in the response.</summary>
-        public int? EstimatedSampleSize { get; set; }
+        public int? EstimatedSampleSize { get => _explicitNullValueEstimatedSampleSize; set { _explicitNullValueEstimatedSampleSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("estimatedSampleSize"); else _explicitNullProperties?.Remove("estimatedSampleSize"); } }
+        private int? _explicitNullValueEstimatedSampleSize = default!;
         /// <summary>A/B test filter effects resulting from configuration settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingFilterEffects? FilterEffects { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingFilterEffects? FilterEffects { get => _explicitNullValueFilterEffects; set { _explicitNullValueFilterEffects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filterEffects"); else _explicitNullProperties?.Remove("filterEffects"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.AbtestingFilterEffects? _explicitNullValueFilterEffects = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingFilterEffects FilterEffects { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingFilterEffects FilterEffects { get => _explicitNullValueFilterEffects; set { _explicitNullValueFilterEffects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filterEffects"); else _explicitNullProperties?.Remove("filterEffects"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.AbtestingFilterEffects _explicitNullValueFilterEffects = default!;
 #endif
         /// <summary>Index name of the A/B test variant (case-sensitive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Index { get; set; }
+        public string? Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
+        private string? _explicitNullValueIndex = default!;
 #nullable restore
 #else
-        public string Index { get; set; }
+        public string Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
+        private string _explicitNullValueIndex = default!;
 #endif
         /// <summary>Number of [searches without results](https://www.algolia.com/doc/guides/search-analytics/concepts/metrics/#searches-without-results) for this variant.</summary>
-        public int? NoResultCount { get; set; }
+        public int? NoResultCount { get => _explicitNullValueNoResultCount; set { _explicitNullValueNoResultCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("noResultCount"); else _explicitNullProperties?.Remove("noResultCount"); } }
+        private int? _explicitNullValueNoResultCount = default!;
         /// <summary>Number of purchase events for this variant.</summary>
-        public int? PurchaseCount { get; set; }
+        public int? PurchaseCount { get => _explicitNullValuePurchaseCount; set { _explicitNullValuePurchaseCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchaseCount"); else _explicitNullProperties?.Remove("purchaseCount"); } }
+        private int? _explicitNullValuePurchaseCount = default!;
         /// <summary>[Purchase rate](https://www.algolia.com/doc/guides/search-analytics/concepts/metrics/#purchase-rate) for this variant.</summary>
-        public double? PurchaseRate { get; set; }
+        public double? PurchaseRate { get => _explicitNullValuePurchaseRate; set { _explicitNullValuePurchaseRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchaseRate"); else _explicitNullProperties?.Remove("purchaseRate"); } }
+        private double? _explicitNullValuePurchaseRate = default!;
         /// <summary>Number of searches for this variant.</summary>
-        public int? SearchCount { get; set; }
+        public int? SearchCount { get => _explicitNullValueSearchCount; set { _explicitNullValueSearchCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("searchCount"); else _explicitNullProperties?.Remove("searchCount"); } }
+        private int? _explicitNullValueSearchCount = default!;
         /// <summary>Number of tracked searches. Tracked searches are search requests where the `clickAnalytics` parameter is true.</summary>
-        public int? TrackedSearchCount { get; set; }
+        public int? TrackedSearchCount { get => _explicitNullValueTrackedSearchCount; set { _explicitNullValueTrackedSearchCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackedSearchCount"); else _explicitNullProperties?.Remove("trackedSearchCount"); } }
+        private int? _explicitNullValueTrackedSearchCount = default!;
         /// <summary>Number of users that made tracked searches to this variant.</summary>
-        public int? TrackedUserCount { get; set; }
+        public int? TrackedUserCount { get => _explicitNullValueTrackedUserCount; set { _explicitNullValueTrackedUserCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackedUserCount"); else _explicitNullProperties?.Remove("trackedUserCount"); } }
+        private int? _explicitNullValueTrackedUserCount = default!;
         /// <summary>Percentage of search requests each variant receives.</summary>
-        public int? TrafficPercentage { get; set; }
+        public int? TrafficPercentage { get => _explicitNullValueTrafficPercentage; set { _explicitNullValueTrafficPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trafficPercentage"); else _explicitNullProperties?.Remove("trafficPercentage"); } }
+        private int? _explicitNullValueTrafficPercentage = default!;
         /// <summary>Number of users that made searches to this variant.</summary>
-        public int? UserCount { get; set; }
+        public int? UserCount { get => _explicitNullValueUserCount; set { _explicitNullValueUserCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userCount"); else _explicitNullProperties?.Remove("userCount"); } }
+        private int? _explicitNullValueUserCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant"/> and sets the default values.
         /// </summary>
@@ -94,7 +145,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.AbtestingVariant(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -153,6 +204,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("trackedUserCount", TrackedUserCount);
             writer.WriteIntValue("trafficPercentage", TrafficPercentage);
             writer.WriteIntValue("userCount", UserCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,23 +12,39 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BayesianMetricResult : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("evidence") is { } nullNodeEvidence && nullNodeEvidence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Evidence = null;
+            if (parseNode.GetChildNode("probabilityToBeBetter") is { } nullNodeProbabilityToBeBetter && nullNodeProbabilityToBeBetter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProbabilityToBeBetter = null;
+            if (parseNode.GetChildNode("relativeEffectCIHigh") is { } nullNodeRelativeEffectCIHigh && nullNodeRelativeEffectCIHigh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelativeEffectCIHigh = null;
+            if (parseNode.GetChildNode("relativeEffectCILow") is { } nullNodeRelativeEffectCILow && nullNodeRelativeEffectCILow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelativeEffectCILow = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Evidence status for this variant metric&apos;s comparison with the control.Only present when the API has an evidence status for the comparison. Omitted when evidence isn&apos;t applicable or no status exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.MetricEvidence? Evidence { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MetricEvidence? Evidence { get => _explicitNullValueEvidence; set { _explicitNullValueEvidence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evidence"); else _explicitNullProperties?.Remove("evidence"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.MetricEvidence? _explicitNullValueEvidence = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.MetricEvidence Evidence { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MetricEvidence Evidence { get => _explicitNullValueEvidence; set { _explicitNullValueEvidence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evidence"); else _explicitNullProperties?.Remove("evidence"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.MetricEvidence _explicitNullValueEvidence = default!;
 #endif
         /// <summary>Probability that this variant is better than the control.</summary>
-        public double? ProbabilityToBeBetter { get; set; }
+        public double? ProbabilityToBeBetter { get => _explicitNullValueProbabilityToBeBetter; set { _explicitNullValueProbabilityToBeBetter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("probabilityToBeBetter"); else _explicitNullProperties?.Remove("probabilityToBeBetter"); } }
+        private double? _explicitNullValueProbabilityToBeBetter = default!;
         /// <summary>Upper bound of the 95% credible interval for the relative effect (variant/control minus 1).</summary>
-        public double? RelativeEffectCIHigh { get; set; }
+        public double? RelativeEffectCIHigh { get => _explicitNullValueRelativeEffectCIHigh; set { _explicitNullValueRelativeEffectCIHigh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relativeEffectCIHigh"); else _explicitNullProperties?.Remove("relativeEffectCIHigh"); } }
+        private double? _explicitNullValueRelativeEffectCIHigh = default!;
         /// <summary>Lower bound of the 95% credible interval for the relative effect (variant/control minus 1).</summary>
-        public double? RelativeEffectCILow { get; set; }
+        public double? RelativeEffectCILow { get => _explicitNullValueRelativeEffectCILow; set { _explicitNullValueRelativeEffectCILow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relativeEffectCILow"); else _explicitNullProperties?.Remove("relativeEffectCILow"); } }
+        private double? _explicitNullValueRelativeEffectCILow = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.BayesianMetricResult"/> and sets the default values.
         /// </summary>
@@ -44,7 +60,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.BayesianMetricResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.BayesianMetricResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.BayesianMetricResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,6 +87,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteDoubleValue("probabilityToBeBetter", ProbabilityToBeBetter);
             writer.WriteDoubleValue("relativeEffectCIHigh", RelativeEffectCIHigh);
             writer.WriteDoubleValue("relativeEffectCILow", RelativeEffectCILow);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

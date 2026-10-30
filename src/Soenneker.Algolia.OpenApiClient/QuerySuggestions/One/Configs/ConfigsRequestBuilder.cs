@@ -66,6 +66,8 @@ namespace Soenneker.Algolia.OpenApiClient.QuerySuggestions.One.Configs
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "401", global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsBaseResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
@@ -98,6 +100,8 @@ namespace Soenneker.Algolia.OpenApiClient.QuerySuggestions.One.Configs
                 { "401", global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsBaseResponse.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsBaseResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsErrorBase.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsBaseResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.QuerySuggestionsBaseResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

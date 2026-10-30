@@ -12,15 +12,28 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FeatureFilters : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("aiPerso") is { } nullNodeAiPerso && nullNodeAiPerso.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiPerso = null;
+            if (parseNode.GetChildNode("dynamicReRanking") is { } nullNodeDynamicReRanking && nullNodeDynamicReRanking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicReRanking = null;
+            if (parseNode.GetChildNode("multiSignalRanking") is { } nullNodeMultiSignalRanking && nullNodeMultiSignalRanking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MultiSignalRanking = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to apply AI Personalization feature filters.</summary>
-        public bool? AiPerso { get; set; }
+        public bool? AiPerso { get => _explicitNullValueAiPerso; set { _explicitNullValueAiPerso = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiPerso"); else _explicitNullProperties?.Remove("aiPerso"); } }
+        private bool? _explicitNullValueAiPerso = default!;
         /// <summary>Whether to apply Dynamic Re-Ranking feature filters.</summary>
-        public bool? DynamicReRanking { get; set; }
+        public bool? DynamicReRanking { get => _explicitNullValueDynamicReRanking; set { _explicitNullValueDynamicReRanking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamicReRanking"); else _explicitNullProperties?.Remove("dynamicReRanking"); } }
+        private bool? _explicitNullValueDynamicReRanking = default!;
         /// <summary>Whether to apply Multi-Signal Re-Ranking feature filters.</summary>
-        public bool? MultiSignalRanking { get; set; }
+        public bool? MultiSignalRanking { get => _explicitNullValueMultiSignalRanking; set { _explicitNullValueMultiSignalRanking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multiSignalRanking"); else _explicitNullProperties?.Remove("multiSignalRanking"); } }
+        private bool? _explicitNullValueMultiSignalRanking = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.FeatureFilters"/> and sets the default values.
         /// </summary>
@@ -36,7 +49,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.FeatureFilters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.FeatureFilters();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.FeatureFilters(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +74,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteBoolValue("aiPerso", AiPerso);
             writer.WriteBoolValue("dynamicReRanking", DynamicReRanking);
             writer.WriteBoolValue("multiSignalRanking", MultiSignalRanking);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

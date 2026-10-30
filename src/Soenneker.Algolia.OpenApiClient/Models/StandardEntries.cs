@@ -12,32 +12,48 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StandardEntries : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("compounds") is { } nullNodeCompounds && nullNodeCompounds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compounds = null;
+            if (parseNode.GetChildNode("plurals") is { } nullNodePlurals && nullNodePlurals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Plurals = null;
+            if (parseNode.GetChildNode("stopwords") is { } nullNodeStopwords && nullNodeStopwords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stopwords = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Key-value pair of a language ISO code and a boolean value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesCompoundsProperty? Compounds { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesCompoundsProperty? Compounds { get => _explicitNullValueCompounds; set { _explicitNullValueCompounds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compounds"); else _explicitNullProperties?.Remove("compounds"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesCompoundsProperty? _explicitNullValueCompounds = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesCompoundsProperty Compounds { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesCompoundsProperty Compounds { get => _explicitNullValueCompounds; set { _explicitNullValueCompounds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compounds"); else _explicitNullProperties?.Remove("compounds"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesCompoundsProperty _explicitNullValueCompounds = default!;
 #endif
         /// <summary>Key-value pair of a language ISO code and a boolean value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesPluralsProperty? Plurals { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesPluralsProperty? Plurals { get => _explicitNullValuePlurals; set { _explicitNullValuePlurals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plurals"); else _explicitNullProperties?.Remove("plurals"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesPluralsProperty? _explicitNullValuePlurals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesPluralsProperty Plurals { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesPluralsProperty Plurals { get => _explicitNullValuePlurals; set { _explicitNullValuePlurals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plurals"); else _explicitNullProperties?.Remove("plurals"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesPluralsProperty _explicitNullValuePlurals = default!;
 #endif
         /// <summary>Key-value pair of a language ISO code and a boolean value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesStopwordsProperty? Stopwords { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesStopwordsProperty? Stopwords { get => _explicitNullValueStopwords; set { _explicitNullValueStopwords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stopwords"); else _explicitNullProperties?.Remove("stopwords"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesStopwordsProperty? _explicitNullValueStopwords = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesStopwordsProperty Stopwords { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesStopwordsProperty Stopwords { get => _explicitNullValueStopwords; set { _explicitNullValueStopwords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stopwords"); else _explicitNullProperties?.Remove("stopwords"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesStopwordsProperty _explicitNullValueStopwords = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.StandardEntries"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.StandardEntries CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.StandardEntries();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.StandardEntries(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesCompoundsProperty>("compounds", Compounds);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesPluralsProperty>("plurals", Plurals);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StandardEntriesStopwordsProperty>("stopwords", Stopwords);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -62,7 +62,7 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Config.Versi
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.CrawlerConfigVersionsResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.CrawlerConfigVersionsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.CrawlerConfigVersionsResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.CrawlerConfigVersionsResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists previous versions of the specified crawler&apos;s configuration, including who authored the change.Every time you update a crawler&apos;s configuration, a new version is added.

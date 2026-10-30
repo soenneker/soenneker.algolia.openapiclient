@@ -53,6 +53,8 @@ namespace Soenneker.Algolia.OpenApiClient.Crawler.One.Crawlers.Item.Crawl_runs
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Algolia.OpenApiClient.Models.InvalidRequestResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.CrawlerLogsResponseResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.CrawlerLogsResponseResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

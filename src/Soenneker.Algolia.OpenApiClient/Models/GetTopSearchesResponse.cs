@@ -12,7 +12,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetTopSearchesResponse : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,17 +54,26 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.GetTopSearchesResponse();
             if("TopSearchesResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TopSearchesResponse = new global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponse();
+                
             }
             else if("TopSearchesResponseWithAnalytics".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TopSearchesResponseWithAnalytics = new global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithAnalytics();
+                
             }
             else if("TopSearchesResponseWithRevenueAnalytics".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TopSearchesResponseWithRevenueAnalytics = new global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithRevenueAnalytics();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("searches") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("searches") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("searches") != null))();
+            if (result.TopSearchesResponse == null && result.TopSearchesResponseWithAnalytics == null && result.TopSearchesResponseWithRevenueAnalytics == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.TopSearchesResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponse(), parseNode);
+            if (result.TopSearchesResponse == null && result.TopSearchesResponseWithAnalytics == null && result.TopSearchesResponseWithRevenueAnalytics == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.TopSearchesResponseWithAnalytics = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithAnalytics(), parseNode);
+            if (result.TopSearchesResponse == null && result.TopSearchesResponseWithAnalytics == null && result.TopSearchesResponseWithRevenueAnalytics == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.TopSearchesResponseWithRevenueAnalytics = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithRevenueAnalytics(), parseNode);
+            if (result.TopSearchesResponse == null && result.TopSearchesResponseWithAnalytics == null && result.TopSearchesResponseWithRevenueAnalytics == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,17 +101,26 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (TopSearchesResponse == null && TopSearchesResponseWithAnalytics == null && TopSearchesResponseWithRevenueAnalytics == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (TopSearchesResponse != null && TopSearchesResponseWithAnalytics == null && TopSearchesResponseWithRevenueAnalytics == null) { if (TopSearchesResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TopSearchesResponse); return; }
+            if (TopSearchesResponseWithAnalytics != null && TopSearchesResponse == null && TopSearchesResponseWithRevenueAnalytics == null) { if (TopSearchesResponseWithAnalytics is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TopSearchesResponseWithAnalytics); return; }
+            if (TopSearchesResponseWithRevenueAnalytics != null && TopSearchesResponse == null && TopSearchesResponseWithAnalytics == null) { if (TopSearchesResponseWithRevenueAnalytics is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TopSearchesResponseWithRevenueAnalytics); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(TopSearchesResponse != null)
             {
+                if (TopSearchesResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponse>(null, TopSearchesResponse);
             }
             else if(TopSearchesResponseWithAnalytics != null)
             {
+                if (TopSearchesResponseWithAnalytics is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithAnalytics>(null, TopSearchesResponseWithAnalytics);
             }
             else if(TopSearchesResponseWithRevenueAnalytics != null)
             {
+                if (TopSearchesResponseWithRevenueAnalytics is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TopSearchesResponseWithRevenueAnalytics>(null, TopSearchesResponseWithRevenueAnalytics);
             }
         }

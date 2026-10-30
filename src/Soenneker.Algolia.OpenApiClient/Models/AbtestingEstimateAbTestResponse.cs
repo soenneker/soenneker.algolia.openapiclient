@@ -11,18 +11,30 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AbtestingEstimateAbTestResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("durationDays") is { } nullNodeDurationDays && nullNodeDurationDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationDays = null;
+            if (parseNode.GetChildNode("sampleSizes") is { } nullNodeSampleSizes && nullNodeSampleSizes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleSizes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Estimated number of days needed to reach the sample sizes required for detecting the configured effect. This value is based on historical traffic.</summary>
-        public long? DurationDays { get; set; }
+        public long? DurationDays { get => _explicitNullValueDurationDays; set { _explicitNullValueDurationDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durationDays"); else _explicitNullProperties?.Remove("durationDays"); } }
+        private long? _explicitNullValueDurationDays = default!;
         /// <summary>Sample size estimates for each variant. The first element is the control variant.Each element is the estimated number of searches required to achieve the desired statistical significance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<long?>? SampleSizes { get; set; }
+        public List<long?>? SampleSizes { get => _explicitNullValueSampleSizes; set { _explicitNullValueSampleSizes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampleSizes"); else _explicitNullProperties?.Remove("sampleSizes"); } }
+        private List<long?>? _explicitNullValueSampleSizes = default!;
 #nullable restore
 #else
-        public List<long?> SampleSizes { get; set; }
+        public List<long?> SampleSizes { get => _explicitNullValueSampleSizes; set { _explicitNullValueSampleSizes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampleSizes"); else _explicitNullProperties?.Remove("sampleSizes"); } }
+        private List<long?> _explicitNullValueSampleSizes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbtestingEstimateAbTestResponse"/> and sets the default values.
@@ -39,7 +51,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.AbtestingEstimateAbTestResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.AbtestingEstimateAbTestResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.AbtestingEstimateAbTestResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("durationDays", DurationDays);
             writer.WriteCollectionOfPrimitiveValues<long?>("sampleSizes", SampleSizes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -19,6 +19,7 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Realtime.U
     public partial class WithUserTokenItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The compute property</summary>
+        [Obsolete("")]
         public global::Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Realtime.Users.Item.Compute.ComputeRequestBuilder Compute
         {
             get => new global::Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Realtime.Users.Item.Compute.ComputeRequestBuilder(PathParameters, RequestAdapter);
@@ -65,6 +66,8 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Realtime.U
                 { "402", global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationErrorBase.CreateFromDiscriminatorValue },
                 { "421", global::Soenneker.Algolia.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationErrorBase.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUser>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

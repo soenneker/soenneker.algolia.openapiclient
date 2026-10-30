@@ -12,23 +12,39 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     public partial class BoughtTogetherQuery : global::Soenneker.Algolia.OpenApiClient.Models.BaseRecommendRequest, IParsable
     #pragma warning restore CS1591
     {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            base.CaptureExplicitNulls(parseNode);
+            if (parseNode.GetChildNode("fallbackParameters") is { } nullNodeFallbackParameters && nullNodeFallbackParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackParameters = null;
+            if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("objectID") is { } nullNodeObjectID && nullNodeObjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObjectID = null;
+        }
+
         /// <summary>Search parameters to use for a fallback request if there aren&apos;t enough recommendations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams? FallbackParameters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams? FallbackParameters { get => _explicitNullValueFallbackParameters; set { _explicitNullValueFallbackParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackParameters"); else _explicitNullProperties?.Remove("fallbackParameters"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams? _explicitNullValueFallbackParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams FallbackParameters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams FallbackParameters { get => _explicitNullValueFallbackParameters; set { _explicitNullValueFallbackParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackParameters"); else _explicitNullProperties?.Remove("fallbackParameters"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams _explicitNullValueFallbackParameters = default!;
 #endif
         /// <summary>Frequently bought together model.This model recommends items that have been purchased within 1 day with the item with the ID `objectID`.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.FbtModel? Model { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FbtModel? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.FbtModel? _explicitNullValueModel = default!;
         /// <summary>Unique record identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ObjectID { get; set; }
+        public string? ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
+        private string? _explicitNullValueObjectID = default!;
 #nullable restore
 #else
-        public string ObjectID { get; set; }
+        public string ObjectID { get => _explicitNullValueObjectID; set { _explicitNullValueObjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectID"); else _explicitNullProperties?.Remove("objectID"); } }
+        private string _explicitNullValueObjectID = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +54,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static new global::Soenneker.Algolia.OpenApiClient.Models.BoughtTogetherQuery CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.BoughtTogetherQuery();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.BoughtTogetherQuery(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,7 +79,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams>("fallbackParameters", FallbackParameters);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.FbtModel>("model", Model);
-            writer.WriteStringValue("objectID", ObjectID);
+            writer.WriteStringValue("objectID", ObjectID);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -11,24 +11,37 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Multifeed : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("feeds") is { } nullNodeFeeds && nullNodeFeeds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Feeds = null;
+            if (parseNode.GetChildNode("feedsOrder") is { } nullNodeFeedsOrder && nullNodeFeedsOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeedsOrder = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A key-value store of Feed ID to Feed. Currently, the only supported Feed type is an Injection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty2? Feeds { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty2? Feeds { get => _explicitNullValueFeeds; set { _explicitNullValueFeeds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feeds"); else _explicitNullProperties?.Remove("feeds"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty2? _explicitNullValueFeeds = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty2 Feeds { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty2 Feeds { get => _explicitNullValueFeeds; set { _explicitNullValueFeeds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feeds"); else _explicitNullProperties?.Remove("feeds"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty2 _explicitNullValueFeeds = default!;
 #endif
         /// <summary>A list of Feed IDs that specifies the order in which to order the results in the response. The IDs should be a subset of those in the Feeds object, and only those specified will be processed. When this field is not set, all Feeds are processed and returned with a default ordering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FeedsOrder { get; set; }
+        public List<string>? FeedsOrder { get => _explicitNullValueFeedsOrder; set { _explicitNullValueFeedsOrder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedsOrder"); else _explicitNullProperties?.Remove("feedsOrder"); } }
+        private List<string>? _explicitNullValueFeedsOrder = default!;
 #nullable restore
 #else
-        public List<string> FeedsOrder { get; set; }
+        public List<string> FeedsOrder { get => _explicitNullValueFeedsOrder; set { _explicitNullValueFeedsOrder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedsOrder"); else _explicitNullProperties?.Remove("feedsOrder"); } }
+        private List<string> _explicitNullValueFeedsOrder = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Multifeed"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.Multifeed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.Multifeed();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.Multifeed(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty2>("feeds", Feeds);
             writer.WriteCollectionOfPrimitiveValues<string>("feedsOrder", FeedsOrder);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

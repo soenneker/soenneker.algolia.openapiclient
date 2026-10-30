@@ -12,7 +12,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthInputPartial : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaInsightsPartial"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,33 +86,36 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartial();
             if("AuthAlgoliaInsightsPartial".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AuthAlgoliaInsightsPartial = new global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaInsightsPartial();
+                
             }
             else if("AuthAlgoliaPartial".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AuthAlgoliaPartial = new global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaPartial();
+                
             }
             else if("AuthApiKeyPartial".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AuthApiKeyPartial = new global::Soenneker.Algolia.OpenApiClient.Models.AuthApiKeyPartial();
+                
             }
             else if("AuthBasicPartial".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AuthBasicPartial = new global::Soenneker.Algolia.OpenApiClient.Models.AuthBasicPartial();
+                
             }
             else if("AuthGoogleServiceAccountPartial".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AuthGoogleServiceAccountPartial = new global::Soenneker.Algolia.OpenApiClient.Models.AuthGoogleServiceAccountPartial();
+                
             }
             else if("AuthInputPartialOneOf7Map".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AuthInputPartialOneOf7Map = new global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartialOneOf7Map();
+                
             }
             else if("AuthOAuthPartial".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AuthOAuthPartial = new global::Soenneker.Algolia.OpenApiClient.Models.AuthOAuthPartial();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            if (result.AuthAlgoliaInsightsPartial == null && result.AuthAlgoliaPartial == null && result.AuthApiKeyPartial == null && result.AuthBasicPartial == null && result.AuthGoogleServiceAccountPartial == null && result.AuthInputPartialOneOf7Map == null && result.AuthOAuthPartial == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -151,33 +159,50 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (AuthAlgoliaInsightsPartial == null && AuthAlgoliaPartial == null && AuthApiKeyPartial == null && AuthBasicPartial == null && AuthGoogleServiceAccountPartial == null && AuthInputPartialOneOf7Map == null && AuthOAuthPartial == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (AuthAlgoliaInsightsPartial != null && AuthAlgoliaPartial == null && AuthApiKeyPartial == null && AuthBasicPartial == null && AuthGoogleServiceAccountPartial == null && AuthInputPartialOneOf7Map == null && AuthOAuthPartial == null) { if (AuthAlgoliaInsightsPartial is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AuthAlgoliaInsightsPartial); return; }
+            if (AuthAlgoliaPartial != null && AuthAlgoliaInsightsPartial == null && AuthApiKeyPartial == null && AuthBasicPartial == null && AuthGoogleServiceAccountPartial == null && AuthInputPartialOneOf7Map == null && AuthOAuthPartial == null) { if (AuthAlgoliaPartial is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AuthAlgoliaPartial); return; }
+            if (AuthApiKeyPartial != null && AuthAlgoliaInsightsPartial == null && AuthAlgoliaPartial == null && AuthBasicPartial == null && AuthGoogleServiceAccountPartial == null && AuthInputPartialOneOf7Map == null && AuthOAuthPartial == null) { if (AuthApiKeyPartial is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AuthApiKeyPartial); return; }
+            if (AuthBasicPartial != null && AuthAlgoliaInsightsPartial == null && AuthAlgoliaPartial == null && AuthApiKeyPartial == null && AuthGoogleServiceAccountPartial == null && AuthInputPartialOneOf7Map == null && AuthOAuthPartial == null) { if (AuthBasicPartial is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AuthBasicPartial); return; }
+            if (AuthGoogleServiceAccountPartial != null && AuthAlgoliaInsightsPartial == null && AuthAlgoliaPartial == null && AuthApiKeyPartial == null && AuthBasicPartial == null && AuthInputPartialOneOf7Map == null && AuthOAuthPartial == null) { if (AuthGoogleServiceAccountPartial is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AuthGoogleServiceAccountPartial); return; }
+            if (AuthInputPartialOneOf7Map != null && AuthAlgoliaInsightsPartial == null && AuthAlgoliaPartial == null && AuthApiKeyPartial == null && AuthBasicPartial == null && AuthGoogleServiceAccountPartial == null && AuthOAuthPartial == null) { if (AuthInputPartialOneOf7Map is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AuthInputPartialOneOf7Map); return; }
+            if (AuthOAuthPartial != null && AuthAlgoliaInsightsPartial == null && AuthAlgoliaPartial == null && AuthApiKeyPartial == null && AuthBasicPartial == null && AuthGoogleServiceAccountPartial == null && AuthInputPartialOneOf7Map == null) { if (AuthOAuthPartial is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AuthOAuthPartial); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(AuthAlgoliaInsightsPartial != null)
             {
+                if (AuthAlgoliaInsightsPartial is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaInsightsPartial>(null, AuthAlgoliaInsightsPartial);
             }
             else if(AuthAlgoliaPartial != null)
             {
+                if (AuthAlgoliaPartial is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthAlgoliaPartial>(null, AuthAlgoliaPartial);
             }
             else if(AuthApiKeyPartial != null)
             {
+                if (AuthApiKeyPartial is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthApiKeyPartial>(null, AuthApiKeyPartial);
             }
             else if(AuthBasicPartial != null)
             {
+                if (AuthBasicPartial is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthBasicPartial>(null, AuthBasicPartial);
             }
             else if(AuthGoogleServiceAccountPartial != null)
             {
+                if (AuthGoogleServiceAccountPartial is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthGoogleServiceAccountPartial>(null, AuthGoogleServiceAccountPartial);
             }
             else if(AuthInputPartialOneOf7Map != null)
             {
+                if (AuthInputPartialOneOf7Map is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartialOneOf7Map>(null, AuthInputPartialOneOf7Map);
             }
             else if(AuthOAuthPartial != null)
             {
+                if (AuthOAuthPartial is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthOAuthPartial>(null, AuthOAuthPartial);
             }
         }

@@ -11,374 +11,547 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SettingsResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("advancedSyntax") is { } nullNodeAdvancedSyntax && nullNodeAdvancedSyntax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdvancedSyntax = null;
+            if (parseNode.GetChildNode("advancedSyntaxFeatures") is { } nullNodeAdvancedSyntaxFeatures && nullNodeAdvancedSyntaxFeatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdvancedSyntaxFeatures = null;
+            if (parseNode.GetChildNode("allowCompressionOfIntegerArray") is { } nullNodeAllowCompressionOfIntegerArray && nullNodeAllowCompressionOfIntegerArray.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowCompressionOfIntegerArray = null;
+            if (parseNode.GetChildNode("allowTyposOnNumericTokens") is { } nullNodeAllowTyposOnNumericTokens && nullNodeAllowTyposOnNumericTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowTyposOnNumericTokens = null;
+            if (parseNode.GetChildNode("alternativesAsExact") is { } nullNodeAlternativesAsExact && nullNodeAlternativesAsExact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlternativesAsExact = null;
+            if (parseNode.GetChildNode("attributeCriteriaComputedBy") is { } nullNodeAttributeCriteriaComputedBy && nullNodeAttributeCriteriaComputedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeCriteriaComputedBy = null;
+            if (parseNode.GetChildNode("attributeCriteriaComputedByMinProximity") is { } nullNodeAttributeCriteriaComputedByMinProximity && nullNodeAttributeCriteriaComputedByMinProximity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeCriteriaComputedByMinProximity = null;
+            if (parseNode.GetChildNode("attributeForDistinct") is { } nullNodeAttributeForDistinct && nullNodeAttributeForDistinct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeForDistinct = null;
+            if (parseNode.GetChildNode("attributesForFaceting") is { } nullNodeAttributesForFaceting && nullNodeAttributesForFaceting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributesForFaceting = null;
+            if (parseNode.GetChildNode("attributesToHighlight") is { } nullNodeAttributesToHighlight && nullNodeAttributesToHighlight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributesToHighlight = null;
+            if (parseNode.GetChildNode("attributesToRetrieve") is { } nullNodeAttributesToRetrieve && nullNodeAttributesToRetrieve.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributesToRetrieve = null;
+            if (parseNode.GetChildNode("attributesToSnippet") is { } nullNodeAttributesToSnippet && nullNodeAttributesToSnippet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributesToSnippet = null;
+            if (parseNode.GetChildNode("attributesToTransliterate") is { } nullNodeAttributesToTransliterate && nullNodeAttributesToTransliterate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributesToTransliterate = null;
+            if (parseNode.GetChildNode("camelCaseAttributes") is { } nullNodeCamelCaseAttributes && nullNodeCamelCaseAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CamelCaseAttributes = null;
+            if (parseNode.GetChildNode("customNormalization") is { } nullNodeCustomNormalization && nullNodeCustomNormalization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomNormalization = null;
+            if (parseNode.GetChildNode("customRanking") is { } nullNodeCustomRanking && nullNodeCustomRanking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomRanking = null;
+            if (parseNode.GetChildNode("decompoundedAttributes") is { } nullNodeDecompoundedAttributes && nullNodeDecompoundedAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecompoundedAttributes = null;
+            if (parseNode.GetChildNode("decompoundQuery") is { } nullNodeDecompoundQuery && nullNodeDecompoundQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecompoundQuery = null;
+            if (parseNode.GetChildNode("disableExactOnAttributes") is { } nullNodeDisableExactOnAttributes && nullNodeDisableExactOnAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableExactOnAttributes = null;
+            if (parseNode.GetChildNode("disablePrefixOnAttributes") is { } nullNodeDisablePrefixOnAttributes && nullNodeDisablePrefixOnAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisablePrefixOnAttributes = null;
+            if (parseNode.GetChildNode("disableTypoToleranceOnAttributes") is { } nullNodeDisableTypoToleranceOnAttributes && nullNodeDisableTypoToleranceOnAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableTypoToleranceOnAttributes = null;
+            if (parseNode.GetChildNode("disableTypoToleranceOnWords") is { } nullNodeDisableTypoToleranceOnWords && nullNodeDisableTypoToleranceOnWords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableTypoToleranceOnWords = null;
+            if (parseNode.GetChildNode("distinct") is { } nullNodeDistinct && nullNodeDistinct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Distinct = null;
+            if (parseNode.GetChildNode("enablePersonalization") is { } nullNodeEnablePersonalization && nullNodeEnablePersonalization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnablePersonalization = null;
+            if (parseNode.GetChildNode("enableReRanking") is { } nullNodeEnableReRanking && nullNodeEnableReRanking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableReRanking = null;
+            if (parseNode.GetChildNode("enableRules") is { } nullNodeEnableRules && nullNodeEnableRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableRules = null;
+            if (parseNode.GetChildNode("exactOnSingleWordQuery") is { } nullNodeExactOnSingleWordQuery && nullNodeExactOnSingleWordQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExactOnSingleWordQuery = null;
+            if (parseNode.GetChildNode("highlightPostTag") is { } nullNodeHighlightPostTag && nullNodeHighlightPostTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HighlightPostTag = null;
+            if (parseNode.GetChildNode("highlightPreTag") is { } nullNodeHighlightPreTag && nullNodeHighlightPreTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HighlightPreTag = null;
+            if (parseNode.GetChildNode("hitsPerPage") is { } nullNodeHitsPerPage && nullNodeHitsPerPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HitsPerPage = null;
+            if (parseNode.GetChildNode("ignorePlurals") is { } nullNodeIgnorePlurals && nullNodeIgnorePlurals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnorePlurals = null;
+            if (parseNode.GetChildNode("indexLanguages") is { } nullNodeIndexLanguages && nullNodeIndexLanguages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexLanguages = null;
+            if (parseNode.GetChildNode("keepDiacriticsOnCharacters") is { } nullNodeKeepDiacriticsOnCharacters && nullNodeKeepDiacriticsOnCharacters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeepDiacriticsOnCharacters = null;
+            if (parseNode.GetChildNode("maxFacetHits") is { } nullNodeMaxFacetHits && nullNodeMaxFacetHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxFacetHits = null;
+            if (parseNode.GetChildNode("maxValuesPerFacet") is { } nullNodeMaxValuesPerFacet && nullNodeMaxValuesPerFacet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxValuesPerFacet = null;
+            if (parseNode.GetChildNode("minProximity") is { } nullNodeMinProximity && nullNodeMinProximity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinProximity = null;
+            if (parseNode.GetChildNode("minWordSizefor1Typo") is { } nullNodeMinWordSizefor1Typo && nullNodeMinWordSizefor1Typo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinWordSizefor1Typo = null;
+            if (parseNode.GetChildNode("minWordSizefor2Typos") is { } nullNodeMinWordSizefor2Typos && nullNodeMinWordSizefor2Typos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinWordSizefor2Typos = null;
+            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("numericAttributesForFiltering") is { } nullNodeNumericAttributesForFiltering && nullNodeNumericAttributesForFiltering.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumericAttributesForFiltering = null;
+            if (parseNode.GetChildNode("optionalWords") is { } nullNodeOptionalWords && nullNodeOptionalWords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionalWords = null;
+            if (parseNode.GetChildNode("paginationLimitedTo") is { } nullNodePaginationLimitedTo && nullNodePaginationLimitedTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaginationLimitedTo = null;
+            if (parseNode.GetChildNode("primary") is { } nullNodePrimary && nullNodePrimary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Primary = null;
+            if (parseNode.GetChildNode("queryLanguages") is { } nullNodeQueryLanguages && nullNodeQueryLanguages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryLanguages = null;
+            if (parseNode.GetChildNode("queryType") is { } nullNodeQueryType && nullNodeQueryType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryType = null;
+            if (parseNode.GetChildNode("ranking") is { } nullNodeRanking && nullNodeRanking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ranking = null;
+            if (parseNode.GetChildNode("relevancyStrictness") is { } nullNodeRelevancyStrictness && nullNodeRelevancyStrictness.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelevancyStrictness = null;
+            if (parseNode.GetChildNode("removeStopWords") is { } nullNodeRemoveStopWords && nullNodeRemoveStopWords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoveStopWords = null;
+            if (parseNode.GetChildNode("removeWordsIfNoResults") is { } nullNodeRemoveWordsIfNoResults && nullNodeRemoveWordsIfNoResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemoveWordsIfNoResults = null;
+            if (parseNode.GetChildNode("renderingContent") is { } nullNodeRenderingContent && nullNodeRenderingContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenderingContent = null;
+            if (parseNode.GetChildNode("replaceSynonymsInHighlight") is { } nullNodeReplaceSynonymsInHighlight && nullNodeReplaceSynonymsInHighlight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplaceSynonymsInHighlight = null;
+            if (parseNode.GetChildNode("replicas") is { } nullNodeReplicas && nullNodeReplicas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Replicas = null;
+            if (parseNode.GetChildNode("reRankingApplyFilter") is { } nullNodeReRankingApplyFilter && nullNodeReRankingApplyFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReRankingApplyFilter = null;
+            if (parseNode.GetChildNode("responseFields") is { } nullNodeResponseFields && nullNodeResponseFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseFields = null;
+            if (parseNode.GetChildNode("restrictHighlightAndSnippetArrays") is { } nullNodeRestrictHighlightAndSnippetArrays && nullNodeRestrictHighlightAndSnippetArrays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestrictHighlightAndSnippetArrays = null;
+            if (parseNode.GetChildNode("searchableAttributes") is { } nullNodeSearchableAttributes && nullNodeSearchableAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SearchableAttributes = null;
+            if (parseNode.GetChildNode("semanticSearch") is { } nullNodeSemanticSearch && nullNodeSemanticSearch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SemanticSearch = null;
+            if (parseNode.GetChildNode("separatorsToIndex") is { } nullNodeSeparatorsToIndex && nullNodeSeparatorsToIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeparatorsToIndex = null;
+            if (parseNode.GetChildNode("snippetEllipsisText") is { } nullNodeSnippetEllipsisText && nullNodeSnippetEllipsisText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnippetEllipsisText = null;
+            if (parseNode.GetChildNode("sortFacetValuesBy") is { } nullNodeSortFacetValuesBy && nullNodeSortFacetValuesBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SortFacetValuesBy = null;
+            if (parseNode.GetChildNode("typoTolerance") is { } nullNodeTypoTolerance && nullNodeTypoTolerance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TypoTolerance = null;
+            if (parseNode.GetChildNode("unretrievableAttributes") is { } nullNodeUnretrievableAttributes && nullNodeUnretrievableAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnretrievableAttributes = null;
+            if (parseNode.GetChildNode("userData") is { } nullNodeUserData && nullNodeUserData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserData = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to support phrase matching and excluding words from search queries.Use the `advancedSyntaxFeatures` parameter to control which feature is supported.</summary>
-        public bool? AdvancedSyntax { get; set; }
+        public bool? AdvancedSyntax { get => _explicitNullValueAdvancedSyntax; set { _explicitNullValueAdvancedSyntax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advancedSyntax"); else _explicitNullProperties?.Remove("advancedSyntax"); } }
+        private bool? _explicitNullValueAdvancedSyntax = default!;
         /// <summary>Advanced search syntax features you want to support.- `exactPhrase`.  Phrases in quotes must match exactly.  For example, `sparkly blue &quot;iPhone case&quot;` only returns records with the exact string &quot;iPhone case&quot;.- `excludeWords`.  Query words prefixed with a `-` must not occur in a record.  For example, `search -engine` matches records that contain &quot;search&quot; but not &quot;engine&quot;.This setting only has an effect if `advancedSyntax` is true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchAdvancedSyntaxFeatures?>? AdvancedSyntaxFeatures { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchAdvancedSyntaxFeatures?>? AdvancedSyntaxFeatures { get => _explicitNullValueAdvancedSyntaxFeatures; set { _explicitNullValueAdvancedSyntaxFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advancedSyntaxFeatures"); else _explicitNullProperties?.Remove("advancedSyntaxFeatures"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchAdvancedSyntaxFeatures?>? _explicitNullValueAdvancedSyntaxFeatures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchAdvancedSyntaxFeatures?> AdvancedSyntaxFeatures { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchAdvancedSyntaxFeatures?> AdvancedSyntaxFeatures { get => _explicitNullValueAdvancedSyntaxFeatures; set { _explicitNullValueAdvancedSyntaxFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advancedSyntaxFeatures"); else _explicitNullProperties?.Remove("advancedSyntaxFeatures"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchAdvancedSyntaxFeatures?> _explicitNullValueAdvancedSyntaxFeatures = default!;
 #endif
         /// <summary>Whether arrays with exclusively non-negative integers should be compressed for better performance.If true, the compressed arrays may be reordered.</summary>
-        public bool? AllowCompressionOfIntegerArray { get; set; }
+        public bool? AllowCompressionOfIntegerArray { get => _explicitNullValueAllowCompressionOfIntegerArray; set { _explicitNullValueAllowCompressionOfIntegerArray = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowCompressionOfIntegerArray"); else _explicitNullProperties?.Remove("allowCompressionOfIntegerArray"); } }
+        private bool? _explicitNullValueAllowCompressionOfIntegerArray = default!;
         /// <summary>Whether to allow typos on numbers in the search query.Turn off this setting to reduce the number of irrelevant matcheswhen searching in large sets of similar numbers.</summary>
-        public bool? AllowTyposOnNumericTokens { get; set; }
+        public bool? AllowTyposOnNumericTokens { get => _explicitNullValueAllowTyposOnNumericTokens; set { _explicitNullValueAllowTyposOnNumericTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowTyposOnNumericTokens"); else _explicitNullProperties?.Remove("allowTyposOnNumericTokens"); } }
+        private bool? _explicitNullValueAllowTyposOnNumericTokens = default!;
         /// <summary>Determine which plurals and synonyms should be considered an exact matches.By default, Algolia treats singular and plural forms of a word, and single-word synonyms, as [exact](https://www.algolia.com/doc/guides/managing-results/relevance-overview/in-depth/ranking-criteria/#exact) matches when searching.For example:- &quot;swimsuit&quot; and &quot;swimsuits&quot; are treated the same.- &quot;swimsuit&quot; and &quot;swimwear&quot; are treated the same (if they are [synonyms](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/adding-synonyms/#regular-synonyms)).- `ignorePlurals`.  Plurals and similar declensions added by the `ignorePlurals` setting are considered exact matches.- `singleWordSynonym`.  Single-word synonyms, such as &quot;NY&quot; = &quot;NYC&quot;, are considered exact matches.- `multiWordsSynonym`.  Multi-word synonyms, such as &quot;NY&quot; = &quot;New York&quot;, are considered exact matches.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchAlternativesAsExact?>? AlternativesAsExact { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchAlternativesAsExact?>? AlternativesAsExact { get => _explicitNullValueAlternativesAsExact; set { _explicitNullValueAlternativesAsExact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alternativesAsExact"); else _explicitNullProperties?.Remove("alternativesAsExact"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchAlternativesAsExact?>? _explicitNullValueAlternativesAsExact = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchAlternativesAsExact?> AlternativesAsExact { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchAlternativesAsExact?> AlternativesAsExact { get => _explicitNullValueAlternativesAsExact; set { _explicitNullValueAlternativesAsExact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alternativesAsExact"); else _explicitNullProperties?.Remove("alternativesAsExact"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchAlternativesAsExact?> _explicitNullValueAlternativesAsExact = default!;
 #endif
         /// <summary>Strategy for computing the Attribute ranking criterion.This mainly affects multi-word queries with matches in more than one attribute.The `ranking` setting decides whether `best` takes effect.When Attribute comes after Proximity, which is the default order, the engine always uses the `minProximity` strategy and ignores `best`.To select `best`, move Attribute before Proximity in `ranking`.The `sum` strategy applies in both orders.- `minProximity`.  Pick the best matching attribute from the attributes that form the best proximity score.  On an ordered attribute, the match position breaks ties.- `best`.  Pick the best matching attribute from all attributes that match any query word.  On an ordered attribute, the match position breaks ties.- `sum`.  Add up a score for every query word instead of picking one attribute.  Each word&apos;s score comes from the attribute it matched, and from its position in that attribute when the attribute is ordered.  A query word that matches nothing adds a large penalty.  A record with a lower total ranks higher.  A record therefore cannot rank high only because one word of a multi-word query matched a top attribute.  Use `sum` with short, relevant attributes, and set long-text attributes to unordered.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchAttributeCriteriaComputedBy? AttributeCriteriaComputedBy { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchAttributeCriteriaComputedBy? AttributeCriteriaComputedBy { get => _explicitNullValueAttributeCriteriaComputedBy; set { _explicitNullValueAttributeCriteriaComputedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributeCriteriaComputedBy"); else _explicitNullProperties?.Remove("attributeCriteriaComputedBy"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchAttributeCriteriaComputedBy? _explicitNullValueAttributeCriteriaComputedBy = default!;
         /// <summary>Whether the best matching attribute should be determined by minimum proximity.This setting only affects ranking if the Attribute ranking criterion comes before Proximity in the `ranking` setting.If true, the best matching attribute is selected based on the minimum proximity of multiple matches.Otherwise, the best matching attribute is determined by the order in the `searchableAttributes` setting.Prefer `attributeCriteriaComputedBy`, which expresses the same two behaviors and adds the `sum` strategy.If you set both, `attributeCriteriaComputedBy` takes precedence.</summary>
-        public bool? AttributeCriteriaComputedByMinProximity { get; set; }
+        public bool? AttributeCriteriaComputedByMinProximity { get => _explicitNullValueAttributeCriteriaComputedByMinProximity; set { _explicitNullValueAttributeCriteriaComputedByMinProximity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributeCriteriaComputedByMinProximity"); else _explicitNullProperties?.Remove("attributeCriteriaComputedByMinProximity"); } }
+        private bool? _explicitNullValueAttributeCriteriaComputedByMinProximity = default!;
         /// <summary>Attribute that should be used to establish groups of results.Attribute names are case-sensitive.All records with the same value for this attribute are considered a group.You can combine `attributeForDistinct` with the `distinct` search parameter to controlhow many items per group are included in the search results.If you want to use the same attribute also for faceting, use the `afterDistinct` modifier of the `attributesForFaceting` setting.This applies faceting _after_ deduplication, which will result in accurate facet counts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AttributeForDistinct { get; set; }
+        public string? AttributeForDistinct { get => _explicitNullValueAttributeForDistinct; set { _explicitNullValueAttributeForDistinct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributeForDistinct"); else _explicitNullProperties?.Remove("attributeForDistinct"); } }
+        private string? _explicitNullValueAttributeForDistinct = default!;
 #nullable restore
 #else
-        public string AttributeForDistinct { get; set; }
+        public string AttributeForDistinct { get => _explicitNullValueAttributeForDistinct; set { _explicitNullValueAttributeForDistinct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributeForDistinct"); else _explicitNullProperties?.Remove("attributeForDistinct"); } }
+        private string _explicitNullValueAttributeForDistinct = default!;
 #endif
         /// <summary>Attributes used for [faceting](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting).Facets are attributes that let you categorize search results.They can be used for filtering search results.By default, no attribute is used for faceting.Attribute names are case-sensitive.**Modifiers**- `filterOnly(&quot;ATTRIBUTE&quot;)`.  Allows the attribute to be used as a filter but doesn&apos;t evaluate the facet values.- `searchable(&quot;ATTRIBUTE&quot;)`.  Allows searching for facet values.- `afterDistinct(&quot;ATTRIBUTE&quot;)`.  Evaluates the facet count _after_ deduplication with `distinct`.  This ensures accurate facet counts.  You can apply this modifier to searchable facets: `afterDistinct(searchable(ATTRIBUTE))`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AttributesForFaceting { get; set; }
+        public List<string>? AttributesForFaceting { get => _explicitNullValueAttributesForFaceting; set { _explicitNullValueAttributesForFaceting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributesForFaceting"); else _explicitNullProperties?.Remove("attributesForFaceting"); } }
+        private List<string>? _explicitNullValueAttributesForFaceting = default!;
 #nullable restore
 #else
-        public List<string> AttributesForFaceting { get; set; }
+        public List<string> AttributesForFaceting { get => _explicitNullValueAttributesForFaceting; set { _explicitNullValueAttributesForFaceting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributesForFaceting"); else _explicitNullProperties?.Remove("attributesForFaceting"); } }
+        private List<string> _explicitNullValueAttributesForFaceting = default!;
 #endif
         /// <summary>Attributes to highlight.By default, all searchable attributes are highlighted.Use `*` to highlight all attributes or use an empty array `[]` to turn off highlighting.Attribute names are case-sensitiveWith highlighting, strings that match the search query are surrounded by HTML tags defined by `highlightPreTag` and `highlightPostTag`.You can use this to visually highlight matching parts of a search query in your UIFor more information, see [Highlighting and snippeting](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/highlighting-snippeting/js).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AttributesToHighlight { get; set; }
+        public List<string>? AttributesToHighlight { get => _explicitNullValueAttributesToHighlight; set { _explicitNullValueAttributesToHighlight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributesToHighlight"); else _explicitNullProperties?.Remove("attributesToHighlight"); } }
+        private List<string>? _explicitNullValueAttributesToHighlight = default!;
 #nullable restore
 #else
-        public List<string> AttributesToHighlight { get; set; }
+        public List<string> AttributesToHighlight { get => _explicitNullValueAttributesToHighlight; set { _explicitNullValueAttributesToHighlight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributesToHighlight"); else _explicitNullProperties?.Remove("attributesToHighlight"); } }
+        private List<string> _explicitNullValueAttributesToHighlight = default!;
 #endif
         /// <summary>Attributes to include in the API response.To reduce the size of your response, you can retrieve only some of the attributes.Attribute names are case-sensitive- `*` retrieves all attributes, except attributes included in the `customRanking` and `unretrievableAttributes` settings.- To retrieve all attributes except a specific one, prefix the attribute with a dash and combine it with the `*`: `[&quot;*&quot;, &quot;-ATTRIBUTE&quot;]`.- The `objectID` attribute is always included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AttributesToRetrieve { get; set; }
+        public List<string>? AttributesToRetrieve { get => _explicitNullValueAttributesToRetrieve; set { _explicitNullValueAttributesToRetrieve = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributesToRetrieve"); else _explicitNullProperties?.Remove("attributesToRetrieve"); } }
+        private List<string>? _explicitNullValueAttributesToRetrieve = default!;
 #nullable restore
 #else
-        public List<string> AttributesToRetrieve { get; set; }
+        public List<string> AttributesToRetrieve { get => _explicitNullValueAttributesToRetrieve; set { _explicitNullValueAttributesToRetrieve = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributesToRetrieve"); else _explicitNullProperties?.Remove("attributesToRetrieve"); } }
+        private List<string> _explicitNullValueAttributesToRetrieve = default!;
 #endif
         /// <summary>Attributes for which to enable snippets.Attribute names are case-sensitiveSnippets provide additional context to matched words.If you enable snippets, they include 10 words, including the matched word.The matched word will also be wrapped by HTML tags for highlighting.You can adjust the number of words with the following notation: `ATTRIBUTE:NUMBER`,where `NUMBER` is the number of words to be extracted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AttributesToSnippet { get; set; }
+        public List<string>? AttributesToSnippet { get => _explicitNullValueAttributesToSnippet; set { _explicitNullValueAttributesToSnippet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributesToSnippet"); else _explicitNullProperties?.Remove("attributesToSnippet"); } }
+        private List<string>? _explicitNullValueAttributesToSnippet = default!;
 #nullable restore
 #else
-        public List<string> AttributesToSnippet { get; set; }
+        public List<string> AttributesToSnippet { get => _explicitNullValueAttributesToSnippet; set { _explicitNullValueAttributesToSnippet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributesToSnippet"); else _explicitNullProperties?.Remove("attributesToSnippet"); } }
+        private List<string> _explicitNullValueAttributesToSnippet = default!;
 #endif
         /// <summary>Attributes, for which you want to support [Japanese transliteration](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#japanese-transliteration-and-type-ahead).Transliteration supports searching in any of the Japanese writing systems.To support transliteration, you must set the indexing language to Japanese.Attribute names are case-sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AttributesToTransliterate { get; set; }
+        public List<string>? AttributesToTransliterate { get => _explicitNullValueAttributesToTransliterate; set { _explicitNullValueAttributesToTransliterate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributesToTransliterate"); else _explicitNullProperties?.Remove("attributesToTransliterate"); } }
+        private List<string>? _explicitNullValueAttributesToTransliterate = default!;
 #nullable restore
 #else
-        public List<string> AttributesToTransliterate { get; set; }
+        public List<string> AttributesToTransliterate { get => _explicitNullValueAttributesToTransliterate; set { _explicitNullValueAttributesToTransliterate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributesToTransliterate"); else _explicitNullProperties?.Remove("attributesToTransliterate"); } }
+        private List<string> _explicitNullValueAttributesToTransliterate = default!;
 #endif
         /// <summary>Attributes for which to split [camel case](https://wikipedia.org/wiki/Camel_case) words.Attribute names are case-sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CamelCaseAttributes { get; set; }
+        public List<string>? CamelCaseAttributes { get => _explicitNullValueCamelCaseAttributes; set { _explicitNullValueCamelCaseAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("camelCaseAttributes"); else _explicitNullProperties?.Remove("camelCaseAttributes"); } }
+        private List<string>? _explicitNullValueCamelCaseAttributes = default!;
 #nullable restore
 #else
-        public List<string> CamelCaseAttributes { get; set; }
+        public List<string> CamelCaseAttributes { get => _explicitNullValueCamelCaseAttributes; set { _explicitNullValueCamelCaseAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("camelCaseAttributes"); else _explicitNullProperties?.Remove("camelCaseAttributes"); } }
+        private List<string> _explicitNullValueCamelCaseAttributes = default!;
 #endif
         /// <summary>Characters and their normalized replacements.This overrides Algolia&apos;s default [normalization](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/normalization).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseIndexSettingsCustomNormalizationProperty2? CustomNormalization { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseIndexSettingsCustomNormalizationProperty2? CustomNormalization { get => _explicitNullValueCustomNormalization; set { _explicitNullValueCustomNormalization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customNormalization"); else _explicitNullProperties?.Remove("customNormalization"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseIndexSettingsCustomNormalizationProperty2? _explicitNullValueCustomNormalization = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseIndexSettingsCustomNormalizationProperty2 CustomNormalization { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseIndexSettingsCustomNormalizationProperty2 CustomNormalization { get => _explicitNullValueCustomNormalization; set { _explicitNullValueCustomNormalization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customNormalization"); else _explicitNullProperties?.Remove("customNormalization"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseIndexSettingsCustomNormalizationProperty2 _explicitNullValueCustomNormalization = default!;
 #endif
         /// <summary>Attributes to use as [custom ranking](https://www.algolia.com/doc/guides/managing-results/must-do/custom-ranking).Attribute names are case-sensitive.The custom ranking attributes decide which items are shown first if the other ranking criteria are equal.Records with missing values for your selected custom ranking attributes are always sorted last.Boolean attributes are sorted based on their alphabetical order.**Modifiers**- `asc(&quot;ATTRIBUTE&quot;)`.  Sort the index by the values of an attribute, in ascending order.- `desc(&quot;ATTRIBUTE&quot;)`.  Sort the index by the values of an attribute, in descending order.If you use two or more custom ranking attributes,[reduce the precision](https://www.algolia.com/doc/guides/managing-results/must-do/custom-ranking/how-to/controlling-custom-ranking-metrics-precision) of your first attributes,or the other attributes will never be applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CustomRanking { get; set; }
+        public List<string>? CustomRanking { get => _explicitNullValueCustomRanking; set { _explicitNullValueCustomRanking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRanking"); else _explicitNullProperties?.Remove("customRanking"); } }
+        private List<string>? _explicitNullValueCustomRanking = default!;
 #nullable restore
 #else
-        public List<string> CustomRanking { get; set; }
+        public List<string> CustomRanking { get => _explicitNullValueCustomRanking; set { _explicitNullValueCustomRanking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRanking"); else _explicitNullProperties?.Remove("customRanking"); } }
+        private List<string> _explicitNullValueCustomRanking = default!;
 #endif
         /// <summary>Searchable attributes to which Algolia should apply [word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/how-to/customize-segmentation) (decompounding).Attribute names are case-sensitive.Compound words are formed by combining two or more individual words,and are particularly prevalent in Germanic languages—for example, &quot;firefighter&quot;.With decompounding, the individual components are indexed separately.You can specify different lists for different languages.Decompounding is supported for these languages:Dutch (`nl`), German (`de`), Finnish (`fi`), Danish (`da`), Swedish (`sv`), and Norwegian (`no`).Decompounding doesn&apos;t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).For example, `Gartenstühle` won&apos;t be decompounded if the `ü` consists of `u` (U+0075) and `◌̈` (U+0308).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseIndexSettingsDecompoundedAttributesProperty2? DecompoundedAttributes { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseIndexSettingsDecompoundedAttributesProperty2? DecompoundedAttributes { get => _explicitNullValueDecompoundedAttributes; set { _explicitNullValueDecompoundedAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decompoundedAttributes"); else _explicitNullProperties?.Remove("decompoundedAttributes"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseIndexSettingsDecompoundedAttributesProperty2? _explicitNullValueDecompoundedAttributes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseIndexSettingsDecompoundedAttributesProperty2 DecompoundedAttributes { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseIndexSettingsDecompoundedAttributesProperty2 DecompoundedAttributes { get => _explicitNullValueDecompoundedAttributes; set { _explicitNullValueDecompoundedAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decompoundedAttributes"); else _explicitNullProperties?.Remove("decompoundedAttributes"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchBaseIndexSettingsDecompoundedAttributesProperty2 _explicitNullValueDecompoundedAttributes = default!;
 #endif
         /// <summary>Whether to split compound words in the query into their building blocks.For more information, see [Word segmentation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations/#split-compound-words).Word segmentation is supported for these languages: German, Dutch, Finnish, Swedish, and Norwegian.Decompounding doesn&apos;t work for words with [non-spacing mark Unicode characters](https://www.charactercodes.net/category/non-spacing_mark).For example, `Gartenstühle` won&apos;t be decompounded if the `ü` consists of `u` (U+0075) and `◌̈` (U+0308).</summary>
-        public bool? DecompoundQuery { get; set; }
+        public bool? DecompoundQuery { get => _explicitNullValueDecompoundQuery; set { _explicitNullValueDecompoundQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decompoundQuery"); else _explicitNullProperties?.Remove("decompoundQuery"); } }
+        private bool? _explicitNullValueDecompoundQuery = default!;
         /// <summary>Searchable attributes for which you want to [turn off the Exact ranking criterion](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/in-depth/adjust-exact-settings/#turn-off-exact-for-some-attributes).Attribute names are case-sensitiveThis can be useful for attributes with long values, where the likelihood of an exact match is high,such as product descriptions.Turning off the Exact ranking criterion for these attributes favors exact matching on other attributes.This reduces the impact of individual attributes with a lot of content on ranking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DisableExactOnAttributes { get; set; }
+        public List<string>? DisableExactOnAttributes { get => _explicitNullValueDisableExactOnAttributes; set { _explicitNullValueDisableExactOnAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableExactOnAttributes"); else _explicitNullProperties?.Remove("disableExactOnAttributes"); } }
+        private List<string>? _explicitNullValueDisableExactOnAttributes = default!;
 #nullable restore
 #else
-        public List<string> DisableExactOnAttributes { get; set; }
+        public List<string> DisableExactOnAttributes { get => _explicitNullValueDisableExactOnAttributes; set { _explicitNullValueDisableExactOnAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableExactOnAttributes"); else _explicitNullProperties?.Remove("disableExactOnAttributes"); } }
+        private List<string> _explicitNullValueDisableExactOnAttributes = default!;
 #endif
         /// <summary>Searchable attributes for which you want to turn off [prefix matching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/#adjust-prefix-search).Attribute names are case-sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DisablePrefixOnAttributes { get; set; }
+        public List<string>? DisablePrefixOnAttributes { get => _explicitNullValueDisablePrefixOnAttributes; set { _explicitNullValueDisablePrefixOnAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disablePrefixOnAttributes"); else _explicitNullProperties?.Remove("disablePrefixOnAttributes"); } }
+        private List<string>? _explicitNullValueDisablePrefixOnAttributes = default!;
 #nullable restore
 #else
-        public List<string> DisablePrefixOnAttributes { get; set; }
+        public List<string> DisablePrefixOnAttributes { get => _explicitNullValueDisablePrefixOnAttributes; set { _explicitNullValueDisablePrefixOnAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disablePrefixOnAttributes"); else _explicitNullProperties?.Remove("disablePrefixOnAttributes"); } }
+        private List<string> _explicitNullValueDisablePrefixOnAttributes = default!;
 #endif
         /// <summary>Attributes for which you want to turn off [typo tolerance](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance).Attribute names are case-sensitiveReturning only exact matches can help when- [Searching in hyphenated attributes](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/how-to/how-to-search-in-hyphenated-attributes).- Reducing the number of matches when you have too many.  This can happen with attributes that are long blocks of text, such as product descriptions.Consider alternatives such as `disableTypoToleranceOnWords` or adding synonyms if your attributes have intentional unusual spellings that might look like typos.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DisableTypoToleranceOnAttributes { get; set; }
+        public List<string>? DisableTypoToleranceOnAttributes { get => _explicitNullValueDisableTypoToleranceOnAttributes; set { _explicitNullValueDisableTypoToleranceOnAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableTypoToleranceOnAttributes"); else _explicitNullProperties?.Remove("disableTypoToleranceOnAttributes"); } }
+        private List<string>? _explicitNullValueDisableTypoToleranceOnAttributes = default!;
 #nullable restore
 #else
-        public List<string> DisableTypoToleranceOnAttributes { get; set; }
+        public List<string> DisableTypoToleranceOnAttributes { get => _explicitNullValueDisableTypoToleranceOnAttributes; set { _explicitNullValueDisableTypoToleranceOnAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableTypoToleranceOnAttributes"); else _explicitNullProperties?.Remove("disableTypoToleranceOnAttributes"); } }
+        private List<string> _explicitNullValueDisableTypoToleranceOnAttributes = default!;
 #endif
         /// <summary>Creates a list of [words which require exact matches](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#turn-off-typo-tolerance-for-certain-words).This also turns off [word splitting and concatenation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/splitting-and-concatenation) for the specified words.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DisableTypoToleranceOnWords { get; set; }
+        public List<string>? DisableTypoToleranceOnWords { get => _explicitNullValueDisableTypoToleranceOnWords; set { _explicitNullValueDisableTypoToleranceOnWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableTypoToleranceOnWords"); else _explicitNullProperties?.Remove("disableTypoToleranceOnWords"); } }
+        private List<string>? _explicitNullValueDisableTypoToleranceOnWords = default!;
 #nullable restore
 #else
-        public List<string> DisableTypoToleranceOnWords { get; set; }
+        public List<string> DisableTypoToleranceOnWords { get => _explicitNullValueDisableTypoToleranceOnWords; set { _explicitNullValueDisableTypoToleranceOnWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disableTypoToleranceOnWords"); else _explicitNullProperties?.Remove("disableTypoToleranceOnWords"); } }
+        private List<string> _explicitNullValueDisableTypoToleranceOnWords = default!;
 #endif
         /// <summary>Determines how many records of a group are included in the search results.Records with the same value for the `attributeForDistinct` attribute are considered a group.The `distinct` setting controls how many members of the group are returned.This is useful for [deduplication and grouping](https://www.algolia.com/doc/guides/managing-results/refine-results/grouping/#deduplicate-results-with-distinct).The `distinct` setting is ignored if `attributeForDistinct` is not set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchDistinct? Distinct { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchDistinct? Distinct { get => _explicitNullValueDistinct; set { _explicitNullValueDistinct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct"); else _explicitNullProperties?.Remove("distinct"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchDistinct? _explicitNullValueDistinct = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchDistinct Distinct { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchDistinct Distinct { get => _explicitNullValueDistinct; set { _explicitNullValueDistinct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distinct"); else _explicitNullProperties?.Remove("distinct"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchDistinct _explicitNullValueDistinct = default!;
 #endif
         /// <summary>Whether to enable Personalization.</summary>
-        public bool? EnablePersonalization { get; set; }
+        public bool? EnablePersonalization { get => _explicitNullValueEnablePersonalization; set { _explicitNullValueEnablePersonalization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enablePersonalization"); else _explicitNullProperties?.Remove("enablePersonalization"); } }
+        private bool? _explicitNullValueEnablePersonalization = default!;
         /// <summary>Whether this search will use [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking).This setting only has an effect if you activated Dynamic Re-Ranking for this index in the Algolia dashboard.</summary>
-        public bool? EnableReRanking { get; set; }
+        public bool? EnableReRanking { get => _explicitNullValueEnableReRanking; set { _explicitNullValueEnableReRanking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableReRanking"); else _explicitNullProperties?.Remove("enableReRanking"); } }
+        private bool? _explicitNullValueEnableReRanking = default!;
         /// <summary>Whether to enable rules.</summary>
-        public bool? EnableRules { get; set; }
+        public bool? EnableRules { get => _explicitNullValueEnableRules; set { _explicitNullValueEnableRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableRules"); else _explicitNullProperties?.Remove("enableRules"); } }
+        private bool? _explicitNullValueEnableRules = default!;
         /// <summary>Determines how the [Exact ranking criterion](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/in-depth/adjust-exact-settings/#turn-off-exact-for-some-attributes) is computed when the search query has only one word.- `attribute`.  The Exact ranking criterion is 1 if the query word and attribute value are the same.  For example, a search for &quot;road&quot; will match the value &quot;road&quot;, but not &quot;road trip&quot;.- `none`.  The Exact ranking criterion is ignored on single-word searches.- `word`.  The Exact ranking criterion is 1 if the query word is found in the attribute value.  The query word must have at least 3 characters and must not be a stop word.  Only exact matches will be highlighted,  partial and prefix matches won&apos;t.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchExactOnSingleWordQuery? ExactOnSingleWordQuery { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchExactOnSingleWordQuery? ExactOnSingleWordQuery { get => _explicitNullValueExactOnSingleWordQuery; set { _explicitNullValueExactOnSingleWordQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exactOnSingleWordQuery"); else _explicitNullProperties?.Remove("exactOnSingleWordQuery"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchExactOnSingleWordQuery? _explicitNullValueExactOnSingleWordQuery = default!;
         /// <summary>HTML tag to insert after the highlighted parts in all highlighted results and snippets.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HighlightPostTag { get; set; }
+        public string? HighlightPostTag { get => _explicitNullValueHighlightPostTag; set { _explicitNullValueHighlightPostTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlightPostTag"); else _explicitNullProperties?.Remove("highlightPostTag"); } }
+        private string? _explicitNullValueHighlightPostTag = default!;
 #nullable restore
 #else
-        public string HighlightPostTag { get; set; }
+        public string HighlightPostTag { get => _explicitNullValueHighlightPostTag; set { _explicitNullValueHighlightPostTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlightPostTag"); else _explicitNullProperties?.Remove("highlightPostTag"); } }
+        private string _explicitNullValueHighlightPostTag = default!;
 #endif
         /// <summary>HTML tag to insert before the highlighted parts in all highlighted results and snippets.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HighlightPreTag { get; set; }
+        public string? HighlightPreTag { get => _explicitNullValueHighlightPreTag; set { _explicitNullValueHighlightPreTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlightPreTag"); else _explicitNullProperties?.Remove("highlightPreTag"); } }
+        private string? _explicitNullValueHighlightPreTag = default!;
 #nullable restore
 #else
-        public string HighlightPreTag { get; set; }
+        public string HighlightPreTag { get => _explicitNullValueHighlightPreTag; set { _explicitNullValueHighlightPreTag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlightPreTag"); else _explicitNullProperties?.Remove("highlightPreTag"); } }
+        private string _explicitNullValueHighlightPreTag = default!;
 #endif
         /// <summary>Number of hits per page.</summary>
-        public int? HitsPerPage { get; set; }
+        public int? HitsPerPage { get => _explicitNullValueHitsPerPage; set { _explicitNullValueHitsPerPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hitsPerPage"); else _explicitNullProperties?.Remove("hitsPerPage"); } }
+        private int? _explicitNullValueHitsPerPage = default!;
         /// <summary>Treat singular, plurals, and other forms of declensions as equivalent.Only use this feature for the languages used in your index.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePlurals? IgnorePlurals { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePlurals? IgnorePlurals { get => _explicitNullValueIgnorePlurals; set { _explicitNullValueIgnorePlurals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignorePlurals"); else _explicitNullProperties?.Remove("ignorePlurals"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePlurals? _explicitNullValueIgnorePlurals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePlurals IgnorePlurals { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePlurals IgnorePlurals { get => _explicitNullValueIgnorePlurals; set { _explicitNullValueIgnorePlurals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignorePlurals"); else _explicitNullProperties?.Remove("ignorePlurals"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchIgnorePlurals _explicitNullValueIgnorePlurals = default!;
 #endif
         /// <summary>Languages for language-specific processing steps, such as word detection and dictionary settings.**Always specify an indexing language.**If you don&apos;t specify an indexing language, the search engine uses all [supported languages](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/supported-languages),or the languages you specified with the `ignorePlurals` or `removeStopWords` parameters.This can lead to unexpected search results.For more information, see [Language-specific configuration](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage?>? IndexLanguages { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage?>? IndexLanguages { get => _explicitNullValueIndexLanguages; set { _explicitNullValueIndexLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexLanguages"); else _explicitNullProperties?.Remove("indexLanguages"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage?>? _explicitNullValueIndexLanguages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage?> IndexLanguages { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage?> IndexLanguages { get => _explicitNullValueIndexLanguages; set { _explicitNullValueIndexLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexLanguages"); else _explicitNullProperties?.Remove("indexLanguages"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage?> _explicitNullValueIndexLanguages = default!;
 #endif
         /// <summary>Characters for which diacritics should be preserved.By default, Algolia removes diacritics from letters.For example, `é` becomes `e`. If this causes issues in your search,you can specify characters that should keep their diacritics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeepDiacriticsOnCharacters { get; set; }
+        public string? KeepDiacriticsOnCharacters { get => _explicitNullValueKeepDiacriticsOnCharacters; set { _explicitNullValueKeepDiacriticsOnCharacters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keepDiacriticsOnCharacters"); else _explicitNullProperties?.Remove("keepDiacriticsOnCharacters"); } }
+        private string? _explicitNullValueKeepDiacriticsOnCharacters = default!;
 #nullable restore
 #else
-        public string KeepDiacriticsOnCharacters { get; set; }
+        public string KeepDiacriticsOnCharacters { get => _explicitNullValueKeepDiacriticsOnCharacters; set { _explicitNullValueKeepDiacriticsOnCharacters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keepDiacriticsOnCharacters"); else _explicitNullProperties?.Remove("keepDiacriticsOnCharacters"); } }
+        private string _explicitNullValueKeepDiacriticsOnCharacters = default!;
 #endif
         /// <summary>Maximum number of facet values to return when [searching for facet values](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/#search-for-facet-values).</summary>
-        public int? MaxFacetHits { get; set; }
+        public int? MaxFacetHits { get => _explicitNullValueMaxFacetHits; set { _explicitNullValueMaxFacetHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxFacetHits"); else _explicitNullProperties?.Remove("maxFacetHits"); } }
+        private int? _explicitNullValueMaxFacetHits = default!;
         /// <summary>Maximum number of facet values to return for each facet.</summary>
-        public int? MaxValuesPerFacet { get; set; }
+        public int? MaxValuesPerFacet { get => _explicitNullValueMaxValuesPerFacet; set { _explicitNullValueMaxValuesPerFacet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxValuesPerFacet"); else _explicitNullProperties?.Remove("maxValuesPerFacet"); } }
+        private int? _explicitNullValueMaxValuesPerFacet = default!;
         /// <summary>Minimum proximity score for two matching words.This adjusts the [Proximity ranking criterion](https://www.algolia.com/doc/guides/managing-results/relevance-overview/in-depth/ranking-criteria/#proximity)by equally scoring matches that are farther apartFor example, if `minProximity` is 2, neighboring matches and matches with one word between them would have the same score.</summary>
-        public int? MinProximity { get; set; }
+        public int? MinProximity { get => _explicitNullValueMinProximity; set { _explicitNullValueMinProximity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minProximity"); else _explicitNullProperties?.Remove("minProximity"); } }
+        private int? _explicitNullValueMinProximity = default!;
         /// <summary>Minimum number of characters a word in the search query must contain to accept matches with [one typo](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos).</summary>
-        public int? MinWordSizefor1Typo { get; set; }
+        public int? MinWordSizefor1Typo { get => _explicitNullValueMinWordSizefor1Typo; set { _explicitNullValueMinWordSizefor1Typo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minWordSizefor1Typo"); else _explicitNullProperties?.Remove("minWordSizefor1Typo"); } }
+        private int? _explicitNullValueMinWordSizefor1Typo = default!;
         /// <summary>Minimum number of characters a word in the search query must contain to accept matches with [two typos](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/in-depth/configuring-typo-tolerance/#configure-word-size-threshold-for-typos).</summary>
-        public int? MinWordSizefor2Typos { get; set; }
+        public int? MinWordSizefor2Typos { get => _explicitNullValueMinWordSizefor2Typos; set { _explicitNullValueMinWordSizefor2Typos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minWordSizefor2Typos"); else _explicitNullProperties?.Remove("minWordSizefor2Typos"); } }
+        private int? _explicitNullValueMinWordSizefor2Typos = default!;
         /// <summary>Search mode the index will use to query for results.This setting only applies to indices, for which Algolia enabled NeuralSearch for you.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchMode? Mode { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchMode? _explicitNullValueMode = default!;
         /// <summary>Numeric attributes that can be used as [numerical filters](https://www.algolia.com/doc/guides/managing-results/rules/detecting-intent/how-to/applying-a-custom-filter-for-a-specific-query/#numerical-filters).Attribute names are case-sensitive.By default, all numeric attributes are available as numerical filters.For faster indexing, reduce the number of numeric attributes.To turn off filtering for all numeric attributes, specify an attribute that doesn&apos;t exist in your index, such as `NO_NUMERIC_FILTERING`.**Modifier**- `equalOnly(&quot;ATTRIBUTE&quot;)`.  Support only filtering based on equality comparisons `=` and `!=`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NumericAttributesForFiltering { get; set; }
+        public List<string>? NumericAttributesForFiltering { get => _explicitNullValueNumericAttributesForFiltering; set { _explicitNullValueNumericAttributesForFiltering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numericAttributesForFiltering"); else _explicitNullProperties?.Remove("numericAttributesForFiltering"); } }
+        private List<string>? _explicitNullValueNumericAttributesForFiltering = default!;
 #nullable restore
 #else
-        public List<string> NumericAttributesForFiltering { get; set; }
+        public List<string> NumericAttributesForFiltering { get => _explicitNullValueNumericAttributesForFiltering; set { _explicitNullValueNumericAttributesForFiltering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numericAttributesForFiltering"); else _explicitNullProperties?.Remove("numericAttributesForFiltering"); } }
+        private List<string> _explicitNullValueNumericAttributesForFiltering = default!;
 #endif
         /// <summary>Words that should be considered optional when found in the query.By default, records must match all words in the search query to be included in the search results.Adding optional words can increase the number of search results by running an additional search query that doesn&apos;t include the optional words.For example, if the search query is &quot;action video&quot; and &quot;video&quot; is optional,the search engine runs two queries: one for &quot;action video&quot; and one for &quot;action&quot;.Records that match all words are ranked higher.For a search query with 4 or more words **and** all its words are optional,the number of matched words required for a record to be included in the search results increases for every 1,000 records:- If `optionalWords` has fewer than 10 words, the required number of matched words increases by 1:  results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 2 matched words.- If `optionalWords` has 10 or more words, the required number of matched words increases by the number of optional words divided by 5 (rounded down).  Example: with 18 optional words, results 1 to 1,000 require 1 matched word; results 1,001 to 2,000 need 4 matched words.For more information, see [Optional words](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/#create-a-list-of-optional-words).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords? OptionalWords { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords? OptionalWords { get => _explicitNullValueOptionalWords; set { _explicitNullValueOptionalWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionalWords"); else _explicitNullProperties?.Remove("optionalWords"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords? _explicitNullValueOptionalWords = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords OptionalWords { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords OptionalWords { get => _explicitNullValueOptionalWords; set { _explicitNullValueOptionalWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionalWords"); else _explicitNullProperties?.Remove("optionalWords"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchOptionalWords _explicitNullValueOptionalWords = default!;
 #endif
         /// <summary>Maximum number of search results that can be obtained through pagination.Higher pagination limits might slow down your search.For pagination limits above 1,000, the sorting of results beyond the 1,000th hit can&apos;t be guaranteed.</summary>
-        public long? PaginationLimitedTo { get; set; }
+        public long? PaginationLimitedTo { get => _explicitNullValuePaginationLimitedTo; set { _explicitNullValuePaginationLimitedTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paginationLimitedTo"); else _explicitNullProperties?.Remove("paginationLimitedTo"); } }
+        private long? _explicitNullValuePaginationLimitedTo = default!;
         /// <summary>Replica indices only: the name of the primary index for this replica.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Primary { get; set; }
+        public string? Primary { get => _explicitNullValuePrimary; set { _explicitNullValuePrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary"); else _explicitNullProperties?.Remove("primary"); } }
+        private string? _explicitNullValuePrimary = default!;
 #nullable restore
 #else
-        public string Primary { get; set; }
+        public string Primary { get => _explicitNullValuePrimary; set { _explicitNullValuePrimary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary"); else _explicitNullProperties?.Remove("primary"); } }
+        private string _explicitNullValuePrimary = default!;
 #endif
         /// <summary>Languages for language-specific query processing steps such as plurals, stop-word removal, and word-detection dictionaries.This setting sets a default list of languages used by the `removeStopWords` and `ignorePlurals` settings.This setting also sets a dictionary for word detection in the logogram-based [CJK](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/normalization/#normalization-for-logogram-based-languages-cjk) languages.To support this, place the CJK language **first**.**Always specify a query language.**If you don&apos;t specify an indexing language, the search engine uses all [supported languages](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/supported-languages),or the languages you specified with the `ignorePlurals` or `removeStopWords` parameters.This can lead to unexpected search results.For more information, see [Language-specific configuration](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/language-specific-configurations).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage?>? QueryLanguages { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage?>? QueryLanguages { get => _explicitNullValueQueryLanguages; set { _explicitNullValueQueryLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryLanguages"); else _explicitNullProperties?.Remove("queryLanguages"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage?>? _explicitNullValueQueryLanguages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage?> QueryLanguages { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage?> QueryLanguages { get => _explicitNullValueQueryLanguages; set { _explicitNullValueQueryLanguages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryLanguages"); else _explicitNullProperties?.Remove("queryLanguages"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchSupportedLanguage?> _explicitNullValueQueryLanguages = default!;
 #endif
         /// <summary>Determines if and how query words are interpreted as prefixes.By default, only the last query word is treated as a prefix (`prefixLast`).To turn off prefix search, use `prefixNone`.Avoid `prefixAll`, which treats all query words as prefixes.This might lead to counterintuitive results and makes your search slower.For more information, see [Prefix searching](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/override-search-engine-defaults/in-depth/prefix-searching).</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchQueryType? QueryType { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchQueryType? QueryType { get => _explicitNullValueQueryType; set { _explicitNullValueQueryType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryType"); else _explicitNullProperties?.Remove("queryType"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchQueryType? _explicitNullValueQueryType = default!;
         /// <summary>Determines the order in which Algolia returns your results.By default, each entry corresponds to a [ranking criteria](https://www.algolia.com/doc/guides/managing-results/relevance-overview/in-depth/ranking-criteria).The tie-breaking algorithm sequentially applies each criterion in the order they&apos;re specified.If you configure a replica index for [sorting by an attribute](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/how-to/sort-by-attribute),you put the sorting attribute at the top of the list.**Modifiers**- `asc(&quot;ATTRIBUTE&quot;)`.  Sort the index by the values of an attribute, in ascending order.- `desc(&quot;ATTRIBUTE&quot;)`.  Sort the index by the values of an attribute, in descending order.Before you modify the default setting,test your changes in the dashboard,and by [A/B testing](https://www.algolia.com/doc/guides/ab-testing/what-is-ab-testing).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ranking { get; set; }
+        public List<string>? Ranking { get => _explicitNullValueRanking; set { _explicitNullValueRanking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ranking"); else _explicitNullProperties?.Remove("ranking"); } }
+        private List<string>? _explicitNullValueRanking = default!;
 #nullable restore
 #else
-        public List<string> Ranking { get; set; }
+        public List<string> Ranking { get => _explicitNullValueRanking; set { _explicitNullValueRanking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ranking"); else _explicitNullProperties?.Remove("ranking"); } }
+        private List<string> _explicitNullValueRanking = default!;
 #endif
         /// <summary>Relevancy threshold below which less relevant results aren&apos;t included in the results.You can only set `relevancyStrictness` on [virtual replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas/#standard-and-virtual-replicas).Use this setting to strike a balance between the relevance and number of returned results.</summary>
-        public int? RelevancyStrictness { get; set; }
+        public int? RelevancyStrictness { get => _explicitNullValueRelevancyStrictness; set { _explicitNullValueRelevancyStrictness = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relevancyStrictness"); else _explicitNullProperties?.Remove("relevancyStrictness"); } }
+        private int? _explicitNullValueRelevancyStrictness = default!;
         /// <summary>Removes stop words from the search query.Stop words are common words like articles, conjunctions, prepositions, or pronouns that have little or no meaning on their own.In English, &quot;the&quot;, &quot;a&quot;, or &quot;and&quot; are stop words.Only use this feature for the languages used in your index.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveStopWords? RemoveStopWords { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveStopWords? RemoveStopWords { get => _explicitNullValueRemoveStopWords; set { _explicitNullValueRemoveStopWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removeStopWords"); else _explicitNullProperties?.Remove("removeStopWords"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveStopWords? _explicitNullValueRemoveStopWords = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveStopWords RemoveStopWords { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveStopWords RemoveStopWords { get => _explicitNullValueRemoveStopWords; set { _explicitNullValueRemoveStopWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removeStopWords"); else _explicitNullProperties?.Remove("removeStopWords"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveStopWords _explicitNullValueRemoveStopWords = default!;
 #endif
         /// <summary>Strategy for removing words from the query when it doesn&apos;t return any results.This helps to avoid returning empty search results.- `none`.  No words are removed when a query doesn&apos;t return results.- `lastWords`.  Treat the last (then second to last, then third to last) word as optional,  until there are results or at most 5 words have been removed.- `firstWords`.  Treat the first (then second, then third) word as optional,  until there are results or at most 5 words have been removed.- `allOptional`.  Treat all words as optional.For more information, see [Remove words to improve results](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/in-depth/why-use-remove-words-if-no-results).</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveWordsIfNoResults? RemoveWordsIfNoResults { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveWordsIfNoResults? RemoveWordsIfNoResults { get => _explicitNullValueRemoveWordsIfNoResults; set { _explicitNullValueRemoveWordsIfNoResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removeWordsIfNoResults"); else _explicitNullProperties?.Remove("removeWordsIfNoResults"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveWordsIfNoResults? _explicitNullValueRemoveWordsIfNoResults = default!;
         /// <summary>Extra data that can be used in the search UI.You can use this to control aspects of your search UI, such as the order of facet names and valueswithout changing your frontend code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchRenderingContent? RenderingContent { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchRenderingContent? RenderingContent { get => _explicitNullValueRenderingContent; set { _explicitNullValueRenderingContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renderingContent"); else _explicitNullProperties?.Remove("renderingContent"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchRenderingContent? _explicitNullValueRenderingContent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchRenderingContent RenderingContent { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchRenderingContent RenderingContent { get => _explicitNullValueRenderingContent; set { _explicitNullValueRenderingContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renderingContent"); else _explicitNullProperties?.Remove("renderingContent"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchRenderingContent _explicitNullValueRenderingContent = default!;
 #endif
         /// <summary>Whether to replace a highlighted word with the matched synonym.By default, the original words are highlighted even if a synonym matches.For example, with `home` as a synonym for `house` and a search for `home`,records matching either &quot;home&quot; or &quot;house&quot; are included in the search results,and either &quot;home&quot; or &quot;house&quot; are highlightedWith `replaceSynonymsInHighlight` set to `true`, a search for `home` still matches the same records,but all occurrences of &quot;house&quot; are replaced by &quot;home&quot; in the highlighted response.</summary>
-        public bool? ReplaceSynonymsInHighlight { get; set; }
+        public bool? ReplaceSynonymsInHighlight { get => _explicitNullValueReplaceSynonymsInHighlight; set { _explicitNullValueReplaceSynonymsInHighlight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replaceSynonymsInHighlight"); else _explicitNullProperties?.Remove("replaceSynonymsInHighlight"); } }
+        private bool? _explicitNullValueReplaceSynonymsInHighlight = default!;
         /// <summary>Creates [replica indices](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/replicas).Replicas are copies of a primary index with the same records but different settings, synonyms, or rules.If you want to offer a different ranking or sorting of your search results, you&apos;ll use replica indices.All index operations on a primary index are automatically forwarded to its replicas.To add a replica index, you must provide the complete set of replicas to this parameter.If you omit a replica from this list, the replica turns into a regular, standalone index that will no longer be synced with the primary index.**Modifier**- `virtual(&quot;REPLICA&quot;)`.  Create a virtual replica,  Virtual replicas don&apos;t increase the number of records and are optimized for [Relevant sorting](https://www.algolia.com/doc/guides/managing-results/refine-results/sorting/in-depth/relevant-sort).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Replicas { get; set; }
+        public List<string>? Replicas { get => _explicitNullValueReplicas; set { _explicitNullValueReplicas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replicas"); else _explicitNullProperties?.Remove("replicas"); } }
+        private List<string>? _explicitNullValueReplicas = default!;
 #nullable restore
 #else
-        public List<string> Replicas { get; set; }
+        public List<string> Replicas { get => _explicitNullValueReplicas; set { _explicitNullValueReplicas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replicas"); else _explicitNullProperties?.Remove("replicas"); } }
+        private List<string> _explicitNullValueReplicas = default!;
 #endif
         /// <summary>The reRankingApplyFilter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchReRankingApplyFilter? ReRankingApplyFilter { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchReRankingApplyFilter? ReRankingApplyFilter { get => _explicitNullValueReRankingApplyFilter; set { _explicitNullValueReRankingApplyFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reRankingApplyFilter"); else _explicitNullProperties?.Remove("reRankingApplyFilter"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchReRankingApplyFilter? _explicitNullValueReRankingApplyFilter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchReRankingApplyFilter ReRankingApplyFilter { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchReRankingApplyFilter ReRankingApplyFilter { get => _explicitNullValueReRankingApplyFilter; set { _explicitNullValueReRankingApplyFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reRankingApplyFilter"); else _explicitNullProperties?.Remove("reRankingApplyFilter"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchReRankingApplyFilter _explicitNullValueReRankingApplyFilter = default!;
 #endif
         /// <summary>Properties to include in the API response of search and browse requests.By default, all response properties are included.To reduce the response size, you can select which properties should be includedAn empty list may lead to an empty API response (except properties you can&apos;t exclude)You can&apos;t exclude these properties:`message`, `warning`, `cursor`, `abTestVariantID`,or any property added by setting `getRankingInfo` to trueYour search depends on the `hits` field. If you omit this field, searches won&apos;t return any results.Your UI might also depend on other properties, for example, for pagination.Before restricting the response size, check the impact on your search experience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ResponseFields { get; set; }
+        public List<string>? ResponseFields { get => _explicitNullValueResponseFields; set { _explicitNullValueResponseFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responseFields"); else _explicitNullProperties?.Remove("responseFields"); } }
+        private List<string>? _explicitNullValueResponseFields = default!;
 #nullable restore
 #else
-        public List<string> ResponseFields { get; set; }
+        public List<string> ResponseFields { get => _explicitNullValueResponseFields; set { _explicitNullValueResponseFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("responseFields"); else _explicitNullProperties?.Remove("responseFields"); } }
+        private List<string> _explicitNullValueResponseFields = default!;
 #endif
         /// <summary>Whether to restrict highlighting and snippeting to items that at least partially matched the search query.By default, all items are highlighted and snippeted.</summary>
-        public bool? RestrictHighlightAndSnippetArrays { get; set; }
+        public bool? RestrictHighlightAndSnippetArrays { get => _explicitNullValueRestrictHighlightAndSnippetArrays; set { _explicitNullValueRestrictHighlightAndSnippetArrays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restrictHighlightAndSnippetArrays"); else _explicitNullProperties?.Remove("restrictHighlightAndSnippetArrays"); } }
+        private bool? _explicitNullValueRestrictHighlightAndSnippetArrays = default!;
         /// <summary>Attributes used for searching. Attribute names are case-sensitive.By default, all attributes are searchable and the [Attribute](https://www.algolia.com/doc/guides/managing-results/relevance-overview/in-depth/ranking-criteria/#attribute) ranking criterion is turned off.With a non-empty list, Algolia only returns results with matches in the selected attributes.In addition, the Attribute ranking criterion is turned on: matches in attributes that are higher in the list of `searchableAttributes` rank first.To make matches in two attributes rank equally, include them in a comma-separated string, such as `&quot;title,alternate_title&quot;`.Attributes with the same priority are always unordered.For more information, see [Searchable attributes](https://www.algolia.com/doc/guides/sending-and-managing-data/prepare-your-data/how-to/setting-searchable-attributes).**Modifier**- `unordered(&quot;ATTRIBUTE&quot;)`.  Ignore the position of a match within the attribute.Without a modifier, matches at the beginning of an attribute rank higher than matches at the end.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SearchableAttributes { get; set; }
+        public List<string>? SearchableAttributes { get => _explicitNullValueSearchableAttributes; set { _explicitNullValueSearchableAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("searchableAttributes"); else _explicitNullProperties?.Remove("searchableAttributes"); } }
+        private List<string>? _explicitNullValueSearchableAttributes = default!;
 #nullable restore
 #else
-        public List<string> SearchableAttributes { get; set; }
+        public List<string> SearchableAttributes { get => _explicitNullValueSearchableAttributes; set { _explicitNullValueSearchableAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("searchableAttributes"); else _explicitNullProperties?.Remove("searchableAttributes"); } }
+        private List<string> _explicitNullValueSearchableAttributes = default!;
 #endif
         /// <summary>Settings for the semantic search part of NeuralSearch.Only used when `mode` is `neuralSearch`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSemanticSearch? SemanticSearch { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSemanticSearch? SemanticSearch { get => _explicitNullValueSemanticSearch; set { _explicitNullValueSemanticSearch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("semanticSearch"); else _explicitNullProperties?.Remove("semanticSearch"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchSemanticSearch? _explicitNullValueSemanticSearch = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSemanticSearch SemanticSearch { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchSemanticSearch SemanticSearch { get => _explicitNullValueSemanticSearch; set { _explicitNullValueSemanticSearch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("semanticSearch"); else _explicitNullProperties?.Remove("semanticSearch"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchSemanticSearch _explicitNullValueSemanticSearch = default!;
 #endif
         /// <summary>Control which non-alphanumeric characters are indexed.By default, Algolia ignores [non-alphanumeric characters](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance/how-to/how-to-search-in-hyphenated-attributes/#handling-non-alphanumeric-characters) like hyphen (`-`), plus (`+`), and parentheses (`(`,`)`).To include such characters, define them with `separatorsToIndex`.Separators are all non-letter characters except spaces and currency characters, such as $€£¥.With `separatorsToIndex`, Algolia treats separator characters as separate words.For example, in a search for &quot;Disney+&quot;, Algolia considers &quot;Disney&quot; and &quot;+&quot; as two separate words.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SeparatorsToIndex { get; set; }
+        public string? SeparatorsToIndex { get => _explicitNullValueSeparatorsToIndex; set { _explicitNullValueSeparatorsToIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("separatorsToIndex"); else _explicitNullProperties?.Remove("separatorsToIndex"); } }
+        private string? _explicitNullValueSeparatorsToIndex = default!;
 #nullable restore
 #else
-        public string SeparatorsToIndex { get; set; }
+        public string SeparatorsToIndex { get => _explicitNullValueSeparatorsToIndex; set { _explicitNullValueSeparatorsToIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("separatorsToIndex"); else _explicitNullProperties?.Remove("separatorsToIndex"); } }
+        private string _explicitNullValueSeparatorsToIndex = default!;
 #endif
         /// <summary>String used as an ellipsis indicator when a snippet is truncated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SnippetEllipsisText { get; set; }
+        public string? SnippetEllipsisText { get => _explicitNullValueSnippetEllipsisText; set { _explicitNullValueSnippetEllipsisText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snippetEllipsisText"); else _explicitNullProperties?.Remove("snippetEllipsisText"); } }
+        private string? _explicitNullValueSnippetEllipsisText = default!;
 #nullable restore
 #else
-        public string SnippetEllipsisText { get; set; }
+        public string SnippetEllipsisText { get => _explicitNullValueSnippetEllipsisText; set { _explicitNullValueSnippetEllipsisText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snippetEllipsisText"); else _explicitNullProperties?.Remove("snippetEllipsisText"); } }
+        private string _explicitNullValueSnippetEllipsisText = default!;
 #endif
         /// <summary>Order in which to retrieve facet values.- `count`.  Facet values are retrieved by decreasing count.  The count is the number of matching records containing this facet value.- `alpha`.  Retrieve facet values alphabetically.This setting doesn&apos;t influence how facet values are displayed in your UI (see `renderingContent`).For more information, see [facet value display](https://www.algolia.com/doc/guides/building-search-ui/ui-and-ux-patterns/facet-display/js).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SortFacetValuesBy { get; set; }
+        public string? SortFacetValuesBy { get => _explicitNullValueSortFacetValuesBy; set { _explicitNullValueSortFacetValuesBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sortFacetValuesBy"); else _explicitNullProperties?.Remove("sortFacetValuesBy"); } }
+        private string? _explicitNullValueSortFacetValuesBy = default!;
 #nullable restore
 #else
-        public string SortFacetValuesBy { get; set; }
+        public string SortFacetValuesBy { get => _explicitNullValueSortFacetValuesBy; set { _explicitNullValueSortFacetValuesBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sortFacetValuesBy"); else _explicitNullProperties?.Remove("sortFacetValuesBy"); } }
+        private string _explicitNullValueSortFacetValuesBy = default!;
 #endif
         /// <summary>Whether [typo tolerance](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/typo-tolerance) is enabled and how it is applied.If typo tolerance is true, `min`, or `strict`, [word splitting and concatenation](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/in-depth/splitting-and-concatenation) are also active.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchTypoTolerance? TypoTolerance { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchTypoTolerance? TypoTolerance { get => _explicitNullValueTypoTolerance; set { _explicitNullValueTypoTolerance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("typoTolerance"); else _explicitNullProperties?.Remove("typoTolerance"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchTypoTolerance? _explicitNullValueTypoTolerance = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchTypoTolerance TypoTolerance { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchTypoTolerance TypoTolerance { get => _explicitNullValueTypoTolerance; set { _explicitNullValueTypoTolerance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("typoTolerance"); else _explicitNullProperties?.Remove("typoTolerance"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchTypoTolerance _explicitNullValueTypoTolerance = default!;
 #endif
         /// <summary>Attributes that can&apos;t be retrieved at query time.This can be useful if you want to use an attribute for ranking or to [restrict access](https://www.algolia.com/doc/guides/security/api-keys/how-to/user-restricted-access-to-data),but don&apos;t want to include it in the search results.Attribute names are case-sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UnretrievableAttributes { get; set; }
+        public List<string>? UnretrievableAttributes { get => _explicitNullValueUnretrievableAttributes; set { _explicitNullValueUnretrievableAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unretrievableAttributes"); else _explicitNullProperties?.Remove("unretrievableAttributes"); } }
+        private List<string>? _explicitNullValueUnretrievableAttributes = default!;
 #nullable restore
 #else
-        public List<string> UnretrievableAttributes { get; set; }
+        public List<string> UnretrievableAttributes { get => _explicitNullValueUnretrievableAttributes; set { _explicitNullValueUnretrievableAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unretrievableAttributes"); else _explicitNullProperties?.Remove("unretrievableAttributes"); } }
+        private List<string> _explicitNullValueUnretrievableAttributes = default!;
 #endif
         /// <summary>An object with custom data.You can store up to 32kB as custom data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? UserData { get; set; }
+        public UntypedNode? UserData { get => _explicitNullValueUserData; set { _explicitNullValueUserData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userData"); else _explicitNullProperties?.Remove("userData"); } }
+        private UntypedNode? _explicitNullValueUserData = default!;
 #nullable restore
 #else
-        public UntypedNode UserData { get; set; }
+        public UntypedNode UserData { get => _explicitNullValueUserData; set { _explicitNullValueUserData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userData"); else _explicitNullProperties?.Remove("userData"); } }
+        private UntypedNode _explicitNullValueUserData = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SettingsResponse"/> and sets the default values.
@@ -417,7 +590,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.SettingsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.SettingsResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.SettingsResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -562,6 +735,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchTypoTolerance>("typoTolerance", TypoTolerance);
             writer.WriteCollectionOfPrimitiveValues<string>("unretrievableAttributes", UnretrievableAttributes);
             writer.WriteObjectValue<UntypedNode>("userData", UserData);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -59,6 +59,8 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rule
                 { "402", global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.DeleteCompositionRule200Response>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.DeleteCompositionRule200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -88,6 +90,8 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rule
                 { "402", global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRule>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.CompositionRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -121,6 +125,8 @@ namespace Soenneker.Algolia.OpenApiClient.Composition.One.Compositions.Item.Rule
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Algolia.OpenApiClient.Models.CompositionErrorBase.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.PutCompositionRule200Response>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.PutCompositionRule200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -12,61 +12,90 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VariantSettings : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("applied") is { } nullNodeApplied && nullNodeApplied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Applied = null;
+            if (parseNode.GetChildNode("applyTimestamp") is { } nullNodeApplyTimestamp && nullNodeApplyTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplyTimestamp = null;
+            if (parseNode.GetChildNode("declaredTimestamp") is { } nullNodeDeclaredTimestamp && nullNodeDeclaredTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeclaredTimestamp = null;
+            if (parseNode.GetChildNode("expiredTimestamp") is { } nullNodeExpiredTimestamp && nullNodeExpiredTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiredTimestamp = null;
+            if (parseNode.GetChildNode("featuresSettings") is { } nullNodeFeaturesSettings && nullNodeFeaturesSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeaturesSettings = null;
+            if (parseNode.GetChildNode("indexSettings") is { } nullNodeIndexSettings && nullNodeIndexSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexSettings = null;
+            if (parseNode.GetChildNode("revertTimestamp") is { } nullNodeRevertTimestamp && nullNodeRevertTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RevertTimestamp = null;
+            if (parseNode.GetChildNode("variantId") is { } nullNodeVariantId && nullNodeVariantId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariantId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the variant&apos;s settings have been applied to the control index.</summary>
-        public bool? Applied { get; set; }
+        public bool? Applied { get => _explicitNullValueApplied; set { _explicitNullValueApplied = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("applied"); else _explicitNullProperties?.Remove("applied"); } }
+        private bool? _explicitNullValueApplied = default!;
         /// <summary>Date and time when the variant&apos;s settings were applied to the control index, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplyTimestamp { get; set; }
+        public string? ApplyTimestamp { get => _explicitNullValueApplyTimestamp; set { _explicitNullValueApplyTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("applyTimestamp"); else _explicitNullProperties?.Remove("applyTimestamp"); } }
+        private string? _explicitNullValueApplyTimestamp = default!;
 #nullable restore
 #else
-        public string ApplyTimestamp { get; set; }
+        public string ApplyTimestamp { get => _explicitNullValueApplyTimestamp; set { _explicitNullValueApplyTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("applyTimestamp"); else _explicitNullProperties?.Remove("applyTimestamp"); } }
+        private string _explicitNullValueApplyTimestamp = default!;
 #endif
         /// <summary>Date and time when the variant&apos;s settings were captured, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeclaredTimestamp { get; set; }
+        public string? DeclaredTimestamp { get => _explicitNullValueDeclaredTimestamp; set { _explicitNullValueDeclaredTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("declaredTimestamp"); else _explicitNullProperties?.Remove("declaredTimestamp"); } }
+        private string? _explicitNullValueDeclaredTimestamp = default!;
 #nullable restore
 #else
-        public string DeclaredTimestamp { get; set; }
+        public string DeclaredTimestamp { get => _explicitNullValueDeclaredTimestamp; set { _explicitNullValueDeclaredTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("declaredTimestamp"); else _explicitNullProperties?.Remove("declaredTimestamp"); } }
+        private string _explicitNullValueDeclaredTimestamp = default!;
 #endif
         /// <summary>Date and time when the captured settings expired, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpiredTimestamp { get; set; }
+        public string? ExpiredTimestamp { get => _explicitNullValueExpiredTimestamp; set { _explicitNullValueExpiredTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiredTimestamp"); else _explicitNullProperties?.Remove("expiredTimestamp"); } }
+        private string? _explicitNullValueExpiredTimestamp = default!;
 #nullable restore
 #else
-        public string ExpiredTimestamp { get; set; }
+        public string ExpiredTimestamp { get => _explicitNullValueExpiredTimestamp; set { _explicitNullValueExpiredTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiredTimestamp"); else _explicitNullProperties?.Remove("expiredTimestamp"); } }
+        private string _explicitNullValueExpiredTimestamp = default!;
 #endif
         /// <summary>Feature-specific settings captured for the variant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettings>? FeaturesSettings { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettings>? FeaturesSettings { get => _explicitNullValueFeaturesSettings; set { _explicitNullValueFeaturesSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featuresSettings"); else _explicitNullProperties?.Remove("featuresSettings"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettings>? _explicitNullValueFeaturesSettings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettings> FeaturesSettings { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettings> FeaturesSettings { get => _explicitNullValueFeaturesSettings; set { _explicitNullValueFeaturesSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featuresSettings"); else _explicitNullProperties?.Remove("featuresSettings"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettings> _explicitNullValueFeaturesSettings = default!;
 #endif
         /// <summary>Index settings captured for the variant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2? IndexSettings { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2? IndexSettings { get => _explicitNullValueIndexSettings; set { _explicitNullValueIndexSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexSettings"); else _explicitNullProperties?.Remove("indexSettings"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2? _explicitNullValueIndexSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2 IndexSettings { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2 IndexSettings { get => _explicitNullValueIndexSettings; set { _explicitNullValueIndexSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexSettings"); else _explicitNullProperties?.Remove("indexSettings"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2 _explicitNullValueIndexSettings = default!;
 #endif
         /// <summary>Date and time when the applied settings were reverted on the control index, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RevertTimestamp { get; set; }
+        public string? RevertTimestamp { get => _explicitNullValueRevertTimestamp; set { _explicitNullValueRevertTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revertTimestamp"); else _explicitNullProperties?.Remove("revertTimestamp"); } }
+        private string? _explicitNullValueRevertTimestamp = default!;
 #nullable restore
 #else
-        public string RevertTimestamp { get; set; }
+        public string RevertTimestamp { get => _explicitNullValueRevertTimestamp; set { _explicitNullValueRevertTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revertTimestamp"); else _explicitNullProperties?.Remove("revertTimestamp"); } }
+        private string _explicitNullValueRevertTimestamp = default!;
 #endif
         /// <summary>One-based index of the variant within the A/B test. The control is variant 1.</summary>
-        public int? VariantId { get; set; }
+        public int? VariantId { get => _explicitNullValueVariantId; set { _explicitNullValueVariantId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variantId"); else _explicitNullProperties?.Remove("variantId"); } }
+        private int? _explicitNullValueVariantId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.VariantSettings"/> and sets the default values.
         /// </summary>
@@ -82,7 +111,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.VariantSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.VariantSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.VariantSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -117,6 +146,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2>("indexSettings", IndexSettings);
             writer.WriteStringValue("revertTimestamp", RevertTimestamp);
             writer.WriteIntValue("variantId", VariantId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

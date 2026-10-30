@@ -53,6 +53,8 @@ namespace Soenneker.Algolia.OpenApiClient.Search.ReplaceAllObjectsWithTransforma
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.ReplaceAllObjectsWithTransformationResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.ReplaceAllObjectsWithTransformationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

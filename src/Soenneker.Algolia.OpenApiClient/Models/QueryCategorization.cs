@@ -12,37 +12,57 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QueryCategorization : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("autofiltering") is { } nullNodeAutofiltering && nullNodeAutofiltering.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Autofiltering = null;
+            if (parseNode.GetChildNode("categories") is { } nullNodeCategories && nullNodeCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Categories = null;
+            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("normalizedQuery") is { } nullNodeNormalizedQuery && nullNodeNormalizedQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NormalizedQuery = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Result of automatic filtering applied by Query Categorization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AutoFilteringResult? Autofiltering { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AutoFilteringResult? Autofiltering { get => _explicitNullValueAutofiltering; set { _explicitNullValueAutofiltering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autofiltering"); else _explicitNullProperties?.Remove("autofiltering"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.AutoFilteringResult? _explicitNullValueAutofiltering = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AutoFilteringResult Autofiltering { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AutoFilteringResult Autofiltering { get => _explicitNullValueAutofiltering; set { _explicitNullValueAutofiltering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autofiltering"); else _explicitNullProperties?.Remove("autofiltering"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.AutoFilteringResult _explicitNullValueAutofiltering = default!;
 #endif
         /// <summary>List of category predictions with confidence levels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.CategoryPrediction>? Categories { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.CategoryPrediction>? Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.CategoryPrediction>? _explicitNullValueCategories = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.CategoryPrediction> Categories { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.CategoryPrediction> Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.CategoryPrediction> _explicitNullValueCategories = default!;
 #endif
         /// <summary>Number of times this normalized query was observed during the training window.</summary>
-        public int? Count { get; set; }
+        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        private int? _explicitNullValueCount = default!;
         /// <summary>Processed and normalized version of the original search query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NormalizedQuery { get; set; }
+        public string? NormalizedQuery { get => _explicitNullValueNormalizedQuery; set { _explicitNullValueNormalizedQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normalizedQuery"); else _explicitNullProperties?.Remove("normalizedQuery"); } }
+        private string? _explicitNullValueNormalizedQuery = default!;
 #nullable restore
 #else
-        public string NormalizedQuery { get; set; }
+        public string NormalizedQuery { get => _explicitNullValueNormalizedQuery; set { _explicitNullValueNormalizedQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("normalizedQuery"); else _explicitNullProperties?.Remove("normalizedQuery"); } }
+        private string _explicitNullValueNormalizedQuery = default!;
 #endif
         /// <summary>Classification of the query scope.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.QueryCategorizationType? Type { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.QueryCategorizationType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.QueryCategorizationType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.QueryCategorization"/> and sets the default values.
         /// </summary>
@@ -58,7 +78,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.QueryCategorization CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.QueryCategorization();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.QueryCategorization(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,6 +107,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("count", Count);
             writer.WriteStringValue("normalizedQuery", NormalizedQuery);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.QueryCategorizationType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

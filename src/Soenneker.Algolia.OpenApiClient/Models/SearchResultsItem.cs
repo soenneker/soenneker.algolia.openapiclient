@@ -12,178 +12,261 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     public partial class SearchResultsItem : global::Soenneker.Algolia.OpenApiClient.Models.SearchFields, IParsable
     #pragma warning restore CS1591
     {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            base.CaptureExplicitNulls(parseNode);
+            if (parseNode.GetChildNode("abTestID") is { } nullNodeAbTestID && nullNodeAbTestID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbTestID = null;
+            if (parseNode.GetChildNode("abTestVariantID") is { } nullNodeAbTestVariantID && nullNodeAbTestVariantID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AbTestVariantID = null;
+            if (parseNode.GetChildNode("appliedRules") is { } nullNodeAppliedRules && nullNodeAppliedRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppliedRules = null;
+            if (parseNode.GetChildNode("aroundLatLng") is { } nullNodeAroundLatLng && nullNodeAroundLatLng.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AroundLatLng = null;
+            if (parseNode.GetChildNode("_automaticInsights") is { } nullNodeAutomaticInsights && nullNodeAutomaticInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticInsights = null;
+            if (parseNode.GetChildNode("automaticRadius") is { } nullNodeAutomaticRadius && nullNodeAutomaticRadius.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutomaticRadius = null;
+            if (parseNode.GetChildNode("compositions") is { } nullNodeCompositions && nullNodeCompositions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compositions = null;
+            if (parseNode.GetChildNode("exhaustive") is { } nullNodeExhaustive && nullNodeExhaustive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exhaustive = null;
+            if (parseNode.GetChildNode("exhaustiveFacetsCount") is { } nullNodeExhaustiveFacetsCount && nullNodeExhaustiveFacetsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExhaustiveFacetsCount = null;
+            if (parseNode.GetChildNode("exhaustiveNbHits") is { } nullNodeExhaustiveNbHits && nullNodeExhaustiveNbHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExhaustiveNbHits = null;
+            if (parseNode.GetChildNode("exhaustiveTypo") is { } nullNodeExhaustiveTypo && nullNodeExhaustiveTypo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExhaustiveTypo = null;
+            if (parseNode.GetChildNode("facets") is { } nullNodeFacets && nullNodeFacets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Facets = null;
+            if (parseNode.GetChildNode("facets_stats") is { } nullNodeFacetsStats && nullNodeFacetsStats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetsStats = null;
+            if (parseNode.GetChildNode("feedID") is { } nullNodeFeedID && nullNodeFeedID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeedID = null;
+            if (parseNode.GetChildNode("index") is { } nullNodeIndex && nullNodeIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Index = null;
+            if (parseNode.GetChildNode("indexUsed") is { } nullNodeIndexUsed && nullNodeIndexUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexUsed = null;
+            if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("nbSortedHits") is { } nullNodeNbSortedHits && nullNodeNbSortedHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbSortedHits = null;
+            if (parseNode.GetChildNode("parsedQuery") is { } nullNodeParsedQuery && nullNodeParsedQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParsedQuery = null;
+            if (parseNode.GetChildNode("processingTimeMS") is { } nullNodeProcessingTimeMS && nullNodeProcessingTimeMS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessingTimeMS = null;
+            if (parseNode.GetChildNode("processingTimingsMS") is { } nullNodeProcessingTimingsMS && nullNodeProcessingTimingsMS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessingTimingsMS = null;
+            if (parseNode.GetChildNode("queryAfterRemoval") is { } nullNodeQueryAfterRemoval && nullNodeQueryAfterRemoval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryAfterRemoval = null;
+            if (parseNode.GetChildNode("queryID") is { } nullNodeQueryID && nullNodeQueryID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryID = null;
+            if (parseNode.GetChildNode("redirect") is { } nullNodeRedirect && nullNodeRedirect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Redirect = null;
+            if (parseNode.GetChildNode("renderingContent") is { } nullNodeRenderingContent && nullNodeRenderingContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenderingContent = null;
+            if (parseNode.GetChildNode("serverTimeMS") is { } nullNodeServerTimeMS && nullNodeServerTimeMS.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerTimeMS = null;
+            if (parseNode.GetChildNode("serverUsed") is { } nullNodeServerUsed && nullNodeServerUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerUsed = null;
+            if (parseNode.GetChildNode("userData") is { } nullNodeUserData && nullNodeUserData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserData = null;
+        }
+
         /// <summary>A/B test ID. This is only included in the response for indices that are part of an A/B test.</summary>
-        public int? AbTestID { get; set; }
+        public int? AbTestID { get => _explicitNullValueAbTestID; set { _explicitNullValueAbTestID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abTestID"); else _explicitNullProperties?.Remove("abTestID"); } }
+        private int? _explicitNullValueAbTestID = default!;
         /// <summary>Variant ID. This is only included in the response for indices that are part of an A/B test.</summary>
-        public int? AbTestVariantID { get; set; }
+        public int? AbTestVariantID { get => _explicitNullValueAbTestVariantID; set { _explicitNullValueAbTestVariantID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abTestVariantID"); else _explicitNullProperties?.Remove("abTestVariantID"); } }
+        private int? _explicitNullValueAbTestVariantID = default!;
         /// <summary>Rules applied to the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemAppliedRulesItem>? AppliedRules { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemAppliedRulesItem>? AppliedRules { get => _explicitNullValueAppliedRules; set { _explicitNullValueAppliedRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appliedRules"); else _explicitNullProperties?.Remove("appliedRules"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemAppliedRulesItem>? _explicitNullValueAppliedRules = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemAppliedRulesItem> AppliedRules { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemAppliedRulesItem> AppliedRules { get => _explicitNullValueAppliedRules; set { _explicitNullValueAppliedRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appliedRules"); else _explicitNullProperties?.Remove("appliedRules"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemAppliedRulesItem> _explicitNullValueAppliedRules = default!;
 #endif
         /// <summary>Computed geographical location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AroundLatLng { get; set; }
+        public string? AroundLatLng { get => _explicitNullValueAroundLatLng; set { _explicitNullValueAroundLatLng = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aroundLatLng"); else _explicitNullProperties?.Remove("aroundLatLng"); } }
+        private string? _explicitNullValueAroundLatLng = default!;
 #nullable restore
 #else
-        public string AroundLatLng { get; set; }
+        public string AroundLatLng { get => _explicitNullValueAroundLatLng; set { _explicitNullValueAroundLatLng = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aroundLatLng"); else _explicitNullProperties?.Remove("aroundLatLng"); } }
+        private string _explicitNullValueAroundLatLng = default!;
 #endif
         /// <summary>Whether automatic events collection is enabled for the application.</summary>
-        public bool? AutomaticInsights { get; set; }
+        public bool? AutomaticInsights { get => _explicitNullValueAutomaticInsights; set { _explicitNullValueAutomaticInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_automaticInsights"); else _explicitNullProperties?.Remove("_automaticInsights"); } }
+        private bool? _explicitNullValueAutomaticInsights = default!;
         /// <summary>Distance from a central coordinate provided by `aroundLatLng`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AutomaticRadius { get; set; }
+        public string? AutomaticRadius { get => _explicitNullValueAutomaticRadius; set { _explicitNullValueAutomaticRadius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automaticRadius"); else _explicitNullProperties?.Remove("automaticRadius"); } }
+        private string? _explicitNullValueAutomaticRadius = default!;
 #nullable restore
 #else
-        public string AutomaticRadius { get; set; }
+        public string AutomaticRadius { get => _explicitNullValueAutomaticRadius; set { _explicitNullValueAutomaticRadius = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("automaticRadius"); else _explicitNullProperties?.Remove("automaticRadius"); } }
+        private string _explicitNullValueAutomaticRadius = default!;
 #endif
         /// <summary>The compositions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemCompositionsProperty? Compositions { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemCompositionsProperty? Compositions { get => _explicitNullValueCompositions; set { _explicitNullValueCompositions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compositions"); else _explicitNullProperties?.Remove("compositions"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemCompositionsProperty? _explicitNullValueCompositions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemCompositionsProperty Compositions { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemCompositionsProperty Compositions { get => _explicitNullValueCompositions; set { _explicitNullValueCompositions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compositions"); else _explicitNullProperties?.Remove("compositions"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemCompositionsProperty _explicitNullValueCompositions = default!;
 #endif
         /// <summary>Whether certain properties of the search response are calculated exhaustive (exact) or approximated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseSearchResponseExhaustive? Exhaustive { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseSearchResponseExhaustive? Exhaustive { get => _explicitNullValueExhaustive; set { _explicitNullValueExhaustive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exhaustive"); else _explicitNullProperties?.Remove("exhaustive"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.BaseSearchResponseExhaustive? _explicitNullValueExhaustive = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseSearchResponseExhaustive Exhaustive { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseSearchResponseExhaustive Exhaustive { get => _explicitNullValueExhaustive; set { _explicitNullValueExhaustive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exhaustive"); else _explicitNullProperties?.Remove("exhaustive"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.BaseSearchResponseExhaustive _explicitNullValueExhaustive = default!;
 #endif
         /// <summary>See the `facetsCount` field of the `exhaustive` object in the response.</summary>
         [Obsolete("")]
-        public bool? ExhaustiveFacetsCount { get; set; }
+        public bool? ExhaustiveFacetsCount { get => _explicitNullValueExhaustiveFacetsCount; set { _explicitNullValueExhaustiveFacetsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exhaustiveFacetsCount"); else _explicitNullProperties?.Remove("exhaustiveFacetsCount"); } }
+        private bool? _explicitNullValueExhaustiveFacetsCount = default!;
         /// <summary>See the `nbHits` field of the `exhaustive` object in the response.</summary>
         [Obsolete("")]
-        public bool? ExhaustiveNbHits { get; set; }
+        public bool? ExhaustiveNbHits { get => _explicitNullValueExhaustiveNbHits; set { _explicitNullValueExhaustiveNbHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exhaustiveNbHits"); else _explicitNullProperties?.Remove("exhaustiveNbHits"); } }
+        private bool? _explicitNullValueExhaustiveNbHits = default!;
         /// <summary>See the `typo` field of the `exhaustive` object in the response.</summary>
         [Obsolete("")]
-        public bool? ExhaustiveTypo { get; set; }
+        public bool? ExhaustiveTypo { get => _explicitNullValueExhaustiveTypo; set { _explicitNullValueExhaustiveTypo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exhaustiveTypo"); else _explicitNullProperties?.Remove("exhaustiveTypo"); } }
+        private bool? _explicitNullValueExhaustiveTypo = default!;
         /// <summary>Facet counts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemFacetsProperty? Facets { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemFacetsProperty? Facets { get => _explicitNullValueFacets; set { _explicitNullValueFacets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facets"); else _explicitNullProperties?.Remove("facets"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemFacetsProperty? _explicitNullValueFacets = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemFacetsProperty Facets { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemFacetsProperty Facets { get => _explicitNullValueFacets; set { _explicitNullValueFacets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facets"); else _explicitNullProperties?.Remove("facets"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemFacetsProperty _explicitNullValueFacets = default!;
 #endif
         /// <summary>Statistics for numerical facets.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemFacetsStatsProperty? FacetsStats { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemFacetsStatsProperty? FacetsStats { get => _explicitNullValueFacetsStats; set { _explicitNullValueFacetsStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facets_stats"); else _explicitNullProperties?.Remove("facets_stats"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemFacetsStatsProperty? _explicitNullValueFacetsStats = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemFacetsStatsProperty FacetsStats { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemFacetsStatsProperty FacetsStats { get => _explicitNullValueFacetsStats; set { _explicitNullValueFacetsStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facets_stats"); else _explicitNullProperties?.Remove("facets_stats"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemFacetsStatsProperty _explicitNullValueFacetsStats = default!;
 #endif
         /// <summary>The ID of the feed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FeedID { get; set; }
+        public string? FeedID { get => _explicitNullValueFeedID; set { _explicitNullValueFeedID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedID"); else _explicitNullProperties?.Remove("feedID"); } }
+        private string? _explicitNullValueFeedID = default!;
 #nullable restore
 #else
-        public string FeedID { get; set; }
+        public string FeedID { get => _explicitNullValueFeedID; set { _explicitNullValueFeedID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feedID"); else _explicitNullProperties?.Remove("feedID"); } }
+        private string _explicitNullValueFeedID = default!;
 #endif
         /// <summary>Index name used for the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Index { get; set; }
+        public string? Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
+        private string? _explicitNullValueIndex = default!;
 #nullable restore
 #else
-        public string Index { get; set; }
+        public string Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
+        private string _explicitNullValueIndex = default!;
 #endif
         /// <summary>Index name used for the query. During A/B testing, the targeted index isn&apos;t always the index used by the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndexUsed { get; set; }
+        public string? IndexUsed { get => _explicitNullValueIndexUsed; set { _explicitNullValueIndexUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexUsed"); else _explicitNullProperties?.Remove("indexUsed"); } }
+        private string? _explicitNullValueIndexUsed = default!;
 #nullable restore
 #else
-        public string IndexUsed { get; set; }
+        public string IndexUsed { get => _explicitNullValueIndexUsed; set { _explicitNullValueIndexUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexUsed"); else _explicitNullProperties?.Remove("indexUsed"); } }
+        private string _explicitNullValueIndexUsed = default!;
 #endif
         /// <summary>Warnings about the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get; set; }
+        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public string Message { get; set; }
+        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string _explicitNullValueMessage = default!;
 #endif
         /// <summary>Number of hits selected and sorted by the relevant sort algorithm.</summary>
-        public int? NbSortedHits { get; set; }
+        public int? NbSortedHits { get => _explicitNullValueNbSortedHits; set { _explicitNullValueNbSortedHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbSortedHits"); else _explicitNullProperties?.Remove("nbSortedHits"); } }
+        private int? _explicitNullValueNbSortedHits = default!;
         /// <summary>Post-[normalization](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/handling-natural-languages-nlp/#what-does-normalization-mean) query string that will be searched.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParsedQuery { get; set; }
+        public string? ParsedQuery { get => _explicitNullValueParsedQuery; set { _explicitNullValueParsedQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parsedQuery"); else _explicitNullProperties?.Remove("parsedQuery"); } }
+        private string? _explicitNullValueParsedQuery = default!;
 #nullable restore
 #else
-        public string ParsedQuery { get; set; }
+        public string ParsedQuery { get => _explicitNullValueParsedQuery; set { _explicitNullValueParsedQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parsedQuery"); else _explicitNullProperties?.Remove("parsedQuery"); } }
+        private string _explicitNullValueParsedQuery = default!;
 #endif
         /// <summary>Time the server took to process the request, in milliseconds.</summary>
-        public int? ProcessingTimeMS { get; set; }
+        public int? ProcessingTimeMS { get => _explicitNullValueProcessingTimeMS; set { _explicitNullValueProcessingTimeMS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingTimeMS"); else _explicitNullProperties?.Remove("processingTimeMS"); } }
+        private int? _explicitNullValueProcessingTimeMS = default!;
         /// <summary>Experimental. List of processing steps and their times, in milliseconds. You can use this list to investigate performance issues.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemProcessingTimingsMsProperty? ProcessingTimingsMS { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemProcessingTimingsMsProperty? ProcessingTimingsMS { get => _explicitNullValueProcessingTimingsMS; set { _explicitNullValueProcessingTimingsMS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingTimingsMS"); else _explicitNullProperties?.Remove("processingTimingsMS"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemProcessingTimingsMsProperty? _explicitNullValueProcessingTimingsMS = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemProcessingTimingsMsProperty ProcessingTimingsMS { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemProcessingTimingsMsProperty ProcessingTimingsMS { get => _explicitNullValueProcessingTimingsMS; set { _explicitNullValueProcessingTimingsMS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingTimingsMS"); else _explicitNullProperties?.Remove("processingTimingsMS"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItemProcessingTimingsMsProperty _explicitNullValueProcessingTimingsMS = default!;
 #endif
         /// <summary>Markup text indicating which parts of the original query have been removed to retrieve a non-empty result set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryAfterRemoval { get; set; }
+        public string? QueryAfterRemoval { get => _explicitNullValueQueryAfterRemoval; set { _explicitNullValueQueryAfterRemoval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryAfterRemoval"); else _explicitNullProperties?.Remove("queryAfterRemoval"); } }
+        private string? _explicitNullValueQueryAfterRemoval = default!;
 #nullable restore
 #else
-        public string QueryAfterRemoval { get; set; }
+        public string QueryAfterRemoval { get => _explicitNullValueQueryAfterRemoval; set { _explicitNullValueQueryAfterRemoval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryAfterRemoval"); else _explicitNullProperties?.Remove("queryAfterRemoval"); } }
+        private string _explicitNullValueQueryAfterRemoval = default!;
 #endif
         /// <summary>Unique identifier for the query. This is used for [click analytics](https://www.algolia.com/doc/guides/analytics/click-analytics).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryID { get; set; }
+        public string? QueryID { get => _explicitNullValueQueryID; set { _explicitNullValueQueryID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryID"); else _explicitNullProperties?.Remove("queryID"); } }
+        private string? _explicitNullValueQueryID = default!;
 #nullable restore
 #else
-        public string QueryID { get; set; }
+        public string QueryID { get => _explicitNullValueQueryID; set { _explicitNullValueQueryID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryID"); else _explicitNullProperties?.Remove("queryID"); } }
+        private string _explicitNullValueQueryID = default!;
 #endif
         /// <summary>[Redirect results to a URL](https://www.algolia.com/doc/guides/managing-results/rules/merchandising-and-promoting/how-to/redirects), this this parameter is for internal use only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseSearchResponseRedirect? Redirect { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseSearchResponseRedirect? Redirect { get => _explicitNullValueRedirect; set { _explicitNullValueRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect"); else _explicitNullProperties?.Remove("redirect"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.BaseSearchResponseRedirect? _explicitNullValueRedirect = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseSearchResponseRedirect Redirect { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseSearchResponseRedirect Redirect { get => _explicitNullValueRedirect; set { _explicitNullValueRedirect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirect"); else _explicitNullProperties?.Remove("redirect"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.BaseSearchResponseRedirect _explicitNullValueRedirect = default!;
 #endif
         /// <summary>Extra data that can be used in the search UI.You can use this to control aspects of your search UI, such as the order of facet names and valueswithout changing your frontend code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RenderingContent? RenderingContent { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RenderingContent? RenderingContent { get => _explicitNullValueRenderingContent; set { _explicitNullValueRenderingContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renderingContent"); else _explicitNullProperties?.Remove("renderingContent"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.RenderingContent? _explicitNullValueRenderingContent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RenderingContent RenderingContent { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RenderingContent RenderingContent { get => _explicitNullValueRenderingContent; set { _explicitNullValueRenderingContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renderingContent"); else _explicitNullProperties?.Remove("renderingContent"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.RenderingContent _explicitNullValueRenderingContent = default!;
 #endif
         /// <summary>Time the server took to process the request, in milliseconds.</summary>
-        public int? ServerTimeMS { get; set; }
+        public int? ServerTimeMS { get => _explicitNullValueServerTimeMS; set { _explicitNullValueServerTimeMS = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serverTimeMS"); else _explicitNullProperties?.Remove("serverTimeMS"); } }
+        private int? _explicitNullValueServerTimeMS = default!;
         /// <summary>Host name of the server that processed the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServerUsed { get; set; }
+        public string? ServerUsed { get => _explicitNullValueServerUsed; set { _explicitNullValueServerUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serverUsed"); else _explicitNullProperties?.Remove("serverUsed"); } }
+        private string? _explicitNullValueServerUsed = default!;
 #nullable restore
 #else
-        public string ServerUsed { get; set; }
+        public string ServerUsed { get => _explicitNullValueServerUsed; set { _explicitNullValueServerUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serverUsed"); else _explicitNullProperties?.Remove("serverUsed"); } }
+        private string _explicitNullValueServerUsed = default!;
 #endif
         /// <summary>An object with custom data.You can store up to 32kB as custom data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? UserData { get; set; }
+        public UntypedNode? UserData { get => _explicitNullValueUserData; set { _explicitNullValueUserData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userData"); else _explicitNullProperties?.Remove("userData"); } }
+        private UntypedNode? _explicitNullValueUserData = default!;
 #nullable restore
 #else
-        public UntypedNode UserData { get; set; }
+        public UntypedNode UserData { get => _explicitNullValueUserData; set { _explicitNullValueUserData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userData"); else _explicitNullProperties?.Remove("userData"); } }
+        private UntypedNode _explicitNullValueUserData = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -193,7 +276,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static new global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.SearchResultsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -268,7 +351,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RenderingContent>("renderingContent", RenderingContent);
             writer.WriteIntValue("serverTimeMS", ServerTimeMS);
             writer.WriteStringValue("serverUsed", ServerUsed);
-            writer.WriteObjectValue<UntypedNode>("userData", UserData);
+            writer.WriteObjectValue<UntypedNode>("userData", UserData);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -12,7 +12,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InjectionMainSource : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainExternalProviderSource"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,17 +54,26 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainSource();
             if("InjectionMainExternalProviderSource".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.InjectionMainExternalProviderSource = new global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainExternalProviderSource();
+                
             }
             else if("InjectionMainRecommendSource".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.InjectionMainRecommendSource = new global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommendSource();
+                
             }
             else if("InjectionMainSearchSource".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.InjectionMainSearchSource = new global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainSearchSource();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("search") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("recommend") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("externalProvider") != null))();
+            if (result.InjectionMainExternalProviderSource == null && result.InjectionMainRecommendSource == null && result.InjectionMainSearchSource == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.InjectionMainSearchSource = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainSearchSource(), parseNode);
+            if (result.InjectionMainExternalProviderSource == null && result.InjectionMainRecommendSource == null && result.InjectionMainSearchSource == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.InjectionMainRecommendSource = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommendSource(), parseNode);
+            if (result.InjectionMainExternalProviderSource == null && result.InjectionMainRecommendSource == null && result.InjectionMainSearchSource == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.InjectionMainExternalProviderSource = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainExternalProviderSource(), parseNode);
+            if (result.InjectionMainExternalProviderSource == null && result.InjectionMainRecommendSource == null && result.InjectionMainSearchSource == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,17 +101,26 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (InjectionMainExternalProviderSource == null && InjectionMainRecommendSource == null && InjectionMainSearchSource == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (InjectionMainExternalProviderSource != null && InjectionMainRecommendSource == null && InjectionMainSearchSource == null) { if (InjectionMainExternalProviderSource is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InjectionMainExternalProviderSource); return; }
+            if (InjectionMainRecommendSource != null && InjectionMainExternalProviderSource == null && InjectionMainSearchSource == null) { if (InjectionMainRecommendSource is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InjectionMainRecommendSource); return; }
+            if (InjectionMainSearchSource != null && InjectionMainExternalProviderSource == null && InjectionMainRecommendSource == null) { if (InjectionMainSearchSource is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, InjectionMainSearchSource); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(InjectionMainExternalProviderSource != null)
             {
+                if (InjectionMainExternalProviderSource is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainExternalProviderSource>(null, InjectionMainExternalProviderSource);
             }
             else if(InjectionMainRecommendSource != null)
             {
+                if (InjectionMainRecommendSource is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainRecommendSource>(null, InjectionMainRecommendSource);
             }
             else if(InjectionMainSearchSource != null)
             {
+                if (InjectionMainSearchSource is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InjectionMainSearchSource>(null, InjectionMainSearchSource);
             }
         }

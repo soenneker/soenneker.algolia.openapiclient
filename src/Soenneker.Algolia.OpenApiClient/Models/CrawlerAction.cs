@@ -12,98 +12,140 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CrawlerAction : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("autoGenerateObjectIDs") is { } nullNodeAutoGenerateObjectIDs && nullNodeAutoGenerateObjectIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoGenerateObjectIDs = null;
+            if (parseNode.GetChildNode("cache") is { } nullNodeCache && nullNodeCache.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cache = null;
+            if (parseNode.GetChildNode("discoveryPatterns") is { } nullNodeDiscoveryPatterns && nullNodeDiscoveryPatterns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscoveryPatterns = null;
+            if (parseNode.GetChildNode("fileTypesToMatch") is { } nullNodeFileTypesToMatch && nullNodeFileTypesToMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileTypesToMatch = null;
+            if (parseNode.GetChildNode("hostnameAliases") is { } nullNodeHostnameAliases && nullNodeHostnameAliases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HostnameAliases = null;
+            if (parseNode.GetChildNode("indexName") is { } nullNodeIndexName && nullNodeIndexName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexName = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("pathAliases") is { } nullNodePathAliases && nullNodePathAliases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathAliases = null;
+            if (parseNode.GetChildNode("pathsToMatch") is { } nullNodePathsToMatch && nullNodePathsToMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathsToMatch = null;
+            if (parseNode.GetChildNode("recordExtractor") is { } nullNodeRecordExtractor && nullNodeRecordExtractor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordExtractor = null;
+            if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
+            if (parseNode.GetChildNode("selectorsToMatch") is { } nullNodeSelectorsToMatch && nullNodeSelectorsToMatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelectorsToMatch = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to generate an `objectID` for records that don&apos;t have one.</summary>
-        public bool? AutoGenerateObjectIDs { get; set; }
+        public bool? AutoGenerateObjectIDs { get => _explicitNullValueAutoGenerateObjectIDs; set { _explicitNullValueAutoGenerateObjectIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoGenerateObjectIDs"); else _explicitNullProperties?.Remove("autoGenerateObjectIDs"); } }
+        private bool? _explicitNullValueAutoGenerateObjectIDs = default!;
         /// <summary>Whether the crawler should cache crawled pages.For more information, see [Partial crawls with caching](https://www.algolia.com/doc/tools/crawler/getting-started/crawler-configuration/#partial-crawls-with-caching).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.Cache? Cache { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Cache? Cache { get => _explicitNullValueCache; set { _explicitNullValueCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache"); else _explicitNullProperties?.Remove("cache"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.Cache? _explicitNullValueCache = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.Cache Cache { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.Cache Cache { get => _explicitNullValueCache; set { _explicitNullValueCache = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cache"); else _explicitNullProperties?.Remove("cache"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.Cache _explicitNullValueCache = default!;
 #endif
         /// <summary>Which _intermediary_ web pages the crawler should visit.Use `discoveryPatterns` to define pages that should be visited _just_ for their links to other pages,_not_ their content.It functions similarly to the `pathsToMatch` action but without record extraction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DiscoveryPatterns { get; set; }
+        public List<string>? DiscoveryPatterns { get => _explicitNullValueDiscoveryPatterns; set { _explicitNullValueDiscoveryPatterns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discoveryPatterns"); else _explicitNullProperties?.Remove("discoveryPatterns"); } }
+        private List<string>? _explicitNullValueDiscoveryPatterns = default!;
 #nullable restore
 #else
-        public List<string> DiscoveryPatterns { get; set; }
+        public List<string> DiscoveryPatterns { get => _explicitNullValueDiscoveryPatterns; set { _explicitNullValueDiscoveryPatterns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discoveryPatterns"); else _explicitNullProperties?.Remove("discoveryPatterns"); } }
+        private List<string> _explicitNullValueDiscoveryPatterns = default!;
 #endif
         /// <summary>File types for crawling non-HTML documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.FileTypes?>? FileTypesToMatch { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.FileTypes?>? FileTypesToMatch { get => _explicitNullValueFileTypesToMatch; set { _explicitNullValueFileTypesToMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileTypesToMatch"); else _explicitNullProperties?.Remove("fileTypesToMatch"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.FileTypes?>? _explicitNullValueFileTypesToMatch = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.FileTypes?> FileTypesToMatch { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.FileTypes?> FileTypesToMatch { get => _explicitNullValueFileTypesToMatch; set { _explicitNullValueFileTypesToMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileTypesToMatch"); else _explicitNullProperties?.Remove("fileTypesToMatch"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.FileTypes?> _explicitNullValueFileTypesToMatch = default!;
 #endif
         /// <summary>Key-value pairs to replace matching hostnames found in a sitemap,on a page, in canonical links, or redirects.During a crawl, this action maps one hostname to another whenever the crawler encounters specific URLs.This helps with links to staging environments (like `dev.example.com`) or external hosting services (such as YouTube).For example, with this `hostnameAliases` mapping:    {    hostnameAliases: {        &apos;dev.example.com&apos;: &apos;example.com&apos;    }    }1. The crawler encounters `https://dev.example.com/solutions/voice-search/`.1. `hostnameAliases` transforms the URL to `https://example.com/solutions/voice-search/`.1. The crawler follows the transformed URL (not the original).**`hostnameAliases` only changes URLs, not page text. In the preceding example, if the extracted text contains the string `dev.example.com`, it remains unchanged.**The crawler can discover URLs in places such as:- Crawled pages- Sitemaps- [Canonical URLs](https://www.algolia.com/doc/tools/crawler/getting-started/crawler-configuration/#canonical-urls-and-crawler-behavior)- Redirects. However, `hostnameAliases` doesn&apos;t transform URLs you explicitly set in the `startUrls` or `sitemaps` parameters,nor does it affect the `pathsToMatch` action or other configuration elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.CrawlerActionHostnameAliases? HostnameAliases { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CrawlerActionHostnameAliases? HostnameAliases { get => _explicitNullValueHostnameAliases; set { _explicitNullValueHostnameAliases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnameAliases"); else _explicitNullProperties?.Remove("hostnameAliases"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.CrawlerActionHostnameAliases? _explicitNullValueHostnameAliases = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.CrawlerActionHostnameAliases HostnameAliases { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CrawlerActionHostnameAliases HostnameAliases { get => _explicitNullValueHostnameAliases; set { _explicitNullValueHostnameAliases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hostnameAliases"); else _explicitNullProperties?.Remove("hostnameAliases"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.CrawlerActionHostnameAliases _explicitNullValueHostnameAliases = default!;
 #endif
         /// <summary>Reference to the index used to store the action&apos;s extracted records.`indexName` is combined with the prefix you specified in `indexPrefix`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndexName { get; set; }
+        public string? IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        private string? _explicitNullValueIndexName = default!;
 #nullable restore
 #else
-        public string IndexName { get; set; }
+        public string IndexName { get => _explicitNullValueIndexName; set { _explicitNullValueIndexName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexName"); else _explicitNullProperties?.Remove("indexName"); } }
+        private string _explicitNullValueIndexName = default!;
 #endif
         /// <summary>Unique identifier for the action. This option is required if `schedule` is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Key-value pairs to replace matching paths with new values.It doesn&apos;t replace:- URLs in the `startUrls`, `sitemaps`, `pathsToMatch`, and other settings- Paths found in extracted textThe crawl continues from the _transformed_ URLs.For example, if you create a mapping for `{ &quot;dev.example.com&quot;: { &apos;/foo&apos;: &apos;/bar&apos; } }` and the crawler encounters `https://dev.example.com/foo/hello/`,it’s transformed to `https://dev.example.com/bar/hello/`.&gt; Compare with the `hostnameAliases` action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.CrawlerActionPathAliases? PathAliases { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CrawlerActionPathAliases? PathAliases { get => _explicitNullValuePathAliases; set { _explicitNullValuePathAliases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pathAliases"); else _explicitNullProperties?.Remove("pathAliases"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.CrawlerActionPathAliases? _explicitNullValuePathAliases = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.CrawlerActionPathAliases PathAliases { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.CrawlerActionPathAliases PathAliases { get => _explicitNullValuePathAliases; set { _explicitNullValuePathAliases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pathAliases"); else _explicitNullProperties?.Remove("pathAliases"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.CrawlerActionPathAliases _explicitNullValuePathAliases = default!;
 #endif
         /// <summary>URLs to which this action should apply.Uses [micromatch](https://github.com/micromatch/micromatch) for negation, wildcards, and more.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PathsToMatch { get; set; }
+        public List<string>? PathsToMatch { get => _explicitNullValuePathsToMatch; set { _explicitNullValuePathsToMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pathsToMatch"); else _explicitNullProperties?.Remove("pathsToMatch"); } }
+        private List<string>? _explicitNullValuePathsToMatch = default!;
 #nullable restore
 #else
-        public List<string> PathsToMatch { get; set; }
+        public List<string> PathsToMatch { get => _explicitNullValuePathsToMatch; set { _explicitNullValuePathsToMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pathsToMatch"); else _explicitNullProperties?.Remove("pathsToMatch"); } }
+        private List<string> _explicitNullValuePathsToMatch = default!;
 #endif
         /// <summary>Function for extracting information from a crawled page and transforming it into Algolia records for indexing.The Crawler has an [editor](https://www.algolia.com/doc/tools/crawler/getting-started/crawler-configuration/#the-editor) with autocomplete and validation to help you update the `recordExtractor`.For details, see the [`recordExtractor` documentation](https://www.algolia.com/doc/tools/crawler/apis/configuration/actions/#parameter-param-recordextractor).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ActionRecordExtractor? RecordExtractor { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ActionRecordExtractor? RecordExtractor { get => _explicitNullValueRecordExtractor; set { _explicitNullValueRecordExtractor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recordExtractor"); else _explicitNullProperties?.Remove("recordExtractor"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.ActionRecordExtractor? _explicitNullValueRecordExtractor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ActionRecordExtractor RecordExtractor { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ActionRecordExtractor RecordExtractor { get => _explicitNullValueRecordExtractor; set { _explicitNullValueRecordExtractor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recordExtractor"); else _explicitNullProperties?.Remove("recordExtractor"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.ActionRecordExtractor _explicitNullValueRecordExtractor = default!;
 #endif
         /// <summary>How often to perform a complete crawl for this action.For mopre information, consult the [`schedule` parameter documentation](https://www.algolia.com/doc/tools/crawler/apis/configuration/schedule).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Schedule { get; set; }
+        public string? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private string? _explicitNullValueSchedule = default!;
 #nullable restore
 #else
-        public string Schedule { get; set; }
+        public string Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private string _explicitNullValueSchedule = default!;
 #endif
         /// <summary>DOM selectors for nodes that must be present on the page to be processed.If the page doesn&apos;t match any of the selectors, it&apos;s ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SelectorsToMatch { get; set; }
+        public List<string>? SelectorsToMatch { get => _explicitNullValueSelectorsToMatch; set { _explicitNullValueSelectorsToMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selectorsToMatch"); else _explicitNullProperties?.Remove("selectorsToMatch"); } }
+        private List<string>? _explicitNullValueSelectorsToMatch = default!;
 #nullable restore
 #else
-        public List<string> SelectorsToMatch { get; set; }
+        public List<string> SelectorsToMatch { get => _explicitNullValueSelectorsToMatch; set { _explicitNullValueSelectorsToMatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selectorsToMatch"); else _explicitNullProperties?.Remove("selectorsToMatch"); } }
+        private List<string> _explicitNullValueSelectorsToMatch = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.CrawlerAction"/> and sets the default values.
@@ -121,7 +163,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.CrawlerAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.CrawlerAction();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.CrawlerAction(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -164,6 +206,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ActionRecordExtractor>("recordExtractor", RecordExtractor);
             writer.WriteStringValue("schedule", Schedule);
             writer.WriteCollectionOfPrimitiveValues<string>("selectorsToMatch", SelectorsToMatch);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

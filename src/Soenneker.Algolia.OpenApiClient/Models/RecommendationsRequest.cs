@@ -12,7 +12,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecommendationsRequest : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.BoughtTogetherQuery"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,25 +70,38 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.RecommendationsRequest();
             if("bought-together".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.BoughtTogetherQuery = new global::Soenneker.Algolia.OpenApiClient.Models.BoughtTogetherQuery();
+                
             }
             else if("looking-similar".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.LookingSimilarQuery = new global::Soenneker.Algolia.OpenApiClient.Models.LookingSimilarQuery();
+                
             }
             else if("related-products".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RelatedQuery = new global::Soenneker.Algolia.OpenApiClient.Models.RelatedQuery();
+                
             }
             else if("trending-facets".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TrendingFacetsQuery = new global::Soenneker.Algolia.OpenApiClient.Models.TrendingFacetsQuery();
+                
             }
             else if("trending-items".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TrendingItemsQuery = new global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsQuery();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("model") != null && (parseNode.GetChildNode("model")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("bought-together".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("objectID") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("model") != null && (parseNode.GetChildNode("model")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("related-products".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("objectID") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("model") != null && (parseNode.GetChildNode("model")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("trending-items".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("indexName") != null && parseNode.GetChildNode("threshold") != null && parseNode.GetChildNode("facetName") != null && parseNode.GetChildNode("model") != null && (parseNode.GetChildNode("model")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("trending-facets".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("model") != null && (parseNode.GetChildNode("model")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("looking-similar".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("objectID") != null))();
+            if (result.BoughtTogetherQuery == null && result.LookingSimilarQuery == null && result.RelatedQuery == null && result.TrendingFacetsQuery == null && result.TrendingItemsQuery == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4) result.BoughtTogetherQuery = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.BoughtTogetherQuery(), parseNode);
+            if (result.BoughtTogetherQuery == null && result.LookingSimilarQuery == null && result.RelatedQuery == null && result.TrendingFacetsQuery == null && result.TrendingItemsQuery == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4) result.RelatedQuery = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.RelatedQuery(), parseNode);
+            if (result.BoughtTogetherQuery == null && result.LookingSimilarQuery == null && result.RelatedQuery == null && result.TrendingFacetsQuery == null && result.TrendingItemsQuery == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4) result.TrendingItemsQuery = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsQuery(), parseNode);
+            if (result.BoughtTogetherQuery == null && result.LookingSimilarQuery == null && result.RelatedQuery == null && result.TrendingFacetsQuery == null && result.TrendingItemsQuery == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4) result.TrendingFacetsQuery = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.TrendingFacetsQuery(), parseNode);
+            if (result.BoughtTogetherQuery == null && result.LookingSimilarQuery == null && result.RelatedQuery == null && result.TrendingFacetsQuery == null && result.TrendingItemsQuery == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.LookingSimilarQuery = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.LookingSimilarQuery(), parseNode);
+            if (result.BoughtTogetherQuery == null && result.LookingSimilarQuery == null && result.RelatedQuery == null && result.TrendingFacetsQuery == null && result.TrendingItemsQuery == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,25 +137,38 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (BoughtTogetherQuery == null && LookingSimilarQuery == null && RelatedQuery == null && TrendingFacetsQuery == null && TrendingItemsQuery == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (BoughtTogetherQuery != null && LookingSimilarQuery == null && RelatedQuery == null && TrendingFacetsQuery == null && TrendingItemsQuery == null) { if (BoughtTogetherQuery is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BoughtTogetherQuery); return; }
+            if (LookingSimilarQuery != null && BoughtTogetherQuery == null && RelatedQuery == null && TrendingFacetsQuery == null && TrendingItemsQuery == null) { if (LookingSimilarQuery is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, LookingSimilarQuery); return; }
+            if (RelatedQuery != null && BoughtTogetherQuery == null && LookingSimilarQuery == null && TrendingFacetsQuery == null && TrendingItemsQuery == null) { if (RelatedQuery is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RelatedQuery); return; }
+            if (TrendingFacetsQuery != null && BoughtTogetherQuery == null && LookingSimilarQuery == null && RelatedQuery == null && TrendingItemsQuery == null) { if (TrendingFacetsQuery is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TrendingFacetsQuery); return; }
+            if (TrendingItemsQuery != null && BoughtTogetherQuery == null && LookingSimilarQuery == null && RelatedQuery == null && TrendingFacetsQuery == null) { if (TrendingItemsQuery is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TrendingItemsQuery); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(BoughtTogetherQuery != null)
             {
+                if (BoughtTogetherQuery is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BoughtTogetherQuery>(null, BoughtTogetherQuery);
             }
             else if(LookingSimilarQuery != null)
             {
+                if (LookingSimilarQuery is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.LookingSimilarQuery>(null, LookingSimilarQuery);
             }
             else if(RelatedQuery != null)
             {
+                if (RelatedQuery is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RelatedQuery>(null, RelatedQuery);
             }
             else if(TrendingFacetsQuery != null)
             {
+                if (TrendingFacetsQuery is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TrendingFacetsQuery>(null, TrendingFacetsQuery);
             }
             else if(TrendingItemsQuery != null)
             {
+                if (TrendingItemsQuery is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsQuery>(null, TrendingItemsQuery);
             }
         }

@@ -12,7 +12,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Trigger : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.OnDemandTrigger"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,25 +58,36 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.Trigger CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.Trigger();
-            if("onDemand".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("OnDemandTrigger".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.OnDemandTrigger = new global::Soenneker.Algolia.OpenApiClient.Models.OnDemandTrigger();
+                
             }
-            else if("schedule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ScheduleTrigger".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ScheduleTrigger = new global::Soenneker.Algolia.OpenApiClient.Models.ScheduleTrigger();
+                
             }
-            else if("streaming".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("StreamingTrigger".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.StreamingTrigger = new global::Soenneker.Algolia.OpenApiClient.Models.StreamingTrigger();
+                
             }
-            else if("subscription".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SubscriptionTrigger".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SubscriptionTrigger = new global::Soenneker.Algolia.OpenApiClient.Models.SubscriptionTrigger();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("onDemand".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("schedule".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("cron") != null && parseNode.GetChildNode("nextRun") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("subscription".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("streaming".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.OnDemandTrigger == null && result.ScheduleTrigger == null && result.StreamingTrigger == null && result.SubscriptionTrigger == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.OnDemandTrigger = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.OnDemandTrigger(), parseNode);
+            if (result.OnDemandTrigger == null && result.ScheduleTrigger == null && result.StreamingTrigger == null && result.SubscriptionTrigger == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.ScheduleTrigger = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.ScheduleTrigger(), parseNode);
+            if (result.OnDemandTrigger == null && result.ScheduleTrigger == null && result.StreamingTrigger == null && result.SubscriptionTrigger == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.SubscriptionTrigger = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.SubscriptionTrigger(), parseNode);
+            if (result.OnDemandTrigger == null && result.ScheduleTrigger == null && result.StreamingTrigger == null && result.SubscriptionTrigger == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.StreamingTrigger = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.StreamingTrigger(), parseNode);
+            if (result.OnDemandTrigger == null && result.ScheduleTrigger == null && result.StreamingTrigger == null && result.SubscriptionTrigger == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +119,32 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (OnDemandTrigger == null && ScheduleTrigger == null && StreamingTrigger == null && SubscriptionTrigger == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (OnDemandTrigger != null && ScheduleTrigger == null && StreamingTrigger == null && SubscriptionTrigger == null) { if (OnDemandTrigger is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, OnDemandTrigger); return; }
+            if (ScheduleTrigger != null && OnDemandTrigger == null && StreamingTrigger == null && SubscriptionTrigger == null) { if (ScheduleTrigger is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ScheduleTrigger); return; }
+            if (StreamingTrigger != null && OnDemandTrigger == null && ScheduleTrigger == null && SubscriptionTrigger == null) { if (StreamingTrigger is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, StreamingTrigger); return; }
+            if (SubscriptionTrigger != null && OnDemandTrigger == null && ScheduleTrigger == null && StreamingTrigger == null) { if (SubscriptionTrigger is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SubscriptionTrigger); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(OnDemandTrigger != null)
             {
+                if (OnDemandTrigger is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.OnDemandTrigger>(null, OnDemandTrigger);
             }
             else if(ScheduleTrigger != null)
             {
+                if (ScheduleTrigger is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ScheduleTrigger>(null, ScheduleTrigger);
             }
             else if(StreamingTrigger != null)
             {
+                if (StreamingTrigger is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StreamingTrigger>(null, StreamingTrigger);
             }
             else if(SubscriptionTrigger != null)
             {
+                if (SubscriptionTrigger is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SubscriptionTrigger>(null, SubscriptionTrigger);
             }
         }

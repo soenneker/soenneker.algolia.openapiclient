@@ -54,6 +54,8 @@ namespace Soenneker.Algolia.OpenApiClient.Insights.One.Usertokens.Item
             {
                 { "422", global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Algolia.OpenApiClient.Models.EventsResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -11,42 +11,63 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RunSourcePayload : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("entityIDs") is { } nullNodeEntityIDs && nullNodeEntityIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityIDs = null;
+            if (parseNode.GetChildNode("entityType") is { } nullNodeEntityType && nullNodeEntityType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EntityType = null;
+            if (parseNode.GetChildNode("indexToExclude") is { } nullNodeIndexToExclude && nullNodeIndexToExclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexToExclude = null;
+            if (parseNode.GetChildNode("indexToInclude") is { } nullNodeIndexToInclude && nullNodeIndexToInclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexToInclude = null;
+            if (parseNode.GetChildNode("runMetadata") is { } nullNodeRunMetadata && nullNodeRunMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunMetadata = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of entityIDs to update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EntityIDs { get; set; }
+        public List<string>? EntityIDs { get => _explicitNullValueEntityIDs; set { _explicitNullValueEntityIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityIDs"); else _explicitNullProperties?.Remove("entityIDs"); } }
+        private List<string>? _explicitNullValueEntityIDs = default!;
 #nullable restore
 #else
-        public List<string> EntityIDs { get; set; }
+        public List<string> EntityIDs { get => _explicitNullValueEntityIDs; set { _explicitNullValueEntityIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityIDs"); else _explicitNullProperties?.Remove("entityIDs"); } }
+        private List<string> _explicitNullValueEntityIDs = default!;
 #endif
         /// <summary>Type of entity to update.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.EntityType? EntityType { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.EntityType? EntityType { get => _explicitNullValueEntityType; set { _explicitNullValueEntityType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entityType"); else _explicitNullProperties?.Remove("entityType"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.EntityType? _explicitNullValueEntityType = default!;
         /// <summary>List of index names to exclude in reindex/update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IndexToExclude { get; set; }
+        public List<string>? IndexToExclude { get => _explicitNullValueIndexToExclude; set { _explicitNullValueIndexToExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexToExclude"); else _explicitNullProperties?.Remove("indexToExclude"); } }
+        private List<string>? _explicitNullValueIndexToExclude = default!;
 #nullable restore
 #else
-        public List<string> IndexToExclude { get; set; }
+        public List<string> IndexToExclude { get => _explicitNullValueIndexToExclude; set { _explicitNullValueIndexToExclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexToExclude"); else _explicitNullProperties?.Remove("indexToExclude"); } }
+        private List<string> _explicitNullValueIndexToExclude = default!;
 #endif
         /// <summary>List of index names to include in reindex/update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IndexToInclude { get; set; }
+        public List<string>? IndexToInclude { get => _explicitNullValueIndexToInclude; set { _explicitNullValueIndexToInclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexToInclude"); else _explicitNullProperties?.Remove("indexToInclude"); } }
+        private List<string>? _explicitNullValueIndexToInclude = default!;
 #nullable restore
 #else
-        public List<string> IndexToInclude { get; set; }
+        public List<string> IndexToInclude { get => _explicitNullValueIndexToInclude; set { _explicitNullValueIndexToInclude = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexToInclude"); else _explicitNullProperties?.Remove("indexToInclude"); } }
+        private List<string> _explicitNullValueIndexToInclude = default!;
 #endif
         /// <summary>Additional information that will be passed to the created runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2? RunMetadata { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2? RunMetadata { get => _explicitNullValueRunMetadata; set { _explicitNullValueRunMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runMetadata"); else _explicitNullProperties?.Remove("runMetadata"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2? _explicitNullValueRunMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2 RunMetadata { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2 RunMetadata { get => _explicitNullValueRunMetadata; set { _explicitNullValueRunMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runMetadata"); else _explicitNullProperties?.Remove("runMetadata"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2 _explicitNullValueRunMetadata = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayload"/> and sets the default values.
@@ -63,7 +84,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayload CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayload();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayload(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +113,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("indexToExclude", IndexToExclude);
             writer.WriteCollectionOfPrimitiveValues<string>("indexToInclude", IndexToInclude);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunSourcePayloadRunMetadataProperty2>("runMetadata", RunMetadata);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

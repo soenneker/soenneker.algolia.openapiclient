@@ -12,32 +12,51 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     public partial class TrendingItemsQuery : global::Soenneker.Algolia.OpenApiClient.Models.BaseRecommendRequest, IParsable
     #pragma warning restore CS1591
     {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            base.CaptureExplicitNulls(parseNode);
+            if (parseNode.GetChildNode("facetName") is { } nullNodeFacetName && nullNodeFacetName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetName = null;
+            if (parseNode.GetChildNode("facetValue") is { } nullNodeFacetValue && nullNodeFacetValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FacetValue = null;
+            if (parseNode.GetChildNode("fallbackParameters") is { } nullNodeFallbackParameters && nullNodeFallbackParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FallbackParameters = null;
+            if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+        }
+
         /// <summary>Facet attribute. To be used in combination with `facetValue`.If specified, only recommendations matching the facet filter will be returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FacetName { get; set; }
+        public string? FacetName { get => _explicitNullValueFacetName; set { _explicitNullValueFacetName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetName"); else _explicitNullProperties?.Remove("facetName"); } }
+        private string? _explicitNullValueFacetName = default!;
 #nullable restore
 #else
-        public string FacetName { get; set; }
+        public string FacetName { get => _explicitNullValueFacetName; set { _explicitNullValueFacetName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetName"); else _explicitNullProperties?.Remove("facetName"); } }
+        private string _explicitNullValueFacetName = default!;
 #endif
         /// <summary>Facet value. To be used in combination with `facetName`.If specified, only recommendations matching the facet filter will be returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FacetValue { get; set; }
+        public string? FacetValue { get => _explicitNullValueFacetValue; set { _explicitNullValueFacetValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetValue"); else _explicitNullProperties?.Remove("facetValue"); } }
+        private string? _explicitNullValueFacetValue = default!;
 #nullable restore
 #else
-        public string FacetValue { get; set; }
+        public string FacetValue { get => _explicitNullValueFacetValue; set { _explicitNullValueFacetValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("facetValue"); else _explicitNullProperties?.Remove("facetValue"); } }
+        private string _explicitNullValueFacetValue = default!;
 #endif
         /// <summary>Search parameters to use for a fallback request if there aren&apos;t enough recommendations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams? FallbackParameters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams? FallbackParameters { get => _explicitNullValueFallbackParameters; set { _explicitNullValueFallbackParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackParameters"); else _explicitNullProperties?.Remove("fallbackParameters"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams? _explicitNullValueFallbackParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams FallbackParameters { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams FallbackParameters { get => _explicitNullValueFallbackParameters; set { _explicitNullValueFallbackParameters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallbackParameters"); else _explicitNullProperties?.Remove("fallbackParameters"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams _explicitNullValueFallbackParameters = default!;
 #endif
         /// <summary>Trending items model.Trending items are determined from the number of conversion events collected on them.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsModel? Model { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsModel? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsModel? _explicitNullValueModel = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +65,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static new global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsQuery CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsQuery();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsQuery(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,7 +92,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("facetName", FacetName);
             writer.WriteStringValue("facetValue", FacetValue);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FallbackParams>("fallbackParameters", FallbackParameters);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsModel>("model", Model);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TrendingItemsModel>("model", Model);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

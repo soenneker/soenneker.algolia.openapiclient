@@ -12,13 +12,24 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchExtensionsQueryCategorization : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("enableAutoFiltering") is { } nullNodeEnableAutoFiltering && nullNodeEnableAutoFiltering.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableAutoFiltering = null;
+            if (parseNode.GetChildNode("enableCategoriesRetrieval") is { } nullNodeEnableCategoriesRetrieval && nullNodeEnableCategoriesRetrieval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableCategoriesRetrieval = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to automatically apply category-based filters and boosts to search results.</summary>
-        public bool? EnableAutoFiltering { get; set; }
+        public bool? EnableAutoFiltering { get => _explicitNullValueEnableAutoFiltering; set { _explicitNullValueEnableAutoFiltering = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableAutoFiltering"); else _explicitNullProperties?.Remove("enableAutoFiltering"); } }
+        private bool? _explicitNullValueEnableAutoFiltering = default!;
         /// <summary>Whether to retrieve category predictions in the response `extensions.queryCategorization` field.</summary>
-        public bool? EnableCategoriesRetrieval { get; set; }
+        public bool? EnableCategoriesRetrieval { get => _explicitNullValueEnableCategoriesRetrieval; set { _explicitNullValueEnableCategoriesRetrieval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableCategoriesRetrieval"); else _explicitNullProperties?.Remove("enableCategoriesRetrieval"); } }
+        private bool? _explicitNullValueEnableCategoriesRetrieval = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchExtensionsQueryCategorization"/> and sets the default values.
         /// </summary>
@@ -36,7 +47,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.SearchExtensionsQueryCategorization CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.SearchExtensionsQueryCategorization();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.SearchExtensionsQueryCategorization(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,6 +70,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enableAutoFiltering", EnableAutoFiltering);
             writer.WriteBoolValue("enableCategoriesRetrieval", EnableCategoriesRetrieval);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

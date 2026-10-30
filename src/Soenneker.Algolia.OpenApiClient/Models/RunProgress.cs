@@ -11,13 +11,24 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RunProgress : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("expectedNbOfEvents") is { } nullNodeExpectedNbOfEvents && nullNodeExpectedNbOfEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedNbOfEvents = null;
+            if (parseNode.GetChildNode("receivedNbOfEvents") is { } nullNodeReceivedNbOfEvents && nullNodeReceivedNbOfEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReceivedNbOfEvents = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The expectedNbOfEvents property</summary>
-        public int? ExpectedNbOfEvents { get; set; }
+        public int? ExpectedNbOfEvents { get => _explicitNullValueExpectedNbOfEvents; set { _explicitNullValueExpectedNbOfEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expectedNbOfEvents"); else _explicitNullProperties?.Remove("expectedNbOfEvents"); } }
+        private int? _explicitNullValueExpectedNbOfEvents = default!;
         /// <summary>The receivedNbOfEvents property</summary>
-        public int? ReceivedNbOfEvents { get; set; }
+        public int? ReceivedNbOfEvents { get => _explicitNullValueReceivedNbOfEvents; set { _explicitNullValueReceivedNbOfEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receivedNbOfEvents"); else _explicitNullProperties?.Remove("receivedNbOfEvents"); } }
+        private int? _explicitNullValueReceivedNbOfEvents = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RunProgress"/> and sets the default values.
         /// </summary>
@@ -33,7 +44,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.RunProgress CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.RunProgress();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.RunProgress(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +67,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("expectedNbOfEvents", ExpectedNbOfEvents);
             writer.WriteIntValue("receivedNbOfEvents", ReceivedNbOfEvents);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

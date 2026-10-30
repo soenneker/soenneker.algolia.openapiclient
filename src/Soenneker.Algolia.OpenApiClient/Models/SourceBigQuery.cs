@@ -12,58 +12,85 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SourceBigQuery : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("customSQLRequest") is { } nullNodeCustomSQLRequest && nullNodeCustomSQLRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomSQLRequest = null;
+            if (parseNode.GetChildNode("datasetID") is { } nullNodeDatasetID && nullNodeDatasetID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatasetID = null;
+            if (parseNode.GetChildNode("dataType") is { } nullNodeDataType && nullNodeDataType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataType = null;
+            if (parseNode.GetChildNode("projectID") is { } nullNodeProjectID && nullNodeProjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectID = null;
+            if (parseNode.GetChildNode("table") is { } nullNodeTable && nullNodeTable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Table = null;
+            if (parseNode.GetChildNode("tablePrefix") is { } nullNodeTablePrefix && nullNodeTablePrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TablePrefix = null;
+            if (parseNode.GetChildNode("uniqueIDColumn") is { } nullNodeUniqueIDColumn && nullNodeUniqueIDColumn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueIDColumn = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Custom SQL request to extract data from the BigQuery table.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomSQLRequest { get; set; }
+        public string? CustomSQLRequest { get => _explicitNullValueCustomSQLRequest; set { _explicitNullValueCustomSQLRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customSQLRequest"); else _explicitNullProperties?.Remove("customSQLRequest"); } }
+        private string? _explicitNullValueCustomSQLRequest = default!;
 #nullable restore
 #else
-        public string CustomSQLRequest { get; set; }
+        public string CustomSQLRequest { get => _explicitNullValueCustomSQLRequest; set { _explicitNullValueCustomSQLRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customSQLRequest"); else _explicitNullProperties?.Remove("customSQLRequest"); } }
+        private string _explicitNullValueCustomSQLRequest = default!;
 #endif
         /// <summary>Dataset ID of the BigQuery source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DatasetID { get; set; }
+        public string? DatasetID { get => _explicitNullValueDatasetID; set { _explicitNullValueDatasetID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetID"); else _explicitNullProperties?.Remove("datasetID"); } }
+        private string? _explicitNullValueDatasetID = default!;
 #nullable restore
 #else
-        public string DatasetID { get; set; }
+        public string DatasetID { get => _explicitNullValueDatasetID; set { _explicitNullValueDatasetID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetID"); else _explicitNullProperties?.Remove("datasetID"); } }
+        private string _explicitNullValueDatasetID = default!;
 #endif
         /// <summary>The dataType property</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.BigQueryDataType? DataType { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BigQueryDataType? DataType { get => _explicitNullValueDataType; set { _explicitNullValueDataType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataType"); else _explicitNullProperties?.Remove("dataType"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.BigQueryDataType? _explicitNullValueDataType = default!;
         /// <summary>Project ID of the BigQuery source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectID { get; set; }
+        public string? ProjectID { get => _explicitNullValueProjectID; set { _explicitNullValueProjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectID"); else _explicitNullProperties?.Remove("projectID"); } }
+        private string? _explicitNullValueProjectID = default!;
 #nullable restore
 #else
-        public string ProjectID { get; set; }
+        public string ProjectID { get => _explicitNullValueProjectID; set { _explicitNullValueProjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectID"); else _explicitNullProperties?.Remove("projectID"); } }
+        private string _explicitNullValueProjectID = default!;
 #endif
         /// <summary>Table name for the BigQuery export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Table { get; set; }
+        public string? Table { get => _explicitNullValueTable; set { _explicitNullValueTable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table"); else _explicitNullProperties?.Remove("table"); } }
+        private string? _explicitNullValueTable = default!;
 #nullable restore
 #else
-        public string Table { get; set; }
+        public string Table { get => _explicitNullValueTable; set { _explicitNullValueTable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table"); else _explicitNullProperties?.Remove("table"); } }
+        private string _explicitNullValueTable = default!;
 #endif
         /// <summary>Table prefix for a Google Analytics 4 data export to BigQuery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TablePrefix { get; set; }
+        public string? TablePrefix { get => _explicitNullValueTablePrefix; set { _explicitNullValueTablePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tablePrefix"); else _explicitNullProperties?.Remove("tablePrefix"); } }
+        private string? _explicitNullValueTablePrefix = default!;
 #nullable restore
 #else
-        public string TablePrefix { get; set; }
+        public string TablePrefix { get => _explicitNullValueTablePrefix; set { _explicitNullValueTablePrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tablePrefix"); else _explicitNullProperties?.Remove("tablePrefix"); } }
+        private string _explicitNullValueTablePrefix = default!;
 #endif
         /// <summary>Name of a column that contains a unique ID which will be used as `objectID` in Algolia.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UniqueIDColumn { get; set; }
+        public string? UniqueIDColumn { get => _explicitNullValueUniqueIDColumn; set { _explicitNullValueUniqueIDColumn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueIDColumn"); else _explicitNullProperties?.Remove("uniqueIDColumn"); } }
+        private string? _explicitNullValueUniqueIDColumn = default!;
 #nullable restore
 #else
-        public string UniqueIDColumn { get; set; }
+        public string UniqueIDColumn { get => _explicitNullValueUniqueIDColumn; set { _explicitNullValueUniqueIDColumn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueIDColumn"); else _explicitNullProperties?.Remove("uniqueIDColumn"); } }
+        private string _explicitNullValueUniqueIDColumn = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceBigQuery"/> and sets the default values.
@@ -80,7 +107,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.SourceBigQuery CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.SourceBigQuery();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.SourceBigQuery(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,6 +140,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("table", Table);
             writer.WriteStringValue("tablePrefix", TablePrefix);
             writer.WriteStringValue("uniqueIDColumn", UniqueIDColumn);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

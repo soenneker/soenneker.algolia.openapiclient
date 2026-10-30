@@ -11,40 +11,59 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Events : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("addToCart") is { } nullNodeAddToCart && nullNodeAddToCart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddToCart = null;
+            if (parseNode.GetChildNode("purchase") is { } nullNodePurchase && nullNodePurchase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Purchase = null;
+            if (parseNode.GetChildNode("viewDetails") is { } nullNodeViewDetails && nullNodeViewDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewDetails = null;
+            if (parseNode.GetChildNode("viewListing") is { } nullNodeViewListing && nullNodeViewListing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewListing = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The addToCart property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>? AddToCart { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>? AddToCart { get => _explicitNullValueAddToCart; set { _explicitNullValueAddToCart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addToCart"); else _explicitNullProperties?.Remove("addToCart"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>? _explicitNullValueAddToCart = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2> AddToCart { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2> AddToCart { get => _explicitNullValueAddToCart; set { _explicitNullValueAddToCart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("addToCart"); else _explicitNullProperties?.Remove("addToCart"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2> _explicitNullValueAddToCart = default!;
 #endif
         /// <summary>The purchase property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>? Purchase { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>? Purchase { get => _explicitNullValuePurchase; set { _explicitNullValuePurchase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchase"); else _explicitNullProperties?.Remove("purchase"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>? _explicitNullValuePurchase = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2> Purchase { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2> Purchase { get => _explicitNullValuePurchase; set { _explicitNullValuePurchase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchase"); else _explicitNullProperties?.Remove("purchase"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2> _explicitNullValuePurchase = default!;
 #endif
         /// <summary>The viewDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>? ViewDetails { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>? ViewDetails { get => _explicitNullValueViewDetails; set { _explicitNullValueViewDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewDetails"); else _explicitNullProperties?.Remove("viewDetails"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>? _explicitNullValueViewDetails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2> ViewDetails { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2> ViewDetails { get => _explicitNullValueViewDetails; set { _explicitNullValueViewDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewDetails"); else _explicitNullProperties?.Remove("viewDetails"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2> _explicitNullValueViewDetails = default!;
 #endif
         /// <summary>The viewListing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>? ViewListing { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>? ViewListing { get => _explicitNullValueViewListing; set { _explicitNullValueViewListing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewListing"); else _explicitNullProperties?.Remove("viewListing"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>? _explicitNullValueViewListing = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2> ViewListing { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2> ViewListing { get => _explicitNullValueViewListing; set { _explicitNullValueViewListing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewListing"); else _explicitNullProperties?.Remove("viewListing"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.EventType2> _explicitNullValueViewListing = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.Events"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.Events CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.Events();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.Events(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>("purchase", Purchase);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>("viewDetails", ViewDetails);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>("viewListing", ViewListing);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

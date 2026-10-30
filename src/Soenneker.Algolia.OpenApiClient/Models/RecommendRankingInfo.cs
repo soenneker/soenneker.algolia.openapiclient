@@ -12,47 +12,82 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecommendRankingInfo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("firstMatchedWord") is { } nullNodeFirstMatchedWord && nullNodeFirstMatchedWord.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstMatchedWord = null;
+            if (parseNode.GetChildNode("geoDistance") is { } nullNodeGeoDistance && nullNodeGeoDistance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeoDistance = null;
+            if (parseNode.GetChildNode("geoPrecision") is { } nullNodeGeoPrecision && nullNodeGeoPrecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GeoPrecision = null;
+            if (parseNode.GetChildNode("matchedGeoLocation") is { } nullNodeMatchedGeoLocation && nullNodeMatchedGeoLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchedGeoLocation = null;
+            if (parseNode.GetChildNode("nbExactWords") is { } nullNodeNbExactWords && nullNodeNbExactWords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbExactWords = null;
+            if (parseNode.GetChildNode("nbTypos") is { } nullNodeNbTypos && nullNodeNbTypos.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbTypos = null;
+            if (parseNode.GetChildNode("personalization") is { } nullNodePersonalization && nullNodePersonalization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Personalization = null;
+            if (parseNode.GetChildNode("promoted") is { } nullNodePromoted && nullNodePromoted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Promoted = null;
+            if (parseNode.GetChildNode("promotedByReRanking") is { } nullNodePromotedByReRanking && nullNodePromotedByReRanking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PromotedByReRanking = null;
+            if (parseNode.GetChildNode("proximityDistance") is { } nullNodeProximityDistance && nullNodeProximityDistance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProximityDistance = null;
+            if (parseNode.GetChildNode("userScore") is { } nullNodeUserScore && nullNodeUserScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserScore = null;
+            if (parseNode.GetChildNode("words") is { } nullNodeWords && nullNodeWords.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Words = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether a filter matched the query.</summary>
-        public int? Filters { get; set; }
+        public int? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private int? _explicitNullValueFilters = default!;
         /// <summary>Position of the first matched word in the best matching attribute of the record.</summary>
-        public int? FirstMatchedWord { get; set; }
+        public int? FirstMatchedWord { get => _explicitNullValueFirstMatchedWord; set { _explicitNullValueFirstMatchedWord = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstMatchedWord"); else _explicitNullProperties?.Remove("firstMatchedWord"); } }
+        private int? _explicitNullValueFirstMatchedWord = default!;
         /// <summary>Distance between the geo location in the search query and the best matching geo location in the record, divided by the geo precision (in meters).</summary>
-        public int? GeoDistance { get; set; }
+        public int? GeoDistance { get => _explicitNullValueGeoDistance; set { _explicitNullValueGeoDistance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geoDistance"); else _explicitNullProperties?.Remove("geoDistance"); } }
+        private int? _explicitNullValueGeoDistance = default!;
         /// <summary>Precision used when computing the geo distance, in meters.</summary>
-        public int? GeoPrecision { get; set; }
+        public int? GeoPrecision { get => _explicitNullValueGeoPrecision; set { _explicitNullValueGeoPrecision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geoPrecision"); else _explicitNullProperties?.Remove("geoPrecision"); } }
+        private int? _explicitNullValueGeoPrecision = default!;
         /// <summary>The matchedGeoLocation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendMatchedGeoLocation? MatchedGeoLocation { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendMatchedGeoLocation? MatchedGeoLocation { get => _explicitNullValueMatchedGeoLocation; set { _explicitNullValueMatchedGeoLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matchedGeoLocation"); else _explicitNullProperties?.Remove("matchedGeoLocation"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.RecommendMatchedGeoLocation? _explicitNullValueMatchedGeoLocation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendMatchedGeoLocation MatchedGeoLocation { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendMatchedGeoLocation MatchedGeoLocation { get => _explicitNullValueMatchedGeoLocation; set { _explicitNullValueMatchedGeoLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matchedGeoLocation"); else _explicitNullProperties?.Remove("matchedGeoLocation"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.RecommendMatchedGeoLocation _explicitNullValueMatchedGeoLocation = default!;
 #endif
         /// <summary>Number of exactly matched words.</summary>
-        public int? NbExactWords { get; set; }
+        public int? NbExactWords { get => _explicitNullValueNbExactWords; set { _explicitNullValueNbExactWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbExactWords"); else _explicitNullProperties?.Remove("nbExactWords"); } }
+        private int? _explicitNullValueNbExactWords = default!;
         /// <summary>Number of typos encountered when matching the record.</summary>
-        public int? NbTypos { get; set; }
+        public int? NbTypos { get => _explicitNullValueNbTypos; set { _explicitNullValueNbTypos = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nbTypos"); else _explicitNullProperties?.Remove("nbTypos"); } }
+        private int? _explicitNullValueNbTypos = default!;
         /// <summary>The personalization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendPersonalization? Personalization { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendPersonalization? Personalization { get => _explicitNullValuePersonalization; set { _explicitNullValuePersonalization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personalization"); else _explicitNullProperties?.Remove("personalization"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.RecommendPersonalization? _explicitNullValuePersonalization = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendPersonalization Personalization { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.RecommendPersonalization Personalization { get => _explicitNullValuePersonalization; set { _explicitNullValuePersonalization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("personalization"); else _explicitNullProperties?.Remove("personalization"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.RecommendPersonalization _explicitNullValuePersonalization = default!;
 #endif
         /// <summary>Whether the record was promoted by a rule.</summary>
-        public bool? Promoted { get; set; }
+        public bool? Promoted { get => _explicitNullValuePromoted; set { _explicitNullValuePromoted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("promoted"); else _explicitNullProperties?.Remove("promoted"); } }
+        private bool? _explicitNullValuePromoted = default!;
         /// <summary>Whether the record is re-ranked.</summary>
-        public bool? PromotedByReRanking { get; set; }
+        public bool? PromotedByReRanking { get => _explicitNullValuePromotedByReRanking; set { _explicitNullValuePromotedByReRanking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("promotedByReRanking"); else _explicitNullProperties?.Remove("promotedByReRanking"); } }
+        private bool? _explicitNullValuePromotedByReRanking = default!;
         /// <summary>Number of words between multiple matches in the query plus 1. For single word queries, `proximityDistance` is 0.</summary>
-        public int? ProximityDistance { get; set; }
+        public int? ProximityDistance { get => _explicitNullValueProximityDistance; set { _explicitNullValueProximityDistance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proximityDistance"); else _explicitNullProperties?.Remove("proximityDistance"); } }
+        private int? _explicitNullValueProximityDistance = default!;
         /// <summary>Overall ranking of the record, expressed as a single integer. This attribute is internal.</summary>
-        public int? UserScore { get; set; }
+        public int? UserScore { get => _explicitNullValueUserScore; set { _explicitNullValueUserScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userScore"); else _explicitNullProperties?.Remove("userScore"); } }
+        private int? _explicitNullValueUserScore = default!;
         /// <summary>Number of matched words.</summary>
-        public int? Words { get; set; }
+        public int? Words { get => _explicitNullValueWords; set { _explicitNullValueWords = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("words"); else _explicitNullProperties?.Remove("words"); } }
+        private int? _explicitNullValueWords = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendRankingInfo"/> and sets the default values.
         /// </summary>
@@ -68,7 +103,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.RecommendRankingInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.RecommendRankingInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.RecommendRankingInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,6 +148,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("proximityDistance", ProximityDistance);
             writer.WriteIntValue("userScore", UserScore);
             writer.WriteIntValue("words", Words);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

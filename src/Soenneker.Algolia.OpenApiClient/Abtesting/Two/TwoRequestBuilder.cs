@@ -16,6 +16,7 @@ namespace Soenneker.Algolia.OpenApiClient.Abtesting.Two
     public partial class TwoRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The abtests property</summary>
+        [Obsolete("")]
         public global::Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.AbtestsRequestBuilder Abtests
         {
             get => new global::Soenneker.Algolia.OpenApiClient.Abtesting.Two.Abtests.AbtestsRequestBuilder(PathParameters, RequestAdapter);

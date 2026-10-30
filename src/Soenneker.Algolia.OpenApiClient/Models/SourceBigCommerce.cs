@@ -12,48 +12,70 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SourceBigCommerce : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("channel") is { } nullNodeChannel && nullNodeChannel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Channel = null;
+            if (parseNode.GetChildNode("customFields") is { } nullNodeCustomFields && nullNodeCustomFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomFields = null;
+            if (parseNode.GetChildNode("productMetafields") is { } nullNodeProductMetafields && nullNodeProductMetafields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductMetafields = null;
+            if (parseNode.GetChildNode("storeHash") is { } nullNodeStoreHash && nullNodeStoreHash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreHash = null;
+            if (parseNode.GetChildNode("variantMetafields") is { } nullNodeVariantMetafields && nullNodeVariantMetafields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariantMetafields = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The channel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceChannel? Channel { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceChannel? Channel { get => _explicitNullValueChannel; set { _explicitNullValueChannel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("channel"); else _explicitNullProperties?.Remove("channel"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceChannel? _explicitNullValueChannel = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceChannel Channel { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceChannel Channel { get => _explicitNullValueChannel; set { _explicitNullValueChannel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("channel"); else _explicitNullProperties?.Remove("channel"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceChannel _explicitNullValueChannel = default!;
 #endif
         /// <summary>The customFields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CustomFields { get; set; }
+        public List<string>? CustomFields { get => _explicitNullValueCustomFields; set { _explicitNullValueCustomFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customFields"); else _explicitNullProperties?.Remove("customFields"); } }
+        private List<string>? _explicitNullValueCustomFields = default!;
 #nullable restore
 #else
-        public List<string> CustomFields { get; set; }
+        public List<string> CustomFields { get => _explicitNullValueCustomFields; set { _explicitNullValueCustomFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customFields"); else _explicitNullProperties?.Remove("customFields"); } }
+        private List<string> _explicitNullValueCustomFields = default!;
 #endif
         /// <summary>The productMetafields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceMetafield>? ProductMetafields { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceMetafield>? ProductMetafields { get => _explicitNullValueProductMetafields; set { _explicitNullValueProductMetafields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productMetafields"); else _explicitNullProperties?.Remove("productMetafields"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceMetafield>? _explicitNullValueProductMetafields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceMetafield> ProductMetafields { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceMetafield> ProductMetafields { get => _explicitNullValueProductMetafields; set { _explicitNullValueProductMetafields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("productMetafields"); else _explicitNullProperties?.Remove("productMetafields"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceMetafield> _explicitNullValueProductMetafields = default!;
 #endif
         /// <summary>Store hash identifying your BigCommerce store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StoreHash { get; set; }
+        public string? StoreHash { get => _explicitNullValueStoreHash; set { _explicitNullValueStoreHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeHash"); else _explicitNullProperties?.Remove("storeHash"); } }
+        private string? _explicitNullValueStoreHash = default!;
 #nullable restore
 #else
-        public string StoreHash { get; set; }
+        public string StoreHash { get => _explicitNullValueStoreHash; set { _explicitNullValueStoreHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeHash"); else _explicitNullProperties?.Remove("storeHash"); } }
+        private string _explicitNullValueStoreHash = default!;
 #endif
         /// <summary>The variantMetafields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceMetafield>? VariantMetafields { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceMetafield>? VariantMetafields { get => _explicitNullValueVariantMetafields; set { _explicitNullValueVariantMetafields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variantMetafields"); else _explicitNullProperties?.Remove("variantMetafields"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceMetafield>? _explicitNullValueVariantMetafields = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceMetafield> VariantMetafields { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceMetafield> VariantMetafields { get => _explicitNullValueVariantMetafields; set { _explicitNullValueVariantMetafields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variantMetafields"); else _explicitNullProperties?.Remove("variantMetafields"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceMetafield> _explicitNullValueVariantMetafields = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceBigCommerce"/> and sets the default values.
@@ -70,7 +92,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.SourceBigCommerce CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.SourceBigCommerce();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.SourceBigCommerce(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +121,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceMetafield>("productMetafields", ProductMetafields);
             writer.WriteStringValue("storeHash", StoreHash);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.BigCommerceMetafield>("variantMetafields", VariantMetafields);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

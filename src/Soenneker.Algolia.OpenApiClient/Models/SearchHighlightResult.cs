@@ -13,6 +13,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchHighlightResult : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
     {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMap"/></summary>
@@ -58,17 +62,22 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult();
             if("SearchHighlightResultMap".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SearchHighlightResultMap = new global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMap();
+                
             }
             else if("SearchHighlightResultOption".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SearchHighlightResultOption = new global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultOption();
+                
             }
             else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult>(global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult> searchHighlightResultPropValue)
             {
                 result.SearchHighlightResultProp = searchHighlightResultPropValue;
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("value") != null && parseNode.GetChildNode("matchLevel") != null && (parseNode.GetChildNode("matchLevel")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("none".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "partial".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "full".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("matchedWords") != null))();
+            if (result.SearchHighlightResultMap == null && result.SearchHighlightResultOption == null && result.SearchHighlightResultProp == null && matchesUnionBranch0) result.SearchHighlightResultOption = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultOption(), parseNode);
+            if (result.SearchHighlightResultMap == null && result.SearchHighlightResultOption == null && result.SearchHighlightResultProp == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,20 +101,27 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (SearchHighlightResultMap == null && SearchHighlightResultOption == null && SearchHighlightResultProp == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (SearchHighlightResultMap != null && SearchHighlightResultOption == null && SearchHighlightResultProp == null) { if (SearchHighlightResultMap is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SearchHighlightResultMap); return; }
+            if (SearchHighlightResultOption != null && SearchHighlightResultMap == null && SearchHighlightResultProp == null) { if (SearchHighlightResultOption is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SearchHighlightResultOption); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(SearchHighlightResultMap != null)
             {
+                if (SearchHighlightResultMap is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultMap>(null, SearchHighlightResultMap);
             }
             else if(SearchHighlightResultOption != null)
             {
+                if (SearchHighlightResultOption is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResultOption>(null, SearchHighlightResultOption);
             }
             else if(SearchHighlightResultProp != null)
             {
                 writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchHighlightResult>(null, SearchHighlightResultProp);
             }
-            writer.WriteAdditionalData(AdditionalData);
+            
         }
     }
 }

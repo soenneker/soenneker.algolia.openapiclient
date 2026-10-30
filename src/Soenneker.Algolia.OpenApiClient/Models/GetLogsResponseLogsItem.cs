@@ -11,136 +11,191 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetLogsResponseLogsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("answer") is { } nullNodeAnswer && nullNodeAnswer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Answer = null;
+            if (parseNode.GetChildNode("answer_code") is { } nullNodeAnswerCode && nullNodeAnswerCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnswerCode = null;
+            if (parseNode.GetChildNode("cid") is { } nullNodeCid && nullNodeCid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cid = null;
+            if (parseNode.GetChildNode("index") is { } nullNodeIndex && nullNodeIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Index = null;
+            if (parseNode.GetChildNode("inner_queries") is { } nullNodeInnerQueries && nullNodeInnerQueries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InnerQueries = null;
+            if (parseNode.GetChildNode("ip") is { } nullNodeIp && nullNodeIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ip = null;
+            if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
+            if (parseNode.GetChildNode("nb_api_calls") is { } nullNodeNbApiCalls && nullNodeNbApiCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbApiCalls = null;
+            if (parseNode.GetChildNode("processing_time_ms") is { } nullNodeProcessingTimeMs && nullNodeProcessingTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessingTimeMs = null;
+            if (parseNode.GetChildNode("query_body") is { } nullNodeQueryBody && nullNodeQueryBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryBody = null;
+            if (parseNode.GetChildNode("query_headers") is { } nullNodeQueryHeaders && nullNodeQueryHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryHeaders = null;
+            if (parseNode.GetChildNode("query_nb_hits") is { } nullNodeQueryNbHits && nullNodeQueryNbHits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryNbHits = null;
+            if (parseNode.GetChildNode("query_params") is { } nullNodeQueryParams && nullNodeQueryParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryParams = null;
+            if (parseNode.GetChildNode("sha1") is { } nullNodeSha1 && nullNodeSha1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sha1 = null;
+            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Response body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Answer { get; set; }
+        public string? Answer { get => _explicitNullValueAnswer; set { _explicitNullValueAnswer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("answer"); else _explicitNullProperties?.Remove("answer"); } }
+        private string? _explicitNullValueAnswer = default!;
 #nullable restore
 #else
-        public string Answer { get; set; }
+        public string Answer { get => _explicitNullValueAnswer; set { _explicitNullValueAnswer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("answer"); else _explicitNullProperties?.Remove("answer"); } }
+        private string _explicitNullValueAnswer = default!;
 #endif
         /// <summary>HTTP status code of the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AnswerCode { get; set; }
+        public string? AnswerCode { get => _explicitNullValueAnswerCode; set { _explicitNullValueAnswerCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("answer_code"); else _explicitNullProperties?.Remove("answer_code"); } }
+        private string? _explicitNullValueAnswerCode = default!;
 #nullable restore
 #else
-        public string AnswerCode { get; set; }
+        public string AnswerCode { get => _explicitNullValueAnswerCode; set { _explicitNullValueAnswerCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("answer_code"); else _explicitNullProperties?.Remove("answer_code"); } }
+        private string _explicitNullValueAnswerCode = default!;
 #endif
         /// <summary>Correlation ID of the logged API request, also returned in that request&apos;s `Correlation-ID` response header.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cid { get; set; }
+        public string? Cid { get => _explicitNullValueCid; set { _explicitNullValueCid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cid"); else _explicitNullProperties?.Remove("cid"); } }
+        private string? _explicitNullValueCid = default!;
 #nullable restore
 #else
-        public string Cid { get; set; }
+        public string Cid { get => _explicitNullValueCid; set { _explicitNullValueCid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cid"); else _explicitNullProperties?.Remove("cid"); } }
+        private string _explicitNullValueCid = default!;
 #endif
         /// <summary>Index targeted by the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Index { get; set; }
+        public string? Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
+        private string? _explicitNullValueIndex = default!;
 #nullable restore
 #else
-        public string Index { get; set; }
+        public string Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
+        private string _explicitNullValueIndex = default!;
 #endif
         /// <summary>Queries performed for the given request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponseLogsItemInnerQueriesItem>? InnerQueries { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponseLogsItemInnerQueriesItem>? InnerQueries { get => _explicitNullValueInnerQueries; set { _explicitNullValueInnerQueries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inner_queries"); else _explicitNullProperties?.Remove("inner_queries"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponseLogsItemInnerQueriesItem>? _explicitNullValueInnerQueries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponseLogsItemInnerQueriesItem> InnerQueries { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponseLogsItemInnerQueriesItem> InnerQueries { get => _explicitNullValueInnerQueries; set { _explicitNullValueInnerQueries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inner_queries"); else _explicitNullProperties?.Remove("inner_queries"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponseLogsItemInnerQueriesItem> _explicitNullValueInnerQueries = default!;
 #endif
         /// <summary>IP address of the client that performed the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ip { get; set; }
+        public string? Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
+        private string? _explicitNullValueIp = default!;
 #nullable restore
 #else
-        public string Ip { get; set; }
+        public string Ip { get => _explicitNullValueIp; set { _explicitNullValueIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ip"); else _explicitNullProperties?.Remove("ip"); } }
+        private string _explicitNullValueIp = default!;
 #endif
         /// <summary>HTTP method of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Method { get; set; }
+        public string? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private string? _explicitNullValueMethod = default!;
 #nullable restore
 #else
-        public string Method { get; set; }
+        public string Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private string _explicitNullValueMethod = default!;
 #endif
         /// <summary>Number of API requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NbApiCalls { get; set; }
+        public string? NbApiCalls { get => _explicitNullValueNbApiCalls; set { _explicitNullValueNbApiCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nb_api_calls"); else _explicitNullProperties?.Remove("nb_api_calls"); } }
+        private string? _explicitNullValueNbApiCalls = default!;
 #nullable restore
 #else
-        public string NbApiCalls { get; set; }
+        public string NbApiCalls { get => _explicitNullValueNbApiCalls; set { _explicitNullValueNbApiCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nb_api_calls"); else _explicitNullProperties?.Remove("nb_api_calls"); } }
+        private string _explicitNullValueNbApiCalls = default!;
 #endif
         /// <summary>Processing time for the query in milliseconds.This doesn&apos;t include latency due to the network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProcessingTimeMs { get; set; }
+        public string? ProcessingTimeMs { get => _explicitNullValueProcessingTimeMs; set { _explicitNullValueProcessingTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processing_time_ms"); else _explicitNullProperties?.Remove("processing_time_ms"); } }
+        private string? _explicitNullValueProcessingTimeMs = default!;
 #nullable restore
 #else
-        public string ProcessingTimeMs { get; set; }
+        public string ProcessingTimeMs { get => _explicitNullValueProcessingTimeMs; set { _explicitNullValueProcessingTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processing_time_ms"); else _explicitNullProperties?.Remove("processing_time_ms"); } }
+        private string _explicitNullValueProcessingTimeMs = default!;
 #endif
         /// <summary>Request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryBody { get; set; }
+        public string? QueryBody { get => _explicitNullValueQueryBody; set { _explicitNullValueQueryBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_body"); else _explicitNullProperties?.Remove("query_body"); } }
+        private string? _explicitNullValueQueryBody = default!;
 #nullable restore
 #else
-        public string QueryBody { get; set; }
+        public string QueryBody { get => _explicitNullValueQueryBody; set { _explicitNullValueQueryBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_body"); else _explicitNullProperties?.Remove("query_body"); } }
+        private string _explicitNullValueQueryBody = default!;
 #endif
         /// <summary>Request headers (API keys are obfuscated).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryHeaders { get; set; }
+        public string? QueryHeaders { get => _explicitNullValueQueryHeaders; set { _explicitNullValueQueryHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_headers"); else _explicitNullProperties?.Remove("query_headers"); } }
+        private string? _explicitNullValueQueryHeaders = default!;
 #nullable restore
 #else
-        public string QueryHeaders { get; set; }
+        public string QueryHeaders { get => _explicitNullValueQueryHeaders; set { _explicitNullValueQueryHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_headers"); else _explicitNullProperties?.Remove("query_headers"); } }
+        private string _explicitNullValueQueryHeaders = default!;
 #endif
         /// <summary>Number of search results (hits) returned for the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryNbHits { get; set; }
+        public string? QueryNbHits { get => _explicitNullValueQueryNbHits; set { _explicitNullValueQueryNbHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_nb_hits"); else _explicitNullProperties?.Remove("query_nb_hits"); } }
+        private string? _explicitNullValueQueryNbHits = default!;
 #nullable restore
 #else
-        public string QueryNbHits { get; set; }
+        public string QueryNbHits { get => _explicitNullValueQueryNbHits; set { _explicitNullValueQueryNbHits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_nb_hits"); else _explicitNullProperties?.Remove("query_nb_hits"); } }
+        private string _explicitNullValueQueryNbHits = default!;
 #endif
         /// <summary>Query parameters sent with the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueryParams { get; set; }
+        public string? QueryParams { get => _explicitNullValueQueryParams; set { _explicitNullValueQueryParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_params"); else _explicitNullProperties?.Remove("query_params"); } }
+        private string? _explicitNullValueQueryParams = default!;
 #nullable restore
 #else
-        public string QueryParams { get; set; }
+        public string QueryParams { get => _explicitNullValueQueryParams; set { _explicitNullValueQueryParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_params"); else _explicitNullProperties?.Remove("query_params"); } }
+        private string _explicitNullValueQueryParams = default!;
 #endif
         /// <summary>SHA1 signature of the log entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sha1 { get; set; }
+        public string? Sha1 { get => _explicitNullValueSha1; set { _explicitNullValueSha1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sha1"); else _explicitNullProperties?.Remove("sha1"); } }
+        private string? _explicitNullValueSha1 = default!;
 #nullable restore
 #else
-        public string Sha1 { get; set; }
+        public string Sha1 { get => _explicitNullValueSha1; set { _explicitNullValueSha1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sha1"); else _explicitNullProperties?.Remove("sha1"); } }
+        private string _explicitNullValueSha1 = default!;
 #endif
         /// <summary>Date and time of the API request, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timestamp { get; set; }
+        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private string? _explicitNullValueTimestamp = default!;
 #nullable restore
 #else
-        public string Timestamp { get; set; }
+        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private string _explicitNullValueTimestamp = default!;
 #endif
         /// <summary>URL of the API endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponseLogsItem"/> and sets the default values.
@@ -157,7 +212,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponseLogsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponseLogsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.GetLogsResponseLogsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -208,6 +263,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("sha1", Sha1);
             writer.WriteStringValue("timestamp", Timestamp);
             writer.WriteStringValue("url", Url);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

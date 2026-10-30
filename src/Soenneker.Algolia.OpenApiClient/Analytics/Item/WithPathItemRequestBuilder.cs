@@ -59,6 +59,8 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Item
                 { "402", global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsCustomDelete200ResponseSchema2>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsCustomDelete200ResponseSchema2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -88,6 +90,8 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Item
                 { "402", global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsCustomGet200ResponseSchema2>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsCustomGet200ResponseSchema2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -119,6 +123,8 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Item
                 { "402", global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsCustomPost200ResponseSchema2>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsCustomPost200ResponseSchema2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -150,6 +156,8 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Item
                 { "402", global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsErrorBase.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsCustomPut200ResponseSchema2>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AnalyticsCustomPut200ResponseSchema2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

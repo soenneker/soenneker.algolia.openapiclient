@@ -11,93 +11,139 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CrawlerLogsResponseResponseLogsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accessCount") is { } nullNodeAccessCount && nullNodeAccessCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccessCount = null;
+            if (parseNode.GetChildNode("configId") is { } nullNodeConfigId && nullNodeConfigId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigId = null;
+            if (parseNode.GetChildNode("crawlCompletedAt") is { } nullNodeCrawlCompletedAt && nullNodeCrawlCompletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CrawlCompletedAt = null;
+            if (parseNode.GetChildNode("crawlStartedAt") is { } nullNodeCrawlStartedAt && nullNodeCrawlStartedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CrawlStartedAt = null;
+            if (parseNode.GetChildNode("expiresAt") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
+            if (parseNode.GetChildNode("fileCreatedAt") is { } nullNodeFileCreatedAt && nullNodeFileCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileCreatedAt = null;
+            if (parseNode.GetChildNode("fileSizeBytes") is { } nullNodeFileSizeBytes && nullNodeFileSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileSizeBytes = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("lastAccessedAt") is { } nullNodeLastAccessedAt && nullNodeLastAccessedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastAccessedAt = null;
+            if (parseNode.GetChildNode("reindexId") is { } nullNodeReindexId && nullNodeReindexId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReindexId = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("uncompressedSizeBytes") is { } nullNodeUncompressedSizeBytes && nullNodeUncompressedSizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UncompressedSizeBytes = null;
+            if (parseNode.GetChildNode("urlsDone") is { } nullNodeUrlsDone && nullNodeUrlsDone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlsDone = null;
+            if (parseNode.GetChildNode("urlsFailed") is { } nullNodeUrlsFailed && nullNodeUrlsFailed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlsFailed = null;
+            if (parseNode.GetChildNode("urlsSkipped") is { } nullNodeUrlsSkipped && nullNodeUrlsSkipped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlsSkipped = null;
+        }
+
         /// <summary>File access count.</summary>
-        public int? AccessCount { get; set; }
+        public int? AccessCount { get => _explicitNullValueAccessCount; set { _explicitNullValueAccessCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accessCount"); else _explicitNullProperties?.Remove("accessCount"); } }
+        private int? _explicitNullValueAccessCount = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Crawler Config identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfigId { get; set; }
+        public string? ConfigId { get => _explicitNullValueConfigId; set { _explicitNullValueConfigId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configId"); else _explicitNullProperties?.Remove("configId"); } }
+        private string? _explicitNullValueConfigId = default!;
 #nullable restore
 #else
-        public string ConfigId { get; set; }
+        public string ConfigId { get => _explicitNullValueConfigId; set { _explicitNullValueConfigId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configId"); else _explicitNullProperties?.Remove("configId"); } }
+        private string _explicitNullValueConfigId = default!;
 #endif
         /// <summary>Crawl started at date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CrawlCompletedAt { get; set; }
+        public string? CrawlCompletedAt { get => _explicitNullValueCrawlCompletedAt; set { _explicitNullValueCrawlCompletedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawlCompletedAt"); else _explicitNullProperties?.Remove("crawlCompletedAt"); } }
+        private string? _explicitNullValueCrawlCompletedAt = default!;
 #nullable restore
 #else
-        public string CrawlCompletedAt { get; set; }
+        public string CrawlCompletedAt { get => _explicitNullValueCrawlCompletedAt; set { _explicitNullValueCrawlCompletedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawlCompletedAt"); else _explicitNullProperties?.Remove("crawlCompletedAt"); } }
+        private string _explicitNullValueCrawlCompletedAt = default!;
 #endif
         /// <summary>Crawl started at date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CrawlStartedAt { get; set; }
+        public string? CrawlStartedAt { get => _explicitNullValueCrawlStartedAt; set { _explicitNullValueCrawlStartedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawlStartedAt"); else _explicitNullProperties?.Remove("crawlStartedAt"); } }
+        private string? _explicitNullValueCrawlStartedAt = default!;
 #nullable restore
 #else
-        public string CrawlStartedAt { get; set; }
+        public string CrawlStartedAt { get => _explicitNullValueCrawlStartedAt; set { _explicitNullValueCrawlStartedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crawlStartedAt"); else _explicitNullProperties?.Remove("crawlStartedAt"); } }
+        private string _explicitNullValueCrawlStartedAt = default!;
 #endif
         /// <summary>File expiration date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpiresAt { get; set; }
+        public string? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
+        private string? _explicitNullValueExpiresAt = default!;
 #nullable restore
 #else
-        public string ExpiresAt { get; set; }
+        public string ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiresAt"); else _explicitNullProperties?.Remove("expiresAt"); } }
+        private string _explicitNullValueExpiresAt = default!;
 #endif
         /// <summary>File created date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileCreatedAt { get; set; }
+        public string? FileCreatedAt { get => _explicitNullValueFileCreatedAt; set { _explicitNullValueFileCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileCreatedAt"); else _explicitNullProperties?.Remove("fileCreatedAt"); } }
+        private string? _explicitNullValueFileCreatedAt = default!;
 #nullable restore
 #else
-        public string FileCreatedAt { get; set; }
+        public string FileCreatedAt { get => _explicitNullValueFileCreatedAt; set { _explicitNullValueFileCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileCreatedAt"); else _explicitNullProperties?.Remove("fileCreatedAt"); } }
+        private string _explicitNullValueFileCreatedAt = default!;
 #endif
         /// <summary>Size of the compressed crawler log.</summary>
-        public int? FileSizeBytes { get; set; }
+        public int? FileSizeBytes { get => _explicitNullValueFileSizeBytes; set { _explicitNullValueFileSizeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileSizeBytes"); else _explicitNullProperties?.Remove("fileSizeBytes"); } }
+        private int? _explicitNullValueFileSizeBytes = default!;
         /// <summary>ID of the crawler log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>File last accessed date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastAccessedAt { get; set; }
+        public string? LastAccessedAt { get => _explicitNullValueLastAccessedAt; set { _explicitNullValueLastAccessedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastAccessedAt"); else _explicitNullProperties?.Remove("lastAccessedAt"); } }
+        private string? _explicitNullValueLastAccessedAt = default!;
 #nullable restore
 #else
-        public string LastAccessedAt { get; set; }
+        public string LastAccessedAt { get => _explicitNullValueLastAccessedAt; set { _explicitNullValueLastAccessedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastAccessedAt"); else _explicitNullProperties?.Remove("lastAccessedAt"); } }
+        private string _explicitNullValueLastAccessedAt = default!;
 #endif
         /// <summary>Identifier of Reindex.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReindexId { get; set; }
+        public string? ReindexId { get => _explicitNullValueReindexId; set { _explicitNullValueReindexId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reindexId"); else _explicitNullProperties?.Remove("reindexId"); } }
+        private string? _explicitNullValueReindexId = default!;
 #nullable restore
 #else
-        public string ReindexId { get; set; }
+        public string ReindexId { get => _explicitNullValueReindexId; set { _explicitNullValueReindexId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reindexId"); else _explicitNullProperties?.Remove("reindexId"); } }
+        private string _explicitNullValueReindexId = default!;
 #endif
         /// <summary>File status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>Size of the uncompressed crawler log.</summary>
-        public int? UncompressedSizeBytes { get; set; }
+        public int? UncompressedSizeBytes { get => _explicitNullValueUncompressedSizeBytes; set { _explicitNullValueUncompressedSizeBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uncompressedSizeBytes"); else _explicitNullProperties?.Remove("uncompressedSizeBytes"); } }
+        private int? _explicitNullValueUncompressedSizeBytes = default!;
         /// <summary>Crawler urls done.</summary>
-        public int? UrlsDone { get; set; }
+        public int? UrlsDone { get => _explicitNullValueUrlsDone; set { _explicitNullValueUrlsDone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urlsDone"); else _explicitNullProperties?.Remove("urlsDone"); } }
+        private int? _explicitNullValueUrlsDone = default!;
         /// <summary>Crawler urls failed.</summary>
-        public int? UrlsFailed { get; set; }
+        public int? UrlsFailed { get => _explicitNullValueUrlsFailed; set { _explicitNullValueUrlsFailed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urlsFailed"); else _explicitNullProperties?.Remove("urlsFailed"); } }
+        private int? _explicitNullValueUrlsFailed = default!;
         /// <summary>Crawler urls skipped.</summary>
-        public int? UrlsSkipped { get; set; }
+        public int? UrlsSkipped { get => _explicitNullValueUrlsSkipped; set { _explicitNullValueUrlsSkipped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urlsSkipped"); else _explicitNullProperties?.Remove("urlsSkipped"); } }
+        private int? _explicitNullValueUrlsSkipped = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.CrawlerLogsResponseResponseLogsItem"/> and sets the default values.
         /// </summary>
@@ -113,7 +159,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.CrawlerLogsResponseResponseLogsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.CrawlerLogsResponseResponseLogsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.CrawlerLogsResponseResponseLogsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -162,6 +208,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteIntValue("urlsDone", UrlsDone);
             writer.WriteIntValue("urlsFailed", UrlsFailed);
             writer.WriteIntValue("urlsSkipped", UrlsSkipped);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

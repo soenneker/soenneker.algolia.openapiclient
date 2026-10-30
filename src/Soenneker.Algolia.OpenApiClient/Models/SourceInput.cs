@@ -12,7 +12,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SourceInput : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SourceAlgoliaIndex"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,41 +102,60 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             var result = new global::Soenneker.Algolia.OpenApiClient.Models.SourceInput();
             if("SourceAlgoliaIndex".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SourceAlgoliaIndex = new global::Soenneker.Algolia.OpenApiClient.Models.SourceAlgoliaIndex();
+                
             }
             else if("SourceBigCommerce".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SourceBigCommerce = new global::Soenneker.Algolia.OpenApiClient.Models.SourceBigCommerce();
+                
             }
             else if("SourceBigQuery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SourceBigQuery = new global::Soenneker.Algolia.OpenApiClient.Models.SourceBigQuery();
+                
             }
             else if("SourceCommercetools".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SourceCommercetools = new global::Soenneker.Algolia.OpenApiClient.Models.SourceCommercetools();
+                
             }
             else if("SourceCsv".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SourceCsv = new global::Soenneker.Algolia.OpenApiClient.Models.SourceCsv();
+                
             }
             else if("SourceDocker".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SourceDocker = new global::Soenneker.Algolia.OpenApiClient.Models.SourceDocker();
+                
             }
             else if("SourceGa4BigQueryExport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SourceGa4BigQueryExport = new global::Soenneker.Algolia.OpenApiClient.Models.SourceGa4BigQueryExport();
+                
             }
             else if("SourceJson".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SourceJson = new global::Soenneker.Algolia.OpenApiClient.Models.SourceJson();
+                
             }
             else if("SourceShopify".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SourceShopify = new global::Soenneker.Algolia.OpenApiClient.Models.SourceShopify();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("url") != null && parseNode.GetChildNode("projectKey") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("storeHash") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("url") != null && (parseNode.GetChildNode("method") == null || (parseNode.GetChildNode("method")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("GET".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "POST".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("url") != null && (parseNode.GetChildNode("method") == null || (parseNode.GetChildNode("method")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("GET".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "POST".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("projectID") != null && parseNode.GetChildNode("datasetID") != null && (parseNode.GetChildNode("dataType") == null || (parseNode.GetChildNode("dataType")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag2 && ("ga4".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal) || "ga360".Equals(optionalTag2.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("projectID") != null && parseNode.GetChildNode("datasetID") != null && parseNode.GetChildNode("tablePrefix") != null))();
+            bool matchesUnionBranch6 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("image") != null && parseNode.GetChildNode("configuration") != null))();
+            bool matchesUnionBranch7 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("indexName") != null))();
+            if (result.SourceAlgoliaIndex == null && result.SourceBigCommerce == null && result.SourceBigQuery == null && result.SourceCommercetools == null && result.SourceCsv == null && result.SourceDocker == null && result.SourceGa4BigQueryExport == null && result.SourceJson == null && result.SourceShopify == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.SourceCommercetools = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.SourceCommercetools(), parseNode);
+            if (result.SourceAlgoliaIndex == null && result.SourceBigCommerce == null && result.SourceBigQuery == null && result.SourceCommercetools == null && result.SourceCsv == null && result.SourceDocker == null && result.SourceGa4BigQueryExport == null && result.SourceJson == null && result.SourceShopify == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.SourceBigCommerce = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.SourceBigCommerce(), parseNode);
+            if (result.SourceAlgoliaIndex == null && result.SourceBigCommerce == null && result.SourceBigQuery == null && result.SourceCommercetools == null && result.SourceCsv == null && result.SourceDocker == null && result.SourceGa4BigQueryExport == null && result.SourceJson == null && result.SourceShopify == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.SourceJson = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.SourceJson(), parseNode);
+            if (result.SourceAlgoliaIndex == null && result.SourceBigCommerce == null && result.SourceBigQuery == null && result.SourceCommercetools == null && result.SourceCsv == null && result.SourceDocker == null && result.SourceGa4BigQueryExport == null && result.SourceJson == null && result.SourceShopify == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.SourceCsv = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.SourceCsv(), parseNode);
+            if (result.SourceAlgoliaIndex == null && result.SourceBigCommerce == null && result.SourceBigQuery == null && result.SourceCommercetools == null && result.SourceCsv == null && result.SourceDocker == null && result.SourceGa4BigQueryExport == null && result.SourceJson == null && result.SourceShopify == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.SourceBigQuery = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.SourceBigQuery(), parseNode);
+            if (result.SourceAlgoliaIndex == null && result.SourceBigCommerce == null && result.SourceBigQuery == null && result.SourceCommercetools == null && result.SourceCsv == null && result.SourceDocker == null && result.SourceGa4BigQueryExport == null && result.SourceJson == null && result.SourceShopify == null && matchesUnionBranch5 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch6 && !matchesUnionBranch7) result.SourceGa4BigQueryExport = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.SourceGa4BigQueryExport(), parseNode);
+            if (result.SourceAlgoliaIndex == null && result.SourceBigCommerce == null && result.SourceBigQuery == null && result.SourceCommercetools == null && result.SourceCsv == null && result.SourceDocker == null && result.SourceGa4BigQueryExport == null && result.SourceJson == null && result.SourceShopify == null && matchesUnionBranch6 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch7) result.SourceDocker = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.SourceDocker(), parseNode);
+            if (result.SourceAlgoliaIndex == null && result.SourceBigCommerce == null && result.SourceBigQuery == null && result.SourceCommercetools == null && result.SourceCsv == null && result.SourceDocker == null && result.SourceGa4BigQueryExport == null && result.SourceJson == null && result.SourceShopify == null && matchesUnionBranch7 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6) result.SourceAlgoliaIndex = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.SourceAlgoliaIndex(), parseNode);
+            if (result.SourceAlgoliaIndex == null && result.SourceBigCommerce == null && result.SourceBigQuery == null && result.SourceCommercetools == null && result.SourceCsv == null && result.SourceDocker == null && result.SourceGa4BigQueryExport == null && result.SourceJson == null && result.SourceShopify == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -183,41 +207,62 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (SourceAlgoliaIndex == null && SourceBigCommerce == null && SourceBigQuery == null && SourceCommercetools == null && SourceCsv == null && SourceDocker == null && SourceGa4BigQueryExport == null && SourceJson == null && SourceShopify == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (SourceAlgoliaIndex != null && SourceBigCommerce == null && SourceBigQuery == null && SourceCommercetools == null && SourceCsv == null && SourceDocker == null && SourceGa4BigQueryExport == null && SourceJson == null && SourceShopify == null) { if (SourceAlgoliaIndex is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SourceAlgoliaIndex); return; }
+            if (SourceBigCommerce != null && SourceAlgoliaIndex == null && SourceBigQuery == null && SourceCommercetools == null && SourceCsv == null && SourceDocker == null && SourceGa4BigQueryExport == null && SourceJson == null && SourceShopify == null) { if (SourceBigCommerce is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SourceBigCommerce); return; }
+            if (SourceBigQuery != null && SourceAlgoliaIndex == null && SourceBigCommerce == null && SourceCommercetools == null && SourceCsv == null && SourceDocker == null && SourceGa4BigQueryExport == null && SourceJson == null && SourceShopify == null) { if (SourceBigQuery is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SourceBigQuery); return; }
+            if (SourceCommercetools != null && SourceAlgoliaIndex == null && SourceBigCommerce == null && SourceBigQuery == null && SourceCsv == null && SourceDocker == null && SourceGa4BigQueryExport == null && SourceJson == null && SourceShopify == null) { if (SourceCommercetools is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SourceCommercetools); return; }
+            if (SourceCsv != null && SourceAlgoliaIndex == null && SourceBigCommerce == null && SourceBigQuery == null && SourceCommercetools == null && SourceDocker == null && SourceGa4BigQueryExport == null && SourceJson == null && SourceShopify == null) { if (SourceCsv is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SourceCsv); return; }
+            if (SourceDocker != null && SourceAlgoliaIndex == null && SourceBigCommerce == null && SourceBigQuery == null && SourceCommercetools == null && SourceCsv == null && SourceGa4BigQueryExport == null && SourceJson == null && SourceShopify == null) { if (SourceDocker is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SourceDocker); return; }
+            if (SourceGa4BigQueryExport != null && SourceAlgoliaIndex == null && SourceBigCommerce == null && SourceBigQuery == null && SourceCommercetools == null && SourceCsv == null && SourceDocker == null && SourceJson == null && SourceShopify == null) { if (SourceGa4BigQueryExport is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SourceGa4BigQueryExport); return; }
+            if (SourceJson != null && SourceAlgoliaIndex == null && SourceBigCommerce == null && SourceBigQuery == null && SourceCommercetools == null && SourceCsv == null && SourceDocker == null && SourceGa4BigQueryExport == null && SourceShopify == null) { if (SourceJson is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SourceJson); return; }
+            if (SourceShopify != null && SourceAlgoliaIndex == null && SourceBigCommerce == null && SourceBigQuery == null && SourceCommercetools == null && SourceCsv == null && SourceDocker == null && SourceGa4BigQueryExport == null && SourceJson == null) { if (SourceShopify is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SourceShopify); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(SourceAlgoliaIndex != null)
             {
+                if (SourceAlgoliaIndex is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceAlgoliaIndex>(null, SourceAlgoliaIndex);
             }
             else if(SourceBigCommerce != null)
             {
+                if (SourceBigCommerce is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceBigCommerce>(null, SourceBigCommerce);
             }
             else if(SourceBigQuery != null)
             {
+                if (SourceBigQuery is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceBigQuery>(null, SourceBigQuery);
             }
             else if(SourceCommercetools != null)
             {
+                if (SourceCommercetools is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceCommercetools>(null, SourceCommercetools);
             }
             else if(SourceCsv != null)
             {
+                if (SourceCsv is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceCsv>(null, SourceCsv);
             }
             else if(SourceDocker != null)
             {
+                if (SourceDocker is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceDocker>(null, SourceDocker);
             }
             else if(SourceGa4BigQueryExport != null)
             {
+                if (SourceGa4BigQueryExport is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceGa4BigQueryExport>(null, SourceGa4BigQueryExport);
             }
             else if(SourceJson != null)
             {
+                if (SourceJson is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceJson>(null, SourceJson);
             }
             else if(SourceShopify != null)
             {
+                if (SourceShopify is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceShopify>(null, SourceShopify);
             }
         }

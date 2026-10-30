@@ -22,6 +22,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.One
     public partial class OneRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The clusters property</summary>
+        [Obsolete("")]
         public global::Soenneker.Algolia.OpenApiClient.Search.One.Clusters.ClustersRequestBuilder Clusters
         {
             get => new global::Soenneker.Algolia.OpenApiClient.Search.One.Clusters.ClustersRequestBuilder(PathParameters, RequestAdapter);

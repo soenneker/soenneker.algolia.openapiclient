@@ -12,31 +12,50 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AbTestConfiguration : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("errorCorrection") is { } nullNodeErrorCorrection && nullNodeErrorCorrection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCorrection = null;
+            if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
+            if (parseNode.GetChildNode("minimumDetectableEffect") is { } nullNodeMinimumDetectableEffect && nullNodeMinimumDetectableEffect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumDetectableEffect = null;
+            if (parseNode.GetChildNode("primaryMetric") is { } nullNodePrimaryMetric && nullNodePrimaryMetric.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryMetric = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Multiple-testing correction method applied when evaluating metric significance.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.ErrorCorrectionType? ErrorCorrection { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.ErrorCorrectionType? ErrorCorrection { get => _explicitNullValueErrorCorrection; set { _explicitNullValueErrorCorrection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCorrection"); else _explicitNullProperties?.Remove("errorCorrection"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.ErrorCorrectionType? _explicitNullValueErrorCorrection = default!;
         /// <summary>List of metric filters applied to the test population.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.MetricsFilter>? Filters { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.MetricsFilter>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.MetricsFilter>? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.MetricsFilter> Filters { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.MetricsFilter> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.MetricsFilter> _explicitNullValueFilters = default!;
 #endif
         /// <summary>A/B test statistical analysis method.When omitted, new A/B tests use `bayesian`.They use `frequentist` instead only if no primary metric that supports Bayesian analysis is available.The selected method is saved in the A/B test configuration.Older A/B tests, created before methods were saved, may have no method in their configuration.These tests use `frequentist`.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.AnalysisMethod? Method { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.AnalysisMethod? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.AnalysisMethod? _explicitNullValueMethod = default!;
         /// <summary>Configuration for the smallest difference between test variants you want to detect, used to estimate the required sample size.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.MinimumDetectableEffect? MinimumDetectableEffect { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MinimumDetectableEffect? MinimumDetectableEffect { get => _explicitNullValueMinimumDetectableEffect; set { _explicitNullValueMinimumDetectableEffect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimumDetectableEffect"); else _explicitNullProperties?.Remove("minimumDetectableEffect"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.MinimumDetectableEffect? _explicitNullValueMinimumDetectableEffect = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.MinimumDetectableEffect MinimumDetectableEffect { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.MinimumDetectableEffect MinimumDetectableEffect { get => _explicitNullValueMinimumDetectableEffect; set { _explicitNullValueMinimumDetectableEffect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimumDetectableEffect"); else _explicitNullProperties?.Remove("minimumDetectableEffect"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.MinimumDetectableEffect _explicitNullValueMinimumDetectableEffect = default!;
 #endif
         /// <summary>Primary metric for Bayesian analysis. Required when `method` is `bayesian`.When `method` is omitted and the test defaults to `bayesian`, the default primary metric is `conversion_rate`,or the first metric in `metrics` that supports Bayesian analysis if `metrics` doesn&apos;t include conversion rate.If the request includes a non-empty `metrics` list, this metric must be in that list.User-level rates (`*_users_rate`) are the share of tracked users with at least one such search.Add-to-cart rates, purchase rates, and revenue per search require access to revenue analytics.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.PrimaryMetric? PrimaryMetric { get; set; }
+        public global::Soenneker.Algolia.OpenApiClient.Models.PrimaryMetric? PrimaryMetric { get => _explicitNullValuePrimaryMetric; set { _explicitNullValuePrimaryMetric = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primaryMetric"); else _explicitNullProperties?.Remove("primaryMetric"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.PrimaryMetric? _explicitNullValuePrimaryMetric = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.AbTestConfiguration"/> and sets the default values.
         /// </summary>
@@ -52,7 +71,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.AbTestConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.AbTestConfiguration();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.AbTestConfiguration(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +100,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.AnalysisMethod>("method", Method);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MinimumDetectableEffect>("minimumDetectableEffect", MinimumDetectableEffect);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.PrimaryMetric>("primaryMetric", PrimaryMetric);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -59,6 +59,8 @@ namespace Soenneker.Algolia.OpenApiClient.Personalization.One.Strategies.Persona
                 { "402", global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationErrorBase.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationErrorBase.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationStrategyParams>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationStrategyParams.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -90,6 +92,8 @@ namespace Soenneker.Algolia.OpenApiClient.Personalization.One.Strategies.Persona
                 { "402", global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationErrorBase.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationErrorBase.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Algolia.OpenApiClient.Models.PersonalizationErrorBase.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.SetPersonalizationStrategyResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.SetPersonalizationStrategyResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

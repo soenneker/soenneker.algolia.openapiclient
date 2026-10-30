@@ -12,16 +12,26 @@ namespace Soenneker.Algolia.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetTopUserIdsResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("topUsers") is { } nullNodeTopUsers && nullNodeTopUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopUsers = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Key-value pairs with cluster names as keys and lists of users with the highest number of records per cluster as values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponseTopUsersItemProperty>? TopUsers { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponseTopUsersItemProperty>? TopUsers { get => _explicitNullValueTopUsers; set { _explicitNullValueTopUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topUsers"); else _explicitNullProperties?.Remove("topUsers"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponseTopUsersItemProperty>? _explicitNullValueTopUsers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponseTopUsersItemProperty> TopUsers { get; set; }
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponseTopUsersItemProperty> TopUsers { get => _explicitNullValueTopUsers; set { _explicitNullValueTopUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topUsers"); else _explicitNullProperties?.Remove("topUsers"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponseTopUsersItemProperty> _explicitNullValueTopUsers = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponse"/> and sets the default values.
@@ -38,7 +48,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public static global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,6 +69,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.GetTopUserIdsResponseTopUsersItemProperty>("topUsers", TopUsers);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

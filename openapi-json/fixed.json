@@ -44756,9 +44756,6 @@
         "description": "Trigger input for continuously running tasks."
       },
       "Trigger": {
-        "required": [
-          "type"
-        ],
         "oneOf": [
           {
             "$ref": "#/components/schemas/OnDemandTrigger"
@@ -44773,13 +44770,8 @@
             "$ref": "#/components/schemas/StreamingTrigger"
           }
         ],
-        "properties": {
-          "type": {
-            "type": "string"
-          }
-        },
         "description": "Trigger that runs the task.",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
             "onDemand": "#/components/schemas/OnDemandTrigger",
@@ -44905,9 +44897,6 @@
         ]
       },
       "TaskCreateTrigger": {
-        "required": [
-          "type"
-        ],
         "oneOf": [
           {
             "$ref": "#/components/schemas/OnDemandTriggerInput"
@@ -44922,12 +44911,7 @@
             "$ref": "#/components/schemas/StreamingTrigger"
           }
         ],
-        "properties": {
-          "type": {
-            "type": "string"
-          }
-        },
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "type",
           "mapping": {
             "onDemand": "#/components/schemas/OnDemandTriggerInput",
@@ -58568,7 +58552,7 @@
           },
           "maxHitsPerQuery": {
             "type": "integer",
-            "description": "Maximum number of results this API key can retrieve in one query.\nBy default, there\u0027s no limit.\n",
+            "description": "Maximum number of hits this API key can retrieve per page.\n\nIf you set this to 0, the maximum allowed value (1,000) applies.\nIf you also set \u0060hitsPerPage\u0060 on the index, the engine uses the lower of the two values.\n",
             "default": 0
           },
           "maxQueriesPerIPPerHour": {

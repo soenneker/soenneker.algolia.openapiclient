@@ -64,6 +64,8 @@ namespace Soenneker.Algolia.OpenApiClient.AdvancedPersonalization.Two.Realtime.U
                 { "421", global::Soenneker.Algolia.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationErrorBase.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Algolia.OpenApiClient.Models.AdvancedPersonalizationErrorBase.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.AcceptedResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.AcceptedResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
