@@ -6,8 +6,10 @@ internal static class OpenApiServiceRoutes
     private static readonly global::System.Collections.Generic.HashSet<string> KnownServers = new(global::System.StringComparer.OrdinalIgnoreCase) { "https://ALGOLIA_APPLICATION_ID-1.algolianet.com", "https://ALGOLIA_APPLICATION_ID-2.algolianet.com", "https://ALGOLIA_APPLICATION_ID-3.algolianet.com", "https://ALGOLIA_APPLICATION_ID-dsn.algolia.net", "https://ALGOLIA_APPLICATION_ID.algolia.net", "https://ai-personalization.eu.algolia.com", "https://analytics.algolia.com", "https://analytics.us.algolia.com", "https://crawler.algolia.com", "https://crawler.algolia.com/api", "https://data.us.algolia.com", "https://insights.algolia.io", "https://insights.us.algolia.io", "https://personalization.us.algolia.com", "https://query-suggestions.us.algolia.com", "https://status.algolia.com" };
     internal static string Resolve(string template, string? configuredBaseUrl, string server, string path, bool rawUrl)
     {
-        var queryMatch = global::System.Text.RegularExpressions.Regex.Match(template, @"\{[?&]|\?");
-        int query = queryMatch.Success ? queryMatch.Index : -1;
+        int query = template.IndexOf('?');
+        if (query > 0 && template[query - 1] == '{') query--;
+        int continuation = template.IndexOf("{&", global::System.StringComparison.Ordinal);
+        if (continuation >= 0 && (query < 0 || continuation < query)) query = continuation;
         string suffix = query >= 0 ? template.Substring(query) : "";
         bool useService = server.Length > 0 && (string.IsNullOrEmpty(configuredBaseUrl) || KnownServers.Contains(configuredBaseUrl.TrimEnd('/')));
         if (useService && !rawUrl && server.Contains('{'))
