@@ -569,6 +569,17 @@
           },
           "500": {
             "$ref": "#/components/responses/InternalError"
+          },
+          "200": {
+            "description": "Accepted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "deprecated": true,

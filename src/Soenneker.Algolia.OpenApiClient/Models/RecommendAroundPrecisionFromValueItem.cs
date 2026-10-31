@@ -60,6 +60,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "from", n => { From = n.GetLongValue(); } },
                 { "value", n => { Value = n.GetLongValue(); } },
+
             };
         }
         /// <summary>

@@ -65,6 +65,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "facet", n => { Facet = n.GetStringValue(); } },
                 { "score", n => { Score = n.GetLongValue(); } },
                 { "disjunctive", n => { Disjunctive = n.GetBoolValue(); } },
+
             };
         }
         /// <summary>

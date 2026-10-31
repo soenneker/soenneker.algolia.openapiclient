@@ -577,6 +577,22 @@
           },
           "404": {
             "$ref": "#/components/responses/IndexNotFound"
+          },
+          "200": {
+            "description": "Created",
+            "headers": {
+              "Correlation-ID": {
+                "$ref": "#/components/headers/Correlation-ID"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaveObjectResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-mcp-tool": true,

@@ -2966,6 +2966,17 @@
           },
           "500": {
             "$ref": "#/components/responses/InternalError"
+          },
+          "200": {
+            "description": "Accepted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "deprecated": true,
@@ -18350,6 +18361,22 @@
           },
           "404": {
             "$ref": "#/components/responses/search_IndexNotFound"
+          },
+          "200": {
+            "description": "Created",
+            "headers": {
+              "Correlation-ID": {
+                "$ref": "#/components/headers/search_Correlation-ID"
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaveObjectResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
