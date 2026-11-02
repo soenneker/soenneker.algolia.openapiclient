@@ -44,12 +44,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Default values for the configuration placeholders that are not reserved Composition placeholders.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParamsProperty2? ConfigurationParams { get => _explicitNullValueConfigurationParams; set { _explicitNullValueConfigurationParams = value; AdditionalData?.Remove("configurationParams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationParams"); else _explicitNullProperties?.Remove("configurationParams"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParamsProperty2? _explicitNullValueConfigurationParams = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParams? ConfigurationParams { get => _explicitNullValueConfigurationParams; set { _explicitNullValueConfigurationParams = value; AdditionalData?.Remove("configurationParams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationParams"); else _explicitNullProperties?.Remove("configurationParams"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParams? _explicitNullValueConfigurationParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParamsProperty2 ConfigurationParams { get => _explicitNullValueConfigurationParams; set { _explicitNullValueConfigurationParams = value; AdditionalData?.Remove("configurationParams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationParams"); else _explicitNullProperties?.Remove("configurationParams"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParamsProperty2 _explicitNullValueConfigurationParams = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParams ConfigurationParams { get => _explicitNullValueConfigurationParams; set { _explicitNullValueConfigurationParams = value; AdditionalData?.Remove("configurationParams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationParams"); else _explicitNullProperties?.Remove("configurationParams"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParams _explicitNullValueConfigurationParams = default!;
 #endif
         /// <summary>Algolia index used to fetch the records.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "configurationID", n => { ConfigurationID = n.GetStringValue(); } },
-                { "configurationParams", n => { ConfigurationParams = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParamsProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParamsProperty2.CreateFromDiscriminatorValue); } },
+                { "configurationParams", n => { ConfigurationParams = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParams>(global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParams.CreateFromDiscriminatorValue); } },
                 { "index", n => { Index = n.GetStringValue(); } },
                 { "ordering", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderOrdering>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOrdering = default; _explicitNullProperties?.Remove("ordering"); AdditionalData["ordering"] = unknown; } else { Ordering = parsed; AdditionalData.Remove("ordering"); } } },
                 { "params", n => { Params = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters>(global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters.CreateFromDiscriminatorValue); } },
@@ -114,7 +114,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("configurationID", ConfigurationID);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParamsProperty2>("configurationParams", ConfigurationParams);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseExternalProviderSourceConfigurationParams>("configurationParams", ConfigurationParams);
             writer.WriteStringValue("index", Index);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderOrdering>("ordering", Ordering);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BaseInjectionQueryParameters>("params", Params);

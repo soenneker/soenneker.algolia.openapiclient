@@ -32,12 +32,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The customSearchParameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomSearchParamsCustomSearchParametersProperty2? CustomSearchParameters { get => _explicitNullValueCustomSearchParameters; set { _explicitNullValueCustomSearchParameters = value; AdditionalData?.Remove("customSearchParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customSearchParameters"); else _explicitNullProperties?.Remove("customSearchParameters"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomSearchParamsCustomSearchParametersProperty2? _explicitNullValueCustomSearchParameters = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomSearchParamsCustomSearchParameters? CustomSearchParameters { get => _explicitNullValueCustomSearchParameters; set { _explicitNullValueCustomSearchParameters = value; AdditionalData?.Remove("customSearchParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customSearchParameters"); else _explicitNullProperties?.Remove("customSearchParameters"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomSearchParamsCustomSearchParameters? _explicitNullValueCustomSearchParameters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomSearchParamsCustomSearchParametersProperty2 CustomSearchParameters { get => _explicitNullValueCustomSearchParameters; set { _explicitNullValueCustomSearchParameters = value; AdditionalData?.Remove("customSearchParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customSearchParameters"); else _explicitNullProperties?.Remove("customSearchParameters"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomSearchParamsCustomSearchParametersProperty2 _explicitNullValueCustomSearchParameters = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomSearchParamsCustomSearchParameters CustomSearchParameters { get => _explicitNullValueCustomSearchParameters; set { _explicitNullValueCustomSearchParameters = value; AdditionalData?.Remove("customSearchParameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customSearchParameters"); else _explicitNullProperties?.Remove("customSearchParameters"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomSearchParamsCustomSearchParameters _explicitNullValueCustomSearchParameters = default!;
 #endif
         /// <summary>Description for this variant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "customSearchParameters", n => { CustomSearchParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomSearchParamsCustomSearchParametersProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomSearchParamsCustomSearchParametersProperty2.CreateFromDiscriminatorValue); } },
+                { "customSearchParameters", n => { CustomSearchParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomSearchParamsCustomSearchParameters>(global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomSearchParamsCustomSearchParameters.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "index", n => { Index = n.GetStringValue(); } },
                 { "trafficPercentage", n => { TrafficPercentage = n.GetIntValue(); } },
@@ -100,7 +100,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomSearchParamsCustomSearchParametersProperty2>("customSearchParameters", CustomSearchParameters);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AbtestingCustomSearchParamsCustomSearchParameters>("customSearchParameters", CustomSearchParameters);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("index", Index);
             writer.WriteIntValue("trafficPercentage", TrafficPercentage);

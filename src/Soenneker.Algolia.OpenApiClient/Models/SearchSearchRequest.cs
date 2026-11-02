@@ -28,12 +28,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The requests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery2>? Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; AdditionalData?.Remove("requests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
-        private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery2>? _explicitNullValueRequests = default!;
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery>? Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; AdditionalData?.Remove("requests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery>? _explicitNullValueRequests = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery2> Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; AdditionalData?.Remove("requests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
-        private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery2> _explicitNullValueRequests = default!;
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery> Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; AdditionalData?.Remove("requests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery> _explicitNullValueRequests = default!;
 #endif
         /// <summary>Strategy for multiple search queries:- `none`. Run all queries.- `stopIfEnoughMatches`. Run the queries one by one, stopping as soon as a query matches at least the `hitsPerPage` number of results.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.SearchStrategy? Strategy { get => _explicitNullValueStrategy; set { _explicitNullValueStrategy = value; AdditionalData?.Remove("strategy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("strategy"); else _explicitNullProperties?.Remove("strategy"); } }
@@ -63,7 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "requests", n => { Requests = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery2>(global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery2.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "requests", n => { Requests = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery>(global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "strategy", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchStrategy>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStrategy = default; _explicitNullProperties?.Remove("strategy"); AdditionalData["strategy"] = unknown; } else { Strategy = parsed; AdditionalData.Remove("strategy"); } } },
             };
         }
@@ -74,7 +74,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery2>("requests", Requests);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchQuery>("requests", Requests);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchStrategy>("strategy", Strategy);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

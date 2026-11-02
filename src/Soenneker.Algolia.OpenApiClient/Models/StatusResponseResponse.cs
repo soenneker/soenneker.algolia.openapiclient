@@ -26,12 +26,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatusProperty2? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatusProperty2? _explicitNullValueStatus = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatus? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatusProperty2 Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatusProperty2 _explicitNullValueStatus = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatus _explicitNullValueStatus = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponse"/> and sets the default values.
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatusProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatusProperty2.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatus>(global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatusProperty2>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.StatusResponseResponseStatus>("status", Status);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

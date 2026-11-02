@@ -18,9 +18,6 @@
           ]
         }
       }
-    },
-    {
-      "url": "https://analytics.algolia.com"
     }
   ],
   "paths": {
@@ -1932,21 +1929,6 @@
           ]
         }
       },
-      "Search": {
-        "type": "string",
-        "description": "Search query.",
-        "example": "separator"
-      },
-      "Count": {
-        "type": "integer",
-        "description": "Number of searches.",
-        "example": 504
-      },
-      "NbHits": {
-        "type": "integer",
-        "description": "Number of results (hits).",
-        "example": 20
-      },
       "TopSearchesResponse": {
         "title": "Top searches",
         "required": [
@@ -1986,15 +1968,6 @@
         "nullable": true,
         "example": 2.035
       },
-      "ClickPositions": {
-        "maxItems": 12,
-        "minItems": 12,
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ClickPositionsItem"
-        },
-        "description": "List of positions in the search results and clicks associated with this search."
-      },
       "ConversionRate": {
         "maximum": 1,
         "exclusiveMaximum": false,
@@ -2006,26 +1979,6 @@
         "default": null,
         "nullable": true,
         "example": 0.05
-      },
-      "TrackedSearchCount": {
-        "type": "integer",
-        "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
-        "default": 0,
-        "example": 2
-      },
-      "ClickCount": {
-        "minimum": 0,
-        "type": "integer",
-        "description": "Number of clicks associated with this search.",
-        "default": 0,
-        "example": 162
-      },
-      "ConversionCount": {
-        "minimum": 0,
-        "type": "integer",
-        "description": "Number of conversions from this search.",
-        "default": 0,
-        "example": 10
       },
       "TopSearchesResponseWithAnalytics": {
         "title": "Top searches with click analytics",
@@ -2044,13 +1997,6 @@
         },
         "additionalProperties": false
       },
-      "Currencies": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/CurrenciesAdditionalProperties"
-        },
-        "description": "Revenue associated with this search: broken down by currency.\n"
-      },
       "AddToCartRate": {
         "maximum": 1,
         "exclusiveMaximum": false,
@@ -2063,13 +2009,6 @@
         "nullable": true,
         "example": 0.1
       },
-      "AddToCartCount": {
-        "minimum": 0,
-        "type": "integer",
-        "description": "Number of add-to-cart events from this search.",
-        "default": 0,
-        "example": 10
-      },
       "PurchaseRate": {
         "maximum": 1,
         "exclusiveMaximum": false,
@@ -2081,12 +2020,6 @@
         "default": null,
         "nullable": true,
         "example": 0.05
-      },
-      "PurchaseCount": {
-        "type": "integer",
-        "description": "Number of purchase events from this search.",
-        "default": 0,
-        "example": 10
       },
       "TopSearchesResponseWithRevenueAnalytics": {
         "title": "Top searches with revenue analytics",
@@ -2117,55 +2050,6 @@
             "$ref": "#/components/schemas/TopSearchesResponseWithRevenueAnalytics"
           }
         ]
-      },
-      "ParametersCount": {
-        "type": "integer",
-        "description": "Number of occurrences.",
-        "example": 2
-      },
-      "Date": {
-        "type": "string",
-        "description": "Date in the format YYYY-MM-DD.",
-        "example": "2023-06-14"
-      },
-      "WithFilterCount": {
-        "minimum": 0,
-        "type": "integer",
-        "description": "Number of searches for this term with applied filters.",
-        "default": 0,
-        "example": 5
-      },
-      "NoResultsRate": {
-        "maximum": 1,
-        "minimum": 0,
-        "type": "number",
-        "description": "No results rate: calculated as the number of searches with zero results divided by the total number of searches.\n",
-        "format": "double",
-        "example": 0.49
-      },
-      "NoResultCount": {
-        "type": "integer",
-        "description": "Number of searches without any results.",
-        "example": 54
-      },
-      "NoClickRate": {
-        "maximum": 1,
-        "minimum": 0,
-        "type": "number",
-        "description": "No click rate: calculated as the number of tracked searches without clicks divided by the number of tracked searches.\n",
-        "format": "double",
-        "example": 0.15
-      },
-      "NoClickCount": {
-        "minimum": 1,
-        "type": "integer",
-        "description": "Number of times this search was returned as a result without any click.",
-        "example": 15
-      },
-      "Hit": {
-        "type": "string",
-        "description": "Object ID of a record returned as a search result.",
-        "example": "method-export-rules-php"
       },
       "TopHitsResponse": {
         "title": "Top search results",
@@ -2230,11 +2114,6 @@
             "$ref": "#/components/schemas/TopHitsResponseWithRevenueAnalytics"
           }
         ]
-      },
-      "Attribute": {
-        "type": "string",
-        "description": "Attribute name.",
-        "example": "url"
       },
       "GetTopFilterAttribute": {
         "required": [
@@ -2319,11 +2198,6 @@
             }
           ]
         }
-      },
-      "ValueValue": {
-        "type": "string",
-        "description": "Attribute value.",
-        "example": "integration"
       },
       "GetTopFilterForAttributeBody": {
         "required": [
@@ -2550,11 +2424,6 @@
         },
         "additionalProperties": false
       },
-      "FilterOperator": {
-        "type": "string",
-        "description": "Comparison operator applied to a filter field, one of: \u0060=\u0060, \u0060!=\u0060, \u0060\u003E\u0060, \u0060\u003C\u0060, \u0060\u003E=\u0060, \u0060\u003C=\u0060, \u0060IN\u0060, \u0060TAG_TREE\u0060, \u0060CONTAINS\u0060, \u0060STARTS_WITH\u0060, \u0060CONTAINS_PREFIX\u0060. Requires a \u0060parameter\u0060 to carry the operand.",
-        "example": "="
-      },
       "ParameterReference": {
         "title": "Parameter reference",
         "required": [
@@ -2757,11 +2626,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "ScalarResponse": {
-        "title": "Scalar response",
-        "type": "object",
-        "description": "Object keyed by metric kind, each mapping to its aggregate value."
       },
       "OrderDirection": {
         "enum": [
@@ -2985,11 +2849,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "DistributionResponse": {
-        "title": "Distribution response",
-        "type": "object",
-        "description": "Object keyed by \u0060histogram\u003CField\u003E\u0060, each mapping a bin label to a count."
       },
       "ClickPositionsItem": {
         "title": "clickPosition",
@@ -3387,13 +3246,6 @@
         },
         "additionalProperties": false
       },
-      "CatalogDomains": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/DomainCatalog"
-        },
-        "description": "Catalog entries grouped by domain."
-      },
       "TimeseriesResponseSeriesItem": {
         "title": "series",
         "required": [
@@ -3418,17 +3270,6 @@
         },
         "additionalProperties": false
       },
-      "TableResponseRowsItem": {
-        "type": "object"
-      },
-      "TimeseriesResponseSeriesItemKey": {
-        "type": "object",
-        "description": "The \u0060groupBy\u0060 values identifying this series. Absent when the query has no \u0060groupBy\u0060."
-      },
-      "TimeseriesResponseSeriesItemTotals": {
-        "type": "object",
-        "description": "Metric totals over the whole period."
-      },
       "TimeseriesResponseSeriesItemDatesItem": {
         "title": "seriesDate",
         "required": [
@@ -3446,28 +3287,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "TimeseriesResponseSeriesItemDatesItemMetrics": {
-        "type": "object",
-        "description": "Metric values for the day."
-      },
-      "CustomGet200Response": {
-        "type": "object"
-      },
-      "CustomPostRequest": {
-        "type": "object"
-      },
-      "CustomPost200Response": {
-        "type": "object"
-      },
-      "CustomPutRequest": {
-        "type": "object"
-      },
-      "CustomPut200Response": {
-        "type": "object"
-      },
-      "CustomDelete200Response": {
-        "type": "object"
       },
       "GetSearchesCountResponse": {
         "title": "getSearchesCountResponse",
@@ -3642,10 +3461,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
       },
       "CustomGet200ResponseSchema": {
         "type": "object"
@@ -4608,5 +4423,207 @@
         "status"
       ]
     }
-  ]
+  ],
+  "x-client-original-servers": [
+    {
+      "url": "https://analytics.{region}.algolia.com",
+      "variables": {
+        "region": {
+          "default": "us",
+          "description": "The region where your Algolia application is hosted.",
+          "enum": [
+            "us",
+            "de"
+          ]
+        }
+      }
+    },
+    {
+      "url": "https://analytics.algolia.com"
+    }
+  ],
+  "x-client-unused-schemas": {
+    "Search": {
+      "type": "string",
+      "description": "Search query.",
+      "example": "separator"
+    },
+    "Count": {
+      "type": "integer",
+      "description": "Number of searches.",
+      "example": 504
+    },
+    "NbHits": {
+      "type": "integer",
+      "description": "Number of results (hits).",
+      "example": 20
+    },
+    "ClickPositions": {
+      "maxItems": 12,
+      "minItems": 12,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ClickPositionsItem"
+      },
+      "description": "List of positions in the search results and clicks associated with this search."
+    },
+    "TrackedSearchCount": {
+      "type": "integer",
+      "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
+      "default": 0,
+      "example": 2
+    },
+    "ClickCount": {
+      "minimum": 0,
+      "type": "integer",
+      "description": "Number of clicks associated with this search.",
+      "default": 0,
+      "example": 162
+    },
+    "ConversionCount": {
+      "minimum": 0,
+      "type": "integer",
+      "description": "Number of conversions from this search.",
+      "default": 0,
+      "example": 10
+    },
+    "Currencies": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/CurrenciesAdditionalProperties"
+      },
+      "description": "Revenue associated with this search: broken down by currency.\n"
+    },
+    "AddToCartCount": {
+      "minimum": 0,
+      "type": "integer",
+      "description": "Number of add-to-cart events from this search.",
+      "default": 0,
+      "example": 10
+    },
+    "PurchaseCount": {
+      "type": "integer",
+      "description": "Number of purchase events from this search.",
+      "default": 0,
+      "example": 10
+    },
+    "ParametersCount": {
+      "type": "integer",
+      "description": "Number of occurrences.",
+      "example": 2
+    },
+    "Date": {
+      "type": "string",
+      "description": "Date in the format YYYY-MM-DD.",
+      "example": "2023-06-14"
+    },
+    "WithFilterCount": {
+      "minimum": 0,
+      "type": "integer",
+      "description": "Number of searches for this term with applied filters.",
+      "default": 0,
+      "example": 5
+    },
+    "NoResultsRate": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": "number",
+      "description": "No results rate: calculated as the number of searches with zero results divided by the total number of searches.\n",
+      "format": "double",
+      "example": 0.49
+    },
+    "NoResultCount": {
+      "type": "integer",
+      "description": "Number of searches without any results.",
+      "example": 54
+    },
+    "NoClickRate": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": "number",
+      "description": "No click rate: calculated as the number of tracked searches without clicks divided by the number of tracked searches.\n",
+      "format": "double",
+      "example": 0.15
+    },
+    "NoClickCount": {
+      "minimum": 1,
+      "type": "integer",
+      "description": "Number of times this search was returned as a result without any click.",
+      "example": 15
+    },
+    "Hit": {
+      "type": "string",
+      "description": "Object ID of a record returned as a search result.",
+      "example": "method-export-rules-php"
+    },
+    "Attribute": {
+      "type": "string",
+      "description": "Attribute name.",
+      "example": "url"
+    },
+    "ValueValue": {
+      "type": "string",
+      "description": "Attribute value.",
+      "example": "integration"
+    },
+    "FilterOperator": {
+      "type": "string",
+      "description": "Comparison operator applied to a filter field, one of: \u0060=\u0060, \u0060!=\u0060, \u0060\u003E\u0060, \u0060\u003C\u0060, \u0060\u003E=\u0060, \u0060\u003C=\u0060, \u0060IN\u0060, \u0060TAG_TREE\u0060, \u0060CONTAINS\u0060, \u0060STARTS_WITH\u0060, \u0060CONTAINS_PREFIX\u0060. Requires a \u0060parameter\u0060 to carry the operand.",
+      "example": "="
+    },
+    "ScalarResponse": {
+      "title": "Scalar response",
+      "type": "object",
+      "description": "Object keyed by metric kind, each mapping to its aggregate value."
+    },
+    "DistributionResponse": {
+      "title": "Distribution response",
+      "type": "object",
+      "description": "Object keyed by \u0060histogram\u003CField\u003E\u0060, each mapping a bin label to a count."
+    },
+    "CatalogDomains": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/DomainCatalog"
+      },
+      "description": "Catalog entries grouped by domain."
+    },
+    "TableResponseRowsItem": {
+      "type": "object"
+    },
+    "TimeseriesResponseSeriesItemKey": {
+      "type": "object",
+      "description": "The \u0060groupBy\u0060 values identifying this series. Absent when the query has no \u0060groupBy\u0060."
+    },
+    "TimeseriesResponseSeriesItemTotals": {
+      "type": "object",
+      "description": "Metric totals over the whole period."
+    },
+    "TimeseriesResponseSeriesItemDatesItemMetrics": {
+      "type": "object",
+      "description": "Metric values for the day."
+    },
+    "CustomGet200Response": {
+      "type": "object"
+    },
+    "CustomPostRequest": {
+      "type": "object"
+    },
+    "CustomPost200Response": {
+      "type": "object"
+    },
+    "CustomPutRequest": {
+      "type": "object"
+    },
+    "CustomPut200Response": {
+      "type": "object"
+    },
+    "CustomDelete200Response": {
+      "type": "object"
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    }
+  }
 }

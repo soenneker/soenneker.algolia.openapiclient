@@ -26,12 +26,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Result rows. Each row is a flat object of the requested fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.TableResponseRowsItemProperty2>? Rows { get => _explicitNullValueRows; set { _explicitNullValueRows = value; AdditionalData?.Remove("rows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows"); else _explicitNullProperties?.Remove("rows"); } }
-        private List<global::Soenneker.Algolia.OpenApiClient.Models.TableResponseRowsItemProperty2>? _explicitNullValueRows = default!;
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.TableResponseRowsItem>? Rows { get => _explicitNullValueRows; set { _explicitNullValueRows = value; AdditionalData?.Remove("rows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows"); else _explicitNullProperties?.Remove("rows"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.TableResponseRowsItem>? _explicitNullValueRows = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.TableResponseRowsItemProperty2> Rows { get => _explicitNullValueRows; set { _explicitNullValueRows = value; AdditionalData?.Remove("rows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows"); else _explicitNullProperties?.Remove("rows"); } }
-        private List<global::Soenneker.Algolia.OpenApiClient.Models.TableResponseRowsItemProperty2> _explicitNullValueRows = default!;
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.TableResponseRowsItem> Rows { get => _explicitNullValueRows; set { _explicitNullValueRows = value; AdditionalData?.Remove("rows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows"); else _explicitNullProperties?.Remove("rows"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.TableResponseRowsItem> _explicitNullValueRows = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.TableResponse"/> and sets the default values.
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "rows", n => { Rows = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.TableResponseRowsItemProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.TableResponseRowsItemProperty2.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "rows", n => { Rows = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.TableResponseRowsItem>(global::Soenneker.Algolia.OpenApiClient.Models.TableResponseRowsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.TableResponseRowsItemProperty2>("rows", Rows);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.TableResponseRowsItem>("rows", Rows);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

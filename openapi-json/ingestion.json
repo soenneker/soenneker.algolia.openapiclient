@@ -3035,11 +3035,6 @@
           ]
         }
       },
-      "ObjectId": {
-        "type": "string",
-        "description": "Unique record identifier.",
-        "example": "test-record-123"
-      },
       "PushTaskPayload": {
         "title": "pushTaskPayload",
         "required": [
@@ -3059,58 +3054,53 @@
           }
         }
       },
-      "RunId": {
-        "type": "string",
-        "description": "Universally unique identifier (UUID) of a task run.",
-        "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
-      },
-      "EventId": {
-        "type": "string",
-        "description": "Universally unique identifier (UUID) of an event.",
-        "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
-      },
       "EventStatus": {
-        "enum": [
-          "created",
-          "started",
-          "retried",
-          "failed",
-          "succeeded",
-          "critical",
-          null
-        ],
-        "type": "string",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "EventStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "created",
-              "name": "Created"
-            },
-            {
-              "value": "started",
-              "name": "Started"
-            },
-            {
-              "value": "retried",
-              "name": "Retried"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "succeeded",
-              "name": "Succeeded"
-            },
-            {
-              "value": "critical",
-              "name": "Critical"
+        "anyOf": [
+          {
+            "enum": [
+              "created",
+              "started",
+              "retried",
+              "failed",
+              "succeeded",
+              "critical"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "EventStatus",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "created",
+                  "name": "Created"
+                },
+                {
+                  "value": "started",
+                  "name": "Started"
+                },
+                {
+                  "value": "retried",
+                  "name": "Retried"
+                },
+                {
+                  "value": "failed",
+                  "name": "Failed"
+                },
+                {
+                  "value": "succeeded",
+                  "name": "Succeeded"
+                },
+                {
+                  "value": "critical",
+                  "name": "Critical"
+                }
+              ]
             }
-          ]
-        }
+          },
+          {
+            "$ref": "#/components/schemas/OpenApiNullValue"
+          }
+        ]
       },
       "EventType": {
         "enum": [
@@ -3142,10 +3132,6 @@
             }
           ]
         }
-      },
-      "PublishedAt": {
-        "type": "string",
-        "description": "Date and time when the resource was published, in RFC 3339 format."
       },
       "EventType2": {
         "required": [
@@ -3192,10 +3178,6 @@
         "additionalProperties": false,
         "description": "An event describe a step of the task execution flow."
       },
-      "CreatedAt": {
-        "type": "string",
-        "description": "Date and time when the resource was created, in RFC 3339 format."
-      },
       "WatchResponse": {
         "required": [
           "runID"
@@ -3236,18 +3218,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "ItemsPerPage": {
-        "maximum": 100,
-        "minimum": 1,
-        "type": "integer",
-        "description": "Number of items per page.",
-        "default": 10
-      },
-      "Page": {
-        "minimum": 1,
-        "type": "integer",
-        "description": "Page of the API response to retrieve."
       },
       "AuthenticationType": {
         "enum": [
@@ -3297,83 +3267,77 @@
         }
       },
       "Platform": {
-        "enum": [
-          "bigcommerce",
-          "commercetools",
-          "shopify",
-          null
-        ],
-        "type": "string",
         "description": "Name of an ecommerce platform with which to authenticate.\nThis determines which authentication type you can select.\n",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "Platform",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "bigcommerce",
-              "name": "Bigcommerce"
-            },
-            {
-              "value": "commercetools",
-              "name": "Commercetools"
-            },
-            {
-              "value": "shopify",
-              "name": "Shopify"
+        "anyOf": [
+          {
+            "enum": [
+              "bigcommerce",
+              "commercetools",
+              "shopify"
+            ],
+            "type": "string",
+            "description": "Name of an ecommerce platform with which to authenticate.\nThis determines which authentication type you can select.\n",
+            "x-ms-enum": {
+              "name": "Platform",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "bigcommerce",
+                  "name": "Bigcommerce"
+                },
+                {
+                  "value": "commercetools",
+                  "name": "Commercetools"
+                },
+                {
+                  "value": "shopify",
+                  "name": "Shopify"
+                }
+              ]
             }
-          ]
-        }
-      },
-      "PlatformNone": {
-        "enum": [
-          "none"
-        ],
-        "type": "string",
-        "description": "Authentication resource not tied to any ecommerce platform, used for filtering.",
-        "x-ms-enum": {
-          "name": "PlatformNone",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "none",
-              "name": "None"
-            }
-          ]
-        }
+          },
+          {
+            "$ref": "#/components/schemas/OpenApiNullValue"
+          }
+        ]
       },
       "PlatformWithNone": {
-        "enum": [
-          "bigcommerce",
-          "commercetools",
-          "shopify",
-          null,
-          "none"
-        ],
-        "type": "string",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "PlatformWithNone",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "bigcommerce",
-              "name": "Bigcommerce"
-            },
-            {
-              "value": "commercetools",
-              "name": "Commercetools"
-            },
-            {
-              "value": "shopify",
-              "name": "Shopify"
-            },
-            {
-              "value": "none",
-              "name": "None"
+        "anyOf": [
+          {
+            "enum": [
+              "bigcommerce",
+              "commercetools",
+              "shopify",
+              "none"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "PlatformWithNone",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "bigcommerce",
+                  "name": "Bigcommerce"
+                },
+                {
+                  "value": "commercetools",
+                  "name": "Commercetools"
+                },
+                {
+                  "value": "shopify",
+                  "name": "Shopify"
+                },
+                {
+                  "value": "none",
+                  "name": "None"
+                }
+              ]
             }
-          ]
-        }
+          },
+          {
+            "$ref": "#/components/schemas/OpenApiNullValue"
+          }
+        ]
       },
       "AuthenticationSortKeys": {
         "enum": [
@@ -3433,15 +3397,6 @@
             }
           ]
         }
-      },
-      "AuthenticationId": {
-        "type": "string",
-        "description": "Universally unique identifier (UUID) of an authentication resource.",
-        "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
-      },
-      "Name": {
-        "type": "string",
-        "description": "Descriptive name for the resource."
       },
       "Owner": {
         "type": "string",
@@ -3560,14 +3515,6 @@
         "additionalProperties": false,
         "description": "Credentials for authenticating with the Algolia Insights API."
       },
-      "AuthSecrets": {
-        "title": "Key:value",
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        },
-        "description": "A key:value authentication for your transformations."
-      },
       "AuthInputPartial": {
         "oneOf": [
           {
@@ -3592,10 +3539,6 @@
             "$ref": "#/components/schemas/AuthInputPartialOneOf7"
           }
         ]
-      },
-      "UpdatedAt": {
-        "type": "string",
-        "description": "Date and time when the resource was last updated, in RFC 3339 format."
       },
       "Authentication": {
         "required": [
@@ -3987,11 +3930,6 @@
           ]
         }
       },
-      "TransformationId": {
-        "type": "string",
-        "description": "Universally unique identifier (UUID) of a transformation.",
-        "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
-      },
       "DestinationSortKeys": {
         "enum": [
           "name",
@@ -4024,11 +3962,6 @@
           ]
         }
       },
-      "DestinationId": {
-        "type": "string",
-        "description": "Universally unique identifier (UUID) of a destination resource.",
-        "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
-      },
       "RecordType": {
         "enum": [
           "product",
@@ -4056,13 +3989,6 @@
           ]
         }
       },
-      "AttributesToExclude": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "Attributes from your source to exclude from Algolia records.\n\nNot all your data attributes will be useful for searching.\nKeeping your Algolia records small increases indexing and search performance.\n\n- Exclude nested attributes with \u0060.\u0060 notation. For example, \u0060foo.bar\u0060 indexes the \u0060foo\u0060 attribute and all its children **except** the \u0060bar\u0060 attribute.\n- Exclude attributes from arrays with \u0060[i]\u0060, where \u0060i\u0060 is the index of the array element.\n  For example, \u0060foo.[0].bar\u0060 only excludes the \u0060bar\u0060 attribute from the first element of the \u0060foo\u0060 array, but indexes the complete \u0060foo\u0060 attribute for all other elements.\n  Use \u0060*\u0060 as wildcard: \u0060foo.[*].bar\u0060 excludes \u0060bar\u0060 from all elements of the \u0060foo\u0060 array.\n"
-      },
       "DestinationInput": {
         "required": [
           "indexName"
@@ -4085,14 +4011,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "TransformationIDs": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "description": "Universally unique identifier (UUID) of a transformation.",
-          "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
-        }
       },
       "Destination": {
         "required": [
@@ -4391,11 +4309,6 @@
           ]
         }
       },
-      "SourceId": {
-        "type": "string",
-        "description": "Universally uniqud identifier (UUID) of a source.",
-        "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
-      },
       "CommercetoolsCustomFields": {
         "type": "object",
         "properties": {
@@ -4561,10 +4474,6 @@
         "x-discriminator-fields": [
           "storeHash"
         ]
-      },
-      "UniqueIdColumn": {
-        "type": "string",
-        "description": "Name of a column that contains a unique ID which will be used as \u0060objectID\u0060 in Algolia."
       },
       "MethodType": {
         "enum": [
@@ -5296,24 +5205,6 @@
           ]
         }
       },
-      "TaskId": {
-        "type": "string",
-        "description": "Universally unique identifier (UUID) of a task.",
-        "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
-      },
-      "Cron": {
-        "type": "string",
-        "description": "Cron expression for the task\u0027s schedule.",
-        "example": "* * 1 * *"
-      },
-      "LastRun": {
-        "type": "string",
-        "description": "The last time the scheduled task ran in RFC 3339 format."
-      },
-      "NextRun": {
-        "type": "string",
-        "description": "The next scheduled run of the task in RFC 3339 format."
-      },
       "MappingFormatSchema": {
         "enum": [
           "mappingkit/v1"
@@ -5569,16 +5460,6 @@
           }
         ],
         "description": "Configuration of the task, depending on its type."
-      },
-      "FailureThreshold": {
-        "maximum": 100,
-        "minimum": 0,
-        "type": "integer",
-        "description": "Maximum accepted percentage of failures for a task run to finish successfully."
-      },
-      "Cursor": {
-        "type": "string",
-        "description": "Date and time when the last cursor was created, in RFC 3339 format."
       },
       "Notifications": {
         "required": [
@@ -5937,23 +5818,6 @@
           ]
         }
       },
-      "OnDemandTrigger": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/OnDemandTriggerType"
-          },
-          "lastRun": {
-            "type": "string",
-            "description": "The last time the scheduled task ran in RFC 3339 format."
-          }
-        },
-        "additionalProperties": false,
-        "description": "Trigger information for manually-triggered tasks."
-      },
       "ScheduleTriggerType": {
         "enum": [
           "schedule"
@@ -5970,34 +5834,6 @@
             }
           ]
         }
-      },
-      "ScheduleTrigger": {
-        "required": [
-          "type",
-          "cron",
-          "nextRun"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/ScheduleTriggerType"
-          },
-          "cron": {
-            "type": "string",
-            "description": "Cron expression for the task\u0027s schedule.",
-            "example": "* * 1 * *"
-          },
-          "lastRun": {
-            "type": "string",
-            "description": "The last time the scheduled task ran in RFC 3339 format."
-          },
-          "nextRun": {
-            "type": "string",
-            "description": "The next scheduled run of the task in RFC 3339 format."
-          }
-        },
-        "additionalProperties": false,
-        "description": "Trigger information for scheduled tasks."
       },
       "SubscriptionTriggerType": {
         "enum": [
@@ -6060,30 +5896,51 @@
         "description": "Trigger input for continuously running tasks."
       },
       "Trigger": {
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/OnDemandTrigger"
-          },
-          {
-            "$ref": "#/components/schemas/ScheduleTrigger"
-          },
-          {
-            "$ref": "#/components/schemas/SubscriptionTrigger"
-          },
-          {
-            "$ref": "#/components/schemas/StreamingTrigger"
-          }
-        ],
         "description": "Trigger that runs the task.",
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "onDemand": "#/components/schemas/OnDemandTrigger",
-            "schedule": "#/components/schemas/ScheduleTrigger",
-            "subscription": "#/components/schemas/SubscriptionTrigger",
-            "streaming": "#/components/schemas/StreamingTrigger"
+            "onDemand": "#/components/schemas/TriggerOnDemandTrigger",
+            "schedule": "#/components/schemas/TriggerScheduleTrigger",
+            "subscription": "#/components/schemas/TriggerSubscriptionTrigger",
+            "streaming": "#/components/schemas/TriggerStreamingTrigger"
           }
-        }
+        },
+        "x-client-original-tagged-union": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/OnDemandTrigger"
+            },
+            {
+              "$ref": "#/components/schemas/ScheduleTrigger"
+            },
+            {
+              "$ref": "#/components/schemas/SubscriptionTrigger"
+            },
+            {
+              "$ref": "#/components/schemas/StreamingTrigger"
+            }
+          ],
+          "description": "Trigger that runs the task.",
+          "discriminator": {
+            "propertyName": "type",
+            "mapping": {
+              "onDemand": "#/components/schemas/OnDemandTrigger",
+              "schedule": "#/components/schemas/ScheduleTrigger",
+              "subscription": "#/components/schemas/SubscriptionTrigger",
+              "streaming": "#/components/schemas/StreamingTrigger"
+            }
+          }
+        },
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ]
       },
       "TaskV1": {
         "required": [
@@ -6277,10 +6134,6 @@
         "additionalProperties": false,
         "description": "Trigger for a task update."
       },
-      "Enabled": {
-        "type": "boolean",
-        "description": "Whether the task is enabled."
-      },
       "TaskUpdateV1": {
         "type": "object",
         "properties": {
@@ -6359,20 +6212,6 @@
           ]
         }
       },
-      "AuthenticationIDs": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "description": "Universally unique identifier (UUID) of an authentication resource.",
-          "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
-        },
-        "description": "The authentications associated with the current transformation."
-      },
-      "Code": {
-        "type": "string",
-        "description": "It is deprecated. Use the \u0060input\u0060 field with proper \u0060type\u0060 instead to specify the transformation code.",
-        "deprecated": true
-      },
       "TransformationCode": {
         "title": "Code",
         "required": [
@@ -6387,10 +6226,6 @@
         },
         "additionalProperties": false,
         "description": "Input for a transformation that contains the source code of the transformation."
-      },
-      "TransformationNoCodeStep": {
-        "type": "object",
-        "description": "A step in a no-code transformation."
       },
       "TransformationNoCode": {
         "title": "No-code",
@@ -6419,14 +6254,6 @@
           }
         ],
         "description": "The input for the transformation, which can be either code or a no-code configuration."
-      },
-      "Name2": {
-        "type": "string",
-        "description": "The uniquely identified name of your transformation."
-      },
-      "Description": {
-        "type": "string",
-        "description": "A descriptive name for your transformation of what it does."
       },
       "Transformation": {
         "required": [
@@ -6803,14 +6630,6 @@
           ]
         }
       },
-      "StartedAt": {
-        "type": "string",
-        "description": "Date and time when the task started, in RFC 3339 format."
-      },
-      "FinishedAt": {
-        "type": "string",
-        "description": "Date and time when the task finished, in RFC 3339 format."
-      },
       "Run": {
         "required": [
           "runID",
@@ -6958,41 +6777,6 @@
           }
         }
       },
-      "EventType2Data": {
-        "type": "object",
-        "nullable": true
-      },
-      "WatchResponseDataItem": {
-        "type": "object"
-      },
-      "SourceCsvMapping": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/MappingTypeCsv"
-        },
-        "description": "Key-value pairs of column names and their expected types.\n",
-        "x-additionalPropertyName": "column name"
-      },
-      "SourceDockerConfiguration": {
-        "type": "object",
-        "description": "Configuration of the spec."
-      },
-      "SourceUpdateShopifyFeatureFlags": {
-        "type": "object",
-        "description": "Feature flags for the Shopify source."
-      },
-      "SourceUpdateDockerConfiguration": {
-        "type": "object",
-        "description": "Configuration of the spec."
-      },
-      "RunSourcePayloadRunMetadata": {
-        "type": "object",
-        "description": "Additional information that will be passed to the created runs."
-      },
-      "MappingFieldDirectiveValue": {
-        "type": "object",
-        "description": "How the destination field should be resolved from the source."
-      },
       "NotificationsEmail": {
         "title": "emailNotifications",
         "type": "object",
@@ -7003,14 +6787,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "RunTaskPayloadRunMetadata": {
-        "type": "object",
-        "description": "Additional information that will be passed to the created run."
-      },
-      "TransformationTrySampleRecord": {
-        "type": "object",
-        "description": "The record to apply the given code to."
       },
       "TransformationTryResponseError": {
         "title": "transformationError",
@@ -7044,24 +6820,6 @@
         },
         "additionalProperties": false
       },
-      "CustomGet200Response": {
-        "type": "object"
-      },
-      "CustomPostRequest": {
-        "type": "object"
-      },
-      "CustomPost200Response": {
-        "type": "object"
-      },
-      "CustomPutRequest": {
-        "type": "object"
-      },
-      "CustomPut200Response": {
-        "type": "object"
-      },
-      "CustomDelete200Response": {
-        "type": "object"
-      },
       "ListAuthenticationsResponse": {
         "title": "listAuthenticationsResponse",
         "required": [
@@ -7081,13 +6839,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "SearchAuthenticationsResponse": {
-        "title": "searchAuthenticationsResponse",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Authentication"
-        }
       },
       "ListDestinationsResponse": {
         "title": "listDestinationsResponse",
@@ -7109,13 +6860,6 @@
         },
         "additionalProperties": false
       },
-      "SearchDestinationsResponse": {
-        "title": "searchDestinationsResponse",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Destination"
-        }
-      },
       "ListSourcesResponse": {
         "title": "listSourcesResponse",
         "required": [
@@ -7135,13 +6879,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "SearchSourcesResponse": {
-        "title": "searchSourcesResponse",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Source"
-        }
       },
       "RunSourceResponse": {
         "title": "runSourceResponse",
@@ -7181,13 +6918,6 @@
         "additionalProperties": false,
         "description": "Configured tasks and pagination information."
       },
-      "SearchTasksResponse": {
-        "title": "searchTasksResponse",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Task"
-        }
-      },
       "ListTasksResponseV1": {
         "title": "listTasksResponseV1",
         "required": [
@@ -7209,13 +6939,6 @@
         "additionalProperties": false,
         "description": "Configured tasks and pagination information."
       },
-      "SearchTasksResponseV1": {
-        "title": "searchTasksResponseV1",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/TaskV1"
-        }
-      },
       "ListTransformationsResponse": {
         "title": "listTransformationsResponse",
         "required": [
@@ -7236,13 +6959,6 @@
         },
         "additionalProperties": false,
         "description": "Configured transformations and pagination information."
-      },
-      "SearchTransformationsResponse": {
-        "title": "searchTransformationsResponse",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Transformation"
-        }
       },
       "ListEventsResponse": {
         "title": "listEventsResponse",
@@ -7267,16 +6983,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "ChunkedPush200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/WatchResponse"
-        }
-      },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
       },
       "CustomGet200ResponseSchema": {
         "type": "object"
@@ -7413,6 +7119,113 @@
           "type": "string"
         },
         "description": "A key:value authentication for your transformations."
+      },
+      "OpenApiNullValue": {
+        "type": "object",
+        "nullable": true,
+        "not": {
+          "type": "object"
+        },
+        "x-client-untyped-value": true
+      },
+      "TriggerOnDemandTrigger": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Trigger"
+          },
+          {
+            "required": [
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/OnDemandTriggerType"
+              },
+              "lastRun": {
+                "type": "string",
+                "description": "The last time the scheduled task ran in RFC 3339 format."
+              }
+            },
+            "additionalProperties": false,
+            "description": "Trigger information for manually-triggered tasks."
+          }
+        ]
+      },
+      "TriggerScheduleTrigger": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Trigger"
+          },
+          {
+            "required": [
+              "type",
+              "cron",
+              "nextRun"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/ScheduleTriggerType"
+              },
+              "cron": {
+                "type": "string",
+                "description": "Cron expression for the task\u0027s schedule.",
+                "example": "* * 1 * *"
+              },
+              "lastRun": {
+                "type": "string",
+                "description": "The last time the scheduled task ran in RFC 3339 format."
+              },
+              "nextRun": {
+                "type": "string",
+                "description": "The next scheduled run of the task in RFC 3339 format."
+              }
+            },
+            "additionalProperties": false,
+            "description": "Trigger information for scheduled tasks."
+          }
+        ]
+      },
+      "TriggerSubscriptionTrigger": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Trigger"
+          },
+          {
+            "required": [
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/SubscriptionTriggerType"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Trigger input for subscription tasks."
+          }
+        ]
+      },
+      "TriggerStreamingTrigger": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Trigger"
+          },
+          {
+            "required": [
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/StreamingTriggerType"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Trigger input for continuously running tasks."
+          }
+        ]
       }
     },
     "responses": {
@@ -7976,6 +7789,339 @@
       "connect": 25000,
       "read": 25000,
       "write": 25000
+    }
+  },
+  "x-client-unused-schemas": {
+    "ObjectId": {
+      "type": "string",
+      "description": "Unique record identifier.",
+      "example": "test-record-123"
+    },
+    "RunId": {
+      "type": "string",
+      "description": "Universally unique identifier (UUID) of a task run.",
+      "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
+    },
+    "EventId": {
+      "type": "string",
+      "description": "Universally unique identifier (UUID) of an event.",
+      "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
+    },
+    "PublishedAt": {
+      "type": "string",
+      "description": "Date and time when the resource was published, in RFC 3339 format."
+    },
+    "CreatedAt": {
+      "type": "string",
+      "description": "Date and time when the resource was created, in RFC 3339 format."
+    },
+    "ItemsPerPage": {
+      "maximum": 100,
+      "minimum": 1,
+      "type": "integer",
+      "description": "Number of items per page.",
+      "default": 10
+    },
+    "Page": {
+      "minimum": 1,
+      "type": "integer",
+      "description": "Page of the API response to retrieve."
+    },
+    "PlatformNone": {
+      "enum": [
+        "none"
+      ],
+      "type": "string",
+      "description": "Authentication resource not tied to any ecommerce platform, used for filtering.",
+      "x-ms-enum": {
+        "name": "PlatformNone",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "none",
+            "name": "None"
+          }
+        ]
+      }
+    },
+    "AuthenticationId": {
+      "type": "string",
+      "description": "Universally unique identifier (UUID) of an authentication resource.",
+      "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
+    },
+    "Name": {
+      "type": "string",
+      "description": "Descriptive name for the resource."
+    },
+    "AuthSecrets": {
+      "title": "Key:value",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "A key:value authentication for your transformations."
+    },
+    "UpdatedAt": {
+      "type": "string",
+      "description": "Date and time when the resource was last updated, in RFC 3339 format."
+    },
+    "TransformationId": {
+      "type": "string",
+      "description": "Universally unique identifier (UUID) of a transformation.",
+      "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
+    },
+    "DestinationId": {
+      "type": "string",
+      "description": "Universally unique identifier (UUID) of a destination resource.",
+      "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
+    },
+    "AttributesToExclude": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Attributes from your source to exclude from Algolia records.\n\nNot all your data attributes will be useful for searching.\nKeeping your Algolia records small increases indexing and search performance.\n\n- Exclude nested attributes with \u0060.\u0060 notation. For example, \u0060foo.bar\u0060 indexes the \u0060foo\u0060 attribute and all its children **except** the \u0060bar\u0060 attribute.\n- Exclude attributes from arrays with \u0060[i]\u0060, where \u0060i\u0060 is the index of the array element.\n  For example, \u0060foo.[0].bar\u0060 only excludes the \u0060bar\u0060 attribute from the first element of the \u0060foo\u0060 array, but indexes the complete \u0060foo\u0060 attribute for all other elements.\n  Use \u0060*\u0060 as wildcard: \u0060foo.[*].bar\u0060 excludes \u0060bar\u0060 from all elements of the \u0060foo\u0060 array.\n"
+    },
+    "TransformationIDs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "Universally unique identifier (UUID) of a transformation.",
+        "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
+      }
+    },
+    "SourceId": {
+      "type": "string",
+      "description": "Universally uniqud identifier (UUID) of a source.",
+      "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
+    },
+    "UniqueIdColumn": {
+      "type": "string",
+      "description": "Name of a column that contains a unique ID which will be used as \u0060objectID\u0060 in Algolia."
+    },
+    "TaskId": {
+      "type": "string",
+      "description": "Universally unique identifier (UUID) of a task.",
+      "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
+    },
+    "Cron": {
+      "type": "string",
+      "description": "Cron expression for the task\u0027s schedule.",
+      "example": "* * 1 * *"
+    },
+    "LastRun": {
+      "type": "string",
+      "description": "The last time the scheduled task ran in RFC 3339 format."
+    },
+    "NextRun": {
+      "type": "string",
+      "description": "The next scheduled run of the task in RFC 3339 format."
+    },
+    "FailureThreshold": {
+      "maximum": 100,
+      "minimum": 0,
+      "type": "integer",
+      "description": "Maximum accepted percentage of failures for a task run to finish successfully."
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Date and time when the last cursor was created, in RFC 3339 format."
+    },
+    "OnDemandTrigger": {
+      "required": [
+        "type"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/OnDemandTriggerType"
+        },
+        "lastRun": {
+          "type": "string",
+          "description": "The last time the scheduled task ran in RFC 3339 format."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Trigger information for manually-triggered tasks."
+    },
+    "ScheduleTrigger": {
+      "required": [
+        "type",
+        "cron",
+        "nextRun"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/ScheduleTriggerType"
+        },
+        "cron": {
+          "type": "string",
+          "description": "Cron expression for the task\u0027s schedule.",
+          "example": "* * 1 * *"
+        },
+        "lastRun": {
+          "type": "string",
+          "description": "The last time the scheduled task ran in RFC 3339 format."
+        },
+        "nextRun": {
+          "type": "string",
+          "description": "The next scheduled run of the task in RFC 3339 format."
+        }
+      },
+      "additionalProperties": false,
+      "description": "Trigger information for scheduled tasks."
+    },
+    "Enabled": {
+      "type": "boolean",
+      "description": "Whether the task is enabled."
+    },
+    "AuthenticationIDs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "Universally unique identifier (UUID) of an authentication resource.",
+        "example": "6c02aeb1-775e-418e-870b-1faccd4b2c0f"
+      },
+      "description": "The authentications associated with the current transformation."
+    },
+    "Code": {
+      "type": "string",
+      "description": "It is deprecated. Use the \u0060input\u0060 field with proper \u0060type\u0060 instead to specify the transformation code.",
+      "deprecated": true
+    },
+    "TransformationNoCodeStep": {
+      "type": "object",
+      "description": "A step in a no-code transformation."
+    },
+    "Name2": {
+      "type": "string",
+      "description": "The uniquely identified name of your transformation."
+    },
+    "Description": {
+      "type": "string",
+      "description": "A descriptive name for your transformation of what it does."
+    },
+    "StartedAt": {
+      "type": "string",
+      "description": "Date and time when the task started, in RFC 3339 format."
+    },
+    "FinishedAt": {
+      "type": "string",
+      "description": "Date and time when the task finished, in RFC 3339 format."
+    },
+    "EventType2Data": {
+      "type": "object",
+      "nullable": true
+    },
+    "WatchResponseDataItem": {
+      "type": "object"
+    },
+    "SourceCsvMapping": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/MappingTypeCsv"
+      },
+      "description": "Key-value pairs of column names and their expected types.\n",
+      "x-additionalPropertyName": "column name"
+    },
+    "SourceDockerConfiguration": {
+      "type": "object",
+      "description": "Configuration of the spec."
+    },
+    "SourceUpdateShopifyFeatureFlags": {
+      "type": "object",
+      "description": "Feature flags for the Shopify source."
+    },
+    "SourceUpdateDockerConfiguration": {
+      "type": "object",
+      "description": "Configuration of the spec."
+    },
+    "RunSourcePayloadRunMetadata": {
+      "type": "object",
+      "description": "Additional information that will be passed to the created runs."
+    },
+    "MappingFieldDirectiveValue": {
+      "type": "object",
+      "description": "How the destination field should be resolved from the source."
+    },
+    "RunTaskPayloadRunMetadata": {
+      "type": "object",
+      "description": "Additional information that will be passed to the created run."
+    },
+    "TransformationTrySampleRecord": {
+      "type": "object",
+      "description": "The record to apply the given code to."
+    },
+    "CustomGet200Response": {
+      "type": "object"
+    },
+    "CustomPostRequest": {
+      "type": "object"
+    },
+    "CustomPost200Response": {
+      "type": "object"
+    },
+    "CustomPutRequest": {
+      "type": "object"
+    },
+    "CustomPut200Response": {
+      "type": "object"
+    },
+    "CustomDelete200Response": {
+      "type": "object"
+    },
+    "SearchAuthenticationsResponse": {
+      "title": "searchAuthenticationsResponse",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Authentication"
+      }
+    },
+    "SearchDestinationsResponse": {
+      "title": "searchDestinationsResponse",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Destination"
+      }
+    },
+    "SearchSourcesResponse": {
+      "title": "searchSourcesResponse",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Source"
+      }
+    },
+    "SearchTasksResponse": {
+      "title": "searchTasksResponse",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Task"
+      }
+    },
+    "SearchTasksResponseV1": {
+      "title": "searchTasksResponseV1",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TaskV1"
+      }
+    },
+    "SearchTransformationsResponse": {
+      "title": "searchTransformationsResponse",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Transformation"
+      }
+    },
+    "ChunkedPush200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/WatchResponse"
+      }
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
     }
   }
 }

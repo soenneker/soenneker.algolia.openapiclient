@@ -89,8 +89,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         private string _explicitNullValueOwner = default!;
 #endif
         /// <summary>Name of an ecommerce platform with which to authenticate.This determines which authentication type you can select.</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.Platform? Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; AdditionalData?.Remove("platform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.Platform? _explicitNullValuePlatform = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.PlatformAnyOf1? Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; AdditionalData?.Remove("platform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.PlatformAnyOf1? _explicitNullValuePlatform = default!;
         /// <summary>Type of authentication. This determines the type of credentials required in the `input` object.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.AuthenticationType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.AuthenticationType? _explicitNullValueType = default!;
@@ -134,7 +134,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartial>(global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartial.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
-                { "platform", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Platform>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePlatform = default; _explicitNullProperties?.Remove("platform"); AdditionalData["platform"] = unknown; } else { Platform = parsed; AdditionalData.Remove("platform"); } } },
+                { "platform", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.PlatformAnyOf1>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePlatform = default; _explicitNullProperties?.Remove("platform"); AdditionalData["platform"] = unknown; } else { Platform = parsed; AdditionalData.Remove("platform"); } } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthenticationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "updatedAt", n => { UpdatedAt = n.GetStringValue(); } },
             };
@@ -151,7 +151,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthInputPartial>("input", Input);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("owner", Owner);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.Platform>("platform", Platform);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.PlatformAnyOf1>("platform", Platform);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.AuthenticationType>("type", Type);
             writer.WriteStringValue("updatedAt", UpdatedAt);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

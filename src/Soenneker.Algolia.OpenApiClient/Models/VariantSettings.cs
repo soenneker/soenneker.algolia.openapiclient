@@ -84,12 +84,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Index settings captured for the variant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2? IndexSettings { get => _explicitNullValueIndexSettings; set { _explicitNullValueIndexSettings = value; AdditionalData?.Remove("indexSettings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexSettings"); else _explicitNullProperties?.Remove("indexSettings"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2? _explicitNullValueIndexSettings = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettings? IndexSettings { get => _explicitNullValueIndexSettings; set { _explicitNullValueIndexSettings = value; AdditionalData?.Remove("indexSettings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexSettings"); else _explicitNullProperties?.Remove("indexSettings"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettings? _explicitNullValueIndexSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2 IndexSettings { get => _explicitNullValueIndexSettings; set { _explicitNullValueIndexSettings = value; AdditionalData?.Remove("indexSettings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexSettings"); else _explicitNullProperties?.Remove("indexSettings"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2 _explicitNullValueIndexSettings = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettings IndexSettings { get => _explicitNullValueIndexSettings; set { _explicitNullValueIndexSettings = value; AdditionalData?.Remove("indexSettings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexSettings"); else _explicitNullProperties?.Remove("indexSettings"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettings _explicitNullValueIndexSettings = default!;
 #endif
         /// <summary>Date and time when the applied settings were reverted on the control index, in RFC 3339 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "declaredTimestamp", n => { DeclaredTimestamp = n.GetStringValue(); } },
                 { "expiredTimestamp", n => { ExpiredTimestamp = n.GetStringValue(); } },
                 { "featuresSettings", n => { FeaturesSettings = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettings>(global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettings.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "indexSettings", n => { IndexSettings = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2.CreateFromDiscriminatorValue); } },
+                { "indexSettings", n => { IndexSettings = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettings>(global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettings.CreateFromDiscriminatorValue); } },
                 { "revertTimestamp", n => { RevertTimestamp = n.GetStringValue(); } },
                 { "variantId", n => { VariantId = n.GetIntValue(); } },
             };
@@ -151,7 +151,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("declaredTimestamp", DeclaredTimestamp);
             writer.WriteStringValue("expiredTimestamp", ExpiredTimestamp);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.FeatureSettings>("featuresSettings", FeaturesSettings);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettingsProperty2>("indexSettings", IndexSettings);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.VariantSettingsIndexSettings>("indexSettings", IndexSettings);
             writer.WriteStringValue("revertTimestamp", RevertTimestamp);
             writer.WriteIntValue("variantId", VariantId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

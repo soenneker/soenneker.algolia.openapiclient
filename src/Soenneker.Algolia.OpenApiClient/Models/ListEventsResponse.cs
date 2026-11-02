@@ -40,12 +40,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Paginated API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination? _explicitNullValuePagination = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.Pagination? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.Pagination? _explicitNullValuePagination = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination _explicitNullValuePagination = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.Pagination Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.Pagination _explicitNullValuePagination = default!;
 #endif
         /// <summary>Time window by which to filter the observability data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,7 +83,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.IngestionEventType2>(global::Soenneker.Algolia.OpenApiClient.Models.IngestionEventType2.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination>(global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination.CreateFromDiscriminatorValue); } },
+                { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Pagination>(global::Soenneker.Algolia.OpenApiClient.Models.Pagination.CreateFromDiscriminatorValue); } },
                 { "window", n => { Window = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Window>(global::Soenneker.Algolia.OpenApiClient.Models.Window.CreateFromDiscriminatorValue); } },
             };
         }
@@ -95,7 +95,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.IngestionEventType2>("events", Events);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IngestionPagination>("pagination", Pagination);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Pagination>("pagination", Pagination);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Window>("window", Window);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

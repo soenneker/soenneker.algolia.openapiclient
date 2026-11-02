@@ -26,12 +26,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The incidents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidentsProperty2? Incidents { get => _explicitNullValueIncidents; set { _explicitNullValueIncidents = value; AdditionalData?.Remove("incidents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incidents"); else _explicitNullProperties?.Remove("incidents"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidentsProperty2? _explicitNullValueIncidents = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidents? Incidents { get => _explicitNullValueIncidents; set { _explicitNullValueIncidents = value; AdditionalData?.Remove("incidents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incidents"); else _explicitNullProperties?.Remove("incidents"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidents? _explicitNullValueIncidents = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidentsProperty2 Incidents { get => _explicitNullValueIncidents; set { _explicitNullValueIncidents = value; AdditionalData?.Remove("incidents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incidents"); else _explicitNullProperties?.Remove("incidents"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidentsProperty2 _explicitNullValueIncidents = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidents Incidents { get => _explicitNullValueIncidents; set { _explicitNullValueIncidents = value; AdditionalData?.Remove("incidents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incidents"); else _explicitNullProperties?.Remove("incidents"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidents _explicitNullValueIncidents = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponse"/> and sets the default values.
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "incidents", n => { Incidents = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidentsProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidentsProperty2.CreateFromDiscriminatorValue); } },
+                { "incidents", n => { Incidents = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidents>(global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidents.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidentsProperty2>("incidents", Incidents);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IncidentsResponseResponseIncidents>("incidents", Incidents);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

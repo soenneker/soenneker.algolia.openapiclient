@@ -18,9 +18,6 @@
           ]
         }
       }
-    },
-    {
-      "url": "https://insights.algolia.io"
     }
   ],
   "paths": {
@@ -930,13 +927,6 @@
         "description": "Error.",
         "x-keep-model": true
       },
-      "EventName": {
-        "maxLength": 64,
-        "minLength": 1,
-        "pattern": "[\\x20-\\x7E]{1,64}",
-        "type": "string",
-        "description": "Event name, up to 64 ASCII characters.\n\nConsider naming events consistently\u2014for example, by adopting Segment\u0027s\n[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)\nframework.\n"
-      },
       "ClickEvent": {
         "enum": [
           "click"
@@ -952,68 +942,6 @@
             }
           ]
         }
-      },
-      "Index": {
-        "type": "string",
-        "description": "Index name (case-sensitive) to which the event\u0027s items belong.",
-        "example": "ALGOLIA_INDEX_NAME"
-      },
-      "ObjectIDs": {
-        "maxItems": 20,
-        "minItems": 1,
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "Object IDs of the records that are part of the event.",
-        "example": [
-          "object-1",
-          "object-2",
-          "object-3"
-        ]
-      },
-      "Positions": {
-        "maxItems": 20,
-        "minItems": 1,
-        "type": "array",
-        "items": {
-          "minimum": 1,
-          "type": "integer"
-        },
-        "description": "Position of the clicked item the search results.\n\nYou must provide 1 \u0060position\u0060 for each \u0060objectID\u0060.\n",
-        "example": [
-          1,
-          2,
-          5
-        ]
-      },
-      "QueryId": {
-        "maxLength": 128,
-        "pattern": "^([0-9a-f]{32}|message_[!-~]\u002B)$",
-        "type": "string",
-        "description": "Unique identifier for a search query.\n\nThe query ID is required for events related to search or browse requests.\nIf you add \u0060clickAnalytics: true\u0060 as a search request parameter, the query ID is included in the API response.\nFor agentic analytics events, the query ID may be prefixed with \u0060message_\u0060 followed by any printable string.\n"
-      },
-      "UserToken": {
-        "maxLength": 129,
-        "minLength": 1,
-        "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
-        "type": "string",
-        "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
-        "example": "test-user-1"
-      },
-      "AuthenticatedUserToken": {
-        "maxLength": 129,
-        "minLength": 1,
-        "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
-        "type": "string",
-        "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
-        "example": "c6a52c02-d0c7-4b53-8ce3-2b8fd202f3f9"
-      },
-      "Timestamp": {
-        "type": "integer",
-        "description": "Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.\nIf not provided, we use the time at which the request was received.\n",
-        "format": "int64",
-        "example": 1687193127
       },
       "ClickedObjectIDsAfterSearch": {
         "title": "Clicked object IDs after search",
@@ -1140,14 +1068,6 @@
           ]
         }
       },
-      "Currency": {
-        "maxLength": 3,
-        "minLength": 3,
-        "pattern": "^[A-Za-z]{3}$",
-        "type": "string",
-        "description": "Three-letter [currency code](https://www.iso.org/iso-4217-currency-codes.html).",
-        "example": "EUR"
-      },
       "Price": {
         "oneOf": [
           {
@@ -1161,12 +1081,6 @@
           }
         ],
         "description": "Final price of a single product, including any discounts, in units of \u0060currency\u0060."
-      },
-      "Quantity": {
-        "type": "integer",
-        "description": "Quantity of a product that has been purchased or added to the cart.\nThe total purchase value is the sum of \u0060quantity\u0060 multiplied with the \u0060price\u0060 for each purchased item.\n",
-        "format": "int32",
-        "example": 2
       },
       "Discount": {
         "oneOf": [
@@ -1207,15 +1121,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "ObjectDataAfterSearchList": {
-        "maxItems": 20,
-        "minItems": 1,
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ObjectDataAfterSearch"
-        },
-        "description": "Extra information about the records involved in a purchase or add-to-cart events.\n\nIf provided, it must be the same length as \u0060objectIDs\u0060.\n"
       },
       "ValueValue": {
         "oneOf": [
@@ -1609,15 +1514,6 @@
         },
         "additionalProperties": false
       },
-      "ObjectDataList": {
-        "maxItems": 20,
-        "minItems": 1,
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ObjectData"
-        },
-        "description": "Extra information about the records involved in a purchase or add-to-cart event.\n\nIf specified, it must have the same length as \u0060objectIDs\u0060.\n"
-      },
       "PurchasedObjectIDs": {
         "title": "Purchased object IDs",
         "required": [
@@ -1873,18 +1769,6 @@
         "x-discriminator-fields": [
           "eventType",
           "objectIDs"
-        ]
-      },
-      "Filters": {
-        "maxItems": 20,
-        "minItems": 1,
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "Applied facet filters.\n\nFacet filters are \u0060facet:value\u0060 pairs.\nFacet values must be URL-encoded, such as, \u0060discount:10%25\u0060.\n",
-        "example": [
-          "brand:apple"
         ]
       },
       "ClickedFilters": {
@@ -2188,12 +2072,6 @@
           ]
         }
       },
-      "AgentId": {
-        "minLength": 1,
-        "type": "string",
-        "description": "Unique identifier for an agent session. Used to correlate instantsearch events with a specific agent interaction.\n",
-        "example": "agent-session-123"
-      },
       "Instantsearch": {
         "required": [
           "eventName",
@@ -2303,24 +2181,6 @@
         "additionalProperties": false,
         "description": "The response of the Insights API."
       },
-      "CustomGet200Response": {
-        "type": "object"
-      },
-      "CustomPostRequest": {
-        "type": "object"
-      },
-      "CustomPost200Response": {
-        "type": "object"
-      },
-      "CustomPutRequest": {
-        "type": "object"
-      },
-      "CustomPut200Response": {
-        "type": "object"
-      },
-      "CustomDelete200Response": {
-        "type": "object"
-      },
       "PushEventsRequest": {
         "title": "insightsEvents",
         "required": [
@@ -2338,14 +2198,6 @@
             "description": "Click and conversion events.\n\n**All** events must be valid, otherwise the API returns an error.\n"
           }
         }
-      },
-      "Html": {
-        "title": "HTML",
-        "type": "string"
-      },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
       },
       "CustomGet200ResponseSchema": {
         "type": "object"
@@ -2500,5 +2352,170 @@
         "usertokens"
       ]
     }
-  ]
+  ],
+  "x-client-original-servers": [
+    {
+      "url": "https://insights.{region}.algolia.io",
+      "variables": {
+        "region": {
+          "default": "us",
+          "description": "The region where your Algolia application is hosted.",
+          "enum": [
+            "us",
+            "de"
+          ]
+        }
+      }
+    },
+    {
+      "url": "https://insights.algolia.io"
+    }
+  ],
+  "x-client-unused-schemas": {
+    "EventName": {
+      "maxLength": 64,
+      "minLength": 1,
+      "pattern": "[\\x20-\\x7E]{1,64}",
+      "type": "string",
+      "description": "Event name, up to 64 ASCII characters.\n\nConsider naming events consistently\u2014for example, by adopting Segment\u0027s\n[object-action](https://segment.com/academy/collecting-data/naming-conventions-for-clean-data/#the-object-action-framework)\nframework.\n"
+    },
+    "Index": {
+      "type": "string",
+      "description": "Index name (case-sensitive) to which the event\u0027s items belong.",
+      "example": "ALGOLIA_INDEX_NAME"
+    },
+    "ObjectIDs": {
+      "maxItems": 20,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Object IDs of the records that are part of the event.",
+      "example": [
+        "object-1",
+        "object-2",
+        "object-3"
+      ]
+    },
+    "Positions": {
+      "maxItems": 20,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "minimum": 1,
+        "type": "integer"
+      },
+      "description": "Position of the clicked item the search results.\n\nYou must provide 1 \u0060position\u0060 for each \u0060objectID\u0060.\n",
+      "example": [
+        1,
+        2,
+        5
+      ]
+    },
+    "QueryId": {
+      "maxLength": 128,
+      "pattern": "^([0-9a-f]{32}|message_[!-~]\u002B)$",
+      "type": "string",
+      "description": "Unique identifier for a search query.\n\nThe query ID is required for events related to search or browse requests.\nIf you add \u0060clickAnalytics: true\u0060 as a search request parameter, the query ID is included in the API response.\nFor agentic analytics events, the query ID may be prefixed with \u0060message_\u0060 followed by any printable string.\n"
+    },
+    "UserToken": {
+      "maxLength": 129,
+      "minLength": 1,
+      "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
+      "type": "string",
+      "description": "Anonymous or pseudonymous user identifier.\n\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+      "example": "test-user-1"
+    },
+    "AuthenticatedUserToken": {
+      "maxLength": 129,
+      "minLength": 1,
+      "pattern": "[a-zA-Z0-9_=/\u002B-]{1,129}",
+      "type": "string",
+      "description": "Identifier for authenticated users.\n\nWhen the user signs in, you can get an identifier from your system and send it as \u0060authenticatedUserToken\u0060.\nThis lets you keep using the \u0060userToken\u0060 from before the user signed in, while providing a reliable way to identify users across sessions.\nDon\u0027t use personally identifiable information in user tokens.\nFor more information, see [User token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+      "example": "c6a52c02-d0c7-4b53-8ce3-2b8fd202f3f9"
+    },
+    "Timestamp": {
+      "type": "integer",
+      "description": "Timestamp of the event, measured in milliseconds since the Unix epoch. Must be no older than 30 days.\nIf not provided, we use the time at which the request was received.\n",
+      "format": "int64",
+      "example": 1687193127
+    },
+    "Currency": {
+      "maxLength": 3,
+      "minLength": 3,
+      "pattern": "^[A-Za-z]{3}$",
+      "type": "string",
+      "description": "Three-letter [currency code](https://www.iso.org/iso-4217-currency-codes.html).",
+      "example": "EUR"
+    },
+    "Quantity": {
+      "type": "integer",
+      "description": "Quantity of a product that has been purchased or added to the cart.\nThe total purchase value is the sum of \u0060quantity\u0060 multiplied with the \u0060price\u0060 for each purchased item.\n",
+      "format": "int32",
+      "example": 2
+    },
+    "ObjectDataAfterSearchList": {
+      "maxItems": 20,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ObjectDataAfterSearch"
+      },
+      "description": "Extra information about the records involved in a purchase or add-to-cart events.\n\nIf provided, it must be the same length as \u0060objectIDs\u0060.\n"
+    },
+    "ObjectDataList": {
+      "maxItems": 20,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ObjectData"
+      },
+      "description": "Extra information about the records involved in a purchase or add-to-cart event.\n\nIf specified, it must have the same length as \u0060objectIDs\u0060.\n"
+    },
+    "Filters": {
+      "maxItems": 20,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Applied facet filters.\n\nFacet filters are \u0060facet:value\u0060 pairs.\nFacet values must be URL-encoded, such as, \u0060discount:10%25\u0060.\n",
+      "example": [
+        "brand:apple"
+      ]
+    },
+    "AgentId": {
+      "minLength": 1,
+      "type": "string",
+      "description": "Unique identifier for an agent session. Used to correlate instantsearch events with a specific agent interaction.\n",
+      "example": "agent-session-123"
+    },
+    "CustomGet200Response": {
+      "type": "object"
+    },
+    "CustomPostRequest": {
+      "type": "object"
+    },
+    "CustomPost200Response": {
+      "type": "object"
+    },
+    "CustomPutRequest": {
+      "type": "object"
+    },
+    "CustomPut200Response": {
+      "type": "object"
+    },
+    "CustomDelete200Response": {
+      "type": "object"
+    },
+    "Html": {
+      "title": "HTML",
+      "type": "string"
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    }
+  }
 }

@@ -53,12 +53,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Type-specific configuration. Only present for v2 and later tests. Shape depends on the parent A/B test&apos;s `type`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayloadProperty2? Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; AdditionalData?.Remove("payload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayloadProperty2? _explicitNullValuePayload = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayload? Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; AdditionalData?.Remove("payload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayload? _explicitNullValuePayload = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayloadProperty2 Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; AdditionalData?.Remove("payload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayloadProperty2 _explicitNullValuePayload = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayload Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; AdditionalData?.Remove("payload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayload _explicitNullValuePayload = default!;
 #endif
         /// <summary>Percentage of search traffic routed to this variant.</summary>
         public int? Percentage { get => _explicitNullValuePercentage; set { _explicitNullValuePercentage = value; AdditionalData?.Remove("percentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percentage"); else _explicitNullProperties?.Remove("percentage"); } }
@@ -90,7 +90,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "customSearchParameters", n => { CustomSearchParameters = n.GetStringValue(); } },
                 { "indexName", n => { IndexName = n.GetStringValue(); } },
-                { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayloadProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayloadProperty2.CreateFromDiscriminatorValue); } },
+                { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayload>(global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayload.CreateFromDiscriminatorValue); } },
                 { "percentage", n => { Percentage = n.GetIntValue(); } },
             };
         }
@@ -103,7 +103,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("customSearchParameters", CustomSearchParameters);
             writer.WriteStringValue("indexName", IndexName);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayloadProperty2>("payload", Payload);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.FetchedIndexAbTestVariantPayload>("payload", Payload);
             writer.WriteIntValue("percentage", Percentage);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

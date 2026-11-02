@@ -42,12 +42,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Index personalization filters by index name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearchProperty2? Search { get => _explicitNullValueSearch; set { _explicitNullValueSearch = value; AdditionalData?.Remove("search"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search"); else _explicitNullProperties?.Remove("search"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearchProperty2? _explicitNullValueSearch = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearch? Search { get => _explicitNullValueSearch; set { _explicitNullValueSearch = value; AdditionalData?.Remove("search"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search"); else _explicitNullProperties?.Remove("search"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearch? _explicitNullValueSearch = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearchProperty2 Search { get => _explicitNullValueSearch; set { _explicitNullValueSearch = value; AdditionalData?.Remove("search"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search"); else _explicitNullProperties?.Remove("search"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearchProperty2 _explicitNullValueSearch = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearch Search { get => _explicitNullValueSearch; set { _explicitNullValueSearch = value; AdditionalData?.Remove("search"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search"); else _explicitNullProperties?.Remove("search"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearch _explicitNullValueSearch = default!;
 #endif
         /// <summary>User ID of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "lastUpdatedAt", n => { LastUpdatedAt = n.GetStringValue(); } },
-                { "search", n => { Search = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearchProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearchProperty2.CreateFromDiscriminatorValue); } },
+                { "search", n => { Search = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearch>(global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearch.CreateFromDiscriminatorValue); } },
                 { "userID", n => { UserID = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
@@ -108,7 +108,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("lastUpdatedAt", LastUpdatedAt);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearchProperty2>("search", Search);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RealtimeUserSearch>("search", Search);
             writer.WriteStringValue("userID", UserID);
             writer.WriteStringValue("version", Version);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

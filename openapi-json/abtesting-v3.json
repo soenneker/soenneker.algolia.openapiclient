@@ -17,9 +17,6 @@
           ]
         }
       }
-    },
-    {
-      "url": "https://analytics.algolia.com"
     }
   ],
   "paths": {
@@ -1048,41 +1045,11 @@
           ]
         }
       },
-      "AbTestId": {
-        "type": "integer",
-        "description": "Unique A/B test identifier.",
-        "example": 224
-      },
-      "UpdatedAt": {
-        "type": "string",
-        "description": "Date and time when the A/B test was last updated, in RFC 3339 format.",
-        "example": "2023-06-15T15:06:44.400601Z"
-      },
-      "CreatedAt": {
-        "type": "string",
-        "description": "Date and time when the A/B test was created, in RFC 3339 format.",
-        "example": "2023-06-15T15:06:04.249906Z"
-      },
-      "EndAt": {
-        "type": "string",
-        "description": "End date and time of the A/B test, in RFC 3339 format.",
-        "example": "2023-06-17T00:00:00Z"
-      },
       "StoppedAt": {
         "type": "string",
         "description": "Date and time when the A/B test was stopped, in RFC 3339 format.",
         "nullable": true,
         "example": "2023-06-15T15:06:44.400601Z"
-      },
-      "Name": {
-        "type": "string",
-        "description": "A/B test name.",
-        "example": "Custom ranking sales rank test"
-      },
-      "Hypothesis": {
-        "type": "string",
-        "description": "Expected outcome of the A/B test.",
-        "example": "Enabling the feature increases conversion rate"
       },
       "Status": {
         "enum": [
@@ -1116,23 +1083,6 @@
             }
           ]
         }
-      },
-      "Description": {
-        "type": "string",
-        "description": "Description for this variant.",
-        "example": "Current production index"
-      },
-      "Index": {
-        "type": "string",
-        "description": "Index name of the A/B test variant (case-sensitive).",
-        "example": "delcourt_production"
-      },
-      "TrafficPercentage": {
-        "maximum": 99,
-        "minimum": 1,
-        "type": "integer",
-        "description": "Percentage of search requests each variant receives.",
-        "example": 60
       },
       "MetricMetadata": {
         "type": "object",
@@ -1289,13 +1239,6 @@
           }
         }
       },
-      "Metrics": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/MetricResult"
-        },
-        "description": "All ABTest metrics that were defined during test creation."
-      },
       "FilterEffects": {
         "type": "object",
         "properties": {
@@ -1363,13 +1306,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "Variants": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Variant"
-        },
-        "description": "A/B test variants.\n\nThe first variant is your _control_ index, typically your production index.\nAll of the additional variants are indexes with changed settings that you want to test against the control.\n"
       },
       "EffectMetric": {
         "enum": [
@@ -1476,13 +1412,6 @@
         },
         "additionalProperties": false,
         "description": "Boolean filter applied to the A/B test population. Each filter targets a boolean metric\nand decides whether to include (true) or exclude (false) matching records.\n"
-      },
-      "MetricsFilters": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/MetricsFilter"
-        },
-        "description": "List of metric filters applied to the test population."
       },
       "ErrorCorrectionType": {
         "enum": [
@@ -1769,12 +1698,6 @@
         },
         "description": "Defines a metric to be retrieved during an A/B test."
       },
-      "TaskId": {
-        "type": "integer",
-        "description": "Unique identifier of a task.\n\nA successful API response means that a task was added to a queue.\nIt might not run immediately.\nYou can check the task\u0027s progress with the [\u0060task\u0060 operation](https://www.algolia.com/doc/rest-api/search/get-task) and this task ID.\n",
-        "format": "int64",
-        "example": 1514562690001
-      },
       "AbTestResponse": {
         "required": [
           "abTestID",
@@ -2021,12 +1944,6 @@
           }
         }
       },
-      "MetricDates": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/MetricDate"
-        }
-      },
       "TimeseriesVariant": {
         "type": "object",
         "properties": {
@@ -2037,13 +1954,6 @@
             }
           }
         }
-      },
-      "TimeseriesVariants": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/TimeseriesVariant"
-        },
-        "description": "A/B test timeseries variants.\n\nThe first variant is your _control_ index, typically your production index.\nAll of the additional variants are indexes with changed settings that you want to test against the control.\n"
       },
       "Timeseries": {
         "required": [
@@ -2233,39 +2143,6 @@
           "trackedSearchesCount": 237
         }
       },
-      "VariantCustomSearchParameters": {
-        "type": "object",
-        "description": "Search parameters applied to this variant when the same index is used for multiple variants.\nOnly present if custom search parameters were provided during test creation.\n",
-        "example": {
-          "enablePersonalization": true,
-          "personalizationImpact": 50
-        }
-      },
-      "CustomSearchParamsCustomSearchParameters": {
-        "type": "object"
-      },
-      "VariantSettingsIndexSettings": {
-        "type": "object",
-        "description": "Index settings captured for the variant."
-      },
-      "CustomGet200Response": {
-        "type": "object"
-      },
-      "CustomPostRequest": {
-        "type": "object"
-      },
-      "CustomPost200Response": {
-        "type": "object"
-      },
-      "CustomPutRequest": {
-        "type": "object"
-      },
-      "CustomPut200Response": {
-        "type": "object"
-      },
-      "CustomDelete200Response": {
-        "type": "object"
-      },
       "AddAbTestsRequest": {
         "title": "addABTestsRequest",
         "required": [
@@ -2333,10 +2210,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
       },
       "CustomGet200ResponseSchema": {
         "type": "object"
@@ -2614,5 +2487,148 @@
         "abtest"
       ]
     }
-  ]
+  ],
+  "x-client-original-servers": [
+    {
+      "url": "https://analytics.{region}.algolia.com",
+      "variables": {
+        "region": {
+          "default": "us",
+          "enum": [
+            "us",
+            "de"
+          ]
+        }
+      }
+    },
+    {
+      "url": "https://analytics.algolia.com"
+    }
+  ],
+  "x-client-unused-schemas": {
+    "AbTestId": {
+      "type": "integer",
+      "description": "Unique A/B test identifier.",
+      "example": 224
+    },
+    "UpdatedAt": {
+      "type": "string",
+      "description": "Date and time when the A/B test was last updated, in RFC 3339 format.",
+      "example": "2023-06-15T15:06:44.400601Z"
+    },
+    "CreatedAt": {
+      "type": "string",
+      "description": "Date and time when the A/B test was created, in RFC 3339 format.",
+      "example": "2023-06-15T15:06:04.249906Z"
+    },
+    "EndAt": {
+      "type": "string",
+      "description": "End date and time of the A/B test, in RFC 3339 format.",
+      "example": "2023-06-17T00:00:00Z"
+    },
+    "Name": {
+      "type": "string",
+      "description": "A/B test name.",
+      "example": "Custom ranking sales rank test"
+    },
+    "Hypothesis": {
+      "type": "string",
+      "description": "Expected outcome of the A/B test.",
+      "example": "Enabling the feature increases conversion rate"
+    },
+    "Description": {
+      "type": "string",
+      "description": "Description for this variant.",
+      "example": "Current production index"
+    },
+    "Index": {
+      "type": "string",
+      "description": "Index name of the A/B test variant (case-sensitive).",
+      "example": "delcourt_production"
+    },
+    "TrafficPercentage": {
+      "maximum": 99,
+      "minimum": 1,
+      "type": "integer",
+      "description": "Percentage of search requests each variant receives.",
+      "example": 60
+    },
+    "Metrics": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/MetricResult"
+      },
+      "description": "All ABTest metrics that were defined during test creation."
+    },
+    "Variants": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Variant"
+      },
+      "description": "A/B test variants.\n\nThe first variant is your _control_ index, typically your production index.\nAll of the additional variants are indexes with changed settings that you want to test against the control.\n"
+    },
+    "MetricsFilters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/MetricsFilter"
+      },
+      "description": "List of metric filters applied to the test population."
+    },
+    "TaskId": {
+      "type": "integer",
+      "description": "Unique identifier of a task.\n\nA successful API response means that a task was added to a queue.\nIt might not run immediately.\nYou can check the task\u0027s progress with the [\u0060task\u0060 operation](https://www.algolia.com/doc/rest-api/search/get-task) and this task ID.\n",
+      "format": "int64",
+      "example": 1514562690001
+    },
+    "MetricDates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/MetricDate"
+      }
+    },
+    "TimeseriesVariants": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TimeseriesVariant"
+      },
+      "description": "A/B test timeseries variants.\n\nThe first variant is your _control_ index, typically your production index.\nAll of the additional variants are indexes with changed settings that you want to test against the control.\n"
+    },
+    "VariantCustomSearchParameters": {
+      "type": "object",
+      "description": "Search parameters applied to this variant when the same index is used for multiple variants.\nOnly present if custom search parameters were provided during test creation.\n",
+      "example": {
+        "enablePersonalization": true,
+        "personalizationImpact": 50
+      }
+    },
+    "CustomSearchParamsCustomSearchParameters": {
+      "type": "object"
+    },
+    "VariantSettingsIndexSettings": {
+      "type": "object",
+      "description": "Index settings captured for the variant."
+    },
+    "CustomGet200Response": {
+      "type": "object"
+    },
+    "CustomPostRequest": {
+      "type": "object"
+    },
+    "CustomPost200Response": {
+      "type": "object"
+    },
+    "CustomPutRequest": {
+      "type": "object"
+    },
+    "CustomPut200Response": {
+      "type": "object"
+    },
+    "CustomDelete200Response": {
+      "type": "object"
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    }
+  }
 }

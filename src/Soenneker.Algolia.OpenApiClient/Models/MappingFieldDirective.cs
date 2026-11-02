@@ -39,12 +39,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>How the destination field should be resolved from the source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValueProperty2? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValueProperty2? _explicitNullValueValue = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValue? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValueProperty2 Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValueProperty2 _explicitNullValueValue = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValue _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirective"/> and sets the default values.
@@ -72,7 +72,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "fieldKey", n => { FieldKey = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValueProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValueProperty2.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValue>(global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -83,7 +83,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("fieldKey", FieldKey);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValueProperty2>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MappingFieldDirectiveValue>("value", Value);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

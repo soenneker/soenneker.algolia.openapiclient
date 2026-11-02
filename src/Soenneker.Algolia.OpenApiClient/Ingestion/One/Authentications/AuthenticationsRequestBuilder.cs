@@ -173,11 +173,11 @@ namespace Soenneker.Algolia.OpenApiClient.Ingestion.One.Authentications
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("platform")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.PlatformWithNone[]? Platform { get; set; }
+            public string[]? Platform { get; set; }
 #nullable restore
 #else
             [QueryParameter("platform")]
-            public global::Soenneker.Algolia.OpenApiClient.Models.PlatformWithNone[] Platform { get; set; }
+            public string[] Platform { get; set; }
 #endif
             /// <summary>Property by which to sort the list of authentications.</summary>
             [QueryParameter("sort")]

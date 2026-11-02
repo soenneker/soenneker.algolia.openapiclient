@@ -615,21 +615,6 @@
         "description": "Error.",
         "x-keep-model": true
       },
-      "AppId": {
-        "type": "object",
-        "properties": {
-          "appID": {
-            "type": "string",
-            "description": "Algolia application ID to which this Query Suggestions configuration belongs."
-          }
-        }
-      },
-      "IndexName": {
-        "title": "indexName",
-        "type": "string",
-        "description": "Name of the Query Suggestions index (case-sensitive).",
-        "example": "ALGOLIA_INDEX_NAME"
-      },
       "AnalyticsTags": {
         "title": "analyticsTags",
         "type": "array",
@@ -913,30 +898,6 @@
         },
         "additionalProperties": false
       },
-      "CustomGet200Response": {
-        "type": "object"
-      },
-      "CustomPostRequest": {
-        "type": "object"
-      },
-      "CustomPost200Response": {
-        "type": "object"
-      },
-      "CustomPutRequest": {
-        "type": "object"
-      },
-      "CustomPut200Response": {
-        "type": "object"
-      },
-      "CustomDelete200Response": {
-        "type": "object"
-      },
-      "GetAllConfigs200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ConfigurationResponse"
-        }
-      },
       "ConfigStatus": {
         "title": "configStatus",
         "type": "object",
@@ -969,10 +930,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
       },
       "CustomGet200ResponseSchema": {
         "type": "object"
@@ -1294,5 +1251,50 @@
         "logs"
       ]
     }
-  ]
+  ],
+  "x-client-unused-schemas": {
+    "AppId": {
+      "type": "object",
+      "properties": {
+        "appID": {
+          "type": "string",
+          "description": "Algolia application ID to which this Query Suggestions configuration belongs."
+        }
+      }
+    },
+    "IndexName": {
+      "title": "indexName",
+      "type": "string",
+      "description": "Name of the Query Suggestions index (case-sensitive).",
+      "example": "ALGOLIA_INDEX_NAME"
+    },
+    "CustomGet200Response": {
+      "type": "object"
+    },
+    "CustomPostRequest": {
+      "type": "object"
+    },
+    "CustomPost200Response": {
+      "type": "object"
+    },
+    "CustomPutRequest": {
+      "type": "object"
+    },
+    "CustomPut200Response": {
+      "type": "object"
+    },
+    "CustomDelete200Response": {
+      "type": "object"
+    },
+    "GetAllConfigs200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ConfigurationResponse"
+      }
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    }
+  }
 }

@@ -26,12 +26,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The indexing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexingProperty2? Indexing { get => _explicitNullValueIndexing; set { _explicitNullValueIndexing = value; AdditionalData?.Remove("indexing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexing"); else _explicitNullProperties?.Remove("indexing"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexingProperty2? _explicitNullValueIndexing = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexing? Indexing { get => _explicitNullValueIndexing; set { _explicitNullValueIndexing = value; AdditionalData?.Remove("indexing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexing"); else _explicitNullProperties?.Remove("indexing"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexing? _explicitNullValueIndexing = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexingProperty2 Indexing { get => _explicitNullValueIndexing; set { _explicitNullValueIndexing = value; AdditionalData?.Remove("indexing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexing"); else _explicitNullProperties?.Remove("indexing"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexingProperty2 _explicitNullValueIndexing = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexing Indexing { get => _explicitNullValueIndexing; set { _explicitNullValueIndexing = value; AdditionalData?.Remove("indexing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexing"); else _explicitNullProperties?.Remove("indexing"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexing _explicitNullValueIndexing = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetrics"/> and sets the default values.
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "indexing", n => { Indexing = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexingProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexingProperty2.CreateFromDiscriminatorValue); } },
+                { "indexing", n => { Indexing = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexing>(global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexing.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexingProperty2>("indexing", Indexing);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.IndexingResponseResponseMetricsIndexing>("indexing", Indexing);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

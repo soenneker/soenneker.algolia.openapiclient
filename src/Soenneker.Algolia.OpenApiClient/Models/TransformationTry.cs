@@ -65,12 +65,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The record to apply the given code to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty2? SampleRecord { get => _explicitNullValueSampleRecord; set { _explicitNullValueSampleRecord = value; AdditionalData?.Remove("sampleRecord"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampleRecord"); else _explicitNullProperties?.Remove("sampleRecord"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty2? _explicitNullValueSampleRecord = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecord? SampleRecord { get => _explicitNullValueSampleRecord; set { _explicitNullValueSampleRecord = value; AdditionalData?.Remove("sampleRecord"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampleRecord"); else _explicitNullProperties?.Remove("sampleRecord"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecord? _explicitNullValueSampleRecord = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty2 SampleRecord { get => _explicitNullValueSampleRecord; set { _explicitNullValueSampleRecord = value; AdditionalData?.Remove("sampleRecord"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampleRecord"); else _explicitNullProperties?.Remove("sampleRecord"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty2 _explicitNullValueSampleRecord = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecord SampleRecord { get => _explicitNullValueSampleRecord; set { _explicitNullValueSampleRecord = value; AdditionalData?.Remove("sampleRecord"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampleRecord"); else _explicitNullProperties?.Remove("sampleRecord"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecord _explicitNullValueSampleRecord = default!;
 #endif
         /// <summary>The type of transformation, which can be either &apos;code&apos; or &apos;noCode&apos;.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.TransformationType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
@@ -103,7 +103,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "authentications", n => { Authentications = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AuthenticationCreate>(global::Soenneker.Algolia.OpenApiClient.Models.AuthenticationCreate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput>(global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput.CreateFromDiscriminatorValue); } },
-                { "sampleRecord", n => { SampleRecord = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty2.CreateFromDiscriminatorValue); } },
+                { "sampleRecord", n => { SampleRecord = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecord>(global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecord.CreateFromDiscriminatorValue); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
@@ -117,7 +117,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.AuthenticationCreate>("authentications", Authentications);
             writer.WriteStringValue("code", Code);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationInput>("input", Input);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecordProperty2>("sampleRecord", SampleRecord);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationTrySampleRecord>("sampleRecord", SampleRecord);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.TransformationType>("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

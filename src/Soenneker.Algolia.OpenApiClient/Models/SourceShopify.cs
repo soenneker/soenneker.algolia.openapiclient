@@ -28,12 +28,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Feature flags for the Shopify source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty2? FeatureFlags { get => _explicitNullValueFeatureFlags; set { _explicitNullValueFeatureFlags = value; AdditionalData?.Remove("featureFlags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featureFlags"); else _explicitNullProperties?.Remove("featureFlags"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty2? _explicitNullValueFeatureFlags = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlags? FeatureFlags { get => _explicitNullValueFeatureFlags; set { _explicitNullValueFeatureFlags = value; AdditionalData?.Remove("featureFlags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featureFlags"); else _explicitNullProperties?.Remove("featureFlags"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlags? _explicitNullValueFeatureFlags = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty2 FeatureFlags { get => _explicitNullValueFeatureFlags; set { _explicitNullValueFeatureFlags = value; AdditionalData?.Remove("featureFlags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featureFlags"); else _explicitNullProperties?.Remove("featureFlags"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty2 _explicitNullValueFeatureFlags = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlags FeatureFlags { get => _explicitNullValueFeatureFlags; set { _explicitNullValueFeatureFlags = value; AdditionalData?.Remove("featureFlags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featureFlags"); else _explicitNullProperties?.Remove("featureFlags"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlags _explicitNullValueFeatureFlags = default!;
 #endif
         /// <summary>URL of the Shopify store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,7 +70,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "featureFlags", n => { FeatureFlags = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty2.CreateFromDiscriminatorValue); } },
+                { "featureFlags", n => { FeatureFlags = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlags>(global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlags.CreateFromDiscriminatorValue); } },
                 { "shopURL", n => { ShopURL = n.GetStringValue(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlagsProperty2>("featureFlags", FeatureFlags);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceUpdateShopifyFeatureFlags>("featureFlags", FeatureFlags);
             writer.WriteStringValue("shopURL", ShopURL);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

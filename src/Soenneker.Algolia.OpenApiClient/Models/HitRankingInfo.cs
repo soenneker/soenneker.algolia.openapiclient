@@ -52,12 +52,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The composed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionRankingInfoComposedProperty2? Composed { get => _explicitNullValueComposed; set { _explicitNullValueComposed = value; AdditionalData?.Remove("composed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("composed"); else _explicitNullProperties?.Remove("composed"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.CompositionRankingInfoComposedProperty2? _explicitNullValueComposed = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionRankingInfoComposed? Composed { get => _explicitNullValueComposed; set { _explicitNullValueComposed = value; AdditionalData?.Remove("composed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("composed"); else _explicitNullProperties?.Remove("composed"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.CompositionRankingInfoComposed? _explicitNullValueComposed = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionRankingInfoComposedProperty2 Composed { get => _explicitNullValueComposed; set { _explicitNullValueComposed = value; AdditionalData?.Remove("composed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("composed"); else _explicitNullProperties?.Remove("composed"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.CompositionRankingInfoComposedProperty2 _explicitNullValueComposed = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.CompositionRankingInfoComposed Composed { get => _explicitNullValueComposed; set { _explicitNullValueComposed = value; AdditionalData?.Remove("composed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("composed"); else _explicitNullProperties?.Remove("composed"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.CompositionRankingInfoComposed _explicitNullValueComposed = default!;
 #endif
         /// <summary>Whether a filter matched the query.</summary>
         public int? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
@@ -137,7 +137,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "composed", n => { Composed = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRankingInfoComposedProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.CompositionRankingInfoComposedProperty2.CreateFromDiscriminatorValue); } },
+                { "composed", n => { Composed = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRankingInfoComposed>(global::Soenneker.Algolia.OpenApiClient.Models.CompositionRankingInfoComposed.CreateFromDiscriminatorValue); } },
                 { "filters", n => { Filters = n.GetIntValue(); } },
                 { "firstMatchedWord", n => { FirstMatchedWord = n.GetIntValue(); } },
                 { "geoDistance", n => { GeoDistance = n.GetIntValue(); } },
@@ -160,7 +160,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRankingInfoComposedProperty2>("composed", Composed);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CompositionRankingInfoComposed>("composed", Composed);
             writer.WriteIntValue("filters", Filters);
             writer.WriteIntValue("firstMatchedWord", FirstMatchedWord);
             writer.WriteIntValue("geoDistance", GeoDistance);

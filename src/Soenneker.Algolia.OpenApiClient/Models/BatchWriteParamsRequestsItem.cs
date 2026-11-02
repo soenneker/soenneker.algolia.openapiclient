@@ -31,12 +31,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Operation arguments (varies with specified `action`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBodyProperty2? Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; AdditionalData?.Remove("body"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBodyProperty2? _explicitNullValueBody = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBody? Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; AdditionalData?.Remove("body"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBody? _explicitNullValueBody = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBodyProperty2 Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; AdditionalData?.Remove("body"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBodyProperty2 _explicitNullValueBody = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBody Body { get => _explicitNullValueBody; set { _explicitNullValueBody = value; AdditionalData?.Remove("body"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("body"); else _explicitNullProperties?.Remove("body"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBody _explicitNullValueBody = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItem"/> and sets the default values.
@@ -64,7 +64,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
-                { "body", n => { Body = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBodyProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBodyProperty2.CreateFromDiscriminatorValue); } },
+                { "body", n => { Body = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBody>(global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBody.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchAction>("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBodyProperty2>("body", Body);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.BatchWriteParamsRequestsItemBody>("body", Body);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

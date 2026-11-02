@@ -38,12 +38,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Search results (hits).Hits are records from your index that match the search criteria, augmented with additional attributes, such as, for highlighting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit>? Hits { get => _explicitNullValueHits; set { _explicitNullValueHits = value; AdditionalData?.Remove("hits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hits"); else _explicitNullProperties?.Remove("hits"); } }
-        private List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit>? _explicitNullValueHits = default!;
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Hit>? Hits { get => _explicitNullValueHits; set { _explicitNullValueHits = value; AdditionalData?.Remove("hits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hits"); else _explicitNullProperties?.Remove("hits"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.Hit>? _explicitNullValueHits = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit> Hits { get => _explicitNullValueHits; set { _explicitNullValueHits = value; AdditionalData?.Remove("hits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hits"); else _explicitNullProperties?.Remove("hits"); } }
-        private List<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit> _explicitNullValueHits = default!;
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.Hit> Hits { get => _explicitNullValueHits; set { _explicitNullValueHits = value; AdditionalData?.Remove("hits"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hits"); else _explicitNullProperties?.Remove("hits"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.Hit> _explicitNullValueHits = default!;
 #endif
         /// <summary>Number of hits returned per page.</summary>
         public int? HitsPerPage { get => _explicitNullValueHitsPerPage; set { _explicitNullValueHitsPerPage = value; AdditionalData?.Remove("hitsPerPage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hitsPerPage"); else _explicitNullProperties?.Remove("hitsPerPage"); } }
@@ -102,7 +102,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "hits", n => { Hits = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit>(global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "hits", n => { Hits = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Hit>(global::Soenneker.Algolia.OpenApiClient.Models.Hit.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hitsPerPage", n => { HitsPerPage = n.GetIntValue(); } },
                 { "nbHits", n => { NbHits = n.GetIntValue(); } },
                 { "nbPages", n => { NbPages = n.GetIntValue(); } },
@@ -118,7 +118,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.CompositionHit>("hits", Hits);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.Hit>("hits", Hits);
             writer.WriteIntValue("hitsPerPage", HitsPerPage);
             writer.WriteIntValue("nbHits", NbHits);
             writer.WriteIntValue("nbPages", NbPages);

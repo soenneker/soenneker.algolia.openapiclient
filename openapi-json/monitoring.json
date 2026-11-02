@@ -234,7 +234,21 @@
             "$ref": "#/components/responses/StatusResponse"
           },
           "401": {
-            "$ref": "#/components/responses/UnauthorizedResponse"
+            "description": "Unauthorized",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponseResponsePlainContentError"
+                },
+                "examples": {
+                  "Unauthorized": {
+                    "summary": "Invalid credentials",
+                    "description": "Use the Monitoring API key.",
+                    "value": "Invalid credentials"
+                  }
+                }
+              }
+            }
           }
         },
         "security": []
@@ -265,10 +279,36 @@
             "$ref": "#/components/responses/StatusResponse"
           },
           "401": {
-            "$ref": "#/components/responses/UnauthorizedResponse"
+            "description": "Unauthorized",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponseResponsePlainContentError"
+                },
+                "examples": {
+                  "Unauthorized": {
+                    "summary": "Invalid credentials",
+                    "description": "Use the Monitoring API key.",
+                    "value": "Invalid credentials"
+                  }
+                }
+              }
+            }
           },
           "404": {
-            "$ref": "#/components/responses/NotFoundResponse"
+            "description": "Not Found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponseResponsePlainContentError"
+                },
+                "examples": {
+                  "NotFound": {
+                    "value": "Unknown cluster \u0022test\u0022"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [],
@@ -288,7 +328,21 @@
             "$ref": "#/components/responses/IncidentsResponse"
           },
           "401": {
-            "$ref": "#/components/responses/UnauthorizedResponse"
+            "description": "Unauthorized",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponseResponsePlainContentError"
+                },
+                "examples": {
+                  "Unauthorized": {
+                    "summary": "Invalid credentials",
+                    "description": "Use the Monitoring API key.",
+                    "value": "Invalid credentials"
+                  }
+                }
+              }
+            }
           }
         },
         "security": [],
@@ -320,10 +374,36 @@
             "$ref": "#/components/responses/IncidentsResponse"
           },
           "401": {
-            "$ref": "#/components/responses/UnauthorizedResponse"
+            "description": "Unauthorized",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnauthorizedResponseResponsePlainContentError"
+                },
+                "examples": {
+                  "Unauthorized": {
+                    "summary": "Invalid credentials",
+                    "description": "Use the Monitoring API key.",
+                    "value": "Invalid credentials"
+                  }
+                }
+              }
+            }
           },
           "404": {
-            "$ref": "#/components/responses/NotFoundResponse"
+            "description": "Not Found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotFoundResponseResponsePlainContentError"
+                },
+                "examples": {
+                  "NotFound": {
+                    "value": "Unknown cluster \u0022test\u0022"
+                  }
+                }
+              }
+            }
           }
         },
         "security": []
@@ -562,11 +642,6 @@
           ]
         }
       },
-      "Timestamp": {
-        "type": "integer",
-        "description": "Timestamp, measured in milliseconds since the Unix epoch.",
-        "format": "int64"
-      },
       "Incident": {
         "title": "incident",
         "type": "object",
@@ -580,14 +655,6 @@
           }
         },
         "description": "Incident details."
-      },
-      "Incidents": {
-        "title": "incidents",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/IncidentsItem"
-        },
-        "description": "Key-value pairs with the cluster names as keys and the list of incidents reported for this cluster as values."
       },
       "Region": {
         "title": "region",
@@ -751,24 +818,6 @@
         },
         "additionalProperties": false
       },
-      "Time": {
-        "title": "times",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/TimeItem"
-        },
-        "description": "Time measured by a probe."
-      },
-      "Probes": {
-        "title": "probes",
-        "type": "object",
-        "additionalProperties": {
-          "type": "boolean",
-          "description": "Key-value pair with the probe name as the key and the reachability status as the value.",
-          "x-additionalPropertiesName": "probe"
-        },
-        "description": "Probes and their response."
-      },
       "Metric": {
         "enum": [
           "avg_build_time",
@@ -864,13 +913,6 @@
         },
         "additionalProperties": false
       },
-      "InfraProbes": {
-        "title": "probes",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ProbesMetric"
-        }
-      },
       "IncidentsItem": {
         "title": "incidentEntry",
         "type": "object",
@@ -909,12 +951,6 @@
             "$ref": "#/components/schemas/StatusResponseResponseStatusProperty"
           }
         }
-      },
-      "UnauthorizedResponseResponsePlain": {
-        "type": "string"
-      },
-      "NotFoundResponseResponsePlain": {
-        "type": "string"
       },
       "IncidentsResponseResponse": {
         "title": "incidentsResponse",
@@ -975,13 +1011,6 @@
           }
         }
       },
-      "ReachabilityResponseResponse": {
-        "title": "reachabilityResponse",
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/ReachabilityResponseResponseAdditionalProperties"
-        }
-      },
       "InfrastructureResponseResponse": {
         "title": "infrastructureResponse",
         "type": "object",
@@ -1001,23 +1030,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "StatusResponseResponseStatus": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Status"
-        }
-      },
-      "IncidentsResponseResponseIncidents": {
-        "type": "object",
-        "additionalProperties": {
-          "title": "incidents",
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/IncidentsItem"
-          },
-          "description": "Key-value pairs with the cluster names as keys and the list of incidents reported for this cluster as values."
-        }
       },
       "LatencyResponseResponseMetrics": {
         "title": "latencyMetric",
@@ -1060,105 +1072,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "LatencyResponseResponseMetricsLatency": {
-        "type": "object",
-        "additionalProperties": {
-          "title": "times",
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/TimeItem"
-          },
-          "description": "Time measured by a probe."
-        }
-      },
-      "IndexingResponseResponseMetricsIndexing": {
-        "type": "object",
-        "additionalProperties": {
-          "title": "times",
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/TimeItem"
-          },
-          "description": "Time measured by a probe."
-        }
-      },
-      "InfrastructureResponseResponseMetricsCpuUsage": {
-        "type": "object",
-        "additionalProperties": {
-          "title": "probes",
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/ProbesMetric"
-          }
-        },
-        "description": "CPU idleness in %."
-      },
-      "InfrastructureResponseResponseMetricsRamIndexingUsage": {
-        "type": "object",
-        "additionalProperties": {
-          "title": "probes",
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/ProbesMetric"
-          }
-        },
-        "description": "RAM used for indexing in MB."
-      },
-      "InfrastructureResponseResponseMetricsRamSearchUsage": {
-        "type": "object",
-        "additionalProperties": {
-          "title": "probes",
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/ProbesMetric"
-          }
-        },
-        "description": "RAM used for search in MB."
-      },
-      "InfrastructureResponseResponseMetricsSsdUsage": {
-        "type": "object",
-        "additionalProperties": {
-          "title": "probes",
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/ProbesMetric"
-          }
-        },
-        "description": "Solid-state disk (SSD) usage expressed as % of RAM. \n0% means no SSD usage. A value of 50% indicates 32\u0026nbsp;GB SSD usage for a machine with 64\u0026nbsp;RAM.\n"
-      },
-      "InfrastructureResponseResponseMetricsAvgBuildTime": {
-        "type": "object",
-        "additionalProperties": {
-          "title": "probes",
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/ProbesMetric"
-          }
-        },
-        "description": "Average build time of the indices in seconds."
-      },
-      "CustomGet200Response": {
-        "type": "object"
-      },
-      "CustomPostRequest": {
-        "type": "object"
-      },
-      "CustomPost200Response": {
-        "type": "object"
-      },
-      "CustomPutRequest": {
-        "type": "object"
-      },
-      "CustomPut200Response": {
-        "type": "object"
-      },
-      "CustomDelete200Response": {
-        "type": "object"
-      },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
       },
       "CustomGet200ResponseSchema": {
         "type": "object"
@@ -1207,16 +1120,6 @@
           },
           "description": "Key-value pairs with the cluster names as keys and the list of incidents reported for this cluster as values."
         }
-      },
-      "ReachabilityResponseResponseAdditionalProperties": {
-        "title": "probes",
-        "type": "object",
-        "additionalProperties": {
-          "type": "boolean",
-          "description": "Key-value pair with the probe name as the key and the reachability status as the value.",
-          "x-additionalPropertiesName": "probe"
-        },
-        "description": "Probes and their response."
       },
       "LatencyResponseResponseMetricsLatencyProperty": {
         "type": "object",
@@ -1304,6 +1207,36 @@
           "x-additionalPropertiesName": "probe"
         },
         "description": "Probes and their response."
+      },
+      "UnauthorizedResponseResponsePlainContentError": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "x-client-untyped-value": true
+          }
+        },
+        "x-client-raw-error-media-type": "text/plain",
+        "x-client-raw-error-schema": {
+          "$ref": "#/components/schemas/UnauthorizedResponseResponsePlainContent"
+        },
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/UnauthorizedResponseResponsePlainContent"
+        }
+      },
+      "NotFoundResponseResponsePlainContentError": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "x-client-untyped-value": true
+          }
+        },
+        "x-client-raw-error-media-type": "text/plain",
+        "x-client-raw-error-schema": {
+          "$ref": "#/components/schemas/NotFoundResponseResponsePlainContent"
+        },
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/NotFoundResponseResponsePlainContent"
+        }
       }
     },
     "responses": {
@@ -1787,5 +1720,184 @@
         "monitoring-tag"
       ]
     }
-  ]
+  ],
+  "x-client-unused-schemas": {
+    "Timestamp": {
+      "type": "integer",
+      "description": "Timestamp, measured in milliseconds since the Unix epoch.",
+      "format": "int64"
+    },
+    "Incidents": {
+      "title": "incidents",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/IncidentsItem"
+      },
+      "description": "Key-value pairs with the cluster names as keys and the list of incidents reported for this cluster as values."
+    },
+    "Time": {
+      "title": "times",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TimeItem"
+      },
+      "description": "Time measured by a probe."
+    },
+    "Probes": {
+      "title": "probes",
+      "type": "object",
+      "additionalProperties": {
+        "type": "boolean",
+        "description": "Key-value pair with the probe name as the key and the reachability status as the value.",
+        "x-additionalPropertiesName": "probe"
+      },
+      "description": "Probes and their response."
+    },
+    "InfraProbes": {
+      "title": "probes",
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ProbesMetric"
+      }
+    },
+    "UnauthorizedResponseResponsePlain": {
+      "type": "string"
+    },
+    "NotFoundResponseResponsePlain": {
+      "type": "string"
+    },
+    "ReachabilityResponseResponse": {
+      "title": "reachabilityResponse",
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/ReachabilityResponseResponseAdditionalProperties"
+      }
+    },
+    "StatusResponseResponseStatus": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Status"
+      }
+    },
+    "IncidentsResponseResponseIncidents": {
+      "type": "object",
+      "additionalProperties": {
+        "title": "incidents",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/IncidentsItem"
+        },
+        "description": "Key-value pairs with the cluster names as keys and the list of incidents reported for this cluster as values."
+      }
+    },
+    "LatencyResponseResponseMetricsLatency": {
+      "type": "object",
+      "additionalProperties": {
+        "title": "times",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/TimeItem"
+        },
+        "description": "Time measured by a probe."
+      }
+    },
+    "IndexingResponseResponseMetricsIndexing": {
+      "type": "object",
+      "additionalProperties": {
+        "title": "times",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/TimeItem"
+        },
+        "description": "Time measured by a probe."
+      }
+    },
+    "InfrastructureResponseResponseMetricsCpuUsage": {
+      "type": "object",
+      "additionalProperties": {
+        "title": "probes",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ProbesMetric"
+        }
+      },
+      "description": "CPU idleness in %."
+    },
+    "InfrastructureResponseResponseMetricsRamIndexingUsage": {
+      "type": "object",
+      "additionalProperties": {
+        "title": "probes",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ProbesMetric"
+        }
+      },
+      "description": "RAM used for indexing in MB."
+    },
+    "InfrastructureResponseResponseMetricsRamSearchUsage": {
+      "type": "object",
+      "additionalProperties": {
+        "title": "probes",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ProbesMetric"
+        }
+      },
+      "description": "RAM used for search in MB."
+    },
+    "InfrastructureResponseResponseMetricsSsdUsage": {
+      "type": "object",
+      "additionalProperties": {
+        "title": "probes",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ProbesMetric"
+        }
+      },
+      "description": "Solid-state disk (SSD) usage expressed as % of RAM. \n0% means no SSD usage. A value of 50% indicates 32\u0026nbsp;GB SSD usage for a machine with 64\u0026nbsp;RAM.\n"
+    },
+    "InfrastructureResponseResponseMetricsAvgBuildTime": {
+      "type": "object",
+      "additionalProperties": {
+        "title": "probes",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ProbesMetric"
+        }
+      },
+      "description": "Average build time of the indices in seconds."
+    },
+    "CustomGet200Response": {
+      "type": "object"
+    },
+    "CustomPostRequest": {
+      "type": "object"
+    },
+    "CustomPost200Response": {
+      "type": "object"
+    },
+    "CustomPutRequest": {
+      "type": "object"
+    },
+    "CustomPut200Response": {
+      "type": "object"
+    },
+    "CustomDelete200Response": {
+      "type": "object"
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    },
+    "ReachabilityResponseResponseAdditionalProperties": {
+      "title": "probes",
+      "type": "object",
+      "additionalProperties": {
+        "type": "boolean",
+        "description": "Key-value pair with the probe name as the key and the reachability status as the value.",
+        "x-additionalPropertiesName": "probe"
+      },
+      "description": "Probes and their response."
+    }
+  }
 }

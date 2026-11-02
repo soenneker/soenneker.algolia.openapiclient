@@ -26,12 +26,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Additional information that will be passed to the created run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadataProperty2? RunMetadata { get => _explicitNullValueRunMetadata; set { _explicitNullValueRunMetadata = value; AdditionalData?.Remove("runMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runMetadata"); else _explicitNullProperties?.Remove("runMetadata"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadataProperty2? _explicitNullValueRunMetadata = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadata? RunMetadata { get => _explicitNullValueRunMetadata; set { _explicitNullValueRunMetadata = value; AdditionalData?.Remove("runMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runMetadata"); else _explicitNullProperties?.Remove("runMetadata"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadata? _explicitNullValueRunMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadataProperty2 RunMetadata { get => _explicitNullValueRunMetadata; set { _explicitNullValueRunMetadata = value; AdditionalData?.Remove("runMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runMetadata"); else _explicitNullProperties?.Remove("runMetadata"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadataProperty2 _explicitNullValueRunMetadata = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadata RunMetadata { get => _explicitNullValueRunMetadata; set { _explicitNullValueRunMetadata = value; AdditionalData?.Remove("runMetadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runMetadata"); else _explicitNullProperties?.Remove("runMetadata"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadata _explicitNullValueRunMetadata = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayload"/> and sets the default values.
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "runMetadata", n => { RunMetadata = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadataProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadataProperty2.CreateFromDiscriminatorValue); } },
+                { "runMetadata", n => { RunMetadata = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadata>(global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadata.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadataProperty2>("runMetadata", RunMetadata);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RunTaskPayloadRunMetadata>("runMetadata", RunMetadata);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

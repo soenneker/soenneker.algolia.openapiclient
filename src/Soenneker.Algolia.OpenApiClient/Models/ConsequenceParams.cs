@@ -553,12 +553,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Removes stop words from the search query.Stop words are common words like articles, conjunctions, prepositions, or pronouns that have little or no meaning on their own.In English, &quot;the&quot;, &quot;a&quot;, or &quot;and&quot; are stop words.Only use this feature for the languages used in your index.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveStopWords? RemoveStopWords { get => _explicitNullValueRemoveStopWords; set { _explicitNullValueRemoveStopWords = value; AdditionalData?.Remove("removeStopWords"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removeStopWords"); else _explicitNullProperties?.Remove("removeStopWords"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveStopWords? _explicitNullValueRemoveStopWords = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.CrawlerRemoveStopWords? RemoveStopWords { get => _explicitNullValueRemoveStopWords; set { _explicitNullValueRemoveStopWords = value; AdditionalData?.Remove("removeStopWords"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removeStopWords"); else _explicitNullProperties?.Remove("removeStopWords"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.CrawlerRemoveStopWords? _explicitNullValueRemoveStopWords = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveStopWords RemoveStopWords { get => _explicitNullValueRemoveStopWords; set { _explicitNullValueRemoveStopWords = value; AdditionalData?.Remove("removeStopWords"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removeStopWords"); else _explicitNullProperties?.Remove("removeStopWords"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveStopWords _explicitNullValueRemoveStopWords = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.CrawlerRemoveStopWords RemoveStopWords { get => _explicitNullValueRemoveStopWords; set { _explicitNullValueRemoveStopWords = value; AdditionalData?.Remove("removeStopWords"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removeStopWords"); else _explicitNullProperties?.Remove("removeStopWords"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.CrawlerRemoveStopWords _explicitNullValueRemoveStopWords = default!;
 #endif
         /// <summary>Strategy for removing words from the query when it doesn&apos;t return any results.This helps to avoid returning empty search results.- `none`.  No words are removed when a query doesn&apos;t return results.- `lastWords`.  Treat the last (then second to last, then third to last) word as optional,  until there are results or at most 5 words have been removed.- `firstWords`.  Treat the first (then second, then third) word as optional,  until there are results or at most 5 words have been removed.- `allOptional`.  Treat all words as optional.For more information, see [Remove words to improve results](https://www.algolia.com/doc/guides/managing-results/optimize-search-results/empty-or-insufficient-results/in-depth/why-use-remove-words-if-no-results).</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveWordsIfNoResults? RemoveWordsIfNoResults { get => _explicitNullValueRemoveWordsIfNoResults; set { _explicitNullValueRemoveWordsIfNoResults = value; AdditionalData?.Remove("removeWordsIfNoResults"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removeWordsIfNoResults"); else _explicitNullProperties?.Remove("removeWordsIfNoResults"); } }
@@ -809,7 +809,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "ranking", n => { Ranking = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "reRankingApplyFilter", n => { ReRankingApplyFilter = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchReRankingApplyFilter>(global::Soenneker.Algolia.OpenApiClient.Models.SearchReRankingApplyFilter.CreateFromDiscriminatorValue); } },
                 { "relevancyStrictness", n => { RelevancyStrictness = n.GetIntValue(); } },
-                { "removeStopWords", n => { RemoveStopWords = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveStopWords>(global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveStopWords.CreateFromDiscriminatorValue); } },
+                { "removeStopWords", n => { RemoveStopWords = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CrawlerRemoveStopWords>(global::Soenneker.Algolia.OpenApiClient.Models.CrawlerRemoveStopWords.CreateFromDiscriminatorValue); } },
                 { "removeWordsIfNoResults", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveWordsIfNoResults>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRemoveWordsIfNoResults = default; _explicitNullProperties?.Remove("removeWordsIfNoResults"); AdditionalData["removeWordsIfNoResults"] = unknown; } else { RemoveWordsIfNoResults = parsed; AdditionalData.Remove("removeWordsIfNoResults"); } } },
                 { "renderingContent", n => { RenderingContent = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchRenderingContent>(global::Soenneker.Algolia.OpenApiClient.Models.SearchRenderingContent.CreateFromDiscriminatorValue); } },
                 { "replaceSynonymsInHighlight", n => { ReplaceSynonymsInHighlight = n.GetBoolValue(); } },
@@ -893,7 +893,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchQueryType>("queryType", QueryType);
             writer.WriteCollectionOfPrimitiveValues<string>("ranking", Ranking);
             writer.WriteIntValue("relevancyStrictness", RelevancyStrictness);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveStopWords>("removeStopWords", RemoveStopWords);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.CrawlerRemoveStopWords>("removeStopWords", RemoveStopWords);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchRemoveWordsIfNoResults>("removeWordsIfNoResults", RemoveWordsIfNoResults);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchRenderingContent>("renderingContent", RenderingContent);
             writer.WriteBoolValue("replaceSynonymsInHighlight", ReplaceSynonymsInHighlight);

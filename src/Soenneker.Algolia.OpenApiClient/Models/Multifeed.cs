@@ -28,12 +28,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>A key-value store of Feed ID to Feed. Currently, the only supported Feed type is an Injection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty2? Feeds { get => _explicitNullValueFeeds; set { _explicitNullValueFeeds = value; AdditionalData?.Remove("feeds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feeds"); else _explicitNullProperties?.Remove("feeds"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty2? _explicitNullValueFeeds = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeeds? Feeds { get => _explicitNullValueFeeds; set { _explicitNullValueFeeds = value; AdditionalData?.Remove("feeds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feeds"); else _explicitNullProperties?.Remove("feeds"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeeds? _explicitNullValueFeeds = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty2 Feeds { get => _explicitNullValueFeeds; set { _explicitNullValueFeeds = value; AdditionalData?.Remove("feeds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feeds"); else _explicitNullProperties?.Remove("feeds"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty2 _explicitNullValueFeeds = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeeds Feeds { get => _explicitNullValueFeeds; set { _explicitNullValueFeeds = value; AdditionalData?.Remove("feeds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feeds"); else _explicitNullProperties?.Remove("feeds"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeeds _explicitNullValueFeeds = default!;
 #endif
         /// <summary>A list of Feed IDs that specifies the order in which to order the results in the response. The IDs should be a subset of those in the Feeds object, and only those specified will be processed. When this field is not set, all Feeds are processed and returned with a default ordering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,7 +70,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "feeds", n => { Feeds = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty2.CreateFromDiscriminatorValue); } },
+                { "feeds", n => { Feeds = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeeds>(global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeeds.CreateFromDiscriminatorValue); } },
                 { "feedsOrder", n => { FeedsOrder = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeedsProperty2>("feeds", Feeds);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MultifeedFeeds>("feeds", Feeds);
             writer.WriteCollectionOfPrimitiveValues<string>("feedsOrder", FeedsOrder);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

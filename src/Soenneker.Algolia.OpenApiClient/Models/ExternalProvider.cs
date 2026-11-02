@@ -26,12 +26,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Values for non-prefixed configuration placeholders, overriding the composition source&apos;s `configurationParams` and the configuration&apos;s `defaults`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParamsProperty2? ConfigurationParams { get => _explicitNullValueConfigurationParams; set { _explicitNullValueConfigurationParams = value; AdditionalData?.Remove("configurationParams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationParams"); else _explicitNullProperties?.Remove("configurationParams"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParamsProperty2? _explicitNullValueConfigurationParams = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParams? ConfigurationParams { get => _explicitNullValueConfigurationParams; set { _explicitNullValueConfigurationParams = value; AdditionalData?.Remove("configurationParams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationParams"); else _explicitNullProperties?.Remove("configurationParams"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParams? _explicitNullValueConfigurationParams = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParamsProperty2 ConfigurationParams { get => _explicitNullValueConfigurationParams; set { _explicitNullValueConfigurationParams = value; AdditionalData?.Remove("configurationParams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationParams"); else _explicitNullProperties?.Remove("configurationParams"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParamsProperty2 _explicitNullValueConfigurationParams = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParams ConfigurationParams { get => _explicitNullValueConfigurationParams; set { _explicitNullValueConfigurationParams = value; AdditionalData?.Remove("configurationParams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configurationParams"); else _explicitNullProperties?.Remove("configurationParams"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParams _explicitNullValueConfigurationParams = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.ExternalProvider"/> and sets the default values.
@@ -58,7 +58,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configurationParams", n => { ConfigurationParams = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParamsProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParamsProperty2.CreateFromDiscriminatorValue); } },
+                { "configurationParams", n => { ConfigurationParams = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParams>(global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParams.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParamsProperty2>("configurationParams", ConfigurationParams);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ExternalProviderConfigurationParams>("configurationParams", ConfigurationParams);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -80,8 +80,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         private string _explicitNullValueRunID = default!;
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Algolia.OpenApiClient.Models.EventStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.EventStatus? _explicitNullValueStatus = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.EventStatusAnyOf1? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.EventStatusAnyOf1? _explicitNullValueStatus = default!;
         /// <summary>The type property</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.IngestionEventType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.IngestionEventType? _explicitNullValueType = default!;
@@ -115,7 +115,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "eventID", n => { EventID = n.GetStringValue(); } },
                 { "publishedAt", n => { PublishedAt = n.GetStringValue(); } },
                 { "runID", n => { RunID = n.GetStringValue(); } },
-                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.EventStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.EventStatusAnyOf1>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.IngestionEventType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
@@ -131,7 +131,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("eventID", EventID);
             writer.WriteStringValue("publishedAt", PublishedAt);
             writer.WriteStringValue("runID", RunID);
-            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.EventStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.EventStatusAnyOf1>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.IngestionEventType>("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

@@ -1314,14 +1314,6 @@
           }
         }
       },
-      "UserToken": {
-        "type": "string",
-        "description": "Unique pseudonymous or anonymous user identifier.\n\nThis helps with analytics and click and conversion events.\nFor more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
-        "example": "test-user-123",
-        "x-categories": [
-          "Personalization"
-        ]
-      },
       "Strategy": {
         "enum": [
           "session",
@@ -1554,13 +1546,6 @@
           }
         }
       },
-      "RealtimeUserSearch": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/SearchFilters"
-        },
-        "description": "Index personalization filters by index name.\n"
-      },
       "ConfigurationObjectIndicesItemSource": {
         "title": "source",
         "type": "object",
@@ -1572,24 +1557,6 @@
             "$ref": "#/components/schemas/Events"
           }
         }
-      },
-      "CustomGet200Response": {
-        "type": "object"
-      },
-      "CustomPostRequest": {
-        "type": "object"
-      },
-      "CustomPost200Response": {
-        "type": "object"
-      },
-      "CustomPutRequest": {
-        "type": "object"
-      },
-      "CustomPut200Response": {
-        "type": "object"
-      },
-      "CustomDelete200Response": {
-        "type": "object"
       },
       "PutConfigRequest": {
         "title": "configurationParameters",
@@ -1673,10 +1640,6 @@
             "type": "string"
           }
         }
-      },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
       },
       "CustomGet200ResponseSchema": {
         "type": "object"
@@ -2123,5 +2086,44 @@
         "users"
       ]
     }
-  ]
+  ],
+  "x-client-unused-schemas": {
+    "UserToken": {
+      "type": "string",
+      "description": "Unique pseudonymous or anonymous user identifier.\n\nThis helps with analytics and click and conversion events.\nFor more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+      "example": "test-user-123",
+      "x-categories": [
+        "Personalization"
+      ]
+    },
+    "RealtimeUserSearch": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/SearchFilters"
+      },
+      "description": "Index personalization filters by index name.\n"
+    },
+    "CustomGet200Response": {
+      "type": "object"
+    },
+    "CustomPostRequest": {
+      "type": "object"
+    },
+    "CustomPost200Response": {
+      "type": "object"
+    },
+    "CustomPutRequest": {
+      "type": "object"
+    },
+    "CustomPut200Response": {
+      "type": "object"
+    },
+    "CustomDelete200Response": {
+      "type": "object"
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    }
+  }
 }

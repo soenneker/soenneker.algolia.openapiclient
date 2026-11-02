@@ -3,7 +3,7 @@
 namespace Soenneker.OpenApi.Generated;
 internal static class OpenApiServiceRoutes
 {
-    private static readonly global::System.Collections.Generic.HashSet<string> KnownServers = new(global::System.StringComparer.OrdinalIgnoreCase) { "https://ALGOLIA_APPLICATION_ID-1.algolianet.com", "https://ALGOLIA_APPLICATION_ID-2.algolianet.com", "https://ALGOLIA_APPLICATION_ID-3.algolianet.com", "https://ALGOLIA_APPLICATION_ID-dsn.algolia.net", "https://ALGOLIA_APPLICATION_ID.algolia.net", "https://ai-personalization.eu.algolia.com", "https://analytics.algolia.com", "https://analytics.us.algolia.com", "https://crawler.algolia.com", "https://crawler.algolia.com/api", "https://data.us.algolia.com", "https://insights.algolia.io", "https://insights.us.algolia.io", "https://personalization.us.algolia.com", "https://query-suggestions.us.algolia.com", "https://status.algolia.com" };
+    private static readonly global::System.Collections.Generic.HashSet<string> KnownServers = new(global::System.StringComparer.OrdinalIgnoreCase) { "https://ALGOLIA_APPLICATION_ID.algolia.net", "https://ai-personalization.eu.algolia.com", "https://analytics.us.algolia.com", "https://crawler.algolia.com", "https://crawler.algolia.com/api", "https://data.us.algolia.com", "https://insights.us.algolia.io", "https://personalization.us.algolia.com", "https://query-suggestions.us.algolia.com", "https://status.algolia.com" };
     internal static string Resolve(string template, string? configuredBaseUrl, string server, string path, bool rawUrl)
     {
         int query = template.IndexOf('?');

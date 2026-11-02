@@ -495,18 +495,6 @@
         "description": "Error.",
         "x-keep-model": true
       },
-      "UserToken": {
-        "type": "string",
-        "description": "Unique pseudonymous or anonymous user identifier.\n\nThis helps with analytics and click and conversion events.\nFor more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
-        "example": "test-user-123",
-        "x-categories": [
-          "Personalization"
-        ]
-      },
-      "Score": {
-        "type": "integer",
-        "description": "Event score."
-      },
       "EventType": {
         "title": "eventType",
         "enum": [
@@ -606,24 +594,6 @@
         },
         "additionalProperties": false
       },
-      "CustomGet200Response": {
-        "type": "object"
-      },
-      "CustomPostRequest": {
-        "type": "object"
-      },
-      "CustomPost200Response": {
-        "type": "object"
-      },
-      "CustomPutRequest": {
-        "type": "object"
-      },
-      "CustomPut200Response": {
-        "type": "object"
-      },
-      "CustomDelete200Response": {
-        "type": "object"
-      },
       "GetUserTokenResponse": {
         "title": "getUserTokenResponse",
         "required": [
@@ -688,10 +658,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
       },
       "CustomGet200ResponseSchema": {
         "type": "object"
@@ -860,5 +826,41 @@
         "strategies"
       ]
     }
-  ]
+  ],
+  "x-client-unused-schemas": {
+    "UserToken": {
+      "type": "string",
+      "description": "Unique pseudonymous or anonymous user identifier.\n\nThis helps with analytics and click and conversion events.\nFor more information, see [user token](https://www.algolia.com/doc/guides/sending-events/concepts/usertoken).\n",
+      "example": "test-user-123",
+      "x-categories": [
+        "Personalization"
+      ]
+    },
+    "Score": {
+      "type": "integer",
+      "description": "Event score."
+    },
+    "CustomGet200Response": {
+      "type": "object"
+    },
+    "CustomPostRequest": {
+      "type": "object"
+    },
+    "CustomPost200Response": {
+      "type": "object"
+    },
+    "CustomPutRequest": {
+      "type": "object"
+    },
+    "CustomPut200Response": {
+      "type": "object"
+    },
+    "CustomDelete200Response": {
+      "type": "object"
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    }
+  }
 }

@@ -45,12 +45,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Key-value pairs of column names and their expected types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2? Mapping { get => _explicitNullValueMapping; set { _explicitNullValueMapping = value; AdditionalData?.Remove("mapping"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapping"); else _explicitNullProperties?.Remove("mapping"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2? _explicitNullValueMapping = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMapping? Mapping { get => _explicitNullValueMapping; set { _explicitNullValueMapping = value; AdditionalData?.Remove("mapping"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapping"); else _explicitNullProperties?.Remove("mapping"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMapping? _explicitNullValueMapping = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2 Mapping { get => _explicitNullValueMapping; set { _explicitNullValueMapping = value; AdditionalData?.Remove("mapping"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapping"); else _explicitNullProperties?.Remove("mapping"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2 _explicitNullValueMapping = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMapping Mapping { get => _explicitNullValueMapping; set { _explicitNullValueMapping = value; AdditionalData?.Remove("mapping"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapping"); else _explicitNullProperties?.Remove("mapping"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMapping _explicitNullValueMapping = default!;
 #endif
         /// <summary>HTTP method to be used for retrieving your data.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.MethodType? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; AdditionalData?.Remove("method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
@@ -102,7 +102,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "delimiter", n => { Delimiter = n.GetStringValue(); } },
-                { "mapping", n => { Mapping = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2.CreateFromDiscriminatorValue); } },
+                { "mapping", n => { Mapping = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMapping>(global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMapping.CreateFromDiscriminatorValue); } },
                 { "method", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.MethodType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMethod = default; _explicitNullProperties?.Remove("method"); AdditionalData["method"] = unknown; } else { Method = parsed; AdditionalData.Remove("method"); } } },
                 { "uniqueIDColumn", n => { UniqueIDColumn = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -116,7 +116,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("delimiter", Delimiter);
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMappingProperty2>("mapping", Mapping);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceCsvMapping>("mapping", Mapping);
             writer.WriteEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.MethodType>("method", Method);
             writer.WriteStringValue("uniqueIDColumn", UniqueIDColumn);
             writer.WriteStringValue("url", Url);

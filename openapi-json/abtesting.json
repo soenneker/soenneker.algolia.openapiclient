@@ -18,9 +18,6 @@
           ]
         }
       }
-    },
-    {
-      "url": "https://analytics.algolia.com"
     }
   ],
   "paths": {
@@ -666,36 +663,11 @@
         "description": "Error.",
         "x-keep-model": true
       },
-      "AbTestId": {
-        "type": "integer",
-        "description": "Unique A/B test identifier.",
-        "example": 224
-      },
-      "UpdatedAt": {
-        "type": "string",
-        "description": "Date and time when the A/B test was last updated, in RFC 3339 format.",
-        "example": "2023-06-15T15:06:44.400601Z"
-      },
-      "CreatedAt": {
-        "type": "string",
-        "description": "Date and time when the A/B test was created, in RFC 3339 format.",
-        "example": "2023-06-15T15:06:04.249906Z"
-      },
-      "EndAt": {
-        "type": "string",
-        "description": "End date and time of the A/B test, in RFC 3339 format.",
-        "example": "2023-06-17T00:00:00Z"
-      },
       "StoppedAt": {
         "type": "string",
         "description": "Date and time when the A/B test was stopped, in RFC 3339 format.",
         "nullable": true,
         "example": "2023-06-15T15:06:44.400601Z"
-      },
-      "Name": {
-        "type": "string",
-        "description": "A/B test name.",
-        "example": "Custom ranking sales rank test"
       },
       "Status": {
         "enum": [
@@ -764,34 +736,6 @@
           }
         }
       },
-      "Currencies": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Currency"
-        },
-        "description": "A/B test currencies.",
-        "example": {
-          "USD": {
-            "currency": "USD",
-            "revenue": 120,
-            "mean": 53.7,
-            "standardDeviation": 12.3,
-            "winsorizedAmount": 23
-          },
-          "EUR": {
-            "currency": "EUR",
-            "revenue": 100,
-            "mean": 43.7,
-            "standardDeviation": 10.3,
-            "winsorizedAmount": 10
-          }
-        }
-      },
-      "Description": {
-        "type": "string",
-        "description": "Description for this variant.",
-        "example": "Current production index"
-      },
       "FilterEffects": {
         "type": "object",
         "properties": {
@@ -803,24 +747,6 @@
           }
         },
         "description": "A/B test filter effects resulting from configuration settings."
-      },
-      "Index": {
-        "type": "string",
-        "description": "Index name of the A/B test variant (case-sensitive).",
-        "example": "delcourt_production"
-      },
-      "TrackedSearchCount": {
-        "type": "integer",
-        "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
-        "default": 0,
-        "example": 2
-      },
-      "TrafficPercentage": {
-        "maximum": 100,
-        "minimum": 0,
-        "type": "integer",
-        "description": "Percentage of search requests each variant receives.",
-        "example": 60
       },
       "Variant": {
         "required": [
@@ -952,13 +878,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "Variants": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Variant"
-        },
-        "description": "A/B test variants.\n\nThe first variant is your _control_ index, typically your production index.\nThe second variant is an index with changed settings that you want to test against the control.\n"
       },
       "FeatureFilters": {
         "type": "object",
@@ -1233,12 +1152,6 @@
           }
         ]
       },
-      "TaskId": {
-        "type": "integer",
-        "description": "Unique identifier of a task.\n\nA successful API response means that a task was added to a queue.\nIt might not run immediately.\nYou can check the task\u0027s progress with the [\u0060task\u0060 operation](https://www.algolia.com/doc/rest-api/search/get-task) and this task ID.\n",
-        "format": "int64",
-        "example": 1514562690001
-      },
       "AbTestResponse": {
         "required": [
           "abTestID",
@@ -1329,41 +1242,6 @@
           "trackedSearchesCount": 237
         }
       },
-      "AbTestRevenueSignificance": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "number",
-          "format": "double",
-          "x-additionalPropertiesName": "currency code"
-        },
-        "description": "A/B test significance calculated from revenue data.\n\nValues of 0.95 or higher can be considered significant,\nthat is, the difference between A and B variants is _not_ due to random variations.\n",
-        "nullable": true,
-        "example": {
-          "USD": 1,
-          "EUR": 0.87
-        }
-      },
-      "CustomSearchParamsCustomSearchParameters": {
-        "type": "object"
-      },
-      "CustomGet200Response": {
-        "type": "object"
-      },
-      "CustomPostRequest": {
-        "type": "object"
-      },
-      "CustomPost200Response": {
-        "type": "object"
-      },
-      "CustomPutRequest": {
-        "type": "object"
-      },
-      "CustomPut200Response": {
-        "type": "object"
-      },
-      "CustomDelete200Response": {
-        "type": "object"
-      },
       "AddAbTestsRequest": {
         "title": "addABTestsRequest",
         "required": [
@@ -1417,10 +1295,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
       },
       "CustomGet200ResponseSchema": {
         "type": "object"
@@ -1663,5 +1537,148 @@
         "abtest"
       ]
     }
-  ]
+  ],
+  "x-client-original-servers": [
+    {
+      "url": "https://analytics.{region}.algolia.com",
+      "variables": {
+        "region": {
+          "default": "us",
+          "description": "The region where your Algolia application is hosted.",
+          "enum": [
+            "us",
+            "de"
+          ]
+        }
+      }
+    },
+    {
+      "url": "https://analytics.algolia.com"
+    }
+  ],
+  "x-client-unused-schemas": {
+    "AbTestId": {
+      "type": "integer",
+      "description": "Unique A/B test identifier.",
+      "example": 224
+    },
+    "UpdatedAt": {
+      "type": "string",
+      "description": "Date and time when the A/B test was last updated, in RFC 3339 format.",
+      "example": "2023-06-15T15:06:44.400601Z"
+    },
+    "CreatedAt": {
+      "type": "string",
+      "description": "Date and time when the A/B test was created, in RFC 3339 format.",
+      "example": "2023-06-15T15:06:04.249906Z"
+    },
+    "EndAt": {
+      "type": "string",
+      "description": "End date and time of the A/B test, in RFC 3339 format.",
+      "example": "2023-06-17T00:00:00Z"
+    },
+    "Name": {
+      "type": "string",
+      "description": "A/B test name.",
+      "example": "Custom ranking sales rank test"
+    },
+    "Currencies": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Currency"
+      },
+      "description": "A/B test currencies.",
+      "example": {
+        "USD": {
+          "currency": "USD",
+          "revenue": 120,
+          "mean": 53.7,
+          "standardDeviation": 12.3,
+          "winsorizedAmount": 23
+        },
+        "EUR": {
+          "currency": "EUR",
+          "revenue": 100,
+          "mean": 43.7,
+          "standardDeviation": 10.3,
+          "winsorizedAmount": 10
+        }
+      }
+    },
+    "Description": {
+      "type": "string",
+      "description": "Description for this variant.",
+      "example": "Current production index"
+    },
+    "Index": {
+      "type": "string",
+      "description": "Index name of the A/B test variant (case-sensitive).",
+      "example": "delcourt_production"
+    },
+    "TrackedSearchCount": {
+      "type": "integer",
+      "description": "Number of tracked searches. Tracked searches are search requests where the \u0060clickAnalytics\u0060 parameter is true.",
+      "default": 0,
+      "example": 2
+    },
+    "TrafficPercentage": {
+      "maximum": 100,
+      "minimum": 0,
+      "type": "integer",
+      "description": "Percentage of search requests each variant receives.",
+      "example": 60
+    },
+    "Variants": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Variant"
+      },
+      "description": "A/B test variants.\n\nThe first variant is your _control_ index, typically your production index.\nThe second variant is an index with changed settings that you want to test against the control.\n"
+    },
+    "TaskId": {
+      "type": "integer",
+      "description": "Unique identifier of a task.\n\nA successful API response means that a task was added to a queue.\nIt might not run immediately.\nYou can check the task\u0027s progress with the [\u0060task\u0060 operation](https://www.algolia.com/doc/rest-api/search/get-task) and this task ID.\n",
+      "format": "int64",
+      "example": 1514562690001
+    },
+    "AbTestRevenueSignificance": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "format": "double",
+        "x-additionalPropertiesName": "currency code"
+      },
+      "description": "A/B test significance calculated from revenue data.\n\nValues of 0.95 or higher can be considered significant,\nthat is, the difference between A and B variants is _not_ due to random variations.\n",
+      "nullable": true,
+      "example": {
+        "USD": 1,
+        "EUR": 0.87
+      }
+    },
+    "CustomSearchParamsCustomSearchParameters": {
+      "type": "object"
+    },
+    "CustomGet200Response": {
+      "type": "object"
+    },
+    "CustomPostRequest": {
+      "type": "object"
+    },
+    "CustomPost200Response": {
+      "type": "object"
+    },
+    "CustomPutRequest": {
+      "type": "object"
+    },
+    "CustomPut200Response": {
+      "type": "object"
+    },
+    "CustomDelete200Response": {
+      "type": "object"
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    }
+  }
 }

@@ -29,12 +29,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Configuration of the spec.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty2? Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; AdditionalData?.Remove("configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty2? _explicitNullValueConfiguration = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfiguration? Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; AdditionalData?.Remove("configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfiguration? _explicitNullValueConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty2 Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; AdditionalData?.Remove("configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
-        private global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty2 _explicitNullValueConfiguration = default!;
+        public global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfiguration Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; AdditionalData?.Remove("configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfiguration _explicitNullValueConfiguration = default!;
 #endif
         /// <summary>Name of the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty2.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfiguration>(global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfiguration.CreateFromDiscriminatorValue); } },
                 { "image", n => { Image = n.GetStringValue(); } },
             };
         }
@@ -82,7 +82,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfigurationProperty2>("configuration", Configuration);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SourceDockerConfiguration>("configuration", Configuration);
             writer.WriteStringValue("image", Image);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

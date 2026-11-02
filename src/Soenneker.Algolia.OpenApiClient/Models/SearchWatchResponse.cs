@@ -46,12 +46,12 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>This field is always null when used with the Push endpoint.When used for a source discover or source validate run, it will include the sampled data of the source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItemProperty2>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
-        private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItemProperty2>? _explicitNullValueData = default!;
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItem>? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItem>? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItemProperty2> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
-        private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItemProperty2> _explicitNullValueData = default!;
+        public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItem> Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItem> _explicitNullValueData = default!;
 #endif
         /// <summary>Universally unique identifier (UUID) of an event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,7 +119,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItemProperty2>(global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItemProperty2.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItem>(global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "eventID", n => { EventID = n.GetStringValue(); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchEventType2>(global::Soenneker.Algolia.OpenApiClient.Models.SearchEventType2.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
@@ -134,7 +134,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("createdAt", CreatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItemProperty2>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchWatchResponseDataItem>("data", Data);
             writer.WriteStringValue("eventID", EventID);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchEventType2>("events", Events);
             writer.WriteStringValue("message", Message);

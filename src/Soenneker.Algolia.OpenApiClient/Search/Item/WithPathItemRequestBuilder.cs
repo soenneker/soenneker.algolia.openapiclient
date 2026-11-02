@@ -36,7 +36,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.Item
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomDelete200ResponseSchema2"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomDelete200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase">When receiving a 400 status code</exception>
@@ -45,11 +45,11 @@ namespace Soenneker.Algolia.OpenApiClient.Search.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomDelete200ResponseSchema2?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomDelete200Response?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomDelete200ResponseSchema2> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomDelete200Response> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -62,12 +62,12 @@ namespace Soenneker.Algolia.OpenApiClient.Search.Item
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomDelete200ResponseSchema2>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomDelete200ResponseSchema2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomDelete200Response>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomDelete200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomGet200ResponseSchema2"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomGet200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase">When receiving a 400 status code</exception>
@@ -76,11 +76,11 @@ namespace Soenneker.Algolia.OpenApiClient.Search.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomGet200ResponseSchema2?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomGet200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomGet200ResponseSchema2> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomGet200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -93,12 +93,12 @@ namespace Soenneker.Algolia.OpenApiClient.Search.Item
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomGet200ResponseSchema2>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomGet200ResponseSchema2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomGet200Response>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomGet200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPost200ResponseSchema2"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPost200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,11 +108,11 @@ namespace Soenneker.Algolia.OpenApiClient.Search.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPost200ResponseSchema2?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPostRequestRequestBody2 body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPost200Response?> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPostRequest body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPost200ResponseSchema2> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPostRequestRequestBody2 body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPost200Response> PostAsync(global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPostRequest body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -126,12 +126,12 @@ namespace Soenneker.Algolia.OpenApiClient.Search.Item
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPost200ResponseSchema2>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPost200ResponseSchema2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPost200Response>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPost200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPut200ResponseSchema2"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPut200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -141,11 +141,11 @@ namespace Soenneker.Algolia.OpenApiClient.Search.Item
         /// <exception cref="global::Soenneker.Algolia.OpenApiClient.Models.SearchErrorBase">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPut200ResponseSchema2?> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPutRequestRequestBody2 body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPut200Response?> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPutRequest body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPut200ResponseSchema2> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPutRequestRequestBody2 body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPut200Response> PutAsync(global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPutRequest body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -159,7 +159,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.Item
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPut200ResponseSchema2>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPut200ResponseSchema2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPut200Response>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPut200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This method lets you send requests to the Algolia REST API.
@@ -207,11 +207,11 @@ namespace Soenneker.Algolia.OpenApiClient.Search.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPostRequestRequestBody2 body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPostRequest body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPostRequestRequestBody2 body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPostRequest body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -229,11 +229,11 @@ namespace Soenneker.Algolia.OpenApiClient.Search.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPutRequestRequestBody2 body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPutRequest body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPutRequestRequestBody2 body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Algolia.OpenApiClient.Models.SearchCustomPutRequest body, Action<RequestConfiguration<global::Soenneker.Algolia.OpenApiClient.Search.Item.WithPathItemRequestBuilder.WithPathItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
