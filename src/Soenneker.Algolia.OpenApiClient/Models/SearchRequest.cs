@@ -19,6 +19,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("externalProvider") is null) { _explicitNullValueExternalProvider = default!; _explicitNullProperties?.Remove("externalProvider"); }
             else if (parseNode.GetChildNode("externalProvider") is { } nullNodeExternalProvider && nullNodeExternalProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalProvider = null;
+            if (parseNode.GetChildNode("feeds") is null) { _explicitNullValueFeeds = default!; _explicitNullProperties?.Remove("feeds"); }
+            else if (parseNode.GetChildNode("feeds") is { } nullNodeFeeds && nullNodeFeeds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Feeds = null;
             if (parseNode.GetChildNode("feedsOrder") is null) { _explicitNullValueFeedsOrder = default!; _explicitNullProperties?.Remove("feedsOrder"); }
             else if (parseNode.GetChildNode("feedsOrder") is { } nullNodeFeedsOrder && nullNodeFeedsOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeedsOrder = null;
             if (parseNode.GetChildNode("params") is null) { _explicitNullValueParams = default!; _explicitNullProperties?.Remove("params"); }
@@ -36,6 +38,16 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public global::Soenneker.Algolia.OpenApiClient.Models.ExternalProvider ExternalProvider { get => _explicitNullValueExternalProvider; set { _explicitNullValueExternalProvider = value; AdditionalData?.Remove("externalProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalProvider"); else _explicitNullProperties?.Remove("externalProvider"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ExternalProvider _explicitNullValueExternalProvider = default!;
+#endif
+        /// <summary>Per-feed parameters for `multifeed` compositions. Each key is a feed ID.Feed `params` take precedence over the root `params`.A feed inherits every root key it doesn&apos;t set.A feed value replaces the root value instead of combining with it.This applies to every key, including `filters`, `facetFilters`, `optionalFilters`, and `analyticsTags`.For example, `filters` must repeat the common values.An empty value such as `filters: &quot;&quot;` discards the root value.The API validates feed `params` like the root `params`.An unsupported parameter returns a 400 error.A feed ID may not exist in the composition (for example, because a rule removed it).The response reports it in the `errors` field but request still succeeds.Rules match once per request, against the root `params` only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchRequestFeedsProperty? Feeds { get => _explicitNullValueFeeds; set { _explicitNullValueFeeds = value; AdditionalData?.Remove("feeds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feeds"); else _explicitNullProperties?.Remove("feeds"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchRequestFeedsProperty? _explicitNullValueFeeds = default!;
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.SearchRequestFeedsProperty Feeds { get => _explicitNullValueFeeds; set { _explicitNullValueFeeds = value; AdditionalData?.Remove("feeds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feeds"); else _explicitNullProperties?.Remove("feeds"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.SearchRequestFeedsProperty _explicitNullValueFeeds = default!;
 #endif
         /// <summary>A list of Feed IDs that specifies the order in which to order the results in the response. The IDs should be a subset of those in the `feeds` object of the targeted `multifeed` Composition / Composition Rule, and only those specified will be processed. The value overrides the value in the defined behavior, and when unspecified, the value defined in the behavior is used. When neither value is present, all feeds are processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,6 +95,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "externalProvider", n => { ExternalProvider = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ExternalProvider>(global::Soenneker.Algolia.OpenApiClient.Models.ExternalProvider.CreateFromDiscriminatorValue); } },
+                { "feeds", n => { Feeds = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchRequestFeedsProperty>(global::Soenneker.Algolia.OpenApiClient.Models.SearchRequestFeedsProperty.CreateFromDiscriminatorValue); } },
                 { "feedsOrder", n => { FeedsOrder = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "params", n => { Params = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ParamsType>(global::Soenneker.Algolia.OpenApiClient.Models.ParamsType.CreateFromDiscriminatorValue); } },
             };
@@ -95,6 +108,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ExternalProvider>("externalProvider", ExternalProvider);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchRequestFeedsProperty>("feeds", Feeds);
             writer.WriteCollectionOfPrimitiveValues<string>("feedsOrder", FeedsOrder);
             writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ParamsType>("params", Params);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

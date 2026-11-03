@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
     /// <summary>
-    /// A mapping of sorting labels to the indices (or replicas) that implement those sorting rules. The sorting indices MUST be related to the associated main targeted index in the composition.Each key is the label your frontend sends at runtime (for example, &quot;Price (asc)&quot;), and each value is the name of the index that should be queried when that label is selected.When a request includes a &quot;sortBy&quot; parameter, the platform looks up the corresponding index in this mapping and uses it to execute the query. The main targeted index is replacedwith the sorting strategy index it is mapped to.Up to 20 sorting strategies can be defined.
+    /// A mapping of sorting labels to the indices (or replicas) that implement those sorting rules. When the composition is run, the API ignores a sorting index that is unrelated to the targeted indices. The response reports it in the `errors` field.Each key is the label your frontend sends at runtime (for example, &quot;Price (asc)&quot;), and each value is the name of the index that should be queried when that label is selected.When a request includes a &quot;sortBy&quot; parameter, the platform looks up the corresponding index in this mapping and uses it to execute the query. The main targeted index is replacedwith the sorting strategy index it is mapped to.Up to 20 sorting strategies can be defined.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CompositionSortingStrategyProperty : IAdditionalDataHolder, IParsable
