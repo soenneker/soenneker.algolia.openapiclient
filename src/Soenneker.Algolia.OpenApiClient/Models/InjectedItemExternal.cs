@@ -37,7 +37,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string Index { get => _explicitNullValueIndex; set { _explicitNullValueIndex = value; AdditionalData?.Remove("index"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index"); else _explicitNullProperties?.Remove("index"); } }
         private string _explicitNullValueIndex = default!;
 #endif
-        /// <summary>Ordering to apply on the injected items coming from the external source. &apos;default&apos; means the items will be ordered as they are in the index (natural relevance) in the smart group. &apos;userDefined&apos; means the order in which the objectIDs are provided in the run request payload will be preserved in the smart group.</summary>
+        /// <summary>Ordering to apply on the injected items coming from the external source. &apos;algoliaDefined&apos; means the items will be ordered as they are in the index (natural relevance) in the smart group. &apos;userDefined&apos; means the order in which the objectIDs are provided in the run request payload will be preserved in the smart group.</summary>
         public global::Soenneker.Algolia.OpenApiClient.Models.ExternalOrdering? Ordering { get => _explicitNullValueOrdering; set { _explicitNullValueOrdering = value; AdditionalData?.Remove("ordering"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ordering"); else _explicitNullProperties?.Remove("ordering"); } }
         private global::Soenneker.Algolia.OpenApiClient.Models.ExternalOrdering? _explicitNullValueOrdering = default!;
         /// <summary>The params property</summary>

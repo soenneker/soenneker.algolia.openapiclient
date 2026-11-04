@@ -30928,15 +30928,20 @@
       },
       "ExternalOrdering": {
         "enum": [
+          "algoliaDefined",
           "default",
           "userDefined"
         ],
         "type": "string",
-        "description": "Ordering to apply on the injected items coming from the external source. \u0027default\u0027 means the items will be ordered as they are in the index (natural relevance) in the smart group. \u0027userDefined\u0027 means the order in which the objectIDs are provided in the run request payload will be preserved in the smart group.",
+        "description": "Ordering to apply on the injected items coming from the external source. \u0027algoliaDefined\u0027 means the items will be ordered as they are in the index (natural relevance) in the smart group. \u0027userDefined\u0027 means the order in which the objectIDs are provided in the run request payload will be preserved in the smart group.",
         "x-ms-enum": {
           "name": "ExternalOrdering",
           "modelAsString": false,
           "values": [
+            {
+              "value": "algoliaDefined",
+              "name": "AlgoliaDefined"
+            },
             {
               "value": "default",
               "name": "DefaultValue"
