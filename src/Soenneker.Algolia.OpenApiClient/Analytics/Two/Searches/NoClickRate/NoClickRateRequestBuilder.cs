@@ -34,7 +34,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Searches.NoClickRate
         {
         }
         /// <summary>
-        /// Retrieves the fraction of searches that didn&apos;t lead to any click within a time range, including a daily breakdown.It also returns the number of tracked searches and tracked searches without clicks.By default, the analyzed period includes the last eight days including the current day.
+        /// Retrieves the fraction of searches whose query didn&apos;t lead to any click within a time range, including a daily breakdown.Only tracked searches with at least one result are counted.A search counts as a search without clicks only when no search for the same query got a click in the time range,so the rate for a whole time range is usually lower than its daily rates.It also returns the number of these searches and of searches without clicks.By default, the analyzed period includes the last eight days including the current day.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Algolia.OpenApiClient.Models.GetNoClickRateResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Searches.NoClickRate
             return await RequestAdapter.SendAsync<global::Soenneker.Algolia.OpenApiClient.Models.GetNoClickRateResponse>(requestInfo, global::Soenneker.Algolia.OpenApiClient.Models.GetNoClickRateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the fraction of searches that didn&apos;t lead to any click within a time range, including a daily breakdown.It also returns the number of tracked searches and tracked searches without clicks.By default, the analyzed period includes the last eight days including the current day.
+        /// Retrieves the fraction of searches whose query didn&apos;t lead to any click within a time range, including a daily breakdown.Only tracked searches with at least one result are counted.A search counts as a search without clicks only when no search for the same query got a click in the time range,so the rate for a whole time range is usually lower than its daily rates.It also returns the number of these searches and of searches without clicks.By default, the analyzed period includes the last eight days including the current day.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace Soenneker.Algolia.OpenApiClient.Analytics.Two.Searches.NoClickRate
             return new global::Soenneker.Algolia.OpenApiClient.Analytics.Two.Searches.NoClickRate.NoClickRateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves the fraction of searches that didn&apos;t lead to any click within a time range, including a daily breakdown.It also returns the number of tracked searches and tracked searches without clicks.By default, the analyzed period includes the last eight days including the current day.
+        /// Retrieves the fraction of searches whose query didn&apos;t lead to any click within a time range, including a daily breakdown.Only tracked searches with at least one result are counted.A search counts as a search without clicks only when no search for the same query got a click in the time range,so the rate for a whole time range is usually lower than its daily rates.It also returns the number of these searches and of searches without clicks.By default, the analyzed period includes the last eight days including the current day.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NoClickRateRequestBuilderGetQueryParameters 

@@ -42,10 +42,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public List<global::Soenneker.Algolia.OpenApiClient.Models.GetNoClickRateResponseDatesItem> Dates { get => _explicitNullValueDates; set { _explicitNullValueDates = value; AdditionalData?.Remove("dates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dates"); else _explicitNullProperties?.Remove("dates"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.GetNoClickRateResponseDatesItem> _explicitNullValueDates = default!;
 #endif
-        /// <summary>Number of times this search was returned as a result without any click.</summary>
+        /// <summary>Number of tracked searches with results whose query didn&apos;t get any click in the time range.</summary>
         public int? NoClickCount { get => _explicitNullValueNoClickCount; set { _explicitNullValueNoClickCount = value; AdditionalData?.Remove("noClickCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("noClickCount"); else _explicitNullProperties?.Remove("noClickCount"); } }
         private int? _explicitNullValueNoClickCount = default!;
-        /// <summary>No click rate: calculated as the number of tracked searches without clicks divided by the number of tracked searches.</summary>
+        /// <summary>No click rate: calculated as the number of tracked searches with results whose query didn&apos;t get any click in the time range, divided by the number of tracked searches with results.</summary>
         public double? Rate { get => _explicitNullValueRate; set { _explicitNullValueRate = value; AdditionalData?.Remove("rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate"); else _explicitNullProperties?.Remove("rate"); } }
         private double? _explicitNullValueRate = default!;
         /// <summary>
