@@ -22348,6 +22348,12 @@
             "description": "Mean value for this metric.",
             "format": "double",
             "example": 53.7
+          },
+          "userCount": {
+            "type": "integer",
+            "description": "Only present for \u0060winsorized_revenue_per_user\u0060.\nNumber of tracked users in this variant with a tracked purchase in the metric\u0027s currency (\u0060dimension\u0060), plus tracked users with no tracked purchase in any currency.\nUsers who purchased only in other currencies are excluded.\nIt\u0027s the sample size behind the mean, p-value, and intervals, and differs from the overall \u0060user_count\u0060 metric.\nOmitted when the variant has no record for that currency.\n",
+            "format": "int64",
+            "example": 4100
           }
         },
         "description": "Metric specific metadata.",
@@ -22471,7 +22477,7 @@
           },
           "dimension": {
             "type": "string",
-            "description": "Dimension defined during test creation. For revenue metrics, including \u0060revenue_per_search\u0060, this is the currency."
+            "description": "Dimension defined during test creation. For revenue metrics, including \u0060revenue_per_search\u0060 and \u0060winsorized_revenue_per_user\u0060, this is the currency."
           },
           "metadata": {
             "$ref": "#/components/schemas/MetricMetadata"
@@ -22700,10 +22706,11 @@
           "add_to_cart_users_rate",
           "clicked_users_rate",
           "converted_users_rate",
-          "purchase_users_rate"
+          "purchase_users_rate",
+          "users_with_no_results_rate"
         ],
         "type": "string",
-        "description": "Primary metric for Bayesian analysis. Required when \u0060method\u0060 is \u0060bayesian\u0060.\nWhen \u0060method\u0060 is omitted and the test defaults to \u0060bayesian\u0060, the default primary metric is \u0060conversion_rate\u0060,\nor the first metric in \u0060metrics\u0060 that supports Bayesian analysis if \u0060metrics\u0060 doesn\u0027t include conversion rate.\nIf the request includes a non-empty \u0060metrics\u0060 list, this metric must be in that list.\nUser-level rates (\u0060*_users_rate\u0060) are the share of tracked users with at least one such search.\nAdd-to-cart rates, purchase rates, and revenue per search require access to revenue analytics.\n",
+        "description": "Primary metric for Bayesian analysis. Required when \u0060method\u0060 is \u0060bayesian\u0060.\nWhen \u0060method\u0060 is omitted and the test defaults to \u0060bayesian\u0060, the default primary metric is \u0060conversion_rate\u0060,\nor the first metric in \u0060metrics\u0060 that supports Bayesian analysis if \u0060metrics\u0060 doesn\u0027t include conversion rate.\nIf the request includes a non-empty \u0060metrics\u0060 list, this metric must be in that list.\nUser-level rates (\u0060*_users_rate\u0060) are the share of tracked users with at least one such search.\nFor \u0060users_with_no_results_rate\u0060, this is the share of tracked users with at least one search returning no results. Lower values are better.\nAdd-to-cart rates, purchase rates, and revenue per search require access to revenue analytics.\n",
         "example": "conversion_rate",
         "x-ms-enum": {
           "name": "PrimaryMetric",
@@ -22744,6 +22751,10 @@
             {
               "value": "purchase_users_rate",
               "name": "PurchaseUsersRate"
+            },
+            {
+              "value": "users_with_no_results_rate",
+              "name": "UsersWithNoResultsRate"
             }
           ]
         }
@@ -23040,6 +23051,7 @@
           "converted_users_rate",
           "add_to_cart_users_rate",
           "purchase_users_rate",
+          "users_with_no_results_rate",
           "avg_click_through_rate_per_user",
           "avg_conversion_rate_per_user",
           "avg_purchase_rate_per_user",
@@ -23160,6 +23172,10 @@
             {
               "value": "purchase_users_rate",
               "name": "PurchaseUsersRate"
+            },
+            {
+              "value": "users_with_no_results_rate",
+              "name": "UsersWithNoResultsRate"
             },
             {
               "value": "avg_click_through_rate_per_user",

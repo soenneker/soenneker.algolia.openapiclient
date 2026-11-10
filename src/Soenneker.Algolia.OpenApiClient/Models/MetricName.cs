@@ -116,6 +116,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         #pragma warning disable CS1591
         PurchaseUsersRate,
         #pragma warning restore CS1591
+        [EnumMember(Value = "users_with_no_results_rate")]
+        #pragma warning disable CS1591
+        UsersWithNoResultsRate,
+        #pragma warning restore CS1591
         [EnumMember(Value = "avg_click_through_rate_per_user")]
         #pragma warning disable CS1591
         AvgClickThroughRatePerUser,

@@ -20,6 +20,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("mean") is null) { _explicitNullValueMean = default!; _explicitNullProperties?.Remove("mean"); }
             else if (parseNode.GetChildNode("mean") is { } nullNodeMean && nullNodeMean.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mean = null;
+            if (parseNode.GetChildNode("userCount") is null) { _explicitNullValueUserCount = default!; _explicitNullProperties?.Remove("userCount"); }
+            else if (parseNode.GetChildNode("userCount") is { } nullNodeUserCount && nullNodeUserCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserCount = null;
             if (parseNode.GetChildNode("winsorizedValue") is null) { _explicitNullValueWinsorizedValue = default!; _explicitNullProperties?.Remove("winsorizedValue"); }
             else if (parseNode.GetChildNode("winsorizedValue") is { } nullNodeWinsorizedValue && nullNodeWinsorizedValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WinsorizedValue = null;
         }
@@ -29,6 +31,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>Mean value for this metric.</summary>
         public double? Mean { get => _explicitNullValueMean; set { _explicitNullValueMean = value; AdditionalData?.Remove("mean"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mean"); else _explicitNullProperties?.Remove("mean"); } }
         private double? _explicitNullValueMean = default!;
+        /// <summary>Only present for `winsorized_revenue_per_user`.Number of tracked users in this variant with a tracked purchase in the metric&apos;s currency (`dimension`), plus tracked users with no tracked purchase in any currency.Users who purchased only in other currencies are excluded.It&apos;s the sample size behind the mean, p-value, and intervals, and differs from the overall `user_count` metric.Omitted when the variant has no record for that currency.</summary>
+        public long? UserCount { get => _explicitNullValueUserCount; set { _explicitNullValueUserCount = value; AdditionalData?.Remove("userCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userCount"); else _explicitNullProperties?.Remove("userCount"); } }
+        private long? _explicitNullValueUserCount = default!;
         /// <summary>Only present for `revenue` metrics.It is the amount exceeding the 95th percentile of global revenue transactions involved in the AB Test. This amount is not considered when calculating statistical significance.It is tied to a per revenue-currency pair contrary to otherglobal filter effects (such as outliers and empty search count).</summary>
         public double? WinsorizedValue { get => _explicitNullValueWinsorizedValue; set { _explicitNullValueWinsorizedValue = value; AdditionalData?.Remove("winsorizedValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winsorizedValue"); else _explicitNullProperties?.Remove("winsorizedValue"); } }
         private double? _explicitNullValueWinsorizedValue = default!;
@@ -58,6 +63,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "mean", n => { Mean = n.GetDoubleValue(); } },
+                { "userCount", n => { UserCount = n.GetLongValue(); } },
                 { "winsorizedValue", n => { WinsorizedValue = n.GetDoubleValue(); } },
             };
         }
@@ -69,6 +75,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("mean", Mean);
+            writer.WriteLongValue("userCount", UserCount);
             writer.WriteDoubleValue("winsorizedValue", WinsorizedValue);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

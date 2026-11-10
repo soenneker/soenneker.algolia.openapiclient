@@ -56,7 +56,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <summary>The value that was computed during error correction. It is used to determine significance of the metric pValue.The critical value is calculated using Bonferroni or Benjamini-Hochberg corrections, based on the givenconfiguration during the A/B test creation.</summary>
         public double? CriticalValue { get => _explicitNullValueCriticalValue; set { _explicitNullValueCriticalValue = value; AdditionalData?.Remove("criticalValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("criticalValue"); else _explicitNullProperties?.Remove("criticalValue"); } }
         private double? _explicitNullValueCriticalValue = default!;
-        /// <summary>Dimension defined during test creation. For revenue metrics, including `revenue_per_search`, this is the currency.</summary>
+        /// <summary>Dimension defined during test creation. For revenue metrics, including `revenue_per_search` and `winsorized_revenue_per_user`, this is the currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Dimension { get => _explicitNullValueDimension; set { _explicitNullValueDimension = value; AdditionalData?.Remove("dimension"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimension"); else _explicitNullProperties?.Remove("dimension"); } }

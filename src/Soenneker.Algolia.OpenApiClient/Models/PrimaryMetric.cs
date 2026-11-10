@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Algolia.OpenApiClient.Models
 {
-    /// <summary>Primary metric for Bayesian analysis. Required when `method` is `bayesian`.When `method` is omitted and the test defaults to `bayesian`, the default primary metric is `conversion_rate`,or the first metric in `metrics` that supports Bayesian analysis if `metrics` doesn&apos;t include conversion rate.If the request includes a non-empty `metrics` list, this metric must be in that list.User-level rates (`*_users_rate`) are the share of tracked users with at least one such search.Add-to-cart rates, purchase rates, and revenue per search require access to revenue analytics.</summary>
+    /// <summary>Primary metric for Bayesian analysis. Required when `method` is `bayesian`.When `method` is omitted and the test defaults to `bayesian`, the default primary metric is `conversion_rate`,or the first metric in `metrics` that supports Bayesian analysis if `metrics` doesn&apos;t include conversion rate.If the request includes a non-empty `metrics` list, this metric must be in that list.User-level rates (`*_users_rate`) are the share of tracked users with at least one such search.For `users_with_no_results_rate`, this is the share of tracked users with at least one search returning no results. Lower values are better.Add-to-cart rates, purchase rates, and revenue per search require access to revenue analytics.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PrimaryMetric
     {
@@ -42,6 +42,10 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         [EnumMember(Value = "purchase_users_rate")]
         #pragma warning disable CS1591
         PurchaseUsersRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "users_with_no_results_rate")]
+        #pragma warning disable CS1591
+        UsersWithNoResultsRate,
         #pragma warning restore CS1591
     }
 }
