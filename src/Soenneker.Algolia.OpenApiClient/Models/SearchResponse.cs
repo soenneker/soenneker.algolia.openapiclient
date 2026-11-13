@@ -22,7 +22,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             else if (parseNode.GetChildNode("compositions") is { } nullNodeCompositions && nullNodeCompositions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compositions = null;
         }
 
-        /// <summary>The compositions property</summary>
+        /// <summary>Information about the compositions processed by the run request. Only present when `getRankingInfo` is `true`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Algolia.OpenApiClient.Models.CompositionsSearchResponse? Compositions { get => _explicitNullValueCompositions; set { _explicitNullValueCompositions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compositions"); else _explicitNullProperties?.Remove("compositions"); } }

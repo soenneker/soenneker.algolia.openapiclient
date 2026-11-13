@@ -28977,7 +28977,8 @@
               "$ref": "#/components/schemas/CompositionRunSearchResponse"
             }
           }
-        }
+        },
+        "description": "Information about the compositions processed by the run request. Only present when `getRankingInfo` is `true`."
       },
       "RedirectRuleIndexMetadata": {
         "required": [
