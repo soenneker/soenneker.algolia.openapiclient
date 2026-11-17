@@ -16241,7 +16241,7 @@
           "recommend"
         ],
         "summary": "Create or update a batch of Recommend Rules",
-        "description": "Create or update a batch of Recommend Rules.\n\nEach Recommend Rule is created or updated, depending on whether a Recommend Rule with the same \u0060objectID\u0060 already exists.\nYou may also specify \u0060true\u0060 for \u0060clearExistingRules\u0060, in which case the batch will atomically replace all the existing Recommend Rules.\n\nRecommend Rules are similar to Search Rules, except that the conditions and consequences apply to a [source item](/doc/guides/algolia-recommend/overview/#recommend-models) instead of a query. The main differences are the following:\n- Conditions \u0060pattern\u0060 and \u0060anchoring\u0060 are unavailable.\n- Condition \u0060filters\u0060 triggers if the source item matches the specified filters.\n- Condition \u0060filters\u0060 accepts numeric filters.\n- Consequence \u0060params\u0060 only covers filtering parameters.\n- Consequence \u0060automaticFacetFilters\u0060 doesn\u0027t require a facet value placeholder (it tries to match the data source item\u0027s attributes instead).\n",
+        "description": "Create or update a batch of Recommend Rules.\n\nEach Recommend Rule is created or updated, depending on whether a Recommend Rule with the same \u0060objectID\u0060 already exists.\nYou may also specify \u0060true\u0060 for \u0060clearExistingRules\u0060, in which case the batch will atomically replace all the existing Recommend Rules.\n\nRecommend Rules are similar to Search Rules, except that the conditions and consequences apply to a [source item](/doc/guides/algolia-recommend/overview/#recommend-models) instead of a query. The main differences are the following:\n- Conditions \u0060pattern\u0060 and \u0060anchoring\u0060 are unavailable.\n- Condition \u0060filters\u0060 triggers if the source item matches the specified filters.\n- Condition \u0060filters\u0060 accepts numeric filters.\n- Consequence \u0060params\u0060 only covers filtering parameters.\n- Consequence \u0060automaticFacetFilters\u0060 doesn\u0027t require a facet value placeholder (it tries to match the data source item\u0027s attributes instead).\n\nTrending Items requests have no source item, so rules for the \u0060trending-items\u0060 model differ:\n- Condition \u0060filters\u0060 and consequence \u0060automaticFacetFilters\u0060 are unavailable.\n- Condition \u0060requestScope\u0060 applies the rule to requests without a facet, or to requests for a specific facet.\n",
         "operationId": "RecommendBatchRecommendRules",
         "parameters": [
           {
@@ -22643,6 +22643,27 @@
         },
         "description": "Configuration for the smallest difference between test variants you want to detect, used to estimate the required sample size."
       },
+      "MetricsFilterParameters": {
+        "type": "object",
+        "properties": {
+          "filterAttribute": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Facet attribute of the category, for example \u0060categories.lvl0\u0060. Hierarchical facets have one attribute for each level.",
+            "example": "categories.lvl0"
+          },
+          "filterValue": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Facet value of the category, exactly as the search sends it.",
+            "example": "Shoes"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Values for a filter that needs them.\nThe \u0060core.hasExactCategoryFilter\u0060 filter requires both properties and matches the searches that had the exact filter \u0060\u003CfilterAttribute\u003E:\u003CfilterValue\u003E\u0060.\nOptional filters and filters in an OR group don\u0027t match.\nWith \u0060includes\u0060 false or omitted, the test counts every search except those searches.\nA test can have at most one \u0060core.hasExactCategoryFilter\u0060 filter.\nOther filters don\u0027t accept parameters.\n"
+      },
       "MetricsFilter": {
         "required": [
           "domain",
@@ -22652,7 +22673,7 @@
         "properties": {
           "domain": {
             "type": "string",
-            "description": "Metric domain (for example \u0060abtesting\u0060, \u0060personalization\u0060).",
+            "description": "Metric domain (for example \u0060abtesting\u0060, \u0060core\u0060, \u0060personalization\u0060).",
             "example": "abtesting"
           },
           "name": {
@@ -22662,11 +22683,14 @@
           },
           "trackEffects": {
             "type": "boolean",
-            "description": "Whether the experiment should record the effects of this filter."
+            "description": "Whether the experiment should record the effects of this filter. Not supported by \u0060core.hasExactCategoryFilter\u0060."
           },
           "includes": {
             "type": "boolean",
-            "description": "If true, keep items that match the filter; if false, exclude them."
+            "description": "If true, keep items that match the filter; if false, exclude them. Defaults to false."
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/MetricsFilterParameters"
           }
         },
         "additionalProperties": {
@@ -46023,8 +46047,8 @@
         "enum": [
           "related-products",
           "bought-together",
-          "trending-facets",
-          "trending-items"
+          "trending-items",
+          "looking-similar"
         ],
         "type": "string",
         "x-ms-enum": {
@@ -46040,15 +46064,78 @@
               "name": "BoughtTogether"
             },
             {
-              "value": "trending-facets",
-              "name": "TrendingFacets"
-            },
-            {
               "value": "trending-items",
               "name": "TrendingItems"
+            },
+            {
+              "value": "looking-similar",
+              "name": "LookingSimilar"
             }
           ]
         }
+      },
+      "GlobalRequestScope": {
+        "title": "Global request scope",
+        "required": [
+          "global"
+        ],
+        "type": "object",
+        "properties": {
+          "global": {
+            "type": "boolean",
+            "description": "Whether the rule applies to requests without a facet. Must be \u0060true\u0060."
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Apply the rule only to Trending Items requests without \u0060facetName\u0060 and \u0060facetValue\u0060.",
+        "x-discriminator-fields": [
+          "global"
+        ]
+      },
+      "FacetRequestScope": {
+        "title": "Facet request scope",
+        "required": [
+          "facetName",
+          "facetValue"
+        ],
+        "type": "object",
+        "properties": {
+          "facetName": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "type": "string",
+            "description": "Facet attribute of the Trending Items request.",
+            "example": "brand"
+          },
+          "facetValue": {
+            "maxLength": 1000,
+            "minLength": 1,
+            "type": "string",
+            "description": "Facet value of the Trending Items request.",
+            "example": "acme"
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        },
+        "description": "Apply the rule only to Trending Items requests with the same \u0060facetName\u0060 and \u0060facetValue\u0060.",
+        "x-discriminator-fields": [
+          "facetName",
+          "facetValue"
+        ]
+      },
+      "RequestScope": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/GlobalRequestScope"
+          },
+          {
+            "$ref": "#/components/schemas/FacetRequestScope"
+          }
+        ],
+        "description": "Facet that a Trending Items request must target for the rule to apply.\n\nOnly available for the \u0060trending-items\u0060 model.\nRules without \u0060requestScope\u0060 apply to all Trending Items requests.\n"
       },
       "RecommendCondition": {
         "type": "object",
@@ -46066,6 +46153,9 @@
             "type": "string",
             "description": "An additional restriction that only triggers the rule, when the search has the same value as \u0060ruleContexts\u0060 parameter.\nFor example, if \u0060context: mobile\u0060, the rule is only triggered when the search request has a matching \u0060ruleContexts: mobile\u0060.\nA rule context must only contain alphanumeric characters.\n",
             "example": "mobile"
+          },
+          "requestScope": {
+            "$ref": "#/components/schemas/RequestScope"
           }
         },
         "description": "Condition that triggers the rule.\nIf not specified, the rule is triggered for all recommendations.\n"

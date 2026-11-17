@@ -1390,6 +1390,25 @@
         },
         "description": "Configuration for the smallest difference between test variants you want to detect, used to estimate the required sample size."
       },
+      "MetricsFilterParameters": {
+        "type": "object",
+        "properties": {
+          "filterAttribute": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Facet attribute of the category, for example \u0060categories.lvl0\u0060. Hierarchical facets have one attribute for each level.",
+            "example": "categories.lvl0"
+          },
+          "filterValue": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Facet value of the category, exactly as the search sends it.",
+            "example": "Shoes"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Values for a filter that needs them.\nThe \u0060core.hasExactCategoryFilter\u0060 filter requires both properties and matches the searches that had the exact filter \u0060\u003CfilterAttribute\u003E:\u003CfilterValue\u003E\u0060.\nOptional filters and filters in an OR group don\u0027t match.\nWith \u0060includes\u0060 false or omitted, the test counts every search except those searches.\nA test can have at most one \u0060core.hasExactCategoryFilter\u0060 filter.\nOther filters don\u0027t accept parameters.\n"
+      },
       "MetricsFilter": {
         "required": [
           "domain",
@@ -1399,7 +1418,7 @@
         "properties": {
           "domain": {
             "type": "string",
-            "description": "Metric domain (for example \u0060abtesting\u0060, \u0060personalization\u0060).",
+            "description": "Metric domain (for example \u0060abtesting\u0060, \u0060core\u0060, \u0060personalization\u0060).",
             "example": "abtesting"
           },
           "name": {
@@ -1409,11 +1428,14 @@
           },
           "trackEffects": {
             "type": "boolean",
-            "description": "Whether the experiment should record the effects of this filter."
+            "description": "Whether the experiment should record the effects of this filter. Not supported by \u0060core.hasExactCategoryFilter\u0060."
           },
           "includes": {
             "type": "boolean",
-            "description": "If true, keep items that match the filter; if false, exclude them."
+            "description": "If true, keep items that match the filter; if false, exclude them. Defaults to false."
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/MetricsFilterParameters"
           }
         },
         "additionalProperties": false,

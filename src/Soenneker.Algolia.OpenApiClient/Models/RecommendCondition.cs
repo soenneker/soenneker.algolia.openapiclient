@@ -22,6 +22,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             else if (parseNode.GetChildNode("context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
             if (parseNode.GetChildNode("filters") is null) { _explicitNullValueFilters = default!; _explicitNullProperties?.Remove("filters"); }
             else if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("requestScope") is null) { _explicitNullValueRequestScope = default!; _explicitNullProperties?.Remove("requestScope"); }
+            else if (parseNode.GetChildNode("requestScope") is { } nullNodeRequestScope && nullNodeRequestScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestScope = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -45,6 +47,16 @@ namespace Soenneker.Algolia.OpenApiClient.Models
 #else
         public string Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
         private string _explicitNullValueFilters = default!;
+#endif
+        /// <summary>Facet that a Trending Items request must target for the rule to apply.Only available for the `trending-items` model.Rules without `requestScope` apply to all Trending Items requests.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.RequestScope? RequestScope { get => _explicitNullValueRequestScope; set { _explicitNullValueRequestScope = value; AdditionalData?.Remove("requestScope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestScope"); else _explicitNullProperties?.Remove("requestScope"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.RequestScope? _explicitNullValueRequestScope = default!;
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.RequestScope RequestScope { get => _explicitNullValueRequestScope; set { _explicitNullValueRequestScope = value; AdditionalData?.Remove("requestScope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requestScope"); else _explicitNullProperties?.Remove("requestScope"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.RequestScope _explicitNullValueRequestScope = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Algolia.OpenApiClient.Models.RecommendCondition"/> and sets the default values.
@@ -73,6 +85,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             {
                 { "context", n => { Context = n.GetStringValue(); } },
                 { "filters", n => { Filters = n.GetStringValue(); } },
+                { "requestScope", n => { RequestScope = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RequestScope>(global::Soenneker.Algolia.OpenApiClient.Models.RequestScope.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -84,6 +97,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("context", Context);
             writer.WriteStringValue("filters", Filters);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.RequestScope>("requestScope", RequestScope);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

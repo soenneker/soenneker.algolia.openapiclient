@@ -24,13 +24,15 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             else if (parseNode.GetChildNode("includes") is { } nullNodeIncludes && nullNodeIncludes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Includes = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("parameters") is null) { _explicitNullValueParameters = default!; _explicitNullProperties?.Remove("parameters"); }
+            else if (parseNode.GetChildNode("parameters") is { } nullNodeParameters && nullNodeParameters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parameters = null;
             if (parseNode.GetChildNode("trackEffects") is null) { _explicitNullValueTrackEffects = default!; _explicitNullProperties?.Remove("trackEffects"); }
             else if (parseNode.GetChildNode("trackEffects") is { } nullNodeTrackEffects && nullNodeTrackEffects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackEffects = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Metric domain (for example `abtesting`, `personalization`).</summary>
+        /// <summary>Metric domain (for example `abtesting`, `core`, `personalization`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
@@ -40,7 +42,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string Domain { get => _explicitNullValueDomain; set { _explicitNullValueDomain = value; AdditionalData?.Remove("domain"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domain"); else _explicitNullProperties?.Remove("domain"); } }
         private string _explicitNullValueDomain = default!;
 #endif
-        /// <summary>If true, keep items that match the filter; if false, exclude them.</summary>
+        /// <summary>If true, keep items that match the filter; if false, exclude them. Defaults to false.</summary>
         public bool? Includes { get => _explicitNullValueIncludes; set { _explicitNullValueIncludes = value; AdditionalData?.Remove("includes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includes"); else _explicitNullProperties?.Remove("includes"); } }
         private bool? _explicitNullValueIncludes = default!;
         /// <summary>Public metric name.</summary>
@@ -53,7 +55,17 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>Whether the experiment should record the effects of this filter.</summary>
+        /// <summary>Values for a filter that needs them.The `core.hasExactCategoryFilter` filter requires both properties and matches the searches that had the exact filter `&lt;filterAttribute&gt;:&lt;filterValue&gt;`.Optional filters and filters in an OR group don&apos;t match.With `includes` false or omitted, the test counts every search except those searches.A test can have at most one `core.hasExactCategoryFilter` filter.Other filters don&apos;t accept parameters.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Algolia.OpenApiClient.Models.MetricsFilterParameters? Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; AdditionalData?.Remove("parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.MetricsFilterParameters? _explicitNullValueParameters = default!;
+#nullable restore
+#else
+        public global::Soenneker.Algolia.OpenApiClient.Models.MetricsFilterParameters Parameters { get => _explicitNullValueParameters; set { _explicitNullValueParameters = value; AdditionalData?.Remove("parameters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameters"); else _explicitNullProperties?.Remove("parameters"); } }
+        private global::Soenneker.Algolia.OpenApiClient.Models.MetricsFilterParameters _explicitNullValueParameters = default!;
+#endif
+        /// <summary>Whether the experiment should record the effects of this filter. Not supported by `core.hasExactCategoryFilter`.</summary>
         public bool? TrackEffects { get => _explicitNullValueTrackEffects; set { _explicitNullValueTrackEffects = value; AdditionalData?.Remove("trackEffects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trackEffects"); else _explicitNullProperties?.Remove("trackEffects"); } }
         private bool? _explicitNullValueTrackEffects = default!;
         /// <summary>
@@ -84,6 +96,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "includes", n => { Includes = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MetricsFilterParameters>(global::Soenneker.Algolia.OpenApiClient.Models.MetricsFilterParameters.CreateFromDiscriminatorValue); } },
                 { "trackEffects", n => { TrackEffects = n.GetBoolValue(); } },
             };
         }
@@ -97,6 +110,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             writer.WriteStringValue("domain", Domain);
             writer.WriteBoolValue("includes", Includes);
             writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.MetricsFilterParameters>("parameters", Parameters);
             writer.WriteBoolValue("trackEffects", TrackEffects);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
