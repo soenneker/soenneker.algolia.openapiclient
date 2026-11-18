@@ -104,7 +104,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "avg_build_time", n => { AvgBuildTime = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsAvgBuildTime>(global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsAvgBuildTime.CreateFromDiscriminatorValue); } },
                 { "cpu_usage", n => { CpuUsage = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsCpuUsage>(global::Soenneker.Algolia.OpenApiClient.Models.InfrastructureResponseResponseMetricsCpuUsage.CreateFromDiscriminatorValue); } },

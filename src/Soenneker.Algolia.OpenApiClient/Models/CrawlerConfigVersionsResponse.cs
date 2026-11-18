@@ -73,7 +73,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.CrawlerConfigVersionsResponseAllOf2ItemsItem>(global::Soenneker.Algolia.OpenApiClient.Models.CrawlerConfigVersionsResponseAllOf2ItemsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "itemsPerPage", n => { ItemsPerPage = n.GetIntValue(); } },

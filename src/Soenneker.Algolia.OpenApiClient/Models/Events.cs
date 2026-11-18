@@ -92,7 +92,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "addToCart", n => { AddToCart = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>(global::Soenneker.Algolia.OpenApiClient.Models.EventType2.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "purchase", n => { Purchase = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.EventType2>(global::Soenneker.Algolia.OpenApiClient.Models.EventType2.CreateFromDiscriminatorValue)?.AsList(); } },

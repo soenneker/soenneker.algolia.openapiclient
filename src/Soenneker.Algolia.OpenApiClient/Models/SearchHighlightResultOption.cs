@@ -79,7 +79,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "fullyHighlighted", n => { FullyHighlighted = n.GetBoolValue(); } },
                 { "matchLevel", n => { var parsed = n.GetEnumValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchMatchLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMatchLevel = default; _explicitNullProperties?.Remove("matchLevel"); AdditionalData["matchLevel"] = unknown; } else { MatchLevel = parsed; AdditionalData.Remove("matchLevel"); } } },

@@ -92,7 +92,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "externalProvider", n => { ExternalProvider = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.ExternalProvider>(global::Soenneker.Algolia.OpenApiClient.Models.ExternalProvider.CreateFromDiscriminatorValue); } },
                 { "feeds", n => { Feeds = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.SearchRequestFeedsProperty>(global::Soenneker.Algolia.OpenApiClient.Models.SearchRequestFeedsProperty.CreateFromDiscriminatorValue); } },

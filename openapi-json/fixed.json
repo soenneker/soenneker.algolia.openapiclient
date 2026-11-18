@@ -21625,7 +21625,7 @@
           {
             "name": "waitForTasks",
             "in": "query",
-            "description": "Whether to wait until every \u0060batch\u0060 task has been processed. This may take longer but is more reliable.",
+            "description": "Whether to wait until every \u0060batch\u0060 task has been processed. This may take longer but is more reliable. In Java, pass \u0060waitForTasks\u0060 together with \u0060batchSize\u0060 or \u0060requestOptions\u0060; there\u0027s no overload that takes \u0060waitForTasks\u0060 on its own.",
             "schema": {
               "type": "boolean",
               "default": false
@@ -21839,7 +21839,7 @@
           {
             "name": "waitForTasks",
             "in": "query",
-            "description": "Whether to wait until every \u0060batch\u0060 task has been processed. This may take longer but is more reliable.",
+            "description": "Whether to wait until every \u0060batch\u0060 task has been processed. This may take longer but is more reliable. In Java, pass \u0060waitForTasks\u0060 together with \u0060batchSize\u0060 or \u0060requestOptions\u0060; there\u0027s no overload that takes \u0060waitForTasks\u0060 on its own.",
             "schema": {
               "type": "boolean"
             }

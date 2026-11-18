@@ -126,7 +126,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.DeleteObjects
             [QueryParameter("requestOptions")]
             public string RequestOptions { get; set; }
 #endif
-            /// <summary>Whether to wait until every `batch` task has been processed. This may take longer but is more reliable.</summary>
+            /// <summary>Whether to wait until every `batch` task has been processed. This may take longer but is more reliable. In Java, pass `waitForTasks` together with `batchSize` or `requestOptions`; there&apos;s no overload that takes `waitForTasks` on its own.</summary>
             [QueryParameter("waitForTasks")]
             public bool? WaitForTasks { get; set; }
         }

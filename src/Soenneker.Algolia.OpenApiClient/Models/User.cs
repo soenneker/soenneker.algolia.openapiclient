@@ -85,7 +85,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "affinities", n => { Affinities = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.UserAffinitiesItem>(global::Soenneker.Algolia.OpenApiClient.Models.UserAffinitiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "lastUpdatedAt", n => { LastUpdatedAt = n.GetStringValue(); } },

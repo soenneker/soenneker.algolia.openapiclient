@@ -116,7 +116,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "createdAt", n => { CreatedAt = n.GetStringValue(); } },
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.WatchResponseDataItem>(global::Soenneker.Algolia.OpenApiClient.Models.WatchResponseDataItem.CreateFromDiscriminatorValue)?.AsList(); } },

@@ -90,7 +90,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "features", n => { Features = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.Features>(global::Soenneker.Algolia.OpenApiClient.Models.Features.CreateFromDiscriminatorValue); } },
                 { "indices", n => { Indices = n.GetCollectionOfObjectValues<global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObjectIndicesItem>(global::Soenneker.Algolia.OpenApiClient.Models.ConfigurationObjectIndicesItem.CreateFromDiscriminatorValue)?.AsList(); } },

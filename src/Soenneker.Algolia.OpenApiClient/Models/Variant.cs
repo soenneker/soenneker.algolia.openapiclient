@@ -114,7 +114,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "customSearchParameters", n => { CustomSearchParameters = n.GetObjectValue<global::Soenneker.Algolia.OpenApiClient.Models.VariantCustomSearchParameters>(global::Soenneker.Algolia.OpenApiClient.Models.VariantCustomSearchParameters.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
