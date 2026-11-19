@@ -51224,6 +51224,22 @@
           "not": { }
         }
       },
+      "SearchParamsAllowReRanking": {
+        "type": "object",
+        "properties": {
+          "allowReRankingOnPersonalization": {
+            "type": "boolean",
+            "description": "Whether [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking) runs concurrently with Personalization.\n\nDynamic Re-Ranking isn't applied when `distinct` > 1, even if `allowReRankingOnPersonalization` is `true`.\n",
+            "default": false,
+            "x-categories": [
+              "Personalization"
+            ]
+          }
+        },
+        "additionalProperties": {
+          "not": { }
+        }
+      },
       "SearchParamsObject": {
         "title": "Search parameters as object",
         "type": "object",
@@ -51233,6 +51249,9 @@
           },
           {
             "$ref": "#/components/schemas/search_IndexSettingsAsSearchParams"
+          },
+          {
+            "$ref": "#/components/schemas/SearchParamsAllowReRanking"
           }
         ],
         "description": "Each parameter value, including the `query` must not be larger than 512 bytes."
@@ -53702,6 +53721,9 @@
           },
           {
             "$ref": "#/components/schemas/search_ParamsType"
+          },
+          {
+            "$ref": "#/components/schemas/SearchParamsAllowReRanking"
           }
         ]
       },
@@ -64885,6 +64907,14 @@
             "default": true,
             "x-categories": [
               "Filtering"
+            ]
+          },
+          "AllowReRankingOnPersonalization": {
+            "type": "boolean",
+            "description": "Whether [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking) runs concurrently with Personalization.\n\nDynamic Re-Ranking isn't applied when `distinct` > 1, even if `allowReRankingOnPersonalization` is `true`.\n",
+            "default": false,
+            "x-categories": [
+              "Personalization"
             ]
           },
           "ProcessingTimeMs": {

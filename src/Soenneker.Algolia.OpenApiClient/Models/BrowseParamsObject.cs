@@ -21,6 +21,8 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             else if (parseNode.GetChildNode("advancedSyntax") is { } nullNodeAdvancedSyntax && nullNodeAdvancedSyntax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdvancedSyntax = null;
             if (parseNode.GetChildNode("advancedSyntaxFeatures") is null) { _explicitNullValueAdvancedSyntaxFeatures = default!; _explicitNullProperties?.Remove("advancedSyntaxFeatures"); }
             else if (parseNode.GetChildNode("advancedSyntaxFeatures") is { } nullNodeAdvancedSyntaxFeatures && nullNodeAdvancedSyntaxFeatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdvancedSyntaxFeatures = null;
+            if (parseNode.GetChildNode("allowReRankingOnPersonalization") is null) { _explicitNullValueAllowReRankingOnPersonalization = default!; _explicitNullProperties?.Remove("allowReRankingOnPersonalization"); }
+            else if (parseNode.GetChildNode("allowReRankingOnPersonalization") is { } nullNodeAllowReRankingOnPersonalization && nullNodeAllowReRankingOnPersonalization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowReRankingOnPersonalization = null;
             if (parseNode.GetChildNode("allowTyposOnNumericTokens") is null) { _explicitNullValueAllowTyposOnNumericTokens = default!; _explicitNullProperties?.Remove("allowTyposOnNumericTokens"); }
             else if (parseNode.GetChildNode("allowTyposOnNumericTokens") is { } nullNodeAllowTyposOnNumericTokens && nullNodeAllowTyposOnNumericTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowTyposOnNumericTokens = null;
             if (parseNode.GetChildNode("alternativesAsExact") is null) { _explicitNullValueAlternativesAsExact = default!; _explicitNullProperties?.Remove("alternativesAsExact"); }
@@ -184,6 +186,9 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         public List<global::Soenneker.Algolia.OpenApiClient.Models.SearchAdvancedSyntaxFeatures?> AdvancedSyntaxFeatures { get => _explicitNullValueAdvancedSyntaxFeatures; set { _explicitNullValueAdvancedSyntaxFeatures = value; AdditionalData?.Remove("advancedSyntaxFeatures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advancedSyntaxFeatures"); else _explicitNullProperties?.Remove("advancedSyntaxFeatures"); } }
         private List<global::Soenneker.Algolia.OpenApiClient.Models.SearchAdvancedSyntaxFeatures?> _explicitNullValueAdvancedSyntaxFeatures = default!;
 #endif
+        /// <summary>Whether [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking) runs concurrently with Personalization.Dynamic Re-Ranking isn&apos;t applied when `distinct` &gt; 1, even if `allowReRankingOnPersonalization` is `true`.</summary>
+        public bool? AllowReRankingOnPersonalization { get => _explicitNullValueAllowReRankingOnPersonalization; set { _explicitNullValueAllowReRankingOnPersonalization = value; AdditionalData?.Remove("allowReRankingOnPersonalization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowReRankingOnPersonalization"); else _explicitNullProperties?.Remove("allowReRankingOnPersonalization"); } }
+        private bool? _explicitNullValueAllowReRankingOnPersonalization = default!;
         /// <summary>Whether to allow typos on numbers in the search query.Turn off this setting to reduce the number of irrelevant matcheswhen searching in large sets of similar numbers.</summary>
         public bool? AllowTyposOnNumericTokens { get => _explicitNullValueAllowTyposOnNumericTokens; set { _explicitNullValueAllowTyposOnNumericTokens = value; AdditionalData?.Remove("allowTyposOnNumericTokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowTyposOnNumericTokens"); else _explicitNullProperties?.Remove("allowTyposOnNumericTokens"); } }
         private bool? _explicitNullValueAllowTyposOnNumericTokens = default!;
@@ -690,6 +695,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             AdvancedSyntax = false;
+            AllowReRankingOnPersonalization = false;
             AllowTyposOnNumericTokens = true;
             Analytics = true;
             AroundLatLngViaIP = false;
@@ -736,10 +742,11 @@ namespace Soenneker.Algolia.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(75)
+            return new Dictionary<string, Action<IParseNode>>(76)
             {
                 { "advancedSyntax", n => { AdvancedSyntax = n.GetBoolValue(); } },
                 { "advancedSyntaxFeatures", n => { AdvancedSyntaxFeatures = n.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchAdvancedSyntaxFeatures>()?.AsList(); } },
+                { "allowReRankingOnPersonalization", n => { AllowReRankingOnPersonalization = n.GetBoolValue(); } },
                 { "allowTyposOnNumericTokens", n => { AllowTyposOnNumericTokens = n.GetBoolValue(); } },
                 { "alternativesAsExact", n => { AlternativesAsExact = n.GetCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchAlternativesAsExact>()?.AsList(); } },
                 { "analytics", n => { Analytics = n.GetBoolValue(); } },
@@ -824,6 +831,7 @@ namespace Soenneker.Algolia.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("advancedSyntax", AdvancedSyntax);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchAdvancedSyntaxFeatures>("advancedSyntaxFeatures", AdvancedSyntaxFeatures);
+            writer.WriteBoolValue("allowReRankingOnPersonalization", AllowReRankingOnPersonalization);
             writer.WriteBoolValue("allowTyposOnNumericTokens", AllowTyposOnNumericTokens);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Algolia.OpenApiClient.Models.SearchAlternativesAsExact>("alternativesAsExact", AlternativesAsExact);
             writer.WriteBoolValue("analytics", Analytics);

@@ -48720,6 +48720,22 @@
           "not": {}
         }
       },
+      "SearchParamsAllowReRanking": {
+        "type": "object",
+        "properties": {
+          "allowReRankingOnPersonalization": {
+            "type": "boolean",
+            "description": "Whether [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking) runs concurrently with Personalization.\n\nDynamic Re-Ranking isn\u0027t applied when \u0060distinct\u0060 \u003E 1, even if \u0060allowReRankingOnPersonalization\u0060 is \u0060true\u0060.\n",
+            "default": false,
+            "x-categories": [
+              "Personalization"
+            ]
+          }
+        },
+        "additionalProperties": {
+          "not": {}
+        }
+      },
       "SearchParamsObject": {
         "title": "Search parameters as object",
         "type": "object",
@@ -48729,6 +48745,9 @@
           },
           {
             "$ref": "#/components/schemas/SearchIndexSettingsAsSearchParams"
+          },
+          {
+            "$ref": "#/components/schemas/SearchParamsAllowReRanking"
           }
         ],
         "description": "Each parameter value, including the \u0060query\u0060 must not be larger than 512 bytes."
@@ -51078,6 +51097,9 @@
           },
           {
             "$ref": "#/components/schemas/SearchParamsType"
+          },
+          {
+            "$ref": "#/components/schemas/SearchParamsAllowReRanking"
           }
         ]
       },
@@ -63663,6 +63685,14 @@
             "default": true,
             "x-categories": [
               "Filtering"
+            ]
+          },
+          "AllowReRankingOnPersonalization": {
+            "type": "boolean",
+            "description": "Whether [Dynamic Re-Ranking](https://www.algolia.com/doc/guides/algolia-ai/re-ranking) runs concurrently with Personalization.\n\nDynamic Re-Ranking isn\u0027t applied when \u0060distinct\u0060 \u003E 1, even if \u0060allowReRankingOnPersonalization\u0060 is \u0060true\u0060.\n",
+            "default": false,
+            "x-categories": [
+              "Personalization"
             ]
           },
           "ProcessingTimeMs": {
