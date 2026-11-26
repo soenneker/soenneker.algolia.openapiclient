@@ -51637,6 +51637,12 @@
         "properties": {
           "status": {
             "$ref": "#/components/schemas/SearchTaskStatus"
+          },
+          "pendingTask": {
+            "type": "boolean",
+            "description": "Indicates whether the index has pending tasks. This value is deprecated and always \u0060false\u0060. Don\u0027t use it.",
+            "default": false,
+            "deprecated": true
           }
         },
         "additionalProperties": {
