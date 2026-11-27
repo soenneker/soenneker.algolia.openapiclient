@@ -3951,7 +3951,7 @@
           "search"
         ],
         "summary": "Replace all records in an index",
-        "description": "Replace all records in your index with a new set of records by using the Transformation pipeline in the Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push).\n\nThis method replaces all records without downtime. It performs these operations:\n  1. Copy settings, synonyms, and rules from your original index to a temporary index.\n  2. Add your new records to the temporary index.\n  3. Replace your original index with the temporary index.\n\nNotes:\n- Use the \u0060safe\u0060 parameter to run these (asynchronous) operations in sequence.\n- If there\u0027s an error during one of these steps, the temporary index isn\u0027t deleted.\n- This operation is rate-limited.\n- This method creates a temporary index, which temporarily doubles your record count.\n- Algolia doesn\u0027t count the three days with the highest number of records toward your monthly usage.\n- If you\u0027re on a legacy plan (before July 2020), this method counts two operations toward your usage (in addition to the number of records): \u0060copySettings\u0060 and \u0060moveIndex\u0060.\n- The API key you use for this operation must have access to the index \u0060YourIndex\u0060 and the temporary index \u0060YourIndex_tmp\u0060.\n",
+        "description": "Replace all records in your index with a new set of records by using the Transformation pipeline in the Push connector (https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/connectors/push).\n\nThis method replaces all records without downtime. It performs these operations:\n  1. Copy settings, synonyms, and rules from your original index to a temporary index.\n  2. Add your new records to the temporary index.\n  3. Replace your original index with the temporary index.\n\nNotes:\n- Use the \u0060safe\u0060 parameter to run these (asynchronous) operations in sequence.\n- The method waits for every ingestion event of the pushed records to succeed before replacing your original index. If ingestion of any record batch fails (for example, the event status is \u0060failed\u0060 or \u0060critical\u0060), the method throws an error, leaves your original index untouched, and tries to delete the temporary index.\n- This operation is rate-limited.\n- This method creates a temporary index, which temporarily doubles your record count.\n- Algolia doesn\u0027t count the three days with the highest number of records toward your monthly usage.\n- If you\u0027re on a legacy plan (before July 2020), this method counts two operations toward your usage (in addition to the number of records): \u0060copySettings\u0060 and \u0060moveIndex\u0060.\n- The API key you use for this operation must have access to the index \u0060YourIndex\u0060 and the temporary index \u0060YourIndex_tmp\u0060.\n",
         "operationId": "ReplaceAllObjectsWithTransformation",
         "parameters": [
           {
@@ -4231,7 +4231,7 @@
           {
             "name": "waitForTasks",
             "in": "query",
-            "description": "Whether to wait until every \u0060batch\u0060 task has been processed. This may take longer but is more reliable.",
+            "description": "Whether to wait until every \u0060batch\u0060 task has been processed. This may take longer but is more reliable. When \u0060true\u0060, the method throws an error if the ingestion event of any batch doesn\u0027t succeed (for example, its status is \u0060failed\u0060 or \u0060critical\u0060).",
             "schema": {
               "type": "boolean",
               "default": false
@@ -4520,7 +4520,7 @@
           {
             "name": "waitForTasks",
             "in": "query",
-            "description": "Whether to wait until every \u0060batch\u0060 task has been processed. This may take longer but is more reliable.",
+            "description": "Whether to wait until every \u0060batch\u0060 task has been processed. This may take longer but is more reliable. When \u0060true\u0060, the method throws an error if the ingestion event of any batch doesn\u0027t succeed (for example, its status is \u0060failed\u0060 or \u0060critical\u0060).",
             "schema": {
               "type": "boolean",
               "default": false

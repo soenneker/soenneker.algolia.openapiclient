@@ -129,7 +129,7 @@ namespace Soenneker.Algolia.OpenApiClient.Search.PartialUpdateObjectsWithTransfo
             [QueryParameter("requestOptions")]
             public string RequestOptions { get; set; }
 #endif
-            /// <summary>Whether to wait until every `batch` task has been processed. This may take longer but is more reliable.</summary>
+            /// <summary>Whether to wait until every `batch` task has been processed. This may take longer but is more reliable. When `true`, the method throws an error if the ingestion event of any batch doesn&apos;t succeed (for example, its status is `failed` or `critical`).</summary>
             [QueryParameter("waitForTasks")]
             public bool? WaitForTasks { get; set; }
         }

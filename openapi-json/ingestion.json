@@ -2926,7 +2926,7 @@
           {
             "name": "waitForTasks",
             "in": "query",
-            "description": "Whether to wait until every \u0060batch\u0060 task has been processed. This may take longer but is more reliable.",
+            "description": "Whether to wait until every \u0060batch\u0060 task has been processed. This may take longer but is more reliable. When \u0060true\u0060, the method throws an error if the ingestion event of any batch doesn\u0027t succeed (for example, its status is \u0060failed\u0060 or \u0060critical\u0060).",
             "schema": {
               "type": "boolean"
             }
